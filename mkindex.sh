@@ -99,10 +99,10 @@ generate_index() {
     </header>
 
     <nav>
-        <a href=\"$root_dir/not\">Notas de Física</a>
-        <a href=\"$root_dir/exer\">Exercícios</a>
-        <a href=\"$root_dir/sol\">Soluções de Exercícios</a>
-        <a href=\"$root_dir/info\">Informações Pessoais</a>
+        <a href=\"not\">Notas de Física</a>
+        <a href=\"exer\">Exercícios</a>
+        <a href=\"sol\">Soluções de Exercícios</a>
+        <a href=\"info\">Informações Pessoais</a>
     </nav>" >> "$index_file"
     echo "    <main><section class=\"section\"><h2>Index of $(basename "$dir")</h2>" >> "$index_file"
     echo "    <ul>" >> "$index_file"
