@@ -1,0 +1,502 @@
+\documentclass[twoside]{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+%\usepackage[sorting=none, style=verbose-inote, backend=biber]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphics}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage{tensor}
+\usepackage[lmargin=0.5cm,rmargin=0.5cm, tmargin =1cm,bmargin =1cm]{geometry}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\Det}[1]{\textup{Det} #1}
+\newcommand{\sgn}[1]{\mbox{sgn}\qty(#1)}
+\newcommand{\cqd}{\hfill$\blacksquare$}
+
+\numberwithin{equation}{section}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defi}{Definição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{hip}{Hipótese}[subsection]
+
+\pagestyle{plain}
+
+\AddToHook{cmd/section/before}{\clearpage}
+
+%\addbibresource{ref.bib}
+
+\title{
+Notas de Mecânica Clássica
+}
+\author{
+  Vicente V. Figueira
+       }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Introdução}
+
+\subsection{Fundamentos da Teoria Clássica}
+
+Podemos pensar na Física como um conjunto de várias teorias, cada qual com seu limite de 
+validade, e, estas historicamente foram nomeadas segundo estes, ou, segundo o fenômeno 
+característico que se propõem a modelar. A Teoria Clássica, ou Mecânica Clássica como 
+alguns chamam, está entre as primeiras teorias física a ser proposta, e como seu nome 
+sugere, está intencionada a descrever fenômenos \emph{não extremos}, seja do ponto de 
+vista de energia, número de constituintes ou dimensões do sistema. Questões como qual 
+os valores numéricos dos reais limites da teoria só podem serem sanadas com comparação 
+experimental dos valores teóricos.
+
+A formulação da Teoria Clássica tem início com observações experimentais e experimentos 
+mentais, que são \emph{confiáveis} para extrair informações \emph{médias} em sistemas de 
+energia, número de constituintes e dimensões \emph{médias}. O primeiro ápice da formulação 
+Clássica foi devido a Newton, seguido por Lagrange e Hamilton. Porém, estamos aqui interessados 
+em desenvolver uma abordagem via postulados para sedimentar quais informações estão sendo 
+assumidas em nossa teoria.
+
+Ao tentar dar início sobre quais são as hipóteses ocultas feitas sobre uma teoria, devemos 
+pensar primeiramente qual são os principais agentes dinâmicos, que por experiência devem ser 
+posições e velocidades, estes que são vetores, logo, deve haver um espaço vetorial abaixo, 
+e via experiência, este é um espaço de três dimensões. Certamente, novamente por experiência,  
+também há uma quantidade que flui naturalmente, chamada comumente de \emph{tempo}. 
+Naturalmente, eu, em meu referencial, utilizando de aparatos adequados posso medir intervalos 
+espaciais e temporais à vontade, porém, outra pessoa, distante de mim, poderia por sua vez 
+também estar interessada em realizar as mesmas medições que eu estou fazendo, se ela realiza 
+as medições do seu referencial, e eu realizo as medições do meu referencial, há alguma 
+correlação entre estas? Bem, naturalmente se para referenciais distintos não houvesse nenhum 
+tipo de correlação entre os valores medidos toda a física cairia por terra, visto que não 
+haveria nenhum modo de comparar medidas e testar teorias físicas, deve portanto haver ao menos 
+alguma classe de referenciais tais que as coordenadas espaciais e temporais possuam correlação 
+entre os dois observadores. Observadores pertencentes a esta classe especial de referenciais que concordam com a física descrita são chamados de observadores \emph{inerciais}, devemos portanto descrever qual propriedades queremos que um referencial inercial possua. O requisito mais intuitivo é de que observadores inerciais percebem objetos que não interagem movem-se com velocidade constante, a princípio mudanças de coordenadas do tipo de translação são triviais de serem tratadas, apenas se fazendo, $${\bar x}^\mu=x^\mu+a^\mu$$
+Nosso interesse esta em mudanças de referenciais não dadas por translações, como boost e rotações, essas atuam de forma linear como, $${\bar x}^\mu={\textup L}^\mu_{\ \nu}x^\nu$$
+No caso de uma rotação pura ao redor de um eixo $\boldsymbol\theta$ com módulo $\theta$, assumimos que a componente temporal não é alterada, assim, o vetor mais genérico linear capaz de ser formado com $\vb x,\boldsymbol\theta$ e $\theta$ de modo a preservar a norma $\vb{\bar x}=\vb x$ é,
+
+\begin{align}
+    \vb{\bar x}&=\frac{\boldsymbol\theta\cdot\vb x}{\theta^2}\boldsymbol\theta+\qty(\vb x-\frac{\boldsymbol\theta\cdot\vb x}{\theta^2}\boldsymbol\theta)\cos\theta-\frac{\boldsymbol\theta\times \vb x}{\theta}\sin\theta
+\end{align}
+
+Logo a matriz $\textup L$ é $${\textup L}^{0}_{\ 0}=1,\ {\textup L}^0_{\ i}={\textup L}^{i}_{\ 0}=0,\ {\textup L}^{i}_{\ j}={\textup R}^{i}_{\ j}$$
+Com,
+\begin{align}
+    {\textup R}^{i}_{\ j}&=\frac{\theta_i\theta_{j}}{\theta^2}+\qty(\delta_{ij}-\frac{\theta_{i}\theta_j}{\theta^2})\cos\theta+\frac{\epsilon_{ijk}\theta_k}{\theta}\sin\theta
+\end{align}
+
+Para um boost, temos que construir escalares e vetores com $\vb v$ e $\vb x$, a construção linear mais geral é,
+
+\begin{align}
+    {\bar t}&=a\qty(v)t+b\qty(v)\vb v\cdot \vb x\\
+    \vb {\bar x}&=c\qty(v)\vb x+d\qty(v)\frac{\vb v\cdot \vb x}{v^2}\vb v+e\qty(v)t\vb v
+\end{align}
+
+A condição $\vb x=\vb v t$ deve implicar $\vb{\bar x}=0$, logo a restrição é,
+
+\begin{align}
+    c\qty(v)+d\qty(v)+e\qty(v)&=0
+\end{align}
+
+A transformação inversa deve valer para $\vb {\bar v}=-\vb v$, o que implica em
+
+\begin{align}
+    c^2&=1\\
+    a^2-ebv^2&=1\\
+    e^2-ebv^2&=1\\
+    ea+e^2&=0\\
+    ba+be&=0
+\end{align}
+
+Tomamos $c=1$ pois $c=-1$ corresponde a uma rotação. Como $e\neq 0$ segue que $a=-e$, logo,
+
+\begin{align}
+    b&=\frac{1-a^2}{av^2}\\
+    c&=1\\
+    d&=a-1\\
+    e&=-a
+\end{align}
+
+Como dois boost seguidos deve corresponder a um único boost, chegamos em
+
+\begin{align}
+    \frac{va\qty(v)}{\bar wa\qty(\bar w)}\qty(1-a^2\qty(\bar w))&=\frac{\bar wa\qty(\bar w)}{va\qty(v)}\qty(1-a^2\qty(v))\\
+    \frac{1-a^2\qty(v)}{v^2a^2\qty(v)}&=\frac{1-a^2\qty(\bar w)}{{\bar w}^2a^2\qty({\bar w})}=K\\
+    a\qty(v)&=\frac{\pm 1}{\sqrt{1+Kv^2}}=\pm \gamma\qty(v),\ \ b\qty(v)=\frac{\pm K}{\sqrt{1+Kv^2}}=\pm K\gamma\qty(v) 
+\end{align}
+
+Logo a transformação é,
+
+\begin{align}
+    {\bar t}&=\pm\gamma\qty(v)\qty(t+K\vb v \cdot \vb x)\\
+    \vb {\bar x}&= \vb x+\frac{\pm\gamma\qty(v)-1}{v^2}\qty(\vb v \cdot \vb x)\vb v\mp\gamma\qty(v)t \vb v
+\end{align}
+
+Resta apenas fixar o sinal de $a\qty(v)$ e o valor de $K$, o caso $K=0$ faz com que $\gamma=1$ e retorna as relações da relatividade de Galileu. Para casos $K\neq 0$, apenas é importante o sinal de $K$ e não seu valor absoluto, visto que podemos sempre mudar as unidades de tempo para obter,
+
+\begin{align}
+    {\bar t}&=\pm\gamma\qty(v)\qty(t+\sgn{K}\norm{K}\vb v \cdot \vb x)\\
+    \vb {\bar x}&= \vb x+\frac{\pm\gamma\qty(v)-1}{v^2}\qty(\vb v \cdot \vb x)\vb v\mp\gamma\qty(v)t \vb v\\
+    \norm{K}^{-\frac12}{\bar t}&=\pm\gamma\qty(v)\qty(\norm{K}^{-\frac12}t+\sgn{K}\norm{K}^\frac12\vb v \cdot \vb x)\\
+    \vb {\bar x}&= \vb x+\frac{\pm\gamma\qty(v)-1}{\norm{K}v^2}\qty(\norm{K}^\frac12\vb v \cdot \vb x)\norm{K}^\frac12\vb v\mp\gamma\qty(v)\norm{K}^{-\frac12}t \norm{K}^\frac12\vb v 
+\end{align}
+
+Redefinindo $t\norm{K}^{-\frac12}\rightarrow t$,
+
+\begin{align}
+    {\bar t}&=\pm\gamma\qty(v)\qty(t+\sgn{K}\vb v \cdot \vb x)\\
+    \vb {\bar x}&= \vb x+\frac{\pm\gamma\qty(v)-1}{v^2}\qty(\vb v \cdot \vb x)\vb v\mp\gamma\qty(v)t \vb v
+\end{align}
+
+Para ter uma intuição sobre o que o sinal de $K$ significa vamos fazer dois boost seguidos,
+
+\begin{align}
+    {\bar{\bar t}}&=\pm\gamma\qty(w)\qty({\bar t}+\sgn{K}\vb w\cdot\vb{\bar x})\\
+    &=\pm\gamma\qty(w)\qty(\pm\gamma\qty(v)\qty{t+\sgn{K}\vb v\cdot\vb x}+\sgn{K}\vb w\cdot\qty[\vb x+\frac{\pm\gamma\qty(v)-1}{v^2}\qty(\vb v \cdot \vb x)\vb v\mp\gamma\qty(v)t \vb v])\\
+    &=\gamma\qty(w)\gamma\qty(v)\qty(t+\sgn{K}\vb v\cdot\vb x\pm\frac{\sgn K}{\gamma\qty(v)}\vb w\cdot \vb x+\sgn K\frac{\gamma\qty(v)\mp1}{v^2\gamma\qty(v)}\qty(\vb w\cdot \vb v)\vb v\cdot \vb x-\sgn K t\vb w \cdot \vb v)\\
+    &=\gamma\qty(w)\gamma\qty(v)\qty(1-\sgn K\vb w\cdot \vb v)\qty(t+\frac{\sgn K}{v^2\gamma\qty(v)\qty(1-\sgn K\vb w\cdot \vb v)} \vb x\cdot \qty{v^2\gamma\qty(v)\vb v\pm v^2\vb w+\qty(\gamma\qty(v)\mp 1)\qty(\vb w\cdot \vb v)\vb v})
+\end{align}
+
+Fazendo as identificações,
+
+\begin{align}
+    \pm\gamma\qty(u)&=\gamma\qty(w)\gamma\qty(v)\qty(1-\sgn K\vb w\cdot \vb v)\\
+    \vb u &=\frac{v^2\gamma\qty(v)+\qty(\gamma\qty(v)\mp1)\vb w\cdot\vb v}{v^2\gamma\qty(v)\qty(1-\sgn K\vb w\cdot\vb v)}\vb v\pm\frac{1}{\gamma\qty(v)\qty(1-\sgn K \vb w\cdot \vb v)}\vb w
+\end{align}
+
+Para $a\qty(v)=\pm\gamma\qty(v)$ ser real com $\sgn K=-1$ somos obrigados a ter $\norm{v}< 1$ para todos os referenciais inerciais, assim $1-\sgn K \vb w\cdot \vb v>0$, que por sua vez nos exige tomar $a\qty(v)=+\gamma\qty(v)$. Analogamente $\sgn K=0$ também fixa $a\qty(v)=+\gamma\qty(v)$, outra opção restante é $\sgn K=+1$ que não restringe os valores de $\norm{v}$, assim $a\qty(v)$ pode assumir valores tanto positivos quanto negativos, valor de $a\qty(v)$ negativo implica em reversão temporal, como estamos assumindo uma transformação passiva não é esperado que resulte em uma inversão na direção temporal, logo, fixamos $K\leq 0$ como casos \emph{físicos}. A Teoria Clássica está interessada no caso $K=0$, para o qual as transformações são da forma,
+
+\begin{align}
+    \gamma&=1\\
+    {\bar t}&=t\\
+    \vb {\bar x}&=\vb x- t\vb v\\
+    \vb u&=\vb v+\vb w
+\end{align}
+
+Portanto temos que o tempo é na verdade uma quantidade absoluta, gostaríamos de introduzir uma métrica para qual as normas seja invariantes perante a rotações e boosts, isto é,
+
+\begin{align*}
+    \qty(Bx)^{\textup T}gBx=x^{\textup T}B^\textup{T}gBx
+\end{align*}
+
+Isto é, a métrica deve satisfazer, $B^{\textup T}gB=g$, se supomos que,
+
+\begin{align*}
+    x=\mqty(t&\vb x^{\textup T})^{\textup T}
+\end{align*}    
+
+Logo,
+
+\begin{align*}
+    \mqty(a&{\vb b}^{\textup T}\\ \vb c&\mathbbm M)&=\mqty(1&-\vb v^{\textup T}\\ \vb 0&\mathbbm 1)\mqty(a&{\vb b}^{\textup T}\\ \vb c&\mathbbm M)\mqty(1&\vb 0^\textup T\\-\vb v&\mathbbm 1)\\
+    \mqty(a&{\vb b}^{\textup T}\\ \vb c&\mathbbm M)&=\mqty(a-\vb v^{\textup T}\vb c&\vb b^{\textup T}-\vb v^{\textup T}\mathbbm M\\ \vb c&\mathbbm M)\mqty(1&\vb 0^\textup T\\-\vb v&\mathbbm 1)\\
+    \mqty(a&{\vb b}^{\textup T}\\ \vb c&\mathbbm M)&=\mqty(a-\vb v^{\textup T}\vb c-\vb b^{\textup T}\vb v+\vb v^{\textup T}\mathbbm M\vb v&\vb b^{\textup T}-\vb v^{\textup T}\mathbbm M\\ \vb c-\mathbbm M \vb v&\mathbbm M)\\
+\end{align*}
+
+Donde concluímos que,
+
+\begin{align}
+    \mathbbm M =\vb  0,\ \vb b=-\vb c
+\end{align}
+
+Esta métrica deve possuír uma inversa, para isso,
+
+\begin{align}
+    \textup{Det } g&=-b_1\textup {Det }\mqty(-b_1&0&0\\-b_2&0&0\\-b_3&0&0)+b_2\textup {Det }\mqty(-b_1&0&0\\-b_2&0&0\\-b_3&0&0)-b_3\textup {Det }\mqty(-b_1&0&0\\-b_2&0&0\\-b_3&0&0)=0
+\end{align}
+
+Logo esta não é inversível, não é possível portanto estabelecer uma métrica que seja invariante pelos boosts. Uma maneira de contornar este problema é introduzir outra coordenada $s$, assim um vetor é,
+
+\begin{align}
+    x=\mqty(\vb x^{\textup T}&t&s)^{\textup T}
+\end{align}
+
+A transformação por boost deve ser claramente,
+
+\begin{align}
+    \mqty(\vb x-\vb v t\\t\\ s')&=\mqty(\mathbbm 1&-\vb v&\vb 0\\ \vb 0^{\textup T }&1&0\\\vb v^{\textup T}a\qty(v)&b\qty(v)&c\qty(v))\mqty(\vb x\\ t\\ s)
+\end{align}
+
+A transformação inversa deve ser aquela com $-\vb v$, então,
+
+\begin{align}
+    \mqty(\mathbbm 1&\vb 0&\vb 0\\\vb 0^{\textup T}&1&0\\\vb 0^{\textup T}&0&1)&=\mqty(\mathbbm 1&\vb v&\vb 0\\ \vb 0^{\textup T }&1&0\\-\vb v^{\textup T}a\qty(v)&b\qty(v)&c\qty(v))\mqty(\mathbbm 1&-\vb v&\vb 0\\ \vb 0^{\textup T }&1&0\\\vb v^{\textup T}a\qty(v)&b\qty(v)&c\qty(v))\\
+    &=\mqty(\mathbbm 1&\vb 0&\vb 0\\ \vb 0^{\textup T }&1&0\\-\vb v^{\textup T}a\qty(v)+\vb v^{\textup T}a\qty(v)c\qty(v)&v^2a\qty(v)+b\qty(v)+b\qty(v)c\qty(v)&c^2\qty(v))
+\end{align}
+
+Isso fixa $c=1$ e $b=-v^2\frac a2$, o boost é dado por,
+
+\begin{align}
+    \mqty(\mathbbm 1&-\vb v&\vb 0\\ \vb 0^{\textup T }&1&0\\\vb v^{\textup T}a&-v^2\frac a2&1)
+\end{align}
+
+A métrica deve ser da forma,
+
+\begin{align}
+    g&=\mqty(\mathbbm M&\vb b&\vb c\\\vb b^{\textup T}&d&e\\\vb c^{\textup T}&e&f)
+\end{align}
+
+Requerendo que preserve os boosts,
+
+\begin{align}
+    &\mqty(\mathbbm M&\vb b&\vb c\\\vb b^{\textup T}&d&e\\\vb c^{\textup T}&e&f)\\
+    &=\mqty(\mathbbm 1&\vb 0&\vb v a\\ -\vb v^{\textup T }&1&-v^2\frac a2\\\vb 0^{\textup T}&0&1)\mqty(\mathbbm M&\vb b&\vb c\\\vb b^{\textup T}&d&e\\\vb c^{\textup T}&e&f)\mqty(\mathbbm 1&-\vb v&\vb 0\\ \vb 0^{\textup T }&1&0\\\vb v^{\textup T}a&-v^2\frac a2&1)\\
+    &=\mqty(\mathbbm 1&\vb 0&\vb v a\\ -\vb v^{\textup T }&1&-v^2\frac a2\\\vb 0^{\textup T}&0&1)\mqty(\mathbbm M+a\vb c\vb v^{\textup T}&-\mathbbm M\vb v+\vb b-v^2\frac a2\vb c&\vb c\\ \vb b^{\textup T}+ae\vb v^{\textup T}&-\vb b^{\textup T}\vb v+d-v^2\frac a2 e&e\\\vb c^{\textup T}+af\vb v^{\textup T}&-\vb c^{\textup T}\vb v+e-v^2\frac a2 f&f)\\
+    &=\mqty(\mathbbm M+a\vb c\vb v^{\textup T}+a\vb v\vb c^{\textup T}+a^2f\vb v\vb v^{\textup T}&-\mathbbm M \vb v+\vb b-\frac12 av^2\vb c-a\vb v\vb c^{\textup T}\vb v+ae\vb v-\frac12 a^2fv^2\vb v&\vb c+af\vb v\\ -\vb v^{\textup T}\mathbbm M-a\vb v^{\textup T}\vb c\vb v^{\textup T}+\vb b^{\textup T}+ae\vb v^{\textup T}-\frac12 av^2\vb c^{\textup T}-\frac12 a^2fv^2\vb v^{\textup T}&\vb v^{\textup T}\mathbbm M\vb v-\vb v^{\textup T}\vb b+\frac12 av^2\vb v^{\textup T}\vb c-\vb b^{\textup T}\vb v+d-\frac12av^2e+\frac12av^2\vb c^{\textup T}\vb v-\frac12 av^2e+\frac14 a^2v^4f&-\vb v^{\textup T}\vb c+e-\frac12 av^2f\\ \vb c^{\textup T}+af\vb v^{\textup T}&-\vb c^{\textup T}\vb v+e-\frac12 av^2f&f)
+\end{align}
+
+Que implica em,
+
+\begin{align}
+    a\vb c\vb v^{\textup T}+a\vb v\vb c^{\textup T}+a^2f\vb v\vb v^{\textup T}&=0
+\end{align}
+
+Logo, $f=0$, e isso implica em $\vb c=0$. Assim,
+
+\begin{align}
+    &\mqty(\mathbbm M&\vb b&\vb 0\\\vb b^{\textup T}&d&e\\\vb 0^{\textup T}&e&0)\\
+    &=\mqty(\mathbbm M&-\mathbbm M \vb v+\vb b+ae\vb v&\vb 0\\ -\vb v^{\textup T}\mathbbm M+\vb b^{\textup T}+ae\vb v^{\textup T}&\vb v^{\textup T}\mathbbm M\vb v-\vb v^{\textup T}\vb b-\vb b^{\textup T}\vb v+d-av^2e&e\\ \vb 0^{\textup T}&e&0)
+\end{align}
+
+Que por sua vez implica em,
+
+\begin{align}
+    \mathbbm M \vb v&= ae\vb v,\ \Rightarrow \mathbbm M=ae\mathbbm 1,\ \Rightarrow \vb b=\vb 0
+\end{align}
+
+Então a métrica fica como,
+
+\begin{align}
+    g=\mqty(ae\mathbbm 1&\vb 0&\vb 0\\\vb 0^{\textup T}&d&e\\\vb 0^{\textup T}&e&0 )=\mqty(ae &0&0&0&0\\0&ae&0&0&0\\0&0&ae&0&0\\0&0&0&d&e\\0&0&0&e&0)
+\end{align}
+
+Esta deve possuir uma inversa, logo, seu determinante não pode ser nulo,
+
+\begin{align}
+    \textup{Det }g&=ae\textup{Det }\mqty(ae&0&0&0\\0&ae&0&0\\0&0&d&e\\0&0&e&0)\\
+    &=\qty(ae)^2\textup{Det }\mqty(ae&0&0\\0&d&e\\0&e&0)\\
+    &=\qty(ae)^3\textup{Det }\mqty(d&e\\e&0)=-e^5a^3
+\end{align}
+
+Gostaríamos que $\norm{\textup{Det }g}=1$, assim, fixamos $\norm{e^5a^3}=1$, a escolha de $a$ é apenas uma redefinição de unidades, logo escolhemos $a=-1$ pois será mais conveniente futuramente, portanto, resta $\norm{e}=1$, escolhemos $e=-1$ que preserva o sinal positivo da parte espacial na métrica. Resta apenas o parâmetro $d$ indeterminado, que renomearemos para $K$
+
+\begin{align}
+    g=\mqty(\mathbbm 1&\vb 0&\vb 0\\\vb 0^{\textup T}&K&-1\\\vb 0^{\textup T}&-1&0 )
+\end{align}
+
+A norma de um vetor $A=\mqty(\vb A&A^4&A^5)$ é,
+
+\begin{align}
+    \vb A^2+K{A^4}^2-2A^4A^5
+\end{align}
+
+O vetor posição é certamente,
+
+\begin{align}
+    x=\mqty(\vb x&t&s),\ \ x\cdot x=\vb x^2+Kt^2-2ts
+\end{align}
+
+E podemos então definir um vetor velocidade, 
+
+\begin{align}
+    u=\dv{x}{t}=\mqty(\vb u&1&\dv{s}{t})
+\end{align}
+
+Note que em um referencial no qual acompanhamos um corpo que se move com velocidade instantânea $\vb v$,
+
+\begin{align}
+    x'&=\mqty(\vb x-\vb vt&t&s-\vb v^{\textup T}\vb x+\frac12 v^2t)\\
+    \dd{x}'&=\mqty(\dd{\vb x}-\dv{\vb x^{\textup T}}{t}\dd{t}&\dd{t}&\dd{s}-\dv{\vb x^{\textup T}}{t}\dd{\vb x}+\frac12 \dv{\vb x^{\textup T}}{t}\dv{\vb x}{t}\dd{t})\\
+    \dd{x}'&=\mqty(\vb 0&\dd{t}&\dd{s}-\frac12 \dv{\vb x^{\textup T}}{t}\dv{\vb x}{t}\dd{t})
+\end{align}
+
+Mas como no referencial do próprio corpo nenhuma quantidade pode depender de sua velocidade, somos levado a concluir que,
+
+\begin{align}
+    \dd{s}=\frac12\vb u^2\dd{t}
+\end{align}
+
+Ou seja, em um referencial que observa o corpo se mover,
+
+\begin{align}
+    x=\mqty(\vb x&t&\frac12\int\limits_{0}^{t}\dd{t'}\vb u^2\qty(t'))
+\end{align}
+
+Dessa forma,
+
+\begin{align}
+    u&=\mqty(\vb u&1 &\frac12 \vb u^2)\\
+    mu=p&=\mqty(m\vb u&m&\frac m2 \vb u^2)\\
+    p&=\mqty(\vb p&m&E)
+\end{align}
+
+Um corpo livre deve obedecer a lei,
+
+\begin{align}
+    \dv{p_\mu}{t}&=0
+\end{align}
+
+Qualquer alteração desta chamamos de força, o que nos leva a escrever,
+
+\begin{align}
+    \dv{p_\mu}{t}&=F_\mu\\
+    \dv{}{t}\qty[m\dv{x_\mu}{t}]&=F_\mu\\
+    \dv{}{t}\qty[m\dv{x_\mu}{t}]&=-\partial_\mu\Phi+\dv{}{t}\qty[\pdv{\Phi}{\dv{x^\mu}{t}}]    
+\end{align}
+
+Que pode ser gerado variacionalmente por,
+
+\begin{align}
+    S&=\int\dd{t}\qty{\frac m2\dv{x^\mu}{t}\dv{x_\mu}{t}-\Phi\qty(x, \dv{x}{t})}
+\end{align}
+
+O fato de que $p_\mu F^\mu=0$, implica em,
+
+\begin{align}
+    S&=\int\dd{t}\qty{\frac m2\dv{x^\mu}{t}\dv{x_\mu}{t}-\dv{x_\mu}{t}A^\mu\qty(x)}
+\end{align}
+
+Porém temos que,
+
+\begin{align}
+    \dv{x_\mu}{t}\dv{x^\mu}{t}&=K
+\end{align}
+
+Para incorporar este vínculo precisamos adicionar um multiplicador de Lagrange fazendo,
+
+\begin{align*}
+    S&=\int\dd{t}\qty{\frac\alpha 2\dv{x_\mu}{t}\dv{x^\mu}{t}-\dv{x_\mu}{t}A^\mu\qty(x)+\frac{m^2K}{2\alpha}}
+\end{align*}
+
+Claro que $\alpha=\alpha\qty(t)$, assim as equações de movimento se tornam,
+
+\begin{align*}
+    \frac12\dv{x_\mu}{t}\dv{x^\mu}{t}-\frac{m^2K}{2\alpha^2}&=0\\
+    \dv{}{t}\qty{\frac\alpha 2\dv{x^\mu}{t}-A^\mu}&=-\dv{x_\nu}{t}\partial^\mu A^{\nu}\\
+    \dv{}{t}\qty{\sqrt{\frac{K}{\dv{x_\mu}{t}\dv{x^\mu}{t}}}\frac m 2\dv{x^\mu}{t}-A^\mu}&=-\dv{x_\nu}{t}\partial^\mu A^{\nu}\\
+\end{align*}
+
+Claro que isso só faz sentido se exigirmos invariância de reparametrização,
+
+\begin{align*}
+    S&=\int\dd{t}\qty{\frac\alpha 2\dv{x_\mu}{t}\dv{x^\mu}{t}-\dv{x_\mu}{t}A^\mu\qty(x)+\frac{m^2K}{2\alpha}}\\
+    &=\int\dd{\lambda}\dv{t}{\lambda}\qty{\frac\alpha 2\dv{\lambda}{t}\dv{\lambda}{t}\dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}-\dv{\lambda}{t}\dv{x_\mu}{\lambda}A^\mu\qty(x)+\frac{m^2K}{2\alpha}}\\
+    &=\int\dd{\lambda}\qty{\frac\alpha 2\dv{\lambda}{t}\dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}-\dv{x_\mu}{\lambda}A^\mu\qty(x)+\frac{m^2K}{2\alpha\dv{\lambda}{t}}}\\
+\end{align*}
+
+Donde retiramos a lei de transformação via reparametrização,
+
+\begin{align}
+    \alpha\qty(\lambda)&=\alpha\qty(t)\dv{\lambda}{t}
+\end{align}
+
+Assim podemos escrever de uma maneira covariante e invariante por reparametrização, tomando $K=1$ por simplicidade,
+
+\begin{align}
+    S&=\int\dd{\lambda}\qty{\frac\alpha 2\dot{x}_\mu\dot{x}^\mu-\dot{x}_\mu A^\mu+\frac{m^2}{2\alpha}}
+\end{align}
+
+Note que a equação de movimento escrita de forma geral é,
+
+\begin{align}
+    \dv{}{\lambda}\qty[\frac{m\dot {x}^\mu}{\sqrt{\dot x_\nu\dot x^\nu}}]&=\dv{}{\lambda}A^\mu-\partial^\mu\qty(\dot x_\nu A^\nu)
+\end{align}
+
+Definimos como momento $p^\mu=\frac{m\dot {x}^\mu}{\sqrt{\dot x_\nu\dot x^\nu}}=\alpha \dot x^\mu$
+
+Vamos escrever a equação de movimento geral para um objeto supondo que estamos em um referencial tal que $A^\mu\mqty(\vb A\qty(\vb x)&A^4\qty(\vb x)&A^5\qty(\vb x))$,
+
+\begin{align}
+    \dv{\vb p}{t}&=\dot x_\nu\qty[\partial^\nu \vb A-\grad A^\nu]\\
+    &=\qty(\dot {\vb x}\cdot\grad)\vb A-\grad\qty(\dot{\vb x}\cdot\vb A)+\dot x_4\grad A^5+\dot x_5\grad A^4-K\dot x_4\grad A^4\\
+    &=\dot{\vb x}\times\qty(\grad\times \vb A)+\dot x_4\grad A^5+\dot x_5\grad A^4-K\dot x_4\grad A^4\\
+    \dv{p^4}{t}=\dv{m}{t}&=\dot x_\nu\qty[\partial^\nu A^4-\partial^4A^\nu]\\
+    &=\dot x_\nu\partial^\nu A^4\\
+    &=\qty(\dot {\vb x}\cdot\grad )A^4\\
+    \dv{p^5}{t}=\dv{E}{t}&=\dot x_\nu\qty[\partial^\nu  A^5-\partial^5 A^\nu]\\
+    &=\dot x_\nu\partial^\nu  A^5\\
+    &=\qty(\dot {\vb x}\cdot \grad)  A^5
+\end{align}
+
+Note que como $A$ deve ser vetor por Galileu,
+
+\begin{align}
+    {A'}^4\qty(\vb x ')&=A^4\qty(\vb x)\\
+    A^4\qty(\vb x-\vb vt)&=A^4\qty(\vb x)\rightarrow A^4\qty(\vb x)=\textup{cte}
+\end{align}
+
+E,
+
+\begin{align}
+    {A'}^5\qty(\vb x')&=A^5\qty(\vb x)\\
+    {A}^5\qty(\vb x-\vb vt)+\vb A\qty(\vb x-\vb vt)\cdot \vb v&=A^5\qty(\vb x)
+\end{align}
+
+E também,
+
+\begin{align}
+    {\vb A}'\qty(\vb x')&=\vb A\qty(\vb x)\\
+    \vb A\qty(\vb x-\vb v t)&=\vb A\qty(\vb x)
+\end{align}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Formalismo Lagrangiano}
+
+
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Formalismo Hamiltoniano}
+
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Formalismo de Hamilton-Jacobi}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Teoria Clássica de Campos}
+
+
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%o  
+
+\end{document}

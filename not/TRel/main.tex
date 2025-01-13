@@ -1,0 +1,1270 @@
+\documentclass[twoside]{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+%\usepackage[sorting=none, style=verbose-inote, backend=biber]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphics}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage{tensor}
+\usepackage[lmargin=0.5cm,rmargin=0.5cm, tmargin =1cm,bmargin =1cm]{geometry}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\Det}[1]{\textup{Det} #1}
+\newcommand{\sgn}[1]{\mbox{sgn}\qty(#1)}
+\newcommand{\cqd}{\hfill$\blacksquare$}
+
+\numberwithin{equation}{section}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defi}{Definição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{hip}{Hipótese}[subsection]
+
+\pagestyle{plain}
+
+\AddToHook{cmd/section/before}{\clearpage}
+
+%\addbibresource{ref.bib}
+
+\title{
+Notas de Mecânica Relativística
+}
+\author{
+  Vicente V. Figueira
+       }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Introdução}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Mecânica Relativística}
+
+\subsection{Hipóteses da Teoria Relativística}
+
+
+Podemos pensar na Física como um conjunto de várias teorias, cada qual com seu limite de 
+validade, e, estas historicamente foram nomeadas segundo estes, ou, segundo o fenômeno 
+característico que se propõem a modelar. A Teoria Clássica, ou Mecânica Clássica como 
+alguns chamam, está entre as primeiras teorias física a ser proposta, e como seu nome 
+sugere, está intencionada a descrever fenômenos \emph{não extremos}, seja do ponto de 
+vista de energia, número de constituintes ou dimensões do sistema. Questões como qual 
+os valores numéricos dos reais limites da teoria só podem serem sanadas com comparação 
+experimental dos valores teóricos.
+
+A formulação da Teoria Clássica tem início com observações experimentais e experimentos 
+mentais, que são \emph{confiáveis} para extrair informações \emph{médias} em sistemas de 
+energia, número de constituintes e dimensões \emph{médias}. O primeiro ápice da formulação 
+Clássica foi devido a Newton, seguido por Lagrange e Hamilton. Porém, estamos aqui interessados 
+em desenvolver uma abordagem via postulados para sedimentar quais informações estão sendo 
+assumidas em nossa teoria.
+
+Ao tentar dar início sobre quais são as hipóteses ocultas feitas sobre uma teoria, devemos 
+pensar primeiramente qual são os principais agentes dinâmicos, que por experiência devem ser 
+posições e velocidades, estes que são vetores, logo, deve haver um espaço vetorial abaixo, 
+e via experiência, este é um espaço de três dimensões. Certamente, novamente por experiência,  
+também há uma quantidade que flui naturalmente, chamada comumente de \emph{tempo}. 
+Naturalmente, eu, em meu referencial, utilizando de aparatos adequados posso medir intervalos 
+espaciais e temporais à vontade, porém, outra pessoa, distante de mim, poderia por sua vez 
+também estar interessada em realizar as mesmas medições que eu estou fazendo, se ela realiza 
+as medições do seu referencial, e eu realizo as medições do meu referencial, há alguma 
+correlação entre estas? Bem, naturalmente se para referenciais distintos não houvesse nenhum 
+tipo de correlação entre os valores medidos toda a física cairia por terra, visto que não 
+haveria nenhum modo de comparar medidas e testar teorias físicas, deve portanto haver ao menos 
+alguma classe de referenciais tais que as coordenadas espaciais e temporais possuam correlação 
+entre os dois observadores. Observadores pertencentes a esta classe especial de referenciais que concordam com a física descrita são chamados de observadores \emph{inerciais}, devemos portanto descrever qual propriedades queremos que um referencial inercial possua. O requisito mais intuitivo é de que observadores inerciais percebem objetos que não interagem movem-se com velocidade constante, a princípio mudanças de coordenadas do tipo de translação são triviais de serem tratadas, apenas se fazendo, $${\bar x}^\mu=x^\mu+a^\mu$$
+Nosso interesse esta em mudanças de referenciais não dadas por translações, como boost e rotações, essas atuam de forma linear como, $${\bar x}^\mu={\textup L}^\mu_{\ \nu}x^\nu$$
+No caso de uma rotação pura ao redor de um eixo $\boldsymbol\theta$ com módulo $\theta$, assumimos que a componente temporal não é alterada, assim, o vetor mais genérico linear capaz de ser formado com $\vb x,\boldsymbol\theta$ e $\theta$ de modo a preservar a norma $\vb{\bar x}=\vb x$ é,
+
+\begin{align}
+    \vb{\bar x}&=\frac{\boldsymbol\theta\cdot\vb x}{\theta^2}\boldsymbol\theta+\qty(\vb x-\frac{\boldsymbol\theta\cdot\vb x}{\theta^2}\boldsymbol\theta)\cos\theta-\frac{\boldsymbol\theta\times \vb x}{\theta}\sin\theta
+\end{align}
+
+Logo a matriz $\textup L$ é $${\textup L}^{0}_{\ 0}=1,\ {\textup L}^0_{\ i}={\textup L}^{i}_{\ 0}=0,\ {\textup L}^{i}_{\ j}={\textup R}^{i}_{\ j}$$
+Com,
+\begin{align}
+    {\textup R}^{i}_{\ j}&=\frac{\theta_i\theta_{j}}{\theta^2}+\qty(\delta_{ij}-\frac{\theta_{i}\theta_j}{\theta^2})\cos\theta+\frac{\epsilon_{ijk}\theta_k}{\theta}\sin\theta
+\end{align}
+
+Para um boost, temos que construir escalares e vetores com $\vb v$ e $\vb x$, a construção linear mais geral é,
+
+\begin{align}
+    {\bar t}&=a\qty(v)t+b\qty(v)\vb v\cdot \vb x\\
+    \vb {\bar x}&=c\qty(v)\vb x+d\qty(v)\frac{\vb v\cdot \vb x}{v^2}\vb v+e\qty(v)t\vb v
+\end{align}
+
+A condição $\vb x=\vb v t$ deve implicar $\vb{\bar x}=0$, 
+
+\begin{align}
+    \vb 0&=c\qty(v)\vb v t+d\qty(v)t\frac{\vb v\cdot \vb v}{v^2}\vb v+e\qty(v)t\vb v\\
+    \vb 0&=c\qty(v)\vb v t+d\qty(v)\vb v t+e\qty(v)\vb v t
+\end{align}
+
+logo a restrição é,
+
+\begin{align}
+    c\qty(v)+d\qty(v)+e\qty(v)&=0
+\end{align}
+
+A transformação inversa deve valer para $\vb {\bar v}=-\vb v$, 
+
+\begin{align}
+    &\begin{cases}
+        {t}&=a\qty(v){\bar t}-b\qty(v)\vb v\cdot \vb{\bar x}\\
+    \vb { x}&=c\qty(v)\vb{\bar x}+d\qty(v)\frac{\vb v\cdot \vb{\bar x}}{v^2}\vb v-e\qty(v){\bar t}\vb v
+    \end{cases}\\
+    &\begin{cases}
+        {t}&=a\qty(v)\qty[a\qty(v)t+b\qty(v)\vb v\cdot \vb x]-b\qty(v)\vb v\cdot \qty[c\qty(v)\vb x+\frac{1}{v^2}d\qty(v)\qty(\vb v\cdot \vb x)\vb v+e\qty(v)t\vb v]\\
+    \vb { x}&=c\qty(v)\qty[c\vb x+\frac{1}{v^2}d\qty(v)\qty(\vb v\cdot\vb x)\vb v+e\qty(v)t\vb v]+\frac{1}{v^2}d\qty(v)\qty(\vb v\cdot \qty[c\qty(v)\vb x+\frac{1}{v^2}d\qty(v)\qty(\vb v\cdot \vb x)\vb v+e\qty(v)t\vb v])\vb v-e\qty(v)\qty[a\qty(v)t+b\qty(v)\qty(\vb v\cdot\vb x)]\vb v
+    \end{cases}
+\end{align}
+
+o que implica em
+
+\begin{align}
+    c^2&=1\\
+    a^2-ebv^2&=1\\
+    e^2-ebv^2&=1\\
+    ea+e^2&=0\\
+    ba+be&=0
+\end{align}
+
+Tomamos $c=1$ pois $c=-1$ corresponde a uma rotação. Como $e\neq 0$ segue que $a=-e$, logo,
+
+\begin{align}
+    b&=\frac{1-a^2}{av^2}\\
+    c&=1\\
+    d&=a-1\\
+    e&=-a
+\end{align}
+
+Como dois boost seguidos deve corresponder a um único boost, chegamos em
+
+\begin{align}
+    \frac{va\qty(v)}{\bar wa\qty(\bar w)}\qty(1-a^2\qty(\bar w))&=\frac{\bar wa\qty(\bar w)}{va\qty(v)}\qty(1-a^2\qty(v))\\
+    \frac{1-a^2\qty(v)}{v^2a^2\qty(v)}&=\frac{1-a^2\qty(\bar w)}{{\bar w}^2a^2\qty({\bar w})}=K\\
+    a\qty(v)&=\frac{\pm 1}{\sqrt{1+Kv^2}}=\pm \gamma\qty(v),\ \ b\qty(v)=\frac{\pm K}{\sqrt{1+Kv^2}}=\pm K\gamma\qty(v) 
+\end{align}
+
+Logo a transformação é,
+
+\begin{align}
+    {\bar t}&=\pm\gamma\qty(v)\qty(t+K\vb v \cdot \vb x)\\
+    \vb {\bar x}&= \vb x+\frac{\pm\gamma\qty(v)-1}{v^2}\qty(\vb v \cdot \vb x)\vb v\mp\gamma\qty(v)t \vb v
+\end{align}
+
+Resta apenas fixar o sinal de $a\qty(v)$ e o valor de $K$, o caso $K=0$ faz com que $\gamma=1$ e retorna as relações da relatividade de Galileu. Para casos $K\neq 0$, apenas é importante o sinal de $K$ e não seu valor absoluto, visto que podemos sempre mudar as unidades de tempo para obter,
+
+\begin{align}
+    {\bar t}&=\pm\gamma\qty(v)\qty(t+\sgn{K}\norm{K}\vb v \cdot \vb x)\\
+    \vb {\bar x}&= \vb x+\frac{\pm\gamma\qty(v)-1}{v^2}\qty(\vb v \cdot \vb x)\vb v\mp\gamma\qty(v)t \vb v\\
+    \norm{K}^{-\frac12}{\bar t}&=\pm\gamma\qty(v)\qty(\norm{K}^{-\frac12}t+\sgn{K}\norm{K}^\frac12\vb v \cdot \vb x)\\
+    \vb {\bar x}&= \vb x+\frac{\pm\gamma\qty(v)-1}{\norm{K}v^2}\qty(\norm{K}^\frac12\vb v \cdot \vb x)\norm{K}^\frac12\vb v\mp\gamma\qty(v)\norm{K}^{-\frac12}t \norm{K}^\frac12\vb v 
+\end{align}
+
+Redefinindo $t\norm{K}^{-\frac12}\rightarrow t$,
+
+\begin{align}
+    {\bar t}&=\pm\gamma\qty(v)\qty(t+\sgn{K}\vb v \cdot \vb x)\\
+    \vb {\bar x}&= \vb x+\frac{\pm\gamma\qty(v)-1}{v^2}\qty(\vb v \cdot \vb x)\vb v\mp\gamma\qty(v)t \vb v
+\end{align}
+
+Para ter uma intuição sobre o que o sinal de $K$ significa vamos fazer dois boost seguidos,
+
+\begin{align}
+    {\bar{\bar t}}&=\pm\gamma\qty(w)\qty({\bar t}+\sgn{K}\vb w\cdot\vb{\bar x})\\
+    &=\pm\gamma\qty(w)\qty(\pm\gamma\qty(v)\qty{t+\sgn{K}\vb v\cdot\vb x}+\sgn{K}\vb w\cdot\qty[\vb x+\frac{\pm\gamma\qty(v)-1}{v^2}\qty(\vb v \cdot \vb x)\vb v\mp\gamma\qty(v)t \vb v])\\
+    &=\gamma\qty(w)\gamma\qty(v)\qty(t+\sgn{K}\vb v\cdot\vb x\pm\frac{\sgn K}{\gamma\qty(v)}\vb w\cdot \vb x+\sgn K\frac{\gamma\qty(v)\mp1}{v^2\gamma\qty(v)}\qty(\vb w\cdot \vb v)\vb v\cdot \vb x-\sgn K t\vb w \cdot \vb v)\\
+    &=\gamma\qty(w)\gamma\qty(v)\qty(1-\sgn K\vb w\cdot \vb v)\qty(t+\frac{\sgn K}{v^2\gamma\qty(v)\qty(1-\sgn K\vb w\cdot \vb v)} \vb x\cdot \qty{v^2\gamma\qty(v)\vb v\pm v^2\vb w+\qty(\gamma\qty(v)\mp 1)\qty(\vb w\cdot \vb v)\vb v})
+\end{align}
+
+Fazendo as identificações,
+
+\begin{align}
+    \pm\gamma\qty(u)&=\gamma\qty(w)\gamma\qty(v)\qty(1-\sgn K\vb w\cdot \vb v)\\
+    \vb u &=\frac{v^2\gamma\qty(v)+\qty(\gamma\qty(v)\mp1)\vb w\cdot\vb v}{v^2\gamma\qty(v)\qty(1-\sgn K\vb w\cdot\vb v)}\vb v\pm\frac{1}{\gamma\qty(v)\qty(1-\sgn K \vb w\cdot \vb v)}\vb w
+\end{align}
+
+Para $a\qty(v)=\pm\gamma\qty(v)$ ser real com $\sgn K=-1$ somos obrigados a ter $\norm{v}< 1$ para todos os referenciais inerciais, assim $1-\sgn K \vb w\cdot \vb v>0$, que por sua vez nos exige tomar $a\qty(v)=+\gamma\qty(v)$. Analogamente $\sgn K=0$ também fixa $a\qty(v)=+\gamma\qty(v)$, outra opção restante é $\sgn K=+1$ que não restringe os valores de $\norm{v}$, assim $a\qty(v)$ pode assumir valores tanto positivos quanto negativos, valor de $a\qty(v)$ negativo implica em reversão temporal, como estamos assumindo uma transformação passiva não é esperado que resulte em uma inversão na direção temporal, logo, fixamos $K\leq 0$ como casos \emph{físicos}, como nesses casos a dimensão de $K^{-1}$ é de velocidade quadrada, chamamos o parâmetro $c=\qty(-K)^{-\frac12}$ como sendo uma escala de velocidade universal que fixa o máximo (não atingível) de velocidade de um referencial inercial, no limite $c\rightarrow \infty$ recuperamos a relatividade Galileana que é compatível com o conceito de que não há limite de velocidades. Com essas convenções temos,
+
+\begin{align}
+    \gamma&=\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}\\
+    {\bar t}&=\gamma\qty(t-\frac{\vb v\cdot\vb x}{c^2})\\
+    \vb {\bar x}&=\vb x+\frac{\gamma-1}{v^2}\qty(\vb v \cdot \vb x)\vb v-\gamma t\vb v\\
+    \gamma\qty(u)&=\gamma\qty(w)\gamma\qty(v)\qty(1+\frac{\vb v\cdot\vb w}{c^2})\\
+    \vb u&=\frac1\gamma\frac{\gamma \vb v+\vb w}{1+\frac{\vb w \cdot\vb v}{c^2}}+\frac{\gamma-1}{v^2\gamma}\frac{\vb v\cdot \vb w}{1+\frac{\vb v\cdot \vb w}{c^2}}\vb v
+\end{align}
+
+As transformações de referenciais devem por sua vez satisfazer alguma condição de quantidade conservada em um espaço métrico, note que,
+
+\begin{align}
+    \dd{{\bar t}}&=\gamma\qty(\dd{t}-\frac{\vb v}{c^2}\cdot \dd{\vb x})\\
+    \dd{\vb{\bar x}}&=\dd{\vb x}+\frac{\gamma-1}{v^2}\qty(\vb v\cdot \dd{\vb x})\vb v-\gamma\dd{t}\vb v\\
+    \qty(\dd{{\bar t}})^2&=\gamma^2\qty(\dd{t})^2-2\frac{\gamma^2}{c^2}\vb v\cdot \dd{\vb x}\dd{t}+\frac{\gamma^2}{c^4}\qty(\vb v\cdot \dd{\vb x})^2\\
+    \qty(\dd{\vb{\bar x}})^2&=\gamma^2v^2\qty(\dd{t})^2+\qty(\dd{\vb x})^2+\qty[\frac{\qty(\gamma-1)^2}{v^2}+\frac{2\qty(\gamma-1)}{v^2}]\qty(\vb v\cdot\dd{\vb x})^2-\qty[2\gamma+2\gamma\qty(\gamma-1)]\dd{t}\vb v\cdot\dd{\vb x}\\
+    -c^2\qty(\dd{{\bar t}})^2+\qty(\dd{\vb{\bar x}})^2&=-c^2\qty(\dd{t})^2+\qty(\dd{\vb x})^2+\qty(\vb v\cdot\dd{\vb x})^2\qty[-\frac{\gamma^2}{c^2}+\frac{\qty(\gamma-1)^2}{v^2}+2\frac{\gamma+1}{v^2}]+\dd{t}\vb v\cdot\dd{\vb x}\qty[2\gamma^2-2\gamma-2\gamma\qty(\gamma-1)]
+\end{align}
+
+Logo, concluímos que,
+
+\begin{align}
+    -c^2\qty(\dd{{\bar t}})^2+\qty(\dd{\vb{\bar x}})^2=-c^2\qty(\dd{{ t}})^2+\qty(\dd{\vb{ x}})^2
+\end{align}
+
+Ou seja, os boost respeitam uma regra de preservação de uma \emph{métrica} no espaço-tempo, note que uma rotação arbitrária também respeita a mesma condição, assim como translações arbitrárias, para rotações e boost arbitrários temos uma condição ainda mais forte,
+
+\begin{align}
+    -c^2\qty({\bar t})^2+\qty(\vb{\bar x})^2&=-c^2\qty(t)^2+\qty(\vb x)^2
+\end{align}
+
+Ou seja, boost são análogos a rotações no plano $\vb x-t$, introduzindo a notação, $x=\mqty(ct & \vb x)^\textup T$ e 
+
+\begin{align}
+    g&=\mqty(-1 & 0 & 0& 0\\ 0&1&0&0\\0&0&1&0\\0&0&0&1)
+\end{align}
+
+Temos que a relação da \emph{métrica no espaço-tempo} é,
+
+\begin{align}
+    {\bar x}^\textup T g \bar x&=x^\textup T g x
+\end{align}
+
+Ou em notação mais conveniente com a convenção de soma,
+
+\begin{align}
+    \bar x\cdot \bar x=g_{\mu\nu}{\bar x}^\mu {\bar x}^\nu&=g_{\mu\nu}x^\mu x^\nu=x\cdot x
+\end{align}
+
+Chamamos o invariante \emph{elemento de linha} de,
+
+\begin{align}
+    -c^2\dd{s}^2&=g_{\mu\nu}\dd{x^\mu}\dd{x^\nu}
+\end{align}
+
+Que é preservado entre referenciais inerciais, os boost escritos na nova notação será,
+
+\begin{align}
+    {\bar x}^0&=\gamma x^0-\gamma\frac{\vb v\cdot\vb x}{c}\\
+    \vb {\bar x}&=\vb x+\frac{\gamma-1}{v^2}\qty(\vb v \cdot \vb x)\vb v-\frac{\gamma}{c} x^0\vb v\\
+    {\bar x}^0&={\textup B}^0_{\ 0}x^0+{\textup B}^0_{\ i}x^i\\
+    {\bar x}^j&={\textup B}^j_{\ 0}x^0+{\textup B}^j_{\ i}x^i\\
+    {\textup B}^0_{\ 0}&=\gamma,\ {\textup B}^0_{\ i}=-\frac{\gamma}{c}v_i\\
+    {\textup B}^j_{\ 0}&=-\frac{\gamma}{c}v_j,\ {\textup B}^j_{\ i}=\delta_{ji}+\frac{\gamma-1}{v^2}v_jv_i
+\end{align}
+
+Assim podemos escrever uma transformação de Boost como,
+
+\begin{align}
+    \bar x={\textup B} x\\
+    {\bar x}^\mu={\textup B}^\mu_{\ \nu}x^\nu
+\end{align}
+
+Uma combinação arbitrária de Boosts e Rotações constitui o que chamamos de \emph{transformações de Lorentz}, geralmente representadas por $\Lambda$, que são o tipo mais geral de transformações lineares que preservam a métrica do espaço-tempo, pois,
+
+\begin{align}
+    x^{\textup T}g x&={\bar x}^{\textup T}g{\bar x}\\
+    &=\qty(\Lambda x)^{\textup T}g\qty(\Lambda x)\\
+    &=x^{\textup T}\Lambda^{\textup T}g\Lambda x
+\end{align}
+
+Portanto,
+
+\begin{align}
+    g&=\Lambda^{\textup T}g\Lambda\\
+    g_{\mu\nu}&=\Lambda^\alpha_{\ \mu}g_{\alpha\beta}\Lambda^\beta_{\ \nu}\\
+    g_{\mu\nu}&=g_{\alpha\beta}\Lambda^\alpha_{\ \mu}\Lambda^\beta_{\ \nu}
+\end{align}
+
+Se temos um objeto movendo-se descrito por um vetor $\vb x$, a velocidade que medimos é da forma $\dv{\vb x}{t}$, porém esse não constitui como um vetor que se transforma corretamente entre referenciais inerciais, para isso, necessitamos de uma quantidade análoga a $t$ que seja invariante, uma quantidade disponível é o elemento de linha, fazemos um boost com a mesma velocidade instantânea que o objeto que queremos descrever e,
+
+\begin{align}
+    -c^2\dd{s}^2&=-c^2\dd{{\bar t}}^2=-c^2\dd{t}^2+\dd{\vb x}^2\\
+    -c^2&=-c^2\dv{t}{s}^2+\dv{\vb x}{s}^2=g_{\mu\nu}u^\mu u^\nu=u\cdot u\\
+    u&=\dv{x}{s}
+\end{align}
+
+Note que,
+
+\begin{align}
+    \dd{{\bar t}}&=\gamma\dd{t}-\frac{\gamma}{c^2}\vb v\cdot \dd{\vb x}\\
+    \dv{{\bar t}}{t}&=\gamma\qty(1-\frac{v^2}{c^2})\\
+    \dv{{\bar t}}{t}&=\frac{1}{\gamma}
+\end{align}
+
+Como $\dd{s}=\dd{{\bar t}}$,
+
+\begin{align}
+    \dv{x}{s}&=\dv{x}{{\bar t}}\\
+    &=\dv{x}{t}\dv{t}{{\bar t}}\\
+    &=\gamma \dv{x}{t}=\mqty(\gamma c&\gamma\vb v)^{\textup T}
+\end{align}
+
+No limite de $c\rightarrow \infty$ a parte espacial concorda com a velocidade galileana.
+
+O grande ponto de se definir referenciais é de que em referenciais inerciais, é que sobre corpos que não interagem estes concordam com a descrição do movimento deles. Em um referencial, corpos não interagentes movem-se de forma que sua velocidade é constante, ou seja,
+
+\begin{align}
+    \dv[2]{x}{s}=0
+\end{align}
+
+Associamos uma mudança da trajetória não interagente com a presença de uma interação, chamamos de \emph{força} a quantidade que descreve essa deviação, para levar em conta as diferentes propriedades de objetos introduzimos um parâmetro de proporcionalidade entre a derivada segunda de $x$ com $F$ chamado de \emph{massa},
+
+\begin{align}
+    m\dv[2]{x}{s}=F
+\end{align}
+
+Para levar em conta objetos que possam mudar de propriedades com o passar de tempo, podemos incluir uma dependência de $m$ com $x$, e fazer,
+
+\begin{align}
+    \dv{}{s}\qty[m\dv{x}{s}]=F
+\end{align}
+
+Definimos a quantidade 
+
+\begin{align}
+    p=m\dv{x}{s}=\mqty(m\gamma c& m\gamma \vb v)^{\textup T}
+\end{align}
+
+Que no limite $c\rightarrow \infty$ a parte espacial é levada em $m\vb v$, que é o momento galileano, note que, 
+
+\begin{align}
+    p\cdot p&=-m^2\gamma^2c^2+m^2\gamma^2v^2\\
+    &=-m^2c^2
+\end{align}
+
+E,
+
+\begin{align}
+    F\cdot p&=\dv{p}{s}\cdot p\\
+    &=\frac12\dv{p\cdot p}{s}=-c^2m\dv{m}{s}=0\\
+    -F^0m\gamma c+m\gamma \vb F\cdot \vb v&=0\\
+    F^0&=\frac{\vb F\cdot \vb v}{c}
+\end{align}
+
+Se analisamos a força no referencial de repouso da partícula $F=\mqty(0&\vb f)^{\textup T}$, no referencial do laboratório,
+
+\begin{align}
+    F=\mqty(\frac\gamma c\vb v\cdot \vb f&\vb f+\frac{\gamma - 1}{v^2}\qty(\vb v\cdot \vb f)\vb v)^{\textup T}
+\end{align}
+
+Chamamos a quantidade $cp^0$ de energia do sistema, motivos desse nome serão dados posteriormente. Note que,
+
+\begin{align}
+    cp^0&=m\gamma c^2\\
+    &=\frac{mc^2}{\sqrt{1-\frac{v^2}{c^2}}}\\
+    &\approx mc^2+\frac12 mv^2+\mathcal O\qty(\frac{v^4}{c^2})
+\end{align}
+
+Chamamos a quantidade $mc^2$ de energia de repouso e $cp^0-mc^2$ de energia cinética, no limite $c\rightarrow \infty$ a energia de repouso é tomada como zero, e a energia cinética tem limite como $m\frac{v^2}{2}$. Podemos escrever ainda,
+
+\begin{align}
+    -\frac{E^2}{c^2}+{\vb p}^2&=-m^2c^2\\
+    E&=\sqrt{m^2c^4+{\vb p}^2c^2}
+\end{align}
+
+Note que a parte temporal da equação diz,
+
+\begin{align}
+    \frac1c\dv{E}{s}&=\frac\gamma c\vb f\cdot \vb v\\
+    \frac\gamma c\dv{E}{t}&=\frac\gamma c\vb f\cdot \vb v\\
+    \dv{E}{t}&=\vb f\cdot \vb v
+\end{align}
+
+Logo o observador inercial percebe uma variação da energia da partícula que depende da força e da velocidade, note que poderíamos escrever,
+
+\begin{align}
+    \dv{E}{s}&=\gamma\vb f \cdot \dv{\vb x}{t}\\
+    \dv{E}{s}&=\vb f\cdot \vb u\\
+    \dv{E}{s}&=\vb f\cdot \dv{\vb x}{s}
+\end{align}
+
+Isso sugere que há uma mudança de energia associada a uma mudança da posição perante forças, chamamos essa quantidade de \emph{trabalho}
+
+\begin{align}
+    \Delta E&=\Delta W=\vb f\cdot \Delta \vb x
+\end{align}
+
+Note que se fosse verdade o fato, $\vb f =-\grad V$, teríamos,
+
+\begin{align}
+    \Delta W&=-\pdv{V}{\vb x}\cdot \Delta \vb x\\
+    \Delta W&=-\Delta V\\
+    \Delta W+\Delta V&=0
+\end{align}
+
+Podemos pensar nesse caso que há dois tipos diferentes de energia, a energia mecânica da partícula $cp^0$, e a energia devido a interações por causa das forças, assim, chamamos este outro tipo de energia de \emph{energia potencial}, no caso em que $\vb f=-\grad V$, temos que a soma dessas duas partes é constante. Estamos principalmente interessados em forças que possam surgir de tais funções de potencial, note que,
+
+\begin{align}
+    F&=\mqty(\frac\gamma c\vb f\cdot \vb v&\vb f+\frac{1}{c^2}\frac{\gamma -1}{v^2}\qty(\vb f\cdot \vb v)\vb v)^{\textup T}\\
+    &=\mqty(\frac1c\vb f\cdot \vb u&\vb f+\frac{1}{c^2}\frac{\gamma^2}{\gamma+1}\qty(\vb f\cdot \vb v)\vb v)^{\textup T}\\
+    &=\mqty(-\frac1c\dv{V}{s}&\vb f+\frac{1}{c^2}\frac{1}{\gamma+1}\qty(\vb f\cdot\vb u)\vb u)^{\textup T}\\
+    &=\mqty(-\frac1c\dv{V}{s}&\vb f-\frac{1}{c^2}\frac{1}{\gamma+1}\dv{V}{s}\vb u)^{\textup T}
+\end{align}
+
+De modo a confirmar que,
+
+\begin{align}
+    \dv{}{s}\qty(E+V)&=0
+\end{align}
+
+Note que, escrevendo,
+
+\begin{align}
+    m\dv{u_\mu}{s}&=F_{\mu}\qty(x,u)\\
+    m\dv{u_\mu}{s}&=F_{\mu}\qty(x)+\frac1cF_{\mu \nu}\qty(x)u^\nu+\frac{1}{c^2}F_{\mu\nu\sigma}u^\nu u^\sigma+\mathcal O\qty(\frac{u^3}{c^3})
+\end{align}
+
+Mas pela relação de ortogonalidade,
+
+\begin{align}
+    0&=\frac1cF_{\mu}u^\mu+\frac{1}{c^2}F_{\mu\nu}u^\mu u^\nu+\frac{1}{c^3}F_{\mu\nu\sigma}u^\mu u^\nu u^\sigma+\mathcal O\qty(\frac{u^4}{c^4})
+\end{align}
+
+Que implica em $F_\mu\equiv0$ e que $F_{\mu\nu}$ é antissimétrico. Se estamos interessados em forças que são lineares na quadrivelocidade,
+
+\begin{align}
+    m\dv{u_\mu}{s}&=\frac1cF_{\mu\nu}\qty(x)u^\nu
+\end{align}
+
+Um tensor antissimétrico genérico é escrito como,
+
+\begin{align}
+    F_{i0}=f_i\qty(x),\ \ F_{ij}=\epsilon_{ijk}g^k\qty(x)
+\end{align}
+
+Note que $\vb f$ é um vetor polar e $\vb g$ é um pseudo-vetor. As equações de movimento são,
+
+\begin{align}
+    m\dv{u_0}{s}&=\frac1cF_{0i}u^i\\
+    -\frac1c\dv{E}{s}&=-\frac1cf_i\dv{x^i}{s}\\
+    \dv{E}{s}&=\vb f\cdot\dv{\vb x}{s}
+\end{align}
+
+Para a parte espacial,
+
+\begin{align}
+    m\dv{u_i}{s}&=\frac1cF_{ij}u^j+\frac1cF_{i0}u^0\\
+    m\dv{u_i}{s}&=\gamma c \frac1cf_i+\frac1c\epsilon_{ijk}u^jg^k\\
+    m\dv{\vb u}{s}&=\gamma\vb f+\frac1c\vb u\times\vb g
+\end{align}
+
+Ou seja, o quadrivetor força é neste caso,
+
+\begin{align}
+    F^\mu\qty(x,u)=\mqty(\frac1c\vb f\qty(x)\cdot \vb u&\gamma\qty(\vb u) \vb f\qty(x)+\frac1c\vb u\times\vb g\qty(x))
+\end{align}
+
+Estamos principalmente interessados em casos \emph{conservativos}, que seriam equivalentes à,
+
+\begin{align}
+    \vb f\qty(x)&=-\grad V\qty(\vb x)
+\end{align}
+
+Logo, 
+
+\begin{align}
+    \dv{E}{s}&=-\grad V\qty(\vb x)\cdot\dv{\vb x}{s}\\
+    \dv{E}{s}&=-\dv{V}{s}\\
+    \dv{E+V}{s}&=0
+\end{align}
+
+Se $\vb g\qty(x)=-\grad\times \vb A\qty(\vb x)$, segue que,
+
+\begin{align}
+    m\dv{\vb u}{s}&=\gamma\vb f+\frac1c\vb u\times\vb g\\
+    m\dv{\vb u}{s}&=-\gamma\grad V-\frac1c\vb u\times\qty(\grad\times \vb A)\\
+    m\dv{\vb u}{s}&=-\gamma\grad V+\frac1c\qty[\qty(\vb u\cdot\grad) \vb A-\grad\qty(\vb u\cdot \vb A)]\\
+    m\dv{\vb u}{s}&=-\grad \qty[\gamma V\qty(\vb x)+\frac1c\vb u\cdot \vb A\qty(\vb x)]+\frac1c\qty(\vb u\cdot\grad) \vb A\qty(\vb x)\\
+    m\dv{\vb u}{s}&=-\grad \qty[\gamma V\qty(\vb x)+\frac1c\vb u\cdot \vb A\qty(\vb x)]+\frac1c\dv{\vb A}{s}\qty(\vb x)\\
+    m\dv{\vb u}{s}&=-\grad \qty(\frac1cu^0 V+\frac1c\vb u\cdot \vb A)+\dv{}{s}\qty[\pdv{}{\vb u}\qty(\frac1cu^0V+\frac1c\vb u\cdot \vb A)]\\
+    m\dv{\vb u}{s}&=-\grad\qty( \frac{u^\nu}{c} A_\nu)+\dv{}{s}\qty[\pdv{}{\vb u}\qty(\frac{u^\nu}{c} A_\nu)]
+\end{align}
+
+E,
+
+\begin{align}
+    \frac1c\dv{E}{s}&=\qty(\frac{\vb u}{c}\cdot \grad)A^0\\
+    m\dv{u^0}{s}&=\dv{}{s}\qty[\pdv{}{u_0}\qty(\frac{u_\nu}{c} A^\nu)]-\partial^0\qty(\frac{u_\nu}{c} A^\nu)
+\end{align}
+
+Juntando,
+
+\begin{align}
+    m\dv{u^\mu}{s}&=-\partial^\mu\qty(\frac{u^\nu}{c} A_\nu)+\dv{}{s}\qty[\pdv{}{u_\mu}\qty(\frac{u^\nu}{c} A_\nu)]
+\end{align}
+
+Com é claro,
+
+\begin{align}
+    A_\mu=\mqty( V&\vb A),\ \ \Phi\qty(x,u)=\frac{u_\nu}{c} A^\nu\qty(x)
+\end{align}
+
+Se $A^\mu$ é constante não há forças, o próximo caso é um quadripotencial da forma,
+
+\begin{align}
+    A^\mu\qty(x)=kf\qty(x)a^\mu
+\end{align}
+
+Então,
+
+\begin{align}
+    m\dv{u^\mu}{s}&=-\frac{ka^\nu u_\nu}{c}\partial^\mu f\qty(x)+\frac {ka^\nu}{c}\dv{}{s}\qty[\pdv{}{u_\mu}\qty(u_\nu f\qty(x))]\\
+    &=-\frac{ka^\nu u_\nu}{c} \partial^\mu f\qty(x)+\frac {ka^\mu}{c}\dv{}{s}\qty[f\qty(x)]\\
+    &=-\frac{ka^\nu u_\nu}{c} \partial^\mu f\qty(x)+\frac {ka^\mu u_\nu}{c}\partial^\nu f\qty(x)\\
+    &=\frac{ku^\nu}{c}a^\alpha \partial^\beta f\qty(x)\qty[g_{\nu\beta}g_\alpha^{\ \mu}-g_{\nu\alpha}g_\beta^{\ \mu}]
+\end{align}
+
+Vamos analisar o caso especial, $f=\frac12\qty(x-r)^2$, no qual $r$ é um vetor fixo simultâneo à $x$,
+
+\begin{align}
+    A^\mu\qty(x)=\frac k2\qty(x^\sigma-r^\sigma)\qty(x_\sigma-r_\sigma)a^\mu
+\end{align}
+
+\begin{align}
+    m\dv{u^\mu}{s}&=\frac{ku^\nu}{c}a^\alpha \qty(x^\beta-r^\beta)\qty[g_{\nu\beta}g_\alpha^{\ \mu}-g_{\nu\alpha}g_\beta^{\ \mu}]
+\end{align}
+
+A parte temporal é,
+
+\begin{align}
+    m\dv{u^0}{s}&=-\frac {ka^\nu u_\nu}{c}\qty(x^0-r^0)+\frac{ka^0 u^\nu}{c}\qty(x_\nu-r_\nu)\\
+    \frac1c\dv{E}{s}&=\frac{ka^0}{c}\vb u\cdot \qty(\vb x-\vb r)
+\end{align}
+
+A parte espacial,
+
+\begin{align}
+    m\dv{\vb u}{s}&=-\frac {ka^\nu u_\nu}{c}\qty(\vb x-\vb r)+\frac{k\vb a u^\nu}{c}\qty(x_\nu-r_\nu)\\
+    &=ka^0\gamma\qty(\vb x-\vb r)-\frac kc \qty(\vb a\cdot \vb u)\qty(\vb x-\vb r)+\frac{k\vb a }{c}\qty[\vb u\cdot \qty(\vb x-\vb r)]\\
+\end{align}
+
+Os três principais casos são $a^2=0,\pm 1$. O caso $a^2=-1$ resume-se à $a^\mu=\mqty(\pm 1&\vb 0)$, que é
+
+\begin{align}
+    \dv{E}{s}&=\pm k\vb u\cdot \qty(\vb x-\vb r)=\pm\dv{}{s}\qty[\frac k2\qty(\vb x-\vb r)^2]\\
+    \dv{}{s}\qty[E\mp\frac k2\qty(\vb x-\vb r)^2]&=0\\
+     m\dv{\vb u}{s}&=\pm k\gamma\qty(\vb x-\vb r)
+\end{align}
+
+O caso $a^\mu=\mqty(- 1&\vb 0)$ trata-se de um oscilador harmônico. O caso $a^2=1$ pode ser tomado como $a^\mu=\mqty(0&\vb {\hat n})$,
+
+\begin{align}
+    \dv{E}{s}&=0\\
+     m\dv{\vb u}{s}&=-\frac kc \qty(\vb {\hat n}\cdot \vb u)\qty(\vb x-\vb r)+\frac{k}{c}\vb{\hat n}\qty[\vb u\cdot \qty(\vb x-\vb r)]\\
+     m\dv{\vb u}{s}&=-\frac kc\vb u\times\qty[\qty(\vb x-\vb r)\times \vb {\hat n}]
+\end{align}
+
+Note que em uma dimensão espacial essa força é trivial, em duas dimensões, supomos que $\vb{\hat  n} =\pm\vb{\hat y}$ e $\vb r=\vb 0$
+
+\begin{align}
+     m\dv{u_x}{s}&=\mp\frac kc xu_y\\
+     m\dv{u_y}{s}&=\pm\frac{k}{c}xu_x\\
+     m\dv{\cos\theta}{s}&=\mp\frac kc x\sin\theta\\
+     m\dv{\sin\theta}{s}&=\pm\frac{k}{c}x\cos\theta\\
+     \dv{\theta}{s}&=\pm\frac {k}{mc} x\\
+     \dv[2]{\theta}{s}&=\pm\frac {\norm{\vb u}k}{mc}\cos\theta
+\end{align}
+
+Resta apenas o caso de $a^2=0$, no qual podemos tomar $a^\mu=\mqty(\pm 1&\vb{\hat n})$,
+
+\begin{align}
+    \dv{E}{s}&=\pm k\vb u\cdot \qty(\vb x-\vb r)\\
+    m\dv{\vb u}{s}&=\pm k\gamma\qty(\vb x-\vb r)-\frac kc\vb u\times\qty[\qty(\vb x-\vb r)\times\vb {\hat n}]
+\end{align}
+
+Todos os casos são equivalentes no limite $c\rightarrow\infty$.
+
+Outro potencial de interesse é,
+
+\begin{align}
+    A^\mu&=ka^\mu\qty[\qty(x^\sigma-r^\sigma)\qty(x_\sigma-r_\sigma)]^{-\frac12}
+\end{align}
+
+\begin{align}
+    m\dv{u^\mu}{s}&=-\frac {ka^\nu u_\nu}{c}\partial^\mu\qty(\qty[\qty(x^\sigma-r^\sigma)\qty(x_\sigma -r_\sigma)]^{-\frac12})+\frac{ka_\nu}{c}\dv{}{s}\qty[\pdv{}{u_\mu}\qty(u^\nu \qty[\qty(x^\sigma-r^\sigma)\qty(x_\sigma-r_\sigma))]^{-\frac12}]\\
+    &=\frac{ka^\nu u_\nu}{c}\frac{\qty(x^\mu-r^\mu)}{\qty[\qty(x^\sigma-r^\sigma)\qty(x_\sigma -r_\sigma)]^{\frac32}}-\frac{ka^\mu u_\nu}{c}\frac{\qty(x^\nu-r^\nu)}{\qty[\qty(x^\sigma-r^\sigma)\qty(x_\sigma -r_\sigma)]^{\frac32}}
+\end{align}
+
+A parte temporal é,
+
+\begin{align}
+    m\dv{u^0}{s}&=-\frac{k}{c}\frac{a^0}{\norm{\vb x-\vb r}^3}\vb u\cdot \qty(\vb x-\vb r)\\
+    \dv{E}{s}&=-\frac{ka^0}{\norm{\vb x-\vb r}^3}\vb u\cdot \qty(\vb x-\vb r)
+\end{align}
+
+A parte espacial,
+
+\begin{align}
+    m\dv{\vb u}{s}&=-ka^0 \gamma\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^{3}}+\frac{k\qty(\vb a\cdot \vb u)}{c}\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^{3}}-\frac{k\vb a}{c}\vb u \cdot \frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^{3}}\\
+    &=-ka^0\gamma\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^{3}}+\frac kc\vb u\times\qty[\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^3}\times \vb a]
+\end{align}
+
+Novamente vamos analisar os casos $a^\mu=\mqty(\pm1&\vb 0)$,
+
+\begin{align}
+    \dv{E}{s}&=\mp k\vb u\cdot\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^3}=\mp \dv{}{s}\qty[\frac{-k}{\norm{\vb x-\vb r}}] \\
+    \dv{}{s}\qty[E\pm \qty(\frac{-k}{\norm{\vb x-\vb r}})]&=0\\
+    m\dv{\vb u}{s}&=\mp k \gamma\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^{3}}
+\end{align}
+
+Caso $a^\mu =\mqty(0&\vb{\hat n})$,
+
+\begin{align}
+    \dv{E}{s}&=0\\
+    m\dv{\vb u}{s}&=\frac{k\qty(\vb {\hat n}\cdot \vb u)}{c}\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^{3}}-\frac{k\vb {\hat n}}{c}\vb u \cdot \frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^{3}}\\
+    &=\frac kc\vb u\times\qty[\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^3}\times \vb {\hat n}]
+\end{align}
+
+E o caso $a^\mu=\mqty(\pm 1&\vb {\hat n})$,
+
+\begin{align}
+    \dv{E}{s}&=\mp k\vb u\cdot\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^3}=\mp \dv{}{s}\qty[\frac{-k}{\norm{\vb x-\vb r}}]\\
+    m\dv{\vb u}{s}&=\mp k \gamma\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^{3}}+\frac{k\qty(\vb {\hat n}\cdot \vb u)}{c}\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^{3}}-\frac{k\vb {\hat n}}{c}\vb u \cdot \frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^{3}}\\
+    &=\mp k \gamma\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^{3}}+\frac kc\vb u\times\qty[\frac{\qty(\vb x-\vb r)}{\norm{\vb x-\vb r}^3}\times \vb {\hat n}]
+\end{align}
+
+Além do movimento translacional, temos também o movimento rotacional, descrito por,
+
+\begin{align}
+    \dv{mu^\sigma}{s}&=F^\sigma\\
+    \epsilon_{\mu\nu\rho\sigma}x^\rho\dv{mu^\sigma}{s}&=\epsilon_{\mu\nu\rho\sigma}x^\rho F^\sigma\\
+    \dv{}{s}\qty[\epsilon_{\mu\nu\rho\sigma}x^\rho mu^\sigma]&=\epsilon_{\mu\nu\rho\sigma}x^\rho F^\sigma\\
+    \dv{}{s}\qty[\epsilon_{\mu\nu\rho\sigma}x^\rho p^\sigma]&=\epsilon_{\mu\nu\rho\sigma}x^\rho F^\sigma\\
+    \dv{}{s}\qty[L_{\mu\nu}]&=\tau_{\mu\nu}
+\end{align}
+
+No qual $L_{\mu\nu}$ é dito o tensor momento angular e $\tau_{\mu\nu}$ é o tensor de torque. Note que,
+
+\begin{align}
+    \tau_{\mu\nu}&=\frac1c\epsilon_{\mu\nu\rho\sigma}x^\rho F^{\sigma\alpha}u_\alpha\\
+    &=\frac1c\epsilon_{\mu\nu\rho\sigma}x^\rho\qty(\partial^\alpha A^\sigma-\partial^\sigma A^\alpha)u_\alpha
+\end{align}
+
+Definimos, $L_{0i}=L_i$, e $L_{ij}=\epsilon_{ijk}K^k$, $\tau_{0i}=\tau_i$, e $\tau_{ij}=\epsilon_{ijk}\kappa^k$ 
+
+\begin{align}
+    \tau_{0i}&=\frac1c\epsilon_{0ijk}x^j\qty(\partial^\alpha A^k-\partial^k A^\alpha)u_\alpha\\
+    &=\frac1c\epsilon_{0ijk}x^j\qty(a^k\partial^\alpha f\qty(x)-a^\alpha\partial^k f\qty(x))u_\alpha\\
+    &=\frac{kg\qty(x)}{c}\epsilon_{0ijk}x^j\qty(a^k\qty(x^\alpha-r^\alpha)-a^\alpha\qty(x^k-r^k))u_\alpha\\
+    &=\frac{kg\qty(x)}{c}\epsilon_{0ijk}x^j\qty(a^k\qty(\vb x-\vb r)\cdot \vb u-\qty(a\cdot u)\qty(x^k-r^k))\\
+    &=\frac{kg\qty(x)}{c}\vb x\times \vb a \qty[\qty(\vb x-\vb r)\cdot \vb u]-\frac{kg\qty(x)}{c}\vb x\times\qty(\vb x-\vb r)\qty(a\cdot u)\\
+    &=\frac{kg\qty(x)}{c}\vb x\times \vb a \qty[\qty(\vb x-\vb r)\cdot \vb u]+a^0\gamma kg\qty(x)\vb x\times\qty(\vb x-\vb r)-\qty(\vb a\cdot \vb u)\frac{kg\qty(x)}{c}\vb x\times \qty(\vb x-\vb r)\\
+    &=kg\qty(x)\vb x\times\qty{a^0\gamma\qty(\vb x-\vb r)+\frac{\qty(\qty(\vb x-\vb r)\cdot \vb u)}{c}\vb a-\frac{\qty(\vb a\cdot \vb u)}{c}\qty(\vb x -\vb r)}\\
+    \boldsymbol \tau&=kg\qty(x)\vb x\times\qty{a^0\gamma\qty(\vb x-\vb r)+\frac{\vb u}{c}\times \qty[\vb a\times\qty(\vb x-\vb r)]}
+\end{align}
+
+Suponha que possuímos mais de um corpo, descreveremos as coordenadas de cada um destes por $\tensor[_i]{x}{^\mu}$, no qual $i$ enumera as partículas. Nessa situação não temos mais o tempo próprio para usar como parâmetro de trajetória, se $\lambda$ é um parâmetro que foi utilizado para a parametrização da trajetória, então temos que,
+
+\begin{align}
+    \tensor{\dot{x}}{^\mu}=\dv{\tensor{x}{^\mu}}{\lambda}=\mqty(c\dv{t}{\lambda}&\dv{\vb x}{\lambda})
+\end{align}
+
+Definimos então o fator gamma generalizado como,
+
+\begin{align}
+    \gamma=\frac{1}{\sqrt{-\frac{1}{c^2}\dv{\tensor{x}{_\mu}}{\lambda}\dv{\tensor{x}{^\mu}}{\lambda}}}
+\end{align}
+
+Certamente, se lambda é o tempo próprio da partícula temos que,
+
+\begin{align}
+    u^\mu=\dot{x}^\mu
+\end{align}
+
+E,
+
+\begin{align}
+    \gamma=1
+\end{align}
+
+Outro caso de interesse é claro, $\lambda=t$, para o qual,
+
+\begin{align}
+    \gamma=\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{align}
+
+Note que,
+
+\begin{align}
+    \gamma \dot{x}^\mu&=\frac{1}{\sqrt{-\frac{1}{c^2}\dv{x_\nu}{\lambda}\dv{x^\nu}{\lambda}}}\dv{x^\mu}{\lambda}\\
+    &=\dv{\lambda}{t}\frac{1}{\sqrt{-\frac{1}{c^2}\dv{x_\nu}{t}\dv{x^\nu}{t}}}\dv{x^\mu}{\lambda}\\
+    &=\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}\dv{x^\mu}{t}\\
+    &=u^\mu
+\end{align}
+
+Obtemos então uma maneira genérica de tratar a quadrivelocidade.
+
+%%\printbibliography[heading=subbibliography]
+%%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Formalismo Lagrangiano}
+
+Gostaríamos agora de expressar nossas equações de movimento com notação não vetorial, para isto precisamos recorrer ao cálculo variacional, gostaríamos de obter a expressão de movimento de uma partícula livre, $$\dv{p}{s}=0$$ como resultado da extremização de alguma quantidade que seja invariante entre observadores inerciais (motivação?), caso o movimento da partícula se dê entre $t_1$ e $t_2$, a expressão que procuramos deve ser da forma, $$S[x,\cdots]=\int\limits_{t_1}^{t_2}\dd{t'}L\qty[x\qty(t'),\cdots]$$ O processo do cálculo variacional,
+
+\begin{align}
+    \fdv{S}{x^\mu\qty(t)}&=\int\limits_{t_1}^{t_2}\dd{t'}\qty{\pdv{L}{x^\mu\qty(t')}\delta\qty(t'-t)+\pdv{L}{{\dot x}^\mu\qty(t')}\delta'\qty(t'-t)+\cdots}\\
+    &=\int\limits_{t_1}^{t_2}\dd{t'}\qty{\pdv{L}{x^\mu\qty(t')}\delta\qty(t'-t)+\dv{}{t'}\qty(\pdv{L}{{\dot x}^\mu\qty(t')}\delta\qty(t'-t))-\dv{}{t'}\pdv{L}{{\dot x}^\mu\qty(t')}\delta\qty(t'-t)+\cdots}\\
+    &=\pdv{L}{x^\mu\qty(t)}-\dv{}{t}\pdv{L}{{\dot x}^\mu\qty(t)}=0
+\end{align}
+
+A resposta mais trivial seria $L\equiv \textup{cte}$ que não possui nenhuma dinâmica, a segunda opção é, eliminando ${\dot x}^0\equiv c$,
+
+\begin{align}
+    \dv{}{t}\pdv{L}{\dot{\vb x}}&=0=\dv{}{s}\qty(m\gamma\qty(\dot{\vb x})\dot{\vb x})\\
+    \pdv{L}{\dot{\vb x}}&=m\gamma\qty(\dot {\vb x})\dot{\vb x}\\
+    \pdv{L}{\dot{\vb x}}&=-\dv{}{\dot{\vb x}}\qty(\frac{mc^2}{\gamma\qty(\dot{\vb x})})
+\end{align}
+
+Podemos então descrever uma partícula livre por,
+
+\begin{align}
+    S[\dot x]&=-mc^2\int\limits_{t_1}^{t_2}\dd{t}\frac{1}{\gamma\qty(\dot{\vb x})}\\
+    &=-mc^2\int\limits_{t_1}^{t_2}\dd{t}\sqrt{1-\frac{1}{c^2}\dv{\vb x}{t}\cdot\dv{\vb x}{t}}\\
+    &=-mc\int\limits_{t_1}^{t_2}\dd{t}\sqrt{c^2\dv{t}{t}\dv{t}{t}-\dv{\vb x}{t}\cdot\dv{\vb x}{t}}\\
+    &=-mc\int\limits_{t_1}^{t_2}\dd{t}\sqrt{\dv{x^0}{t}\dv{x^0}{t}-\dv{\vb x}{t}\cdot\dv{\vb x}{t}}\\
+    &=-mc\int\limits_{t_1}^{t_2}\dd{t}\sqrt{-\dv{x_\mu}{t}\dv{x^\mu}{t}}\\
+    &=-mc\int\limits_{\lambda_1}^{\lambda_2}\dd{\lambda}\sqrt{-\dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}}
+\end{align}
+
+Onde $\lambda$ é um parâmetro introduzido para parametrizar a trajetória da partícula, após a variação da ação podemos tomar este como sendo $t$ ou $s$. Note que esta ação é invariante pela reparametrização da linha de mundo,
+
+\begin{align}
+    S&=-mc\int\limits_{\lambda_1'}^{\lambda_2'}\dd{\lambda'}\dv{\lambda}{\lambda'}\sqrt{-\dv{x_\mu}{\lambda'}\dv{x^\mu}{\lambda'}\qty(\dv{\lambda'}{\lambda})^2}\\
+    &=-mc\int\limits_{\lambda_1'}^{\lambda_2'}\dd{\lambda'}\sqrt{-\dv{x_\mu}{\lambda'}\dv{x^\mu}{\lambda'}}=S'
+\end{align}
+
+Para tornar mais simples a expressão da ação e poder introduzir a noção de partículas com $m=0$, vamos introduzir um artifício novo, uma nova variável $\alpha\qty(\lambda)$,
+
+\begin{align}
+    \tilde S&=\frac12\int\limits_{\lambda_1}^{\lambda_2}\dd{\lambda}\qty[\alpha\dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}-\frac{m^2c^2}{\alpha}]
+\end{align}
+
+As equações de movimento são,
+
+\begin{align}
+    \fdv{\tilde S}{\alpha}&=\frac12\dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}+\frac12 \frac{m^2c^2}{\alpha^2}=0\\
+    \fdv{\tilde S}{x_\mu}&=-\dv{}{\lambda}\qty[\alpha\dv{x^\mu}{\lambda}]=0\\
+    \alpha&=\frac{mc}{\sqrt{-\dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}}}
+\end{align}
+
+Note que,
+
+\begin{align}
+    \tilde S&=-\frac12\int\limits_{\lambda_1}^{\lambda_2}\dd{\lambda}\qty[-\frac{mc}{\sqrt{-\dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}}}\dv{x_\nu}{\lambda}\dv{x^\nu}{\lambda}+mc\sqrt{-\dv{x_\nu}{\lambda}\dv{x^\nu}{\lambda}}]\\
+    &=-mc\int\limits_{\lambda_1}^{\lambda_2}\dd{\lambda}\sqrt{-\dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}}
+\end{align}
+
+Para incluir forças podemos notar o que foi desenvolvido no capítulo anterior para que,
+
+\begin{align}
+    m\dv{u^\mu}{s}&=-\partial^\mu\Phi+\dv{}{s}\qty[\pdv{}{u_\mu}\Phi]\\
+    \dv{}{t}\qty[m\gamma\qty(\dot{\vb x})\dot{\vb x}]&+\grad\frac{\Phi}{\gamma\qty(\dot{\vb x})}-\dv{}{t}\qty[\pdv{}{\dot{\vb x}}\frac{\Phi}{\gamma\qty(\dot{\vb x})}]=0\\
+    \dv{}{t}\qty[\pdv{}{\dot{\vb x}}\qty(-\frac{mc^2}{\gamma\qty(\dot{\vb x})})]&+\grad\frac{\Phi}{\gamma\qty(\dot{\vb x})}-\dv{}{t}\qty[\pdv{}{\dot{\vb x}}\frac{\Phi}{\gamma\qty(\dot{\vb x})}]=0
+\end{align}
+
+Que implica em,
+
+\begin{align}
+    L&=-\frac{mc^2}{\gamma\qty(\dot{\vb x})}-\frac{\Phi\qty(\vb x,\dot{\vb x})}{\gamma\qty(\dot{\vb x})}\\
+    S&=\int\limits_{t_1}^{t_2}\dd{t}\qty(-\frac{mc^2}{\gamma\qty(\dot{\vb x})}-\frac{\Phi\qty(\vb x,\dot{\vb x})}{\gamma\qty(\dot{\vb x})})=\int\limits_{t_1}^{t_2}\dd{t}\qty(-\frac{mc^2}{\gamma\qty(\dot{\vb x})}-\frac{\gamma\qty(\dot{\vb x})}{\gamma\qty(\dot{\vb x})}\frac1c\dv{x^\mu}{t}A_\mu)\\
+    &=-\int\limits_{\lambda_1}^{\lambda_2}\dd{\lambda}\qty(mc\sqrt{-\dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}}+\frac1c\dv{x^\mu}{\lambda}A_\mu)\\
+    &=-\int\limits_{\lambda_1}^{\lambda_2}\dd{\lambda}\qty(-\frac12\frac{mc}{\sqrt{-\dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}}}\dv{x_\nu}{\lambda}\dv{x^\nu}{\lambda}+\frac12 m^2c^2\frac{\sqrt{-\dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}}}{mc}+\frac1c\dv{x^\mu}{\lambda}A_\mu)\\
+    &=\int\limits_{\lambda_1}^{\lambda_2}\dd{\lambda}\qty(\frac12\alpha\dv{x_\nu}{\lambda}\dv{x^\nu}{\lambda}-\frac12 \frac{m^2c^2}{\alpha}-\frac1c\dv{x^\mu}{\lambda}A_\mu)
+\end{align}
+
+Note que temos portanto equações de movimento como,
+
+\begin{align}
+    \fdv{S}{x_\mu}&=0\\
+    -\dv{}{\lambda}\qty(\alpha\dv{x^\mu}{\lambda})-\frac1c\dv{x^\nu}{\lambda}\partial^\mu A_\nu+\frac1c\dv{}{\lambda}A^\mu&=0
+\end{align}
+
+Que é equivalente à o que foi discutido no capítulo anterior se junta da segunda equação,
+
+\begin{align}
+    \fdv{S}{\alpha}&=0\\
+    \frac12\dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}+\frac12\frac{m^2c^2}{\alpha^2}&=0
+\end{align}
+
+Note que $\alpha$ resulta da arbitrariedade da parametrização por $\lambda$. Podemos agora analisar o caso especial de $m=0$, suponha que $A_\mu\equiv 0$, as equações de movimento são então,
+
+\begin{align}
+    \dv{}{\lambda}\qty[\alpha\dv{x^\mu}{\lambda}]&=0\\
+    \dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}&=0
+\end{align}
+
+Da segunda equação obtemos que,
+
+\begin{align}
+    c\dv{t}{\lambda}&=\norm{\dv{\vb x}{\lambda}}
+\end{align}
+
+Como podemos escolher parametrizar por $\lambda=t$, segue que,
+
+\begin{align}
+    c&=\norm{\dv{\vb x}{t}}
+\end{align}
+
+Podemos então tomar $\alpha\qty(t) =1$ nessa parametrização. De forma que uma partícula com massa nula deve necessariamente mover-se com velocidade da luz. Se $m=0$ e $A^\mu=\mqty(A^0&\vb 0) $ com $\partial_0A^\mu=0$,
+
+\begin{align}
+    \dv{}{\lambda}\qty(\alpha\dv{x^\mu}{\lambda})&=\frac1c\dv{x_\nu}{\lambda}\qty(\partial^\nu A^\mu-\partial^\mu A^\nu)\\
+    \dv{x_\mu}{\lambda}\dv{x^\mu}{\lambda}&=0
+\end{align}
+
+Novamente, trabalhando na parametrização de $\lambda = t$, temos novamente que $\norm{\dv{\vb x}{t}}=c$, a parte temporal da primeira equação resulta em,
+
+\begin{align}
+    \dv{}{t}\qty(\alpha c)&=\frac1c\dv{x_nu}{t}\qty(\partial^\nu A^0-\partial^0 A^\nu)\\
+    \dv{\alpha}{t}&=\frac{1}{c^2}\dv{x_\nu}{t}\partial^\nu A^0\\
+    \dv{\alpha}{t}&=-\frac{1}{c^2}c\partial^0 A^0+\frac{1}{c^2}\dv{\vb x}{t}\cdot \grad A^0\\
+    \dv{\alpha}{t}&=\frac1c\vb {\hat n}\cdot\grad A^0
+\end{align}
+
+A parte espacial é,
+
+\begin{align}
+    \dv{}{t}\qty(\alpha\dv{\vb x}{t})&=\frac1c\dv{x_\nu}{t}\qty(\partial^\nu\vb A-\grad A^\nu)\\
+    \dv{}{t}\qty(\alpha\vb {\hat n})&=-\frac{1}{c^2}\dv{x_0}{t}\grad A^0\\
+    \dv{}{t}\qty(\alpha\vb {\hat n})&=\frac{1}{c}\grad A^0
+\end{align}
+
+Combinando as duas,
+
+\begin{align}
+    \alpha\dv{\vb{\hat n}}{t}&=\frac1c\grad A^0-\frac{\vb {\hat n}}{c}\qty(\vb{\hat n}\cdot\grad A^0)
+\end{align}
+
+Se desejamos descrever a dinâmica de mais de uma partículas interagentes fazemos,
+
+\begin{align}
+    S&=\frac12\sum\limits_i\int\limits_{\lambda_1}^{\lambda_2}\dd{\lambda}\qty[\tensor[_i]{\alpha}{}\dv{\tensor[_i]{x}{_\mu}}{\lambda}\dv{\tensor[_i]{x}{^\mu}}{\lambda}-\frac{\tensor[_i]{m}{^2}c^2}{\tensor[_i]{\alpha}{}}]
+\end{align}
+
+Para partículas interagentes certamente cada uma interage com outra segundo um potencial $A^\mu$,
+
+\begin{align}
+    S&=\sum\limits_i\int\limits_{\lambda_1}^{\lambda_2}\dd{\lambda}\qty(\frac12\tensor[_i]{\alpha}{}\dv{\tensor[_i]{x}{_\nu}}{\lambda}\dv{\tensor[_i]{x}{^\nu}}{\lambda}-\frac12 \frac{\tensor[_i]{m}{^2}c^2}{\tensor[_i]{\alpha}{}}-\frac1c\dv{\tensor[_i]{x}{^\mu}}{\lambda}\tensor[_i]{A}{_\mu}\qty(\tensor[_l]{x}{}))
+\end{align}
+
+Supomos que $\tensor[_i]{m}{}>0$, de modo que a variação de $S$ gera,
+
+\begin{align}
+    \fdv{S}{\tensor[_i]{\alpha}{}}&=\frac12\dv{\tensor[_i]{x}{_\mu}}{\lambda}\dv{\tensor[_i]{x}{^\mu}}{\lambda}+\frac12\frac{\tensor[_i]{m}{^2}c^2}{\tensor[_i]{\alpha}{^2}}=0\\
+    \tensor[_i]{\alpha}{}&=\frac{\tensor[_i]{m}{}c}{\sqrt{-\dv{\tensor[_i]{x}{_\mu}}{\lambda}\dv{\tensor[_i]{x}{^\mu}}{\lambda}}}\\
+    \tensor[_i]{\alpha}{}&=\frac{\tensor[_i]{m}{}}{\sqrt{-\frac{1}{c^2}\dv{\tensor[_i]{x}{_\mu}}{\lambda}\dv{\tensor[_i]{x}{^\mu}}{\lambda}}}
+\end{align}
+
+E,
+
+\begin{align}
+    \fdv{S}{\tensor[_i]{x}{_\mu}}&=-\frac1c\sum\limits_l\tensor[_l]{\dot{x}}{^\nu}\tensor[_i]{\partial}{^\mu}\tensor[_l]{A}{_\nu}+\frac1c\dv{\tensor[_i]{A}{^\mu}}{\lambda}-\dv{}{\lambda}\qty[\tensor[_i]{\alpha}{}\tensor[_i]{\dot{x}}{^\mu}]=0\\
+    \dv{}{\lambda}\qty[\tensor[_i]{\alpha}{}\tensor[_i]{\dot{x}}{^\mu}]&=-\frac1c\sum\limits_l\tensor[_l]{\dot{x}}{^\nu}\tensor[_i]{\partial}{^\mu}\tensor[_l]{A}{_\nu}+\frac1c\dv{\tensor[_i]{A}{^\mu}}{\lambda}\\
+    \dv{}{\lambda}\qty[\tensor[_i]{\alpha}{}\tensor[_i]{\dot{x}}{^\mu}]&=-\frac1c\sum\limits_l\tensor[_l]{\dot{x}}{^\nu}\tensor[_i]{\partial}{^\mu}\tensor[_l]{A}{_\nu}+\frac1c\sum\limits_l\tensor[_l]{\dot{x}}{^\nu}\tensor[_l]{\partial}{_\nu}\tensor[_i]{A}{^\mu}\\
+    \dv{}{\lambda}\qty[\tensor[_i]{m}{}\tensor[_i]{u}{^\mu}]&=-\frac1c\sum\limits_l\tensor[_l]{\dot{x}}{^\nu}\tensor[_i]{\partial}{^\mu}\tensor[_l]{A}{_\nu}+\frac1c\sum\limits_l\tensor[_l]{\dot{x}}{^\nu}\tensor[_l]{\partial}{_\nu}\tensor[_i]{A}{^\mu}\\
+    \dv{}{\lambda}\qty[\tensor[_i]{m}{}\tensor[_i]{u}{^\mu}]&=\frac1c\sum\limits_l\tensor[_l]{\dot{x}}{^\nu}\qty[\tensor[_l]{\partial}{_\nu}\tensor[_i]{A}{^\mu}-\tensor[_i]{\partial}{^\mu}\tensor[_l]{A}{_\nu}]
+\end{align}
+
+Supomos que,
+
+\begin{align}
+    \tensor[_i]{A}{^\mu}&=\sum\limits_j\tensor[_{ji}]{A}{^\mu}\qty(\tensor[_i]{x}{}-\tensor[_j]{x}{})=\sum\limits_j\tensor[_{ji}]{f}{}\qty(\tensor[_i]{x}{}-\tensor[_j]{x}{})\tensor[_{ji}]{a}{^\mu}
+\end{align}
+
+Então,
+
+\begin{align}
+    \dv{}{\lambda}\qty[\tensor[_i]{m}{}\tensor[_i]{u}{^\mu}]&=\frac1c\sum\limits_{l,k}\tensor[_l]{\dot{x}}{^\nu}\qty[\tensor[_l]{\partial}{_\nu}\tensor[_{ki}]{A}{^\mu}-\tensor[_i]{\partial}{^\mu}\tensor[_{kl}]{A}{_\nu}]\\
+    &=\frac2c\sum\limits_{l,k}\tensor[_l]{\dot{x}}{^\nu}\qty[\tensor[_{ki}]{a}{^\mu}\tensor[_{ki}]{{f'}}{}\qty{\delta_{li}\qty(\tensor[_i]{x}{_\nu}-\tensor[_k]{x}{_\nu})-\delta_{lk}\qty(\tensor[_i]{x}{_\nu}-\tensor[_k]{x}{_\nu})}-\tensor[_{kl}]{a}{_\nu}\tensor[_{kl}]{{f'}}{}\qty{\delta_{il}\qty(\tensor[_l]{x}{^\mu}-\tensor[_k]{x}{^\mu})-\delta_{ik}\qty(\tensor[_l]{x}{^\mu}-\tensor[_k]{x}{^\mu})}]\\
+    &=\frac2c\sum\limits_{k}\qty{\tensor[_{ki}]{a}{^\mu}\tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{x}{_\nu}-\tensor[_k]{x}{_\nu})\qty[\tensor[_i]{\dot{x}}{^\nu}-\tensor[_k]{\dot{x}}{^\nu}]}-\frac2c\sum\limits_k \tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{x}{^\mu}-\tensor[_k]{x}{^\mu})\qty(\tensor[_{ki}]{a}{_\nu}\tensor[_i]{\dot{x}}{^\nu}+\tensor[_{ik}]{a}{_\nu}\tensor[_k]{\dot{x}}{^\nu})
+\end{align}
+
+A parte temporal é,
+
+\begin{align}
+    \frac1c\dv{\tensor[_i]{E}{}}{\lambda}&=\frac2c\sum\limits_{k}\qty{\tensor[_{ki}]{a}{^0}\tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{x}{^\mu}-\tensor[_k]{x}{^\mu})\qty[\tensor[_i]{\dot{x}}{_\mu}-\tensor[_k]{\dot{x}}{_\mu}]}-2\sum\limits_k \tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{t}{}-\tensor[_k]{t}{})\qty(\tensor[_{ki}]{a}{_\nu}\tensor[_i]{\dot{x}}{^\nu}+\tensor[_{ik}]{a}{_\nu}\tensor[_k]{\dot{x}}{^\nu})\\
+    \dv{\tensor[_i]{E}{}}{\lambda}&=2\sum\limits_{k}\qty{\tensor[_{ki}]{a}{^0}\tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{x}{^\mu}-\tensor[_k]{x}{^\mu})\cdot\dv{}{\lambda}\qty(\tensor[_i]{x}{_\mu}-\tensor[_k]{x}{_\mu})}-2c\sum\limits_k \tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{t}{}-\tensor[_k]{t}{})\qty(\tensor[_{ki}]{a}{_\nu}\tensor[_i]{\dot{x}}{^\nu}+\tensor[_{ik}]{a}{_\nu}\tensor[_k]{\dot{x}}{^\nu})\\
+    \dv{\tensor[_i]{E}{}}{\lambda}&=\sum\limits_{k}\qty{\tensor[_{ki}]{a}{^0}\tensor[_{ki}]{{f'}}{}\dv{}{\lambda}\qty(\tensor[_i]{x}{}-\tensor[_k]{x}{})^2}-2c\sum\limits_k \tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{t}{}-\tensor[_k]{t}{})\qty(\tensor[_{ki}]{a}{_\nu}\tensor[_i]{\dot{x}}{^\nu}+\tensor[_{ik}]{a}{_\nu}\tensor[_k]{\dot{x}}{^\nu})
+\end{align}
+
+Se $\tensor[_{ki}]{a}{^\mu}$ for antissimétrico, certamente vale que,
+
+\begin{align}
+    \sum\limits_i\dv{\tensor[_i]{E}{}}{\lambda}&=\sum\limits_{k,i}\qty{\tensor[_{ki}]{a}{^0}\tensor[_{ki}]{{f'}}{}\dv{}{\lambda}\qty(\tensor[_i]{x}{}-\tensor[_k]{x}{})^2}-2c\sum\limits_{k,i}\tensor[_{ki}]{a}{_\nu} \tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{t}{}-\tensor[_k]{t}{})\qty(\tensor[_i]{\dot{x}}{^\nu}-\tensor[_k]{\dot{x}}{^\nu})=0
+\end{align}
+
+A parte espacial,
+
+\begin{align}
+    \dv{}{\lambda}\qty[\tensor[_i]{m}{}\tensor[_i]{\vb {u}}{}]&=\frac2c\sum\limits_{k}\qty{\tensor[_{ki}]{\vb{a}}{}\tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{x}{_\nu}-\tensor[_k]{x}{_\nu})\qty[\tensor[_i]{\dot{x}}{^\nu}-\tensor[_k]{\dot{x}}{^\nu}]}-\frac2c\sum\limits_k\qty{ \tensor[_{ki}]{a}{_\nu}\tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{\vb{x}}{}-\tensor[_k]{\vb{x}}{})\qty[\tensor[_i]{\dot{x}}{^\nu}-\tensor[_k]{\dot{x}}{^\nu}]}\\
+    &=\frac2c\sum\limits_k\tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{\dot{x}}{^\nu}-\tensor[_k]{\dot{x}}{^\nu})\qty{\tensor[_{ki}]{\vb{a}}{}\qty(\tensor[_i]{x}{_\nu}-\tensor[_k]{x}{_\nu})- \tensor[_{ki}]{a}{_\nu}\qty(\tensor[_i]{\vb{x}}{}-\tensor[_k]{\vb{x}}{})}\\
+    &=\frac2c\sum\limits_k\tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{\dot{\vb{x}}}{}-\tensor[_k]{\dot{\vb{x}}}{})\times\qty{\tensor[_{ki}]{\vb{a}}{}\times\qty(\tensor[_i]{\vb{x}}{}-\tensor[_k]{\vb{x}}{})}-2c\sum\limits_k\tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{\dot{t}}{}-\tensor[_k]{\dot{t}}{})\qty{\tensor[_{ki}]{\vb{a}}{}\qty(\tensor[_i]{t}{}-\tensor[_k]{t}{})- \tensor[_{ki}]{a}{^0}\qty(\tensor[_i]{\vb{x}}{}-\tensor[_k]{\vb{x}}{})}
+\end{align}
+
+Como $\tensor[_{ki}]{{f'}}{}$ é simétrico, e $\tensor[_{ki}]{\vb{a}}{}$ antissimétrico, temos que,
+
+\begin{align}
+    \sum\limits_i\dv{}{\lambda}\qty[\tensor[_i]{m}{}\tensor[_i]{\vb {u}}{}]&=\frac2c\sum\limits_{k,i}\tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{\dot{\vb{x}}}{}-\tensor[_k]{\dot{\vb{x}}}{})\times\qty{\tensor[_{ki}]{\vb{a}}{}\times\qty(\tensor[_i]{\vb{x}}{}-\tensor[_k]{\vb{x}}{})}-2c\sum\limits_{k,i}\tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{\dot{t}}{}-\tensor[_k]{\dot{t}}{})\qty{\tensor[_{ki}]{\vb{a}}{}\qty(\tensor[_i]{t}{}-\tensor[_k]{t}{})- \tensor[_{ki}]{a}{^0}\qty(\tensor[_i]{\vb{x}}{}-\tensor[_k]{\vb{x}}{})}=0
+\end{align}
+
+Note que,
+
+\begin{align}
+    \sum\limits_i\tensor[_i]{m}{}\tensor[_i]{\vb{u}}{}&=\sum\limits_i\tensor[_i]{m}{}\tensor[_i]{\gamma}{}\tensor[_i]{\dot{\vb{x}}}{}\\
+    &=\sum\limits_i\frac{\tensor[_i]{E}{}}{c^2}\dv{\lambda}{\tensor[_i]{t}{}}\tensor[_i]{\dot{\vb{x}}}{}\\
+    &=\sum\limits_i\frac{\tensor[_i]{E}{}}{c^2}\tensor[_i]{\vb{v}}{}={\vb V}\sum\limits_i\frac{\tensor[_i]{E}{}}{c^2}\equiv \mbox{cte}
+\end{align}
+
+No qual interpretamos $\vb V$ como a velocidade do centro de massa. Podemos tentar definir um conceito análogo de \emph{centro de massa}, como,
+
+\begin{align}
+    \vb{R}&=\frac{\sum\limits_i\tensor[_i]{E}{}\tensor[_i]{\vb{x}}{}}{\sum\limits_i\tensor[_i]{E}{}}
+\end{align}
+
+Porém este não é de muita utilidade visto que,
+
+\begin{align}
+    \dot{\vb R}&=\frac{\sum\limits_i\tensor[_i]{E}{}\tensor[_i]{\dot{\vb{x}}}{}}{\sum\limits_i\tensor[_i]{E}{}}+\frac{\sum\limits_i\dv{\tensor[_i]{E}{}}{\lambda}\tensor[_i]{\vb{x}}{}}{\sum\limits_i\tensor[_i]{E}{}}
+\end{align}
+
+Exceto no limite $c\rightarrow\infty$ para qual $\dot{\vb R}=\vb V$.
+
+Voltemos à um caso genérico,
+
+\begin{align}
+    \dv{}{\lambda}\qty[\tensor[_i]{m}{}\tensor[_i]{u}{^\mu}]&=\frac{1}{c}\sum\limits_k\tensor[_{ki}]{a}{^\mu}\tensor[_{ki}]{{f'}}{}\dv{}{\lambda}\qty[\qty(\tensor[_i]{x}{}-\tensor[_k]{x}{})^2]-\frac2c\sum\limits_k\tensor[_{ki}]{a}{_\nu}\tensor[_{ki}]{{f'}}{}\qty(\tensor[_i]{x}{^\mu}-\tensor[_k]{x}{^\mu})\qty(\tensor[_i]{\dot{x}}{^\nu}-\tensor[_k]{\dot{x}}{^\nu})
+\end{align}
+
+Supomos que possuímos apenas 2 partículas e, $\tensor[_{21}]{a}{^\mu}=-\tensor[_{12}]{a}{^\mu}=a^\mu$, $\tensor[_{11}]{a}{^\mu}=\tensor[_{22}]{a}{^\mu}=0$ e $\tensor[_{ki}]{{f'}}{}={f'}\qty[\qty(\tensor[_i]{x}{}-\tensor[_k]{x}{})^2]$ para todos $k,i$,
+
+\begin{align}
+    \dv{}{\lambda}\qty[\tensor[_i]{m}{}\tensor[_i]{u}{^\mu}]&=\frac{1}{c}\tensor[]{a}{^\mu}\sum\limits_k\tensor[]{{f'}}{}\dv{}{\lambda}\qty[\qty(\tensor[_i]{x}{}-\tensor[_k]{x}{})^2]-\frac2c\tensor[]{a}{_\nu}\sum\limits_k\tensor[]{{f'}}{}\qty(\tensor[_i]{x}{^\mu}-\tensor[_k]{x}{^\mu})\qty(\tensor[_i]{\dot{x}}{^\nu}-\tensor[_k]{\dot{x}}{^\nu})\\
+    \dv{}{\lambda}\qty[\tensor[_i]{m}{}\tensor[_i]{u}{^\mu}]&=\frac{1}{c}\tensor[]{a}{^\mu}\sum\limits_k\dv{f}{\lambda}-\frac2c\sum\limits_k{f'}\qty(\tensor[_i]{x}{^\mu}-\tensor[_k]{x}{^\mu})\vb{a}\cdot\qty(\tensor[_i]{\dot{\vb{x}}}{}-\tensor[_k]{\dot{\vb{x}}}{})+2\sum\limits_k{f'}\qty(\tensor[_i]{x}{^\mu}-\tensor[_k]{x}{^\mu})a^0\qty(\tensor[_i]{\dot{t}}{}-\tensor[_k]{\dot{t}}{})\\
+    &\begin{cases}
+        \dv{}{\lambda}\qty[\tensor[_1]{m}{}\tensor[_1]{u}{^\mu}]&=\frac{1}{c}\tensor[_{21}]{a}{^\mu}\dv{f}{\lambda}-\frac2c{f'}\qty(\tensor[_1]{x}{^\mu}-\tensor[_2]{x}{^\mu})\tensor[_{21}]{\vb{a}}{}\cdot\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})+2{f'}\qty(\tensor[_1]{x}{^\mu}-\tensor[_2]{x}{^\mu})\tensor[_{21}]{a}{^0}\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})\\
+        \dv{}{\lambda}\qty[\tensor[_2]{m}{}\tensor[_2]{u}{^\mu}]&=\frac{1}{c}\tensor[_{12}]{a}{^\mu}\dv{f}{\lambda}-\frac2c{f'}\qty(\tensor[_2]{x}{^\mu}-\tensor[_1]{x}{^\mu})\tensor[_{12}]{\vb{a}}{}\cdot\qty(\tensor[_2]{\dot{\vb{x}}}{}-\tensor[_1]{\dot{\vb{x}}}{})+2{f'}\qty(\tensor[_2]{x}{^\mu}-\tensor[_1]{x}{^\mu})\tensor[_{12}]{a}{^0}\qty(\tensor[_2]{\dot{t}}{}-\tensor[_1]{\dot{t}}{})
+    \end{cases}\\
+    &\begin{cases}
+        \dv{}{\lambda}\qty[\tensor[_1]{m}{}\tensor[_1]{u}{^\mu}]&=\frac{1}{c}\tensor[]{a}{^\mu}\dv{f}{\lambda}-\frac2c{f'}\qty(\tensor[_1]{x}{^\mu}-\tensor[_2]{x}{^\mu})\tensor[]{\vb{a}}{}\cdot\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})+2{f'}\qty(\tensor[_1]{x}{^\mu}-\tensor[_2]{x}{^\mu})\tensor[]{a}{^0}\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})\\
+        \dv{}{\lambda}\qty[\tensor[_2]{m}{}\tensor[_2]{u}{^\mu}]&=-\frac{1}{c}\tensor[]{a}{^\mu}\dv{f}{\lambda}+\frac2c{f'}\qty(\tensor[_1]{x}{^\mu}-\tensor[_2]{x}{^\mu})\tensor[]{\vb{a}}{}\cdot\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})-2{f'}\qty(\tensor[_1]{x}{^\mu}-\tensor[_2]{x}{^\mu})\tensor[]{a}{^0}\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})
+    \end{cases}\\
+    &\begin{cases}
+        \frac1c\dv{}{\lambda}\qty[\tensor[_1]{E}{}]&=\frac{1}{c}\tensor[]{a}{^0}\dv{f}{\lambda}-2{f'}\qty(\tensor[_1]{t}{}-\tensor[_2]{t}{})\qty[\tensor[]{\vb{a}}{}\cdot\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})-c\tensor[]{a}{^0}\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})]\\
+        \frac1c\dv{}{\lambda}\qty[\tensor[_2]{E}{}]&=-\frac{1}{c}\tensor[]{a}{^0}\dv{f}{\lambda}+2{f'}\qty(\tensor[_1]{t}{}-\tensor[_2]{t}{})\qty[\tensor[]{\vb{a}}{}\cdot\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})-c\tensor[]{a}{^0}\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})]
+    \end{cases}\\
+    &\begin{cases}
+        \dv{}{\lambda}\qty[\tensor[_1]{m}{}\tensor[_1]{\vb{u}}{}]&=\frac{2}{c}{f'}\tensor[]{\vb{a}}{}\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})\cdot\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})-\frac2c{f'}\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})\qty[\tensor[]{\vb{a}}{}\cdot\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})-ca^0\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})]\\
+        \dv{}{\lambda}\qty[\tensor[_2]{m}{}\tensor[_2]{\vb{u}}{}]&=-\frac{2}{c}{f'}\tensor[]{\vb{a}}{}\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})\cdot\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})+\frac2c{f'}\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})\qty[\tensor[]{\vb{a}}{}\cdot\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})-ca^0\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})]
+    \end{cases}\\
+    &\begin{cases}
+        \dv{}{\lambda}\qty[\tensor[_1]{E}{}]&=\tensor[]{a}{^0}\dv{f}{\lambda}-2c{f'}\qty(\tensor[_1]{t}{}-\tensor[_2]{t}{})\qty[\tensor[]{\vb{a}}{}\cdot\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})-c\tensor[]{a}{^0}\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})]\\
+        \dv{}{\lambda}\qty[\tensor[_2]{E}{}]&=-\tensor[]{a}{^0}\dv{f}{\lambda}+2c{f'}\qty(\tensor[_1]{t}{}-\tensor[_2]{t}{})\qty[\tensor[]{\vb{a}}{}\cdot\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})-c\tensor[]{a}{^0}\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})]
+    \end{cases}\\
+    &\begin{cases}
+        \dv{}{\lambda}\qty[\tensor[_1]{m}{}\tensor[_1]{\gamma}{}\tensor[_1]{\dot{\vb{x}}}{}]&=\frac{2}{c}{f'}\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})\times\qty[\vb a\times\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})]+2{f'}\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})a^0\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})]\\
+        \dv{}{\lambda}\qty[\tensor[_2]{m}{}\tensor[_2]{\gamma}{}\tensor[_2]{\dot{\vb{x}}}{}]&=-\frac{2}{c}{f'}\qty(\tensor[_1]{\dot{\vb{x}}}{}-\tensor[_2]{\dot{\vb{x}}}{})\times\qty[\vb a\times\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})]-2{f'}\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})a^0\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})]
+    \end{cases}\\
+\end{align}
+
+Supomos que $\vb a =0$, e que o sinal da interação entre as partículas viaja com velocidade $c$,
+
+\begin{align}
+    &\begin{cases}
+        \dv{}{\lambda}\qty[\tensor[_1]{E}{}]&=\tensor[]{a}{^0}\dv{f}{\lambda}+2c^2{f'}\qty(\tensor[_1]{t}{}-\tensor[_2]{t}{})\tensor[]{a}{^0}\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})\\
+        \dv{}{\lambda}\qty[\tensor[_2]{E}{}]&=-\tensor[]{a}{^0}\dv{f}{\lambda}-2c^2{f'}\qty(\tensor[_1]{t}{}-\tensor[_2]{t}{})\tensor[]{a}{^0}\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})
+    \end{cases}\\
+    &\begin{cases}
+        \dv{}{\lambda}\qty[\tensor[_1]{m}{}\tensor[_1]{\gamma}{}\tensor[_1]{\dot{\vb{x}}}{}]&=2{f'}\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})a^0\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})]\\
+        \dv{}{\lambda}\qty[\tensor[_2]{m}{}\tensor[_2]{\gamma}{}\tensor[_2]{\dot{\vb{x}}}{}]&=-2{f'}\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})a^0\qty(\tensor[_1]{\dot{t}}{}-\tensor[_2]{\dot{t}}{})]
+    \end{cases}\\
+    &\begin{cases}
+        \dv{}{\lambda}\qty[\tensor[_1]{E}{}]&=\tensor[]{a}{^0}\dv{f}{\lambda}+c^2\tensor[]{a}{^0}{f'}\dv{}{\lambda}\qty[\qty(\tensor[_1]{t}{}-\tensor[_2]{t}{})^2]\\
+        \dv{}{\lambda}\qty[\tensor[_2]{E}{}]&=-\tensor[]{a}{^0}\dv{f}{\lambda}-c^2\tensor[]{a}{^0}{f'}\dv{}{\lambda}\qty[\qty(\tensor[_1]{t}{}-\tensor[_2]{t}{})^2]
+    \end{cases}\\
+    &\begin{cases}
+        \dv{}{\lambda}\qty[\tensor[_1]{m}{}\tensor[_1]{\gamma}{}\tensor[_1]{\dot{\vb{x}}}{}]&=2{f'}\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})a^0\dv{}{\lambda}\qty(\tensor[_1]{{t}}{}-\tensor[_2]{{t}}{})\\
+        \dv{}{\lambda}\qty[\tensor[_2]{m}{}\tensor[_2]{\gamma}{}\tensor[_2]{\dot{\vb{x}}}{}]&=-2{f'}\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})a^0\dv{}{\lambda}\qty(\tensor[_1]{{t}}{}-\tensor[_2]{{t}}{})
+    \end{cases}\\
+    &\begin{cases}
+        \dv{}{\lambda}\qty[\tensor[_1]{E}{}]&=\tensor[]{a}{^0}\dv{f}{\lambda}+\tensor[]{a}{^0}{f'}\dv{}{\lambda}\qty[\norm{\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{}}^2]\\
+        \dv{}{\lambda}\qty[\tensor[_2]{E}{}]&=-\tensor[]{a}{^0}\dv{f}{\lambda}-\tensor[]{a}{^0}{f'}\dv{}{\lambda}\qty[\norm{\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{}}^2]
+    \end{cases}\\
+    &\begin{cases}
+        \dv{}{\lambda}\qty[\tensor[_1]{m}{}\tensor[_1]{\gamma}{}\tensor[_1]{\dot{\vb{x}}}{}]&=2{f'}\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})a^0\dv{}{\lambda}\qty[\norm{\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{}}]\\
+        \dv{}{\lambda}\qty[\tensor[_2]{m}{}\tensor[_2]{\gamma}{}\tensor[_2]{\dot{\vb{x}}}{}]&=-2{f'}\qty(\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{})a^0\dv{}{\lambda}\qty[\norm{\tensor[_1]{\vb{x}}{}-\tensor[_2]{\vb{x}}{}}]
+    \end{cases}
+\end{align}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Formalismo Hamiltoniano}
+
+Vamos fazer uma transformação de variáveis para expressar as equações de movimento na forma dita Hamiltoniana, para isso vamos definir o \emph{momento}, como sendo, utilizando a notação, ${\dot x}^\mu=\dv{x^\mu}{\lambda}$,
+
+\begin{align}
+    \pdv{L}{{\dot x}^\mu}&=p_\mu
+\end{align}
+
+Expressando a Lagrangiana em função de $x^\mu$ e $p^\mu$,
+
+\begin{align}
+    L&=\frac\alpha2{\dot x}_\mu{\dot x}^\mu-\frac{m^2c^2}{2\alpha}-\frac1c{\dot x}^\mu A_\mu\\
+    &=\frac\alpha2\qty[\frac1\alpha\qty(p_\mu+\frac1c A_\mu)]\qty[\frac1\alpha\qty(p^\mu+\frac1c A^\mu)]-\frac{m^2c^2}{2\alpha}-\frac{1}{\alpha c}\qty(p^\mu +\frac1c A^\mu)A_\mu\\
+    &=\frac{1}{2\alpha}p_\mu p^\mu+\frac{1}{\alpha c}p_\mu A^\mu+\frac{1}{2\alpha c^2}A^\mu A_\mu-\frac{m^2c^2}{2\alpha}-\frac{1}{\alpha c}p_\mu A^\mu -\frac{1}{\alpha c^2}A_\mu A^\mu\\
+    &=\frac{1}{2\alpha}p_\mu p^\mu-\frac{1}{2\alpha c^2}A_\mu A^\mu-\frac{m^2c^2}{2\alpha}
+\end{align}
+
+Fazemos a mudança de variáveis definindo o \emph{Hamiltoniano} como,
+
+\begin{align}
+    H&={\dot x}^\mu p_\mu-L\\
+    &=\frac1\alpha\qty(p_\mu+\frac1c A_\mu)p^\mu-\frac{1}{2\alpha}p_\mu p^\mu+\frac{1}{2\alpha c^2}A_\mu A^\mu +\frac{m^2c^2}{2\alpha}\\
+    &=\frac{1}{2\alpha}\qty(p+\frac1c A)^2+\frac{m^2c^2}{2\alpha}
+\end{align}
+
+Note que,
+
+\begin{align}
+    \dd{H}&=p_\mu \dd{\dot{x}^\mu}+\dot{x}^\mu\dd{p_\mu}-\dd{L}\\
+    \pdv{H}{\alpha}\dd{\alpha}+\pdv{H}{x^\mu}\dd{x^\mu}+\pdv{H}{p_\mu}\dd{p_\mu}&=p_\mu \dd{\dot{x}^\mu}+\dot{x}^\mu\dd{p_\mu}-\pdv{L}{\alpha}\dd{\alpha}-\pdv{L}{x^\mu}\dd{x^\mu}-\pdv{L}{\dot{x}^\mu}\dd{\dot{x}^\mu}
+\end{align}
+
+Temos então as identificações,
+
+\begin{align}
+    \pdv{H}{\alpha}&=-\pdv{L}{\alpha}=-\dv{}{\lambda}\pdv{L}{\dot\alpha}=0\\
+    \pdv{H}{x^\mu}&=-\pdv{L}{x^\mu}=-\dv{}{\lambda}\pdv{L}{x^\mu}=-\dot{p}_\mu\\
+    \pdv{H}{p_\mu}&=\dot{x}^\mu
+\end{align}
+
+Vamos aplicar as equações do movimento,
+
+\begin{align}
+    \pdv{H}{\alpha}&=-\frac{1}{2\alpha^2}\qty(p+\frac1c A)^2-\frac{m^2c^2}{2\alpha^2}=0\\
+    \pdv{H}{x^\mu}&=\frac{1}{\alpha c}\qty(p_\nu+\frac1c A_\nu)\partial_\mu A^\nu=-\dot{p}_\mu\\
+    \pdv{H}{p_\mu}&=\frac{1}{\alpha}\qty(p^\mu+\frac1c A^\mu)=\dot{x}^\mu
+\end{align}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Formalismo de Hamilton-Jacobi}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Teoria Clássica de Campos}
+
+\subsection{Teorema de Noether}
+
+Correntes conservadas devido a simetria do Espaço-Tempo, caso de 
+translação, $$x\rightarrow x+\delta a$$
+
+\begin{align}
+    \mathcal L\qty(x)\rightarrow \mathcal L'\qty(x+\delta a)\\
+    \mathcal L'\qty(x+\delta a)&=\mathcal L\qty(x)+\partial_\mu \mathcal L\qty(x)\delta a^\mu
+\end{align}
+
+Mas, 
+
+\begin{align}
+    \phi\rightarrow \phi'\qty(x+\delta a)\\
+    \phi'\qty(x+\delta a)&=\phi(x)+\partial_\mu\phi\qty(x)\delta a^\mu\\
+    \partial_\nu'\phi'\qty(x+\delta a)&=\partial_\nu\phi\qty(x)+\partial_\nu\partial_\mu\phi\qty(x)\delta a^\mu
+\end{align}
+
+Assim,
+
+\begin{align}
+    \mathcal L'\qty(x+\delta a)&=-\frac12\partial_\mu'\phi'\qty(x+\delta a){\partial'}^\mu \phi'\qty(x+\delta a) -
+    \frac{m^2}{2}\phi'\qty(x+\delta a)\phi'\qty(x+\delta a)\\
+    &=-\frac12\partial_\mu\phi\qty(x)\partial^\mu\phi\qty(x)-\frac{m^2}{2}\phi\qty(x)\phi\qty(x)-
+    \partial_\nu\partial_\mu\phi\qty(x)\delta a^\nu\partial^\mu\phi\qty(x)-m^2\partial_\nu\phi\qty(x)\delta a^\nu\phi\qty(x)\\
+    &=\mathcal L\qty(x)-\delta a^\nu\qty{\partial^\mu\qty[\partial_\nu\partial_\mu\phi\qty(x)\phi\qty(x)]-\partial_\nu\partial^\mu\partial_\mu\phi\qty(x)\phi\qty(x)+m^2\phi\qty(x)\partial_\nu\phi\qty(x)}\\
+    &=\mathcal L\qty(x)-\delta a^\nu\qty{\partial^\mu\qty[\partial_\nu\partial_\mu\phi\qty(x)\phi\qty(x)]-m^2\partial_\nu\phi\qty(x)\phi\qty(x)+m^2\phi\qty(x)\partial_\nu\phi\qty(x)}\\
+    &=\mathcal L\qty(x)-\partial_\mu\qty{\delta a^\nu\phi\qty(x)\partial_\nu\partial^\mu\phi\qty(x)}
+\end{align}
+
+Poderíamos ter calculado,
+
+\begin{align}
+    \mathcal L'\qty[\phi',\partial_\mu'\phi ']&=\mathcal L\qty[\phi,\partial_\mu\phi]+\pdv{\mathcal L}{\phi}\partial_\mu\phi\qty(x)\delta a^\mu
+    +\pdv{\mathcal L}{\partial_\nu\phi}\partial_\nu\partial_\mu\phi\qty(x)\delta a^\mu\\
+    &=\mathcal L\qty[\phi,\partial_\mu\phi]+\partial_\nu\pdv{\mathcal L}{\partial_\nu\phi}\partial_\mu\phi\qty(x)\delta a^\mu+
+    \pdv{\mathcal L}{\partial_\nu\phi}\partial_\nu\partial_\mu\phi\qty(x)\delta a^\mu\\
+    &=\mathcal L\qty[\phi,\partial_\mu\phi]+\delta a^\mu\partial_\nu\qty{\frac{\mathcal L}{\partial_\nu\phi}\partial_\mu\phi\qty(x)}
+\end{align}
+
+Igualando,
+
+\begin{align}
+    \partial_\nu\qty{\pdv{\mathcal L}{\partial_\nu\phi}\partial_\mu\phi-\delta^\nu_{\ \mu}\mathcal L}\delta a^\mu&=0
+\end{align}
+
+Logo a quantidade conservada é o tensor de energia momento, $$T^\nu_{\ \mu}=\pdv{\mathcal L}{\partial_\nu\phi}\partial_\mu\phi-\delta^\nu_{\ \mu}\mathcal L$$
+
+Outra simetria é a de transformação de Lorentz, $$x\rightarrow \Lambda x=x^\mu+\delta\omega^\mu_{\ \nu}x^\nu,\ \delta\omega_{\mu\nu}=-\delta\omega_{\nu\mu}$$
+
+\begin{align}
+    \mathcal L\qty(x)\rightarrow\mathcal L'\qty(x+\delta\omega x)\\
+    \mathcal L'\qty(x+\delta\omega x)&=\mathcal L\qty(x)+\partial_\mu\mathcal L\qty(x)\delta\omega^\mu_{\ \nu}x^\nu
+\end{align}
+
+\begin{align}
+    \phi\rightarrow\phi'\qty(x+\delta\omega x)\\
+    \phi'\qty(x+\delta\omega x)&=\phi\qty(x)+\partial_\mu\phi\qty(x)\delta\omega^{\mu}_{\ \nu}x^\nu\\
+    \partial_\rho'\phi'\qty(x+\delta\omega x)&=\partial_\rho\phi\qty(x)-\delta\omega_{\rho}^{\ \mu}\partial_\mu\phi\qty(x)+\partial_\rho\partial_\mu\phi\qty(x)\delta\omega^{\mu}_{\ \nu}x^\nu
+\end{align}
+
+\begin{align}
+    \mathcal L'\qty(x+\delta\omega x)&=-\frac12\partial_\mu'\phi\qty(x+\delta \omega x){\partial'}^\mu\phi'\qty(x+\delta\omega x)-\frac{m^2}{2}\phi'\qty(x+\delta\omega x)\phi'\qty(x+\delta \omega x)\\
+    &=-\frac12\partial_\mu\phi\qty(x)\partial^\mu\phi\qty(x)-\frac{m^2}{2}\phi\qty(x)\phi\qty(x)-\partial_\nu\partial_\mu\phi\qty(x)\delta\omega^{\nu\rho}x_{\rho}\partial^\mu\phi\qty(x)-m^2\phi\qty(x)\partial_\nu\phi\qty(x)\delta\omega^{\nu\rho}x_{\rho}+\delta\omega^{\nu\rho}\partial_\nu\phi\qty(x)\partial_\rho\phi\qty(x)\\
+    &=\mathcal L\qty(x)-\delta\omega^{\nu\rho}\qty{\partial^\mu\qty[\phi\qty(x)x_\rho\partial_\nu\partial_\mu\phi\qty(x)]-\phi\qty(x)\delta^{\mu}_{\ \rho}\partial_\nu\partial_\mu\phi\qty(x)-x_\rho\phi\qty(x)\partial_\nu\partial^\mu\partial_\mu\phi\qty(x)+m^2x_\rho\phi\qty(x)\partial_\nu\phi\qty(x)}\\
+    &=\mathcal L\qty(x)-\delta\omega^{\nu\rho}\qty{\partial^\mu\qty[\phi\qty(x)x_\rho\partial_\nu\partial_\mu\phi\qty(x)]-\phi\qty(x)\partial_\nu\partial_\rho\phi\qty(x)-m^2x_\rho\phi\qty(x)\partial_\nu\phi\qty(x)+m^2x_\rho\phi\qty(x)\partial_\nu\phi\qty(x)}\\
+    &=\mathcal L\qty(x)-\partial_\mu\qty{\delta\omega^{\nu\rho}x_\rho\phi\qty(x)\partial_\nu\partial^\mu\phi\qty(x)}
+\end{align}
+
+Logo é uma simetria da ação, poderíamos ter escrito,
+
+\begin{align}
+    \mathcal L'\qty[\phi',\partial_\mu'\phi']&=\mathcal L\qty[\phi,\partial_\mu\phi]+\pdv{\mathcal L}{\phi}\partial_\mu\phi\qty(x)\delta\omega^{\mu\nu}x_\nu+\pdv{\mathcal L}{\partial_\rho\phi\qty(x)}\qty{\partial_\rho\partial_\mu\phi\qty(x)\delta\omega^{\mu\nu}x_\nu-\delta\omega_{\rho}^{\ \nu}\partial_\nu\phi\qty(x)}\\
+    &=\mathcal L\qty[\phi,\partial_\mu\phi]+\partial_\rho\pdv{\mathcal L}{\partial_\rho\phi}\partial_\mu\phi\qty(x)\delta\omega^{\mu\nu}x_\nu+\pdv{\mathcal L}{\partial_\rho\phi\qty(x)}\partial_\rho\partial_\mu\phi\qty(x)\delta\omega^{\mu\nu}x_\nu-\pdv{\mathcal L}{\partial^\rho\phi}\partial_\nu\phi\qty(x)\delta\omega^{\rho\nu}\\
+    &=\mathcal L\qty[\phi,\partial_\mu\phi]+\partial_\rho\qty{\pdv{\mathcal L}{\partial_\rho\phi}\partial_\mu\phi\qty(x)\delta\omega^{\mu\nu}x_\nu}-\pdv{\mathcal L}{\partial_\rho\phi}\partial_\mu\phi\qty(x)\delta\omega^{\mu\nu}g_{\rho\nu}-\pdv{\mathcal L}{\partial^\mu\phi}\partial_\nu\phi\qty(x)\delta\omega^{\mu\nu}\\
+    &=\mathcal L\qty[\phi,\partial_\mu\phi]+\frac12\delta\omega^{\mu\nu}\qty{\pdv{\mathcal L}{\partial^\mu\phi}\partial_\nu\phi-\pdv{\mathcal L}{\partial^\nu\phi}\partial_\mu\phi+\partial_\rho\qty{\pdv{\mathcal L}{\partial_\rho\phi}\qty(\partial_\mu\phi x_\nu-\partial_\nu\phi x_\mu)}}\\
+    &-\frac12\delta\omega^{\mu\nu}\qty{\pdv{\mathcal L}{\partial^\mu\phi}\partial_\nu\phi\qty(x)-\pdv{\mathcal L}{\partial^\nu\phi}\partial_\mu\phi\qty(x)}\\
+    &=\mathcal L[\phi,\partial_\mu\phi]+\frac12\delta\omega^{\mu\nu}\partial_\rho\qty{x_\nu T^\rho_{\ \mu}+x_\nu\delta^\rho_{\ \mu}\mathcal L-x_\mu T^\rho_{\ \nu}-x_\mu\delta^\rho_{\ \nu}\mathcal L}
+\end{align}
+
+Mas, $$\mathcal L'\qty(x+\delta\omega x)=\mathcal L\qty(x)+\frac12\delta\omega^{\mu\nu}\qty{\partial_\mu\qty(x_\nu\mathcal L)-\partial_\nu\qty(x_\mu\mathcal L)}$$
+
+Igualando,
+
+\begin{align}
+    \delta\omega^{\mu\nu}\qty{\partial_\mu\qty(x_\nu\mathcal L)-\partial_\nu\qty(x_\mu\mathcal L)}&=\delta\omega^{\mu\nu}\partial_\rho\qty{x_\nu T^\rho_{\ \mu}+x_\nu\delta^\rho_{\ \mu}\mathcal L-x_\mu T^\rho_{\ \nu}-x_\mu\delta^\rho_{\ \nu}\mathcal L}\\
+    \delta\omega^{\mu\nu}\partial_\rho\qty(T^\rho_{\ \mu}x_\nu-T^\rho_{\ \nu}x_\mu)&=0\\
+    \partial_\rho\qty{T^\rho_{\ \mu}x_\nu-T^\rho_{\ \nu}x_\mu}&=0
+\end{align}
+
+Para o campo escalar sempre temos o tensor energia momento simétrico, logo, a quantidade conservada é o tensor de momento angular, $$\mathcal M^{\rho\mu\nu}=T^{\rho\mu}x^\nu-T^{\rho\nu}x^\mu$$
+
+Para um campo com índices vetoriais, a simetria de translações é mantida, resultando em um tensor de energia momento associado como, $$T^{\mu}_{\ \nu}=\pdv{\mathcal L}{\partial_\mu A^\rho}\partial_\nu A^\rho-\delta^{\mu}_{\ \nu}\mathcal L$$
+
+Mas para a simetria de transformações de Lorentz, 
+
+\begin{align}
+    {A'}^\mu\qty(x+\delta \omega x)&=A^\mu\qty(x)-\delta\omega^{\mu}_{\ \nu}A^\nu\qty(x)+\partial_\rho A^\mu\qty(x)\delta\omega^{\rho \nu}x_\nu\\
+    \partial_\sigma'{A'}^\mu\qty(x+\delta\omega x)&=\partial_\sigma A^\mu\qty(x)-\delta\omega_{\sigma}^{\ \nu}\partial_\nu A^\mu\qty(x)-\delta\omega^{\mu}_{\ \nu}\partial_\sigma A^\nu\qty(x)+\partial_\nu\partial_\sigma A^\mu\qty(x)\delta\omega^{\nu\rho}x_\rho
+\end{align}
+
+Temos,
+
+\begin{align}
+    \mathcal L'\qty[{A'}^\mu,\partial_\nu' {A'}^\mu]&=\mathcal L\qty[A^\mu,\partial_\nu A^\mu]+\pdv{\mathcal L}{A^\mu}\qty{\partial_\rho A^\mu\delta\omega^{\rho\nu}x_\nu-\delta\omega^{\mu\nu}A_\nu\qty(x)}\\
+    &+\pdv{\mathcal L}{\partial_\sigma A^\mu}\qty{-\partial_\sigma A_\nu\qty(x)\delta\omega^{\mu\nu}-\partial_\nu A^\mu\qty(x)\delta\omega_{\sigma}^{\ \nu}+\partial_\rho\partial_\sigma A^\mu\qty(x)\delta\omega^{\rho\nu}x_\nu}\\
+    \delta\mathcal L&=\partial_\sigma\pdv{\mathcal L}{\partial_\sigma A^\mu}\qty{\partial_\rho A^\mu\delta\omega^{\rho\nu}x_\nu-\delta\omega^{\mu\nu}A_\nu\qty(x)}\\
+    &+\pdv{\mathcal L}{\partial_\sigma A^\mu}\qty{-\partial_\sigma A_\nu\qty(x)\delta\omega^{\mu\nu}-\partial_\nu A^\mu\qty(x)\delta\omega_{\sigma}^{\ \nu}+\partial_\rho\partial_\sigma A^\mu\qty(x)\delta\omega^{\rho\nu}x_\nu}\\
+    \delta\mathcal L&=\partial_\sigma\qty{\pdv{\mathcal L}{\partial_\sigma A^\mu}\qty{\partial_\rho A^\mu\delta\omega^{\rho\nu}x_\nu-\delta\omega^{\mu\nu}A_\nu}}\\
+    &-\pdv{\mathcal L}{\partial_\sigma A^\mu}\partial_\sigma\partial_\rho A^\mu\delta\omega^{\rho\nu}x_\nu-\pdv{\mathcal L}{\partial_\sigma A^\mu}\partial_\rho A^\mu\delta\omega^{\rho\nu}g_{\sigma\nu}\\
+    &+\pdv{\mathcal L}{\partial_\sigma A^\mu}\partial_\sigma A_\nu\delta\omega^{\mu\nu}\\
+    &+\pdv{\mathcal L}{\partial_\sigma A^\mu}\qty{-\partial_\sigma A_\nu\qty(x)\delta\omega^{\mu\nu}-\partial_\nu A^\mu\qty(x)\delta\omega_{\sigma}^{\ \nu}+\partial_\rho\partial_\sigma A^\mu\qty(x)\delta\omega^{\rho\nu}x_\nu}\\
+    \delta\mathcal L&=\partial_\sigma\qty{\delta\omega^{\mu\nu}\qty{\pdv{\mathcal L}{\partial_\sigma A^\mu}A_\nu+\pdv{\mathcal L}{\partial_\sigma A^\alpha}\partial_\mu A^\alpha x_\nu}}\\
+    \delta\mathcal L&=\frac12\delta\omega^{\mu\nu}\partial_\sigma\qty{\pdv{\mathcal L}{\partial_\sigma A^\mu}A_\nu-\pdv{\mathcal L}{\partial_\sigma A^\nu}A_\mu+\pdv{\mathcal L}{\partial_\sigma A^\alpha}\partial_\mu A^\alpha x_\nu-\pdv{\mathcal L}{\partial_\sigma A^\alpha}\partial_\nu A^\alpha x_\mu}\\
+    \delta\mathcal L&=\frac12\delta\omega^{\mu\nu}\partial_\sigma\qty{\pdv{\mathcal L}{\partial_\sigma A^\mu}A_\nu-\pdv{\mathcal L}{\partial_\sigma A^\nu}A_\mu+T^{\sigma}_{\ \mu}x_\nu+\delta^{\sigma}_{\ \mu}x_\nu\mathcal L-T^{\sigma}_{\ \nu}x_\mu-\delta^{\sigma}_{\ \nu}x_\mu\mathcal L}
+\end{align}
+
+Definindo,$$\mathcal S^{\sigma\mu\nu}=\pdv{\mathcal L}{\partial_\sigma A_\mu}A^\nu-\pdv{\mathcal L}{\partial_\sigma A_\nu}A^\mu$$ $$\mathcal M^{\sigma\mu\nu}=T^{\sigma\mu}x^\nu-T^{\sigma\nu}x^\mu$$ $$\mathcal J^{\sigma\mu\nu}=\mathcal S^{\sigma\mu\nu}+\mathcal M^{\sigma\mu\nu}$$
+
+Concluímos que,
+
+\begin{align}
+    \delta\mathcal L&=\frac12\delta\omega^{\mu\nu}\partial_\sigma\qty{\mathcal S^{\sigma}_{\ \mu\nu}+\mathcal M^{\sigma}_{\ \mu\nu}+\delta^\sigma_{\ \mu}x_\nu\mathcal L-\delta^\sigma_{\ \nu}x_\mu\mathcal L}
+\end{align}
+
+Igualando as variações, concluímos que 
+
+\begin{align}
+    \partial_\sigma\mathcal J^{\sigma}_{\ \mu\nu}&=0
+\end{align}
+
+Para um campo geral com $n$ índices, $A^{\mu_1\cdots\mu_n}$,
+
+\begin{align}
+    {A'}^{\mu_1\cdots\mu_n}\qty(x+\delta \omega x)&=A^{\mu_1\cdots\mu_n}\qty(x)-\delta\omega^{\mu_i}_{\ \nu_i}A^{\mu_1\cdots\nu_i\cdots\mu_n}\qty(x)+\partial_\rho A^{\mu_1\cdots\mu_n}\qty(x)\delta\omega^{\rho \nu}x_\nu\\
+    \partial_\sigma'{A'}^{\mu_1\cdots\mu_n}\qty(x+\delta\omega x)&=\partial_\sigma A^{\mu_1\cdots\mu_n}\qty(x)-\delta\omega_{\sigma}^{\ \nu}\partial_\nu A^{\mu_1\cdots\mu_n}\qty(x)-\delta\omega^{\mu_i}_{\ \nu_i}\partial_\sigma A^{\mu_1\cdots\nu_i\cdots\mu_n}\qty(x)+\partial_\nu\partial_\sigma A^{\mu_1\cdots\mu_n}\qty(x)\delta\omega^{\nu\rho}x_\rho
+\end{align}
+
+Temos,
+
+\begin{align}
+    \mathcal L'\qty[{A'}^{\mu_1\cdots\mu_n},\partial_\nu' {A'}^{\mu_1\cdots\mu_n}]&=\mathcal L\qty[A^{\mu_1\cdots\mu_n},\partial_\nu A^{\mu_1\cdots\mu_n}]+\pdv{\mathcal L}{A^{\mu_1\cdots\mu_n}}\qty{\partial_\rho A^{\mu_1\cdots\mu_n}\delta\omega^{\rho\nu}x_\nu-\delta\omega^{\mu_i\nu_i}A_{\mu_1\cdots\nu_i\cdots\mu_n}\qty(x)}\\
+    &+\pdv{\mathcal L}{\partial_\sigma A^{\mu_1\cdots\mu_n}}\qty{-\partial_\sigma A_{\mu_1\cdots\nu_i\cdots\mu_n}\qty(x)\delta\omega^{\mu_i\nu_i}-\partial_{\nu} A^{\mu_1\cdots\mu_n}\qty(x)\delta\omega_{\sigma}^{\ \nu}+\partial_\rho\partial_\sigma A^{\mu_1\cdots\mu_n}\qty(x)\delta\omega^{\rho\nu}x_\nu}\\
+    \delta\mathcal L&=\partial_\sigma\pdv{\mathcal L}{\partial_\sigma A^{\mu_1\cdots\mu_n}}\qty{\partial_\rho A^{\mu_1\cdots\mu_n}\delta\omega^{\rho\nu}x_\nu-\delta\omega^{\mu_i\nu_i}A_{\mu_1\cdots\nu_i\cdots\mu_n}\qty(x)}\\
+    &+\pdv{\mathcal L}{\partial_\sigma A^{\mu_1\cdots\mu_n}}\qty{-\partial_\sigma A_{\mu_1\cdots\nu_i\cdots\mu_n}\qty(x)\delta\omega^{\mu_i\nu_i}-\partial_\nu A^{\mu_1\cdots\mu_n}\qty(x)\delta\omega_{\sigma}^{\ \nu}+\partial_\rho\partial_\sigma A^{\mu_1\cdots\mu_n}\qty(x)\delta\omega^{\rho\nu}x_\nu}\\
+    \delta\mathcal L&=\partial_\sigma\qty{\pdv{\mathcal L}{\partial_\sigma A^{\mu_1\cdots\mu_n}}\qty{\partial_\rho A^{\mu_1\cdots\mu_n}\delta\omega^{\rho\nu}x_\nu-\delta\omega^{\mu_i\nu_i}A_{\mu_1\cdots\nu_i\cdots\mu_n}}}\\
+    &-\pdv{\mathcal L}{\partial_\sigma A^{\mu_1\cdots\mu_n}}\partial_\sigma\partial_\rho A^{\mu_1\cdots\mu_n}\delta\omega^{\rho\nu}x_\nu-\pdv{\mathcal L}{\partial_\sigma A^{\mu_1\cdots\mu_n}}\partial_\rho A^{\mu_1\cdots\mu_n}\delta\omega^{\rho\nu}g_{\sigma\nu}\\
+    &+\pdv{\mathcal L}{\partial_\sigma A^{\mu_1\cdots\mu_n}}\partial_\sigma A_{\mu_1\cdots\nu_i\cdots\mu_n}\delta\omega^{\mu_i\nu_i}\\
+    &+\pdv{\mathcal L}{\partial_\sigma A^{\mu_1\cdots\mu_n}}\qty{-\partial_\sigma A_{\mu_1\cdots\nu_i\cdots\mu_n}\qty(x)\delta\omega^{\mu_i\nu_i}-\partial_\nu A^{\mu_1\cdots\mu_n}\qty(x)\delta\omega_{\sigma}^{\ \nu}+\partial_\rho\partial_\sigma A^{\mu_1\cdots\mu_n}\qty(x)\delta\omega^{\rho\nu}x_\nu}\\
+    \delta\mathcal L&=\partial_\sigma\qty{\delta\omega^{\rho\nu}\pdv{\mathcal L}{\partial_\sigma A^{\mu_1\cdots\mu_n}}\partial_\rho A^{\mu_1\cdots\mu_n}x_\nu}+\partial_\sigma\qty{\delta\omega^{\mu_i\nu_i}\pdv{\mathcal L}{\partial_\sigma A^{\mu_1\cdots\mu_i\cdots\mu_n}}A_{\mu_1\cdots\nu_i\cdots\mu_n}}\\
+    \delta\mathcal L&=\delta\omega^{\rho\nu}\qty{\frac12\partial_\sigma\qty{T^{\sigma}_{\ \rho}x_\nu-T^\sigma_{\ \nu}x_\rho}+\partial_\sigma\qty{\pdv{\mathcal L}{\partial_\sigma A^{[\rho|\cdots\mu_n}}A_{|\nu]\cdots\mu_n}+\cdots+\pdv{\mathcal L}{\partial_\sigma A^{\mu_1\cdots[\rho|}}A_{\mu_1\cdots|\nu]}}}\\
+    &+\frac12\delta\omega^{\rho\nu}\partial_\sigma\qty{\delta^\sigma_{\ \rho}x_\nu\mathcal L-\delta^\sigma_{\ \nu}x_\rho\mathcal L}
+\end{align}
+
+Definindo,$$\mathcal S^{\sigma\mu\nu}=2\qty{\pdv{\mathcal L}{\partial_\sigma A_{[\mu|\cdots\mu_n}}A^{|\nu]\cdots\mu_n}+\cdots+\pdv{\mathcal L}{\partial_\sigma A_{\mu_1\cdots[\mu|}}A^{\mu_1\cdots|\nu]}}$$ $$\mathcal M^{\sigma\mu\nu}=T^{\sigma\mu}x^\nu-T^{\sigma\nu}x^\mu$$ $$\mathcal J^{\sigma\mu\nu}=\mathcal S^{\sigma\mu\nu}+\mathcal M^{\sigma\mu\nu}$$
+
+Concluímos que,
+
+\begin{align}
+    \delta\mathcal L&=\frac12\delta\omega^{\mu\nu}\partial_\sigma\qty{\mathcal S^{\sigma}_{\ \mu\nu}+\mathcal M^{\sigma}_{\ \mu\nu}+\delta^\sigma_{\ \mu}x_\nu\mathcal L-\delta^{\sigma}_{\ \nu}x_\mu\mathcal L}
+\end{align}
+
+Igualando as variações, concluímos que 
+
+\begin{align}
+    \partial_\sigma\mathcal J^{\sigma}_{\ \mu\nu}&=0
+\end{align}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%o  
+
+\end{document}

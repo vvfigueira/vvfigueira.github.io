@@ -1,0 +1,408 @@
+\documentclass[twoside]{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+\usepackage[sorting=none, style=verbose-inote, backend=biber]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphics}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage{tensor}
+\usepackage[lmargin=0.5cm,rmargin=0.5cm, tmargin =1cm,bmargin =1cm]{geometry}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\Det}[1]{\textup{Det} #1}
+\newcommand{\sgn}[1]{\mbox{sgn}\qty(#1)}
+\newcommand{\cqd}{\hfill$\blacksquare$}
+\newcommand{\dbar}{\mbox{\dj}}
+
+\numberwithin{equation}{section}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defi}{Definição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{hip}{Hipótese}[subsection]
+
+\pagestyle{plain}
+
+\AddToHook{cmd/section/before}{\clearpage}
+
+\addbibresource{ref.bib}
+
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{definicao}{Definição}[section]
+\newtheorem{lema}{Lema}[section]
+\newtheorem{hipotese}{Hipótese}[section]
+\newtheorem{postulado}{Postulado}[section]
+
+\newcommand{\thistheoremname}{}
+\newtheorem*{genericthm}{\thistheoremname}
+\newenvironment{namedthm}[1]
+  {\renewcommand{\thistheoremname}{#1}
+   \begin{genericthm}}
+  {\end{genericthm}}
+
+\title{
+Notas de Mecânica Estatística
+}
+\author{
+  Vicente V. Figueira
+       }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{refsection}
+\section{Termodinâmica Antiga}
+
+\subsection{O que é Termodinâmica?}
+
+O princípio básico da Termodinâmica é de que, mesmo sem se conhecer completamente todos os graus de liberdade 
+do sistema, ou até mesmo sem conhecer como é a dinâmica microscópica do sistema, utilizar-se de observáveis 
+macroscópicos para poder inferir a maior quantidade de informação disponível sobre o sistema. Aqui estamos 
+interessados principalmente em sistemas em \emph{equilíbrio}, estes se caracterizam por possuírem propriedades 
+macroscópicas que não variam significativamente no intervalo de tempo no qual está sendo feita a análise do 
+sistema\footnote{Essa afirmação pode soar vaga, pois, dependendo da escala de tempo de interesse fenômenos podem se apresentar como de equilíbrio tanto como fora de equilíbrio.}. Esta definição de o que é equilíbrio é muito vaga, porém, teremos um pouco mais a dizer sobre a natureza 
+do que é equilíbrio quando começarmos a analisar os sistemas do ponto de vista da Mecânica Estatística, que 
+tem como um dos propósitos generalizar as ideias desenvolvidas de forma fenomenológica na Termodinâmica. 
+
+Em suma, a Termodinâmica descreve as propriedades de um sistema em equilíbrio termodinâmico, aqui deve-se 
+entender de equilíbrio termodinâmico como sendo a situação em que quaisquer quantidades macroscópicas mensuráveis possuem um valor fixo.
+
+Para realizar a descrição de um sistema físico, é necessário haver mensuráveis mecânicos que possam estabelecer qual é a situação do sistema, chamaremos esses mensuráveis de \emph{coordenadas generalizadas}, 
+sendo representadas por $\vb x$ as quais possuem suas forças generalizadas conjugadas $\vb J$, um exemplo do 
+que seria uma coordenada generalizada é o volume de um gás, que possui como força generalizada conjugada a 
+pressão do gás. O conjunto de $\vb x$ e $\vb J$ constitui as coordenadas mecânicas do sistema.
+
+Se o sistema é também composto por pedaços elementares --- como um gás é constituído por diversas partículas 
+---, é necessário para especificar o sistema também sabem quantos componentes de cada tipo constituem o 
+sistema, representado por $\vb N$. Por analogia, como uma coordenada $x$ mantém-se em equilíbrio devido a 
+ação de uma força $J$, naturalmente podemos estender esse conceito para argumentar que o número de 
+constituintes de cada tipo mantêm-se constante devido a uma ``força química'', dependente de cada 
+constituinte e representada por $\boldsymbol \mu$, chamada de \emph{potencial químico}.
+
+Feita estas considerações iniciais, a termodinâmica normalmente é formulada partindo-se de três Leis.
+
+\subsection{Lei zero da Termodinâmica}
+
+A lei zero constata um fato \emph{trivial} empírico, a existência de um estado físico de sistemas conhecido 
+como \emph{equilíbrio térmico}, além disso ela também nos indica que este estado de equilíbrio deve estar 
+associado a uma grandeza física que \emph{mede} comparativamente situações de equilíbrio entre dois corpos. Mas, primeiramente devemos fazer algumas suposições sobre o estado de equilíbrio,
+
+\begin{hipotese}
+    Existe um estado macroscópio de todo sistema chamado de \textbf{estado de equilíbrio}, 
+    esse estado é tal que observáveis físicos não variem substancialmente para o intervalo 
+    temporal em que é realizado a análise. O estado de equilíbrio é independente da 
+    configuração microscópica em que o sistema se encontra e pode ser caracterizado por 
+    variáveis macroscópicas cujos valores são mantidos constantes.
+\end{hipotese}
+
+O enunciado mais comum da Lei Zero é,
+
+\begin{namedthm}{Lei Zero}
+    Suponha que ambos dois sistemas $A,B$ estão em equilíbrio térmico com um sistema $C$, então, necessariamente 
+    $A$ está em equilíbrio térmico com $B$.
+\end{namedthm}
+
+Note que a constatação de equilíbrio entre $A$ e $C$ implica em haver algum vínculo entre suas 
+quantidades macroscópicas que descrevem o estado de cada sistema\footcite{kardar} 
+\begin{align}F_{AC}\qty(\vb{x}_A,\vb{J}_A,\vb{N}_A,\boldsymbol{\mu}_A;\vb{x}_C,\vb{J}_C,\vb{N}_C,\boldsymbol{\mu}_C)=0\end{align} Analogamente, 
+\begin{align}F_{BC}\qty(\vb{x}_B,\vb{J}_B,\vb{N}_B,\boldsymbol{\mu}_B;\vb{x}_C,\vb{J}_C,\vb{N}_C,\boldsymbol{\mu}_C)=0\end{align} Até aqui não utilizamos a 
+lei zero, utilizando a lei zero concluímos que \begin{align}F_{AB}\qty(\vb{x}_A,\vb{J}_A,\vb{N}_A,\boldsymbol{\mu}_A;\vb{x}_B,\vb{J}_B,\vb{N}_B,\boldsymbol{\mu}_B)=0\end{align} Assim, note que podemos utilizar $F_{AC}$ para isolar uma das 
+variáveis de $C$ e igualar à $F_{BC}$ com a mesma variável isolada, de modo que obtemos uma relação entre todas as 
+variáveis de $A$ e $B$ e quase todas de $C$ \begin{align}C_1=F'(A,C')=F'(B,C')\end{align} mas já possuímos um vínculo sobre as variáveis de 
+$A$ e $B$, $F_{AB}$, podemos utilizar estas para simplificar a equação anterior, que agora deve valer independentemente dos exatos valores de $\vb{x}_C,\vb{J}_C,\vb{N}_C,\boldsymbol{\mu}_C$, isto é, deve ser válido que existe uma função, \begin{align}\Theta(\vb{x}_A,\vb{J}_A,\vb{N}_A,\boldsymbol{\mu}_A)=\Theta(\vb{x}_B,\vb{J}_B,\vb{N}_B,\boldsymbol{\mu}_B)=\Theta(\vb{x}_C,\vb{J}_C,\vb{N}_C,\boldsymbol{\mu}_C)\end{align}
+
+Este resultado é surpreendente, derivamos que existe um observável físico que depende apenas de 
+quantidades macroscópicas do sistema --- coordenadas, forças, número de componentes e potencial químico --- e que mensura qual é a situação de equilíbrio do sistema. Até agora só temos como 
+afirmar que se $\Theta_A=\Theta_B$ os sistemas $A$ e $B$ estão em equilíbrio termodinâmico. Mas, 
+não sabemos ainda como construir tal função, nem o que podemos dizer sobre o caso $\Theta_A<\Theta_B$.\footnote{Claro que empiricamente já possuímos a noção de que $\Theta$ virá a ser a Temperatura, e possuímos já pré-conceitos sobre suas propriedades.} Normalmente o modo 
+mais comum de se obter a função $\Theta$ é sobre uma \textbf{Equação de Estado}, uma função da 
+forma \begin{align}F\qty(\Theta,\vb{x},\vb{J},\vb{N},\boldsymbol{\mu})=0\end{align} Funções como 
+esta são dependentes de qual é a natureza do sistema analisado e como este se comporta na
+situação de equilíbrio.
+
+\subsection{Primeira Lei da Termodinâmica}
+
+Antes de enunciar a primeira lei, vamos fazer ressalvas com à definições de processos 
+termodinâmicos,
+
+\begin{definicao}
+    Um processo que transforma um sistema de um estado $A$ para um estado $B$ é dito ser 
+    \textbf{quasi-estático}, se esse processo ocorre suficientemente lento para que possa 
+    ser considerado que em cada instante da transformação o sistema está em um estado de 
+    equilíbrio.
+\end{definicao}
+
+Outra definição importante é,
+
+\begin{definicao}
+    Um processo quasi-estático que leva um sistema de um estado $A$ para um sistema $B$ é 
+    dito ser \textbf{reversível} se é possível do processo inverso --- o sistema ir de $B$ 
+    para $A$ --- ocorrer espontaneamente. Um processo que não possui essa propriedade é dito 
+    ser \textbf{irreversível}.
+\end{definicao}
+
+Estamos agora preparados para enunciar e discutir a primeira lei da termodinâmica, que tem sua forma similar ao análogo da Mecânica Clássica, a \emph{conservação de energia}. Mas, devemos fazer algumas considerações antes de enunciá-la,
+
+\begin{hipotese}
+    Para todo sistema termodinâmico em equilíbrio está associado uma função \begin{align}U=U\qty(\Theta,\vb x,\vb J,\vb N,\boldsymbol \mu)\end{align} chamada de \textbf{energia interna}.
+\end{hipotese}
+
+\begin{hipotese}
+    A variação da energia interna de um sistema possui relação com o trabalho realizado sobre 
+    este.
+\end{hipotese}
+
+\begin{hipotese}
+    A alteração do número de constituintes do sistema do tipo $i$ gera uma contribuição para a 
+    variação da energia interna da forma \begin{align}\mu_i\Delta N_i\end{align}
+\end{hipotese}
+
+Agora podemos enunciar a primeira lei como,
+
+\begin{namedthm}{Primeira Lei}
+    Suponha que durante um processo em análise seja fornecido ao sistema uma quantidade $\Delta W$ de trabalho mecânico, 
+    então, parte desse trabalho é aproveitado para alterar a energia interna do sistema $\Delta U$, e o restante não é 
+    aproveitado, sendo chamado de \textbf{calor} $\Delta Q$. Ou seja, \begin{equation}\Delta U=\Delta W+\Delta Q+\boldsymbol\mu\cdot\Delta\vb N\end{equation}
+\end{namedthm}
+
+Certamente, podemos perceber que $\Delta Q$ é uma medida de quanto o sistema foge de uma situação \emph{ideal}, na 
+qual toda a energia aplicada pelo trabalho é convertida para variação de energia interna do sistema. Este tipo de 
+processo no qual $\Delta Q=0$ é dito \textbf{adiabático}, processos que diferem de um adiabático devem satisfazer 
+$\Delta Q\neq 0$ o que implica $\Delta Q<0$. Note que $\Delta Q>0$ não é possível de ser uma situação física, pois 
+esta representaria geração espontânea de energia\footnote{Claramente aqui estamos nos referindo ao $\Delta Q$ do sistema 
+total. Dado um sistema que possa ser decomposto em partes menores, $\Delta Q_T=\Delta Q_A+\Delta Q_B\leq 0$, nada 
+impede que $\Delta Q_A\geq 0$, desde que $\Delta Q_B$ seja compatível com $\Delta Q_T\leq 0$.}, logo, genericamente 
+$$\Delta Q\leq 0$$
+
+Podemos reescrever a primeira lei de forma diferencial, considerando transformações infinitesimais de um sistema. Para isso 
+note que $U$ é de fato uma \textbf{função de estado}, isto é, o sistema em análise é dependente de coordenadas 
+generalizadas macroscópicas $\vb x$ que fixam em qual ponto do \emph{espaço de fase macroscópico} o sistema está 
+localizado, coordenadas essas que estão associadas uma a uma à forças generalizadas macroscópicas $\vb J$ que descrevem 
+os diferentes modos de realizar trabalho no sistema. Com essas considerações somos levados a concluir que existe de 
+fato uma função $U$ a qual podemos diferenciar, obtendo $\dd{U}$. O mesmo raciocínio não é aplicável a $\Delta W$ 
+e $\Delta Q$, pois, a princípio ambos dependem da forma com que o trabalho é realizado no sistema, e portanto não existem 
+funções $Q$ e $W$ das quais possamos obter um diferencial, independentemente deste fato, ainda é 
+possível escrever uma forma como \textbf{diferencial não exato} para eles. Certamente, o infinitesimal de trabalho mecânico 
+total é apenas a soma dos infinitesimais de trabalho de todos os métodos disponíveis para realizar trabalho, enquanto que 
+a relação do diferencial não exato do calor com o diferencial exato de alguma quantidade é motivado a ser definido como,
+
+\begin{align}
+    \dbar W&=\vb J\cdot\dd{\vb x}\\
+    \dbar Q&=T\dd{S}
+\end{align}
+
+No qual ainda não atribuímos significado físico para as quantidades $T$ e $S$\footnote{$T$ necessita de ser a temperatura pela implicação da segunda lei, e para $S$ é dado o nome de \emph{entropia}.}, sendo $T$ apenas o fator integrante tal que 
+$\frac{\dbar Q}{T}$ seja um diferencial exato, e definimos $S$ como sendo a função cujo diferencial exato é $$\dd{S}=\frac{\dbar Q}{T}$$
+
+Vale aqui enfatizar fato de que $\dbar Q$ e $\dbar W$ não são diferenciais de uma função, ao contrário de $\dd{U}$, que 
+pode ser escrito como $$\dd{U}=\grad{U}\cdot\dd\vb x+\pdv{U}{T}\dd{T}$$ que verdadeiramente é o diferencial de uma função.
+
+Após feito estas ressalvas, finalmente podemos escrever a primeira lei da termodinâmica como uma equação entre diferenciais,
+\begin{align}
+    \dd{U}&=\dbar Q+\dbar W\\
+    \dd{U}&=T\dd{S}+\vb J\cdot \dd{\vb x}
+\end{align}
+
+Que trata-se da forma mais fundamental da primeira lei da termodinâmica. Apesar desta reter o nome de \emph{lei}, não há nenhum 
+conteúdo físico no enunciado desta, trata-se apenas de uma definição do que chamamos de \emph{calor} $$\dbar Q=\dd{U}-\dbar W$$ O 
+verdadeiro conteúdo físico sobre esta nova quantidade definida é descrito na segunda lei da termodinâmica, que sim possui conteúdo 
+físico.
+
+Para motivar a aparição de $T$, supomos que o sistema possua apenas coordenada $x$ e força $J$ com número de partículas fixo. 
+Suponha também que sabemos uma função de estado $F(\Theta,x,J)=0$, que implica que podemos escrever $J=J(x,\Theta)$, então,
+
+\begin{align}
+    \dbar Q&=\dd{U}-\dbar W\\
+    \dbar Q&=\pdv{U}{\Theta}\dd\Theta+\pdv{U}{x}\dd x+\pdv{U}{J}\dd J-J\dd x
+\end{align}
+
+Para transformar $\dbar Q$ em um diferencial exato multiplicamos por $\phi=\phi\qty(\Theta,x,J)$
+
+\begin{align}
+    \phi\dbar Q=\dd S&=\phi\pdv{U}{\Theta}\dd\Theta+\phi\qty(\pdv{U}{x}-J)\dd x+\phi\pdv{U}{J}\dd{J}
+\end{align}
+
+Para que seja um diferencial total é necessário,
+
+\begin{align}
+    \begin{cases}\pdv{}{x}\qty[\phi\pdv{U}{\Theta}]&=\pdv{}      
+        {\Theta}\qty[\phi\pdv{U}{x}-\phi J]\\
+        \pdv{}{J}\qty[\phi\pdv{U}{\Theta}]&=\pdv{}{\Theta}\qty[\phi\pdv{U}{J}]\\
+        \pdv{}{J}\qty[\phi\pdv{U}{x}-\phi J]&=\pdv{}{x}\qty[\phi\pdv{U}{J}]
+    \end{cases}
+\end{align}
+
+Que resulta em,
+
+\begin{align}
+    \begin{cases}
+        J\qty(x,\Theta)&=J_x\qty(x)J_\Theta\qty(\Theta)\\
+        \phi\qty(x,\Theta)&=\frac{\kappa}{J_\Theta\qty(\Theta)}\\
+        U\qty(x,\Theta)&=U\qty(\Theta)
+    \end{cases}
+\end{align}
+
+Com $\kappa$ sendo uma constante. Note que tanto $\Theta$ quanto $J_\Theta\qty(\Theta)$ são bons candidatos para o que definimos como temperatura, 
+trata-se apenas de uma mudança de unidades e escala de medida. O principal ponto é que temos uma noção intuitiva de porque o diferencial exato de $S$, 
+a ser discutido o que é, com energia interna e trabalho. Vale notar que quando supõe-se uma equação de estado, estamos supondo que o sistema está em 
+uma situação de equilíbrio, então, as variações analisadas nas quantidades relevantes são resultados de processos \textbf{quasi-estáticos}, outro fato 
+importante, é de que $$\frac{\dbar Q}{T}=\dd{S}$$ apenas para processos \textbf{reversíveis}, que é o conteúdo da próxima lei.
+
+\subsection{Segunda Lei da Termodinâmica}
+
+Vimos na primeira lei que ao realizar trabalho sobre um sistema, parte da energia pode ser degenerada no processo de 
+alterar a energia interna do sistema, a segunda lei da termodinâmica faz restrições sobre qual deve ser o comportamento 
+de $\dbar Q$ sobre transformações de sistemas.
+
+\subsection{Terceira Lei da Termodinâmica}
+
+\printbibliography[heading=subbibliography]
+\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Termodinâmica Moderna}
+
+\subsection{Redução de Princípios}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Teoria de Probabilidade e Informação}
+
+\subsection{Noções Básicas de Probabilidade}
+
+\subsection{Problema da Informação Limitada}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Mecânica Estatística Clássica}
+
+\subsection{O que é Mecânica Estatística?}
+
+Sempre ao começarmos o estudo de uma modelagem teórica da Física temos que nos perguntar, qual a motivação de estarmos fazendo o que fazemos? Pois apenas métodos matemáticos sem a fundação de doutrina de trabalho não geram muitos frutos. Assim portanto iniciamos nossa discussão abordando este tema, qual o objetivo da Mecânica Estatística.
+
+Devemos começar nossa discussão com algo ainda mais fundamental, qual é o método de trabalho da Física? O princípio fundamental em que nos baseamos é, fazemos uma medição de algum observável físico $A\qty(\vb y)$, que depende de variáveis internas do sistema $\vb y$, que por sua vez podem ou não serem acessíveis experimentalmente. Certamente como essa medida feita em laboratório não é perfeita, o que obtemos é um valor esperado $\expval{A\qty(\vb y)}$, e possivelmente seus momentos, $\expval{A^n\qty(\vb y)}$. A grande questão é, o quanto de informação sobre o sistema ganhamos sabendo $\expval{A\qty(\vb y)}$? Supomos que possuímos algum outro observável $B\qty(\vb y)$ que depende dos mesmos parâmetros internos do sistema dos quais $A\qty(\vb y)$ depende, é possível fazer uma estimativa de $\expval{B\qty(\vb y)}$ apenas com a informação de $\expval{A\qty(\vb y)}$ e nenhuma outra informação adicional sobre os próprios $\vb y$? E quão bem podemos fazer esta estimativa?
+
+Todo esse questionamento pode parecer não muito objetivo. Suponha que estamos analisando um sistema de uma partícula livre dentro de uma caixa sem forças externas, quais são os parâmetros $\vb y$ para fazer uma caracterização do sistema? As dimensões da caixa, posição $\vb q$ da partícula, seu momento $\vb p$ e sua massa. É realmente necessário realizar todo uma manipulação engenhosa de valores esperados para se retirar informação de observáveis desse sistema? Ao que tudo indica basta medirmos cuidadosamente cada parâmetro e poderíamos ter uma caracterização do sistema tão boa quanto desejável. Porém suponhamos que não possuímos apenas uma partícula dentro desta caixa, mas sim um número $N$ de partículas, se desejamos fazer uma caracterização do sistema seria necessário fazer medições de $6N$ variáveis, e para um sistema macroscópico médio temos $N=10^{23}$ o que torna infactível tal procedimento. Apesar de \emph{em teoria} 
+ser possível escrever as equações de Hamilton para todas as partículas, resolvê-las é não trivial e até mesmo computacionalmente torna se um desafio devido o enorme número de variáveis.
+
+Como prosseguir? Suponhamos que soubéssemos realmente \textbf{todos} os parâmetros $\vb y$ que caracterizam o sistema \textbf{exatamente}, que tipo de situação é esta? Neste caso o sistema está confinado exatamente em um ponto no espaço de fase, a informação disponível é máxima. Mas uma situação real difere desta, sabemos algumas variáveis e estas por sua vez possuem incertezas, mas certamente como possuímos algum tipo de informação, o conjunto dos pontos do espaço de fase que \emph{podem representar o sistema} é um subconjunto do espaço de fase total. Certamente se não possuímos nenhuma informação sobre o sistema todos os pontos do espaço de fase são possíveis representações do sistema físico em análise. Vamos frisar o fato de que \emph{sempre} o sistema físico está localizado em apenas um ponto do espaço de fase, mas não possuímos esta informação, portanto consideramos como possíveis representações todos os pontos do espaço de fase que são compatíveis com a informação disponível.
+
+Até agora sabemos que com a informação que obtemos experimentalmente podemos restringir os pontos do espaço de fase dos quais consideramos acessíveis a nosso sistema, porém, podemos inferir a partir da informação disponível qual seriam os pontos do espaço de fase com \emph{maior ou menor probabilidade} de representar o sistema em análise? A princípio tal pergunta aparenta ser irrelevante, já que todos os microestados, pontos no espaço de fase, que são compatíveis, são compatíveis, porque não assumir que todos são igualmente prováveis de descrever corretamente o sistema? Aqui entra um argumento sutil, caso a informação disponível seja sabida com incerteza \textbf{zero}, este realmente é o caso, todos os microestados são igualmente prováveis, porém, geralmente não possuímos tamanha precisão de medida, o que torna alguns microestados mais prováveis que outros. O que nos leva a pensar, existe uma maneira única e canônica de fazer uma atribuição de probabilidades para eventos de forma a garantir que tenhamos a menor ignorância possível dentro da informação disponível?
+
+Comecemos considerando um sistema de uma variável aleatória $X$ com $N$ possíveis valores permitidos $x_1,\cdots,x_N$, cada qual com probabilidades $p_i$ que supostamente não nos são acessíveis. Quanto de incerteza temos com relação a uma probabilidade de $p_i=1$? Zero, temos certeza total do processo que ocorre, e, certamente quanto menor a probabilidade mais incertos nos tornamos em relação ao processo. O que desejamos é formalizar em uma expressão matemática o que qualitativamente chamamos aqui por incerteza, assim, podemos maximizá-la com relação a informação disponível. A uma primeira vista parece contraditório que na busca pela maior quantidade de informação possível do sistema tenhamos que maximizar a incerteza que temos sobre este, porém, nosso maior desejo não é apenas extrair a maior quantidade de informação sobre o sistema, mais sim extrair a maior quantidade de informação sobre o sistema sem fazer considerações adicionais que não sejam informações das quais dispomos e que estão contidas nos vínculos nos quais a incerteza está sendo maximizada. Dessa forma o processo de maximização da incerteza é na verdade um processo cuidadoso de checagem sobre nosso viés no sistema.
+
+Das propriedades importantes que nossa grandeza \emph{incerteza} deve possuir já listamos algumas, sendo elas,
+
+\begin{itemize}
+    \item $s\qty(1)=0$.
+    \item $s\qty(pq)=s\qty(p)+s\qty(q)$ se $p$ e $q$ são probabilidades de eventos independentes.
+    \item $s\qty(p)$ é uma função contínua ao menos duas vezes diferenciável e côncava
+\end{itemize}
+
+Essas condições per si determinam o tipo de função que desejamos,
+
+\begin{align}
+    s\qty(pq)&=s\qty(p)+s\qty(q)\nonumber\\
+    q\pdv{s}{p}\qty(pq)&=\pdv{s}{p}\qty(p)
+\end{align}
+
+\subsection{Conceitos Básicos}
+
+A mecânica estatística se baseia quase totalmente sobre o princípio da entropia máxima, que é o que descreve sistemas em equilíbrio. O conceito de entropia surge da teoria da informação como uma caracterização da informação que nos é disponível. 
+
+Dentro da teoria da informação, um dos grandes problemas era o seguinte, suponha haver uma variável discreta que possa assumir $N$ valores, $X\in\qty{x_1,\cdots, x_N}$, não possuímos nenhuma informação adicional sobre essa variável, e nós é requisitado realizar a melhor estimativa possível das probabilidades $P_1,\cdots, P_N$ relacionadas a cada valor acessível, dentro da condição de que nossa estimativa para $P_i$ deve ser tal que retrate o fato de não incluirmos de forma alguma qualquer tipo de informação adicional que não possuímos. Como deveria ser feito tal processo? A resposta é trivial, uma distribuição uniforme! Porém, digamos que possuímos informação adicional, ou até vínculos entre as probabilidades, como haveria de ser feito esse processo de escolha genericamente?
+
+A questão pode ser melhor formulada se for possível construir uma função que meça a quantidade de informação que uma distribuição de probabilidades possui. Para isso vamos listar algumas propriedades que gostaríamos que tal função satisfizesse:
+
+\begin{itemize}
+    \item $S\qty(\qty{P_i})$ deve assumir o menor valor possível para a distribuição de maior informação possível, $$P_i=\delta_{ij}$$ Tal menor valor possível é tomado como zero.
+    \item Supomos que $S\qty(\qty{P_i})$ é da forma, $$S\qty(\qty{P_i})=\sum\limits_{j=1}^{N}s\qty(P_j)$$
+    \item $s\qty(P_i)$ é uma função contínua, diferenciável e côncava
+    \item Se $P^A_i$ refere-se a um sistema $A$ que é independente de outro sistema $B$ descrito por $P^B_i$, então,
+    $$S\qty(\qty{P^{AB}_i})=S\qty(\qty{P^A_i})+S\qty(\qty{P^B_i})$$
+\end{itemize}
+
+\subsection{Hipóteses da Mecânica Estatística Clássica de Equilíbrio}
+
+\subsubsection{Hipótese Ergódica}
+
+A principal ideia que nos permite fazer comparações entre cálculos teóricos de Mecânica Estatística com 
+valores medidos experimentalmente é de que, quando em equilíbrio, um sistema clássico definido como um ponto 
+no espaço de fase, percorre uma trajetória no espaço de fase tal que quase todo ponto do espaço de fase 
+total possui uma vizinhança de raio não nulo que intersecta a trajetória do sistema. Este fato nos permite 
+concluir que uma média realizada no \emph{ensamble} é de fato equivalente a uma média \emph{temporal} de qualquer 
+quantidade, pois, em um intervalo de tempo grande o suficiente o sistema percorre quase todos os pontos do 
+espaço de fase. 
+
+Vale enfatizar que sem essa condição, nenhum dos cálculos realizados teria qualquer tipo de correlação com 
+observáveis físicos.
+
+\subsubsection{Hipótese Entrópica}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Mecânica Estatística Quântica}
+
+\subsection{Mudanças do Clássico para Quântico}
+
+\subsection{Hipóteses da Mecânica Estatística Quântica de Equilíbrio}
+
+\subsubsection{Hipótese Ergódica}
+
+\subsubsection{Hipótese Entrópica}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Mecânica Estatística Relativística}
+
+\subsection{Mudanças do Clássico para Relativístico}
+
+\subsection{Hipóteses da Mecânica Estatística Relativística de Equilíbrio}
+
+\subsubsection{Hipótese Ergódica}
+
+\subsubsection{Hipótese Entrópica}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

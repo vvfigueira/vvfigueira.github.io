@@ -1,0 +1,136 @@
+\documentclass[twoside]{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphics}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage[lmargin=0.5cm,rmargin=0.5cm, tmargin =1cm,bmargin =1cm]{geometry}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\Det}[1]{\textup{Det} #1}
+\newcommand{\cqd}{\hfill$\blacksquare$}
+
+\numberwithin{equation}{section}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defi}{Definição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{hip}{Hipótese}[subsection]
+
+\pagestyle{plain}
+
+\AddToHook{cmd/section/before}{\clearpage}
+
+\title{
+Srednicki Capítulo 1
+}
+\author{
+  Vicente V. Figueira
+       }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercício 1}
+
+\begin{align*}
+    H_{ab}H_{bc}&=\qty(\luz P_j\alpha^j_{ab}+m\luz^2\beta_{ab})\qty(\luz P_k\alpha^k_{bc}+m\luz^2\beta_{bc})\\
+    &=\luz^2P_j\alpha^j_{ab}P_k\alpha^k_{bc}+m\luz^3P_j\alpha^j_{ab}\beta_{bc}+m\luz^3 P_k\beta_{ab}\alpha^k_{bc}+m^2\luz^4\beta_{ab}\beta_{bc}\\
+    &=\frac{\luz^2}{2}P_jP_k\qty(\alpha^j\alpha^k+\alpha^k\alpha^j)_{ac}+m\luz^3P_j\qty(\alpha^j\beta+\beta\alpha^j)_{ac}+m^2\luz^4\beta^2_{ac}\\
+    \Rightarrow &\qty(\alpha^j\alpha^k+\alpha^k+\alpha^j)_{ac}=\acomm{\alpha^j}{\alpha^k}_{ac}=2\delta^{jk}\delta_{ac}\\
+    &\qty(\alpha^j\beta+\beta\alpha^j)_{ac}=\acomm{\alpha^j}{\beta}_{ac}=0\\
+    &\beta^2_{ac}=\frac12\acomm{\beta}{\beta}_{ac}=\delta_{ac}
+\end{align*}
+
+Os auto-valores de $\beta$ são,
+
+\begin{align*}
+    &\beta v = \lambda v\Rightarrow \beta^2 v=\lambda v= \lambda^2 v\\
+    &\Rightarrow v=\lambda^2 v\Rightarrow \lambda =\pm 1
+\end{align*}
+
+Como $\alpha^j\beta=-\beta\alpha ^j\Rightarrow \beta=-\alpha^j\beta\alpha^j$, temos que,
+
+\begin{align*}
+    \Tr\qty[\beta]&=-\Tr\qty[\alpha^j\beta\alpha^j]=-\Tr\qty[\alpha^j\alpha^j\beta]\\
+    &=-\Tr\qty[\beta]\Rightarrow\Tr\qty[\beta]=0
+\end{align*}
+
+Logo $\beta$ possui número igual de auto-valores $+1$ e $-1$, logo, tem dimensão par.
+
+Para $\alpha^j$,
+
+\begin{align*}
+    &\alpha^j v = \lambda v\Rightarrow {\alpha^j}^2 v=\lambda v= \lambda^2 v\\
+    &\Rightarrow v=\lambda^2 v\Rightarrow \lambda =\pm 1
+\end{align*}
+
+Como $\alpha^j\beta=-\beta\alpha ^j\Rightarrow \alpha^j=-\beta\alpha^j\beta$, temos que,
+
+\begin{align*}
+    \Tr\qty[\alpha^j]&=-\Tr\qty[\beta\alpha^j\beta]=-\Tr\qty[\alpha^j\beta^2]\\
+    &=-\Tr\qty[\alpha^j]\Rightarrow\Tr\qty[\alpha^j]=0
+\end{align*}
+
+Logo pelo mesmo argumento $\alpha^j$ tem dimensão Par!\cqd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercício 2}
+
+Para $n=1$,
+
+\begin{align*}
+    H\ket{\phi; t}&=\int\dd[3]{\vb x} a^\dagger\qty(\vb x)\qty[-\frac{\hbar^2}{2m}\laplacian_x+U\qty(\vb x)]a\qty(\vb x)\int\dd[3]{\vb x_1}\phi\qty(\vb x_1;t)a^\dagger\qty(\vb x_1)\ket 0\\
+    &+\frac12\int\dd[3]{\vb x}\dd[3]{\vb y}V\qty(\vb x-\vb y)a^\dagger\qty(\vb x)a^\dagger\qty(\vb y)a\qty(y)a\qty(\vb x)\int\dd[3]{\vb x_1}\phi\qty(\vb x_1;t)a^\dagger\qty(\vb x_1)\ket 0\\
+    &=\int\dd[3]{\vb x}\dd[3]{\vb x_1}a^\dagger\qty(\vb x)\qty[-\frac{\hbar^2}{2m}\laplacian_x+U\qty(\vb x)]\phi\qty(\vb x; t)\qty(a^\dagger\qty(\vb x_1)a\qty(\vb x)+\delta^{\qty(3)}\qty(\vb x-\vb x_1))\ket 0\\
+    &+\frac12\int\dd[3]{\vb x}\dd[3]{\vb y}V\qty(\vb x-\vb y)\phi\qty(\vb x_1;t)a^\dagger\qty(\vb x)a^\dagger\qty(\vb y)a\qty(\vb y)\qty(a^\dagger\qty(\vb x_1)a\qty(\vb x)+\delta^{\qty(3)}\qty(\vb x-\vb x_1))\ket 0\\
+    &=\int\dd[3]{\vb x}a^\dagger\qty(\vb x)\qty[-\frac{\hbar}{2m}\laplacian_x+U\qty(\vb x)]\phi\qty(\vb x;t)\ket 0\\
+    &=\int\dd[3]{\vb x}a^\dagger\qty(\vb x)\im \hbar\pdv{}{t}\phi\qty(\vb x;t)\ket 0=\im\hbar\pdv{}{t}\ket{\phi;t}
+\end{align*}
+
+Analogamente,
+
+\begin{align*}
+    \im\hbar\pdv{}{t}\int\dd[3]{\vb x_1}\phi\qty(\vb x_1;t)a^\dagger\qty(\vb x_1)\ket 0&=\int\dd[3]{\vb x}a^\dagger\qty(\vb x)\qty[-\frac{\hbar^2}{2m}\laplacian_x+U\qty(\vb x)]a\qty(\vb x)\int\dd[3]{\vb x_1}\phi\qty(\vb x_1;t)a^\dagger\qty(\vb x_1)\ket 0\\
+    &=\int\dd[3]{\vb x}\dd[3]{\vb x_1}a^\dagger\qty(\vb x)\qty[-\frac{\hbar}{2m}\laplacian_x+U\qty(\vb x)]\phi\qty(\vb x_1;t)\qty(a^\dagger\qty(\vb x_1)a\qty(\vb x)+\delta^{\qty(3)}\qty(\vb x_1-\vb x))\ket 0\\
+    &=\int\dd[3]{\vb x}a^\dagger\qty(\vb x)\qty[-\frac{\hbar^2}{2m}\laplacian_x+U\qty(\vb x)]\phi\qty(\vb x;t)\ket 0\\
+    \Rightarrow\im\hbar\pdv{}{t}\phi\qty(\vb x;t)&=\qty(-\frac{\hbar^2}{2m}+U\qty(\vb x))\phi\qty(\vb x;t)
+\end{align*}
+
+Por indução está provado.\cqd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercício 3}
+
+\begin{align*}
+    \comm{N}{H}&=\comm{\int\dd[3]{\vb x}a^\dagger\qty(\vb x)a\qty(\vb x)}{\int\dd[3]{\vb y}a^\dagger\qty(\vb y)\qty[-\frac{\hbar^2}{2m}\laplacian_y+U\qty(y)]a\qty(\vb y)}\\
+    &=\int\dd[3]{\vb x}\dd[3]{\vb y}\qty{a^\dagger\qty(\vb x)a\qty(\vb x)a^\dagger\qty(\vb y)\qty[-\frac{\hbar^2}{2m}\laplacian_y+U\qty(y)]a\qty(\vb y)-a^\dagger\qty(\vb y)\qty[-\frac{\hbar^2}{2m}\laplacian_y+U\qty(y)]a\qty(\vb y)a^\dagger\qty(\vb x)a\qty(\vb x)}\\
+    &=\int\dd[3]{\vb x}\dd[3]{\vb y}\qty{a^\dagger\qty(\vb x)a\qty(\vb x)a^\dagger\qty(\vb y)\qty[-\frac{\hbar^2}{2m}\laplacian_y+U\qty(y)]a\qty(\vb y)-a^\dagger\qty(\vb y)\qty[-\frac{\hbar^2}{2m}\laplacian_y+U\qty(y)]\qty(a^\dagger\qty(\vb x)a\qty(\vb y)+\delta^{\qty(3)}\qty(\vb y-\vb x))a\qty(\vb x)}\\
+    &=\int\dd[3]{\vb x}\dd[3]{\vb y}a^\dagger\qty(\vb x)\qty(a\qty(\vb x)a^\dagger\qty(\vb y)-a^\dagger\qty(\vb y)a\qty(\vb x))\qty[-\frac{\hbar^2}{2m}\laplacian_y+U\qty(y)]a\qty(\vb y)-\int\dd[3]{\vb y}a^\dagger\qty(\vb y)\qty[-\frac{\hbar^2}{2m}\laplacian_y+U\qty(\vb y)]a\qty(\vb y)\\
+    &=\int\dd[3]{\vb x}\dd[3]{\vb y}a^\dagger\qty(\vb x)\delta^{\qty(3)}\qty(\vb x-\vb y)\qty[-\frac{\hbar^2}{2m}\laplacian_y+U\qty(y)]a\qty(\vb y)-\int\dd[3]{\vb y}a^\dagger\qty(\vb y)\qty[-\frac{\hbar^2}{2m}\laplacian_y+U\qty(\vb y)]a\qty(\vb y)\\
+    &=0
+\end{align*}
+\cqd
+
+\end{document}

@@ -1,0 +1,134 @@
+\documentclass[twoside]{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+\usepackage[sorting=none, style=verbose-inote, backend=biber]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphics}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage{tensor}
+\usepackage[lmargin=0.5cm,rmargin=0.5cm, tmargin =1cm,bmargin =1cm]{geometry}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\Det}[1]{\textup{Det} #1}
+\newcommand{\sgn}[1]{\mbox{sgn}\qty(#1)}
+\newcommand{\cqd}{\hfill$\blacksquare$}
+
+\numberwithin{equation}{section}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defi}{Definição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{hip}{Hipótese}[subsection]
+
+\pagestyle{plain}
+
+\AddToHook{cmd/section/before}{\clearpage}
+
+\addbibresource{ref.bib}
+
+\title{
+Notas de Mecânica Quântica
+}
+\author{
+  Vicente V. Figueira
+       }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Introdução}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Mecânica Quântica}
+
+\subsection{Conjunto Axiomático}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{refsection}
+\section{Momento Angular}
+
+Gostaríamos de estudar como o sistema que estamos analisando é afetado por rotações das coordenadas, certamente, isso está motivado pela grande importância das rotações em sistemas clássicos. Começamos por definir o que é uma rotação, uma rotação é uma transformação das coordenadas $x_i$ tais que o produto interno ordinário se preserva, isso é, uma rotação não afeta o módulo de vetores, apenas sua orientação. Intuitivamente segue que rotações devem serem lineares, isto é, uma rotação pode então ser representada por,
+
+\begin{align}
+    x'&=Rx\nonumber\\
+    x'_i&=\sum\limits_j R_{ij}x_j
+\end{align}
+
+A condição\footcite{sakurai} de estas preservarem o produto interno pode ser escrita como,
+
+\begin{align}
+    \vb x\cdot \vb y&=\vb x'\cdot \vb y'\nonumber\\
+    \sum\limits_i x_iy_i&=\sum\limits_i\qty(\sum\limits_j R_{ij}x_j)\qty(\sum\limits_k R_{ik}y_k)\nonumber\\
+    \sum\limits_{j,k}\delta_{j,k}x_jy_k&=\sum\limits_{j,k}x_jy_k\sum\limits_i R_{ij}R_{ik}\nonumber\\
+    \delta_{j,k}&=\sum\limits_i R_{ij}R_{ik}\nonumber\\
+    \mathbbm 1 &=R^T R
+\end{align}
+
+Essa clase de matrizes são ditas \emph{ortogonais}, o conjunto das matrizes ortogonais $N$ dimensionais forma a estrutura de um grupo, chamado comumente de $O\qty(N)$, porém, note que neste grupo temos matrizes que possuem o determinante tanto positivo quanto negativo. Rotações não podem ter o determinante negativo, pois, todas as rotações dependem de parâmetros contínuos, e, podem serem levadas continuamente até a rotação trivial, que possui determinante $+1$, portanto todas devem satisfazer a condição de $\mbox{Det\ } R = +1$. Todas outras transformações em $O\qty(N)$ com determinante negativo correspondem a rotações ordinárias compostas com inversões espaciais. Para isso, o grupo apenas de matrizes ortogonais com determinante positivo unitário é chamado de $SO\qty(N)$. 
+
+Certamente associada a essa transformação de variáveis está ligada uma transformação no espaço de Hilbert dos estados quânticos, gostaríamos de entender como estas são descritas. Para isso, note que sempre podemos considerar rotações infinitesimais como,
+
+\begin{align}
+    R&=\mathbbm 1+\omega+\mathcal O\qty(\omega^2)\nonumber\\
+    R_{ij}&=\delta_{ij}+\omega_{ij}+\mathcal O\qty(\omega ^2)
+\end{align}
+
+A aplicação da condição de ortogonalidade resulta em,
+
+\begin{align}
+    \mathbbm 1&=R^TR\nonumber\\
+    \mathbbm 1&=\qty(\mathbbm 1+\omega^T+\mathcal O\qty(\omega^2))\qty(\mathbbm 1-\omega+\mathcal O\qty(\omega^2))\nonumber\\
+    \mathbbm 1&=\mathbbm 1-\omega +\omega^T+\mathcal O\qty(\omega^2)\nonumber\\
+    \omega^T&=-\omega\nonumber\\
+    \omega_{ij}&=-\omega_{ji}
+\end{align}
+
+Ou seja, as matrizes $\omega$ são antissimétricas. O operador que atua no espaço de Hilbert deve, para rotações infinitesimais, necessariamente ser expressável como,
+
+\begin{align}
+    U\qty(\mathbbm 1+\omega)&=\mathbbm 1+\frac{i}{2\hbar}\sum\limits_{i,j}\omega_{ij}M_{ij}+\mathcal O \qty(\omega^2)
+\end{align}
+
+Na qual $J_{ij}$ são operadores que podem serem tomados como sendo antissimétricos. Uma informação a mais que podemos obter é sobre a álgebra descrita pelos operadores $M$, que pode ser obtida notando que,
+
+\begin{align}
+    U^{-1}\qty(R')U\qty(\mathbbm 1+\omega)U\qty(R')&=U\qty(\mathbbm 1+{R'}^{-1}\omega R')\nonumber\\
+    U^{-1}\qty(R')\qty(\mathbbm 1+\frac{i}{2\hbar}\sum\limits_{i,j}\omega_{ij}M_{ij}+\mathcal O \qty(\omega^2))U\qty(R')&=\mathbbm 1+\frac{i}{2\hbar}\sum\limits_{k,l}\sum\limits_{i,j}{R'}_{ik}\omega_{ij}{R'}_{jl}M_{kl}+\mathcal O\qty(\omega^2)\nonumber\\
+    U^{-1}\qty(R')M_{ij}U\qty(R')&=\sum\limits_{k,l}{R'}_{ik}{R'}_{jl}M_{kl}
+\end{align}
+
+\printbibliography[heading=subbibliography]
+\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

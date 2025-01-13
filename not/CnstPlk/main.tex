@@ -1,0 +1,197 @@
+\documentclass[twoside]{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+\usepackage[sorting=none, style=verbose-inote, backend=biber]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphics}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage{tensor}
+\usepackage[lmargin=0.5cm,rmargin=0.5cm, tmargin =1cm,bmargin =1cm]{geometry}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1\: }
+\newcommand{\Det}[1]{\textup{Det} #1}
+\newcommand{\sgn}[1]{\mbox{sgn}\qty(#1)}
+\newcommand{\cqd}{\hfill$\blacksquare$}
+
+\numberwithin{equation}{section}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defi}{Definição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{hip}{Hipótese}[subsection]
+
+\pagestyle{plain}
+
+\AddToHook{cmd/section/before}{\clearpage}
+
+%\addbibresource{ref.bib}
+
+\title{
+Origem da Constante de Planck
+}
+\author{
+  Vicente V. Figueira
+       }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Introdução}
+
+Introdução
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Cálculo}
+  
+Da teoria da informação sabemos que precisamos maximizar a quantidade 
+$$\mathcal I\qty[p]=-\int\Dd {x}p\qty[x]\ln\qty(\frac{p\qty[x]}{m\qty[x]})$$ Com as devidas condições 
+de contorno. No nosso caso, a condição de contorno é da \textbf{ação média ser a ação clássica}, isto é,
+$$\int\Dd xp\qty[x]S\qty[x]=S[x_{\textnormal{cl}}]$$ Com é claro $x_{\textnormal{cl}}\qty(t)$ sendo 
+definido por, $$\fdv{S}{x\qty(t)}\qty[x_{\textnormal{cl}}]=0$$ Logo, o que devemos maximizar é,
+
+\begin{align*}
+    \mathcal I\qty[p]&=-\int\Dd x\ln\qty(\frac{p\qty[x]}{m\qty[x]})-\alpha\qty(\int\Dd xp\qty[x]S\qty[x]-S\qty[x_{\textnormal{cl}}])\\
+    &\begin{cases}
+        \fdv{\mathcal I}{p\qty[x]}&=0=-\ln\qty(\frac{p\qty[x]}{m\qty[x]})-1-\alpha S\qty[x]\\
+        \pdv{\mathcal I}{\alpha}&=0=\int\Dd xp\qty[x]S\qty[x]-S[x_{\textnormal{cl}}]
+    \end{cases}\\
+    p\qty[x]&=m\qty[x]\exp\qty(-\alpha S\qty[x]-1)\\
+    S\qty[x_{\textnormal{cl}}]&=\int\Dd{x}m\qty[x]\exp\qty(-\alpha S\qty[x]-1)S\qty[x]
+\end{align*}
+  
+Definimos assim $$m\qty[x]=\qty(\int\Dd x\exp\qty(-\alpha S\qty[x]-1))^{-1}$$ Dessa forma, podemos escrever,
+$$Z\qty(\alpha)=\int\Dd x\exp\qty(-\alpha S\qty[x])$$ Onde a condição se torna
+$$-\pdv{}{\alpha}\ln\qty[Z\qty(\alpha)]=S\qty[x_\textnormal{cl}]$$
+
+Resume-se o cálculo à calcular $Z\qty(\alpha)$. Impomos os vínculos do caminho como sendo, $$x\qty(t_{\textnormal i})=x_{\textnormal i},\ x\qty(t_{\textnormal f})=x_{\textnormal f}$$
+Dividimos em $N$ partes com $x_0=x_{\textnormal i},\ x_N=x_{\textnormal f},\ \Delta t=\frac{t_{\textnormal f}-t_{\textnormal i}}{N}$,
+
+\begin{align*}
+    Z\qty(\alpha)&=\lim\limits_{N\rightarrow \infty}\int\prod\limits_{j=1}^{N-1}\dd{x_j}\exp\qty{-\frac{\alpha m}{2}\sum\limits_{k=1}^N\frac{\qty(x_k-x_{k-1})^2}{{\Delta t}^2}\Delta t}\\
+    &=\lim\limits_{N\rightarrow \infty}\qty(\frac{2\Delta t}{\alpha m})^{\frac{N-1}{2}}\int\prod\limits_{j=1}^{N-1}\dd{y_j}\exp\qty{-\sum\limits_{k=1}^N\qty(y_{k}-y_{k-1})^2}\\
+    &=\lim\limits_{N\rightarrow \infty}\qty(\frac{2\Delta t}{\alpha m})^{\frac{N-1}{2}}\frac{\pi^{\frac{N-1}{2}}}{N^{\frac12}}\exp\qty{-\frac{\qty(y_N-y_0)^2}{N}}\\
+    &=\lim\limits_{N\rightarrow \infty}\qty(\frac{2\Delta t\pi}{\alpha m})^{\frac{N-1}{2}}\frac{1}{\sqrt{N}}\exp\qty{-\frac{\alpha m}{2}\frac{\qty(x_{\textnormal f}-x_{\textnormal i})^2}{t_{\textnormal f}-t_{\textnormal i}}}\\
+    &=\exp\qty{-\alpha S\qty[x_{\textnormal{cl}}]}\lim\limits_{N\rightarrow \infty}\qty(\frac{2\pi\qty(t_{\textnormal f}-t_{\textnormal i})}{\alpha m})^{\frac{N-1}{2}}N^{-\frac N2}
+\end{align*}
+
+O que é claramente divergente, pois é necessário uma normalização da integral funcional, a normalização tem 
+origem no fato de que,
+
+\begin{align*}
+    \int\limits_{{\mathbb R}^D}\dd[D]{\vb x}\exp\qty(- \frac\pi a\vb x\cdot\vb x)&=a^{\frac D2}
+\end{align*}
+
+Para o limite $D\rightarrow\infty$,
+
+\begin{align*}
+    a^\infty&=\begin{cases}
+        0&:\quad0<a<1\\
+        1&:\quad a=1\\
+        \infty&:\quad a>1
+    \end{cases}
+\end{align*}
+
+Que não é contínua no parâmetro $a$. Uma das possibilidades é tomar a medida,
+
+\begin{align*}
+    \int\Dd{x}\exp\qty(-\frac\pi ax^2)=\lim\limits_{D\rightarrow \infty}\int\limits_{{\mathbb R}^D}\prod\limits_{j=1}^D\qty(a^{-\frac12}\dd{x_j})\exp\qty(- \frac\pi a\vb x\cdot\vb x)=1   
+\end{align*}
+
+Logo para cada $\dd{x_j}$ é necessário adicionar um fator de normalização $R_N$ dependente da quantidade 
+de intervalos de divisão. Como $R_N$ deve ter dimensão de inverso de comprimento, a dependência em $\alpha, m, t_{\textnormal f}-t_{\textnormal i}$ é fixada, 
+a dependência adicional em $N$ é tal que previne a divergência da integral, a definir temos uma função arbitrária 
+adimensional da variável $$\lambda = \frac{\alpha m\qty(x_{\textnormal f}-x_{\textnormal i})^2}{2\qty(t_{\textnormal f}-t_{\textnormal i})}=\alpha S\qty[x_{\textnormal{cl}}]$$
+
+\begin{align*}
+    Z\qty(\alpha)&=\exp\qty{-\alpha S\qty[x_{\textnormal{cl}}]}\lim\limits_{N\rightarrow \infty}\qty(\frac{2\pi\qty(t_{\textnormal f}-t_{\textnormal i})}{\alpha m})^{\frac{N-1}{2}}N^{-\frac N2}R^{N-1}_N\\
+    Z\qty(\alpha)&=\exp\qty{-\alpha S\qty[x_{\textnormal{cl}}]}\lim\limits_{N\rightarrow \infty}\qty(\frac{2\pi\qty(t_{\textnormal f}-t_{\textnormal i})}{\alpha m})^{\frac{N-1}{2}}N^{-\frac N2}\qty(\sqrt{\frac{\alpha m}{2\pi\qty(t_{\textnormal f}-t_{\textnormal i})}})^{N-1}\qty(N^{\frac{N}{2\qty(N-1)}})^{N-1}F\qty(\alpha S\qty[x_{\textnormal{cl}}])\\
+    Z\qty(\alpha)&=\exp\qty{-\alpha S\qty[x_{\textnormal{cl}}]}F\qty(\alpha S\qty[x_{\textnormal {cl}}])\\
+    \ln Z&=-\alpha S\qty[x_{\textnormal{cl}}]+\ln F\\
+    -\pdv{}{\alpha}\ln Z&=S\qty[x_{\textnormal{cl}}]-\frac{1}{F}\pdv{}{\alpha}F \buildrel!\over=S\qty[x_{\textnormal{cl}}]\Rightarrow F\equiv 1
+\end{align*}
+
+Portanto a densidade de probabilidade é,
+
+$$p\qty[x]=\exp\qty(-\alpha S\qty[x]+\alpha S\qty[x_{\textnormal{cl}}])$$
+
+Outro cálculo possível de ser feito é o da posição média em um tempo $t_{\textnormal i}<t<t_{\textnormal f}$,
+
+\begin{align*}
+    \expval{x\qty(t)}&=\int\Dd xx\qty(t)\exp\qty(-\frac{\alpha m}{2}\int\limits_{t_{\textnormal i}}^{t_{\textnormal f}}\dd{t'}\dot x^2\qty(t'))\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}R_N^{N-1}\int\prod\limits_{j=1}^{N-1}\dd{x_j}x_l\exp\qty(-\frac{\alpha m}{2\Delta t}\sum\limits_{k=1}^N\qty(x_k-x_{k-1})^2)\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}R_N^{N-1}\qty(\frac{2\Delta t}{\alpha m})^{\frac N2}\int\prod\limits_{j=1}^{N-1}\dd{y_j}y_l\exp\qty(-\sum\limits_{k=1}^N\qty(y_k-y_{k-1})^2)\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}R_N^{N-1}\qty(\frac{2\Delta t}{\alpha m})^{\frac N2}\frac{\pi^{\frac{l-1}{2}}}{l^{\frac12}}\frac{\pi^{\frac{N-l-1}{2}}}{\qty(N-l)^{\frac12}}\int\dd{y_l}y_l\exp\qty(-\frac{1}{l}\qty(y_l-y_0)^2-\frac{1}{N-l}\qty(y_N-y_l)^2)\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}R_N^{N-1}\qty(\frac{2\Delta t}{\alpha m})^{\frac N2}\frac{\pi^{\frac{N-2}{2}}}{l^{\frac12}\qty(N-l)^{\frac12}}\times\\
+    &\quad\times\int\dd{y_l}y_l\exp\qty(-\frac{N}{l\qty(N-l)}\qty(y_l-\frac{\qty(ly_N+\qty(N-l)y_0)}{N})^2+\frac{\qty(ly_N+\qty(N-l)y_0)^2}{Nl\qty(N-l)}-\frac{y_0^2}{l}-\frac{y_N^2}{N-l})\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}R_N^{N-1}\qty(\frac{2\Delta t}{\alpha m})^{\frac N2}\frac{\pi^{\frac{N-2}{2}}}{l^{\frac12}\qty(N-l)^{\frac12}}\sqrt{\frac{\pi l\qty(N-l)}{N}}\frac{\qty(N-l)y_0+ly_N}{N}\exp\qty(-\frac1N\qty(y_N-y_0)^2)\\
+    &=\lim\limits_{N\rightarrow\infty}\qty(\sqrt{\frac{\alpha m}{2\pi\qty(t_{\textnormal f}-t_{\textnormal i})}})^{N-1}\qty(N^{\frac{N}{2\qty(N-1)}})^{N-1}\qty(\frac{2\qty(t_{\textnormal f}-t_{\textnormal i})}{\alpha mN})^{\frac N2}\frac{\pi^{\frac{N-1}{2}}}{\sqrt N}\sqrt{\frac{\alpha m N}{2\qty(t_{\textnormal f}-t_{\textnormal i})}}\frac{\qty(t_{\textnormal f}-t)x_{\textnormal i}+\qty(t-t_{\textnormal i})x_{\textnormal f}}{t_{\textnormal f}-t_{\textnormal i}}\\
+    &=\frac{\qty(t_{\textnormal f}-t)x_{\textnormal i}+\qty(t-t_{\textnormal i})x_{\textnormal f}}{t_{\textnormal f}-t_{\textnormal i}}
+\end{align*}
+
+Como esperado para o caminho clássico. Podemos calcular agora a variância da posição,
+
+\begin{align*}
+    \expval{x^2\qty(t)}&=\int\Dd xx^2\qty(t)\exp\qty(-\frac{\alpha m}{2}\int\limits_{t_{\textnormal i}}^{t_{\textnormal f}}\dd{t'}\dot x^2\qty(t'))\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}R_N^{N-1}\qty(\frac{2\Delta t}{\alpha m})^{\frac {N+1}{2}}\frac{\pi^{\frac{N-2}{2}}}{l^{\frac12}\qty(N-l)^{\frac12}}\times\\
+    &\quad\times\int\dd{y_l}y^2_l\exp\qty(-\frac{N}{l\qty(N-l)}\qty(y_l-\frac{\qty(ly_N+\qty(N-l)y_0)}{N})^2-\frac1N\qty(y_N-y_0)^2)\\
+    &=\lim\limits_{N\rightarrow\infty}\qty(\sqrt{\frac{\alpha m}{2\pi\qty(t_{\textnormal f}-t_{\textnormal i})}})^{N-1}N^\frac{N}{2}\qty(\frac{2\qty( t_{\textnormal f}-t_{\textnormal i})}{N\alpha m})^{\frac{N+1}{2}}\frac{\pi^{\frac{N-2}{2}}}{l^{\frac12}\qty(N-l)^{\frac12}}\sqrt{\frac{\pi l\qty(N-l)}{N}}\qty(\frac{l\qty(N-l)}{2N}+\frac{\qty(ly_N+\qty(N-l)y_0)^2}{N^2})\\
+    &=\lim\limits_{N\rightarrow\infty}\frac{2\qty( t_{\textnormal f}-t_{\textnormal i})}{\alpha m}\frac{1}{N}\qty(N\frac{\qty(t-t_{\textnormal i})\qty(t_{\textnormal f}-t)}{2\qty(t_{\textnormal f}-t_{\textnormal i})^2}+\frac{\alpha m N}{2\qty(t_{\textnormal f}-t_{\textnormal i})}\frac{\qty(\qty(t-t_{\textnormal i})x_{\textnormal f}+\qty(t_{\textnormal f}-t)x_{\textnormal i})^2}{\qty(t_{\textnormal f}-t_{\textnormal i})^2})\\
+    &=\expval{x\qty(t)}^2+\frac{\qty(t-t_{\textnormal i})\qty(t_{\textnormal f}-t)}{\alpha m\qty(t_{\textnormal f}-t_{\textnormal i})}
+\end{align*}
+
+De modo que a variância é, $$\expval{x^2\qty(t)}-\expval{x\qty(t)}^2=\frac{\qty(t-t_{\textnormal i})\qty(t_{\textnormal f}-t)}{\alpha m\qty(t_{\textnormal f}-t_{\textnormal i})}$$
+
+Para a velocidade,
+
+$$\expval{\dot x\qty(t)}=\dv{}{t}\expval{x\qty(t)}=\frac{x_{\textnormal f}-x_{\textnormal i}}{t_{\textnormal f}-t_{\textnormal i}}$$
+
+Para a variância da velocidade,
+
+\begin{align*}
+    \expval{\dot x^2\qty(t)}&=\int\Dd x\dot x^2\qty(t)\exp\qty(-\frac{\alpha m}{2}\int\limits_{t_{\textnormal i}}^{t_{\textnormal f}}\dd{t'}\dot x^2\qty(t'))\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}R_N^{N-1}\int\prod\limits_{j=1}^{N-1}\dd{x_j}\qty(\frac{x_l-x_{l-1}}{t_l-t_{l-1}})^2\exp\qty(-\frac{\alpha m}{2\Delta t}\sum\limits_{k=1}^N\qty(x_k-x_{k-1})^2)\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}R_N^{N-1}\qty(\frac{2\Delta t}{\alpha m})^{\frac {N+1}{2}}\int\prod\limits_{j=1}^{N-1}\dd{y_j}\qty(\frac{y_l-y_{l-1}}{t_l-t_{l-1}})^2\exp\qty(-\sum\limits_{k=1}^N\qty(y_k-y_{k-1})^2)\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}\qty(\frac{\alpha m}{2\Delta t})^{\frac{N-1}{2}}\frac{N^{\frac{1}{2}}}{\pi^{\frac{N-1}{2}}}\qty(\frac{2\Delta t}{\alpha m})^{\frac {N+1}{2}}\frac{\pi^{\frac{l-2}{2}}}{\qty(l-1)^{\frac12}}\frac{\pi^{\frac{N-l-1}{2}}}{\qty(N-l)^{\frac12}}\times\\
+    &\quad\times\int\dd{y_l}\dd{y_{l-1}}\qty(\frac{y_l-y_{l-1}}{t_l-t_{l-1}})^2\exp\qty(-\qty(y_l-y_{l-1})^2-\frac{1}{l-1}\qty(y_{l-1}-y_0)^2-\frac{1}{N-l}\qty(y_N-y_l)^2)
+\end{align*}
+
+\begin{align*}
+    \expval{\dot x^2\qty(t)}&=\int\Dd x\dot x^2\qty(t)\exp\qty(-\frac{\alpha m}{2}\int\limits_{t_{\textnormal i}}^{t_{\textnormal f}}\dd{t'}\dot x^2\qty(t'))\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}R_N^{N-1}\int\prod\limits_{j=1}^{N-1}\dd{x_j}\qty(\frac{x_l-x_{l-1}}{t_l-t_{l-1}})^2\exp\qty(-\frac{\alpha m}{2\Delta t}\sum\limits_{k=1}^N\qty(x_k-x_{k-1})^2)\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}R_N^{N-1}\qty(\frac{2\Delta t}{\alpha m})^{\frac {N+1}{2}}\int\prod\limits_{j=1}^{N-1}\dd{y_j}\qty(\frac{y_l-y_{l-1}}{t_l-t_{l-1}})^2\exp\qty(-\sum\limits_{k=1}^N\qty(y_k-y_{k-1})^2)\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}\frac{N^{\frac{1}{2}}}{\pi^{\frac{N-1}{2}}}\frac{2\Delta t}{\alpha m\qty(t_l-t_{l-1})^2}\int\prod\limits_{j=1}^{N-1}\dd{y_j}\qty(y_l^2-2y_ly_{l-1}+y_{l-1}^2)\exp\qty(-\sum\limits_{k=1}^N\qty(y_k-y_{k-1})^2)\\
+    &=\exp\qty(\alpha S\qty[x_{\textnormal{cl}}])\lim\limits_{N\rightarrow\infty}\frac{N^{\frac{1}{2}}}{\pi^{\frac{N-1}{2}}}\frac{2\Delta t}{\alpha m\qty(t_l-t_{l-1})^2}\int\prod\limits_{j=1}^{N-1}\dd{y_j}\qty(y_l^2-2y_ly_{l-1}+y_{l-1}^2)\exp\qty(-\sum\limits_{k=1}^N\qty(y_k-y_{k-1})^2)
+\end{align*}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+
+\end{document}

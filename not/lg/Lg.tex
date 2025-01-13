@@ -1,0 +1,93 @@
+\documentclass[twoside]{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+%\usepackage[sorting=none, style=verbose-inote, backend=biber]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphics}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage{tensor}
+\usepackage[lmargin=0.5cm,rmargin=0.5cm, tmargin =1cm,bmargin =1cm]{geometry}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\Det}[1]{\textup{Det} #1}
+\newcommand{\sgn}[1]{\mbox{sgn}\qty(#1)}
+\newcommand{\cqd}{\hfill$\blacksquare$}
+
+\numberwithin{equation}{section}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defi}{Definição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{hip}{Hipótese}[subsection]
+
+\pagestyle{plain}
+
+\AddToHook{cmd/section/before}{\clearpage}
+
+%\addbibresource{ref.bib}
+
+\title{
+Srednicki Capítulo 3
+}
+\author{
+  Vicente V. Figueira
+       }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{}
+
+Transformações de coordenadas gerais são,
+
+\begin{align*}
+    x^\mu\rightarrow \tensor{\Lambda}{^\mu_\nu}x^\nu+a^\mu
+\end{align*}
+
+Note que se fazemos duas transformações,
+
+\begin{align*}
+    x^\mu&\rightarrow \tensor{{\Lambda'}}{^\mu_\nu}\qty(\tensor{\Lambda}{^\nu_\rho}x^\rho+a^\nu)+{a'}^\mu\\
+    &\rightarrow \tensor{{\Lambda'}}{^\mu_\nu}\tensor{\Lambda}{^\nu_\rho}x^\rho+\tensor{{\Lambda'}}{^\mu_\nu}a^\nu+{a'}^\mu
+\end{align*}
+
+Isso implica que as transformações de coordenadas formam um grupo, satisfazendo a regra de composição,
+
+\begin{align*}
+    \qty(\Lambda',a')\qty(\Lambda,a)&=\qty(\Lambda'\Lambda,\Lambda'a+a')
+\end{align*}
+
+Transformações infinitesimais são,
+
+\begin{align*}
+    \tensor{\Lambda}{^\mu_\nu}&=\tensor{\delta}{^\mu_\nu}+\tensor{\omega}{^\mu_\nu}+\mathcal O\qty(\omega^2)
+\end{align*}
+
+Mas,
+
+\begin{align*}
+    \Lambda^\textnormal{T}\Lambda&=\mathbbm 1\\
+    \qty(\tensor{\delta}{^\mu_\nu}+\tensor{\omega}{^\mu_\nu})^\textnormal{T}\qty(\tensor{\delta}{^\nu_\rho}+\tensor{\omega}{^\nu_\rho})&=\tensor{\delta}{^\mu_\rho}\\
+    \omega_{\mu\nu}&=-\omega_{\nu\mu}
+\end{align*}
+
+\end{document}

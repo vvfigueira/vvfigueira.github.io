@@ -1,0 +1,900 @@
+\documentclass[twoside]{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+%\usepackage[sorting=none, style=verbose-inote, backend=biber]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphics}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage{tensor}
+\usepackage[lmargin=0.5cm,rmargin=0.5cm, tmargin =1cm,bmargin =1cm]{geometry}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\Det}[1]{\textup{Det} #1}
+\newcommand{\sgn}[1]{\mbox{sgn}\qty(#1)}
+\newcommand{\cqd}{\hfill$\blacksquare$}
+
+\numberwithin{equation}{section}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defi}{Definição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{hip}{Hipótese}[subsection]
+
+\pagestyle{plain}
+
+\AddToHook{cmd/section/before}{\clearpage}
+
+%\addbibresource{ref.bib}
+
+\title{
+Notas de Teoria Térmica de Campos
+}
+\author{
+  Vicente V. Figueira
+       }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Introdução}
+
+Vamos primeiramente motivar o tratamento via integrais de caminho, para isto, vamos tomar o resultado conhecido de,
+
+\begin{align}
+    \mel{q''}{e^{-\frac{i}{\hbar}\qty(t''-t')\hat H}}{q'}&=\mathcal N\int\limits_{\substack{q\qty(t')=q'\\q\qty(t'')=q''}}\Dd{q}\Dd{p}\exp\qty{\frac i\hbar\int\limits_{t'}^{t''}\dd{t}\qty[p\dot q-H]}
+\end{align}
+
+Assim, note que podemos calcular,
+
+\begin{align}
+    \Tr e^{-\beta \hat H}&=\mathcal N\int\dd{q'}\mel{q'}{e^{-\frac i\hbar\qty(-\frac i2\beta \hbar-\frac i2\beta \hbar)\hat H}}{q'}\\
+    &=\mathcal N\int\limits_{\substack{q\qty(i\frac12\beta)=q\qty(-i\frac12\beta)}}\Dd{q}\Dd{p}\exp\qty{\frac i\hbar\int\limits_{\frac i2\beta\hbar}^{-\frac i2\beta \hbar}\qty[p\dot q-H]}
+\end{align}
+
+Fazendo $t=-i\tau$,
+
+\begin{align}
+    \Tr e^{-\beta\hat H}&=\mathcal N\int\Dd{q}\Dd{p}\exp\qty{\frac i\hbar\qty(-i)\int\limits_{-\frac12\beta\hbar}^{\frac12\beta\hbar}\dd{\tau}\qty[ip\dot q-H]}\\
+    &=\mathcal N\int\Dd{q}\Dd{p}\exp\qty{\frac1\hbar\int\limits_{-\frac12\beta\hbar}^{\frac12\beta\hbar}\dd{\tau}\qty[ip\dot q-H]}
+\end{align}
+
+Vamos tomar o Hamiltoniano como,
+
+\begin{align}
+    H&=\frac{p^2}{2m}+V\qty(q)-E_0
+\end{align}
+
+Assim,
+
+\begin{align}
+    \Tr e^{-\beta\hat H}&=\mathcal N\int\Dd{q}\Dd{p}\exp\qty{\frac1\hbar\int\limits_{-\frac12\beta\hbar}^{\frac12\beta\hbar}\dd{\tau}\qty[ip\dot q-\frac{p^2}{2m}-V\qty(q)+E_0]}\\
+    &=\mathcal N\int\Dd{q}\Dd{p}\exp\qty{\frac1\hbar\int\limits_{-\frac12\beta\hbar}^{\beta \hbar}\dd{\tau}\qty[-\frac{1}{2m}\qty(p^2-2mip\dot q+\qty(mi\dot q)^2-\qty(mi\dot q)^2)-V\qty(q)+E_0]}\\
+    &=\mathcal N\int\Dd{q}\Dd{p}\exp\qty{\frac1\hbar\int\limits_{-\frac12\beta\hbar}^{\frac12\beta\hbar}\dd{\tau}\qty[-\frac{1}{2m}\qty(p-mi\dot q)^2-\frac m2{\dot q}^2-V\qty(q)+E_0]}\\
+    &=\mathcal N\int\Dd{q}\Dd{p}\exp\qty{-\frac1\hbar\int\limits_{-\frac12\beta\hbar}^{\frac12\beta\hbar}\dd{\tau}\mathcal E}\exp\qty{-\frac{1}{2m\hbar}\int\limits_{-\frac12\beta\hbar}^{\frac12\beta\hbar}\dd{\tau}p^2}\\
+    &=\mathcal N\int\Dd{q}\exp\qty{-\frac1\hbar\int\limits_{-\frac12\beta\hbar}^{\frac12\beta\hbar}\dd{\tau}\mathcal E}
+\end{align}
+
+Vamos especificar agora $V=\frac{m\omega^2}{2}q^2$, logo,
+
+\begin{align}
+    \Tr e^{-\beta\hat H}&=\mathcal N\int\Dd{q}\exp\qty{-\frac1\hbar\int\limits_{-\frac12\beta\hbar}^{\frac12\beta\hbar}\dd{\tau}\qty[\frac m2{\dot q}^2+\frac{m\omega^2}{2}q^2-\frac{\hbar \omega}{2}]}\\
+    &=\mathcal Ne^{\beta\frac{\hbar \omega}{2}}\int\Dd{q}\exp\qty{-\frac1\hbar\int\limits_{-\frac12\beta\hbar}^{\frac12\beta\hbar}\dd{\tau}\qty[\frac m2{\dot q}^2+\frac{m\omega^2}{2}q^2]}\\
+    &=\mathcal Ne^{\beta\frac{\hbar \omega}{2}}\int\Dd{q}\exp\qty{-\frac1\hbar\int\limits_{-\frac12\beta\hbar}^{\frac12\beta\hbar}\dd{\tau}\qty[\frac m2\dv{}{\tau}\qty(q\dot q)-\frac m2q\dv[2]{}{\tau}q+\frac{m\omega^2}{2}q^2]}\\
+    &=\mathcal Ne^{\beta\frac{\hbar \omega}{2}}\int\Dd{q}\exp\qty{-\frac12\int\limits_{-\frac12\beta\hbar}^{\frac12\beta\hbar}\dd{\tau}q\qty[-\frac m\hbar \dv[2]{}{\tau}+\frac{m\omega^2}{\hbar}]q}
+\end{align}
+
+Precisamos então resolver um problema de auto-valores,
+
+\begin{align}
+    \qty[-\frac m\hbar \dv[2]{}{\tau}+\frac{m\omega^2}{\hbar}]q&=\lambda q,\ q\qty(-\frac12\beta\hbar)=q\qty(\frac12\beta\hbar)
+\end{align}
+
+Fazemos como tentativa,
+
+\begin{align}
+    q\qty(\tau)&=e^{i\tau\kappa}a+e^{-i\tau\kappa}a^\ast
+\end{align}
+
+Aplicando as condições de contorno,
+
+\begin{align}
+    e^{-\frac12i\beta\hbar\kappa}a+e^{\frac12i\beta\hbar\kappa}a^\ast&=e^{\frac12i\beta\hbar\kappa}a+e^{-\frac12i\beta\hbar\kappa}a^\ast\\
+    \qty(e^{\frac12i\beta\hbar\kappa}-e^{-\frac12i\beta\hbar\kappa})a&=\qty(e^{\frac12i\beta\hbar\kappa}-e^{-\frac12i\beta\hbar\kappa})a^\ast\\
+    \sin\qty(\frac12\beta\hbar\kappa)&=0,\ \kappa_n=\frac{2\pi n}{\beta\hbar},\ n\in\mathbb Z
+\end{align}
+
+Logo os auto-valores são,
+
+\begin{align}
+    \qty[-\frac m\hbar \dv[2]{}{\tau}+\frac{m\omega^2}{\hbar}]q&=\lambda q\\
+    \qty[\frac{m4\pi^2n^2}{\beta^2\hbar^3}+\frac{m\omega^2}{\hbar}]q&=\lambda q\\
+    \lambda_n&=\frac{m4\pi^2n^2}{\beta^2\hbar^3}+\frac{m\omega^2}{\hbar},\ n\in\mathbb Z
+\end{align}
+
+O determinante pode ser calculado como,
+
+\begin{align}
+    \Det\qty[D]&=\prod\limits_{n=1}^{\infty}\lambda_n\\
+    &=\exp\qty{\ln\qty[\prod\limits_{n=1}^{\infty}\lambda_n]}\\
+    &=\exp\qty{\sum\limits_{n=1}^{\infty}\ln\qty[\lambda_n]}\\
+    &=\exp\qty{\sum\limits_{n=1}^{\infty}\frac{\ln\qty[\lambda_n]}{\lambda_n^s}\eval_{s=0}}\\
+    &=\exp\qty{-\dv{}{s}\sum\limits_{n=1}^{\infty}\frac{1}{\lambda_n^s}\eval_{s=0}}
+\end{align}
+
+Definimos então a função \emph{zeta espectral} como,
+
+\begin{align}
+    \zeta_D\qty(s)&=\sum\limits_{n=1}^{\infty}\frac{1}{\lambda_n^s}
+\end{align}
+
+De forma que,
+
+\begin{align}
+    \Det\qty[D]=\exp\qty{-\dv{}{s}\zeta_D\eval_{s=0}}
+\end{align}
+
+Para o nosso caso,
+
+\begin{align}
+    \Det\qty[D]&=\prod\limits_{n=1}^{\infty}\qty(\frac{\pi^2m}{\beta^2\hbar^3}n^2+\frac{m\omega^2}{\hbar})\\
+    &=\prod\limits_{n=1}^{\infty}\qty(\frac{\pi^2m}{\beta^2\hbar^3}n^2)\prod\limits_{j=1}^{\infty}\qty(1+\frac{\omega^2\hbar^2\beta^2}{\pi^2j^2})\\
+    &=\prod\limits_{n=1}^{\infty}\qty(\frac{\pi^2m}{\beta^2\hbar^3}n^2)\frac{\pi}{\beta\hbar\omega}\sinh\qty(\beta\hbar\omega) \\
+    &=\frac{\pi}{\beta\hbar\omega}\sinh\qty(\beta\hbar\omega)\exp\qty{-\dv{}{s}\zeta_{D'}\eval_{s=0}}
+\end{align}
+
+Onde,
+
+\begin{align}
+    \zeta_{D'}\qty(s)&=\sum\limits_{n=1}^{\infty}\frac{1}{\qty(\frac{\pi^2m}{\beta^2\hbar^3}n^2)^s}\\
+    &=\qty(\frac{\beta^2\hbar^3}{\pi^2m})^s\zeta\qty(2s)
+\end{align}
+
+Sabendo que $\dv{}{s}\zeta\eval_{s=0}=-\frac12\ln\qty(2\pi)$ e $\zeta\qty(0)=-\frac12$
+
+\begin{align}
+    \dv{}{s}\zeta_{D'}\eval_{s=0}&=\ln\qty(\frac{\beta^2\hbar^3}{\pi^2 m})\qty(\frac{\beta^2\hbar^3}{\pi^2m})^s\zeta\qty(2s)\eval_{s=0}+\qty(\frac{\beta^2\hbar^3}{\pi^2m})^s2\dv{}{s}\zeta\eval_{s=0}\\
+    &=-\frac12\ln\qty(\frac{\beta^2\hbar^3}{\pi^2 m})-\ln\qty(2\pi)\\
+    &=\ln\qty(\frac{\pi m^\frac12}{\beta\hbar^{\frac32}})+\ln\qty(\frac{1}{2\pi})\\
+    &=\ln\qty(\frac{m^\frac12}{2\beta\hbar^\frac32})
+\end{align}
+
+Logo,
+
+\begin{align}
+    \Det\qty[D]&=\frac{\pi}{\beta\hbar\omega}\sinh\qty(\beta\hbar\omega)\exp\qty{\ln\qty(\frac{2\beta\hbar^\frac32}{m^\frac12})}\\
+    &=\frac{\pi}{\beta\hbar\omega}\sinh\qty(\beta\hbar\omega)\frac{2\beta\hbar^\frac32}{m^\frac12}\\
+    &=\frac{2\pi\hbar^\frac12}{\omega m^\frac12}\sinh\qty(\beta\hbar\omega)
+\end{align}
+
+Finalmente,
+
+\begin{align}
+    &\Tr e^{-\beta\hat H}\\
+    &=\mathcal N\qty(\frac{m\omega}{\pi\hbar}\tanh\qty(\frac12\beta\hbar\omega))^{-\frac12}e^{\beta\frac{\hbar \omega}{2}}\qty(\Det\qty[D])^{-\frac12}\\
+    &=\mathcal N\qty(\frac{m\omega}{\pi\hbar}\tanh\qty(\frac12\beta\hbar\omega))^{-\frac12}e^{\beta\frac{\hbar \omega}{2}}\qty(\frac{2\pi\hbar^\frac12}{\omega m^\frac12}\sinh\qty(\beta\hbar\omega))^{-\frac12}\\
+    &=\mathcal N\qty(\frac{4m^\frac12}{\hbar^\frac12}\sinh^2\qty(\frac12\beta\hbar\omega))^{-\frac12}e^{\beta\frac{\hbar \omega}{2}}\\
+    &=\mathcal N\frac{\hbar^\frac14}{2m^\frac14}\frac{e^{\beta\frac{\hbar \omega}{2}}}{\sinh\qty(\frac12\beta\hbar\omega)}\\
+    &=\mathcal N\frac{1}{1-e^{-\beta\hbar\omega}}
+\end{align}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Campo Escalar Real}
+
+Vamos agora generalizar o cálculo para um campo escalar real. A motivação é calcular propriedades termodinâmicas de um grande número de partículas descritas por um campo escalar real. A função de partição é,
+
+\begin{align}
+    \Tr e^{-\beta\hat H}&=\mathcal N\int\Dd{\phi}\exp\qty{\frac i\hbar\int\limits_{i\frac12\beta}^{-i\frac12\beta}\dd{t}\int\dd[3]{\vb x}\qty[-\frac12\partial_\mu\phi\partial^\mu\phi-\frac12m^2\phi^2+\mathcal E_0]}\\
+    &=\mathcal N\int\Dd{\phi}\exp\qty{i\int\limits_{i\frac12\beta}^{-i\frac12\beta}\dd{t}\int\dd[3]{\vb x}\qty[\frac{1}{2}{\dot\phi}^2-\frac12\qty(\grad\phi)^2-\frac12m^2\phi^2+\mathcal E_0]}
+\end{align}
+
+Fazendo $t=-i\tau$,
+
+\begin{align}
+    \Tr e^{-\beta\hat H}&=\mathcal N\int\Dd{\phi}\exp\qty{i\qty(-i)\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\int\dd[3]{\vb x}\qty[-\frac{1}{2}{\dot\phi}^2-\frac12\qty(\grad\phi)^2-\frac12m^2\phi^2+\mathcal E_0]}\\
+    &=\mathcal N\int\Dd{\phi}\exp\qty{-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\int\dd[3]{\vb x}\qty[\frac{1}{2}{\dot\phi}^2+\frac12\qty(\grad\phi)^2+\frac12m^2\phi^2-\mathcal E_0]}\\
+    &=\mathcal Ne^{V\beta\mathcal E_0}\int\Dd{\phi}\exp\qty{-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\int\dd[3]{\vb x}\qty[\frac{1}{2}{\dot\phi}^2+\frac12\qty(\grad\phi)^2+\frac12m^2\phi^2]}\\
+    &=\mathcal Ne^{V\beta\mathcal E_0}\int\Dd{\phi}\exp\qty{-\frac12\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\int\dd[3]{\vb x}\phi\qty[-\pdv[2]{}{\tau}-\laplacian+m^2]\phi}
+\end{align}
+
+Para realizar o cálculo da integral funcional vamos calcular o determinante do operador,
+
+\begin{align}
+    \qty[-\pdv[2]{\tau}-\laplacian+m^2]\varphi&=\lambda\varphi,\ \varphi\qty(-\frac12\beta,\vb x)=\varphi\qty(\frac12\beta,\vb x)
+\end{align}
+
+As auto-funções são,
+
+\begin{align}
+    e^{i\omega\tau+i\vb k\cdot\vb x}a\qty(\omega,\vb k)
+\end{align}
+
+Então, as auto-funções reais são,
+
+\begin{align}
+    \varphi_{\omega,\vb k}\qty(\tau,\vb k)&=e^{i\omega\tau+i\vb k\cdot\vb x}a\qty(\omega,\vb k)+e^{-i\omega\tau-i\vb k\cdot\vb x}a^\ast\qty(\omega,\vb k)\\
+    \qty[-\pdv[2]{\tau}-\laplacian+m^2]\varphi_{\omega,\vb k}&=\qty[\omega^2+\vb k^2+m^2]\varphi_{\omega,\vb k}
+\end{align}
+
+Aplicando as condições de contorno,
+
+\begin{align}
+    \varphi_{\omega,\vb k}\qty(-\frac12\beta,\vb k)&=\varphi_{\omega,\vb k}\qty(\frac12\beta,\vb k)\\
+    e^{-i\frac12\beta\tau+i\vb k\cdot\vb x}a\qty(\omega,\vb k)+e^{i\frac12\beta\tau-i\vb k\cdot\vb x}a^\ast\qty(\omega,\vb k)&=e^{i\frac12\beta\tau+i\vb k\cdot\vb x}a\qty(\omega,\vb k)+e^{-i\frac12\beta\tau-i\vb k\cdot\vb x}a^\ast\qty(\omega,\vb k)\\
+    e^{-i\vb k\cdot\vb x}a^\ast\qty(\omega,\vb k)\qty[e^{i\omega\frac12\beta}-e^{-i\omega\frac12\beta}]&=e^{i\vb k\cdot\vb x}a\qty(\omega,\vb k)\qty[e^{i\omega\frac12\beta}-e^{-i\omega\frac12\beta}]\\
+    \sin\qty(\frac12\beta\omega)&=0\Rightarrow\ \omega_n=\frac{2\pi n}{\beta},\ n\in\mathbb Z
+\end{align}
+
+Isto é, as auto-funções com as condições de contorno são,
+
+\begin{align}
+    \varphi_{n,\vb k}\qty(\tau,\vb k)&=e^{i\omega_n\tau+i\vb k\cdot\vb x}a_n\qty(\vb k)+e^{-i\omega_n\tau-i\vb k\cdot\vb x}a_n^\ast\qty(\vb k),\ \omega_n=\frac{2\pi n}{\beta},\ n\in\mathbb Z
+\end{align}
+
+Que implica nos auto-valores serem,
+
+\begin{align}
+    \lambda_n\qty(\vb k)&=\omega_n^2+\omega_{\vb k}^2,\ n\in\mathbb Z,\ \vb k \in\mathbb R^3
+\end{align}
+
+Então,
+
+\begin{align}
+     \Det\qty[-\pdv[2]{\tau}-\laplacian+m^2] &=\prod\limits_{\vb k\in\mathbb R^3}\qty{\prod\limits_{n\in\mathbb Z}\qty(\frac{4\pi^2n^2}{\beta^2}+\omega_{\vb k}^2)}\\
+     &=\prod\limits_{\vb k\in\mathbb R^3}\qty{\omega_{\vb k}^2\prod\limits_{n\in\mathbb Z^\ast}\qty(\frac{4\pi^2n^2}{\beta^2}+\omega_{\vb k}^2)}\\
+     &=\prod\limits_{\vb k\in\mathbb R^3}\qty{\qty[\omega_{\vb k}\prod\limits_{n=1}^{\infty}\qty(\frac{4\pi^2n^2}{\beta^2}+\omega_{\vb k}^2)]^2}\\
+     &=\prod\limits_{\vb k\in\mathbb R^3}\qty{\qty[\omega_{\vb k}\qty(\prod\limits_{n=1}^{\infty}\frac{4\pi^2n^2}{\beta^2})\qty(\prod\limits_{p=1}^{\infty}\qty(1+\frac{\beta^2\omega_{\vb k}^2}{4\pi^2p^2}))]^2}\\
+     &=\prod\limits_{\vb k}\qty{\qty[\omega_{\vb k}\beta\frac{2\pi}{\beta\omega_{\vb k}}\sinh\qty(\frac12\beta\omega_{\vb k})]^2}\\
+     &=\exp\qty{2V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[2\pi\sinh\qty(\frac12\beta\omega_{\vb k})]}
+\end{align}
+
+Finalmente então,
+
+\begin{align}
+    &\Tr e^{-\beta\hat H}\\
+    &=\mathcal Ne^{V\beta\mathcal E_0}\exp{-\frac{V}{\qty(2\pi)^3}\int\dd[3]{\vb k}\ln\qty[\sinh\qty(\frac12\beta\omega_{\vb k})]}\\
+    &=\mathcal Ne^{V\beta\mathcal E_0}\exp{-V\beta\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\frac{\omega_{\vb k}}{2}}\exp{-4\pi\frac{V}{\qty(2\pi)^3}\int\limits_0^\infty\dd{ k}k^2\ln\qty[1-e^{-\beta\omega_{\vb k}}]}
+\end{align}
+
+Onde podemos fixar, $\mathcal E_0=\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\frac\omega2$, dessa forma,
+
+\begin{align}
+    \Tr e^{-\beta\hat H}&=\mathcal N\exp{-4\pi\frac{V}{\qty(2\pi)^3}\int\limits_0^\infty\dd{ k}k^2\ln\qty[1-e^{-\beta\omega_{\vb k}}]}\\
+    F&=-\frac1\beta\ln\qty[\Tr e^{-\beta\hat H}]=\frac{4\pi}{\beta}\frac{V}{\qty(2\pi)^3}\int\limits_0^\infty\dd{ k}k^2\ln\qty[1-e^{-\beta\omega_{\vb k}}]\\
+    F&=\frac{V}{2\pi^2\beta}\int\limits_0^\infty\dd{ k}k^2\ln\qty[1-\exp{-\beta\sqrt{k^2+m^2}}]\\
+    F&=\frac{V}{2\pi^2\hbar^3\beta}\int\limits_0^\infty\dd{ k}k^2\ln\qty[1-\exp{-\beta\sqrt{c^2k^2+c^4m^2}}]
+\end{align}
+
+Tudo dito aqui é suficiente para analisar as propriedades termostáticas de um campo em equilíbrio térmico, porém, e caso queiramos saber o valor esperado de algum observável no equilíbrio térmico do campo? Para observáveis $\mathcal O_1,\mathcal O_2,\cdots$,
+
+\begin{align}
+    \expval{\mathcal O_1\mathcal O_2\cdots}_\beta&=\frac1{\Tr\qty[e^{-\beta\hat H}]}\Tr\qty[e^{-\beta\hat H}\textup{T}\qty{\mathcal O_1\mathcal O_2\cdots}]
+\end{align}
+
+Claramente,
+
+\begin{align}
+    \Tr\qty[e^{-\beta\hat H}\textup{T}\qty{\phi_1\phi_2\cdots}]&=\mathcal N\int\Dd{\phi}\ \phi _1\phi_2\cdots \exp\qty{i\int\limits_{i\frac12\beta}^{-i\frac12\beta}\dd[4]{x}\mathcal L}
+\end{align}
+
+Para calcular esta quantidade fazemos o procedimento padrão de adicionar uma corrente na lagrangiana,
+
+\begin{align}
+    \mathcal L&=-\frac12\partial_\mu\phi\partial^\mu\phi-\frac12m^2\phi^2+\mathcal E_0+J\phi
+\end{align}
+
+Assim,
+
+\begin{align}
+    \Tr\qty[e^{-\beta\hat H}\textup{T}\qty{\phi_1\phi_2\cdots}]&=\frac1i\fdv{}{J_1}\frac1i\fdv{}{J_2}\cdots\Tr\qty[e^{-\beta\hat H\qty(J)}]\eval_{J=0}
+\end{align}
+
+Para isso então, calculemos a quantidade,
+
+\begin{align}
+    &\Tr\qty[e^{-\beta\hat H\qty(J)}]=\mathcal N\int\Dd{\phi} \exp\qty{i\int\limits_{i\frac12\beta}^{-i\frac12\beta}\dd{t}\dd[3]{\vb x}\qty[\frac12\pdv{\phi}{t}\pdv{\phi}{t}-\frac12\grad\phi\cdot\grad\phi-\frac12m^2\phi^2+\mathcal E_0+J\phi]}\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd{\phi}\exp\qty{\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[-\frac12\pdv{\phi}{\tau}\pdv{\phi}{\tau}-\frac12\grad\phi\cdot\grad\phi-\frac12m^2\phi^2+J\phi]}\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd{\phi}\exp\qty{-\frac12\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[\phi\qty(-\pdv[2]{}{\tau}-\laplacian+m^2)\phi-J\phi-\phi J]}\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd{\phi}\exp\qty{-\frac12\int\limits_{-\frac12\beta}^{\frac12\beta}\dd[4]{x}\dd[4]{y}\qty[\phi\qty(y)\qty(-\pdv[2]{}{\tau_y}-\laplacian_y+m^2)\delta^{\qty(4)}\qty(y-x)\phi\qty(x)-J\qty(y)\delta^{\qty(4)}\qty(y-x)\phi\qty(x)-\phi\qty(y)\delta^{\qty(4)}\qty(y-x) J\qty(x)]}\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd{\phi}\exp\qty{-\frac12\int\limits_{-\frac12\beta}^{\frac12\beta}\dd[4]{x}\dd[4]{y}\qty[\phi\qty(y)\Delta^{-1}\qty(y,x)\phi\qty(x)-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd[4]{z}J\qty(z)\Delta\qty(z,y)\Delta^{-1}\qty(y,x)\phi\qty(x)-\phi\qty(y)\Delta^{-1}\qty(y,x)\int\limits_{-\frac12\beta}^{\frac12\beta}\dd[4]{z}\Delta\qty(x,z)J\qty(z)]}\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd{\phi}\exp\qty{-\frac12\int\limits_{-\frac12\beta}^{\frac12\beta}\dd[4]{x}\dd[4]{y}\qty[\qty(\phi\qty(y)-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd[4]{z}J\qty(z)\Delta\qty(z,y))\Delta^{-1}\qty(y,x)\qty(\phi\qty(x)-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd[4]{z}\Delta\qty(x,z)J\qty(z))]}\\&\times\exp\qty{\frac12\int\limits_{-\frac12\beta}^{\frac12\beta}\dd[4]{x}\dd[4]{y}J\qty(y)\Delta\qty(y,x)J\qty(x)}\nonumber\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd{\phi}\exp\qty{-\frac12\int\limits_{-\frac12\beta}^{\frac12\beta}\dd[4]{x}\dd[4]{y}\phi\qty(y)\Delta^{-1}\qty(y,x)\phi\qty(x)}\exp\qty{\frac12\int\limits_{-\frac12\beta}^{\frac12\beta}\dd[4]{x}\dd[4]{y}J\qty(y)\Delta\qty(y,x)J\qty(x)}
+\end{align}
+
+Isto é,
+
+\begin{align}
+    Z_0\qty[\beta; J]&=Z_0\qty[\beta]\exp\qty{\frac12\int\limits_{\beta}\dd[4]{x}\dd[4]{y}J\qty(y)\Delta\qty(y,x)J\qty(x)}\\
+    Z_0\qty[\beta; J]&=Z_0\qty[\beta]\exp\qty{-\frac12\int\limits\dd[4]{x}\dd[4]{y}J\qty(y)\Delta\qty(y,x)J\qty(x)}
+\end{align}
+
+Para calcularmos $\Delta\qty(y,x)$ é necessário inverter o operador $\Delta^{-1}\qty(y,x)$, note que,
+
+\begin{align}
+    \Delta^{-1}\qty(y,x)&=\qty[-\pdv[2]{}{\tau_y}-\laplacian_y+m^2]\delta^{\qty(4)}\qty(y-x)\\
+    &=\sum\limits_{n\in\mathbb Z}\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3\beta}\qty[-\pdv[2]{}{\tau_y}-\laplacian_y+m^2]e^{i\vb k\cdot\qty(\vb y-\vb x)}e^{i\frac{2\pi n}{\beta}\qty(\tau_y-\tau_x)}\\
+    &=\sum\limits_{n\in\mathbb Z}\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3\beta}e^{i\vb k\cdot\qty(\vb y-\vb x)}e^{i\frac{2\pi n}{\beta}\qty(\tau_y-\tau_x)}\qty[\omega_n^2+\omega_{\vb k}^2]
+\end{align}
+
+Logo, seu inverso é,
+
+\begin{align}
+    \Delta\qty(y,x)&=\sum\limits_{n\in\mathbb Z}\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3\beta}e^{i\vb k\cdot\qty(\vb y-\vb x)}e^{i\omega_n\qty(\tau_y-\tau_x)}\frac{1}{\omega_n^2+\omega_{\vb k}^2},\ \omega_n=\frac{2\pi n}{\beta}\\
+    &=\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^32\omega_{\vb k}}e^{i\vb k\cdot\qty(\vb y-\vb x)}\qty(e^{i\omega_{\vb k}\abs{t_y-t_x}}+\frac{e^{i\omega_{\vb k}\qty(t_y-t_x)}+e^{-i\omega_{\vb k}\qty(t_y-t_x)}}{e^{\beta\omega_{\vb k}}-1})\\
+    &=\int\frac{\dd[4]{ k}}{\qty(2\pi)^4}\frac{e^{i k\cdot\qty( y- x)}}{k^2+m^2}+\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3\omega_{\vb k}}e^{i\vb k\cdot\qty(\vb y-\vb x)}\frac{\cos\qty(\omega_{\vb k}\qty(t_y-t_x))}{e^{\beta\omega_{\vb k}}-1}
+\end{align}
+
+Suponha que desejamos analisar uma teoria com interação, supomos,
+
+\begin{align}
+    \mathcal L&=\frac12\phi\qty(\partial_\mu\partial^\mu-m^2)\phi-\frac{\lambda}{4!}\phi^4+\mathcal E_0
+\end{align}
+
+Certamente a nova função de partição é,
+
+\begin{align}
+    Z\qty[\beta; J]&=\exp\qty{-\frac{\lambda}{4!}\int\dd[4]{z}\qty(\frac{1}{i}\fdv{}{J\qty(z)})^4}Z_0[\beta;J]\\
+    Z\qty[\beta; J]&=Z_0[\beta]\exp\qty{-\frac{\lambda}{4!}\int\dd[4]{z}\qty(\frac{1}{i}\fdv{}{J\qty(z)})^4}\exp\qty{-\frac12J_x\Delta_{xy}J_y}
+\end{align}
+
+Em primeira ordem,
+
+\begin{align}
+    &Z\qty[\beta; J]\\
+    &=Z_0[\beta]\qty(1-\frac{\lambda}{4!}\int\dd[4]{z}\qty(\frac{1}{i}\fdv{}{J\qty(z)})^4)\exp\qty{-\frac12J_x\Delta_{xy}J_y}\\
+    &=Z_0[\beta]\exp\qty{-\frac12J_x\Delta_{xy}J_y}-Z_0[\beta]\frac{\lambda}{4!}\qty(\fdv{}{J_z})^3\qty[-\Delta_{za}J_a\exp\qty{-\frac12J_x\Delta_{xy}J_y}]\\
+    &=Z_0[\beta]\exp\qty{-\frac12J_x\Delta_{xy}J_y}-Z_0[\beta]\frac{\lambda}{4!}\qty(\fdv{}{J_z})^2\qty[\qty(-\Delta_{zz}+\qty(\Delta_{za}J_a)^2)\exp\qty{-\frac12J_x\Delta_{xy}J_y}]\\
+    &=Z_0[\beta]\exp\qty{-\frac12J_x\Delta_{xy}J_y}-Z_0[\beta]\frac{\lambda}{4!}\qty(\fdv{}{J_z})\qty[\qty(3\Delta_{zz}\Delta_{za}J_a-\qty(\Delta_{za}J_a)^3)\exp\qty{-\frac12J_x\Delta_{xy}J_y}]\\
+    &=Z_0[\beta]\qty[1-\frac{\lambda}{4!}\qty(3\Delta^2_{zz}-6\Delta_{zz}\qty(\Delta_{za}J_a)^2+\qty(\Delta_{za}J_a)^4)]\exp\qty{-\frac12J_x\Delta_{xy}J_y}
+\end{align}
+
+Isso já é suficiente para obter a primeira correção para a função de partição,
+
+\begin{align}
+    Z\qty[\beta]&=Z_0[\beta]\qty[1-\frac{\lambda}{8}\Delta^2\qty(0)V\beta]
+\end{align}
+
+Mas claramente $\Delta\qty(0)$ é divergente, isto é, precisamos adicionar contra-termos para renormalizar a teoria,
+
+\begin{align}
+    \mathcal L&=\frac12\phi\qty(\partial_\mu\partial^\mu-m^2)\phi-\frac{\lambda}{4!}\phi^4+\mathcal E_0-\delta_{m^2}\frac12\phi^2+\delta_{\phi^2}\frac12\phi\partial_\mu\partial^\mu\phi-\delta_{\lambda}\frac{1}{4!}\phi^4
+\end{align}
+
+Assim a função de partição renormalizada é, esperando que $\delta_{\phi^2}$ e $\delta_{\lambda}$ sejam de ordem superior em $\lambda$,
+
+\begin{align}
+    &Z\qty[\beta; J]\\
+    &=Z_0[\beta]\qty(1-\frac{\lambda}{4!}\int\dd[4]{z}\qty(\frac{1}{i}\fdv{}{J\qty(z)})^4-\frac{\delta_{m^2}}{2}\int\dd[4]{z}\qty(\frac1i\fdv{}{J\qty(z)})^2)\exp\qty{-\frac12J_x\Delta_{xy}J_y}\\
+    &=Z_0[\beta]\qty(1-\frac{\lambda}{4!}\int\dd[4]{z}\qty(\fdv{}{J\qty(z)})^4+\frac{\delta_{m^2}}{2}\int\dd[4]{z}\qty(\fdv{}{J\qty(z)})^2)\exp\qty{-\frac12J_x\Delta_{xy}J_y}\\
+    &=Z_0[\beta]\qty(1-\frac{\lambda}{4!}\qty(3\Delta^2_{zz}-6\Delta_{zz}\qty(\Delta_{za}J_a)^2+\qty(\Delta_{za}J_a)^4)+\frac{\delta_{m^2}}{2}\qty(-\Delta_{zz}+\qty(\Delta_{za}J_a)^2))\exp\qty{-\frac12J_x\Delta_{xy}J_y}
+\end{align}
+
+Isto é,
+
+\begin{align}
+    Z\qty[\beta]&=Z_0[\beta]\qty(1-\frac{\lambda}{8}\Delta^2_{zz}-\frac{\delta_{m^2}}{2}\Delta_{zz})  
+\end{align}
+
+Para calcular a função de dois pontos,
+
+\begin{align}
+    &\frac1i\fdv{}{J\qty(x_1)}\frac1i\fdv{}{J\qty(x_2)}Z\qty[\beta; J]\eval_{J=0}\\
+    &=-Z_0[\beta]\qty(-\Delta_{x_1x_2}-\frac{\lambda}{4!}\qty(-3\Delta^2_{zz}\Delta_{x_1x_2}-12\Delta_{zz}\Delta_{zx_1}\Delta_{zx_2})+\frac{\delta_{m^2}}{2}\qty(\Delta_{zz}\Delta_{x_1x_2}+2\Delta_{zx_1}\Delta_{zx_2}))\\
+    &=Z_0[\beta]\qty(\Delta_{x_1x_2}-\frac{\lambda}{8}\Delta^2_{zz}\Delta_{x_1x_2}-\frac{\lambda}{2}\Delta_{zz}\Delta_{zx_1}\Delta_{zx_2}-\frac{\delta_{m^2}}{2}\Delta_{zz}\Delta_{x_1x_2}-\delta_{m^2}\Delta_{zx_1}\Delta_{zx_2})\\
+    &=\Delta_{x_1x_2}Z_0[\beta]\qty(1-\frac{\lambda}{8}\Delta^2_{zz}-\frac{\delta_{m^2}}{2}\Delta_{zz})-\Delta_{zx_1}\Delta_{zx_2}Z_0[\beta]\qty(\frac\lambda2\Delta_{zz}+\delta_{m^2})
+\end{align}
+
+Então,
+
+\begin{align}
+    \expval{\phi\qty(x_1)\phi\qty(x_2)}&=\frac{1}{Z\qty[\beta]}\frac1i\fdv{}{J\qty(x_1)}\frac1i\fdv{}{J\qty(x_2)}Z\qty[\beta; J]\eval_{J=0}\\
+    &=\Delta_{x_1x_2}-\Delta_{zx_1}\Delta_{zx_2}\frac{Z_0[\beta]\qty(\frac\lambda2\Delta_{zz}+\delta_{m^2})}{Z_0[\beta]\qty(1-\frac{\lambda}{8}\Delta^2_{zz}-\frac{\delta_{m^2}}{2}\Delta_{zz})  }\\
+    &=\Delta_{x_1x_2}-\Delta_{zx_1}\Delta_{zx_2}\qty(\frac\lambda2\Delta_{zz}+\delta_{m^2})
+\end{align}
+
+$\Delta\qty(0)$ é,
+
+\begin{align}
+    \Delta\qty(0)&=\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^32\omega_{\vb k}}\qty(1+\frac{2}{e^{\beta\omega_{\vb k}}-1})=\Delta^{T=0}\qty(0)+\Delta^T\qty(0)
+\end{align}
+
+Assim, a divergência é eliminada tomando-se,
+
+\begin{align}
+    \delta_{m^2}&=-\frac\lambda2\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^32\omega_{\vb k}}=-\frac\lambda2\Delta^{T=0}\qty(0)
+\end{align}
+
+Note que assim, a massa que entra no propagador exato será,
+
+\begin{align}
+    \expval{\phi\qty(x_1)\phi\qty(x_2)}&=\Delta_{x_1x_2}-\Delta_{x_1z}\Delta_{zx_2}\qty(\frac\lambda2\Delta_{zz}+\delta_{m^2})\\
+    \sum\limits_{n\in\mathbb Z}\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3\beta}&e^{i\vb k\cdot\qty(\vb x_1-\vb x_2)-\omega_n\qty(t_1-t_2)}\frac{1}{\omega_{n}^2+\vb k^2+m_\beta^2}=\sum\limits_{n\in\mathbb Z}\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3\beta}e^{i\vb k\cdot\qty(\vb x_1-\vb x_2)-\omega_n\qty(t_1-t_2)}\frac{1}{\omega_n^2+\vb k^2+m^2}\\
+    &-\int\dd[4]{z}\sum\limits_{n\in\mathbb Z}\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3\beta}e^{i\vb k\cdot\qty(\vb x_1-\vb z)-\omega_n\qty(t_1-t_z)}\sum\limits_{m\in\mathbb Z}\int\frac{\dd[3]{\vb q}}{\qty(2\pi)^3\beta}e^{i\vb q\cdot\qty(\vb z-\vb x_2)-\omega_m\qty(t_z-t_2)}\frac{1}{\omega_{n}^2+\vb k^2+m^2}\frac{1}{\omega_{m}^2+{{\vb q}}^2+m^2}\\
+    &\times\qty(\frac\lambda2\sum\limits_{l\in\mathbb Z}\int\frac{\dd[3]{\vb q'}}{\qty(2\pi)^3\beta}\frac{1}{\omega_l^2+{{\vb q}'}^2+m^2}+\delta_{m^2})\\
+    \sum\limits_{n\in\mathbb Z}\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3\beta}&e^{i\vb k\cdot\qty(\vb x_1-\vb x_2)-\omega_n\qty(t_1-t_2)}\frac{1}{\omega_{n}^2+\vb k^2+m_\beta^2}=\sum\limits_{n\in\mathbb Z}\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3\beta}e^{i\vb k\cdot\qty(\vb x_1-\vb x_2)-\omega_n\qty(t_1-t_2)}\frac{1}{\omega_n^2+\vb k^2+m^2}\\
+    &-\sum\limits_{n\in\mathbb Z}\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3\beta}e^{i\vb k\cdot\qty(\vb x_1-\vb x_2)-\omega_n\qty(t_1-t_2)}\frac{1}{\omega_{n}^2+\vb k^2+m^2}\frac{1}{\omega_{n}^2+{{\vb k}}^2+m^2}\lambda\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^32\omega_{\vb k}}\frac{1}{e^{\beta\omega_{\vb k}}-1}\\
+    \frac{1}{\omega_{n}^2+\vb k^2+m_\beta^2}&=\frac{1}{\omega_n^2+\vb k^2+m^2}-\frac{1}{\omega_{n}^2+\vb k^2+m^2}\frac{1}{\omega_{n}^2+{{\vb k}}^2+m^2}\lambda\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^32\omega_{\vb k}}\frac{1}{e^{\beta\omega_{\vb k}}-1}\\
+    \frac{1}{\omega_{n}^2+\vb k^2+m_\beta^2}&=\frac{1}{\omega_n^2+\vb k^2+m^2}\qty(1-\frac{1}{\omega_{n}^2+{{\vb k}}^2+m^2}\lambda\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^32\omega_{\vb k}}\frac{1}{e^{\beta\omega_{\vb k}}-1})\\
+    \frac{1}{\omega_{n}^2+\vb k^2+m_\beta^2}&=\frac{1}{\omega_n^2+\vb k^2+m^2}\qty(1+\frac{1}{\omega_{n}^2+{{\vb k}}^2+m^2}\lambda\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^32\omega_{\vb k}}\frac{1}{e^{\beta\omega_{\vb k}}-1})^{-1}\\
+    \omega_n^2+\vb k^2+m_\beta^2&=\omega_n^2+\vb k^2+m^2+\lambda\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^32\omega_{\vb k}}\frac{1}{e^{\beta\omega_{\vb k}}-1}
+\end{align} 
+
+Isto é, temos a correção térmica da massa,
+
+\begin{align}
+    m_\beta^2=m^2+\lambda\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^32\omega_{\vb k}}\frac{1}{e^{\beta\omega_{\vb k}}-1}
+\end{align}
+
+O caso $m^2=0$ pode ser avaliado analiticamente, com,
+
+\begin{align}
+    m_\beta^2=\frac{\lambda}{24\beta^2}
+\end{align}
+
+E assim a nova função de partição é,
+
+\begin{align}
+    Z\qty[\beta]&=Z_0[\beta]\qty(1-V\beta\frac{\lambda}{8}\Delta^2\qty(0)-V\beta\frac{\delta_{m^2}}{2}\Delta\qty(0))  
+\end{align}
+
+\subsection{Re-derivação da Função de Partição}
+
+Vamos agora reobter o resultado da Função de Partição seguindo um argumento um pouco mais intuitivo e menos rigoroso, 
+note que
+
+\begin{align}
+    Z\qty(\beta)&=\Tr\qty[\exp\qty(-\beta\hat H)]
+\end{align}
+
+Para nosso hamiltoniano, sabemos que o mesmo pode ser escrito como,
+
+\begin{align}
+    \hat H&=V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\omega_{\vb k}{\hat a}^\dagger\qty(\vb k)\hat a\qty(\vb k)\\
+    &=V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\omega_{\vb k}{\hat n}\qty(\vb k)
+\end{align}
+
+Logo, o traço pode ser reescrito como,
+
+\begin{align}
+    Z\qty(\beta)&=\Tr\qty[\exp\qty(-\beta\hat H)]\\
+    &=\sum\limits_{\qty{n\qty(\vb k)}}\exp\qty(-\beta V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\omega_{\vb k}n\qty(\vb k))\\
+    &=\sum\limits_{\qty{n\qty(\vb k)}}\exp\qty(-\beta\sum\limits_{\vb k}\omega_{\vb k}n\qty(\vb k))\\
+    &=\sum\limits_{\qty{n\qty(\vb k)}}\prod\limits_{\vb k}\exp\qty(-\beta\omega_{\vb k}n\qty(\vb k))\\
+    &=\prod\limits_{\vb k}\sum\limits_{n=0}^\infty\exp\qty(-\beta\omega_{\vb k}n)\\
+    &=\prod\limits_{\vb k}\frac{1}{1-\exp\qty(-\beta\omega_{\vb k})}\\
+    &=\prod\limits_{\vb k}\exp\qty{-\ln\qty[1-e^{-\beta\omega_{\vb k}}]}\\
+    &=\exp\qty{-\sum\limits_{\vb k}\ln\qty[1-e^{-\beta\omega_{\vb k}}]}\\
+    &=\exp\qty{-V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[1-e^{-\beta\omega_{\vb k}}]}
+\end{align}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Campo Escalar Complexo}
+
+Nossa lagrangiana é,
+
+\begin{align}
+    \mathcal L&=-\partial_\mu\phi^\dagger\partial^\mu\phi-m^2\phi^\dagger\phi+\mathcal E_0
+\end{align}
+
+A grande diferença agora é que temos uma carga conservada associada a transformação global $\phi\rightarrow e^{i\theta}\phi$, dada por
+
+\begin{align}
+    \mathcal L'&=\qty(\phi+i\theta\phi)^\dagger\partial_\mu\partial^\mu\qty(\phi+i\theta\phi)-m^2\qty(\phi+i\theta\phi)^\dagger\qty(\phi+i\theta\phi)+\mathcal E_0\\
+    \mathcal L'&=\phi^\dagger\partial_\mu\partial^\mu\phi-i\phi^\dagger\theta\partial_\mu\partial^\mu\phi+i\phi^\dagger\partial_\mu\partial^\mu i\theta\phi-m^2\phi^\dagger\phi+im^2\phi^\dagger\theta\phi-im^2\phi^\dagger\theta\phi+\mathcal E_0\\
+    \mathcal L'&=\phi^\dagger\partial_\mu\partial^\mu\phi-m^2\phi^\dagger\phi+\mathcal E_0=\mathcal L
+\end{align}
+
+Logo, o Teorema de Noether garante,
+
+\begin{align}
+    j^\mu&=\pdv{\mathcal L}{\partial_\mu\phi}i\phi-i\phi^\dagger\pdv{\mathcal L}{\partial_\mu\phi^\dagger}\\
+    j^\mu&=-i\partial^\mu\phi^\dagger\phi+i\phi^\dagger\partial^\mu\phi,\ \partial_\mu j^\mu=0\\
+    j^\mu&=i\qty(\phi^\dagger\partial^\mu\phi-\phi\partial^\mu\phi^\dagger)
+\end{align}
+
+Ou seja,
+
+\begin{align}
+    -Q&=\int\dd[3]{\vb x}j^0=i\int\dd[3]{\vb x}\qty(\phi^\dagger\partial^0\phi-\phi\partial^0\phi^\dagger)\\
+    Q&=i\int\dd[3]{\vb x}\qty(\phi^\dagger\partial_0\phi-\phi\partial_0\phi^\dagger)\\
+    Q&=i\int\dd[3]{\vb x}\qty(\pi^\dagger\phi^\dagger-\phi\pi)
+\end{align}
+
+Com é claro o Hamiltoniano dado por,
+
+\begin{align}
+    H&=\int\dd[3]{\vb x}\qty(\pi^\dagger\pi+\grad\phi^\dagger\cdot\grad\phi+m^2\phi^\dagger\phi)-V\mathcal E_0
+\end{align}
+
+Isso quer dizer que temos que adicionar um potencial químico a esta quantidade conservada na função de partição, isto é, devemos avaliar,
+
+\begin{align}
+    &\Tr\qty[e^{-\beta\qty(\hat H-\mu \hat Q)}]\\
+    &=\mathcal N\int\Dd\qty(\pi^\dagger,\pi)\Dd\qty(\phi^\dagger,\phi)\exp\qty{\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[i\pi^\dagger\pdv{}{\tau}\phi^\dagger+i\pi\pdv{}{\tau}\phi-\mathcal H+i\mu\qty(\pi^\dagger\phi^\dagger-\pi\phi)]}\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd\qty(\pi^\dagger,\pi)\Dd\qty(\phi^\dagger,\phi)\exp\qty{\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[i\pi^\dagger\pdv{}{\tau}\phi^\dagger+i\pi\pdv{}{\tau}\phi-\pi^\dagger\pi-\grad\phi^\dagger\cdot\grad\phi-m^2\phi^\dagger\phi+i\mu\qty(\pi^\dagger\phi^\dagger-\pi\phi)]}\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd\qty(\pi^\dagger,\pi)\Dd\qty(\phi^\dagger,\phi)\exp\qty{\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[-\qty(\pi^\dagger-i\pdv{}{\tau}\phi+i\mu\phi)\qty(\pi-i\pdv{}{\tau}\phi^\dagger-i\mu\phi^\dagger)]}\\
+    &\times\exp{\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[-\pdv{}{\tau}\phi\pdv{}{\tau}\phi^\dagger-\mu\pdv{}{\tau}\phi\phi^\dagger+\mu\phi\pdv{}{\tau}\phi^\dagger+\mu^2\phi^\dagger\phi-\grad\phi^\dagger\cdot\grad\phi-m^2\phi^\dagger\phi]}\nonumber\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd\qty(\phi^\dagger,\phi)\exp{-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[\pdv{}{\tau}\phi\pdv{}{\tau}\phi^\dagger+\mu\pdv{}{\tau}\phi\phi^\dagger-\mu\phi\pdv{}{\tau}\phi^\dagger-\mu^2\phi^\dagger\phi+\grad\phi^\dagger\cdot\grad\phi+m^2\phi^\dagger\phi]}\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd\qty(\phi^\dagger,\phi)\exp{-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\phi^\dagger\qty[-\pdv[2]{}{\tau}+2\mu\pdv{}{\tau}-\laplacian+m^2-\mu^2]\phi}
+\end{align}
+
+Basta agora calcular os autovalores do operador diferencial,
+
+\begin{align}
+    \qty[-\pdv[2]{}{\tau}+2\mu\pdv{}{\tau}-\laplacian+m^2-\mu^2]\phi&=\lambda\phi,\ \phi\qty(-\frac12\beta,\vb x)=\phi\qty(\frac12\beta,\vb x)
+\end{align}
+
+Como tentativa de auto-função,
+
+\begin{align}
+    \varphi_{\omega,\vb k}\qty(\tau,\vb x)&=e^{i\omega\tau+i\vb k\cdot\vb x}a\qty(\omega,\vb k)\\
+    \qty[-\pdv[2]{}{\tau}+2\mu\pdv{}{\tau}-\laplacian+m^2-\mu^2]\varphi_{\omega,\vb k}\qty(\tau,\vb x)&=\qty[\omega^2+2\mu i\omega-\mu^2+\omega_{\vb k}^2]\varphi_{\omega,\vb k}\qty(\tau,\vb x)
+\end{align}
+
+Vamos então impor as condições de contorno,
+
+\begin{align}
+    \phi_{\omega,\vb k}=e^{i\omega\tau+i\vb k\cdot\vb x}a\qty(\omega,\vb k)+e^{-i\omega\tau-i\vb k\cdot\vb x}b^\dagger\qty(\omega,\vb k)&,\ \phi_{\omega,\vb k}\qty(-\frac12\beta,\vb x)=\phi_{\omega,\vb k}\qty(\frac12\beta,\vb x)\\
+    e^{-\frac12i\omega\beta+i\vb k\cdot\vb x}a\qty(\omega,\vb k)+e^{\frac12i\omega\beta-i\vb k\cdot\vb x}b^\dagger\qty(\omega,\vb k)&=e^{\frac12i\omega\beta+i\vb k\cdot\vb x}a\qty(\omega,\vb k)+e^{-\frac12i\omega\beta-i\vb k\cdot\vb x}b^\dagger\qty(\omega,\vb k)\\
+    \qty[e^{\frac12i\omega\beta}-e^{-\frac12i\omega\beta}]e^{-i\vb k\cdot\vb x}b^\dagger\qty(\omega,\vb k)&=\qty[e^{\frac12i\omega\beta}-e^{-\frac12i\omega\beta}]e^{i\vb k\cdot\vb x}a\qty(\omega,\vb k)\\
+    \sin\qty(\frac12\beta\omega)&=0\Rightarrow \omega_n=\frac{2\pi n}{\beta},\ n\in\mathbb Z
+\end{align}
+
+Isto é, as auto-funções com as condições de contorno são,
+
+\begin{align}
+    \phi_{n,\vb k}\qty(\tau,\vb k)&=e^{i\omega_n\tau+i\vb k\cdot\vb x}a_n\qty(\vb k)+e^{-i\omega_n\tau-i\vb k\cdot\vb x}b_n^\ast\qty(\vb k),\ \omega_n=\frac{2\pi n}{\beta},\ n\in\mathbb Z
+\end{align}
+
+Que implica nos auto-valores serem,
+
+\begin{align}
+    \lambda_n\qty(\vb k)&=\omega_n^2+\omega_{\vb k}^2-\mu^2+2i\mu\omega_n,\ n\in\mathbb Z,\ \vb k \in\mathbb R^3
+\end{align}
+
+Então,
+
+\begin{align}
+     \Det\qty[-\pdv[2]{}{\tau}+2\mu\pdv{}{\tau}-\laplacian+m^2-\mu^2] &=\prod\limits_{\vb k\in\mathbb R^3}\qty{\prod\limits_{n\in\mathbb Z}\qty(\frac{4\pi^2n^2}{\beta^2}+\omega_{\vb k}^2-\mu^2+2i\mu\frac{2\pi n}{\beta})}\\
+     &=\prod\limits_{\vb k\in\mathbb R^3}\qty{\qty(\omega_{\vb k}^2-\mu^2)\prod\limits_{n\in\mathbb Z^\ast}\qty(\frac{4\pi^2n^2}{\beta^2}+\omega_{\vb k}^2-\mu^2+2i\mu\frac{2\pi n}{\beta})}\\
+     &=\prod\limits_{\vb k\in\mathbb R^3}\qty{\qty(\omega_{\vb k}^2-\mu^2)\prod\limits_{n=1}^{\infty}\qty[\qty(\frac{4\pi^2n^2}{\beta^2}+\omega_{\vb k}^2-\mu^2)^2+4\mu^2\frac{4\pi^2 n^2}{\beta^2}]}\\
+     &=\prod\limits_{\vb k\in\mathbb R^3}\qty{\qty(\omega_{\vb k}^2-\mu^2)\prod\limits_{n=1}^{\infty}\qty[\frac{16\pi^4n^4}{\beta^4}+\qty(\omega_{\vb k}^2+\mu^2)8\frac{\pi^2n^2}{\beta^2}+\qty(\omega_{\vb k}^2-\mu^2)^2]}\\
+     &=\prod\limits_{\vb k\in\mathbb R^3}\qty{\qty(\omega_{\vb k}^2-\mu^2)\prod\limits_{n=1}^{\infty}\qty[\qty(\frac{4\pi^2n^2}{\beta^2}+\omega_{\vb k}^2+\mu^2)^2-4\omega_{\vb k}^2\mu^2]}\\
+     &=\prod\limits_{\vb k\in\mathbb R^3}\qty{\qty(\omega_{\vb k}^2-\mu^2)\prod\limits_{n=1}^{\infty}\qty[\frac{4\pi^2n^2}{\beta^2}+\qty(\omega_{\vb k}-\mu)^2]\prod\limits_{p=1}^{\infty}\qty[\frac{4\pi^2p^2}{\beta^2}+\qty(\omega_{\vb k}+\mu)^2]}\\
+     &=\prod\limits_{\vb k\in\mathbb R^3}\qty{\qty(\omega_{\vb k}^2-\mu^2)\qty(\prod\limits_{m=1}^{\infty}\frac{4\pi^2 m^2}{\beta^2})^2\prod\limits_{n=1}^{\infty}\qty[1+\frac{\beta^2\qty(\omega_{\vb k}-\mu)^2}{4\pi^2n^2}]\prod\limits_{p=1}^{\infty}\qty[1+\frac{\beta^2\qty(\omega_{\vb k}+\mu)^2}{4\pi^2p^2}]}\\
+     &=\prod\limits_{\vb k\in\mathbb R^3}\qty{\qty(\omega_{\vb k}^2-\mu^2)\beta^2\frac{4\pi^2}{\beta^2\qty(\omega_{\vb k}-\mu)\qty(\omega_{\vb k}+\mu)}\sinh\qty(\frac12\beta\qty(\omega_{\vb k}-\mu))\sinh\qty(\frac12\beta\qty(\omega_{\vb k}+\mu))}\\
+     &=\prod\limits_{\vb k\in\mathbb R^3}\qty{4\pi^2\sinh\qty(\frac12\beta\qty(\omega_{\vb k}-\mu))\sinh\qty(\frac12\beta\qty(\omega_{\vb k}+\mu))}\\
+     &=\exp\qty{V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[4\pi^2\sinh\qty(\frac12\beta\qty(\omega_{\vb k}-\mu))\sinh\qty(\frac12\beta\qty(\omega_{\vb k}+\mu))]}\\
+\end{align}
+
+Então,
+
+\begin{align}
+    &\Tr\qty[e^{-\beta\qty(\hat H-\mu\hat Q)}]\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\exp{-V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[\sinh\qty(\frac12\beta\qty(\omega_{\vb k}+\mu))\sinh\qty(\frac12\beta\qty(\omega_{\vb k}-\mu))]}
+\end{align}
+
+Usamos agora o fato de que $\mathcal E_0=\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\omega_{\vb k}$
+
+\begin{align}
+    &\Tr\qty[e^{-\beta\qty(\hat H-\mu\hat Q)}]\\
+    &=\mathcal N\exp\qty{V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[e^{\beta\omega}]}\exp{-V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[\sinh\qty(\frac12\beta\qty(\omega+\mu))\sinh\qty(\frac12\beta\qty(\omega-\mu))]}\\
+    &=\mathcal N\exp{-V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[e^{-\frac12\beta\omega}\sinh\qty(\frac12\beta\qty(\omega+\mu))]}\exp{-V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[e^{-\frac12\beta\omega}\sinh\qty(\frac12\beta\qty(\omega-\mu))]}\\
+    &=\mathcal N\exp{-V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[e^{\frac12\beta\mu}-e^{-\beta\omega-\frac12\beta\mu}]}\exp{-V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[e^{-\frac12\beta\mu}-e^{-\beta\omega+\frac12\beta\mu}]}\\
+    &=\mathcal N\exp{-V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[1-e^{-\beta\qty(\omega+\mu)}]}\exp{-V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[1-e^{-\beta\qty(\omega-\mu)}]}
+\end{align}
+
+Podemos então calcular a energia livre de Helmholtz,
+
+\begin{align}
+    F&=-\frac1\beta\ln\qty[\Tr\qty[e^{-\beta\qty(\hat H-\mu\hat Q)}]]\\
+    &=\frac1\beta V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[1-e^{-\beta\qty(\omega+\mu)}]+\frac1\beta V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[1-e^{-\beta\qty(\omega-\mu)}]
+\end{align}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Campo Spinorial}
+
+Queremos agora olhar para os campos fermiônicos, dados pela lagrangiana,
+
+\begin{align}
+    \mathcal L&=\bar\Psi\qty(i\slashed \partial-m)\Psi+\mathcal E_0
+\end{align}
+
+Note que esta possui uma simetria de $\Psi\rightarrow e^{i\theta}\Psi$, cuja está associada uma quantidade conservada,
+
+\begin{align}
+    j^\mu&=\pdv{\mathcal L}{\partial_\mu\Psi}i\Psi-i\bar\Psi\pdv{\mathcal L}{\partial_\mu\bar\Psi}\\
+    j^\mu&=i\bar\Psi\gamma^\mu i\Psi\\
+    j^\mu&=-\bar\Psi\gamma^\mu\Psi\\
+    Q&=\int\dd[3]{\vb x}j_0=\int\dd[3]{\vb x}\Psi^\dagger\Psi
+\end{align}
+
+Portanto, a função de partição é dada por,
+
+\begin{align}
+    \Tr\qty[e^{-\beta\qty(\hat H-\mu\hat Q)}]&=\mathcal N\int\Dd{\Psi}\Dd{\bar\Psi}\exp\qty{i\int\limits_{i\frac12\beta}^{-i\frac12\beta}\dd{t}\dd[3]{\vb x}\qty[i\bar\Psi\slashed \partial\Psi-m\bar\Psi\Psi+\mu\bar\Psi\gamma^0\Psi+\mathcal E_0]}\\
+    \Tr\qty[e^{-\beta\qty(\hat H-\mu\hat Q)}]&=\mathcal N\int\Dd{\Psi}\Dd{\bar\Psi}\exp\qty{i\int\limits_{i\frac12\beta}^{-i\frac12\beta}\dd{t}\dd[3]{\vb x}\qty[i\bar\Psi\gamma^0 \partial_0\Psi+i\bar\Psi\boldsymbol{\gamma}\cdot \grad\Psi-m\bar\Psi\Psi+\mu\bar\Psi\gamma^0\Psi+\mathcal E_0]}\\
+    \Tr\qty[e^{-\beta\qty(\hat H-\mu\hat Q)}]&=\mathcal N\int\Dd{\Psi}\Dd{\bar\Psi}\exp\qty{i\qty(-i)\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[-\bar\Psi\gamma^0 \pdv{}{\tau}\Psi+i\bar\Psi\boldsymbol{\gamma}\cdot \grad\Psi-m\bar\Psi\Psi+\mu\bar\Psi\gamma^0\Psi+\mathcal E_0]}\\
+    \Tr\qty[e^{-\beta\qty(\hat H-\mu\hat Q)}]&=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd{\Psi}\Dd{\bar\Psi}\exp\qty{-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[\bar\Psi\gamma^0 \pdv{}{\tau}\Psi-i\bar\Psi\boldsymbol{\gamma}\cdot \grad\Psi+m\bar\Psi\Psi-\mu\bar\Psi\gamma^0\Psi]}\\
+    \Tr\qty[e^{-\beta\qty(\hat H-\mu\hat Q)}]&=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd{\Psi}\Dd{\bar\Psi}\exp\qty{-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\bar\Psi\qty[\gamma^0 \pdv{}{\tau}-i\boldsymbol{\gamma}\cdot \grad+m\mathbbm 1-\mu\gamma^0]\Psi}
+\end{align}
+
+A equação de autovalores é,
+
+\begin{align}
+    \qty[\gamma^0 \pdv{}{\tau}-i\boldsymbol{\gamma}\cdot \grad+m\mathbbm 1-\mu\gamma^0]\Psi=\lambda\Psi,\ \Psi\qty(-\frac12\beta,\vb x)=-\Psi\qty(\frac12\beta,\vb x)\\
+    \sum\limits_{n=-\infty}^{+\infty}\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3\beta}\qty[\gamma^0 \pdv{}{\tau}-i\boldsymbol{\gamma}\cdot \grad+m\mathbbm 1-\mu\gamma^0]e^{i\vb k\cdot\vb x}e^{i\frac{2\pi\tau}{\beta}\qty(n+\frac12)}\psi_n\qty(\vb k)=\sum\limits_{n=-\infty}^{+\infty}\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3\beta}e^{i\vb k\cdot\vb x}e^{i\frac{2\pi\tau}{\beta}\qty(n+\frac12)}\lambda\psi_n\qty(\vb k)\\
+    \qty[\gamma^0i\frac{2\pi}{\beta}\qty(n+\frac12)+\boldsymbol\gamma\cdot\vb k+m\mathbbm 1-\gamma^0\mu]\psi_n\qty(\vb k)=\lambda\psi_n\qty(\vb k)\\
+    \qty[\gamma^0\im\omega_n+\boldsymbol\gamma\cdot\vb k+m\mathbbm 1-\gamma^0\mu]\psi_n\qty(\vb k)&=\lambda\psi_n\qty(\vb k)\\
+    \mqty(m-\lambda+\im\omega_n-\mu&0&k_z&k_x-ik_y\\0&m-\lambda+\im\omega_n-\mu&k_x+ik_y&-k_z\\-k_z&-k_x+ik_y&m-\lambda+\mu-\im\omega_n&0\\-k_x-ik_y&k_z&0&m-\lambda+\mu-\im\omega_n)\mqty(a_n\qty(\vb k)\\b_n\qty(\vb k)\\c_n\qty(\vb k)\\d_n\qty(\vb k))=0
+\end{align}
+
+Que pode ser escrita como,
+
+\begin{align}
+    &\begin{cases}
+        a\qty(m-\lambda+\im\omega_n-\mu)+k_z c+d\qty(k_x-ik_y)&=0\\
+        b\qty(m-\lambda+\im\omega_n-\mu)+c\qty(k_x+ik_y)-dk_z&=0\\
+        -ak_z+b\qty(-k_x+ik_y)+c\qty(m-\lambda+\mu-\im\omega_n)&=0\\
+        -a\qty(k_x+ik_y)+bk_z+d\qty(m-\lambda+\mu-\im\omega_n)&=0
+    \end{cases}\\
+    &\begin{cases}
+        a&=\frac{-k_zc-d\qty(k_x-ik_y)}{\im\omega_n-\mu+m-\lambda}\\
+        b&=\frac{-c\qty(k_x+ik_y)+dk_z}{\im\omega_n-\mu+m-\lambda}
+    \end{cases}\\
+    &\begin{cases}
+        \frac{k_z^2c+k_zd\qty(k_x-ik_y)}{\im\omega_n-\mu+m-\lambda}+\qty(-k_x+ik_y)\frac{dk_z-c\qty(k_x+ik_y)}{\im\omega_n-\mu+m-\lambda}+c\qty(\mu-\im\omega_n+m-\lambda)&=0
+    \end{cases}\\
+    &\begin{cases}
+        c\vb k^2&=c\qty(\qty(\im\omega_n-\mu)^2-\qty(m-\lambda)^2)\\
+        d\vb k^2&=d\qty(\qty(\im\omega_n-\mu)^2-\qty(m-\lambda)^2)
+    \end{cases}
+\end{align}
+
+Portanto temos que,
+
+\begin{align}
+    a&=\frac{-k_zc-d\qty(k_x-ik_y)}{\im\omega_n-\mu+m-\lambda}\\
+    b&=\frac{-c\qty(k_x+ik_y)+dk_z}{\im\omega_n-\mu+m-\lambda}\\
+    \lambda_n^\pm\qty(\vb k)&=m\pm\sqrt{\qty(\im\omega_n-\mu)^2-\vb k^2}
+\end{align}
+
+Assim o determinante que queremos calcular é,
+
+\begin{align}
+    &\Det\qty[\gamma^0 \pdv{}{\tau}-i\boldsymbol{\gamma}\cdot \grad+m\mathbbm 1-\mu\gamma^0]\\
+    &=\prod\limits_{\vb k\in\mathbb R^3}\prod\limits_{n\in\mathbb Z}\qty(m+\sqrt{\qty(\im\omega_n-\mu)^2-\vb k^2})\qty(m-\sqrt{\qty(\im\omega_n-\mu)^2-\vb k^2})\\
+    &=\prod\limits_{\vb k\in\mathbb R^3}\qty[\prod\limits_{n\in\mathbb Z}\qty(\omega_{\vb k}^2-\qty(\im\omega_n-\mu)^2)]\\
+    &=\prod\limits_{\vb k\in\mathbb R^3}\qty[\prod\limits_{n\in\mathbb Z}\qty(\omega_{\vb k}-\im\omega_n+\mu)\qty(\omega_{\vb k}+\im\omega_n-\mu)]\\
+    &=\prod\limits_{\vb k\in\mathbb R^3}\qty[\prod\limits_{n=0}^{\infty}\qty(\omega_n^2+\qty(\omega_{\vb k}+\mu)^2)\qty(\omega_n^2+\qty(\omega_{\vb k}-\mu)^2)]\\
+    &=\prod\limits_{\vb k\in\mathbb R^3}\qty[\prod\limits_{n=0}^\infty\qty(\frac{4\pi^2}{\beta^2}\qty(n+\frac12)^2)^2\prod\limits_{p=0}^{\infty}\qty(1+\frac{\beta^2\qty(\omega_{\vb k}+\mu)^2}{4\pi^2\qty(p+\frac12)^2})\prod\limits_{q=0}^{\infty}\qty(1+\frac{\beta^2\qty(\omega_{\vb k}-\mu)^2}{4\pi^2\qty(q+\frac12)^2})]\\
+    &=\prod\limits_{\vb k\in\mathbb R^3}\qty[\prod\limits_{n=0}^\infty\qty(\frac{4\pi^2}{\beta^2}\qty(n+\frac12)^2)^2\cosh\qty(\frac12\beta\qty(\omega_{\vb k}+\mu))\cosh\qty(\frac12\beta\qty(\omega_{\vb k}-\mu))]\\
+    &=\prod\limits_{\vb k\in\mathbb R^3}\qty[4\cosh\qty(\frac12\beta\qty(\omega_{\vb k}+\mu))\cosh\qty(\frac12\beta\qty(\omega_{\vb k}-\mu))]
+\end{align} 
+
+Logo a função de partição é,
+
+\begin{align}
+    \Tr\qty[e^{-\beta\hat H}]&=\mathcal Ne^{\beta V\mathcal E_0}\int\Dd{\Psi}\Dd{\bar\Psi}\exp\qty{-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\bar\Psi\qty[\gamma^0 \pdv{}{\tau}-i\boldsymbol{\gamma}\cdot \grad+m\mathbbm 1-\mu\gamma^0]\Psi}\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\exp\qty{V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[\cosh\qty(\frac12\beta\qty(\omega_{\vb k}+\mu))\cosh\qty(\frac12\beta\qty(\omega_{\vb k}-\mu))]}\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\exp\qty{V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[\qty(e^{\frac12\beta\qty(\omega_{\vb k}+\mu)}+e^{-\frac12\beta\qty(\omega_{\vb k}+\mu)})\qty(e^{\frac12\beta\qty(\omega_{\vb k}-\mu)}+e^{-\frac12\beta\qty(\omega_{\vb k}-\mu)})]}\\
+    &=\mathcal Ne^{\beta V\mathcal E_0}\exp\qty{V\beta\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\omega_{\vb k}}\exp\qty{V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[1+e^{-\beta\qty(\omega_{\vb k}+\mu)}]}\exp\qty{V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[1+e^{-\beta\qty(\omega_{\vb k}-\mu)}]}
+\end{align}
+
+Isto é,
+
+\begin{align}
+    Z\qty(\beta)&=\exp\qty{V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[1+e^{-\beta\qty(\omega_{\vb k}+\mu)}]}\exp\qty{V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[1+e^{-\beta\qty(\omega_{\vb k}-\mu)}]}\\
+    F&=-\frac V\beta\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[1+e^{-\beta\qty(\omega_{\vb k}+\mu)}]-\frac V\beta\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[1+e^{-\beta\qty(\omega_{\vb k}-\mu)}]
+\end{align}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Campo de Calibre}
+
+O objetivo é refazer os cálculos anteriores para a teoria descrita pela Lagrangiana, 
+
+\begin{align}
+    \mathcal L&=-\frac14F_{\mu\nu}F^{\mu\nu}+\mathcal E_0
+\end{align}
+
+Porém esta possui uma liberdade de calibre da forma,
+
+\begin{align}
+    A^\mu\qty(x)\rightarrow A^\mu\qty(x)-\partial^\mu\theta\qty(x)
+\end{align}
+
+Portanto não podemos apenas calcular $\Tr\qty[e^{-\beta\hat H}]$, pois estaremos sobre-contando estados e contando estados não físicos, para isso, é necessário fazer $\Tr\qty[\hat{\mathbb P}e^{-\beta\hat H}]$, no qual $\hat{\mathbb P}$ é um projetor sobre estados físicos, isto é, estamos fazendo o Traço sobre todas as configurações de campo que são equivalentes por mudança de calibre. Podemos fazer isto integrando por todas as configurações inequivalentes e posteriormente integrando por todos os calibres, fazendo estes iguais a zero.
+
+\begin{align}
+    \Tr\qty[\hat{\mathbb P}e^{-\beta\hat H}]&=\int\Dd{\theta}\int\Dd{A}\delta\qty(\theta\qty(x))\exp\qty{i\int\limits_{i\frac12\beta}^{-i\frac12\beta}\dd{t}\dd[3]{\vb x}\qty[-\frac14F_{\mu\nu}F^{\mu\nu}]}
+\end{align}
+
+Porém, podemos querer utilizar outra fixação de calibre que não $\theta=0$, uma implícita, da forma $G\qty(A)=g\qty(A)-\alpha\qty(x)$, podemos então novamente voltar a integrar sobre todas as configurações de campo com,
+
+\begin{align}
+    \Tr\qty[\hat{\mathbb P}e^{-\beta\hat H}]_\alpha&=\int\Dd{A}\delta\qty(G\qty(A))\Det\qty[\fdv{G\qty(A)}{\theta}]\exp\qty{i\int\limits_{i\frac12\beta}^{-i\frac12\beta}\dd{t}\dd[3]{\vb x}\qty[-\frac14F_{\mu\nu}F^{\mu\nu}]}
+\end{align}
+
+O determinante pode ser escrito como uma integral funcional sobre campos fermiônicos ditos \emph{fantasmas},
+
+\begin{align}
+    \Tr\qty[\hat{\mathbb P}e^{-\beta\hat H}]_\alpha&=\int\Dd{A}\int\Dd{\eta}\Dd{\bar\eta}\delta\qty(G\qty(A))\exp\qty{-\int\limits_{i\frac12\beta}^{-i\frac12\beta}\dd{t}\int\dd[3]{\vb x}\bar\eta\fdv{G\qty(A)}{\theta}\eta}\exp\qty{i\int\limits_{i\frac12\beta}^{-i\frac12\beta}\dd{t}\dd[3]{\vb x}\qty[-\frac14F_{\mu\nu}F^{\mu\nu}]}
+\end{align}
+
+Que ao fazer todas as manipulações necessárias pode ser escrita como,
+
+\begin{align}
+    \Tr\qty[\hat{\mathbb P}e^{-\beta\hat H}]&=\int\Dd{A}\Dd{\eta}\Dd{\bar\eta}\exp\qty{-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[\frac14F_{\mu\nu}F_{\mu\nu}+\frac{1}{2\xi}\qty(\partial_\mu A_\mu)^2+\bar\eta\qty(\pdv[2]{}{\tau}+\laplacian)\eta]}
+\end{align}
+
+Escolhemos o calibre de Feynman, $\xi=1$,
+
+\begin{align}
+    \Tr\qty[\hat{\mathbb P}e^{-\beta\hat H}]&=\int\Dd{A}\Dd{\eta}\Dd{\bar\eta}\exp\qty{-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[-\frac12A_{\mu}\partial_\mu\partial_\mu A_\mu+\bar\eta\partial_\mu \partial_\mu \eta]}
+\end{align}
+
+Como já calculamos o resultado de,
+
+\begin{align}
+    \int\Dd{\phi}\exp\qty{-\frac12\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[-\phi\qty(\partial_\mu\partial_\mu+m^2)\phi]}=\exp\qty{-V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[\sinh\qty(\frac12\beta\sqrt{k^2+m^2})]}
+\end{align}
+
+Segue naturalmente que,
+
+\begin{align}
+    &\int\Dd{A}\exp\qty{-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[-\frac12A_{\mu}\partial_\mu\partial_\mu A_\mu]}=\exp\qty{-4V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[\sinh\qty(\frac12\beta\norm{\vb k})]}\\
+    &\int\Dd{\eta}\Dd{\bar\eta}\exp\qty{-\int\limits_{-\frac12\beta}^{\frac12\beta}\dd{\tau}\dd[3]{\vb x}\qty[\bar\eta\partial_\mu \partial_\mu \eta]}=\exp\qty{2V\int\frac{\dd[3]{\vb k}}{\qty(2\pi)^3}\ln\qty[\sinh\qty(\frac12\beta\norm{\vb k})]}
+\end{align}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Regularização Zeta}
+
+Suponhamos que desejamos calcular o seguinte produtório,
+
+\begin{align}
+    \prod\limits_{n=1}^{\infty}\lambda_n
+\end{align}
+
+Para isso reescrevemos,
+
+\begin{align}
+    \prod\limits_{n=1}^{\infty}\lambda_n&=\exp\qty{\ln\qty[\prod\limits_{n=1}^{\infty}\lambda_n]}\\
+    &=\exp\qty{\sum\limits_{n=1}^{\infty}\ln\lambda_n}\\
+    &=\exp\qty{\sum\limits_{n=1}^{\infty}\frac{\ln\lambda_n}{\lambda_n^s}\eval_{s=0}}\\
+    &=\exp\qty{-\dv{}{s}\sum\limits_{n=1}^{\infty}\frac{1}{\lambda_n^s}\eval_{s=0}}
+\end{align}
+
+Definimos então a função \emph{zeta espectral} como,
+
+\begin{align}
+    \zeta_\lambda\qty(s)&=\sum\limits_{n=1}^{\infty}\frac{1}{\lambda_n^s}
+\end{align}
+
+De forma que,
+
+\begin{align}
+    \prod\limits_{n=1}^{\infty}\lambda_n=\exp\qty{-\dv{}{s}\zeta_\lambda\eval_{s=0}}
+\end{align}
+
+Para realizar esse cálculo é necessário relacionar $\zeta_\lambda\qty(s)$ com a função zeta de Riemann,
+
+\begin{align}
+    \zeta\qty(s)&=\sum\limits_{n=1}^\infty\frac{1}{n^s}
+\end{align}
+
+O caso de principal interesse é $\lambda_n=\frac{4\pi^2n^2}{a^2}$, assim,
+
+\begin{align}
+    \zeta_{\lambda}\qty(s)&=\sum\limits_{n=1}^{\infty}\frac{1}{\qty(\frac{4\pi^2n^2}{a^2})^s}\\
+    &=\qty(\frac{a^2}{4\pi^2})^s\zeta\qty(2s)
+\end{align}
+
+Sabendo que $\dv{}{s}\zeta\eval_{s=0}=-\frac12\ln\qty(2\pi)$ e $\zeta\qty(0)=-\frac12$
+
+\begin{align}
+    \dv{}{s}\zeta_{\lambda}\eval_{s=0}&=\ln\qty(\frac{a^2}{4\pi^2})\qty(\frac{a^2}{4\pi^2})^s\zeta\qty(2s)\eval_{s=0}+\qty(\frac{a^2}{4\pi^2})^s2\dv{}{s}\zeta\eval_{s=0}\\
+    &=-\frac12\ln\qty(\frac{a^2}{4\pi^2})-\ln\qty(2\pi)\\
+    &=-\ln\qty(\frac{a}{2\pi})-\ln\qty(2\pi)\\
+    &=-\ln a\\
+\end{align}
+
+Portanto,
+
+\begin{align}
+    \prod\limits_{n=1}^{\infty}\frac{4\pi^2n^2}{a^2}&=\exp\qty{\ln a}\\
+    \prod\limits_{n=1}^{\infty}\frac{4\pi^2n^2}{a^2}&=a
+\end{align}
+
+Outro caso de interesse é da forma de,
+
+\begin{align}
+    \lambda_n&=\frac{4\pi^2}{a^2}\qty(n-\frac12)^2
+\end{align}
+
+Precisaremos agora utilizar a função zeta de Hurwitz,
+
+\begin{align}
+    \zeta\qty(s,b)&=\sum\limits_{n=0}^\infty\frac{1}{\qty(n+b)^s}
+\end{align}
+
+Temos que,
+
+\begin{align}
+    \zeta_\lambda\qty(s)&=\sum\limits_{n=1}^\infty\frac{1}{\qty(\frac{4\pi^2}{a^2}\qty(n-\frac12)^2)^s}\\
+    &=\sum\limits_{n=0}^\infty\frac{1}{\qty(\frac{4\pi^2}{a^2}\qty(n+\frac12)^2)^s}\\
+    &=\qty(\frac{a^2}{4\pi^2})^s\sum\limits_{n=0}^\infty\frac{1}{\qty(n+\frac12)^{2s}}\\
+    &=\qty(\frac{a^2}{4\pi^2})^s\zeta\qty(2s,\frac12)
+\end{align}
+
+Sabendo de, $\zeta\qty(0,\frac12)=0$ e $\zeta'\qty(0,\frac12)=-\frac12\ln2$, temos que,
+
+\begin{align}
+    \dv{}{s}\zeta_\lambda\qty(s)\eval_{s=0}&=\ln\qty(\frac{a^2}{4\pi^2})\qty(\frac{a^2}{4\pi^2})^s\zeta\qty(2s,\frac12)\eval_{s=0}+\qty(\frac{a^2}{4\pi^2})^s\dv{}{s}\zeta\qty(2s,\frac12)\eval_{s=0}\\
+    &=-\ln2
+\end{align}
+
+\begin{align}
+    \prod\limits_{n=1}^{\infty}\frac{4\pi^2}{a^2}\qty(n-\frac12)^2&=\exp\qty{\ln 2}\\
+    \prod\limits_{n=1}^{\infty}\frac{4\pi^2}{a^2}\qty(n-\frac12)^2&=2
+\end{align}
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+\section{Determinantes}
+
+
+
+%\printbibliography[heading=subbibliography]
+%\end{refsection}
+
+\end{document}

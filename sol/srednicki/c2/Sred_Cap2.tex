@@ -1,0 +1,297 @@
+\documentclass[twoside]{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphics}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage{tensor}
+\usepackage[lmargin=0.5cm,rmargin=0.5cm, tmargin =1cm,bmargin =1cm]{geometry}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\Det}[1]{\textup{Det} #1}
+\newcommand{\cqd}{\hfill$\blacksquare$}
+
+\numberwithin{equation}{section}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defi}{Definição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{hip}{Hipótese}[subsection]
+
+\pagestyle{plain}
+
+\AddToHook{cmd/section/before}{\clearpage}
+
+\title{
+Srednicki Capítulo 2
+}
+\author{
+  Vicente V. Figueira
+       }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercício 1}
+
+\begin{align*}
+    \tensor{g}{_\mu_\nu}\qty(\tensor{\delta}{^\mu_\rho}+\tensor{\delta\omega}{^\mu_\rho})\qty(\tensor{\delta}{^\nu_\sigma}+\tensor{\delta\omega}{^\mu_\sigma})&=\tensor{g}{_\rho_\sigma}\\
+    \tensor{g}{_\mu_\nu}\qty(\tensor{\delta}{^\mu_\rho}\tensor{\delta}{^\nu_\sigma}+\tensor{\delta}{^\mu_\rho}\tensor{\delta\omega}{^\nu_\sigma}+\tensor{\delta}{^\nu_\sigma}\tensor{\delta\omega}{^\mu_\rho})&=\tensor{g}{_\rho_\sigma}\\
+    \tensor{g}{_\rho_\sigma}+\tensor{g}{_\rho_\nu}\tensor{\delta\omega}{^\nu_\sigma}+\tensor{g}{_\mu_\sigma}\tensor{\delta\omega}{^\mu_\rho}&=\tensor{g}{_\rho_\sigma}\\
+    \tensor{\delta\omega}{_\rho_\sigma}&=-\tensor{\delta\omega}{_\sigma_\rho}
+\end{align*}
+\cqd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercício 2}
+
+\begin{align*}
+    U^{-1}\qty(\Lambda)U\qty(\Lambda')U\qty(\Lambda)&=U\qty(\Lambda^{-1}\Lambda'\Lambda)\\
+    U^{-1}\qty(\mathbbm 1+\frac{\im}{2\hbar}\tensor{{\delta\omega'}}{_\mu_\nu}\tensor{M}{^\mu^\nu})U\qty(\Lambda)&=U\qty(\Lambda^{-1}\qty(\mathbbm 1+\delta\omega')\Lambda)\\
+    \mathbbm 1+\frac{\im}{2\hbar}\tensor{{\delta\omega'}}{_\mu_\nu}U^{-1}\qty(\Lambda)\tensor{M}{^\mu^\nu}U\qty(\Lambda)&=\mathbbm 1+\frac{\im}{2\hbar}\tensor{\qty(\Lambda^{-1})}{_\alpha^\mu}\tensor{{\delta\omega'}}{_\mu_\nu}\tensor{\Lambda}{^\nu_\beta}\tensor{M}{^\alpha^\beta}\\
+    \tensor{{\delta\omega'}}{_\mu_\nu}U^{-1}\qty(\Lambda)\tensor{M}{^\mu^\nu}U\qty(\Lambda)&=\tensor{{\delta\omega'}}{_\mu_\nu}\tensor{\Lambda}{^\nu_\beta}\tensor{\Lambda}{^\mu_\alpha}\tensor{M}{^\alpha^\beta}\\
+    U^{-1}\qty(\Lambda)\tensor{M}{^\mu^\nu}U\qty(\Lambda)&=\tensor{\Lambda}{^\nu_\beta}\tensor{\Lambda}{^\mu_\alpha}\tensor{M}{^\alpha^\beta}
+\end{align*}
+\cqd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercício 3}
+
+\begin{align*}
+    \qty(\mathbbm 1-\frac{\im}{2\hbar}\tensor{\delta\omega}{_\rho_\sigma}\tensor{M}{^\rho^\sigma})\tensor{M}{^\mu^\nu}\qty(\mathbbm 1-\frac{\im}{\hbar}\tensor{\delta\omega}{_\rho_\sigma}\tensor{M}{^\rho^\sigma})&=\qty(\tensor{\delta}{^\nu_\beta}+\tensor{\delta\omega}{^\nu_\beta})\qty(\tensor{\delta}{^\mu_\alpha}+\tensor{\delta\omega}{^\mu_\alpha})\tensor{M}{^\alpha^\beta}\\
+    \tensor{M}{^\mu^\nu}+\frac{\im}{2\hbar}\tensor{\delta\omega}{_\rho_\sigma}\comm{\tensor{M}{^\mu^\nu}}{\tensor{M}{^\rho^\sigma}}&=\tensor{M}{^\mu^\nu}+\tensor{\delta\omega}{^\nu_\beta}\tensor{M}{^\mu^\beta}+\tensor{\delta\omega}{^\mu_\alpha}\tensor{M}{^\alpha^\nu}\\
+    \frac{\im}{2\hbar}\tensor{\delta\omega}{_\rho_\sigma}\comm{\tensor{M}{^\mu^\nu}}{\tensor{M}{^\rho^\sigma}}&=\frac{\tensor{\delta\omega}{_\rho_\sigma}}{2}\qty(\tensor{g}{^\nu^\rho}\tensor{M}{^\mu^\sigma}+\tensor{g}{^\nu^\sigma}\tensor{M}{^\mu^\rho}+\tensor{g}{^\nu^\rho}\tensor{M}{^\mu^\sigma}-\tensor{g}{^\nu^\sigma}\tensor{M}{^\mu^\rho})\\
+    &+\frac{\tensor{\delta\omega}{_\rho_\sigma}}{2}\qty(\tensor{g}{^\mu^\rho}\tensor{M}{^\sigma^\nu}+\tensor{g}{^\mu^\sigma}\tensor{M}{^\rho^\nu}+\tensor{g}{^\mu^\rho}\tensor{M}{^\sigma^\nu}-\tensor{g}{^\mu^\sigma}\tensor{M}{^\rho^\nu})\\
+    \comm{\tensor{M}{^\mu^\nu}}{\tensor{M}{^\rho^\sigma}}&=\im\hbar\qty(\tensor{g}{^\mu^\rho}\tensor{M}{^\nu^\sigma}-\tensor{g}{^\nu^\rho}\tensor{M}{^\mu^\sigma}+\tensor{g}{^\nu^\sigma}\tensor{M}{^\mu^\rho}-\tensor{g}{^\mu^\sigma}\tensor{M}{^\nu^\rho})
+\end{align*}
+\cqd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercício 4}
+
+\begin{align*}
+    \comm{J_i}{J_j}&=\frac14\epsilon_{iab}\epsilon_{jcd}\comm{M^{ab}}{M^{cd}}\\
+    &=\frac{\im\hbar}{4}\qty{\delta_{ij}\qty(\delta_{ac}\delta_{bd}-\delta_{ad}\delta_{bc})+\delta_{ic}\qty(\delta_{ad}\delta_{bj}-\delta_{aj}\delta_{bd})+\delta_{id}\qty(\delta_{aj}\delta_{bc}-\delta_{ac}\delta_{bj})}\qty(\tensor{g}{^\mu^\rho}\tensor{M}{^\nu^\sigma}-\tensor{g}{^\nu^\rho}\tensor{M}{^\mu^\sigma}+\tensor{g}{^\nu^\sigma}\tensor{M}{^\mu^\rho}-\tensor{g}{^\mu^\sigma}\tensor{M}{^\nu^\rho})\\
+    &=\frac{\im\hbar}{2}\qty(-\tensor{g}{^a_a}M_{ji}-\tensor{g}{^b_b}M_{ji}+g_{ja}\tensor{M}{^a_i}+g_{jb}\tensor{M}{^b_i}+\tensor{g}{^a_i}M_{ja}+\tensor{g}{^b_i}M_{jb})\\
+    &=\im\hbar M_{ij}=\frac{\im\hbar}{2}\qty(\delta_{ai}\delta_{bj}-\delta_{aj}\delta_{bi})M^{ab}\\
+    &=\im\hbar\tensor{\epsilon}{_i_j^k}J_k
+\end{align*}
+
+\begin{align*}
+    \comm{J_i}{K_j}&=\frac12\epsilon_{iab}\comm{M^{ab}}{M^{j0}}\\
+    &=\frac{\im\hbar}{2}\epsilon_{iab}\qty(g^{aj}M^{b0}-g^{bj}M^{a0}-g^{a0}M^{bj}+g^{b0}M^{aj})\\
+    &=\frac{\im\hbar}{2}\epsilon_{iab}g^{aj}M^{b0}+\frac{\im\hbar}{2}\epsilon_{iab}g^{bj}M^{a0}\\
+    &=\im\hbar\epsilon_{ijb}M^{b0}\\
+    &=\im\hbar\tensor{\epsilon}{_i_j^k}K_k
+\end{align*}
+
+\begin{align*}
+    \comm{K_i}{K_j}&=\comm{M^{i0}}{M^{j0}}\\
+    &=\im\hbar\qty(g^{ij}M^{00}-g^{0j}M^{i0}-g^{i0}M^{0j}+g^{00}M^{ij})\\
+    &=-\frac{\im\hbar}{2}\qty(\delta_{ai}\delta_{bj}-\delta_{aj}\delta_{bi})M^{ab}\\
+    &=-\im\hbar\tensor{\epsilon}{_i_j^k}J_k
+\end{align*}
+\cqd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercício 5}
+
+\begin{align*}
+    U^{-1}\qty(\Lambda)P^\mu U\qty(\Lambda)&=\tensor{\Lambda}{^\mu_\nu}P^\nu\\
+    \qty(\mathbbm 1-\frac{\im}{2\hbar}{\delta\omega}_{\rho\sigma}M^{\rho\sigma})P^\mu\qty(\mathbbm 1+\frac{\im}{2\hbar}{\delta\omega}_{\rho\sigma}M^{\rho\sigma})&=\qty(\tensor{\delta}{^\mu_\nu}+\tensor{\delta\omega}{^\mu_\nu})P^\nu\\
+    P^\mu+\frac{\im}{2\hbar}{\delta\omega}_{\rho\sigma}\comm{P^\mu}{M^{\rho\sigma}}&=P^\mu+\tensor{\delta\omega}{^\mu_\nu}P^\nu\\
+    {\delta\omega}_{\rho\sigma}\comm{P^\mu}{M^{\rho\sigma}}&=-\im\hbar{\delta\omega}_{\rho\sigma}\qty(g^{\mu\rho}P^\sigma-g^{\mu\sigma}P^\rho)\\
+    \comm{P^\mu}{M^{\rho\sigma}}&=\im\hbar\qty(g^{\mu\sigma}P^\rho-g^{\mu\rho}P^\sigma)
+\end{align*}
+\cqd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercício 6}
+
+\begin{align*}
+    \comm{J_i}{H}&=\comm{J_i}{P^0}\\
+    &=\frac12\epsilon_{ijk}\comm{M^{jk}}{P^0}\\
+    &=-\frac12\epsilon_{ijk}\qty(g^{0k}P^j-g^{0j}P^k)\\
+    &=0
+\end{align*}
+
+\begin{align*}
+    \comm{J_i}{P_j}&=\frac12\epsilon_{iab}\comm{M^{ab}}{P_j}\\
+    &=-\frac{\im\hbar}{2}\epsilon_{iab}\qty(g^{ib}P^a-g^{ja}P^b)\\
+    &=\im\hbar\epsilon_{ijk}P^k
+\end{align*}
+
+\begin{align*}
+    \comm{K_i}{H}&=-\comm{P^0}{M^{i0}}\\
+    &=-\im\hbar\qty(g^{00}P^i-g^{0i}P^0)\\
+    &=\im\hbar P^i
+\end{align*}
+
+\begin{align*}
+    \comm{K_i}{P_j}&=\comm{M^{i0}}{P^j}\\
+    &=-\im\hbar\qty(g^{j0}P^i-g^{ji}P^0)\\
+    &=\im\hbar\delta_{ij}H
+\end{align*}
+\cqd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercício 7}
+
+A propriedade é $T\qty(a)T\qty(b)=T\qty(a+b)$,
+
+\begin{align*}
+    T^{-1}\qty(\delta a)T\qty(b)T\qty(\delta a)&=T\qty(b)\\
+    \qty(\mathbbm 1+\frac{\im\hbar}{\delta a}_\mu P^\mu)T\qty(b)\qty(\mathbbm 1-\frac\im\hbar{\delta a}_\mu P^\mu)&=T\qty(b)\\
+    T\qty(b)+\frac\im\hbar\comm{P^\mu}{T\qty(b)}{\delta a}_\mu&=T\qty(b)\\
+    \comm{P^\mu}{T\qty(b)}&=0\\
+    \comm{P^\mu}{\mathbbm 1-\frac\im\hbar{\delta b}_\nu P^\nu}&=0\\
+    \comm{P^\mu}{P^\nu}&=0
+\end{align*}
+\cqd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercício 8}
+
+\subsection*{\textbf{a)}}
+
+\begin{align*}
+    U^{-1}\qty(\Lambda)\phi\qty(x)U\qty(\Lambda)&=\phi\qty(\Lambda^{-1}x)\\
+    \qty(\mathbbm 1-\frac{\im}{2\hbar}{\delta\omega}_{\mu\nu}M^{\mu\nu})\phi\qty(x)\qty(\mathbbm 1+\frac{\im}{2\hbar}{\delta\omega}_{\mu\nu}M^{\mu\nu})&=\phi\qty(x-\delta\omega x)\\
+    \phi\qty(x)+\frac{\im}{2\hbar}\comm{\phi\qty(x)}{M^{\mu\nu}}{\delta\omega}_{\mu\nu}&=\phi\qty(x)-\qty(\delta\omega x)^\rho\partial_\rho\phi\qty(x)\\
+    {\delta\omega}_{\mu\nu}\comm{\phi\qty(x)}{M^{\mu\nu}}&=2\im\hbar{\delta\omega}_{\mu\nu}g^{\rho\mu}x^\nu\partial_\rho\phi\qty(x)\\
+    &=\im\hbar{\delta\omega}_{\mu\nu}\qty(g^{\rho\mu}x^\nu-g^{\rho\nu}x^\mu)\partial_\rho\phi\qty(x)\\
+    &=\frac\hbar\im{\delta\omega}_{\mu\nu}\qty(x^\mu\partial^\nu-x^\nu\partial^\mu)\phi\qty(x)\\
+    \comm{\phi\qty(x)}{M^{\mu\nu}}&={\mathcal L}^{\mu\nu}\phi\qty(x)
+\end{align*}
+
+\subsection*{\textbf{b)}}
+
+\begin{align*}
+    \comm{\comm{\phi\qty(x)}{M^{\mu\nu}}}{M^{\rho\sigma}}&=\comm{{\mathcal L}^{\mu\nu}\phi\qty(x)}{M^{\rho\sigma}}\\
+    &={\mathcal L}^{\mu\nu}\comm{\phi\qty(x)}{M^{\rho\sigma}}\\
+    &={\mathcal L}^{\mu\nu}{\mathcal L}^{\rho\sigma}\phi\qty(x)
+\end{align*}
+
+\subsection*{\textbf{c)}}
+
+\begin{align*}
+    &\comm{\comm{A}{B}}{C}+\comm{\comm{B}{C}}{A}+\comm{\comm{C}{A}}{B}\\
+    &=ABC-BAC-CAB+CBA+BCA-CBA-ABC+ACB+CAB-ACB-BCA+BAC\\
+    &=0
+\end{align*}
+
+\subsection*{\textbf{d)}}
+
+\begin{align*}
+    \comm{\phi\qty(x)}{\comm{M^{\mu\nu}}{M^{\rho\sigma}}}&=-\comm{M^{\mu\nu}}{\comm{M^{\rho\sigma}}{\phi\qty(x)}}-\comm{M^{\rho\sigma}}{\comm{\phi\qty(x)}{M^{\mu\nu}}}\\
+    &=-\comm{\comm{\phi\qty(x)}{M^{\rho\sigma}}}{M^{\mu\nu}}+\comm{\comm{\phi\qty(x)}{M^{\mu\nu}}}{M^{\rho\sigma}}\\
+    &=\qty({\mathcal L}^{\mu\nu}{\mathcal L}^{\rho\sigma}-{\mathcal L}^{\rho\sigma}{\mathcal L}^{\mu\nu})\phi\qty(x)
+\end{align*}
+
+\subsection*{\textbf{e)}}
+
+\begin{align*}
+    \qty({\mathcal L}^{\mu\nu}{\mathcal L}^{\rho\sigma}-{\mathcal L}^{\rho\sigma}{\mathcal L}^{\mu\nu})\phi\qty(x)&=\comm{{\mathcal L}^{\mu\nu}}{{\mathcal L}^{\rho\sigma}}\phi\qty(x)\\
+    &=-\hbar^2\comm{x^\mu\partial^\nu-x^\nu\partial^\mu}{x^\rho\partial^\sigma-x^\sigma\partial^\rho}\phi\qty(x)\\
+    &=-\im\hbar\qty(\tensor{g}{^\nu^\rho}\tensor{L}{^\mu^\sigma}+\tensor{g}{^\mu^\rho}\tensor{L}{^\sigma^\nu}+\tensor{g}{^\mu^\sigma}\tensor{L}{^\nu^\rho}-\tensor{g}{^\nu^\sigma}\tensor{L}{^\rho^\mu})
+    &=\comm{\phi\qty(x)}{-\im\hbar\qty(g^{\mu\rho}M^{\nu\sigma}+g^{\nu\rho}M^{\mu\sigma}-g^{\mu\sigma}M^{\nu\rho}-g^{\nu\sigma}M^{\mu\rho})}
+\end{align*}
+
+\subsection*{\textbf{f)}}
+
+Segue diretamente do item anterior, pois avaliamos $\comm{\phi\qty(x)}{\comm{M^{\mu\nu}}{M^{\rho\sigma}}}$, a menos 
+de uma carga central a relação de comutação é válida.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercício 9}
+
+\subsection*{\textbf{a)}}
+
+\begin{align*}
+    U^{-1}\qty(\Lambda)\partial^\rho\phi\qty(x)U\qty(\Lambda)&=\tensor{\Lambda}{^\rho_\sigma}{\bar\partial}^\sigma\phi\qty(\Lambda^{-1}x)\\
+    \qty(\mathbbm 1-\frac{\im}{2\hbar}{\delta\omega}_{\mu\nu}M^{\mu\nu})\partial^\rho\phi\qty(x)\qty(\mathbbm 1+\frac{\im}{2\hbar}{\delta\omega}_{\mu\nu}M^{\mu\nu})&=\qty(\tensor{\delta}{^\rho_\sigma}+\frac{\im}{2\hbar}{\delta\omega}_{\alpha\beta}\tensor{\qty(S^{\alpha\beta}_{\textnormal{V}})}{^\rho_\sigma}){\bar\partial}^\sigma\phi\qty(\Lambda^{-1}x)\\
+    \partial^\sigma\phi\qty(x)+\frac{\im}{2\hbar}{\delta\omega}_{\mu\nu}\comm{\partial^\rho\phi\qty(x)}{M^{\mu\nu}}&={\bar\partial}^\rho\qty(x-\delta\omega x)+\frac{\im}{2\hbar}{\delta\omega}_{\alpha\beta}\tensor{\qty(S^{\alpha\beta}_{\textnormal V})}{^\rho_\sigma}{\bar\partial}^\sigma\phi\qty(x-\delta\omega x)\\
+    \frac{\im}{2\hbar}{\delta\omega}_{\mu\nu}\comm{\partial^\rho\phi\qty(x)}{M^{\mu\nu}}&=-\qty(\delta\omega x)_\gamma\partial^\gamma\partial^\rho\phi\qty(x)+\frac{\im}{2\hbar}{\delta\omega}_{\alpha\beta}\tensor{\qty(S^{\alpha\beta}_{\textnormal{V}})}{^\rho_\sigma}\qty(\partial^\sigma\phi\qty(x)-\qty(\delta\omega)_\delta\partial^\delta\partial^\sigma\phi\qty(x))\\
+    {\delta\omega}_{\mu\nu}\comm{\partial^\rho\phi\qty(x)}{M^{\mu\nu}}&=2\im\hbar{\delta\omega}_{\mu\nu}x^\nu\partial^\mu\partial^\rho\phi\qty(x)+{\delta\omega}_{\mu\nu}\tensor{\qty(S^{\mu\nu}_{\textnormal{V}})}{^\rho_\sigma}\partial^\sigma\phi\qty(x)\\
+    {\delta\omega}_{\mu\nu}\comm{\partial^\rho\phi\qty(x)}{M^{\mu\nu}}&=-\frac\hbar\im{\delta\omega}_{\mu\nu}\qty(x^\nu\partial^\mu-x^\mu\partial^\nu)\partial^\rho\phi\qty(x)+{\delta\omega}_{\mu\nu}\tensor{\qty(S^{\mu\nu}_{\textnormal{V}})}{^\rho_\sigma}\partial^\sigma\phi\qty(x)\\
+    \comm{\partial^\rho\phi\qty(x)}{M^{\mu\nu}}&={\mathcal L}^{\mu\nu}\partial^\rho\phi\qty(x)+\tensor{\qty(S^{\mu\nu}_{\textnormal{V}})}{^\rho_\sigma}\partial^\sigma\phi\qty(x)
+\end{align*}
+
+\subsection*{\textbf{b)}}
+
+\begin{align*}
+    \tensor{\comm{S^{\mu\nu}_{\textnormal{V}}}{S^{\rho\sigma}_{\textnormal{V}}}}{^\alpha_\beta}&=\tensor{\qty(S^{\mu\nu}_{\textnormal{V}})}{^\alpha_\tau}\tensor{\qty(S^{\rho\sigma}_{\textnormal{V}})}{^\tau_\beta}-\tensor{\qty(S^{\rho\sigma}_{\textnormal{V}})}{^\alpha_\tau}\tensor{\qty(S^{\mu\nu}_{\textnormal{V}})}{^\tau_\beta}\\
+    &=-\hbar^2\qty(g^{\mu\alpha}\tensor{\delta}{^\nu_\tau}-g^{\nu\alpha}\tensor{\delta}{^\mu_\tau})\qty(g^{\rho\tau}\tensor{\delta}{^\sigma_\beta}-g^{\sigma\tau}\tensor{\delta}{^\rho_\beta})+\hbar^2\qty(g^{\rho\alpha}\tensor{\delta}{^\sigma_\tau}-g^{\sigma\alpha}\tensor{\delta}{^\rho_\tau})\qty(g^{\mu\tau}\tensor{\delta}{^\nu_\beta}-g^{\nu\tau}\tensor{\delta}{^\mu_\beta})\\
+    &=-\hbar^2\qty{g^{\mu\rho}\qty(g^{\sigma\alpha}\tensor{\delta}{^\nu_\beta}-g^{\nu\alpha}\tensor{\delta}{^\sigma_\beta})+g^{\nu\rho}\qty(g^{\mu\alpha}\tensor{\delta}{^\sigma_\beta}-g^{\sigma\alpha}\tensor{\delta}{^\mu_\beta})}-\hbar^2\qty{g^{\mu\sigma}\qty(g^{\nu\alpha}\tensor{\delta}{^\rho_\beta}-g^{\rho\alpha}\tensor{\delta}{^\nu_\beta})+g^{\nu\sigma}\qty(g^{\rho\alpha}\tensor{\delta}{^\mu_\beta}-g^{\mu\alpha}\tensor{\delta}{^\rho_\beta})}\\
+    &=\im\hbar\qty{g^{\mu\rho}\tensor{\qty(S^{\nu\sigma}_{\textnormal{V}})}{^\alpha_\beta}-g^{\nu\rho}\tensor{\qty(S^{\mu\sigma}_{\textnormal{V}})}{^\alpha_\beta}-g^{\mu\sigma}\tensor{\qty(S^{\nu\rho}_{\textnormal{V}})}{^\alpha_\beta}+g^{\nu\sigma}\tensor{\qty(S^{\mu\rho}_{\textnormal{V}})}{^\alpha_\beta}}
+\end{align*}
+
+\subsection*{\textbf{c)}}
+
+\begin{align*}
+    \tensor{\qty(S^{12}_{\textnormal{V}})}{^\mu_\nu}&=\frac\hbar\im\qty(g^{1\mu}\tensor{\delta}{^2_\nu}-g^{2\mu}\tensor{\delta}{^1_\nu})\\
+    &=\frac\hbar\im\qty(\delta_{1\mu}\delta_{2\nu}-\delta_{2\mu}\delta_{1\nu})
+\end{align*}
+
+\begin{align*}
+    S^{12}_\textnormal{V}&=\frac\hbar\im\mqty(0&0&0&0\\0&0&1&0\\0&-1&0&0\\0&0&0&0),\ \qty(S^{12}_\textnormal{V})^2=\frac{\hbar^2}{\im^2}\mqty(0&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&0)\\
+    \qty(S^{12}_\textnormal{V})^3&=\frac{\hbar^3}{\im^3}\mqty(0&0&0&0\\0&0&-1&0\\0&1&0&0\\0&0&0&0)=-\frac{\hbar^2}{\im^2}S^{12}_\textnormal{V}
+\end{align*}
+
+\begin{align*}
+    \exp\qty(-\frac{\im\theta}{\hbar}S^{12}_\textnormal{V})&=\sum\limits_{n=0}^\infty\qty(-\frac{\im\theta}{\hbar})^n\frac{\qty(S^{12}_\textnormal{V})^n}{n!}\\
+    &=\mathbbm 1+\sum\limits_{n=0}^{\infty}\qty(-\frac{\im\theta}{\hbar})^{2n+1}\frac{\qty(S^{12}_\textnormal{V})^{2n+1}}{(2n+1)!}+\sum\limits_{n=1}^{\infty}\qty(-\frac{\im\theta}{\hbar})^{2n}\frac{\qty(S^{12}_\textnormal{V})^{2n}}{(2n)!}\\
+    &=\mathbbm 1+\sum\limits_{n=0}^{\infty}\qty(-\frac{\im\theta}{\hbar})^{2n+1}\qty(-\frac{\hbar^2}{\im^2})^{n}\frac{S^{12}_\textnormal{V}}{(2n+1)!}+\sum\limits_{n=1}^{\infty}\qty(-\frac{\im\theta}{\hbar})^{2n}\qty(-\frac{\hbar^2}{\im^2})^{n-1}\frac{\qty(S^{12}_\textnormal{V})^{2}}{(2n)!}\\
+    &=\mathbbm 1 +\frac{1}{\hbar^2}\qty(S^{12}_\textnormal{V})^2\qty(\cos\theta-1)-\frac{\im}{\hbar}S^{12}_\textnormal{V}\sin\theta\\
+    &=\mqty(1&0&0&0\\0&\cos\theta&-\sin\theta&0\\0&\sin\theta&\cos\theta&0\\0&0&0&1)
+\end{align*}
+
+\subsection*{\textbf{d)}}
+
+\begin{align*}
+    \tensor{\qty(S^{30}_{\textnormal{V}})}{^\mu_\nu}&=\frac\hbar\im\qty(g^{3\mu}\tensor{\delta}{^0_\nu}-g^{0\mu}\tensor{\delta}{^3_\nu})\\
+    &=\frac\hbar\im\qty(\delta_{3\mu}\delta_{0\nu}-\delta_{0\mu}\delta_{3\nu})
+\end{align*}
+
+\begin{align*}
+    S^{30}_\textnormal{V}&=\frac\hbar\im\mqty(0&0&0&1\\0&0&0&0\\0&0&0&0\\1&0&0&0),\ \qty(S^{30}_\textnormal{V})^2=\frac{\hbar^2}{\im^2}\mqty(1&0&0&0\\0&0&0&0\\0&0&0&0\\0&0&0&1)\\
+    \qty(S^{30}_\textnormal{V})^3&=\frac{\hbar^3}{\im^3}\mqty(0&0&0&1\\0&0&0&0\\0&0&0&0\\1&0&0&0)=\frac{\hbar^2}{\im^2}S^{30}_\textnormal{V}
+\end{align*}
+
+\begin{align*}
+    \exp\qty(\frac{\im\eta}{\hbar}S^{30}_\textnormal{V})&=\sum\limits_{n=0}^\infty\qty(\frac{\im\eta}{\hbar})^n\frac{\qty(S^{30}_\textnormal{V})^n}{n!}\\
+    &=\mathbbm 1+\sum\limits_{n=0}^{\infty}\qty(\frac{\im\eta}{\hbar})^{2n+1}\frac{\qty(S^{30}_\textnormal{V})^{2n+1}}{(2n+1)!}+\sum\limits_{n=1}^{\infty}\qty(\frac{\im\eta}{\hbar})^{2n}\frac{\qty(S^{30}_\textnormal{V})^{2n}}{(2n)!}\\
+    &=\mathbbm 1+\sum\limits_{n=0}^{\infty}\qty(\frac{\im\eta}{\hbar})^{2n+1}\qty(\frac{\hbar^2}{\im^2})^{n}\frac{S^{30}_\textnormal{V}}{(2n+1)!}+\sum\limits_{n=1}^{\infty}\qty(\frac{\im\eta}{\hbar})^{2n}\qty(\frac{\hbar^2}{\im^2})^{n-1}\frac{\qty(S^{30}_\textnormal{V})^{2}}{(2n)!}\\
+    &=\mathbbm 1 +\frac{1}{\hbar^2}\qty(S^{30}_\textnormal{V})^2\qty(1-\cosh\eta)+\frac{\im}{\hbar}S^{30}_\textnormal{V}\sinh\eta\\
+    &=\mqty(\cosh\eta&0&0&\sin\eta\\0&1&0&0\\0&0&1&0\\\sin\eta&0&0&\cos\eta)
+\end{align*}
+\cqd
+
+\end{document}
