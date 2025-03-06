@@ -1,0 +1,467 @@
+\section{Sine-Gordon Theory}
+
+Our theory under consideration is the following Lagrangian in a 1+1 space-time,
+
+\begin{align}
+    \mathcal L&=-\frac12\partial_\mu \Phi\partial^\mu\Phi-\frac ab\qty(1-\cos\qty(b\Phi))\nonumber
+\end{align}
+
+\subsection{Exact Solutions}
+
+We're going to verify that the two expressions,
+
+\begin{align}
+    \Phi^{\pm}\qty(x)&=\frac4b\arctan\qty[\exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}]\nonumber
+\end{align}
+
+Are in fact two independent solutions of the theory, with `$v$' a 2-vector, an integration constant. 
+To do this, we first state the equations of motion,
+
+\begin{align}
+    0&=\pdv{\mathcal L}{\Phi}-\partial_\mu\pdv{\mathcal L}{\partial_\mu\Phi}\nonumber\\
+    0&=-a\sin\qty(b\Phi)+\partial_\mu\partial^\mu\Phi\nonumber
+\end{align}
+
+So the we can just compute the derivatives of the expressions,
+
+\begin{align}
+    \partial_\mu\Phi^{\pm}&=\frac4b\frac{\qty(\pm)v_\mu\sqrt{\frac{ab}{v^2}}}
+        {1+\exp\qty{\pm2x\cdot v\sqrt{\frac{ab}{v^2}}}}
+    \exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}\nonumber\\
+    \partial^\mu\partial_\mu\Phi^{\pm}&=-\frac4b
+    \frac{\qty(\pm)v_\mu\sqrt{\frac{ab}{v^2}}\qty(\pm) 2v^\mu\sqrt{\frac{ab}{v^2}}}
+        {\qty[1+\exp\qty{\pm2x\cdot v\sqrt{\frac{ab}{v^2}}}]^2}
+    \exp\qty{\pm 2x\cdot v\sqrt{\frac{ab}{v^2}}}
+    \exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}\nonumber\\
+    &\quad+\frac4b\frac{\qty(\pm)v_\mu\sqrt{\frac{ab}{v^2}}\qty(\pm) v^\mu\sqrt{\frac{ab}{v^2}}}
+        {1+\exp\qty{\pm2x\cdot v\sqrt{\frac{ab}{v^2}}}}
+    \exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}\nonumber\\
+    \partial^\mu\partial_\mu\Phi^{\pm}&=-8
+    \frac{a}{\qty[1+\exp\qty{\pm2x\cdot v\sqrt{\frac{ab}{v^2}}}]^2}
+    \exp\qty{\pm 3x\cdot v\sqrt{\frac{ab}{v^2}}}\nonumber\\
+    &\quad+4\frac{a}{1+\exp\qty{\pm2x\cdot v\sqrt{\frac{ab}{v^2}}}}
+    \exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}\nonumber\\
+    \partial^\mu\partial_\mu\Phi^{\pm}&=
+    \frac{4a\exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}}
+        {\qty[1+\exp\qty{\pm2x\cdot v\sqrt{\frac{ab}{v^2}}}]^2}
+    \qty[-2\exp\qty{\pm 2x\cdot v\sqrt{\frac{ab}{v^2}}}+1+\exp\qty{\pm2x\cdot v\sqrt{\frac{ab}{v^2}}}]\nonumber\\
+    \partial^\mu\partial_\mu\Phi^{\pm}&=
+    \frac{4a\exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}}
+        {\qty[1+\exp\qty{\pm2x\cdot v\sqrt{\frac{ab}{v^2}}}]^2}
+    \qty[1-\exp\qty{\pm2x\cdot v\sqrt{\frac{ab}{v^2}}}]\label{dalambertian}
+\end{align}
+
+This seems a little bit hopeless, but, now let's take a look at,
+
+\begin{align}
+    -a\sin\qty(b\Phi^\pm)&=-a\sin\qty(b\frac4b\arctan\qty[\exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}])\nonumber
+\end{align}
+
+It's clear that this will be cumbersome, hence, we'll compactify the notation, making,
+
+\begin{align}
+    \theta&=\exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}\nonumber
+\end{align}
+
+So,
+
+\begin{align}
+    -a\sin\qty(b\Phi^\pm)&=-a\sin\qty(4\arctan\theta)\nonumber
+\end{align}
+
+The objective here is to use trigonometric identities to make the argument inside any trigonometric function just 
+`$\arctan\theta$', and then rewrite all the trigonometric functions in terms of tangents, we start with simple 
+double angle identities,
+
+\begin{align}
+    -a\sin\qty(b\Phi^\pm)&=-a\sin\qty(4\arctan\theta)\nonumber\\
+    &=-2a\sin\qty(2\arctan\theta)\cos\qty(2\arctan\theta)\nonumber\\
+    &=-4a\sin\qty(\arctan\theta)\cos\qty(\arctan\theta)\qty[2\cos^2\qty(\arctan\theta)-1]\nonumber
+\end{align}
+
+The first objective is already achieved, everything has as argument `$\arctan\theta$', now, we have to use the 
+relations,
+
+\begin{align}
+    \begin{cases}
+        \tan^2z+1&=\frac{1}{\cos^2z}\\
+        \frac{1}{\tan^2z}+1&=\frac{1}{\sin^2z}
+    \end{cases}\Rightarrow
+    \begin{cases}
+        \cos z&=\frac{1}{\sqrt{\tan^2z+1}}\\
+        \sin z&=\frac{\tan z}{\sqrt{\tan^2z+1}}
+    \end{cases}\nonumber
+\end{align}
+
+To get an equation with just tangents,
+
+\begin{align}
+    -a\sin\qty(b\Phi^\pm)&=-4a\sin\qty(\arctan\theta)\cos\qty(\arctan\theta)
+    \qty[2\cos^2\qty(\arctan\theta)-1]\nonumber\\
+    &=-4a\frac{\tan\qty(\arctan\theta)}
+        {\sqrt{\tan^2\qty(\arctan\theta)+1}}
+    \frac{1}{\sqrt{\tan^2\qty(\arctan\theta)+1}}\qty[\frac{2}{\tan^2\qty(\arctan\theta)+1}-1]\nonumber
+\end{align}
+
+And now we just use the trivial property `$\tan\qty(\arctan\theta)=\theta$',
+
+\begin{align}
+    -a\sin\qty(b\Phi^\pm)&=-4a\frac{\tan\qty(\arctan\theta)}
+        {\sqrt{\tan^2\qty(\arctan\theta)+1}}
+    \frac{1}{\sqrt{\tan^2\qty(\arctan\theta)+1}}\qty[\frac{2}{\tan^2\qty(\arctan\theta)+1}-1]\nonumber\\
+    &=-4a\frac{\theta}{\sqrt{1+\theta^2}}
+    \frac{1}{\sqrt{1+\theta^2}}\qty[\frac{2}{1+\theta^2}-1]\nonumber\\
+    &=-4a\frac{\theta}{\qty[1+\theta^2]^2}\qty[2-\theta^2-1]\nonumber\\
+    &=-4a\frac{\theta}{\qty[1+\theta^2]^2}\qty[1-\theta^2]\nonumber
+\end{align}
+
+If we switch back to, `$\theta=\exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}$', we get,
+
+\begin{align}
+    -a\sin\qty(b\Phi^\pm)&=-4a\frac{\theta}{\qty[1+\theta^2]^2}\qty[1-\theta^2]\nonumber\\
+    -a\sin\qty(b\Phi^\pm)&=-4a\frac{\exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}}
+        {\qty[1+\exp\qty{\pm 2x\cdot v\sqrt{\frac{ab}{v^2}}}]^2}
+    \qty[1-\exp\qty{\pm 2x\cdot v\sqrt{\frac{ab}{v^2}}}]\label{sinphi}
+\end{align}
+
+If we take a look at the two expressions \ref{dalambertian} and \ref{sinphi}, we can 
+notice that the two are identical, apart from a minus sign, this implies that,
+
+\begin{align}
+    -a\sin\qty(b\Phi^\pm)+\partial_\mu\partial^\mu\Phi^\pm&=0\nonumber
+\end{align}
+
+Is true for any 2-vector `$v$', confirming the expression is indeed a exact solution of the theory. Actually, 
+we have some subtleties, as if those are to be solutions, they better be real, what is equivalent to say,
+
+\begin{align}
+    \frac{ab}{v^2}\geq 0\nonumber
+\end{align}
+
+Both `$a,b$' are Real parameters, but, for the vacuum at `$\Phi=0$' to be \textit{stable}, it's needed `$\frac ab>0$' 
+--- the case with `$\frac ab=0$' is trivial ---, what implies `$ab>0$', and that we do need `$v^2\geq 0$'. 
+We're going to trow away under the carpet the singular case `$v^2=0$', and for now on just consider the 
+`$v^2>0$' case. This allows us to do some simplifications, as, with `$v^2>0$' we know for sure that isn't 
+possible to have `$v^1=0$', and, by the way `$v$' appears in the solution, any rescaling of `$v$' is irrelevant, 
+thus we can without any loss of generality choose both `$v^2=1$', `$v^1=1$' and also `$v^0=u$'. One could argue about the choice 
+`$v^1=-1$', and until now there is nothing we can say about to reject it, but, we'll say in advance that the sign of 
+`$v^1$' is the same sign of the energies of those modes, hence, to modes of negative energies not be present, we force 
+`$v^1=1$' which, as we're going to show later, implies the energy is positive.
+
+\subsection{Conserved Current and Charge}
+
+These exact solutions are curious due to being topological, that is, they do not satisfy 
+`$\Phi\qty(x^0,x^1=+\infty)=0=\Phi\qty(x^0,x^1=-\infty)$', neither the weaker condition, 
+`$\Phi\qty(x^0,x^1=+\infty)=\Phi\qty(x^0,x^1=-\infty)$'. In fact we have,
+
+\begin{align}
+    \Phi^\pm\qty(x^0,x^1)&=\frac4b\arctan\qty[\exp\qty{\pm\qty(-x^0u+x^1)\sqrt{\frac{ab}{v^2}}}]\nonumber\\
+    \Phi^\pm\qty(x^0,x^1=+\infty)&=\frac4b\arctan\qty[\exp\qty{\pm\qty(-x^0u+\infty)\sqrt{\frac{ab}{v^2}}}]\nonumber\\
+    \Phi^\pm\qty(x^0,x^1=+\infty)&=\frac4b\arctan\qty[\exp\qty{\pm\infty}]\nonumber\\
+    \Phi^\pm\qty(x^0,x^1=+\infty)&=\frac\pi b\qty(1\pm 1)\nonumber
+\end{align}
+
+And also,
+
+\begin{align}
+    \Phi^\pm\qty(x^0,x^1)&=\frac4b\arctan\qty[\exp\qty{\pm\qty(-x^0u+x^1)\sqrt{\frac{ab}{v^2}}}]\nonumber\\
+    \Phi^\pm\qty(x^0,x^1=-\infty)&=\frac4b\arctan\qty[\exp\qty{\pm\qty(-x^0u-\infty)\sqrt{\frac{ab}{v^2}}}]\nonumber\\
+    \Phi^\pm\qty(x^0,x^1=-\infty)&=\frac4b\arctan\qty[\exp\qty{\mp\infty}]\nonumber\\
+    \Phi^\pm\qty(x^0,x^1=-\infty)&=\frac\pi b\qty(1\mp 1)\nonumber
+\end{align}
+
+Where clearly we have some non-zero values for,
+
+\begin{align}
+    \Phi^\pm\qty(x^0,x^1=+\infty)-\Phi^\pm\qty(x^0,x^1=-\infty)&=\frac\pi b\qty(1\pm 1)-\frac\pi b\qty(1\mp 1)\nonumber\\
+    \Phi^\pm\qty(x^0,x^1=+\infty)-\Phi^\pm\qty(x^0,x^1=-\infty)&=\pm\frac{2\pi}{b}\nonumber
+\end{align}
+
+This result is highly suspicious, clearly these two solutions labeled by `$+,-$' are some kind of 
+\textit{eigenvalues} of some certain charge operator. We're going to be very straightforward and readily 
+define an \textbf{winding number charge operator}, by,
+
+\begin{align}
+    Q&=\frac{b}{2\pi}\qty[\Phi\qty(x^0,x^1=+\infty)-\Phi\qty(x^0,x^1=-\infty)]\nonumber
+\end{align}
+
+We would like to write this in a fully covariant manner, we know that this generator should come from a 
+current, so we try to make something as a 2-vector apear,
+
+\begin{align}
+    Q&=\frac{b}{2\pi}\int\limits_{-\infty}^{+\infty}\dd{x^1}\partial_1\Phi\nonumber
+\end{align}
+
+Well, `$\partial_1\Phi$' seems like a piece from a 2-vector, but, it is the spatial part, rather then the 
+temporal part, fear not, because as we're in 1+1 dimensions we have a natural way of transforming spatial 
+components into temporal ones, this is the Levi-Civita, which in 1+1 dimensions has 2 index, furthermore, 
+the components are,
+
+\begin{align}
+    \epsilon_{00}&=\epsilon_{11}=0\nonumber\\
+    \epsilon_{01}&=-\epsilon_{10}=1\nonumber
+\end{align}
+
+There is! Our salvation!
+
+\begin{align}
+    Q&=\frac{b}{2\pi}\int\limits_{-\infty}^{+\infty}\dd{x^1}\epsilon^{10}\partial_1\Phi\nonumber\\
+    Q&=-\frac{b}{2\pi}\int\limits_{-\infty}^{+\infty}\dd{x^1}\epsilon^{01}\partial_1\Phi\nonumber\\
+    Q&=-\frac{b}{2\pi}\int\limits_{-\infty}^{+\infty}\dd{x^1}\epsilon^{0\nu}\partial_\nu\Phi\nonumber
+\end{align}
+
+This is clearly a quantity that transforms as a temporal component of a 2-vector, which we'll define as our 
+current,
+
+\begin{align}
+    J^\mu&=-\frac{b}{2\pi}\epsilon^{\mu\nu}\partial_\nu\Phi\nonumber
+\end{align}
+
+So that,
+
+\begin{align}
+    Q&=\int\limits_{-\infty}^{+\infty}\dd{x^1}J^0\nonumber
+\end{align}
+
+Now we can finally prove a claim we tried to omit, the time independence of this charge, it depends on the 
+conservation of this current, which is trivially true,
+
+\begin{align}
+    \partial_\mu J^\mu&=-\frac{b}{2\pi}\epsilon^{\mu\nu}\partial_\mu\partial_\nu\Phi=0\nonumber
+\end{align}
+
+Simply due to the anti-symmetry of the Levi-Civita. Hence,
+
+\begin{align}
+    \dv{Q}{x^0}&=\int\limits_{-\infty}^{+\infty}\dd{x^1}\partial_0J^0\nonumber\\
+    \dv{Q}{x^0}&=-\int\limits_{-\infty}^{+\infty}\dd{x^1}\partial_1J^1\nonumber\\
+    \dv{Q}{x^0}&=-J^1\eval_{x^1=-\infty}^{x^1=+\infty}\nonumber\\
+    \dv{Q}{x^0}&=\frac{b}{2\pi}\partial_1\Phi\eval_{x^1=-\infty}^{x^1=+\infty}\nonumber
+\end{align}
+
+This quantity \textbf{has} to be zero, because, if the derivative of the field isn't zero at infinity, then, 
+the field blows up at infinity, what isn't an acceptable physical solution. Thus,
+
+\begin{align}
+    \dv{Q}{x^0}&=0\nonumber
+\end{align}
+
+
+\subsection{Energy of the Exact Solutions}
+
+To compute the energy, we need first to compute the Hamiltonian in terms of the fields, that's a simple Legendre 
+transform, first, we define the conjugate momentum,
+
+\begin{align}
+    \Pi\qty(x)&=\pdv{\mathcal L\qty(x)}{\partial_0\Phi\qty(x)}\nonumber
+\end{align}
+
+And then define the Legendre transform,
+
+\begin{align}
+    \mathcal H\qty(x)&=\Pi\qty(x)\partial_0\Phi\qty(x)-\mathcal L\nonumber\\
+    \mathcal H\qty(x)&=\Pi\qty(x)\partial_0\Phi\qty(x)
+    +\frac12\partial_\mu\Phi\qty(x)\partial^\mu\Phi\qty(x)
+    +\frac ab\qty(1-\cos\qty(b\Phi\qty(x)))\nonumber\\
+    \mathcal H\qty(x)&=\Pi^2\qty(x)-\frac12\qty[\partial_0\Phi\qty(x)]^2
+    +\frac12\qty[\partial_1\Phi\qty(x)]^2
+    +\frac ab\qty(1-\cos\qty(b\Phi\qty(x)))\nonumber\\
+    \mathcal H\qty(x)&=\frac12\qty[\Pi\qty(x)]^2
+    +\frac12\qty[\partial_1\Phi\qty(x)]^2
+    +\frac ab\qty(1-\cos\qty(b\Phi\qty(x)))\nonumber
+\end{align}
+
+This is the Hamiltonian density, to get the Hamiltonian we just integrate over 
+the spatial coordinate,
+
+\begin{align}
+    H&=\int\limits_{-\infty}^{+\infty}\dd{x^1}\mathcal H\qty(x)=\int\limits_{-\infty}^{+\infty}\dd{x^1}\qty[\frac12\Pi^2\qty(x)
+    +\frac12\qty[\partial_1\Phi\qty(x)]^2
+    +\frac ab\qty(1-\cos\qty(b\Phi\qty(x)))]\nonumber
+\end{align}
+
+We now use some of what we had already done,
+
+\begin{align}
+    \partial_\mu\Phi^{\pm}&=\frac4b\frac{\qty(\pm)v_\mu\sqrt{\frac{ab}{v^2}}}
+        {1+\exp\qty{\pm2x\cdot v\sqrt{\frac{ab}{v^2}}}}
+    \exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}\nonumber
+\end{align}
+
+From where we can compute already `$\partial_1\Phi$' and `$\Pi$'. What we'll also need is 
+an expression for the cosine, this we'll have to derive from scratch, following the same 
+procedure we did for the sine. So, using the same `$\theta$' notation that we used before,
+
+\begin{align}
+    \cos\qty(b\Phi^\pm)&=\cos\qty(4\arctan\qty(\theta))\nonumber\\
+    \cos\qty(b\Phi^\pm)&=2\cos^2\qty(2\arctan\qty(\theta))-1\nonumber\\
+    \cos\qty(b\Phi^\pm)&=2\qty[2\cos^2\qty(\arctan\qty(\theta))-1]^2-1\nonumber\\
+    \cos\qty(b\Phi^\pm)&=2\qty[2\frac{1}{\tan^2\qty(\arctan\qty(\theta))+1}-1]^2-1\nonumber\\
+    \cos\qty(b\Phi^\pm)&=2\qty[2\frac{1}{\theta^2+1}-1]^2-1\nonumber
+\end{align}
+
+Just for remembering,
+
+\begin{align}
+    \theta&=\exp\qty{\pm x\cdot v\sqrt{\frac{ab}{v^2}}}\nonumber
+\end{align}
+
+And we write also the derivatives in terms of `$\theta$',
+
+\begin{align}
+    \partial_\mu\Phi^{\pm}&=\frac4b\frac{\qty(\pm)v_\mu\sqrt{\frac{ab}{v^2}}}
+        {\theta^2+1}
+    \theta\nonumber
+\end{align}
+
+So that,
+
+\begin{align}
+    \qty[\partial_\mu\Phi^{\pm}]^2&=\frac{16a}{bv^2}\frac{v_\mu^2}
+        {\qty(\theta^2+1)^2}
+    \theta^2\nonumber\\
+\end{align}
+
+Going to our phase space variables,
+
+\begin{align}
+    \qty[\Pi^{\pm}]^2&=\frac{16a}{bv^2}\frac{v_0^2}
+        {\qty(\theta^2+1)^2}
+    \theta^2,\quad\quad\quad\qty[\partial_1\Phi^{\pm}]^2=\frac{16a}{bv^2}\frac{v_1^2}
+    {\qty(\theta^2+1)^2}
+    \theta^2\nonumber
+\end{align}
+
+Now we just put together everything we already got,
+
+\begin{align}
+    H^\pm&=\int\limits_{-\infty}^{+\infty}\dd{x^1}\qty[\frac12\qty[\Pi^\pm\qty(x)]^2
+    +\frac12\qty[\partial_1\Phi^\pm\qty(x)]^2
+    +\frac ab\qty(1-\cos\qty(b\Phi^\pm\qty(x)))]\nonumber\\
+    H^\pm&=\int\limits_{-\infty}^{+\infty}\dd{x^1}\qty[\frac{8a}{bv^2}\frac{v_0^2}
+    {\qty(\theta^2+1)^2}\theta^2
+    +\frac{8a}{bv^2}\frac{v_1^2}
+    {\qty(\theta^2+1)^2}\theta^2
+    +\frac ab\qty(1-2\qty[2\frac{1}{\theta^2+1}-1]^2+1)]\nonumber\\
+    H^\pm&=\int\limits_{-\infty}^{+\infty}\dd{x^1}\qty[\frac{8a}{bv^2}\frac{v_0^2}
+    {\qty(\theta^2+1)^2}\theta^2
+    +\frac{8a}{bv^2}\frac{v_1^2}
+    {\qty(\theta^2+1)^2}\theta^2
+    +\frac ab\qty(-\frac{8}{\qty(\theta^2+1)^2}+\frac{8}{\theta^2+1})]\nonumber\\
+    H^\pm&=8\frac ab\int\limits_{-\infty}^{+\infty}\dd{x^1}\qty[\frac{1}{v^2}\frac{v_0^2}
+    {\qty(\theta^2+1)^2}\theta^2
+    +\frac{1}{v^2}\frac{v_1^2}
+    {\qty(\theta^2+1)^2}\theta^2
+    +\frac{\theta^2}{\qty(\theta^2+1)^2}]\nonumber\\
+    H^\pm&=8\frac ab\qty[\frac{v_0^2+v_1^2}{v^2}+1]\int\limits_{-\infty}^{+\infty}\dd{x^1}\frac{\theta^2}
+    {\qty(\theta^2+1)^2}\nonumber\\
+    H^\pm&=8\frac ab\frac{v_0^2+v_1^2-v_0^2+v_1^2}{v^2}\int\limits_{-\infty}^{+\infty}\dd{x^1}\frac{\theta^2}
+    {\qty(\theta^2+1)^2}\nonumber\\
+    H^\pm&=16\frac ab\frac{v_1^2}{v^2}\int\limits_{-\infty}^{+\infty}\dd{x^1}\frac{\theta^2}
+    {\qty(\theta^2+1)^2}\nonumber
+\end{align}
+
+So now what remains to be done is the integral,
+
+\begin{align}
+    H^\pm&=16\frac ab\frac{v_1^2}{v^2}\int\limits_{-\infty}^{+\infty}\dd{x^1}\frac{\exp\qty{\pm 2x\cdot v\sqrt{\frac{ab}{v^2}}}}
+    {\qty(\exp\qty{\pm 2x\cdot v\sqrt{\frac{ab}{v^2}}}+1)^2}\nonumber\\
+    H^\pm&=16\frac ab\frac{v_1^2}{v^2}\qty(\pm) \frac{1}{2v^1}\sqrt{\frac{v^2}{ab}}
+    \int\limits_{-\infty}^{+\infty}\dd{x^1}\frac{\pm 2v^1\sqrt{\frac{ab}{v^2}}\exp\qty{\pm 2x\cdot v\sqrt{\frac{ab}{v^2}}}}
+    {\qty(\exp\qty{\pm 2x\cdot v\sqrt{\frac{ab}{v^2}}}+1)^2}\nonumber\\
+    H^\pm&=16\frac ab\frac{v_1^2}{v^2}\qty(\pm) \frac{1}{2v^1}\sqrt{\frac{v^2}{ab}}
+    \int\limits_{-\infty}^{+\infty}\dd{x^1}\frac{1}
+    {\qty(\exp\qty{\pm 2x\cdot v\sqrt{\frac{ab}{v^2}}}+1)^2}\partial_1\exp\qty{\pm 2x\cdot v\sqrt{\frac{ab}{v^2}}}\nonumber\\
+    H^\pm&=\mp8\sqrt{\frac{a}{b^3}}\frac{v_1}{\sqrt{v^2}}
+    \int\limits_{-\infty}^{+\infty}\dd{x^1}\partial_1\frac{1}
+    {\exp\qty{\pm 2x\cdot v\sqrt{\frac{ab}{v^2}}}+1}\nonumber\\
+    H^\pm&=\mp8\sqrt{\frac{a}{b^3}}\frac{v_1}{\sqrt{v^2}}
+    \frac{1}
+    {\exp\qty{\pm 2x\cdot v\sqrt{\frac{ab}{v^2}}}+1}\eval_{-\infty}^{+\infty}\nonumber\\
+    H^\pm&=\mp8\sqrt{\frac{a}{b^3}}\frac{v_1}{\sqrt{v^2}}
+    \qty[\frac{1}
+    {\exp\qty{\pm 2\qty(+\infty v^1-x^0v^0)\sqrt{\frac{ab}{v^2}}}+1}-\frac{1}
+    {\exp\qty{\pm 2\qty(-\infty v^1-x^0v^0)\cdot v\sqrt{\frac{ab}{v^2}}}+1}]\nonumber\\
+    H^\pm&=\mp8\sqrt{\frac{a}{b^3}}\frac{v_1}{\sqrt{v^2}}
+    \qty[\frac{1}
+    {\exp\qty{\pm \infty}+1}-\frac{1}
+    {\exp\qty{\mp \infty}+1}]\nonumber\\
+    H^\pm&=\mp8\sqrt{\frac{a}{b^3}}\frac{v_1}{\sqrt{v^2}}
+    \qty(\mp)\nonumber\\
+    H^\pm&=8\sqrt{\frac{a}{b^3}}\frac{v_1}{\sqrt{v^2}}\nonumber
+\end{align}
+
+Now we invoke the aforementioned rescaling property of `$v$', which does simplify to,
+
+\begin{align}
+    H^\pm&=8\sqrt{\frac{a}{b^3}}\nonumber
+\end{align}
+
+Both modes having the same energy, and also being independent of the time variable.
+
+\subsection{Expanding the Lagrangian}
+
+We're going to use the following expansion,
+
+\begin{align}
+    \cos\qty(b\Phi\qty(x))&=\sum\limits_{n=0}^\infty\qty(-1)^{n}\frac{b^{2n}\Phi^{2n}}{\qty(2n)!}\nonumber
+\end{align}
+
+Thus the expansion of the Lagrangian is,
+
+\begin{align}
+    \mathcal L&=-\frac12\partial_\mu\Phi\partial^\mu\Phi-\frac ab\qty(1-\cos\qty(b\Phi))\nonumber\\
+    \mathcal L&=-\frac12\partial_\mu\Phi\partial^\mu\Phi-\frac ab\qty(1-1+\frac{b^2}{2}\Phi^2-\frac{b^4}{4!}\Phi^4+\mathcal O\qty(b^6))\nonumber\\
+    \mathcal L&=-\frac12\partial_\mu\Phi\partial^\mu\Phi-\frac{ab}{2}\Phi^2+\frac{ab^3}{4!}\Phi^4+\mathcal O\qty(b^6)\nonumber
+\end{align}
+
+From where we can easily read the mass and quartic coupling from the quadratic and quartic factors,
+
+\begin{align}
+    m^2&=ab\nonumber\\
+    \lambda&=ab^3\nonumber
+\end{align}
+
+If we would like, we can invert these expressions to give,
+
+\begin{align}
+    a&=\frac{m^3}{\sqrt\lambda}\nonumber\\
+    b&=\frac{\sqrt\lambda}{m}\nonumber
+\end{align}
+
+This is interesting, because we can write the energy of the exact solutions in terms of these parameters,
+
+\begin{align}
+    H&=8\sqrt{\frac{m^3m^3}{\sqrt\lambda \sqrt{\lambda^3}}}\nonumber\\
+    H&=8\frac{m^3}{\lambda}\nonumber
+\end{align}
+
+This seems very wrong, at least from a dimensional analysis point of view, but isn't, 
+this is because we usually take `$\lambda$' to be adimensional, but, in this case it isn't. To 
+see that we have to do the analysis of the dimensions,
+
+\begin{align}
+    \qty[\dd[2]{x}\partial_\mu\Phi\partial^\mu\Phi]&=0\nonumber\\
+    -2+2+2\qty[\Phi]&=0\Rightarrow \qty[\Phi]=0\nonumber
+\end{align}
+
+Wow! This is rather strange, to have a dimensionless field, but with this,
+
+\begin{align}
+    \qty[\Phi^2ab]&=2\Rightarrow \qty[ab]=0\nonumber\\
+    \qty[\Phi^4ab^3]&=2\Rightarrow \qty[ab^3]=0\nonumber
+\end{align}
+
+The only possible solution to this system of equations is,
+
+\begin{align}
+    \qty[a]&=2,\ \ \ \qty[b]=0\nonumber
+\end{align}
+
+So, we actually have,
+
+\begin{align}
+    \qty[m^2]&=\qty[\lambda]\nonumber
+\end{align}
+
+And in fact our Energy found has indeed the right dimensions!

@@ -1,0 +1,736 @@
+\section{Anomalies}
+
+Our theory under consideration here is a single Dirac Fermion coupled to an `$U\qty(1)$' Gauge-Boson,
+
+\begin{align}
+    \mathcal L&=-\bar\Psi\slashed D\Psi-\frac14F_{\mu\nu}F^{\mu\nu}\nonumber
+\end{align}
+
+With of course our covariant derivative being,
+
+\begin{align}
+    D_\mu &=\partial_\mu-\im gA_\mu\nonumber
+\end{align}
+
+Besides the trivial `$U\qty(1)$' global, gauged, symmetry, 
+
+\begin{align}
+    \Psi&\rightarrow\exp\qty(-\im g\alpha)\Psi\nonumber\\
+    \bar\Psi&\rightarrow\bar\Psi\exp\qty(\im g\alpha)\nonumber
+\end{align}
+
+our theory has also another symmetry,
+
+\begin{align}
+    \Psi&\rightarrow\exp\qty(-\im g\gamma_5\alpha)\Psi\nonumber\\
+    \bar\Psi&\rightarrow\bar\Psi\exp\qty(-\im g\gamma_5\alpha)\nonumber
+\end{align}
+
+This is true due to,
+
+\begin{align}
+    \acomm{\gamma_5}{\gamma_\mu}&=0\nonumber
+\end{align}
+
+What implies that,
+
+\begin{align}
+    -\bar\Psi\slashed D\Psi&\rightarrow-\bar\Psi\exp\qty(-\im g\gamma_5\alpha)\slashed D\exp\qty(-\im g\gamma_5\alpha)\Psi\nonumber\\
+    -\bar\Psi\slashed D\Psi&\rightarrow-\bar\Psi\exp\qty(-\im g\gamma_5\alpha)\exp\qty(\im g\gamma_5\alpha)\slashed D\Psi\nonumber\\
+    -\bar\Psi\slashed D\Psi&\rightarrow-\bar\Psi\slashed D\Psi\nonumber
+\end{align}
+
+For completeness, we're going to get the associated Noether charges,
+
+\begin{align}
+    S[\bar\Psi,\Psi,A_\mu,\alpha]&=\int\dd[4]{x}\mathcal L\qty(\bar\Psi\exp\qty(\im g \alpha), \exp\qty(-\im g \alpha)\Psi, A_\mu)=\int\dd[4]{x}\mathcal L\qty(\bar\Psi, \Psi, A_\mu)\nonumber\\
+    \dv{S}{\alpha}&=\dv{}{\alpha}\int\dd[4]{x}\mathcal L\qty(\bar\Psi\exp\qty(\im g \alpha), \exp\qty(-\im g \alpha)\Psi, A_\mu)=\dv{}{\alpha}\mathcal L\qty(\bar\Psi, \Psi, A_\mu)=0\nonumber\\
+    0&=\dv{\bar\Psi\exp\qty(\im g \alpha)}{\alpha}\fdv{S}{\bar\Psi\qty(y)}-\fdv{S}{\Psi\qty(y)}\dv{\exp\qty(-\im g \alpha)\Psi}{\alpha}\nonumber\\
+    0&=\im g\bar\Psi\exp\qty(\im g \alpha)\fdv{S}{\bar\Psi\qty(y)}+\fdv{S}{\Psi\qty(y)}\im g \exp\qty(-\im g \alpha)\Psi\nonumber
+\end{align}
+
+First we get,
+
+\begin{align}
+    \fdv{S}{\bar\Psi\qty(y)}&=\frac{1}{\bar\epsilon}\qty{S[\bar\Psi\qty(x)+\bar\epsilon\delta\qty(x-y),\Psi,A_\mu]-S[\bar\Psi,\Psi,A_\mu]}\nonumber\\
+    \fdv{S}{\bar\Psi\qty(y)}&=\frac{1}{\bar\epsilon}\int\dd[4]{x}\qty{-\qty(\bar\Psi\qty(x)+\bar\epsilon\delta\qty(x-y))\slashed D\Psi\qty(x)+\bar\Psi\qty(x)\slashed D\Psi\qty(x)}\nonumber\\
+    \fdv{S}{\bar\Psi\qty(y)}&=-\frac{1}{\bar\epsilon}\int\dd[4]{x}\bar\epsilon\delta\qty(x-y)\slashed D\Psi\qty(x)\nonumber\\
+    \fdv{S}{\bar\Psi\qty(y)}&=-\slashed D\Psi\qty(y)=-\gamma^\mu\partial_\mu\Psi+\im g A_\mu \gamma^\mu \Psi\nonumber
+\end{align}
+
+And,
+
+\begin{align}
+    \fdv{S}{\Psi\qty(y)}&=\frac{1}{\epsilon}\qty{S[\bar\Psi\qty(x),\Psi+\epsilon\delta\qty(x-y),A_\mu]-S[\bar\Psi,\Psi,A_\mu]}\nonumber\\
+    \fdv{S}{\Psi\qty(y)}&=\frac{1}{\epsilon}\int\dd[4]{x}\qty{-\bar\Psi\qty(x)\slashed D\qty(\Psi\qty(x)+\epsilon\delta\qty(x-y))+\bar\Psi\qty(x)\slashed D\Psi\qty(x)}\nonumber\\
+    \fdv{S}{\Psi\qty(y)}&=-\frac{1}{\epsilon}\int\dd[4]{x}\bar\Psi\qty(x)\slashed D\epsilon\delta\qty(x-y)\nonumber\\
+    \fdv{S}{\Psi\qty(y)}&=\int\dd[4]{x}\bar\Psi\qty(x)\gamma^\mu\qty(\partial_\mu-\im g A_\mu)\delta\qty(x-y)\nonumber\\
+    \fdv{S}{\Psi\qty(y)}&=\int\dd[4]{x}\qty[-\partial_\mu\bar\Psi\qty(x)\gamma^\mu-\bar\Psi\qty(x)\gamma^\mu\im g A_\mu]\delta\qty(x-y)\nonumber\\
+    \fdv{S}{\Psi\qty(y)}&=-\partial_\mu\bar\Psi\qty(y)\gamma^\mu-\bar\Psi\qty(y)\gamma^\mu\im g A_\mu\nonumber
+\end{align}
+
+So that the equation is,
+
+\begin{align}
+    0&=\bar\Psi\qty[-\gamma^\mu\partial_\mu\Psi+\im g A_\mu \gamma^\mu \Psi]-\qty[\partial_\mu\bar\Psi\qty(y)\gamma^\mu+\bar\Psi\qty(y)\gamma^\mu\im g A_\mu] \Psi\nonumber\\
+    0&=-\partial_\mu\qty[\bar\Psi\gamma^\mu\Psi]\nonumber
+\end{align}
+
+So we got our first current, the Vector current,
+
+\begin{align}
+    J_{\textnormal V}^\mu\qty(x)&=\bar\Psi\qty(x)\gamma^\mu\Psi\qty(x)\nonumber
+\end{align}
+
+We do again the same procedure for the other symmetry,
+
+\begin{align}
+    S[\bar\Psi,\Psi,A_\mu,\alpha]&=\int\dd[4]{x}\mathcal L\qty(\bar\Psi\exp\qty(-\im g\gamma_5 \alpha), \exp\qty(-\im g\gamma_5 \alpha)\Psi, A_\mu)=\int\dd[4]{x}\mathcal L\qty(\bar\Psi, \Psi, A_\mu)\nonumber\\
+    \dv{S}{\alpha}&=\dv{}{\alpha}\int\dd[4]{x}\mathcal L\qty(\bar\Psi\exp\qty(-\im g\gamma_5 \alpha), \exp\qty(-\im g\gamma_5 \alpha)\Psi, A_\mu)=\dv{}{\alpha}\mathcal L\qty(\bar\Psi, \Psi, A_\mu)=0\nonumber\\
+    0&=\dv{\bar\Psi\exp\qty(-\im g \gamma_5\alpha)}{\alpha}\fdv{S}{\bar\Psi\qty(y)}-\fdv{S}{\Psi\qty(y)}\dv{\exp\qty(-\im g \alpha)\Psi}{\alpha}\nonumber\\
+    0&=-\im g\bar\Psi\gamma_5\exp\qty(\im g \alpha)\fdv{S}{\bar\Psi\qty(y)}+\fdv{S}{\Psi\qty(y)}\im g\gamma_5 \exp\qty(-\im g \alpha)\Psi\nonumber\\
+    0&=-\bar\Psi\gamma_5\qty[-\gamma^\mu\partial_\mu\Psi+\im g A_\mu \gamma^\mu \Psi]+\qty[-\partial_\mu\bar\Psi\qty(y)\gamma^\mu-\bar\Psi\qty(y)\gamma^\mu\im g A_\mu]\gamma_5 \Psi\nonumber\\
+    0&=\bar\Psi\gamma_5\gamma^\mu\partial_\mu\Psi-\partial_\mu\bar\Psi\qty(y)\gamma^\mu\gamma_5 \Psi\nonumber\\
+    0&=-\partial_\mu\qty[\bar\Psi\gamma^\mu\gamma_5\Psi]\nonumber
+\end{align}
+
+This is our Axial current,
+
+\begin{align}
+    J_{\textnormal A}^\mu\qty(x)&=\bar\Psi\qty(x)\gamma^\mu\gamma_5\Psi\qty(x)\nonumber
+\end{align}
+
+From a tree level analysis, or, classically, as both this symmetries are indeed symmetries of the Lagrangian, 
+what is expected is that both of the currents should obey the zero divergence,
+
+\begin{align}
+    \partial_\mu J_{\textnormal V}^\mu\qty(x)&=0\nonumber\\
+    \partial_\mu J_{\textnormal A}^\mu\qty(x)&=0\nonumber
+\end{align}
+
+And, as we saw, this is true. But, nothing guarantees that this statement will still hold upon quantization 
+of the theory. To check if the quantized theory do possesses theses conservations laws, we have to  look at 
+quantities of the kind,
+
+\begin{align}
+    \partial_{x\mu}\mel{0}{\textnormal{T}\qty{J_{\textnormal A}^\mu\qty(x)\mathcal O\qty(y)}}{0}=?\nonumber
+\end{align}
+
+By our virtue of foresight, we're going to compute,
+
+\begin{align}
+    \im\Delta^{\mu\alpha\beta}\qty(x,y,z)&=
+    \mel{\Omega}{\textnormal{T}\qty{J_{\textnormal A}^\mu\qty(x)
+        J_{\textnormal V}^\alpha\qty(y)J_{\textnormal V}^\beta\qty(z)}}{\Omega}\nonumber\\
+    \im\Delta^{\mu\alpha\beta}\qty(x,y,z)&=
+    \mel{\Omega}{\textnormal{T}\qty{\bar\Psi\qty(x)\gamma^\mu\gamma_5\Psi\qty(x)
+        \bar\Psi\qty(y)\gamma^\alpha\Psi\qty(y)
+        \bar\Psi\qty(z)\gamma^\beta\Psi\qty(z)}}{\Omega}\nonumber
+\end{align}
+
+Up to first order, there're two possible Wick contraction we can perform here --- of course, only two are possible because we're 
+ignoring non-connected contributions ---, 
+
+\begin{align}
+    \im\Delta^{\mu\alpha\beta}\qty(x,y,z)&=
+    \mel{0}{\textnormal{T}\qty{\wick{\c1{\bar{\Psi}}\qty(x)\gamma^\mu\gamma_5\c2{\Psi}\qty(x)
+        \c2{\bar{\Psi}}\qty(y)\gamma^\alpha\c3{\Psi}\qty(y)
+        \c3{\bar{\Psi}}\qty(z)\gamma^\beta\c1{\Psi}\qty(z)}}}{0}\nonumber\\
+        &\quad\quad+
+    \mel{0}{\textnormal{T}\qty{\wick{\c1{\bar{\Psi}}\qty(x)\gamma^\mu\gamma_5\c3{\Psi}\qty(x)
+        \c2{\bar{\Psi}}\qty(y)\gamma^\alpha\c1{\Psi}\qty(y)
+        \c3{\bar{\Psi}}\qty(z)\gamma^\beta\c2{\Psi}\qty(z)}}}{0}\nonumber
+\end{align}
+
+Now, the contractions themselves are easily evaluated, as they're just the free propagators,
+
+\begin{align}
+    \wick{\c{\Psi}\qty(x)\c{\bar{\Psi}}\qty(y)}&=
+    \mel{0}{\textnormal{T}\qty{\Psi\qty(x)\bar{\Psi}\qty(y)}}{0}\nonumber\\
+    \wick{\c{\Psi}\qty(x)\c{\bar{\Psi}}\qty(y)}&=
+    \frac1\im\int\frac{\dd[4]{k}}{\qty(2\pi)^4}\exp\qty(\im k\cdot \qty(x-y))\frac{-\im \slashed k}{k^2}=\frac1\im S\qty(x,y)\nonumber
+\end{align}
+
+As every operator is already contracted, there is no more need for the Time-ordered product, neither for the 
+vacuum expectation value. We 
+
+\begin{align}
+    \im\Delta^{\mu\alpha\beta}\qty(x,y,z)&=\wick{\c1{\bar{\Psi}} \qty(x)\gamma^\mu\gamma_5\c2{\Psi} \qty(x)
+        \c2{\bar{\Psi}} \qty(y)\gamma^\alpha\c3{\Psi} \qty(y)
+        \c3{\bar{\Psi}} \qty(z)\gamma^\beta\c1{\Psi} \qty(z)}\nonumber\\
+        &\quad\quad+\wick{\c1{\bar{\Psi}}\qty(x)\gamma^\mu\gamma_5\c3{\Psi}\qty(x)
+        \c2{\bar{\Psi}}\qty(y)\gamma^\alpha\c1{\Psi}\qty(y)
+        \c3{\bar{\Psi}}\qty(z)\gamma^\beta\c2{\Psi}\qty(z)}\nonumber
+\end{align}
+
+We now manipulate the fields to get all in the right order, but in doing this, we can not lost the track of 
+the multiplication order, for the first one is easy, as we can write it as a trace, and we need an additional 
+minus signs, as we need to cross an odd number of fermionic fields. For the second one, we can switch fully 
+one vector current with the other to get,
+
+\begin{align}
+    \im\Delta^{\mu\alpha\beta}\qty(x,y,z)&=-\Tr\qty[\wick{\gamma^\mu\gamma_5\c2{\Psi}\qty(x)
+        \c2{\bar{\Psi}}\qty(y)\gamma^\alpha\c3{\Psi}\qty(y)
+        \c3{\bar{\Psi}}\qty(z)\gamma^\beta\c1{\Psi}\qty(z)\c1{\bar{\Psi}}\qty(x)}]\nonumber\\
+        &\quad\quad+\wick{\c1{\bar{\Psi}}\qty(x)\gamma^\mu\gamma_5\c3{\Psi}\qty(x)
+        \c3{\bar{\Psi}}\qty(z)\gamma^\beta\c2{\Psi}\qty(z)
+        \c2{\bar{\Psi}}\qty(y)\gamma^\alpha\c1{\Psi}\qty(y)}\nonumber\\
+    \im\Delta^{\mu\alpha\beta}\qty(x,y,z)&=-\Tr\qty[\wick{\gamma^\mu\gamma_5\c2{\Psi}\qty(x)
+        \c2{\bar{\Psi}}\qty(y)\gamma^\alpha\c3{\Psi}\qty(y)
+        \c3{\bar{\Psi}}\qty(z)\gamma^\beta\c1{\Psi}\qty(z)\c1{\bar{\Psi}}\qty(x)}]\nonumber\\
+        &\quad\quad-\Tr\qty[\wick{\gamma^\mu\gamma_5\c3{\Psi}\qty(x)
+        \c3{\bar{\Psi}}\qty(z)\gamma^\beta\c2{\Psi}\qty(z)
+        \c2{\bar{\Psi}}\qty(y)\gamma^\alpha\c1{\Psi}\qty(y)\c1{\bar{\Psi}}\qty(x)}]\nonumber\\
+    \im\Delta^{\mu\alpha\beta}\qty(x,y,z)&=-\Tr\qty[\gamma^\mu\gamma_5\frac1\im S\qty(x,y)\gamma^\alpha\frac1\im S\qty(y,z)\gamma^\beta\frac1\im S\qty(z,x)]\nonumber\\
+        &\quad\quad-\Tr\qty[\gamma^\mu\gamma_5\frac1\im S\qty(x,z)\gamma^\beta\frac1\im S\qty(z,y)\gamma^\alpha\frac1\im S\qty(y,x)]\nonumber\\
+    \im\Delta^{\mu\alpha\beta}\qty(x,y,z)&=-\int\frac{\dd[4]{k'}\dd[4]{p'}\dd[4]{q'}}{\qty(2\pi)^{12}}
+        \exp\qty(\im {k'}\cdot\qty(x-y)+\im {p'}\cdot\qty(y-z)+\im {q'}\cdot\qty(z-x))\times\nonumber\\
+        &\quad\quad\quad\times\Tr\qty[\gamma^\mu\gamma_5\frac1\im \frac{-\im\slashed {k'}}{{k'}^2}\gamma^\alpha\frac1\im \frac{-\im\slashed {p'}}{{p'}^2}\gamma^\beta\frac1\im \frac{-\im\slashed {q'}}{{q'}^2}]\nonumber\\
+        &\quad\quad-\int\frac{\dd[4]{{k'}}\dd[4]{{p'}}\dd[4]{{q'}}}{\qty(2\pi)^{12}}
+        \exp\qty(\im {k'}\cdot\qty(x-y)+\im {p'}\cdot\qty(y-z)+\im {q'}\cdot\qty(z-x))\times\nonumber\\
+        &\quad\quad\quad\times\Tr\qty[\gamma^\mu\gamma_5\frac1\im \frac{\im\slashed {q'}}{{q'}^2}\gamma^\beta\frac1\im\frac{\im\slashed {p'}}{{p'}^2}\gamma^\alpha\frac1\im \frac{\im\slashed {k'}}{{k'}^2}]\nonumber
+\end{align}
+
+Here we wisely choose the integration momentum variables so that we can group the two terms inside just one 
+integral,
+
+\begin{align}
+    \im\Delta^{\mu\alpha\beta}\qty(x,y,z)&=\int\frac{\dd[4]{{k'}}\dd[4]{{p'}}\dd[4]{{q'}}}{\qty(2\pi)^{12}}
+        \exp\qty(\im {k'}\cdot\qty(x-y)+\im {p'}\cdot\qty(y-z)+\im {q'}\cdot\qty(z-x))\times\nonumber\\
+        &\quad\quad\quad\times\qty{-\Tr\qty[\gamma^\mu\gamma_5\frac1\im \frac{-\im\slashed {k'}}{{k'}^2}\gamma^\alpha\frac1\im \frac{-\im\slashed {p'}}{{p'}^2}\gamma^\beta\frac1\im \frac{-\im\slashed {q'}}{{q'}^2}]-\Tr\qty[\gamma^\mu\gamma_5\frac1\im \frac{\im\slashed {q'}}{{q'}^2}\gamma^\beta\frac1\im\frac{\im\slashed {p'}}{{p'}^2}\gamma^\alpha\frac1\im \frac{\im\slashed {k'}}{{k'}^2}]}\nonumber
+\end{align}
+
+Now it's clear the appearance of a triple Fourier transform, so we work with just the momentum space to ease 
+our calculation. Thus,
+
+\begin{align}
+    \im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)\qty(2\pi)^4\delta^{\qty(4)}\qty(k+p+q)&=
+        \int\dd[4]{x}\dd[4]{y}\dd[4]{z}\im\Delta^{\mu\alpha\beta}\qty(x,y,z)\exp\qty(-\im k\cdot x-\im p\cdot y-\im q\cdot z)\nonumber
+\end{align}
+
+This affects primarily just the space dependent part, so let's compute first,
+
+\begin{align}
+    &\int\frac{\dd[4]{k'}\dd[4]{p'}\dd[4]{q'}}{\qty(2\pi)^{12}}\int\dd[4]{x}\dd[4]{y}\dd[4]{z}\times\nonumber\\
+    &\quad\quad\times\exp\qty(-\im k\cdot x-\im p\cdot y-\im q\cdot z)
+        \exp\qty(\im k'\cdot\qty(x-y)+\im p'\cdot\qty(y-z)+\im q'\cdot\qty(z-x))\nonumber\\
+        &\int\frac{\dd[4]{k'}\dd[4]{p'}\dd[4]{q'}}{\qty(2\pi)^{12}}\int\dd[4]{x}\dd[4]{y}\dd[4]{z}\times\nonumber\\
+    &\quad\quad\times\exp\qty(\im x\cdot\qty(k'-k-q')+\im y\cdot \qty(p'-k'-p)+\im z\cdot\qty(q'-p'-q))\nonumber\\
+    &\int\dd[4]{k'}\dd[4]{p'}\dd[4]{q'}\delta^{\qty(4)}\qty(k'-k-q')\delta^{\qty(4)}\qty(p'-k'-p)\delta^{\qty(4)}\qty(q'-p'-q)\nonumber
+\end{align}
+
+So,
+
+\begin{align}
+    \im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)\qty(2\pi)^4\delta^{\qty(4)}\qty(k+p+q)&=
+    \int\dd[4]{k'}\dd[4]{p'}\dd[4]{q'}\delta^{\qty(4)}\qty(k'-k-q')\delta^{\qty(4)}\qty(p'-k'-p)\times\nonumber\\
+    &\quad\quad\times\delta^{\qty(4)}\qty(q'-p'-q)\left(-\Tr\qty[\gamma^\mu\gamma_5\frac1\im \frac{-\im\slashed {k'}}{{k'}^2}\gamma^\alpha\frac1\im \frac{-\im\slashed {p'}}{{p'}^2}\gamma^\beta\frac1\im \frac{-\im\slashed {q'}}{{q'}^2}]\right.\nonumber\\
+    &\quad\quad\quad\left.-\Tr\qty[\gamma^\mu\gamma_5\frac1\im \frac{\im\slashed {q'}}{{q'}^2}\gamma^\beta\frac1\im\frac{\im\slashed {p'}}{{p'}^2}\gamma^\alpha\frac1\im \frac{\im\slashed {k'}}{{k'}^2}]\right)\nonumber\\
+    \im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)\qty(2\pi)^4\delta^{\qty(4)}\qty(k+p+q)&=
+    \int\dd[4]{p'}\delta^{\qty(4)}\qty(k+q+p)\times\nonumber\\
+    &\quad\quad\times\left(-\Tr\qty[\gamma^\mu\gamma_5\frac1\im \frac{-\im\slashed {k}-\im \slashed{p}'-\im\slashed q}{\qty(k+q+p')^2}\gamma^\alpha\frac1\im \frac{-\im\slashed {p'}}{{p'}^2}\gamma^\beta\frac1\im \frac{-\im\slashed {p'}-\im\slashed q}{\qty(q+p')^2}]\right.\nonumber\\
+    &\quad\quad\quad\left.-\Tr\qty[\gamma^\mu\gamma_5\frac1\im \frac{\im\slashed {p'}+\im\slashed q}{\qty(q+p')^2}\gamma^\beta\frac1\im\frac{\im\slashed {p'}}{{p'}^2}\gamma^\alpha\frac1\im \frac{\im\slashed {k}+\im\slashed{q}+\im\slashed p'}{\qty(k+q+p')^2}]\right)\nonumber
+\end{align}
+
+Finally we got,
+
+\begin{align}
+    \im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\left(-\Tr\qty[\gamma^\mu\gamma_5\frac1\im \frac{-\im\slashed {k}-\im \slashed{l}-\im\slashed q}{\qty(k+q+l)^2}\gamma^\alpha\frac1\im \frac{-\im\slashed {l}}{{l}^2}\gamma^\beta\frac1\im \frac{-\im\slashed {l}-\im\slashed q}{\qty(q+l)^2}]\right.\nonumber\\
+    &\quad\quad\quad\left.-\Tr\qty[\gamma^\mu\gamma_5\frac1\im \frac{\im\slashed {l}+\im\slashed q}{\qty(q+l)^2}\gamma^\beta\frac1\im\frac{\im\slashed {l}}{{l}^2}\gamma^\alpha\frac1\im \frac{\im\slashed {k}+\im\slashed{q}+\im\slashed l}{\qty(k+q+l)^2}]\right)\nonumber
+\end{align}
+
+Notice that by the form of this vacuum expectation value, we certainly can find a diagram that matches it, in this 
+case, there are, one for each trace, 
+
+\begin{align}
+    \im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)=\feynmandiagram [ baseline = (e.base),horizontal=a to e] {
+    a[particle=\(\gamma^\mu\gamma_5\)] -- [photon,reversed momentum=\(k\)] e -- [fermion] b -- [fermion,reversed momentum=\(l\)] f --[photon,momentum=\(q\)] c[particle=\(\gamma^\beta\)],
+    b -- [photon,momentum=\(p\)] d[particle=\(\gamma^\alpha\)],
+    e--[anti fermion] f,
+    };+\feynmandiagram [ baseline = (e.base),horizontal=a to e] {
+        a[particle=\(\gamma^\mu\gamma_5\)] -- [photon,reversed momentum=\(k\)] e -- [anti fermion] b -- [anti fermion,reversed momentum=\(l\)] f --[photon,momentum=\(q\)] c[particle=\(\gamma^\beta\)],
+        b -- [photon,momentum=\(p\)] d[particle=\(\gamma^\alpha\)],
+        e--[fermion] f,
+    };\nonumber
+\end{align}
+
+But of course these diagrams are only for illustration purposes, as there is no `$\gamma_5$' coupling to any 
+Gauge-boson in our theory, and we're not analyzing any 3-Gauge-boson scattering. Simplifying a little, 
+
+\begin{align}
+    \im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\qty{
+    \Tr\qty[\gamma^\mu\gamma_5\qty(\slashed {k}+\slashed{l}+\slashed q)\gamma^\alpha\slashed {l}\gamma^\beta \qty(\slashed {l}+\slashed q)]
+    -\Tr\qty[\gamma^\mu\gamma_5\qty(\slashed {l}+\slashed q)\gamma^\beta\slashed {l}\gamma^\alpha \qty(\slashed {k}+\slashed{q}+\slashed l)]}\nonumber
+\end{align}
+
+What we really are interested in computing is,
+
+\begin{align}
+    \im k_\mu{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\qty{
+    \Tr\qty[\slashed k\gamma_5\qty(\slashed {k}+\slashed{l}+\slashed q)\gamma^\alpha\slashed {l}\gamma^\beta \qty(\slashed {l}+\slashed q)]
+    -\Tr\qty[\slashed k\gamma_5\qty(\slashed {l}+\slashed q)\gamma^\beta\slashed {l}\gamma^\alpha \qty(\slashed {k}+\slashed{q}+\slashed l)]}\nonumber\\
+    \im k_\mu{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\qty{
+    \Tr\qty[\gamma^\alpha\slashed {l}\gamma^\beta\gamma_5 \qty(\slashed {l}+\slashed q)\slashed k\qty(\slashed {k}+\slashed{l}+\slashed q)]
+    -\Tr\qty[\gamma^\beta\slashed {l}\gamma^\alpha\gamma_5 \qty(\slashed {k}+\slashed{q}+\slashed l)\slashed k\qty(\slashed {l}+\slashed q)]}\nonumber
+\end{align}
+
+But notice that,
+
+\begin{align}
+    \qty(\slashed {l}+\slashed q)\slashed k\qty(\slashed {k}+\slashed{l}+\slashed q)&=\qty(\slashed {l}+\slashed q)\qty[\slashed k+\slashed l+\slashed q-\qty(\slashed l+\slashed q)]\qty(\slashed {k}+\slashed{l}+\slashed q)\nonumber\\
+    \qty(\slashed {l}+\slashed q)\slashed k\qty(\slashed {k}+\slashed{l}+\slashed q)&=
+    \qty(\slashed {l}+\slashed q)\qty( k+ l+ q)^2-\qty( l+ q)^2\qty(\slashed {k}+\slashed{l}+\slashed q)\nonumber
+\end{align}
+
+Analogously
+
+\begin{align}
+    \qty(\slashed {k}+\slashed{l}+\slashed q)\slashed k\qty(\slashed {l}+\slashed q)&=\qty(\slashed {k}+\slashed{l}+\slashed q)\qty[\slashed k+\slashed l+\slashed q-\qty(\slashed l+\slashed q)]\qty(\slashed {l}+\slashed q)\nonumber\\
+    \qty(\slashed {k}+\slashed{l}+\slashed q)\slashed k\qty(\slashed {l}+\slashed q)&=
+    \qty(\slashed {l}+\slashed q)\qty( k+ l+ q)^2-\qty( l+ q)^2\qty(\slashed {k}+\slashed{l}+\slashed q)\nonumber
+\end{align}
+
+So that,
+
+\begin{align}
+    \im k_\mu{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=-
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\left[
+    \qty(l+k+q)^2\Tr\qty[\gamma_5 \gamma^\alpha\slashed {l}\gamma^\beta \qty(\slashed l+\slashed q)]-\qty(l+q)^2\Tr\qty[\gamma_5 \gamma^\alpha\slashed {l}\gamma^\beta\qty(\slashed l+\slashed q+\slashed k)]\right.\nonumber\\
+    &\quad\quad\times\left.
+    -\qty(l+k+q)^2\Tr\qty[\gamma_5 \gamma^\beta\slashed {l}\gamma^\alpha\qty(\slashed l+\slashed q)]+\qty(l+q)^2\Tr\qty[\gamma_5 \gamma^\beta\slashed {l}\gamma^\alpha\qty(\slashed l+\slashed q+\slashed k)]\right]\nonumber
+\end{align}
+
+Using now the following derived in the appendix,
+
+\begin{align}
+    \Tr\qty[\gamma_5\gamma^\mu\gamma^\nu\gamma^\alpha\gamma^\beta]&=4\im\epsilon^{\mu\nu\alpha\beta}\nonumber
+\end{align}
+
+We obtain,
+
+\begin{align}
+    \im k_\mu{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=-4\im
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\left[
+    \qty(l+k+q)^2\epsilon^{\alpha\rho\beta\sigma}l_\rho\qty(l+q)_\sigma-\qty(l+q)^2\epsilon^{\alpha\rho\beta\sigma}l_\rho\qty(l+q+k)_\sigma\right.\nonumber\\
+    &\quad\quad\times\left.
+    -\qty(l+k+q)^2\epsilon^{\beta\rho\alpha\sigma}l_\rho\qty(l+q)_\sigma+\qty(l+q)^2\epsilon^{\beta\rho\alpha\sigma}l_\rho\qty(l+q+k)_\sigma\right]\nonumber\\
+    \im k_\mu{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=-4\im
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\left[
+    \qty(l+k+q)^2\epsilon^{\alpha\rho\beta\sigma}l_\rho q_\sigma-\qty(l+q)^2\epsilon^{\alpha\rho\beta\sigma}l_\rho\qty(q+k)_\sigma\right.\nonumber\\
+    &\quad\quad\times\left.
+    +\qty(l+k+q)^2\epsilon^{\alpha\rho\beta\sigma}l_\rho q_\sigma-\qty(l+q)^2\epsilon^{\alpha\rho\beta\sigma}l_\rho\qty(q+k)_\sigma\right]\nonumber\\
+    \im k_\mu{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=8\im\epsilon^{\alpha\beta\rho\sigma}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\left[
+    \qty(l+k+q)^2l_\rho q_\sigma-\qty(l+q)^2l_\rho\qty(q+k)_\sigma\right]\nonumber\\
+    \im k_\mu{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=8\im\epsilon^{\alpha\beta\rho\sigma}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\qty[
+        \frac{l_\rho q_\sigma}{l^2\qty(q+l)^2}-\frac{l_\rho\qty(q+k)_\sigma}{l^2\qty(q+l+k)^2}]\nonumber
+\end{align}
+
+This integral is clearly \textbf{linearly divergent}, this is a sign of trouble ahead, we proceed then carefully, 
+first we notice that the integrand is in the form,
+
+\begin{align}
+    f_\rho\qty(l;q)&=\frac{l_\rho}{l^2\qty(q+l)^2}\nonumber
+\end{align}
+
+By Lorentz covariance, we can argue that it must be true,
+
+\begin{align}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l;q)&=Aq_\rho\nonumber
+\end{align}
+
+Where `$A$' is some constant to be determined. Let's substitute this back in our expression,
+
+\begin{align}
+    \im k_\mu{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=8A\im\epsilon^{\alpha\beta\rho\sigma}
+    \qty[ q_\rho q_\sigma-\qty(q+k)_\rho\qty(q+k)_\sigma]=0\nonumber
+\end{align}
+
+Due to the anti-symmetric nature of the Levi-Civita. What a crazy result! Is this correct? As we said before, 
+this was a linearly divergent integral, for this to be true, the integrand must behave like a constant for 
+high momenta. As we warm up for what is coming next, suppose we have a function `$f\qty(x)$', such that the 
+integral,
+
+\begin{align}
+    \int\limits_{-\infty}^{+\infty}\dd{x}f\qty(x)\nonumber
+\end{align}
+
+Is linearly divergent. Looks like a trivial fact that a variable change such as,
+
+\begin{align}
+    \int\limits_{-\infty}^{+\infty}\dd{x}f\qty(x+a)\nonumber
+\end{align}
+
+Would make no diference on the integral, but this is not true. As `$f\qty(x)$' must be a constant at infinity, all the derivatives vanish at infinity, 
+and we can do the following,
+
+\begin{align}
+    \int\limits_{-\infty}^{+\infty}f\qty(x+a)&=\int\limits_{-\infty}^{+\infty}\qty[f\qty(x)+af'\qty(x)+\frac12a^2f''\qty(x)+\cdots]\nonumber\\
+    &=\int\limits_{-\infty}^{+\infty}f\qty(x)+a\qty(f\qty(+\infty)-f\qty(-\infty))\nonumber
+\end{align}
+
+With no more other terms as all derivatives are zero at infinity. We clearly see here that the shift we did at 
+our integral indeed affected it, a not trivial fact. We could use this fact for changing the integral loop 
+variable `$l$' and reproduce any value for `$\im k_\mu{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)$', what 
+obstructs us from just choosing a arbitrary value for these? The answer lies on the other two useful quantities 
+`$\im p_\alpha{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)$' and `$\im q_\beta{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)$'. 
+As we discussed before, we're interested in computing the divergence of the current beyond tree level, and, this 
+is related to the momentum contraction of the `$\im{\tilde\Delta}^{\mu\alpha\beta}$'. So let's compute the other 
+two related contractions,
+
+\begin{align}
+    \im p_\alpha{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\qty{
+    \Tr\qty[\gamma^\mu\gamma_5\qty(\slashed {k}+\slashed{l}+\slashed q)\slashed p\slashed {l}\gamma^\beta \qty(\slashed {l}+\slashed q)]
+    -\Tr\qty[\gamma^\mu\gamma_5\qty(\slashed {l}+\slashed q)\gamma^\beta\slashed {l}\slashed p \qty(\slashed {k}+\slashed{q}+\slashed l)]}\nonumber\\
+    \im p_\alpha{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\qty{
+    -\Tr\qty[\gamma_5\gamma^\beta \qty(\slashed {l}+\slashed q)\gamma^\mu\qty(\slashed {k}+\slashed{l}+\slashed q)\slashed p\slashed {l}]
+    +\Tr\qty[\gamma_5\gamma^\beta\slashed {l}\slashed p \qty(\slashed {k}+\slashed{q}+\slashed l)\gamma^\mu\qty(\slashed {l}+\slashed q)]}\nonumber
+\end{align}
+
+Using again,
+
+\begin{align}
+    \qty(\slashed k+\slashed l+\slashed q)\slashed p\slashed l&=\qty(\slashed k+\slashed l+\slashed q)\qty(-\slashed k-\slashed q)\slashed l\nonumber\\
+    &=\qty(\slashed k+\slashed l+\slashed q)\qty(-\slashed k-\slashed q-\slashed l+\slashed l)\slashed l\nonumber\\
+    &=-\qty(k+l+q)^2\slashed l+l^2\qty(\slashed k+\slashed l+\slashed q)\nonumber
+\end{align}
+
+Where we used the momentum conservation to write `$p=-q-k$'. Putting back and using the already mentioned 
+Gamma matrices trace,
+
+\begin{align}
+    \im p_\alpha{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\left(
+    \qty(k+l+q)^2\Tr\qty[\gamma_5\gamma^\beta \qty(\slashed {l}+\slashed q)\gamma^\mu\slashed l]
+    -l^2\Tr\qty[\gamma_5\gamma^\beta \qty(\slashed {l}+\slashed q)\gamma^\mu\qty(\slashed k+\slashed l+\slashed q)]\right.\nonumber\\
+    &\quad\quad\left.-\qty(k+l+q)^2\Tr\qty[\gamma_5\gamma^\beta\slashed l\gamma^\mu\qty(\slashed {l}+\slashed q)]
+    +l^2\Tr\qty[\gamma_5\gamma^\beta\qty(\slashed {k}+\slashed{q}+\slashed l)\gamma^\mu\qty(\slashed {l}+\slashed q)]\right)\nonumber\\
+    \im p_\alpha{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=4\im\epsilon^{\beta\rho\mu\sigma}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\left(
+    \qty(k+l+q)^2\qty(l+q)_\rho l_\sigma
+    -l^2\qty( {l}+ q)_\rho\qty( k+ l+ q)_\sigma\right.\nonumber\\
+    &\quad\quad\left.-\qty(k+l+q)^2l_\rho\qty( {l}+ q)_\sigma
+    +l^2\qty( {k}+{q}+ l)_\rho\qty( {l}+ q)_\sigma\right)\nonumber
+\end{align}
+
+Using the antisymmetric properties of the Levi-Civita,
+
+\begin{align}
+    \im p_\alpha{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=4\im\epsilon^{\beta\rho\mu\sigma}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\left(
+    \qty(k+l+q)^2q_\rho l_\sigma
+    -l^2\qty( {l}+ q)_\rho k_\sigma\right.\nonumber\\
+    &\quad\quad\left.-\qty(k+l+q)^2l_\rho q_\sigma
+    +l^2 k_\rho\qty( {l}+ q)_\sigma\right)\nonumber\\
+    \im p_\alpha{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=8\im\epsilon^{\beta\rho\mu\sigma}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\left(
+    \qty(k+l+q)^2q_\rho l_\sigma
+    -l^2\qty( {l}+ q)_\rho k_\sigma\right)\nonumber\\
+    \im p_\alpha{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=8\im\epsilon^{\beta\rho\mu\sigma}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\qty[\frac{q_\rho l_\sigma}{l^2\qty(q+l)^2}-\frac{\qty( {l}+ q)_\rho k_\sigma}{\qty(q+l)^2\qty(k+q+l)^2}]\nonumber
+\end{align}
+
+Here is the catch! If shifting the momentum integral `$l+q\rightarrow l$' didn't make a difference, we could 
+argue that this integral is also zero! But as we argued, we can't do that, so let's really compute what it is. 
+Our starting point is the argument made with the simple single variable function before, that is,
+
+\begin{align}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l+p;q)&=\int\dd[4]{l}{\qty(2\pi)^4}\qty[f_\rho\qty(l;q)+p^\tau\pdv{}{l^\tau}f_\rho\qty(l;q)+\cdots]\nonumber
+\end{align}
+
+But as we argued, the higher derivatives terms all go to zero, leaving us with just,
+
+\begin{align}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l+p;q)&=\int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l;q)+\int\frac{\dd[4]{l}}{\qty(2\pi)^4}p^\tau\pdv{}{l^\tau}f_\rho\qty(l;q)\nonumber
+\end{align}
+
+The last term is clearly a boundary term, in this case it's equivalent to integrating over the boundary of the 
+Minkowski momentum space, something that is not really well defined, so we need to pass to the Euclidean version, 
+what amounts to multiplying by `$\im$' and integrating over the `$S^3$' sphere with infinite radius,
+
+\begin{align}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l+p;q)-\int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l;q)
+    &=\im\lim\limits_{l\rightarrow\infty}\int\frac{\dd[3]{S_\tau}}{\qty(2\pi)^4}p^\tau f_\rho\qty(l;q)\nonumber\\
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l+p;q)-\int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l;q)
+    &=\im\lim\limits_{l\rightarrow\infty}\int\frac{\dd[3]{\Omega}}{\qty(2\pi)^4}p^\tau l^2l_\tau f_\rho\qty(l;q)\nonumber\\
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l+p;q)-\int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l;q)
+    &=\im\lim\limits_{l\rightarrow\infty}\int\frac{\dd[3]{\Omega}}{\qty(2\pi)^4}p^\tau l_\tau \frac{l_\rho}{\qty(l+q)^2}\nonumber\\
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l+p;q)-\int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l;q)
+    &=\im\lim\limits_{l\rightarrow\infty}\int\frac{\dd[3]{\Omega}}{\qty(2\pi)^4}p^\tau l_\tau \frac{l_\rho}{l^2}\nonumber\\
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l+p;q)-\int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l;q)
+    &=\im\lim\limits_{l\rightarrow\infty}\int\frac{\dd[3]{\Omega}}{\qty(2\pi)^4}p^\tau \frac14 \frac{g_{\tau\rho}l^2}{l^2}\nonumber\\
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l+p;q)-\int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l;q)
+    &=\im p_\rho \frac14 \int\frac{\dd[3]{\Omega}}{\qty(2\pi)^4}\nonumber
+\end{align}
+
+The remaining integral is the area of a unit `$3$'-sphere, what is also computed in the appendix as being, `$2\pi^2$', 
+
+\begin{align}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l+p;q)-\int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l;q)
+    &=\frac{\im}{32\pi^2}p_\rho\nonumber
+\end{align}
+
+A beautiful result! That is,
+
+\begin{align}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}f_\rho\qty(l+p;q)
+    &=Aq_\rho+\frac{\im}{32\pi^2}p_\rho\nonumber
+\end{align}
+
+Going back to our original expression,
+
+\begin{align}
+    \im p_\alpha{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=8\im\epsilon^{\beta\rho\mu\sigma}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\qty[q_\rho f_\sigma\qty(l;q)-k_\sigma f_\rho\qty(l+q;k)]\nonumber\\
+    \im p_\alpha{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=8\im\epsilon^{\beta\rho\mu\sigma}
+    \qty[Aq_\rho q_\sigma -k_\sigma\qty(A k_\rho+\frac{\im}{32\pi^2}q_\rho)]\nonumber\\
+    \im p_\alpha{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=-\frac{1}{4\pi^2}\epsilon^{\beta\mu\rho\sigma}
+     q_\rho k_\sigma\nonumber
+\end{align}
+
+Interesting! And the final one,
+
+\begin{align}
+    \im q_\beta{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\qty{
+    \Tr\qty[\gamma^\mu\gamma_5\qty(\slashed {k}+\slashed{l}+\slashed q)\gamma^\alpha\slashed {l}\slashed q \qty(\slashed {l}+\slashed q)]
+    -\Tr\qty[\gamma^\mu\gamma_5\qty(\slashed {l}+\slashed q)\slashed q\slashed {l}\gamma^\alpha \qty(\slashed {k}+\slashed{q}+\slashed l)]}\nonumber
+\end{align}
+
+Using again,
+
+\begin{align}
+    \qty(\slashed l+\slashed q)\slashed q\slashed l&=\qty(\slashed l+\slashed q)\qty(\slashed l+\slashed q-\slashed l)\slashed l\nonumber\\
+    &=\qty(l+q)^2\slashed l-l^2\qty(\slashed l+\slashed q)\nonumber
+\end{align}
+
+Thus,
+
+\begin{align}
+    \im q_\beta{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\left(
+    \qty(q+l)^2\Tr\qty[\gamma^\mu\gamma_5\qty(\slashed {k}+\slashed{l}+\slashed q)\gamma^\alpha\slashed {l}]
+    -l^2\Tr\qty[\gamma^\mu\gamma_5\qty(\slashed {k}+\slashed{l}+\slashed q)\gamma^\alpha\qty(\slashed {l}+\slashed q)]\right.\nonumber\\
+    &\quad\quad\left.-\qty(q+l)^2\Tr\qty[\gamma^\mu\gamma_5\slashed {l}\gamma^\alpha \qty(\slashed {k}+\slashed{q}+\slashed l)]
+    +l^2\Tr\qty[\gamma^\mu\gamma_5\qty(\slashed {l}+\slashed q)\gamma^\alpha \qty(\slashed {k}+\slashed{q}+\slashed l)]\right)\nonumber\\
+    \im q_\beta{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=4\im\epsilon^{\mu\rho\alpha\sigma}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\left(
+    -\qty(q+l)^2\qty( {k}+ q)_\rho{l}_\sigma
+    +l^2k_\rho\qty({l}+q)_\sigma\right.\nonumber\\
+    &\quad\quad\left.+\qty(q+l)^2 {l}_\rho \qty( {k}+{q})_\sigma
+    -l^2\qty( {l}+ q)_\rho k_\sigma\right)\nonumber\\
+    \im q_\beta{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=8\im\epsilon^{\mu\alpha\rho\sigma}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\left(
+    \qty(q+l)^2\qty( {k}+ q)_\rho{l}_\sigma
+    -l^2k_\rho\qty({l}+q)_\sigma\right)\nonumber
+\end{align}
+
+Now we put it in the more familiar form,
+
+\begin{align}
+    \im q_\beta{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=8\im\epsilon^{\mu\alpha\rho\sigma}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\qty[
+        \frac{\qty( {k}+ q)_\rho{l}_\sigma}{l^2\qty(k+q+l)^2}
+        -\frac{k_\rho\qty({l}+q)_\sigma}{\qty(q+l)^2\qty(k+q+l)^2}]\nonumber\\
+        \im q_\beta{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=8\im\epsilon^{\mu\alpha\rho\sigma}
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\qty[
+        \qty( {k}+ q)_\rho f_\sigma\qty(l;k+q)
+        -k_\rho f_\sigma\qty(l+q;k)]\nonumber\\
+        \im q_\beta{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=8\im\epsilon^{\mu\alpha\rho\sigma}
+    \qty[
+        \qty( {k}+ q)_\rho A\qty(k+q)_\sigma
+        -k_\rho\qty(A k_\sigma+\frac{\im}{32\pi^2}q_\sigma)]\nonumber\\
+        \im q_\beta{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=\frac{1}{4\pi^2}\epsilon^{\mu\alpha\rho\sigma}
+    k_\rho q_\sigma\nonumber
+\end{align}
+
+So two of them are non-zero while one is indeed zero. But is this the only choice? We could go back to our original 
+expression,
+
+\begin{align}
+    \im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{1}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\qty{
+    \Tr\qty[\gamma^\mu\gamma_5\qty(\slashed {k}+\slashed{l}+\slashed q)\gamma^\alpha\slashed {l}\gamma^\beta \qty(\slashed {l}+\slashed q)]
+    -\Tr\qty[\gamma^\mu\gamma_5\qty(\slashed {l}+\slashed q)\gamma^\beta\slashed {l}\gamma^\alpha \qty(\slashed {k}+\slashed{q}+\slashed l)]}\nonumber
+\end{align}
+
+And try to regularize it as,
+
+\begin{align}
+    \im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{\qty(l+k+q)_\rho l_\nu \qty(l+q)_\sigma}{l^2\qty(q+l)^2\qty(k+q+l)^2}\times\nonumber\\
+    &\quad\quad\times\qty{
+    \Tr\qty[\gamma^\mu\gamma_5\gamma^\rho\gamma^\alpha\gamma^\nu\gamma^\beta\gamma^\sigma]
+    -\Tr\qty[\gamma^\mu\gamma_5\gamma^\sigma\gamma^\beta\gamma^\nu\gamma^\alpha\gamma^\rho]}\nonumber
+\end{align}
+
+We have just one integral which is linearly divergent, so we can shift the integration variable to see what 
+kind of choices we're allowed to make,
+
+\begin{align}
+    I_{\rho\nu\sigma}\qty(k,q;l+a)&=\int\frac{\dd[4]{l}}{\qty(2\pi)^4}\frac{\qty(l+a+k+q)_\rho \qty(l+a)_\nu \qty(l+a+q)_\sigma}{\qty(l+a)^2\qty(q+l+a)^2\qty(k+q+l+a)^2}\nonumber
+\end{align}
+
+As we saw,
+
+\begin{align}
+    I_{\rho\nu\sigma}\qty(k,q;l+a)-I_{\rho\nu\sigma}\qty(k,q;l)&=\im\lim\limits_{l\rightarrow\infty}\int\frac{\dd[3]{S_\tau}}{\qty(2\pi)^4}a^\tau\frac{\qty(l+k+q)_\rho l_\nu \qty(l+q)_\sigma}{l^2\qty(q+l)^2\qty(k+q+l)^2}\nonumber\\
+    I_{\rho\nu\sigma}\qty(k,q;l+a)-I_{\rho\nu\sigma}\qty(k,q;l)&=\im\lim\limits_{l\rightarrow\infty}\int\frac{\dd[3]{S_\tau}}{\qty(2\pi)^4}a^\tau\frac{l_\rho l_\nu l_\sigma}{l^2l^2l^2}\nonumber\\
+    I_{\rho\nu\sigma}\qty(k,q;l+a)-I_{\rho\nu\sigma}\qty(k,q;l)&=\im\lim\limits_{l\rightarrow\infty}\int\frac{\dd[3]{\Omega}}{\qty(2\pi)^4}a^\tau l_\tau\frac{l_\rho l_\nu l_\sigma}{l^2l^2}\nonumber\\
+    I_{\rho\nu\sigma}\qty(k,q;l+a)-I_{\rho\nu\sigma}\qty(k,q;l)&=\im\lim\limits_{l\rightarrow\infty}\int\frac{\dd[3]{\Omega}}{\qty(2\pi)^4}a^\tau \frac{1}{4\cdot 3!}\qty(g_{\tau\rho}g_{\nu\sigma}+g_{\tau\nu}g_{\rho\sigma}+g_{\tau\sigma}g_{\nu\rho})\frac{l^2l^2}{l^2l^2}\nonumber\\
+    I_{\rho\nu\sigma}\qty(k,q;l+a)-I_{\rho\nu\sigma}\qty(k,q;l)&=\im\frac{2\pi^2}{\qty(2\pi)^4}a^\tau \frac{1}{4\cdot 3!}\qty(g_{\tau\rho}g_{\nu\sigma}+g_{\tau\nu}g_{\rho\sigma}+g_{\tau\sigma}g_{\nu\rho})\nonumber\\
+    I_{\rho\nu\sigma}\qty(k,q;l+a)-I_{\rho\nu\sigma}\qty(k,q;l)&=\frac{\im}{32\pi^26}a^\tau \qty(g_{\tau\rho}g_{\nu\sigma}+g_{\tau\nu}g_{\rho\sigma}+g_{\tau\sigma}g_{\nu\rho})\nonumber
+\end{align}
+
+We have now to multiply this factor by the Gamma matrices trace, let's start with,
+
+\begin{align}
+    &\qty(g_{\tau\rho}g_{\nu\sigma}+g_{\tau\nu}g_{\rho\sigma}+g_{\tau\sigma}g_{\nu\rho})\Tr\qty[\gamma^\mu\gamma_5\gamma^\rho\gamma^\alpha\gamma^\nu\gamma^\beta\gamma^\sigma]\nonumber\\
+    &\qty(-2g_{\tau\rho}\Tr\qty[\gamma^\mu\gamma_5\gamma^\rho\gamma^\alpha\gamma^\beta]+g_{\tau\nu}g_{\rho\sigma}\Tr\qty[\gamma^\mu\gamma_5\gamma^\rho\gamma^\alpha\gamma^\nu\gamma^\beta\gamma^\sigma]-2g_{\tau\sigma}\Tr\qty[\gamma^\mu\gamma_5\gamma^\alpha\gamma^\beta\gamma^\sigma])\nonumber\\
+    &8\im g_{\tau\rho}\epsilon^{\mu\rho\alpha\beta}+8\im g_{\tau\sigma}\epsilon^{\mu\alpha\beta\sigma}+2g_{\tau\nu}\Tr\qty[\gamma^\mu\gamma_5\qty(\gamma^\beta\gamma^\alpha\gamma^\nu-\gamma^\alpha\gamma^\nu\gamma^\beta-\gamma^\nu\gamma^\alpha\gamma^\beta)]\nonumber\\
+    &8\im g_{\tau\rho}\epsilon^{\mu\rho\alpha\beta}+8\im g_{\tau\sigma}\epsilon^{\mu\alpha\beta\sigma}-8\im g_{\tau\nu}\qty[\epsilon^{\mu\beta\alpha\nu}-\epsilon^{\mu\alpha\nu\beta}-\epsilon^{\mu\nu\alpha\beta}]\nonumber\\
+    &8\im g_{\tau\rho}\epsilon^{\mu\rho\alpha\beta}+8\im g_{\tau\sigma}\epsilon^{\mu\alpha\beta\sigma}+8\im g_{\tau\nu}\epsilon^{\mu\nu\alpha\beta}\nonumber\\
+    &8\im g_{\tau\rho}\epsilon^{\mu\rho\alpha\beta}+8\im g_{\tau\sigma}\epsilon^{\mu\alpha\beta\sigma}+8\im g_{\tau\nu}\epsilon^{\mu\nu\alpha\beta}\nonumber
+\end{align}
+
+The other contribution is,
+
+\begin{align}
+    &\qty(g_{\tau\rho}g_{\nu\sigma}+g_{\tau\nu}g_{\rho\sigma}+g_{\tau\sigma}g_{\nu\rho})\Tr\qty[\gamma^\mu\gamma_5\gamma^\sigma\gamma^\beta\gamma^\nu\gamma^\alpha\gamma^\rho]\nonumber\\
+    &\qty(-2g_{\tau\rho}\Tr\qty[\gamma^\mu\gamma_5\gamma^\beta\gamma^\alpha\gamma^\rho]+g_{\tau\nu}g_{\rho\sigma}\Tr\qty[\gamma^\mu\gamma_5\gamma^\sigma\gamma^\beta\gamma^\nu\gamma^\alpha\gamma^\rho]-2g_{\tau\sigma}\Tr\qty[\gamma^\mu\gamma_5\gamma^\sigma\gamma^\beta\gamma^\alpha])\nonumber\\
+    &8\im g_{\tau\rho}\epsilon^{\mu\beta\alpha\rho}+8\im g_{\tau\sigma}\epsilon^{\mu\sigma\beta\alpha}+2g_{\tau\nu}\Tr\qty[\gamma^\mu\gamma_5\qty(\gamma^\alpha\gamma^\beta\gamma^\nu-\gamma^\beta\gamma^\nu\gamma^\alpha-\gamma^\nu\gamma^\beta\gamma^\alpha)]\nonumber\\
+    &-8\im g_{\tau\rho}\epsilon^{\mu\rho\alpha\beta}-8\im g_{\tau\sigma}\epsilon^{\mu\alpha\beta\sigma}-8\im g_{\tau\nu}\qty[\epsilon^{\mu\alpha\beta\nu}-\epsilon^{\mu\beta\nu\alpha}-\epsilon^{\mu\nu\beta\alpha}]\nonumber\\
+    &-8\im g_{\tau\rho}\epsilon^{\mu\rho\alpha\beta}-8\im g_{\tau\sigma}\epsilon^{\mu\alpha\beta\sigma}-8\im g_{\tau\nu}\epsilon^{\mu\nu\alpha\beta}\nonumber
+\end{align}
+
+Subtracting the two we have,
+
+\begin{align}
+    &\qty(g_{\tau\rho}g_{\nu\sigma}+g_{\tau\nu}g_{\rho\sigma}+g_{\tau\sigma}g_{\nu\rho})\qty{\Tr\qty[\gamma^\mu\gamma_5\gamma^\rho\gamma^\alpha\gamma^\nu\gamma^\beta\gamma^\sigma]-\Tr\qty[\gamma^\mu\gamma_5\gamma^\sigma\gamma^\beta\gamma^\nu\gamma^\alpha\gamma^\rho]}\nonumber\\
+    &=16\im\qty[ g_{\tau\rho}\epsilon^{\mu\rho\alpha\beta}+g_{\tau\sigma}\epsilon^{\mu\alpha\beta\sigma}+g_{\tau\nu}\epsilon^{\mu\nu\alpha\beta}]\nonumber
+\end{align}
+
+So that finally,
+
+\begin{align}
+    \im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)-\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=\qty[
+    I_{\rho\nu\sigma}\qty(k,q;l+a)-I_{\rho\nu\sigma}\qty(k,q;l)]\times\nonumber\\
+    &\quad\quad\times\qty{
+    \Tr\qty[\gamma^\mu\gamma_5\gamma^\rho\gamma^\alpha\gamma^\nu\gamma^\beta\gamma^\sigma]
+    -\Tr\qty[\gamma^\mu\gamma_5\gamma^\sigma\gamma^\beta\gamma^\nu\gamma^\alpha\gamma^\rho]}\nonumber\\
+    \im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)-\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \frac{\im}{32\pi^26}a^\tau16\im
+    \qty[ g_{\tau\rho}\epsilon^{\mu\rho\alpha\beta}+g_{\tau\sigma}\epsilon^{\mu\alpha\beta\sigma}+g_{\tau\nu}\epsilon^{\mu\nu\alpha\beta}]\nonumber\\
+    \im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)-\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \frac{1}{4\pi^2}a_\nu
+    \epsilon^{\nu\mu\alpha\beta}\nonumber
+\end{align}
+
+Now we make use of what we already had computed to get,
+
+\begin{align}
+    k_\mu\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)-k_\mu\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \frac{1}{4\pi^2}a_\nu k_\mu
+    \epsilon^{\nu\mu\alpha\beta}\nonumber\\
+    k_\mu\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)&=
+    \frac{1}{4\pi^2}a_\nu k_\mu
+    \epsilon^{\nu\mu\alpha\beta}\nonumber
+\end{align}
+
+\begin{align}
+    p_\alpha\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)-p_\alpha\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \frac{1}{4\pi^2}a_\nu p_\alpha
+    \epsilon^{\nu\mu\alpha\beta}\nonumber\\
+    p_\alpha\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)&=-\frac{1}{4\pi^2}p_\alpha k_\nu\epsilon^{\nu\mu\alpha\beta}
+    +\frac{1}{4\pi^2}a_\nu p_\alpha
+    \epsilon^{\nu\mu\alpha\beta}\nonumber
+\end{align}
+
+\begin{align}
+    q_\beta\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)-q_\beta\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)&=
+    \frac{1}{4\pi^2}a_\nu q_\beta
+    \epsilon^{\nu\mu\alpha\beta}\nonumber\\
+    q_\beta\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)&=\frac{1}{4\pi^2}q_\beta k_\nu\epsilon^{\nu\mu\alpha\beta}
+    +\frac{1}{4\pi^2}a_\nu q_\beta
+    \epsilon^{\nu\mu\alpha\beta}\nonumber
+\end{align}
+
+We have total freedom in choosing the vector `$a$', but, nevertheless, this isn't enough to set all these 
+quantities to zero. If we want to set the first one to zero, the only option is to choose `$a\propto k$', 
+with this choice the second one can be made zero by only choosing `$a=k$', and this choice already gives the third 
+one non-zero! The best we can do is to choose two of them to be zero, and hence, the preferred choice, as the 
+vector current is Gauged in our theory, is to choose `$a$' to be such that both `$q_\beta\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)$' 
+and `$p_\alpha\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)$', are zero. From the third condition we see that 
+`$a$' needs to have a part like `$-k$' plus any vector parallel to `$q$', and from the second condition we see 
+that the part parallel has to be `$2q$', hence, our unique choice to maintain the vectorial current with zero 
+divergence is,
+
+\begin{align}
+    a=2q-k\nonumber
+\end{align}
+
+With this choice all contractions are,
+
+\begin{align}
+    k_\mu\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)&=
+    \frac{1}{4\pi^2}\qty(2q-k)_\nu k_\mu
+    \epsilon^{\nu\mu\alpha\beta}\nonumber\\
+    k_\mu\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)&=
+    \frac{1}{4\pi^2}\qty(2q+p+q)_\nu \qty(-p-q)_\mu
+    \epsilon^{\nu\mu\alpha\beta}\nonumber\\
+    k_\mu\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)&=
+    \frac{1}{4\pi^2}\qty[-3q_\nu p_\mu-p_\nu q_\mu]
+    \epsilon^{\nu\mu\alpha\beta}\nonumber\\
+    k_\mu\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)&=
+    -\frac{1}{2\pi^2}q_\nu p_\mu
+    \epsilon^{\nu\mu\alpha\beta}\nonumber\\
+    p_\alpha\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)&=0\nonumber\\
+    q_\beta\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q;a)&=0\nonumber
+\end{align}
+
+As desired. The discrepancy between the said in the problem `$\frac{1}{4\pi^2}$', and the 
+found here `$\frac{1}{2\pi^2}$' is to requiring or not that the vector current is indeed 
+conserved, here we approached requiring it, but if we didn't, we could had chosen for `$a$' just 
+`$a=q$', and that would have recovered the result `$\frac{1}{4\pi^2}$'. This in fact prove that the axial current isn't conserved, due to,
+
+\begin{align}
+    \partial_{x\mu}\im\Delta^{\mu\alpha\beta}\qty(x,y,z)&=\partial_{x\mu}\mel{\Omega}{J^\mu_{\textnormal {A}}\qty(x)J^\alpha_{\textnormal V}\qty(y)J^\beta_{\textnormal V}\qty(z)}{\Omega}\nonumber\\
+    &=\partial_{x\mu}\int\dd[4]{k}\dd[4]{p}\dd[4]{q}\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)\qty(2\pi)^4\delta^{\qty(4)}\qty(k+p+q)\exp\qty(\im k\cdot x+\im p\cdot y+\im q\cdot z)\nonumber\\
+    &=\int\dd[4]{k}\dd[4]{p}\dd[4]{q}\im k_\mu\im{\tilde\Delta}^{\mu\alpha\beta}\qty(k,p,q)\qty(2\pi)^4\delta^{\qty(4)}\qty(k+p+q)\exp\qty(\im k\cdot x+\im p\cdot y+\im q\cdot z)\nonumber\\
+    &=-\int\dd[4]{k}\dd[4]{p}\dd[4]{q}\im \frac{1}{2\pi^2}q_\nu p_\mu
+    \epsilon^{\nu\mu\alpha\beta}\qty(2\pi)^4\delta^{\qty(4)}\qty(k+p+q)\exp\qty(\im k\cdot x+\im p\cdot y+\im q\cdot z)\nonumber
+\end{align}
+
+Hence, what we proved is,
+
+\begin{align}
+    \partial_{x\mu}\mel{\Omega}{J^\mu_{\textnormal {A}}\qty(x)J^\alpha_{\textnormal V}\qty(y)J^\beta_{\textnormal V}\qty(z)}{\Omega}&=-8\im\pi^2\epsilon^{\nu\mu\alpha\beta}\int\dd[4]{p}\dd[4]{q} q_\nu p_\mu
+    \exp\qty(\im p\cdot\qty( y-x)+\im q\cdot\qty( z-x))\nonumber
+\end{align}
+
+In other words, the Ward Identity does not hold, and thus the current don't have zero divergence.

@@ -1,0 +1,87 @@
+\section{Álgebra de Super-Poincaré}
+
+Conforme mencionado, o Teorema provado por Haag-Łopuszański-Sohnius nos garante que a Álgebra de Poincaré \ref{poincare}, somente 
+pode ser estendida de maneira não trivial se os geradores adicionais forem fermiônicos com índices de mão esquerda e direita. A 
+princípio podemos ter uma quantidade arbitrária $\mathcal N$ linearmente independente\footnote{Esta hipótese está aqui por 
+motivos profiláticos, se por acaso uma quantidade destes geradores não fosse linearmente independente poderíamos eliminar-los para 
+obter uma coleção menor com independência linear. Também é necessária a hipótese que estes não aniquilem ao menos um estado físico 
+do espaço de Hilbert, do contrário são apenas operadores nulos.} destes,
+\begin{align*}
+    Q_a^A, Q_{\dot a}^{\dagger A};\ \ \ A,B=1,\cdots,\mathcal N;\ \ \ a=1,2;\ \ \ \dot a =\dot 1,\dot 2
+\end{align*}
+
+E com a seguinte graduação,
+\begin{align*}
+    \eta\qty(Q_a^A)=\eta\qty(Q_{\dot a}^{\dagger A})=1,\ \ \ \eta\qty(P^\mu)=\eta\qty(M^{\mu\nu})=0
+\end{align*}
+
+O restante do conteúdo do Teorema fixa unicamente qual são as relações de comutação. Não iremos aqui derivar na íntegra todas 
+as relações, mas comentar brevemente como covariância por Lorentz, unido das Identidades de Jacobi, são suficientes para se fixar 
+todas as relações de comutação. A mais trivial é a das Super-Cargas com os geradores de 
+momento angular e boost, pois como as Super-Cargas carregam índices spinoriais, suas leis de transformação por Lorentz são 
+fixas por sua representação do grupo. Assim,
+\begin{align*}
+    \comm{Q_a^A}{M^{\mu\nu}}=\tensor{\sigma}{^\mu^\nu_a^b}Q^A_b,\ \ \ \comm{Q^{\dagger A\dot a}}{M^{\mu\nu}}=\tensor{{\bar\sigma}}{^\mu^\nu^{\dot a}_{\dot b}}Q^{\dagger A\dot b}\numberthis\label{qlorentz}
+\end{align*}
+
+Outra maneira de entender por que não é possível alterar estas relações é devido ao lado direito do comutador possuir graduação 
+fermiônica, logo, deve apenas conter uma quantidade ímpar de $Q_a^A,Q_{\dot a}^{\dagger A}$, mas, como estes pertencem a álgebra, 
+é obrigatório do lado direto do comutador ser linear nestes, assim, o único outro termo que poderia ser incluso no lado direito da 
+primeira relação de comutação\footnote{Para a segunda relação de comutação basta tomar o adjunto da primeira. $Q_{\dot a}^{\dagger A}=\qty(Q_a^A)^{\dagger}$.} 
+seria, \[\tensor{C}{^\mu^\nu_a^{\dot b}}Q^{\dagger A}_{\dot b}\]
+
+Isto iria requerer a existência de uma quantidade invariante $\tensor{C}{^\mu^\nu_a^{\dot b}}$, mas pela decomposição de representações,
+\[\qty(\frac12,\frac12)\otimes\qty(\frac12,\frac12)\otimes\qty(\frac12,0)\otimes\qty(0,\frac12)=\qty(\frac12,\frac12)\oplus\qty(\frac32,\frac12)\oplus\qty(\frac12,\frac32)\oplus\qty(\frac32,\frac32)\]
+podemos observar que não há nenhuma decomposição na representação escalar, $\qty(0,0)$, portanto este objeto invariante não existe e as relações de comutação são 
+fixadas como mencionado. A próxima relação de comutação é de $Q_a^A$ com $P^\mu$, a única combinação linear nos geradores, Lorentz 
+covariante e com graduação correta é, \[\comm{Q_a^A}{P^\mu}=\sigma^\mu_{a\dot b}\tensor{Z}{^A_B}Q^{\dagger B\dot b}\] 
+
+Para determinar $\tensor{Z}{^A_B}$ usamos das Identidades de Jacobi,
+\begin{align*}
+    \comm{\comm{Q_a^A}{P^\mu}}{P^\nu}+\comm{\comm{P^\nu}{Q_a^A}}{P^\mu}+\comm{\comm{P^\mu}{P^\nu}}{Q_a^A}&=0\\
+    \sigma^\mu_{a\dot b}\tensor{Z}{^A_B}\comm{Q^{\dagger B\dot b}}{P^\nu}-\sigma^\nu_{a\dot b}\tensor{Z}{^A_B}\comm{Q^{\dagger B\dot b}}{P^\mu}&=0\\
+    \sigma^\mu_{a\dot b}{\bar\sigma}^{\nu\dot b c}\tensor{Z}{^A_B}\tensor{{Z^\ast}}{^B_C}Q^C_c-\sigma^\nu_{a\dot b}{\bar\sigma}^{\mu\dot b c}\tensor{Z}{^A_B}\tensor{{Z^\ast}}{^B_C}Q^C_c&=0\\
+    \tensor{Z}{^A_B}\tensor{{Z^\ast}}{^B_C}\sigma^{\mu\nu}Q^C&=0
+\end{align*}
+
+O único modo de se garantir que isto é verdade para todos $\mu,\nu, Q^C$ é tomando $\tensor{Z}{^A_B}=0$,\[\comm{Q_a^A}{P^\mu}=0\numberthis\label{qp}\]
+
+A próxima relação de comutação que analisaremos é de $Q_a^A$ e $Q_b^B$, a forma mais geral do comutador é, 
+\[\comm{Q_a^A}{Q_b^B}=Z^{AB}\epsilon_{ab}+\tensor{\sigma}{^\mu^\nu_a_b}M_{\mu\nu}X^{AB}\]
+
+Aplicando a Identidade de Jacobi,
+\begin{align*}
+    \comm{\comm{Q_a^A}{Q_b^B}}{P^\mu}+\comm{\comm{P^\mu}{Q_a^A}}{Q_b^B}-\comm{\comm{Q_b^B}{P^\mu}}{Q_a^A}&=0\\
+    \epsilon_{ab}\comm{Z^{AB}}{P^\mu}+\tensor{\sigma}{^\alpha^\beta_a_b}X^{AB}\comm{M_{\alpha\beta}}{P^\mu}&=0
+\end{align*}
+
+Aqui necessariamente $Z^{AB}$ deve ser proporcional a identidade, pois tem graduação zero e nenhum índice de Lorentz, não é possível construir tal objeto utilizando-se apenas 
+de combinação lineares dos geradores, assim nossa condição é de que o segundo comutador deve ser zero! Condição que só pode ser satisfeita se $X^{AB}=0$, uma vez que $\comm{M^{\alpha\beta}}{P^\mu}\neq 0$. 
+Assim\footnote{Conforme mencionado, $Z^{AB}$ são proporcionais a identidade, isto é, são cargas centrais.}, \[\comm{Q_a^A}{Q_b^B}=Z^{AB}\epsilon_{ab}\numberthis\label{qq}\]
+
+A última relação que nos resta analisar é de $Q_a^A$ com $Q_{\dot b}^{\dagger B}$, a combinação mais geral é\footnote{O fator de $2$ é meramente convencional.},
+\[\comm{Q_a^A}{Q_{\dot b}^{\dagger B}}=-2X^{AB}\sigma_{\mu a\dot b}P^\mu\]
+
+Claramente aqui $X^{AB}$ é manifestamente hermitiano, iremos mostrar que é também positivo-definido. Para isto temos que invocar 
+condições sobre os geradores das Super-Simetrias, que são linearmente independentes, e que exista ao menos um estado não aniquilado por estes, assim, considere,
+\[\mathbb Q=y_Aw^aQ_a^A\]
+Certamente então, para algum estado $\Psi$ que não é aniquilado por $\mathbb Q$,
+\begin{align*}
+    0<\qty(\Psi,\comm{\mathbb Q}{\mathbb Q^\dagger}\Psi)=-w^ay_Ay_B^\ast w^{\ast\dot b}2X^{AB}\sigma_{\mu a\dot b}\qty(\Psi,P^\mu\Psi)
+\end{align*}
+
+Isto é, a quantidade $y_AX^{AB}y^\ast_B$ é não nula para todos $y_A$, ou seja, ou $X^{AB}$ é positivo-definido, ou é negativo-definido. Para decidir entre estas duas 
+possibilidades, tomemos o caso de um estado físico com $P^\mu\Psi=-mg^{\mu 0}\Psi$,
+\begin{align*}
+    0&<2y_AX^{AB}y_B^\ast w^aw^{\ast\dot b}\sigma_{\mu a\dot b}mg^{\mu 0}\qty(\Psi,\Psi)\\
+    0&<2y_AX^{AB}y_B^\ast w^aw^{\ast\dot b}{\sigma}^0_{ a\dot b}\\
+    0&<2y_AX^{AB}y_B^\ast\norm{\vb w}^2
+\end{align*}
+
+Isto é, se desejamos ter estados de energia positiva é necessário que $X^{AB}$ seja positivo-definido\footnote{Do ponto de vista da Álgebra 
+não há nada que impeça de ter $X^{AB}$ negativo-definido, isto faria com que o operador momento \textit{físico} fosse na verdade $-P^\mu$.}. 
+Sabendo disto e da hipótese que todos os $Q^A_a$ são linearmente independentes, a matriz $X^{AB}$ será não degenerada, assim, podemos, 
+fazendo uma mudança de variáveis dos $Q^A_a$, diagonalizá-la de forma a obter,
+\[\comm{Q^A_a}{Q_{\dot b}^{\dagger B}}=-2\delta^{AB}\sigma_{\mu a\dot b}P^\mu\numberthis\label{qqdagger}\]
+As relações de comutação obtidas, \cref{poincare,qq,qp,qlorentz,qqdagger}, constituem a \textbf{Álgebra de Super-Poincaré}, e são o principal 
+resultado do Teorema de Haag-Łopuszański-Sohnius.

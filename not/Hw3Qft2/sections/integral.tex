@@ -1,0 +1,88 @@
+\section{Useful Integrals}
+
+The mostly useful integrals we'll need to know how to solve are,
+
+\begin{itemize}
+    \item $\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{\qty(k^2)^a}{\qty(k^2+A)^b}=\frac{\im}{\qty(4\pi)^{\frac D2}}A^{-b+\frac D2+a}\frac{\Gamma\qty(b-a-\frac D2)\Gamma\qty(a+\frac D2)}{\Gamma\qty(b)\Gamma\qty(\frac D2)}$
+\end{itemize}
+
+Let's prove this,
+
+We first start with a Wick rotation in `$k^0$',
+
+\begin{align}
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{\qty(k^2)^a}{\qty(k^2+A)^b}&=\im\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{\qty(k^2)^a}{\qty(k^2+A)^b}\nonumber\\
+    &=\frac{\im}{\qty(2\pi)^D}\int\dd[D-1]{\Omega}\int\limits_0^\infty\dd{k}{k^{D-1}}\frac{\qty(k^2)^a}{\qty(k^2+A)^b}\nonumber
+\end{align}
+
+For getting what is the angular integral,
+
+\begin{align}
+    \int\dd[D]{k}\exp\qty(-tk^2)&=\qty[\int\limits_{-\infty}^{+\infty}\dd{k}\exp\qty(-tk^2)]^D\nonumber\\
+    \int\dd[D-1]{\Omega}\int\limits_0^{\infty}\dd{k}k^{D-1}\exp\qty(-tk^2)&=\qty(\frac{\pi}{t})^{-\frac D2}\nonumber\\
+    \int\dd[D-1]{\Omega}t^{-\frac D2}\int\limits_0^{\infty}\dd{x}x^{D-1}\exp\qty(-x^2)&=\qty(\frac{\pi}{t})^{-\frac D2}\nonumber\\
+    \int\dd[D-1]{\Omega}t^{-\frac D2}\frac12\Gamma\qty(\frac D2)&=\qty(\frac{\pi}{t})^{-\frac D2}\nonumber\\
+    \int\dd[D-1]{\Omega}&=\frac{2\pi^{\frac D2}}{\Gamma\qty(\frac D2)}\nonumber
+\end{align}
+
+So we continue as,
+
+\begin{align}
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{\qty(k^2)^a}{\qty(k^2+A)^b}&=\frac{\im}{\qty(2\pi)^D}\int\dd[D-1]{\Omega}\int\limits_0^\infty\dd{k}{k^{D-1}}\frac{\qty(k^2)^a}{\qty(k^2+A)^b}\nonumber\\
+    &=\frac{\im}{\qty(2\pi)^D}\frac{2\pi^{\frac D2}}{\Gamma\qty(\frac D2)}\frac12\int\limits_0^\infty\dd{k^2}{k^{D-2}}\frac{\qty(k^2)^a}{\qty(k^2+A)^b}\nonumber\\
+    &=\frac{\im}{\qty(4\pi)^{\frac D2}}\frac{1}{\Gamma\qty(\frac D2)}\int\limits_0^\infty\dd{k^2}{\qty(k^2)^{\frac{D-2}{2}}}\frac{\qty(k^2)^a}{\qty(k^2+A)^b}\nonumber\\
+    &=\frac{\im}{\qty(4\pi)^{\frac D2}}\frac{1}{\Gamma\qty(\frac D2)}A^{1-b+\frac D2-1+a}\int\limits_0^\infty\dd{x}{\qty(x)^{\frac{D-2}{2}}}\frac{\qty(x)^a}{\qty(x+1)^b}\nonumber\\
+    &=\frac{\im}{\qty(4\pi)^{\frac D2}}\frac{1}{\Gamma\qty(\frac D2)}A^{-b+\frac D2+a}\int\limits_0^\infty\dd{x}{\qty(x)^{\frac{D-2}{2}+a}}\qty(x+1)^{-b}\nonumber\\
+    &=\frac{\im}{\qty(4\pi)^{\frac D2}}\frac{1}{\Gamma\qty(\frac D2)}A^{-b+\frac D2+a}\int\limits_1^0\dd{\qty(\frac1z-1)}{\qty(\frac1z-1)^{\frac{D-2}{2}+a}}\qty(\frac1z-1+1)^{-b}\nonumber\\
+    &=\frac{\im}{\qty(4\pi)^{\frac D2}}\frac{1}{\Gamma\qty(\frac D2)}A^{-b+\frac D2+a}\int\limits_0^1\dd{z}{\qty(1-z)^{\frac D2+a-1}}z^{b-a-\frac D2-1}\nonumber
+\end{align}
+
+This can be written as the Beta function,
+
+\begin{align}
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{\qty(k^2)^a}{\qty(k^2+A)^b}&
+    =\frac{\im}{\qty(4\pi)^{\frac D2}}\frac{1}{\Gamma\qty(\frac D2)}A^{-b+\frac D2+a}\int\limits_0^1\dd{z}{\qty(1-z)^{\frac D2+a-1}}z^{b-a-\frac D2-1}\nonumber\\
+    &=\frac{\im}{\qty(4\pi)^{\frac D2}}\frac{1}{\Gamma\qty(\frac D2)}A^{-b+\frac D2+a}\frac{\Gamma\qty(b-a-\frac D2)\Gamma\qty(a+\frac D2)}{\Gamma\qty(b)}\nonumber
+\end{align}
+
+Some other useful properties are,
+
+\begin{itemize}
+    \item $\int\dd[D]{k}k_\alpha f\qty(k^2)=0$
+\end{itemize}
+
+This is only due to the integral is an odd function integrated over an even domain contain zero.
+
+\begin{itemize}
+    \item $\int\dd[D]{k}k_\alpha k_\beta f\qty(k^2)=\frac 1Dg_{\alpha\beta}\int\dd[D]{k}k^2f\qty(k^2)$
+\end{itemize}
+
+This a matter of Lorentz covariance, if `$\alpha\neq \beta$' the integral is zero by the same reasoning of the 
+last property. If `$\alpha=\beta$', we can just make use of rotational/boost covariance to align the momentum 
+in the direction of `$\alpha$', and thus this integral is equal to the one with `$k^2$', but as latter has `$D$' 
+components we need to divide by `$D$'.
+
+\begin{itemize}
+    \item $\int\dd[D]{k}k_\alpha k_\beta k_\mu f\qty(k^2)=0$
+\end{itemize}
+
+This is the same reasoning of the integral before.
+
+\begin{itemize}
+    \item $\int\dd[D]{k}k_\alpha k_\beta k_\mu k_\nu f\qty(k^2)=\frac 1D\frac{1}{3!}\qty(g_{\alpha\beta}g_{\mu\nu}+g_{\alpha\mu}g_{\beta\nu}+g_{\alpha\nu}g_{\mu\beta})\int\dd[D]{k}\qty(k^2)^2 f\qty(k^2)$
+\end{itemize}
+
+This is the same reasoning as before, we just have an additional `$3!$' due to the possible contractions.
+
+Now we come to a trick used in the problems,
+
+\begin{itemize}
+    \item $\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{k^2}{\qty(k^2+A)^2}=\frac{D}{2-D}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{A}{\qty(k^2+A)^2}$
+\end{itemize}
+
+\begin{align}
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{k^2}{\qty(k^2+A)^2}&=\frac{\im}{\qty(4\pi)^{\frac D2}}A^{-2+\frac D2+1}\frac{\Gamma\qty(2-1-\frac D2)\Gamma\qty(1+\frac D2)}{\Gamma\qty(2)\Gamma\qty(\frac D2)}\nonumber\\
+    &=\frac{A}{1-\frac D2}\frac D2\frac{\im}{\qty(4\pi)^{\frac D2}} A^{-2+\frac D2}\frac{\Gamma\qty(2-\frac D2)\Gamma\qty(\frac D2)}{\Gamma\qty(2)\Gamma\qty(\frac D2)}\nonumber\\
+    &=\frac{AD}{2-D}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{\qty(k^2+A)^2}\nonumber\\
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{k^2}{\qty(k^2+A)^2}&=\frac{D}{2-D}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{A}{\qty(k^2+A)^2}\nonumber
+\end{align}

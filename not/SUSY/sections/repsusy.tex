@@ -1,0 +1,192 @@
+\section{Representations of the Super-Poincarè Algebra}
+
+As we have seen, the Super-Poincarè algebra is characterized by two Casimir operators, the first we already are familiar with, it is the mass,
+
+\begin{align}
+    P^\mu P_\mu\nonumber
+\end{align}
+
+The second one is the not so trivial,
+
+\begin{align}
+    C_{\mu\nu}C^{\mu\nu}\nonumber
+\end{align}
+
+Notice that the values of `$P^\mu$' are constrained, in particular,
+
+\begin{align}
+    \comm{Q_a}{Q^\dagger_{\dot b}}&=-2\sigma_{\mu a\dot b}P^\mu\nonumber\\
+    \tensor{\bar\sigma}{^0^{\dot b}^a}\comm{Q_a}{Q^\dagger_{\dot b}}&=-2\tensor{\bar\sigma}{^0^{\dot b}^a}\sigma_{\mu a\dot b}P^\mu\nonumber\\
+    \comm{Q_1}{Q^\dagger_{\dot 1}}+\comm{Q_2}{Q^\dagger_{\dot 2}}&=4P^0\nonumber
+\end{align}
+
+That is,
+
+\begin{align}
+    P^0&=\frac14\qty(Q_1Q^\dagger_{\dot 1}+Q^\dagger_{\dot 1}Q_1+Q_2Q^\dagger_{\dot 2}+Q^\dagger_{\dot 2}Q_2)\nonumber
+\end{align}
+
+Let's apply this to an arbitrary state,
+
+\begin{align}
+    \qty(\Psi,P^0\Psi)&=\frac14\qty[\qty(Q^\dagger_{\dot 1}\Psi,Q^\dagger_{\dot 1}\Psi)+\qty(Q_1\Psi,Q_1\Psi)+\qty(Q^\dagger_{\dot 2}\Psi,Q^\dagger_{\dot 2}\Psi)+\qty(Q_2\Psi,Q_2\Psi)]\nonumber
+\end{align}
+
+This is clearly non negative, as it's the sum over norms of states, thus we conclude,
+
+\begin{align}
+    \qty(\Psi,P^0\Psi)\geq 0\nonumber
+\end{align}
+
+For all states. Actually the energy of the ground state acts as a order parameter for the SSB of SUSY. Other constrain for the `$P^\mu$' is the square of it,
+
+\begin{align}
+    \comm{Q_a}{Q^\dagger_{\dot b}}\comm{Q_c}{Q^\dagger_{\dot d}}&=4\sigma_{\mu a\dot{ b}}P^\mu\sigma_{\nu c\dot{ d}}P^\nu\nonumber\\
+    \epsilon^{ac}\epsilon^{\dot b\dot d}\comm{Q_a}{Q^\dagger_{\dot b}}\comm{Q_c}{Q^\dagger_{\dot d}}&=4\sigma_{\mu a\dot b}P^\mu\epsilon^{ac}\epsilon^{\dot b\dot d}\sigma_{\nu c\dot d}P^\nu\nonumber\\
+    \epsilon^{ac}\epsilon^{\dot b\dot d}\comm{Q_a}{Q^\dagger_{\dot b}}\comm{Q_c}{Q^\dagger_{\dot d}}&=4\sigma_{\mu a\dot b}P^\mu\tensor{{\bar\sigma}}{_\nu ^{\dot b}^a}P^\nu\nonumber\\
+    \epsilon^{\dot b\dot d}\comm{Q_1}{Q^\dagger_{\dot b}}\comm{Q_2}{Q^\dagger_{\dot d}}-\epsilon^{\dot b\dot d}\comm{Q_2}{Q^\dagger_{\dot b}}\comm{Q_1}{Q^\dagger_{\dot d}}&=-8P^\mu P_\mu\nonumber\\
+    \comm{Q_1}{Q^\dagger_{\dot 1}}\comm{Q_2}{Q^\dagger_{\dot 2}}-\comm{Q_1}{Q^\dagger_{\dot 2}}\comm{Q_2}{Q^\dagger_{\dot 1}}-\comm{Q_2}{Q^\dagger_{\dot 1}}\comm{Q_1}{Q^\dagger_{\dot 2}}+\comm{Q_2}{Q^\dagger_{\dot 2}}\comm{Q_1}{Q^\dagger_{\dot 1 }}&=-8P^\mu P_\mu\nonumber
+\end{align}
+
+\subsection{Massive representations}
+
+We are going to first consider massive representations of the Super-Poincaré group, that is, representations with `$P^\mu P_\mu =-m^2<0$'. Notice that we can always perform a Lorentz transformation to go from any eigenvalue of `$P^\mu$' to the eigenvalue,
+
+\begin{align}
+    P^\mu=\mqty(m&\vb 0)\nonumber
+\end{align}
+
+Thus, our second Casimir have it's values restrained by,
+
+\begin{align}
+    C^2&=\qty(B_\mu P_\nu-B_\nu P_\mu)\qty(B^\mu P^\nu -B^\nu P^\mu)\nonumber\\
+    &=2 B_\mu P_\nu B^\mu P^\nu -2B_\mu P_\nu B^\nu P^\mu\nonumber\\
+    &=-2m^2B_\mu B^\mu-2\qty(B_0 P^0)^2\nonumber\\
+    &=2m^2B_0^2-2m^2\vb B\cdot \vb B-2m^2B_0^2\nonumber\\
+    &=-2m^2\vb B\cdot \vb B\nonumber
+\end{align}
+
+But,
+
+\begin{align}
+    \vb B&=\vb W+\frac14\vb X\nonumber\\
+    B_i&=\frac12\epsilon_{\mu i\alpha\beta}M^{\alpha\beta}P^\mu+\frac14Q^\dagger{\bar\sigma}_i Q\nonumber\\
+    B_i&=\frac m2\epsilon_{0i\alpha\beta}M^{\alpha\beta}+\frac14Q^\dagger{\bar\sigma}_i Q\nonumber\\
+    B_i&=\frac m2\epsilon_{0ijk}M^{jk}+\frac14Q^\dagger{\bar\sigma}_i Q\nonumber\\
+    mY_i&=mJ_i+\frac14Q^\dagger{\bar\sigma}_i Q\nonumber
+\end{align}
+
+So that,
+
+\begin{align}
+    C^2=-2m^4 \vb Y\cdot \vb Y\nonumber
+\end{align}
+
+Some interesting features of this new operator `$\vb Y$' is that,
+
+\begin{align}
+    \comm{Y_i}{Y_j}&=\comm{J_i+\frac{1}{4m}Q^\dagger{\bar\sigma}_i Q}{J_j+\frac{1}{4m}Q^\dagger{\bar\sigma}_j Q}\nonumber\\
+    &=\im\epsilon_{ijk}J^k+\frac{1}{4m}\comm{J_i}{Q^\dagger{\bar\sigma}_j Q}-\frac{1}{4m}\comm{J_j}{Q^\dagger{\bar\sigma}_i Q}+\frac{1}{16m^2}\comm{Q^\dagger{\bar\sigma}_i Q}{Q^\dagger{\bar\sigma}_j Q}\nonumber
+\end{align}
+
+Let's compute first,
+
+\begin{align}
+    \comm{J_i}{Q^\dagger}&=-\frac12\epsilon_{0ijk}\comm{Q^\dagger}{M^{jk}}\nonumber\\
+    &=-\frac12\epsilon_{0ijk}{\bar\sigma}^{jk}Q^\dagger\nonumber\\
+    &=-\im{\bar\sigma}_{0i}Q^\dagger\nonumber
+\end{align}
+
+\begin{align}
+    \comm{J_i}{Q}&=-\frac12\epsilon_{0ijk}\comm{Q}{M^{jk}}\nonumber\\
+    &=-\frac12\epsilon_{0ijk}{\sigma}^{jk}Q\nonumber\\
+    &=\im{\sigma}_{0i}Q\nonumber
+\end{align}
+
+So that,
+
+\begin{align}
+    \comm{J_i}{Q^\dagger{\bar\sigma}_jQ}&=\comm{J_i}{Q^\dagger}{\bar\sigma}_jQ+Q^\dagger{\bar\sigma}_j\comm{J_i}{Q}\nonumber\\
+    &=-\im\qty[{\bar\sigma}_{0i}Q^\dagger]{\bar\sigma}_jQ+Q^\dagger{\bar\sigma}_j\im{\sigma}_{0i}Q\nonumber\\
+    &=\im Q^\dagger{\bar\sigma}_{0i}{\bar\sigma}_jQ+Q^\dagger{\bar\sigma}_j\im{\sigma}_{0i}Q\nonumber\\
+    &=-\frac14 Q^\dagger\qty[{\bar\sigma}_0\sigma_i{\bar\sigma}_j-{\bar\sigma}_i\sigma_0{\bar\sigma}_j+
+    {\bar\sigma}_j\sigma_0{\bar\sigma}_i-{\bar\sigma}_j\sigma_i{\bar\sigma_0}]Q\nonumber\\
+    &=-\frac14Q^\dagger\qty[{\bar\sigma}_0\sigma_i{\bar\sigma}_j+{\bar\sigma}_0\sigma_i{\bar\sigma}_j-{\bar\sigma}_0\sigma_j{\bar\sigma}_i+{\bar\sigma}_j\sigma_0{\bar\sigma}_i]Q\nonumber\\
+    &=-\frac14Q^\dagger\qty[{\bar\sigma}_0\sigma_i{\bar\sigma}_j+{\bar\sigma}_0\sigma_i{\bar\sigma}_j-{\bar\sigma}_0\sigma_j{\bar\sigma}_i-{\bar\sigma}_0\sigma_j{\bar\sigma}_i]Q\nonumber\\
+    &=-\frac12Q^\dagger{\bar\sigma}_0\qty[\sigma_i{\bar\sigma}_j-\sigma_j{\bar\sigma}_i ]Q\nonumber\\
+    &=2\im\frac{\im}{4}Q^\dagger{\bar\sigma}_0\qty[\sigma_i{\bar\sigma}_j-\sigma_j{\bar\sigma}_i ]Q\nonumber\\
+    &=2\im Q^\dagger{\bar\sigma}_0\sigma_{ij}Q\nonumber\\
+    &=2\im Q^\dagger{\bar\sigma}_0\frac\im2\epsilon_{ij\mu\nu}\sigma^{\mu\nu}Q\nonumber\\
+    &=2Q^\dagger{\bar\sigma}_0\epsilon_{0ijk}\sigma^{k0}Q\nonumber\\
+    &=-2\frac\im 4\epsilon_{ijk}Q^\dagger\qty[{\bar\sigma}^0\sigma^{k}{\bar\sigma}^0-{\bar\sigma}^0\sigma^0{\bar\sigma^k}]Q\nonumber\\
+    &=-2\frac\im 4\epsilon_{ijk}Q^\dagger\qty[-{\bar\sigma}^0\sigma^{0}{\bar\sigma}^k-{\bar\sigma}^0\sigma^0{\bar\sigma^k}]Q\nonumber\\
+    &=\im\epsilon_{ijk}Q^\dagger{\bar\sigma^k}Q\nonumber
+\end{align}
+
+So now we have to compute,
+
+\begin{align}
+    \comm{Q^\dagger{\bar\sigma}_iQ}{Q^\dagger_{\dot b}}&=Q^\dagger_{\dot a}{{\bar\sigma}_i}^{\dot a b}\comm{Q_b}{Q^\dagger_{\dot b}}\nonumber\\
+    &=Q^\dagger_{\dot a}{{\bar\sigma}_i}^{\dot a b}\qty(-2){\sigma_0}_{b\dot b}m\nonumber\\
+    &=-2m\qty[Q^\dagger{{\bar\sigma}_i}{\sigma_0}]_{\dot b}\nonumber
+\end{align}
+
+And also,
+
+\begin{align}
+    \comm{Q^\dagger{\bar\sigma}_iQ}{Q_c}&=-\comm{Q_c}{Q^\dagger_{\dot a}}{{\bar\sigma}_i}^{\dot a b}Q_b\nonumber\\
+    &=2{\sigma_0}_{c\dot a}m{{\bar\sigma}_i}^{\dot a b}Q_b\nonumber\\
+    &=2m\qty[{\sigma_0}{{\bar\sigma}_i}Q]_c\nonumber
+\end{align}
+
+Thus, finally,
+
+\begin{align}
+    \comm{Q^\dagger{\bar\sigma}_iQ}{Q^\dagger{\bar\sigma}_j Q}&=\comm{Q^\dagger{\bar\sigma}_iQ}{Q^\dagger_{\dot b}}{{\bar\sigma}_j}^{\dot b c}Q_c+Q^\dagger_{\dot b}{{\bar\sigma}_j}^{\dot b c}\comm{Q^\dagger{\bar\sigma}_iQ}{Q_c}\nonumber\\
+    &=-2m\qty[Q^\dagger{{\bar\sigma}_i}{\sigma_0}]_{\dot b}{{\bar\sigma}_j}^{\dot b c}Q_c+Q^\dagger_{\dot b}{{\bar\sigma}_j}^{\dot b c}2m\qty[{\sigma_0}{{\bar\sigma}_i}Q]_c\nonumber\\
+    &=-2mQ^\dagger\qty[{\bar\sigma}_i\sigma_0{\bar\sigma}_j-{\bar\sigma}_j\sigma_0{\bar\sigma}_i]Q\nonumber\\
+    &=-2mQ^\dagger{\bar\sigma}_0\qty[-\sigma_i{\bar\sigma}_j+\sigma_j{\bar\sigma}_i]Q\nonumber\\
+    &=8\im\frac\im4mQ^\dagger{\bar\sigma}_0\qty[-\sigma_i{\bar\sigma}_j+\sigma_j{\bar\sigma}_i]Q\nonumber\\
+    &=-8\im mQ^\dagger{\bar\sigma}_0\sigma_{ij}Q\nonumber\\
+    &=-8\im mQ^\dagger{\bar\sigma}_0\frac\im2\epsilon_{ij\mu\nu}\sigma^{\mu\nu}Q\nonumber\\
+    &=8 mQ^\dagger{\bar\sigma}_0\epsilon_{ijk0}\sigma^{k0}Q\nonumber\\
+    &=-8 mQ^\dagger{\bar\sigma}_0\epsilon_{0jki}\sigma^{k0}Q\nonumber\\
+    &=-8 m\epsilon_{0ijk}Q^\dagger{\bar\sigma}_0\sigma^{k0}Q\nonumber\\
+    &=-8 m\epsilon_{ijk}\frac\im 4Q^\dagger{\bar\sigma}_0\qty[\sigma^k{\bar\sigma}^0-\sigma^0{\bar\sigma^k}]Q\nonumber\\
+    &=-8 m\epsilon_{ijk}\frac\im 4Q^\dagger{\bar\sigma}_0\qty[-\sigma^0{\bar\sigma}^k-\sigma^0{\bar\sigma^k}]Q\nonumber\\
+    &=4 m\epsilon_{ijk}\im Q^\dagger{\bar\sigma}_0\sigma^0{\bar\sigma}^kQ\nonumber\\
+    &=-4\im  m\epsilon_{ijk}Q^\dagger{\bar\sigma}^kQ\nonumber
+\end{align}
+
+At last,
+
+\begin{align}
+    \comm{Y_i}{Y_j}&=\im\epsilon_{ijk}J^k+\frac{1}{4m}\comm{J_i}{Q^\dagger{\bar\sigma}_j Q}-\frac{1}{4m}\comm{J_j}{Q^\dagger{\bar\sigma}_i Q}+\frac{1}{16m^2}\comm{Q^\dagger{\bar\sigma}_i Q}{Q^\dagger{\bar\sigma}_j Q}\nonumber\\
+    &=\im\epsilon_{ijk}J^k+\frac{1}{4m}\im\epsilon_{ijk}Q^\dagger{\bar\sigma^k}Q-\frac{1}{4m}\im\epsilon_{jik}Q^\dagger{\bar\sigma^k}Q-\frac{1}{16m^2}4\im  m\epsilon_{ijk}Q^\dagger{\bar\sigma}^kQ\nonumber\\
+    &=\im\epsilon_{ijk}J^k+\frac{1}{2m}\im\epsilon_{ijk}Q^\dagger{\bar\sigma^k}Q-\frac{1}{4m}\im\epsilon_{ijk}Q^\dagger{\bar\sigma}^kQ\nonumber\\
+    &=\im\epsilon_{ijk}J^k+\frac{1}{4m}\im\epsilon_{ijk}Q^\dagger{\bar\sigma^k}Q=\im\epsilon_{ijk}Y^k\nonumber
+\end{align}
+
+That show us that our second Casimir is actually some form of an angular momentum,
+
+\begin{align}
+    C^2&=-2m^4\vb Y\cdot \vb Y\nonumber
+\end{align}
+
+From representation theory of `$\mathfrak{su}\qty(2)$' algebra, we know that irreducible representations are labeled 
+by two half-integer, `$y,y_3$', such that,
+
+\begin{align}
+    \ket{m,j,k}\rightarrow\begin{cases}
+        \vb Y\cdot \vb Y\ket{m,y,y_3}&=y\qty(y+1)\ket{m,y,y_3}\\
+        Y_3\ket{m,j,k}&=y_3\ket{m,y,y_3}\\
+        P^\mu P_\mu\ket{m,y,y_3}&=-m^2\ket{m,y,y_3}
+    \end{cases}
+\end{align}
+
+Also, another useful fact is that,
+
+\begin{align}
+    \comm{Y_i}{Q^\dagger}&=\comm{J_i}{Q}+\frac{1}{4m}\comm{Q^\dagger{\bar\sigma}_iQ}{Q}\nonumber\\
+    &=-\im{\bar\sigma}_{0i}Q^\dagger-\frac12Q^\dagger{\bar\sigma}_i\sigma_0\nonumber
+\end{align}

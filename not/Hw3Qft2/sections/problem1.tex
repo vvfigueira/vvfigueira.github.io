@@ -1,0 +1,1178 @@
+\section{Beta functions of Non-Abelian Gauge-Fermion Theory}
+
+\subsection{Construction of the Theory}
+
+The theory under consideration is one of a set of Gauge Bosons, `${\vb A}_\mu$', with a set meaning we have an underlying group structure, to which is associated a Lie Algebra, this one is restricted due to energy positivity reasons to be a direct sum over commuting compact simple and `$\mathfrak u\qty(1)$' Lie Algebras. This greatly pins down the possible Lie Algebras, leaving just the ones whose structure constants are totally anti-symmetric in the all-up indices, this also mean that exists a symmetric non-degenerate 2-form, which behaves like a metric in the algebra, and with which we raise and lower the group indices. With a pertinent choice of basis we can, still consequences of compactness and simpleness, constrain this \textit{group metric} to be in a diagonal form with all elements from the diagonal equal to one, from now on this is the choice assumed to hold. Also, with this choice, there is no need to distinguish between upper and lower indices, hence, all index will be written upstairs. From this, we can set our group/algebra to be one as,
+
+\begin{align}
+    \comm{\vb T^a}{\vb T^b}=\im\tensor{f}{^a^b_c}\vb T^c\nonumber
+\end{align}
+
+The most important representation of our group/algebra will be the \textit{Adjoint Representation}, which is defined by,
+
+\begin{align}
+    \tensor{{\qty(\vb T_{\textnormal A}^{a})}}{^b_c}=-\im \tensor{f}{^a^b_c}\nonumber
+\end{align}
+
+And which is the representation belonging to the Gauge fields, `${\vb A}_\mu$'. The fermionic fields will also transform in a representation of the same group/algebra `$\vb T^a_{\textnormal f}$', the requirement of the action being invariant through the transformation,
+
+\begin{align}
+    \boldsymbol\Psi\qty(x)\rightarrow\exp\qty(-\im g \alpha_a\qty(x)\vb T^a_{\textnormal f})\boldsymbol\Psi\qty(x)\nonumber
+\end{align}
+
+Imposes the necessity of replacing the standard derivative, for a covariant derivative in the group/algebra, and this by itself --- as a notion of a covariant derivative --- requires an additional field, which is of course our Gauge field. Thus, our derivative is,
+
+\begin{align}
+    \vb D_\mu&=\mathbbm 1\partial_\mu-\im g \vb A_\mu\qty(x)\nonumber
+\end{align}
+
+This sign choice is a convention, and reflects the choice of sign in the transformation law of `$\vb A_\mu$', which is determined by the requirement of,
+
+\begin{align}
+    \vb D_\mu\boldsymbol\Psi\qty(x)\rightarrow\exp\qty(-\im g\alpha_a\qty(x)\vb T^a_{\textnormal f})\vb D_\mu\boldsymbol\Psi\qty(x)\nonumber
+\end{align}
+
+Setting `$\vb U\qty(x)=\exp\qty(-\im g\alpha_a\qty(x)\vb T^a_{\textnormal f})$', we get our constrain as,
+
+\begin{align}
+    \vb D_\mu&\rightarrow\vb U\qty(x)\vb D_\mu\vb U^\dagger\qty(x)\nonumber\\
+    \mathbbm 1\partial_\mu-\im g\vb A_\mu&\rightarrow\vb U\qty(x)\partial_\mu\vb U^\dagger\qty(x)+\vb U\qty(x)\vb U^\dagger\qty(x)\partial_\mu-\im g \vb U\qty(x)\vb A_\mu\vb U^\dagger\qty(x)\nonumber\\
+    \vb A_\mu\qty(x)&\rightarrow\vb U\qty(x)\vb A_\mu\vb U^\dagger\qty(x)+\frac{\im}{g}\vb U\qty(x)\partial_\mu\vb U^\dagger\qty(x)\nonumber
+\end{align}
+
+Clearly then our kinetic term for the fermion will be,
+
+\begin{align}
+    \mathcal L\supset -\bar{\boldsymbol\Psi}\slashed{\vb D}\boldsymbol\Psi\nonumber
+\end{align}
+
+Which is of course invariant under all transformations. Remain to be adjusted the kinetic term of the Gauge Field. For this we'll take some knowledge from Differential Geometry, which tell us a curvature 2-form is related to the commutator of covariant derivatives. That is,
+
+\begin{align}
+    \comm{\vb D_\mu}{\vb D_\nu}\boldsymbol\Psi&=\comm{\mathbbm 1\partial_\mu-\im g\vb A_\mu}{\mathbbm 1\partial_\nu-\im g\vb A_\nu}\boldsymbol\Psi\nonumber\\
+    &=\qty(-\im g\comm{\mathbbm 1\partial_\mu}{\vb A_\nu}-\im g\comm{\vb A_\mu}{\mathbbm 1\partial_\nu}-g^2\comm{\vb A_\mu}{\vb A_\nu})\boldsymbol\Psi\nonumber\\
+    &=-\im g\qty(\partial_\mu\vb A_\nu-\partial_\nu\vb A_\mu-\im g\comm{\vb A_\mu}{\vb A_\nu})\boldsymbol\Psi\nonumber
+\end{align}
+
+So this commutator behaves just as a multiplication factor. We define it to be,
+
+\begin{align}
+    \vb F_{\mu\nu}&=\frac{\im}{g}\comm{\vb D_\mu}{\vb D_\nu}=\partial_\mu\vb A_\nu-\partial_\nu\vb A_\mu-\im g\comm{\vb A_\mu}{\vb A_\nu}
+\end{align}
+
+Which has a good transformation rule,
+
+\begin{align}
+    \vb F_{\mu\nu}\rightarrow\vb U\qty(x)\vb F_{\mu\nu}\vb U^\dagger\qty(x)\nonumber
+\end{align}
+
+So that we can use as a kinetic term,
+
+\begin{align}
+    -\frac12\Tr\qty[\vb F_{\mu\nu}\vb F^{\mu\nu}]
+\end{align}
+
+Which is clearly manifestly invariant thought a local transformation. To get a more meaningful expression we do,
+
+\begin{align}
+    \vb F_{\mu\nu}&=\partial_\mu A_{c\nu}\vb T^c-\partial_\nu A_{c\mu}\vb T^c-\im g A_{a\mu}A_{b\nu}\comm{\vb T^{a}}{\vb T^b}\nonumber\\
+    F_{c\mu\nu}\vb T^c&=\qty[\partial_\mu A_{c\nu}-\partial_\nu A_{c\mu}+g\tensor{f}{^a^b_c} A_{a\mu}A_{b\nu}]\vb T^c\nonumber\\
+    F_{c\mu\nu}&=\partial_\mu A_{c\nu}-\partial_\nu A_{c\mu}+g\tensor{f}{^a^b_c} A_{a\mu}A_{b\nu}\nonumber
+\end{align}
+
+Our kinetic term is then,
+
+\begin{align}
+    -\frac12\Tr\qty[\vb F_{\mu\nu}\vb F^{\mu\nu}]&=-\frac12F_{a\mu\nu}\tensor{F}{_b^\mu^\nu}\Tr\qty[\vb T^a\vb T^b]\nonumber
+\end{align}
+
+As was previously discussed, in our convenient choice of basis of the algebra,
+
+\begin{align}
+    \Tr\qty[\vb T^a\vb T^b]&=\frac12\delta^{ab}\nonumber
+\end{align}
+
+Thus, the kinetic term is just,
+
+\begin{align}
+    -\frac14F_{c\mu\nu}F^{c\mu\nu}\nonumber
+\end{align}
+
+We can finally write down our full Lagrangian,
+
+\begin{align}
+    \mathcal L&=-\frac14F_{c\mu\nu}F^{c\mu\nu} -\bar{\boldsymbol\Psi}\slashed{\vb D}\boldsymbol\Psi-m\bar{\boldsymbol\Psi}\boldsymbol\Psi\nonumber
+\end{align}
+
+Let's open further the fermionic therm,
+
+\begin{align}
+    \slashed{\vb D}&=\gamma^\mu\qty[\mathbbm 1\partial_\mu-\im g A_{a\mu}\vb T^a_{\textnormal f}]\nonumber
+\end{align}
+
+Here we do not assume any specific representation for the fermion to transform, but rather label each component as `$\Psi_i$', with the spinorial indices being implicitly understood. This get us,
+
+\begin{align}
+    \tensor{\qty[\slashed{\vb D}]}{_i^j}&=\gamma^\mu\qty[\tensor{\delta}{_i^j}\partial_\mu-\im g A_{a\mu}\tensor{\qty[\vb T^a_{\textnormal f}]}{_i^j}]\nonumber
+\end{align}
+
+Now,
+
+\begin{align}
+    \mathcal L&=-\frac14F_{c\mu\nu}F^{c\mu\nu} -\bar{\Psi}^i\tensor{\qty[\slashed{\vb D}]}{_i^j}\Psi_j-m\bar\Psi^i\Psi_i\nonumber\\
+    \mathcal L&=-\frac14F_{c\mu\nu}F^{c\mu\nu} -\bar{\Psi}^i\slashed\partial\Psi_i+\im g\bar{\Psi}^i\slashed A_a\tensor{\qty[\vb T^a_{\textnormal f}]}{_i^j}\Psi_j-m\bar\Psi^i\Psi_i\nonumber
+\end{align}
+
+To continue further we have to quantize the theory, what will require also making a gauge fixing. In order to do all that let's take a look at our generating functional,
+
+\begin{align}
+    \int\Dd{A}\Dd{\bar\Psi}\Dd{\Psi}\exp\qty(\im\int\dd[4]{x}\mathcal L)
+\end{align}
+
+As a gauge transformation is in fact a redundancy, by integrating over all gauge fields we're in fact over-counting the physical states. Thus, we need to cut some of the integration domain, this is done by choosing a particular gauge, and integrating over only the field configurations that satisfy it. To do this we split the integration measure `$\Dd{A}$' into the gauge inequivalent part, which we'll still call `$\Dd{A}$', and the gauge transformation parameter `$\Dd{\alpha}$', this is equivalent to integrating over all field configurations. We would like to throw away the `$\Dd{\alpha}$', but for a non-abelian theory, just throw away is not possible, so we'll have to make something more clever, as introducing by hand a Dirac delta to get rid of it,
+
+\begin{align}
+    \int\Dd{A}\Dd{\alpha}\Dd{\bar\Psi}\Dd{\Psi}\exp\qty(\im\int\dd[4]{x}\mathcal L)\rightarrow\int\Dd{A}\Dd{\alpha}\Dd{\bar\Psi}\Dd{\Psi}\delta\qty(\alpha_a\qty(x))\exp\qty(\im\int\dd[4]{x}\mathcal L)\nonumber
+\end{align}
+
+This is as saying that a theory with just an action of `$\int\mathcal L$' is not well defined when we go to non-abelian groups, and in fact the correct action have to be, `$-\im\ln\qty[\delta\qty(\alpha_a\qty(x))\exp\qty(\im\int\mathcal L)]$'. As the whole integral is invariant through any shift `$\alpha^a\qty(x)\rightarrow\alpha_a\qty(x)-f_a\qty(x)\equiv G_a\qty(x)$',
+
+\begin{align}
+    &\int\Dd{A}\Dd{\alpha}\Dd{\bar\Psi}\Dd{\Psi}\delta\qty(\alpha_a-f_a)\exp\qty(\im\int\dd[4]{x}\mathcal L)\nonumber\\
+    &\int\Dd{A}\Dd{\alpha}\Dd{\bar\Psi}\Dd{\Psi}\Det\qty[\fdv{G_a}{\alpha_b}]\eval_{\alpha_a=0}\delta\qty(G_c)\exp\qty(\im\int\dd[4]{x}\mathcal L)\nonumber
+\end{align}
+
+Our choice of `$G_a$' will be to preserve Lorentz invariance, that is, the `$R_\xi$'-Gauge, 
+
+\begin{align}
+    G_a\qty(x)&=\partial_\mu\tensor{A}{_a^\mu}-\omega_a\qty(x)\nonumber
+\end{align}
+
+With `$\omega_a\qty(x)$' arbitrary. To do the determinant is necessary to know how `$G_a$' transform under gauge, and as the determinant is to be evaluated at `$\alpha_a=0$', it's sufficient to know how `$G_a$' transforms under gauge to first order, that being said,
+
+\begin{align}
+    \vb A_\mu\qty(x)&\rightarrow \vb U\qty(x)\vb A_\mu\qty(x)\vb U^\dagger\qty(x)+\frac\im g \vb U\qty(x)\partial_\mu\vb U^\dagger\qty(x),\ \ \ \vb U\qty(x)=\exp\qty(-\im g\alpha_a\qty(x)\vb T^a_{\textnormal{A}})\nonumber\\
+    A_{a\mu}\qty(x)\vb T^a&\rightarrow A_{a\mu}\qty(x)\vb U\qty(x)\vb T^a\vb U^\dagger\qty(x)-\partial_\mu\alpha_a\qty(x) \vb U\qty(x)\vb T^a\vb U^\dagger\qty(x)\nonumber\\
+    A_{a\mu}\vb T^a&\rightarrow A_{a\mu}\qty(\vb T^a- g\alpha_b\tensor{f}{^a^b_c}\vb T^c)-\partial_\mu\alpha_a \vb T^a\nonumber\\
+    A_{a\mu}&\rightarrow A_{a\mu}- gA_{b\mu}\alpha_c\tensor{f}{_a^b^c}-\partial_\mu\alpha_a\nonumber\\
+    A_{a\mu}&\rightarrow A_{a\mu}-\qty(\tensor{\delta}{_a^c}\partial_\mu\alpha_c -\im g A_{b\mu}\alpha_c\qty(-\im\tensor{f}{^b_a^c}))\nonumber\\
+    A_{a\mu}&\rightarrow A_{a\mu}-\qty(\tensor{\delta}{_a^c}\partial_\mu -\im g A_{b\mu}\tensor{\qty[\vb T^b_{\textnormal A}]}{_a^c})\alpha_c\nonumber\\
+    A_{a\mu}&\rightarrow A_{a\mu}-\tensor{\qty[\vb D_\mu]}{_a^c}\alpha_c\nonumber\\
+    \partial^\mu A_{a\mu}&\rightarrow \partial^\mu A_{a\mu}-\partial^\mu\tensor{\qty[\vb D_\mu]}{_a^c}\alpha_c\nonumber
+\end{align}
+
+So we do know the transformation law for `$G_a$',
+
+\begin{align}
+    G_a\qty(x)&\rightarrow G_a\qty(x)-\partial^\mu\tensor{\qty[\vb D_\mu]}{_a^c}\alpha_c\nonumber\\
+    \fdv{G_a\qty(x)}{\alpha_b\qty(y)}\eval_{\alpha_b=0}&=-\partial^\mu\tensor{\qty[\vb D_\mu]}{_a^b}\delta^{\qty(4)}\qty(x-y)\nonumber
+\end{align}
+
+And finally the determinant is written as a path integral over anti-commuting variables,
+
+\begin{align}
+    \Det\qty[\fdv{G_a\qty(x)}{\alpha_b\qty(y)}]\eval_{\alpha_b=0}&\propto\int\Dd{\bar c}\Dd{c}\exp\qty(\im\int\dd[4]{x}\bar c^a\partial^\mu\tensor{\qty[\vb D_\mu]}{_a^b}c_b)\nonumber\\
+    \Det\qty[\fdv{G_a\qty(x)}{\alpha_b\qty(y)}]\eval_{\alpha_b=0}&\propto\int\Dd{\bar c}\Dd{c}\exp\qty(-\im\int\dd[4]{x}\partial^\mu\bar c^a\tensor{\qty[\vb D_\mu]}{_a^b}c_b)\nonumber
+\end{align}
+
+Those are the so waited ghosts,
+
+\begin{align}
+    \mathcal L_{\textnormal{gh}}&=-\partial^\mu\bar c^a\tensor{\qty[\vb D_\mu]}{_a^b}c_b\nonumber\\
+    \mathcal L_{\textnormal{gh}}&=-\partial^\mu\bar c^a\qty(\tensor{\delta}{_a^b}\partial_\mu -\im g A_{c\mu}\tensor{\qty[\vb T^c_{\textnormal A}]}{_a^b})c_b\nonumber\\
+    \mathcal L_{\textnormal{gh}}&=-\partial_\mu\bar c^a\partial^\mu c_a+g A_{c\mu}\tensor{f}{_a^b^c}\partial^\mu \bar c^ac_b\nonumber
+\end{align}
+
+Including this \textit{ghost Lagrangian} in our theory, we can don't worry about over-counting in the gauge boson integration, and just switch back to integrating over all field configurations. In order to not get messy, we also are going to name,
+
+\begin{align}
+    \mathcal L_{\textnormal{YM}}&=-\frac14F_{c\mu\nu}F^{c\mu\nu}\nonumber\\
+    \mathcal L_{\textnormal{f}}&=-\bar{\Psi}^i\slashed\partial\Psi_i+\im g\bar{\Psi}^i\slashed A_a\tensor{\qty[\vb T^a_{\textnormal f}]}{_i^j}\Psi_j-m\bar\Psi^i\Psi_i\nonumber
+\end{align}
+
+So that our theory up to now is described by the following generating functional,
+
+\begin{align}
+    \int\Dd{A}\Dd{\bar\Psi}\Dd{\Psi}\Dd{\bar c}\Dd{c}\delta\qty(G_c)\exp\qty(\im\int\dd[4]{x}\qty(\mathcal L_{\textnormal{YM}}+\mathcal L_{\textnormal{f}}+\mathcal L_{\textnormal{gh}}))\nonumber
+\end{align}
+
+We still have a strange factor of `$\delta\qty(G_c)$', which carry an arbitrary function `$\omega_c$'. Our theory is completely uncaring about this function, so the best way to get rid of it is to integrate over with a choice of weight. The simplest one is a Gaussian/quadratic,
+
+\begin{align}
+    \int\Dd\qty(\cdots)\delta\qty(G_c)\exp\qty(\im\qty(S_{\textnormal{YM}}+S_{\textnormal{f}}+S_{\textnormal{gh}}))&\rightarrow\int\Dd\qty(\cdots)\exp\qty(\im\qty(S_{\textnormal{YM}}+S_{\textnormal{f}}+S_{\textnormal{gh}}))\times\nonumber\\&\quad\quad\quad\times\int\Dd{\omega}\delta\qty(G_c)\exp\qty(-\frac{\im}{2\xi}\int\dd[4]{x}\omega^a\omega_a)\nonumber\\
+    \int\Dd\qty(\cdots)\delta\qty(G_c)\exp\qty(\im\qty(S_{\textnormal{YM}}+S_{\textnormal{f}}+S_{\textnormal{gh}}))&\rightarrow\int\Dd\qty(\cdots)\exp\qty(\im\qty(S_{\textnormal{YM}}+S_{\textnormal{f}}+S_{\textnormal{gh}}))\times\nonumber\\&\quad\quad\quad\times\exp\qty(-\frac{\im}{2\xi}\int\dd[4]{x}\partial^\mu A_{a\mu}\partial^\nu \tensor{A}{^a_\nu})\nonumber
+\end{align}
+
+Where we get our final additional piece of the theory,
+
+\begin{align}
+    \mathcal L_{\textnormal{gf}}&=-\frac{1}{2\xi}\partial^\mu A_{a\mu}\partial^\nu \tensor{A}{^a_\nu}\nonumber
+\end{align}
+
+So the full theory is described by the following functional generator,
+
+\begin{align}
+    \int\Dd{A}\Dd{\bar\Psi}\Dd{\Psi}\Dd{\bar c}\Dd{c}\exp\qty(\im S_{\textnormal{YM}}+\im S_{\textnormal{f}}+\im S_{\textnormal{gh}}+\im S_{\textnormal{gf}})
+\end{align}
+
+\subsection{Renormalization and Feynman Rules}
+
+Before working out all Feynman rules and getting to compute the diagrams, we have to say a few words on the renormalizability of the theory, due to, for renormalization be possible, our Lagrangian must contain \textbf{all} up to `$4$' mass dimension symmetry compatible terms. Is this the case? First we have to know all symmetries of our theory:
+
+\begin{itemize}
+    \item Poincaré Invariance
+    \item `$\mathsf{CPT}$' Invariance
+    \item Gauge Invariance
+    \item Ghost Number Conservation
+    \item Anti-Ghost Translation Invariance
+\end{itemize}
+
+We're not going to prove, but, the theory constructed here already contains all terms compatible with those symmetries, so in principle we wouldn't need to worry about this. 
+
+Let's open the Lagrangian of the full theory, starting by,
+
+\begin{align}
+    \mathcal L_{\textnormal{YM}}&=-\frac14F_{e\mu\nu}F^{e\mu\nu}\nonumber\\
+    &=-\frac14\qty(\partial_\mu A_{e\nu}-\partial_\nu A_{e\mu}+g\tensor{f}{^a^b_e}A_{a\mu}A_{b\nu})\qty(\partial^\mu A^{e\nu}-\partial^\nu A^{e\mu}+g\tensor{f}{_c_d^e}A^{c\mu}A^{d\nu})\nonumber\\
+    &=-\frac12\partial_\mu A_{a\nu}\partial^\mu A^{a\nu}+\frac12\partial_\mu A_{a\nu}\partial^\nu A^{a\mu}-g\tensor{f}{^a^b_c}A_{a\mu}A_{b\nu}\partial^\mu A^{c\nu}\nonumber\\
+    &\quad\quad\quad-\frac{g^2}{4}\tensor{f}{^a^b_e}\tensor{f}{_c_d^e}A_{a\mu}A_{b\nu}A^{c\mu}A^{d\nu}\nonumber\\
+    &=\frac12A^{a\mu}\delta_{ab}\qty(g_{\mu\nu}\partial^2 -\partial_\mu\partial_\nu )A^{b\nu}-g\tensor{f}{^a^b_c}A_{a\mu}A_{b\nu}\partial^\mu A^{c\nu}\nonumber\\
+    &\quad\quad\quad-\frac{g^2}{4}\tensor{f}{^a^b_e}\tensor{f}{_c_d^e}A_{a\mu}A_{b\nu}A^{c\mu}A^{d\nu}\nonumber
+\end{align}
+
+Putting all together,
+
+\begin{align}
+    \mathcal L&=\frac12A^{a\mu}\delta_{ab}\qty(g_{\mu\nu}\partial^2 -\partial_\mu\partial_\nu )A^{b\nu}+\frac{1}{2\xi} A_{a\mu}\partial^\mu\partial^\nu \tensor{A}{^a_\nu}\nonumber\\
+    &\quad\quad\quad-g\tensor{f}{^a^b_c}A_{a\mu}A_{b\nu}\partial^\mu A^{c\nu}-\frac{g^2}{4}\tensor{f}{^a^b_e}\tensor{f}{_c_d^e}A_{a\mu}A_{b\nu}A^{c\mu}A^{d\nu}\nonumber\\
+    &\quad\quad\quad-\bar{\Psi}^i\delta_{ij}\slashed\partial\Psi^j-\bar{\Psi}^i\delta_{ij}m\Psi^j+\im g\bar{\Psi}^i\gamma^\mu A_{a\mu}\tensor{\qty[\vb T^a_{\textnormal f}]}{_i_j}\Psi^j\nonumber\\
+    &\quad\quad\quad -\partial_\mu\bar c^a\partial^\mu c_a+g A_{c\mu}\tensor{f}{^a^b^c}\partial^\mu \bar c_ac_b
+\end{align}
+
+Actually now all fields and couplings are treated as being the bare ones, that is,
+
+\begin{align}
+    \mathcal L&=\frac12{A_0}^{a\mu}\delta_{ab}\qty(g_{\mu\nu}\partial^2 -\partial_\mu\partial_\nu ){A_0}^{b\nu}+\frac{1}{2\xi_0} {A_0}_{a\mu}\partial^\mu\partial^\nu \tensor{{A_0}}{^a_\nu}\nonumber\\
+    &\quad\quad\quad-g_0\tensor{f}{^a^b_c}{A_0}_{a\mu}{A_0}_{b\nu}\partial^\mu {A_0}^{c\nu}-\frac{g_0^2}{4}\tensor{f}{^a^b_e}\tensor{f}{_c_d^e}{A_0}_{a\mu}{A_0}_{b\nu}{A_0}^{c\mu}{A_0}^{d\nu}\nonumber\\
+    &\quad\quad\quad-\bar{\Psi}_0^i\delta_{ij}\slashed\partial\Psi_0^j-\bar{\Psi}_0^i\delta_{ij}m_0\Psi_0^j+\im g_0\bar{\Psi}_0^i\gamma^\mu {A_0}_{a\mu}\tensor{\qty[\vb T^a_{\textnormal f}]}{_i_j}\Psi_0^j\nonumber\\
+    &\quad\quad\quad -\partial_\mu\bar c_0^a\partial^\mu {c_0}_a+g_0 {A_0}_{c\mu}\tensor{f}{^a^b^c}\partial^\mu \bar {c_0}_a{c_0}_b\label{lagrangianbare1}
+\end{align}
+
+So now we can really pass to the renormalized fields and couplings adding the `$Z$' factors,
+
+\begin{align}
+    \mathcal L&=\frac{Z_A}{2}A^{a\mu}\delta_{ab}\qty(g_{\mu\nu}\partial^2 -\partial_\mu\partial_\nu )A^{b\nu}+\frac{Z_\xi}{2\xi} A_{a\mu}\partial^\mu\partial^\nu \tensor{A}{^a_\nu}\nonumber\\
+    &\quad\quad\quad-gZ_{3g}\tensor{f}{^a^b_c}A_{a\mu}A_{b\nu}\partial^\mu A^{c\nu}-\frac{g^2Z_{4g}}{4}\tensor{f}{^a^b_e}\tensor{f}{_c_d^e}A_{a\mu}A_{b\nu}A^{c\mu}A^{d\nu}\nonumber\\
+    &\quad\quad\quad-Z_\Psi\bar{\Psi}^i\delta_{ij}\slashed\partial\Psi^j-Z_m\bar{\Psi}^i\delta_{ij}m\Psi^j+\im gZ_{g\Psi}\bar{\Psi}^i\gamma^\mu A_{a\mu}\tensor{\qty[\vb T^a_{\textnormal f}]}{_i_j}\Psi^j\nonumber\\
+    &\quad\quad\quad -Z_c\partial_\mu\bar c^a\partial^\mu c_a+gZ_{gc} A_{c\mu}\tensor{f}{^a^b^c}\partial^\mu \bar c_ac_b
+\end{align}
+
+If we rearrange the terms,
+
+\begin{align}
+    \mathcal L&=\frac{1}{2}A^{a\mu}\delta_{ab}\qty(g_{\mu\nu}\partial^2 -\qty(1-\frac1\xi)\partial_\mu\partial_\nu )A^{b\nu}-\bar{\Psi}^i\delta_{ij}\qty(\slashed\partial+m)\Psi^j-\partial_\mu\bar c^a\delta_{ab}\partial^\mu c^b\nonumber\\
+    &\quad\quad\quad-gZ_{3g}\tensor{f}{^a^b_c}A_{a\mu}A_{b\nu}\partial^\mu A^{c\nu}-\frac{g^2Z_{4g}}{4}\tensor{f}{^a^b_e}\tensor{f}{_c_d^e}A_{a\mu}A_{b\nu}A^{c\mu}A^{d\nu}\nonumber\\
+    &\quad\quad\quad+\im gZ_{g\Psi}\bar{\Psi}^i\gamma^\mu A_{a\mu}\tensor{\qty[\vb T^a_{\textnormal f}]}{_i_j}\Psi^j+gZ_{gc} A_{c\mu}\tensor{f}{^a^b^c}\partial^\mu \bar c_ac_b\nonumber\\
+    &\quad\quad\quad +\frac{\qty(Z_A-1)}{2}A^{a\mu}\delta_{ab}\qty(g_{\mu\nu}\partial^2 -\partial_\mu\partial_\nu )A^{b\nu}+\frac{\qty(Z_\xi-1)}{2\xi} A_{a\mu}\partial^\mu\partial^\nu \tensor{A}{^a_\nu}-\qty(Z_c-1)\partial_\mu\bar c^a\delta_{ab}\partial^\mu c^b\nonumber\\
+    &\quad\quad\quad-\qty(Z_\Psi-1)\bar{\Psi}^i\delta_{ij}\slashed\partial\Psi^j-\qty(Z_m-1)\bar{\Psi}^i\delta_{ij}m\Psi^j
+\end{align}
+
+This isn't yet the final version, because, as we are going to use dimensional regularization, all couplings dimensions need to be reset with a choice of particular mass scale `$\Lambda$', in `$D$'-dimensional space-time we have,
+
+\begin{align}
+    \qty[A]=\frac{D-2}{2},\ \ \ \qty[\Psi]=\frac{D-1}{2},\ \ \ \qty[c]=\frac{D-2}{2}\nonumber
+\end{align}
+
+Setting `$4-D=2\epsilon$',
+
+\begin{align}
+    \qty[gAA\partial A]&=\frac32\qty(D-2)+1+\qty[g]=D\nonumber\\
+    \qty[g]&=-\frac12 \qty(D-4)=\epsilon
+\end{align}
+
+\begin{align}
+    \qty[g^2AAAA]&=\frac42\qty(D-2)+2\qty[g]=D\nonumber\\
+    \qty[g]&=\frac12\qty(-D+4)=\epsilon
+\end{align}
+
+\begin{align}
+    \qty[gA\partial\bar cc]&=\frac32\qty(D-2)+1+\qty[g]=D\nonumber\\
+    \qty[g]&=-\frac12\qty(D-4)=\epsilon
+\end{align}
+
+\begin{align}
+    \qty[gA\bar\Psi\gamma\Psi]&=\frac12\qty(D-2)+\qty(D-1)+\qty[g]=D\nonumber\\
+    \qty[g]&=-\frac12\qty(D-4)=\epsilon
+\end{align}
+
+We see here thatApplying the changes we get,
+
+\begin{align}
+    \mathcal L&=\frac{1}{2}A^{a\mu}\delta_{ab}\qty(g_{\mu\nu}\partial^2 -\qty(1-\frac1\xi)\partial_\mu\partial_\nu )A^{b\nu}-\bar{\Psi}^i\delta_{ij}\qty(\slashed\partial+m)\Psi^j-\partial_\mu\bar c^a\delta_{ab}\partial^\mu c^b\nonumber\\
+    &\quad\quad\quad-gZ_{3g}\Lambda^\epsilon\tensor{f}{^a^b_c}A_{a\mu}A_{b\nu}\partial^\mu A^{c\nu}-\frac{g^2Z_{4g}\Lambda^{2\epsilon}}{4}\tensor{f}{^a^b_e}\tensor{f}{_c_d^e}A_{a\mu}A_{b\nu}A^{c\mu}A^{d\nu}\nonumber\\
+    &\quad\quad\quad+\im gZ_{g\Psi}\Lambda^\epsilon\bar{\Psi}^i\gamma^\mu A_{a\mu}\tensor{\qty[\vb T^a_{\textnormal f}]}{_i_j}\Psi^j+gZ_{gc}\Lambda^\epsilon A_{c\mu}\tensor{f}{^a^b^c}\partial^\mu \bar c_ac_b\nonumber\\
+    &\quad\quad\quad +\frac{\qty(Z_A-1)}{2}A^{a\mu}\delta_{ab}\qty(g_{\mu\nu}\partial^2 -\partial_\mu\partial_\nu )A^{b\nu}+\frac{\qty(Z_\xi-1)}{2\xi} A_{a\mu}\partial^\mu\partial^\nu \tensor{A}{^a_\nu}-\qty(Z_c-1)\partial_\mu\bar c^a\delta_{ab}\partial^\mu c^b\label{lagrangian1}\nonumber\\
+    &\quad\quad\quad-\qty(Z_\Psi-1)\bar{\Psi}^i\delta_{ij}\slashed\partial\Psi^j-\qty(Z_m-1)\bar{\Psi}^i\delta_{ij}m\Psi^j
+\end{align}
+
+From where the propagators Feynman rules become clear as being,
+
+\begin{itemize}
+     \item Fermion Propagator\ \ \feynmandiagram [baseline=(a.base),horizontal=a to b] {
+     a [particle=\(i\)] -- [fermion] b [particle=\(j\)],
+     }; $= \frac1\im\frac{-\im\slashed p+m}{p^2+m^2}\delta_{ij}$
+     \item Gauge Propagator\ \ \feynmandiagram [baseline=(a.base),horizontal=a to b] {
+     a [particle=\(\mqty{a\\\mu}\)] -- [photon] b [particle=\(\mqty{b\\\nu}\)],
+     }; $= \frac1\im\frac{\delta_{ab}}{p^2}\qty(g_{\mu\nu}+\qty(\xi-1)\frac{p_\mu p_\nu}{p^2})$
+     \item Ghost Propagator\ \ \feynmandiagram [baseline=(a.base),horizontal=a to b] {
+     a [particle=\(a\)] -- [ghost, with arrow=0.5] b [particle=\(b\)],
+     }; $= \frac1\im\frac{1}{p^2}\delta_{ab}$
+     \item Fermion Counter-Term\ \ \feynmandiagram [baseline = (c.base),horizontal=a to b,layered layout] {
+     a [particle=\(i\)] -- [fermion] b [crossed dot] -- [fermion] c [particle=\(j\)],
+     }; $=\qty(Z_\Psi-1)\delta_{ij}\slashed p-\im\qty(Z_{m}-1)\delta_{ij}m$
+     \item Gauge Counter-Term\ \ \feynmandiagram [baseline = (c.base),horizontal=a to b,layered layout] {
+     a [particle=\(\mqty{a\\\mu}\)]-- [photon] b [crossed dot]-- [photon] c[particle=\(\mqty{b\\\nu}\)],
+     }; $=-\im\qty(Z_A-1)\delta_{ab}\qty(g_{\mu\nu}p^2-p_\mu p_\nu)-\im\frac{\qty(Z_\xi-1)}{\xi}\delta_{ab}p_\mu p_\nu$
+     \item Ghost Counter-Term\ \ \feynmandiagram [baseline = (c.base),horizontal=a to b,layered layout] {
+     a [particle=\(a\)]-- [ghost, with arrow=0.5] b [crossed dot]-- [ghost, with arrow=0.5] c[particle=\(b\)],
+     }; $=-\im\qty(Z_c-1)\delta_{ab}p^2$
+\end{itemize}
+
+ The Fermion-Gauge and Ghost-Gauge interaction terms are also simple,
+
+\begin{itemize}
+    \item Fermion-Gauge Interaction\ \ \feynmandiagram [small,baseline = (b.base),horizontal=a to b] {
+     a [particle=\(\mqty{a\\\mu}\)]-- [photon] b ,
+     b -- [fermion] c[particle=\(i\)],
+     b -- [anti fermion] d[particle=\(j\)],
+     }; $= -gZ_{g\Psi}\Lambda^\epsilon\gamma^\mu\qty[\vb T^a_\textnormal{f}]_{ij}$
+     \item Ghost-Gauge Interaction\ \ \feynmandiagram [small,baseline = (b.base),horizontal=a to b] {
+     a [particle=\(\mqty{a\\\mu}\)]-- [photon] b ,
+     b -- [ghost, with arrow=0.5,momentum=\(p\)] c[particle=\(b\)],
+     b -- [ghost, with reversed arrow=0.5] d[particle=\(c\)],
+     }; $=gZ_{gc}\Lambda^\epsilon f^{abc}p_\mu$
+\end{itemize}
+
+ The Gauge-Gauge Interactions need to be treated a little bit more carefully, due to being present some permutation symmetries. Let's first look at the term,
+
+\begin{align}
+    -gZ_{3g}\Lambda^\epsilon\tensor{f}{^a^b_c}A_{a\mu}A_{b\nu}\partial^\mu A^{c\nu}\nonumber
+\end{align}
+
+Certainly it must have three Gauge bosons with a momentum of one of them, but, due to this term having a `$f$' factor, it must be also antisymmetric in color index,
+
+\begin{align}
+    -gZ_{3g}\Lambda^\epsilon\tensor{f}{^a^b_c}\frac{1}{3}\qty(A_{a\mu}A_{b\nu}\partial^\mu A^{c\nu}+A_{b\mu}A^{c\nu}\partial^\mu A_{a\nu}+A^{c\mu}\tensor{A}{^a_\nu}\partial_\mu A^{b\nu})\nonumber
+\end{align}
+
+But each term can be further antisymmetrize in the last two index, what will add a factor of `$2$' in the denominator, this `$3!$' will be cancelled by the possible permutations of the leg. If we label the `$a,b,c$' color index momentum as `$p,q,k$', all flowing out of the vertex, the result will be,
+
+\begin{itemize}
+    \item Gauge Cubic Interaction\ \ \feynmandiagram [small,baseline = (b.base),horizontal=a to b] {
+     a [particle=\(\mqty{a\\\mu}\)]-- [photon,reversed momentum'=\(p\)] b ,
+     b -- [photon,momentum=\(k\)] c[particle=\(\mqty{c\\\alpha}\)],
+     b -- [photon,momentum =\(q\)] d[particle=\(\mqty{b\\\nu}\)],
+     }; \begin{align}=gZ_{3g}\Lambda^\epsilon f^{abc}\qty(\qty(q-k)_\mu g_{\nu\alpha}+\qty(k-p)_\nu g_{\alpha\mu}+\qty(p-q)_\alpha g_{\mu\nu})\end{align}
+\end{itemize}
+
+The four Gauge vertex will also need some additional factors, but the final result is,
+
+\begin{itemize}
+    \item Gauge Quartic Interaction\ \ \feynmandiagram [small,baseline = (b.base), layered layout] {
+     a [particle=\(\mqty{a\\\mu}\)]-- [photon] b ,
+     e [particle=\(\mqty{d\\\beta}\)]--[photon] b,
+     b -- [photon] c[particle=\(\mqty{b\\\nu}\)],
+     b -- [photon] d[particle=\(\mqty{c\\\alpha}\)],
+     }; \begin{align}=-\im g^2Z_{4g}\Lambda^{2\epsilon}&\left[\tensor{f}{^a^b_e}\tensor{f}{^c^d^e}\qty(g_{\mu\alpha}g_{\nu\beta}-g_{\mu\beta}g_{\nu\alpha})\right.\nonumber\\
+     &\quad\quad+\tensor{f}{^a^c_e}\tensor{f}{^d^b^e}\qty(g_{\mu\beta}g_{\alpha\nu}-g_{\mu\nu}g_{\beta\alpha})\nonumber\\
+     &\quad\quad\left.+\tensor{f}{^a^d_e}\tensor{f}{^b^c^e}\qty(g_{\mu\nu}g_{\alpha\beta}-g_{\mu\alpha}g_{\beta\nu})\right]\end{align}
+\end{itemize}
+
+This finishes all Feynman rules we'll need.
+
+\subsection{Gauge Boson Self Energy}
+
+Now we proceed to compute the renormalization of the Gauge Boson self energy to one loop, just as a remainder,
+
+\begin{align}
+    \frac1\im\boldsymbol\Delta^{ab}_{\mu\nu}\qty(p^2)&=\frac1\im\Delta^{ab}_{\mu\nu}\qty(p^2)+\frac1\im\Delta^{ac}_{\mu\alpha}\qty(p^2)\im\Pi^{cd}_{\alpha\beta}\qty(p^2)\frac1\im\Delta^{db}_{\beta\nu}\qty(p^2)+\cdots\nonumber\\
+    \frac1\im\boldsymbol\Delta^{ab}_{\mu\nu}\qty(p^2)&=\frac1\im\Delta^{ab}_{\mu\nu}\qty(p^2)+\frac1\im\Delta^{ac}_{\mu\alpha}\qty(p^2)\im\Pi^{cd}_{\alpha\beta}\qty(p^2)\qty{\frac1\im\Delta^{db}_{\beta\nu}+\frac1\im\Delta^{de}_{\beta\rho}\im\Pi^{ef}_{\rho\sigma}\frac1\im\Delta^{fb}_{\sigma\nu}+\cdots}\nonumber\\
+    \frac1\im\boldsymbol\Delta^{ab}_{\mu\nu}\qty(p^2)&=\frac1\im\Delta^{ab}_{\mu\nu}\qty(p^2)+\frac1\im\Delta^{ac}_{\mu\alpha}\qty(p^2)\im\Pi^{cd}_{\alpha\beta}\qty(p^2)\frac1\im\boldsymbol\Delta^{db}_{\beta\nu}\qty(p^2)\nonumber\\
+    \frac1\im\Delta^{ab}_{\mu\nu}\qty(p^2)&=\qty[\delta^{ad}_{\mu\beta}-\frac1\im\Delta^{ac}_{\mu\alpha}\qty(p^2)\im\Pi^{cd}_{\alpha\beta}\qty(p^2)]\frac1\im\boldsymbol\Delta^{db}_{\beta\nu}\qty(p^2)\nonumber\\
+    \boldsymbol\Delta\qty(p^2)&=\qty[1-\Delta\qty(p^2)\Pi\qty(p^2)]^{-1}\Delta\qty(p^2)\nonumber\\
+    {\boldsymbol\Delta^{-1}}^{ab}_{\mu\nu}\qty(p^2)&={\Delta^{-1}}^{ab}_{\mu\nu}\qty(p^2)-\Pi^{ab}_{\mu\nu}\qty(p^2)=\delta^{ab}\qty(p^2g_{\mu\nu}+\qty(\frac1\xi-1)p_\mu p_\nu)-\Pi^{ab}_{\mu\nu}\qty(p^2)
+\end{align}
+
+Where `$\im\Pi^{ab}_{\mu\nu}\qty(p^2)$' is the $1$PI contributions,
+
+\begin{align}
+    \im\Pi^{ab}_{\mu\nu}\qty(p^2)&=\feynmandiagram [baseline = (b.base),horizontal=a to b,layered layout] {
+     a -- [photon] b -- [ loop,photon,min distance =2cm] b--[photon] c,
+     }; + \feynmandiagram [baseline = (b.base),horizontal=a to b,layered layout] {
+     a -- [photon] b -- [ half left,photon] c --[half left,photon] b,
+     c -- [photon] d,
+     };+ \feynmandiagram [baseline = (b.base),horizontal=a to b,layered layout] {
+     a -- [photon] b -- [ half left,fermion] c --[half left,fermion] b,
+     c -- [photon] d,
+     };\nonumber\\
+     &\quad\quad+ \feynmandiagram [baseline = (b.base),horizontal=a to b,layered layout] {
+     a -- [photon] b -- [ half left,ghost,with arrow=0.5] c --[half left,ghost, with arrow=0.5] b,
+     c -- [photon] d,
+     };+\feynmandiagram [baseline = (b.base),horizontal=a to b,layered layout] {
+     a -- [photon] b [crossed dot] -- [photon] c ,
+     };+\cdots
+\end{align}
+
+The first contribution is,
+
+\begin{align}
+    \im{\Pi^{\qty(1)}}^{ab}_{\mu\nu}&=-\im g^2Z_{4g}\Lambda^{2\epsilon}\left[
+        \tensor{f}{^a^b_e}\tensor{f}{^c^d^e}\qty(g_{\mu\alpha}g_{\nu\beta}-g_{\mu\beta}g_{\nu\alpha})
+        +\tensor{f}{^a^c_e}\tensor{f}{^d^b^e}\qty(g_{\mu\beta}g_{\nu\alpha}-g_{\mu\nu}g_{\beta\alpha})\right.\nonumber\\
+        &\quad\quad\quad\left.+\tensor{f}{^a^d_e}\tensor{f}{^b^c^e}\qty(g_{\mu\nu}g_{\alpha\beta}-g_{\mu\alpha}g_{\beta\nu})\right]
+        \int\frac{\dd[D]{k}}{\qty(2\pi)^{D}}\frac{\delta_{cd}}{\im k^2}\qty(g^{\alpha\beta}+\qty(\xi-1)\frac{k^\alpha k^\beta}{k^2})\nonumber\\
+        &=- g^2Z_{4g}\Lambda^{2\epsilon}\left[\tensor{f}{^a_c_d}\tensor{f}{^c^b^d}\qty(g_{\mu\beta}g_{\nu\alpha}-g_{\mu\nu}g_{\beta\alpha})\right.\nonumber\\
+        &\quad\quad\quad\left.+\tensor{f}{^a_c_d}\tensor{f}{^b^c^d}\qty(g_{\mu\nu}g_{\alpha\beta}-g_{\mu\alpha}g_{\beta\nu})\right]
+        \int\frac{\dd[D]{k}}{\qty(2\pi)^{D}}\frac{1}{ k^2}\qty(g^{\alpha\beta}+\qty(\xi-1)\frac{k^\alpha k^\beta}{k^2})\nonumber\\
+        &=- g^2Z_{4g}\Lambda^{2\epsilon}\tensor{f}{^a_c_d}\tensor{f}{^b^c^d}\left[2g_{\mu\nu}g_{\beta\alpha}-g_{\mu\alpha}g_{\beta\nu}-g_{\mu\beta}g_{\nu\alpha}\right]\times\nonumber\\
+        &\quad\quad\quad\times\int\frac{\dd[D]{k}}{\qty(2\pi)^{D}}\frac{1}{ k^2}\qty(g^{\alpha\beta}+\qty(\xi-1)\frac{k^\alpha k^\beta}{k^2})\nonumber\\
+        &=- g^2Z_{4g}\Lambda^{2\epsilon}\tensor{f}{^a_c_d}\tensor{f}{^b^c^d}\left[2g_{\mu\nu}g_{\beta\alpha}-g_{\mu\alpha}g_{\beta\nu}-g_{\mu\beta}g_{\nu\alpha}\right]\times\nonumber\\
+        &\quad\quad\quad\times\int\frac{\dd[D]{k}}{\qty(2\pi)^{D}}\frac{1}{ k^2}\qty(g^{\alpha\beta}+\qty(\xi-1)\frac{k^\alpha k^\beta}{k^2})\nonumber\\
+        &=2^2gZ_{4g}\Lambda^{2\epsilon}\tensor{f}{^a_c_d}\tensor{f}{^b^c^d}\int\frac{\dd[D]{k}}{\qty(2\pi)^{D}}\frac{1}{ k^2}
+        \qty[g_{\mu\nu}\qty(1-D)+\qty(\xi-1)k_\mu k_\nu-g_{\mu\nu}\qty(\xi-1)k^2]\nonumber\\
+        &=2g^2Z_{4g}\Lambda^{2\epsilon}\tensor{f}{^a_c_d}\tensor{f}{^b^c^d}\int\frac{\dd[D]{k}}{\qty(2\pi)^{D}}\frac{1}{ k^2}
+        \frac{1}{D}\qty(\xi-1)k^2g_{\mu\nu}\nonumber\\
+    \im{\Pi^{\qty(1)}}^{ab}_{\mu\nu}&=0\nonumber
+\end{align}
+
+This impressive result is consequence of dimensional regularization, which guarantees that,
+
+\begin{align}
+    \int\dd[D]{k}\qty(k^2)^a\equiv0\nonumber
+\end{align}
+
+Besides this result, we also made use of,
+
+\begin{align}
+    \int\dd[D]{k}k_\mu k_\nu f\qty(k^2)&=\frac{1}{D}g_{\mu\nu}\int\dd[D]{k}k^2f\qty(k^2)\nonumber
+\end{align}
+
+For the next one, we have to choose a gauge. The most easy one to do computations is the `$\xi = 1$',
+
+\begin{align}
+    \im {\Pi^{\qty(2)}}^{ab}_{\mu\nu}&=\frac12\int\frac{\dd[D]{k}}{\qty(2\pi)^D}gZ_{3g}
+    \Lambda^\epsilon\tensor{f}{^a^d^c}
+    \qty[\qty(p-2k)_\mu g_{\alpha\beta}+\qty(k+p)_\beta g_{\alpha\mu}+\qty(k-2p)_\alpha g_{\mu\beta}]\times\nonumber\\
+    &\quad\quad\quad\times\frac{1}{\im}\frac{\delta_{ce}}{k^2}g^{\alpha\rho}\frac{1}{\im}\frac{\delta_{df}}{\qty(k-p)^2}g^{\beta\sigma}\times\nonumber\\
+    &\quad\quad\quad\times gZ_{3g}\Lambda^\epsilon\tensor{f}{^b^e^f}\qty[\qty(p-2k)_\nu g_{\rho\sigma}+\qty(k-2p)_\rho g_{\sigma\nu}+\qty(p+k)_\sigma g_{\rho\nu}]\nonumber\\
+    \im {\Pi^{\qty(2)}}^{ab}_{\mu\nu}&=-\frac{g^2}{2}Z_{3g}^2\Lambda^{2\epsilon}\tensor{f}{^a_c_d}\tensor{f}{^b^d^c}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\qty[\qty(p-2k)_\mu g_{\alpha\beta}+\qty(k+p)_\beta g_{\alpha\mu}+\qty(k-2p)_\alpha g_{\mu\beta}]\times\nonumber\\
+    &\quad\quad\quad\times\frac{g^{\alpha\rho}g^{\beta\sigma}}{k^2\qty(k-p)^2}\qty[\qty(p-2k)_\nu g_{\rho\sigma}+\qty(k-2p)_\rho g_{\sigma\nu}+\qty(p+k)_\sigma g_{\rho\nu}]\nonumber\\
+    \im {\Pi^{\qty(2)}}^{ab}_{\mu\nu}&=\frac{g^2}{2}Z_{3g}^2\Lambda^{2\epsilon}\tensor{f}{^a_c_d}\tensor{f}{^b^c^d}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{N_{\mu\nu}}{k^2\qty(k-p)^2}\nonumber\\
+    \im {\Pi^{\qty(2)}}^{ab}_{\mu\nu}&=\frac{g^2}{2}Z_{3g}^2\Lambda^{2\epsilon}\tensor{f}{^a_c_d}\tensor{f}{^b^c^d}\int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{N_{\mu\nu}}{\qty[xk^2 + \qty(1-x)\qty(k-p)^2]^2}\nonumber\\
+    \im {\Pi^{\qty(2)}}^{ab}_{\mu\nu}&=\frac{g^2}{2}Z_{3g}^2\Lambda^{2\epsilon}\tensor{f}{^a_c_d}\tensor{f}{^b^c^d}\int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{N_{\mu\nu}}{\qty[\qty(k-\qty(1-x)p)^2+p^2x\qty(1-x)]^2}\nonumber
+\end{align}
+
+With,
+
+\begin{align}
+    N_{\mu\nu}&=D\qty(p-2k)_\mu\qty(p-2k)_\nu+g_{\mu\nu}\qty(2k^2+5p^2-2k\cdot p)-3\qty[2k_\mu k_\nu+2 p_\mu p_\nu-k_\mu p_\nu-k_\nu p_\mu]\nonumber
+\end{align}
+
+We can now go ahead and to the change of integration variable, `$k\rightarrow q=k-\qty(1-x)p$', what changes `$N_{\mu\nu}$', 
+since the denominator is already in the form `$f\qty(q^2)$', any odd power of `$q$' in the numerator will integrate to zero, 
+with this information in mind we can substitute in `$N_{\mu\nu}$' keeping only the non-zero terms,
+
+\begin{align}
+    N_{\mu\nu}&=2g_{\mu\nu}q^2+q_\mu q_\nu\qty[4 D-6]+g_{\mu\nu}p^2\qty[2x^2-2x+5]+p_\mu p_\nu\qty[D\qty(2x-1)^2-6\qty(x^2+x-1)]\nonumber
+\end{align}
+
+Inside the integral, `$q_\mu q_\nu$' is replaceable with `$\frac1Dg_{\mu\nu}q^2$', thus,
+
+\begin{align}
+    N_{\mu\nu}&=6g_{\mu\nu}q^2\qty[1-\frac 1D]+g_{\mu\nu}p^2\qty[2x^2-2x+5]+p_\mu p_\nu\qty[D\qty(2x-1)^2-6\qty(x^2+x-1)]\nonumber
+\end{align}
+
+So our integral is,
+
+\begin{align}
+    \im {\Pi^{\qty(2)}}^{ab}_{\mu\nu}&=\frac{g^2}{2}Z_{3g}^2\Lambda^{2\epsilon}\tensor{f}{^a_c_d}\tensor{f}{^b^c^d}\int\limits_0^1\dd{x}\int\frac{\dd[D]{q}}{\qty(2\pi)^D}\frac{N_{\mu\nu}}{\qty[q^2+p^2x\qty(1-x)]^2}\nonumber
+\end{align}
+
+As is shown in the appendix,
+
+\begin{align}
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{q^2}{\qty(q^2+A)^2}&=\frac{D}{2-D}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{A}{\qty(q^2+A)^2}
+\end{align}
+
+So we can also substitute `$q^2\rightarrow\frac{D}{2-D}p^2x\qty(1-x)$', we got then,
+
+\begin{align}
+    N_{\mu\nu}&=6g_{\mu\nu}p^2x\qty(1-x)\frac{D-1}{2-D}+g_{\mu\nu}p^2\qty[2x^2-2x+5]+p_\mu p_\nu\qty[D\qty(2x-1)^2-6\qty(x^2+x-1)]\nonumber
+\end{align}
+
+In this way `$N_{\mu\nu}$ doesn't depend on `$q$', and then can be taken outside of the integral, this integral turn out to 
+be well known, as is calculated in the appendix,
+
+\begin{align}
+    \int\frac{\dd[D]{q}}{\qty(2\pi)^D}\frac{1}{\qty(q^2+A)^2}&=\frac{\im}{\qty(4\pi)^{\frac D2}}\Gamma\qty(2-\frac D2)\qty(p^2x\qty(1-x))^{\frac D2-2}\nonumber
+\end{align}
+
+So we can put back in to get,
+
+\begin{align}
+    \im {\Pi^{\qty(2)}}^{ab}_{\mu\nu}&=\frac{g^2}{2}Z_{3g}^2\Lambda^{2\epsilon}\tensor{f}{^a_c_d}\tensor{f}{^b^c^d}\int\limits_0^1\dd{x}N_{\mu\nu}\frac{\im}{\qty(4\pi)^{\frac D2}}\Gamma\qty(2-\frac D2)\qty(p^2x\qty(1-x))^{\frac D2-2}\nonumber
+\end{align}
+
+As we're interested in computing the beta function, we only need to know the divergent part of each contribution, thus, as the 
+divergence is generated by `$D\rightarrow 4$', notice that the only place where this limit has a pole is in `$\Gamma\qty(2-\frac D 2)$', 
+so we can substitute back `$D=4$' everywhere apart from the Gamma function, where we use `$D=4-2\epsilon$'. We also further 
+simplify by using the nomenclature `$T\qty(\textnormal{A})\delta^{ab}=\tensor{f}{^a_c_d}\tensor{f}{^b^c^d}$', that is, the Trace Factor 
+of the Adjoint representation.
+
+\begin{align}
+    \im {\Pi^{\qty(2)}}^{ab}_{\mu\nu}&=\im\delta^{ab}\frac{g^2}{32\pi^2}Z_{3g}^2\Gamma\qty(\epsilon)T\qty(\textnormal{A})\int\limits_0^1\dd{x}N_{\mu\nu}\nonumber
+\end{align}
+
+What remains to be done is the integral on `$x$', which is just a polynomial integral, it's trivial and gives,
+
+\begin{align}
+    \im {\Pi^{\qty(2)}}^{ab}_{\mu\nu}&=\im\delta^{ab}\frac{g^2}{32\pi^2}Z_{3g}^2\Gamma\qty(\epsilon)T\qty(\textnormal{A})\qty[\frac{19}{6}g_{\mu\nu}p^2-\frac{11}{3}p_\mu p_\nu]\nonumber
+\end{align}
+
+Finally, using the Laurent expansion of the Gamma Function, and keeping only divergent terms,
+
+\begin{align}
+    \im {\Pi^{\qty(2)}}^{ab}_{\mu\nu}&=\frac1\epsilon\im\delta^{ab}\frac{g^2}{32\pi^2}Z_{3g}^2T\qty(\textnormal{A})\qty[\frac{19}{6}g_{\mu\nu}p^2-\frac{11}{3}p_\mu p_\nu]\nonumber
+\end{align}
+
+This completes the calculus of the first diagram, the third is the fermion loop contribution,
+
+\begin{align}
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=-gZ_{g\Psi}\Lambda^{\epsilon}\qty[\vb T^a_{\textnormal{f}}]_{ij}\qty(-1)\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\Tr\qty[\gamma_\mu\frac1\im\frac{\qty(-\im\slashed k+m)}{k^2+m}\delta^{ik}\gamma_\nu\frac1\im\frac{\qty(-\im\qty(\slashed k-\slashed p)+m)}{\qty(k-p)^2+m^2}\delta^{lj}]\times\nonumber\\
+    &\quad\quad\quad\times\qty(-1)gZ_{g\Psi}\Lambda^\epsilon\qty[\vb T^b_{\textnormal {f}}]_{lk}\nonumber\\
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=g^2Z_{g\Psi}^2\Lambda^{2\epsilon}\Tr\qty[\vb T^a_{\textnormal{f}}\vb T^b_{\textnormal{f}}]\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\Tr\qty[\gamma_\mu\frac{\qty(-\im\slashed k+m)}{k^2+m}\gamma_\nu\frac{\qty(-\im\qty(\slashed k-\slashed p)+m)}{\qty(k-p)^2+m^2}]\nonumber
+\end{align}
+
+We readily identify the factor `$\Tr\qty[\vb T^a_{\textnormal{f}}\vb T^b_{\textnormal{f}}]=T\qty(\textnormal{F})\delta^{ab}$' 
+as the Trace Factor of the Fermionic representation. The remaining trace over the gamma matrices is done remembering that only 
+even combinations survive under the trace,
+
+\begin{align}
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=\delta^{ab}g^2Z_{g\Psi}^2\Lambda^{2\epsilon}T\qty(\textnormal{F})\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{\Tr\qty[\gamma_\mu\qty(-\im\slashed k+m)\gamma_\nu\qty(-\im\qty(\slashed k-\slashed p)+m)]}{\qty(k^2+m^2)\qty(\qty(k-p)^2+m^2)}\nonumber\\
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=\delta^{ab}g^2Z_{g\Psi}^2\Lambda^{2\epsilon}T\qty(\textnormal{F})\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{\qty{m^2Dg_{\mu\nu}-\Tr\qty[\gamma_\mu\slashed k\gamma_\nu\qty(\slashed k-\slashed p)]}}{\qty(k^2+m^2)\qty(\qty(k-p)^2+m^2)}\nonumber\\
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=\delta^{ab}g^2Z_{g\Psi}^2\Lambda^{2\epsilon}T\qty(\textnormal{F})D\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{m^2g_{\mu\nu}-2k_{\mu}k_{\nu}+g_{\mu\nu}k^2+k_{\mu}p_\nu+k_\nu p_\mu-g_{\mu\nu}k\cdot p}{\qty(k^2+m^2)\qty(\qty(k-p)^2+m^2)}\nonumber
+\end{align}
+
+We follow with the standard procedure of performing a Feynman reparametrization,
+
+\begin{align}
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=\delta^{ab}g^2Z_{g\Psi}^2\Lambda^{2\epsilon}T\qty(\textnormal{F})D\int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{N_{\mu\nu}}{\qty[x\qty(k^2+m^2)+\qty(1-x)\qty(\qty(k-p)^2+m^2)]^2}\nonumber\\
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=\delta^{ab}g^2Z_{g\Psi}^2\Lambda^{2\epsilon}T\qty(\textnormal{F})D\int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{N_{\mu\nu}}{\qty[\qty(k-\qty(1-x)p)^2+p^2x\qty(1-x)+m^2]^2}\nonumber
+\end{align}
+
+Changing integration variables to `$q=k-\qty(1-x)p$', substituting back in `$N_{\mu\nu}$' and neglecting linear terms in `$q$',
+
+\begin{align}
+    N_{\mu\nu}&=g_{\mu\nu}q^2-2q_\mu q_\nu-g_{\mu\nu}p^2x\qty(1-x)+2p_\mu p_\nu x\qty(1-x)+m^2 g_{\mu\nu}\nonumber
+\end{align}
+
+Again, with everything inside the integral, we can do `$q_\mu q_\nu\rightarrow \frac1Dg_{\mu\nu}q^2$',
+
+\begin{align}
+    N_{\mu\nu}&=q^2g_{\mu\nu}\qty(1-\frac2D)-g_{\mu\nu}p^2x\qty(1-x)+2p_\mu p_\nu x\qty(1-x)+m^2 g_{\mu\nu}\nonumber
+\end{align}
+
+So, up to now the contribution is,
+
+\begin{align}
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=\delta^{ab}g^2Z_{g\Psi}^2\Lambda^{2\epsilon}T\qty(\textnormal{F})D\int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{N_{\mu\nu}}{\qty[q^2+p^2x\qty(1-x)+m^2]^2}\nonumber
+\end{align}
+
+As was stated before, inside the integral, we can replace `$q^2\rightarrow \frac{D}{2-D}\qty(p^2x\qty(1-x)+m^2)$', so the 
+`$N_{\mu\nu}$' becomes,
+
+\begin{align}
+    N_{\mu\nu}&=2p_\mu p_\nu x\qty(1-x)-2p^2x\qty(1-x)g_{\mu\nu}\nonumber
+\end{align}
+
+So that it can be moved outside of the integral, and we're left with our old friendly integral,
+
+\begin{align}
+    \int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{\qty[q^2+p^2x\qty(1-x)+m^2]^2}&=\frac{\im}{\qty(4\pi)^{\frac D2}}\Gamma\qty(2-\frac D2)\qty(p^2x\qty(1-x) +m^2)^{\frac D2-2}\nonumber
+\end{align}
+
+So that,
+
+\begin{align}
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=\delta^{ab}g^2Z_{g\Psi}^2\Lambda^{2\epsilon}T\qty(\textnormal{F})D\int\limits_0^1\dd{x}N_{\mu\nu}\frac{\im}{\qty(4\pi)^{\frac D2}}\Gamma\qty(2-\frac D2)\qty(p^2x\qty(1-x) +m^2)^{\frac D2-2}\nonumber
+\end{align}
+
+As we're just interested in the divergent part, we can substitute back `$D=4$' except in the terms which are divergent,
+that is, the Gamma function, where we do use `$D=4-2\epsilon$',
+
+\begin{align}
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=\im\frac{g^2}{4\pi^2}\delta^{ab}Z_{g\Psi}^2T\qty(\textnormal{F})\Gamma\qty(\epsilon)\int\limits_0^1\dd{x}N_{\mu\nu}\nonumber
+\end{align}
+
+The remaining integral is polynomial, trivial and gives,
+
+\begin{align}
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=\im\frac{g^2}{12\pi^2}\delta^{ab}Z_{g\Psi}^2T\qty(\textnormal{F})\Gamma\qty(\epsilon)\qty[p_\mu p_\nu-p^2g_{\mu\nu}]\nonumber
+\end{align}
+
+Also expanding the Gamma function in it's Laurent series we arrive at our final result,
+
+\begin{align}
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=\frac1\epsilon\im\delta^{ab}\frac{g^2}{12\pi^2}Z_{g\Psi}^2T\qty(\textnormal{F})\qty[p_\mu p_\nu-p^2g_{\mu\nu}]\nonumber
+\end{align}
+
+Notice that this result is the one for each generation of fermions, that is, if we have more then one family, or in 
+other words, more the one flavor of fermions, then, we need to compute this result for each flavor and sum up. 
+Considering that all flavors transform under gauge in the same representation, we just have to multiply for the 
+number of flavors,
+
+\begin{align}
+    \im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}&=\frac1\epsilon\im\delta^{ab}\frac{g^2}{12\pi^2}Z_{g\Psi}^2N_{\textnormal{F}}T\qty(\textnormal{F})\qty[p_\mu p_\nu-p^2g_{\mu\nu}]\nonumber
+\end{align}
+
+We then proceed to our forth contribution, the ghost loop,
+
+\begin{align}
+    \im {\Pi^{\qty(4)}}^{ab}_{\mu\nu}&=gZ_{gc}\Lambda^{\epsilon}f^{acd}\qty(-1)\int\frac{\dd[D]{k}}{\qty(2\pi)^D}k_\mu\frac1\im\frac{\delta_{ce}}{k^2}\frac1\im\frac{\delta_{fd}}{\qty(k-p)^2}\times\nonumber\\
+    &\quad\quad\quad\times gZ_{cg}\Lambda^\epsilon f^{bfe}\qty(k-p)_\nu\nonumber\\
+    \im {\Pi^{\qty(4)}}^{ab}_{\mu\nu}&=g^2Z_{gc}^2\Lambda^{2\epsilon}f^{acd}\tensor{f}{^b_d_c}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{k_\mu\qty(k-p)_\nu}{k^2\qty(k-p)^2}\nonumber\\
+    \im {\Pi^{\qty(4)}}^{ab}_{\mu\nu}&=-\delta^{ab}g^2Z_{gc}^2\Lambda^{2\epsilon}T\qty(\textnormal{A})\int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{k_\mu\qty(k-p)_\nu}{\qty[xk^2+\qty(1-x)\qty(k-p)^2]^2}\nonumber\\
+    \im {\Pi^{\qty(4)}}^{ab}_{\mu\nu}&=-\delta^{ab}g^2Z_{gc}^2\Lambda^{2\epsilon}T\qty(\textnormal{A})\int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{k_\mu\qty(k-p)_\nu}{\qty[\qty(k-\qty(1-x)p)^2+p^2x\qty(1-x)]^2}\nonumber
+\end{align}
+
+Where we already have done the Feynman parametrization, we then perform the change of integration variables, `$q=k-\qty(1-x)p$', neglecting linear terms in `$q$' in the numerator,
+
+\begin{align}
+    \im {\Pi^{\qty(4)}}^{ab}_{\mu\nu}&=-\delta^{ab}g^2Z_{gc}^2\Lambda^{2\epsilon}T\qty(\textnormal{A})\int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{q_\mu q_\nu-p_\mu p_\nu x\qty(1-x)}{\qty[q^2+p^2x\qty(1-x)]^2}\nonumber
+\end{align}
+
+Again we do the usual replacing inside the integral, `$q_\mu q_\nu\rightarrow \frac1Dg_{\mu\nu}q^2\rightarrow\frac{1}{2-D}g_{\mu\nu}p^2x\qty(1-x)$',
+
+\begin{align}
+    \im {\Pi^{\qty(4)}}^{ab}_{\mu\nu}&=-\delta^{ab}g^2Z_{gc}^2\Lambda^{2\epsilon}T\qty(\textnormal{A})\qty(\frac{1}{2-D}g_{\mu\nu}p^2-p_\mu p_\nu)\int\limits_0^1\dd{x}x\qty(1-x)\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{\qty[q^2+p^2x\qty(1-x)]^2}\nonumber
+\end{align}
+
+Again, the momentum integral gives,
+
+\begin{align}
+    \im {\Pi^{\qty(4)}}^{ab}_{\mu\nu}&=-\delta^{ab}g^2Z_{gc}^2\Lambda^{2\epsilon}T\qty(\textnormal{A})\qty(\frac{1}{2-D}g_{\mu\nu}p^2-p_\mu p_\nu)\int\limits_0^1\dd{x}x\qty(1-x)\frac{\im\qty(p^2x\qty(1-x))^{\frac D2-2}}{\qty(4\pi)^{\frac D2}}\Gamma\qty(2-\frac D2)\nonumber
+\end{align}
+
+Going back to `$D=4$' except in the Gamma function,
+
+\begin{align}
+    \im {\Pi^{\qty(4)}}^{ab}_{\mu\nu}&=\delta^{ab}\frac{\im}{16\pi^2}\Gamma\qty(\epsilon)g^2Z_{gc}^2T\qty(\textnormal{A})\qty(\frac12g_{\mu\nu}p^2+p_\mu p_\nu)\int\limits_0^1\dd{x}x\qty(1-x)\nonumber\\
+    \im {\Pi^{\qty(4)}}^{ab}_{\mu\nu}&=\frac1\epsilon\delta^{ab}\frac{\im}{16\pi^2}g^2Z_{gc}^2T\qty(\textnormal{A})\qty(\frac{1}{12}g_{\mu\nu}p^2+\frac16p_\mu p_\nu)\nonumber
+\end{align}
+
+The final contribution is from the counter-terms, which is also the simplest one, giving,
+
+\begin{align}
+    \im {\Pi^{\qty(5)}}^{ab}_{\mu\nu}&=-\im\delta^{ab}\qty(Z_A-1)\qty(g_{\mu\nu}p^2-p_\mu p_\nu)-\im\delta^{ab}\qty(Z_\xi-1)p_\mu p_\nu\nonumber
+\end{align}
+
+So, summing all the contributions for the self-energy, we get,
+
+\begin{align}
+    \im \Pi^{ab}_{\mu\nu}&=\im {\Pi^{\qty(1)}}^{ab}_{\mu\nu}+\im {\Pi^{\qty(2)}}^{ab}_{\mu\nu}+\im {\Pi^{\qty(3)}}^{ab}_{\mu\nu}+\im {\Pi^{\qty(4)}}^{ab}_{\mu\nu}+\im {\Pi^{\qty(5)}}^{ab}_{\mu\nu}\nonumber\\
+    &=\frac{\im\delta^{ab}g^2}{32\pi^2\epsilon}Z_{3g}^2T\qty(\textnormal{A})\qty[\frac{19}{6}g_{\mu\nu}p^2-\frac{11}{3}p_\mu p_\nu]+\frac{\im\delta^{ab}g^2}{12\pi^2\epsilon}Z_{g\Psi}^2N_{\textnormal{F}}T\qty(\textnormal{F})\qty[p_\mu p_\nu-p^2g_{\mu\nu}]\nonumber\\
+    &\quad\quad\quad+\frac{\im\delta^{ab}g^2}{32\pi^2\epsilon}Z_{gc}^2T\qty(\textnormal{A})\qty(\frac{1}{6}g_{\mu\nu}p^2+\frac13p_\mu p_\nu)-\im\delta^{ab}\qty(Z_A-1)\qty(g_{\mu\nu}p^2-p_\mu p_\nu)\nonumber\\
+    &\quad\quad\quad-\im\delta^{ab}\qty(Z_\xi-1)p_\mu p_\nu\nonumber
+\end{align}
+
+Up to first order in `$g^2$' we can neglect higher powers of `$Z$', so then,
+
+\begin{align}
+    \im \Pi^{ab}_{\mu\nu}&=\frac{\im\delta^{ab}g^2}{32\pi^2\epsilon}T\qty(\textnormal{A})\qty[\frac{19}{6}g_{\mu\nu}p^2-\frac{11}{3}p_\mu p_\nu]+\frac{\im\delta^{ab}g^2}{32\pi^2\epsilon}N_{\textnormal{F}}T\qty(\textnormal{F})\qty[\frac83p_\mu p_\nu-\frac83p^2g_{\mu\nu}]\nonumber\\
+    &\quad\quad\quad+\frac{\im\delta^{ab}g^2}{32\pi^2\epsilon}T\qty(\textnormal{A})\qty[\frac{1}{6}g_{\mu\nu}p^2+\frac13p_\mu p_\nu]-\im\delta^{ab}\qty(Z_A-1)\qty(g_{\mu\nu}p^2-p_\mu p_\nu)-\im\delta^{ab}\qty(Z_\xi-1)p_\mu p_\nu\nonumber
+\end{align}
+
+And then we set to zero, as the renormalized self-energy should be finite. We factor the terms with `$p^2$', which contribute as,
+
+\begin{align}
+    \im\delta^{ab}\qty(Z_A-1)g_{\mu\nu}p^2&=\frac{\im\delta^{ab}g^2}{32\pi^2\epsilon}T\qty(\textnormal{A})\frac{19}{6}g_{\mu\nu}p^2-\frac{\im\delta^{ab}g^2}{32\pi^2\epsilon}N_{\textnormal{F}}T\qty(\textnormal{F})\frac83p^2g_{\mu\nu}+\frac{\im\delta^{ab}g^2}{32\pi^2\epsilon}T\qty(\textnormal{A})\frac{1}{6}g_{\mu\nu}p^2\nonumber\\
+    Z_A&=1+\frac{g^2}{16\pi^2\epsilon}\qty[\frac{5}{3}T\qty(\textnormal{A})-\frac43N_{\textnormal{F}}T\qty(\textnormal{F})]\nonumber
+\end{align}
+
+And by factorizing `$p_\mu p_\nu$' we can get the `$Z_\xi$' factor,
+
+\begin{align}
+    \im\delta^{ab}\qty(Z_\xi-1)p_\mu p_\nu-\im\delta^{ab}\qty(Z_A-1)p_\mu p_\nu&=-\frac{\im\delta^{ab}g^2}{32\pi^2\epsilon}T\qty(\textnormal{A})\frac{11}{3}p_\mu p_\nu
+    +\frac{\im\delta^{ab}g^2}{32\pi^2\epsilon}N_{\textnormal{F}}T\qty(\textnormal{F})\frac83p_\mu p_\nu\nonumber\\
+    &\quad\quad\quad+\frac{\im\delta^{ab}g^2}{32\pi^2\epsilon}T\qty(\textnormal{A})\frac13p_\mu p_\nu\nonumber\\
+    Z_\xi-1-\frac{g^2}{16\pi^2\epsilon}\qty[\frac{5}{3}T\qty(\textnormal{A})-\frac43N_{\textnormal{F}}T\qty(\textnormal{F})]&=-\frac{g^2}{32\pi^2\epsilon}T\qty(\textnormal{A})\frac{10}{3}
+    +\frac{g^2}{32\pi^2\epsilon}N_{\textnormal{F}}T\qty(\textnormal{F})\frac83\nonumber\\
+    Z_\xi&=1\nonumber
+\end{align}
+
+That is, at least in this order in perturbation theory, the gauge fixing parameter isn't renormalized! In fact 
+this is a non-perturbative result, we have `$Z_\xi=1$' what is equivalent to the 1PI self energy being always 
+transverse.
+
+\subsection{Fermionic Self Energy}
+
+The same goes for the loop contributions of the fermion propagator,
+
+\begin{align}
+    \frac1\im{\mathbf{S}}\qty(\slashed p)&=\frac1\im \textnormal {S}\qty(\slashed p)+\frac1\im \textnormal {S}\qty(\slashed p)\im\Sigma\qty(\slashed p)\frac1\im \textnormal {S}\qty(\slashed p)+\cdots\nonumber\\
+    \frac1\im\mathbf S\qty(\slashed p)&=\frac1\im\textnormal {S}\qty(\slashed p)+\frac1\im \textnormal {S}\qty(\slashed p)\im\Sigma\qty(\slashed p)\qty{\frac1\im \textnormal{S}\qty(\slashed p)+\frac1\im\textnormal {S}\qty(\slashed p)\im\Sigma\qty(\slashed p)\frac1\im \textnormal {S}\qty(\slashed p)+\cdots}\nonumber\\
+    \frac1\im\mathbf S\qty(\slashed p)&=\frac1\im \textnormal {S}\qty(\slashed p)+\frac1\im \textnormal {S}\qty(\slashed p)\im\Sigma\qty(\slashed p)\frac1\im\mathbf  {S}\qty(\slashed p)\nonumber\\
+    \mathbf S\qty(\slashed p)&=\qty[1- \textnormal {S}\qty(\slashed p)\Sigma\qty(\slashed p)]^{-1}\textnormal {S}\qty(\slashed p)\nonumber\\
+    {\mathbf S}^{-1}\qty(\slashed p)&={\textnormal {S}}^{-1}\qty(\slashed p)\qty[1- \textnormal {S}\qty(\slashed p)\Sigma\qty(\slashed p)]={\textnormal {S}}^{-1}\qty(\slashed p)- \Sigma\qty(\slashed p)=\im\slashed p+m-\Sigma\qty(\slashed p)\nonumber
+\end{align}
+
+Where we have suppressed, but, we also have color indices, restoring them,
+
+\begin{align}
+    {{\mathbf S}^{-1}}^{ij}\qty(\slashed p)&=\qty(\im\slashed p+m)\delta^{ij}-\Sigma^{ij}\qty(\slashed p)\nonumber
+\end{align}
+
+With `$\im\Sigma^{ij}$' being the 1PI loop contributions to the propagator, which is diagrammatically,
+
+\begin{align}
+    \im\Sigma^{ij}\qty(\slashed p)=\feynmandiagram [baseline = (b.base),horizontal=a to b,layered layout] {
+    a -- [fermion] b -- [ half left,photon] c --[half left,anti fermion] b,
+    c -- [fermion] d,
+    };+\feynmandiagram [baseline = (b.base),horizontal=a to b,layered layout] {
+    a -- [fermion] b [crossed dot] -- [fermion] c ,
+    };+\cdots
+\end{align}
+
+The loop contribution is,
+
+\begin{align}
+    \im\Sigma^{ij}_{\qty(1)}&=-gZ_{g\Psi}\Lambda^\epsilon\qty[\vb T^a_{\textnormal f}]^{li}
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\gamma_\mu
+    \frac{\delta_{lk}}{\im}\frac{-\im\qty(\slashed p-\slashed k)+m}{\qty(p-k)^2+m^2}\gamma_\nu
+    \frac1\im\frac{\delta_{ab}}{k^2}g^{\mu\nu}\qty(-1)gZ_{g\Psi}\Lambda^\epsilon\qty[\vb T^b_{\textnormal f}]^{jk}\nonumber\\
+    \im\Sigma^{ij}_{\qty(1)}&=-g^2Z_{g\Psi}^2\Lambda^{2\epsilon}\delta_{ab}\qty[\vb T^b_{\textnormal f}\vb T^a_{\textnormal f}]^{ji}
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\gamma_\mu
+    \frac{-\im\qty(\slashed p-\slashed k)+m}{k^2\qty(\qty(p-k)^2+m^2)}\gamma^\mu\nonumber
+\end{align}
+
+Using a few of Gamma matrix technology, as shown in the appendix,
+
+\begin{align}
+    \gamma_\mu \gamma^\mu&=D\nonumber\\
+    \gamma_\mu\gamma_\alpha\gamma^\mu&=\qty(2-D)\gamma_\alpha\nonumber
+\end{align}
+
+And Feynman reparametrization,
+
+\begin{align}
+    \im\Sigma^{ij}_{\qty(1)}&=-g^2Z_{g\Psi}^2\Lambda^{2\epsilon}\delta_{ab}\qty[\vb T^b_{\textnormal f}\vb T^a_{\textnormal f}]^{ji}
+    \int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}
+    \frac{-\im\qty(2-D)\qty(\slashed p-\slashed k)+Dm}{\qty[\qty(k-\qty(1-x)p)^2+\qty(1-x)\qty(xp^2+m^2)]^2}\nonumber
+\end{align}
+
+Doing the change of integration variable `$q=k-\qty(1-x)p$', and remembering that we do only keep even powers 
+of `$q$' in the numerator,
+
+\begin{align}
+    \im\Sigma^{ij}_{\qty(1)}&=-g^2Z_{g\Psi}^2\Lambda^{2\epsilon}\delta_{ab}\qty[\vb T^b_{\textnormal f}\vb T^a_{\textnormal f}]^{ji}
+    \int\limits_0^1\dd{x}\int\frac{\dd[D]{q}}{\qty(2\pi)^D}
+    \frac{-\im\qty(2-D)\qty(\slashed p-\qty(1-x)\slashed p)+Dm}{\qty[q^2+\qty(1-x)\qty(xp^2+m^2)]^2}\nonumber
+\end{align}
+
+Also we can identify the algebra factor `$\delta_{ab}\qty[\vb T^b_{\textnormal f}\vb T^a_{\textnormal f}]^{ji}=C\qty(\textnormal{F})\delta^{ij}$' 
+as the quadratic Casimir operator, hence,
+
+\begin{align}
+    \im\Sigma^{ij}_{\qty(1)}&=-g^2Z_{g\Psi}^2\Lambda^{2\epsilon}C\qty(\textnormal{F})\delta^{ij}
+    \int\limits_0^1\dd{x}\qty[-\im\qty(2-D)x\slashed p+Dm]\int\frac{\dd[D]{q}}{\qty(2\pi)^D}
+    \frac{1}{\qty[q^2+\qty(1-x)\qty(xp^2+m^2)]^2}\nonumber
+\end{align}
+
+Where we have again our beloved momentum integral giving,
+
+\begin{align}
+    \im\Sigma^{ij}_{\qty(1)}&=-g^2Z_{g\Psi}^2\Lambda^{2\epsilon}C\qty(\textnormal{F})\delta^{ij}
+    \int\limits_0^1\dd{x}\qty[-\im\qty(2-D)x\slashed p+Dm]\frac{\im\Gamma\qty(2-\frac D2)}{\qty(4\pi)^{\frac D2}}
+    \qty[\qty(1-x)\qty(xp^2+m^2)]^{\frac D2-2}\nonumber
+\end{align}
+
+We go back now to `$D=4$', keeping attention on the pole of the Gamma function,
+
+\begin{align}
+    \im\Sigma^{ij}_{\qty(1)}&=-\frac{\im g^2}{\qty(4\pi)^2}Z_{g\Psi}^2C\qty(\textnormal{F})\delta^{ij}
+    \Gamma\qty(\epsilon)\int\limits_0^1\dd{x}\qty[\im2x\slashed p+4m]\nonumber\\
+    \im\Sigma^{ij}_{\qty(1)}&=\frac{g^2}{16\pi^2}Z_{g\Psi}^2C\qty(\textnormal{F})\delta^{ij}
+    \frac1\epsilon\qty(\slashed p-4\im m)\nonumber
+\end{align}
+
+The second diagram is the counter terms,
+
+\begin{align}
+    \im\Sigma^{ij}_{\qty(2)}&=\qty(Z_\Psi-1)\delta^{ij}\slashed p-\im\qty(Z_m-1)\delta^{ij}m\nonumber
+\end{align}
+
+Summing the two contributions,
+
+\begin{align}
+    \im \Sigma^{ij}&=\im\Sigma^{ij}_{\qty(1)}+\im\Sigma^{ij}_{\qty(2)}\nonumber\\
+    \im \Sigma^{ij}&=\frac{g^2\delta^{ij}}{16\pi^2\epsilon}Z_{g\Psi}^2C\qty(\textnormal{F})
+    \qty(\slashed p-4\im m)+\qty(Z_\Psi-1)\delta^{ij}\slashed p-\im\qty(Z_m-1)\delta^{ij}m\nonumber
+\end{align}
+
+As this is only the divergent part, we must equal it to zero, what determines `$Z_\Psi$' and . Also, 
+as this is just the first order we neglect higher powers of the `$Z$'s.
+
+\begin{align}
+    Z_\Psi&=1-\frac{g^2}{16\pi^2\epsilon}C\qty(\textnormal{F})\nonumber\\
+    Z_m&=1-4\frac{g^2}{16\pi^2\epsilon}C\qty(\textnormal{F})\nonumber
+\end{align}
+
+\subsection{Fermion-Gauge Vertex Loop Corrections}
+
+Up to 1-loop the relevant diagrams are,
+
+\begin{align}
+    \im\Gamma^{a\mu}_{ij}\qty(p,p')=\feynmandiagram [baseline = (b.base),vertical=d to b] {
+    a -- [fermion,momentum=\(p\)] b -- [fermion,momentum=\(p'\)] c,
+    b -- [photon,momentum=\(p-p'\)] d,
+    };+\feynmandiagram [small, baseline = (e.base),vertical=d to b] {
+    a -- [fermion] e -- [fermion] b -- [fermion] f --[fermion] c,
+    b -- [photon] d,
+    e--[photon] f,
+    };+\feynmandiagram [small, baseline = (e.base),vertical=d to b] {
+    a -- [fermion] e -- [photon] b -- [photon] f --[fermion] c,
+    b -- [photon] d,
+    e--[fermion] f,
+    };\cdots\nonumber
+\end{align}
+
+The first diagram gives,
+
+\begin{align}
+    \im{\Gamma^{\qty(1)}}^{a\mu}_{ij}=-gZ_{g\Psi}\Lambda^\epsilon\gamma^\mu\qty[\vb T^a_{\textnormal{f}}]_{ji}\nonumber
+\end{align}
+
+The second one,
+
+\begin{align}
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-gZ_{g\Psi}\Lambda^\epsilon\qty[{\vb T^a_{\textnormal{f}}}]_{nm}
+    \qty(-1)gZ_{g\Psi}\Lambda^\epsilon\qty[{\vb T^b_{\textnormal{f}}}]_{li}
+    \qty(-1)gZ_{g\Psi}\Lambda^\epsilon\qty[{\vb T^c_{\textnormal{f}}}]_{jk}\times\nonumber\\
+    &\quad\quad\quad\times\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac1\im\frac{\delta_{bc}g_{\alpha\beta}}{k^2}
+    \gamma^\beta\frac{\delta^{nk}}{\im}\frac{-\im\qty(\slashed p'-\slashed k)+m}{\qty({p'}-k)^2+m^2}
+    \gamma^\mu\frac{\delta^{lm}}{\im}\frac{-\im\qty(\slashed p-\slashed k)+m}{\qty(p-k)^2+m^2}
+    \gamma^\alpha\nonumber\\
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\im g^3Z_{g\Psi}^3\Lambda^{3\epsilon}\delta_{bc}
+    \qty[{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}]_{ji}
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{k^2}
+    \gamma_\alpha\frac{-\im\qty(\slashed p'-\slashed k)+m}{\qty({p'}-k)^2+m^2}
+    \gamma^\mu\frac{-\im\qty(\slashed p-\slashed k)+m}{\qty(p-k)^2+m^2}
+    \gamma^\alpha\nonumber
+\end{align}
+
+Here we have an addendum to make. Notice that in both second and third diagrams will contain a factor 
+`$Z_{g\Psi}^3$', which of course will later be neglected by being a higher power, that means, all the divergence 
+generated by the second and third diagrams must be regularized by the first diagram, due to being the only one 
+having contributing `$Z_{g\Psi}$' factor in this order in perturbation theory, and as this diagram is independent 
+of the external momentum, we can surely state that the divergences generated at this level of perturbation 
+theory will not have any dependence on external momentum, and hence we can make it equal to zero to facilitate 
+the computation. In this way we get,
+
+\begin{align}
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\im g^3Z_{g\Psi}^3\Lambda^{3\epsilon}\delta_{bc}
+    \qty[{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}]_{ji}
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{k^2}
+    \gamma_\alpha\frac{\im\slashed k+m}{k^2+m^2}
+    \gamma^\mu\frac{\im\slashed k+m}{k^2+m^2}
+    \gamma^\alpha\nonumber
+\end{align}
+
+
+Recurring to some Gamma matrix relations derived in the appendix,
+
+\begin{align}
+    \gamma_\alpha\gamma^\mu\gamma^\alpha&=\qty(2-D)\gamma^\mu\nonumber\\
+    \gamma_\alpha\gamma^\rho\gamma^\mu\gamma^\alpha&=2\gamma^\mu\gamma^\rho
+    +\qty(D-2)\gamma^\rho\gamma^\mu\nonumber\\
+    \gamma_\alpha\gamma^\rho\gamma^\mu\gamma^\sigma\gamma^\alpha&=
+    2\gamma^\sigma\gamma^\rho\gamma^\mu-2\gamma^\mu\gamma^\rho\gamma^\sigma
+    +\qty(2-D)\gamma^\rho\gamma^\mu\gamma^\sigma\nonumber
+\end{align}
+
+Simplifies to,
+
+\begin{align}
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\im g^3Z_{g\Psi}^3\Lambda^{3\epsilon}\delta_{bc}
+    \qty[{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}]_{ji}
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{k^2\qty(k^2+m^2)\qty(k^2+m^2)}\times\nonumber\\
+    &\quad\quad\quad\times\left(-2\slashed k\slashed k\gamma^\mu
+    +2\gamma^\mu\slashed k\slashed k
+    +\qty(D-2)\slashed k\gamma^\mu\slashed k\right.+\im m\qty[2\gamma^\mu\slashed k+\qty(D-2)\slashed k\gamma^\mu]\nonumber\\
+    &\quad\quad\quad+\im m\qty[2\slashed k\gamma^\mu+\qty(D-2)\gamma^\mu\slashed k]\left.+m^2\qty(2-D)\gamma^\mu\right)\nonumber
+\end{align}
+
+Also, as already is well known to us, any linear `$k$' term will integrate to zero, thus,
+
+\begin{align}
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\im g^3Z_{g\Psi}^3\Lambda^{3\epsilon}\delta_{bc}
+    \qty[{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}]_{ji}
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{k^2\qty(k^2+m^2)\qty(k^2+m^2)}\times\nonumber\\
+    &\quad\quad\quad\times\qty(-2\slashed k\slashed k\gamma^\mu
+    +2\gamma^\mu\slashed k\slashed k
+    +\qty(D-2)\slashed k\gamma^\mu\slashed k+m^2\qty(2-D)\gamma^\mu)\nonumber\\
+\end{align}
+
+Also switching off to the Feynman parametrization,
+
+\begin{align}
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\im g^3Z_{g\Psi}^3\Lambda^{3\epsilon}\delta_{bc}
+    \qty[{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}]_{ji}\times\nonumber\\
+    &\quad\quad\quad\times2\int\limits_0^1\dd{x}\int\limits_0^{1-x}\dd{y}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{\qty[xk^2+y\qty(k^2+m^2)+\qty(1-x-y)\qty(k^2+m^2)]^3}\times\nonumber\\
+    &\quad\quad\quad\times\qty(k_\alpha k_\beta\qty(2\gamma^\mu\gamma^\alpha\gamma^\beta-2\gamma^\alpha\gamma^\beta\gamma^\mu
+    +\qty(D-2)\gamma^\alpha\gamma^\mu\gamma^\beta)+m^2\qty(2-D)\gamma^\mu)\nonumber\\
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\im g^3Z_{g\Psi}^3\Lambda^{3\epsilon}\delta_{bc}
+    \qty[{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}]_{ji}2\int\limits_0^1\dd{x}\int\limits_0^{1-x}\dd{y}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{\qty[k^2+m^2\qty(1-x)]^3}\times\nonumber\\
+    &\quad\quad\quad\times\qty(k_\alpha k_\beta\qty(2\gamma^\mu\gamma^\alpha\gamma^\beta-2\gamma^\alpha\gamma^\beta\gamma^\mu
+    +\qty(D-2)\gamma^\alpha\gamma^\mu\gamma^\beta)+m^2\qty(2-D)\gamma^\mu)\nonumber
+\end{align}
+
+The `$y$' integral is trivial, and using that inside the integral we have, 
+`$k_\alpha k_\beta\rightarrow\frac1D g_{\alpha\beta}k^2$',
+
+\begin{align}
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\im g^3Z_{g\Psi}^3\Lambda^{3\epsilon}\delta_{bc}
+    \qty[{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}]_{ji}2\int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1-x}{\qty[k^2+m^2\qty(1-x)]^3}\times\nonumber\\
+    &\quad\quad\quad\times\qty(\frac1Dk^2\qty(2\gamma^\mu\gamma_\alpha\gamma^\alpha-2\gamma_\alpha\gamma^\alpha\gamma^\mu
+    +\qty(D-2)\gamma_\alpha\gamma^\mu\gamma^\alpha)+m^2\qty(2-D)\gamma^\mu)\nonumber\\
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\im g^3Z_{g\Psi}^3\Lambda^{3\epsilon}\delta_{bc}
+    \qty[{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}]_{ji}2\int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1-x}{\qty[k^2+m^2\qty(1-x)]^3}\times\nonumber\\
+    &\quad\quad\quad\times\qty(\frac1Dk^2\qty(2D\gamma^\mu -2D\gamma^\mu
+    -\qty(2-D)^2\gamma^\mu)+m^2\qty(2-D)\gamma^\mu)\nonumber\\
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\im2 g^3Z_{g\Psi}^3\Lambda^{3\epsilon}\delta_{bc}
+    \qty[{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}]_{ji}\qty(2-D)\gamma^\mu
+    \int\limits_0^1\dd{x}\qty(1-x)\times\nonumber\\
+    &\quad\quad\quad\times\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{\qty[k^2+m^2\qty(1-x)]^3}
+    \qty(k^2\qty(1-\frac2D)+m^2)\nonumber
+\end{align}
+
+For solving the momentum integral we use the results of the appendix,
+
+\begin{align}
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{\qty[k^2+m^2\qty(1-x)]^3}&=\frac12\frac{\im}{\qty(4\pi)^{\frac D2}}\Gamma\qty(3-\frac D2)\qty[m^2\qty(1-x)]^{\frac D2 -3}\nonumber\\
+    \int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{k^2}{\qty[k^2+m^2\qty(1-x)]^3}&=\frac D4\frac{\im}{\qty(4\pi)^{\frac D2}}\Gamma\qty(2-\frac D2)\qty[m^2\qty(1-x)]^{\frac D2 -2}\nonumber
+\end{align}
+
+Factorizing the terms,
+
+\begin{align}
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\im2 g^3Z_{g\Psi}^3\Lambda^{3\epsilon}\delta_{bc}
+    \qty[{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}]_{ji}\qty(2-D)\gamma^\mu
+    \int\limits_0^1\dd{x}\qty(1-x)\times\nonumber\\
+    &\quad\quad\quad\times\frac12\frac{\im}{\qty(4\pi)^{\frac D2}}\qty[m^2\qty(1-x)]^{\frac D2-2}
+    \qty(\frac D2\qty(1-\frac2D)\Gamma\qty(2-\frac D2)+\frac{\Gamma\qty(3-\frac D2)}{1-x})\nonumber
+\end{align}
+
+We can go back to `$D=4$', except in the first Gamma function,
+
+\begin{align}
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\frac{g^3}{8\pi^2} Z_{g\Psi}^3\delta_{bc}
+    \qty[{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}]_{ji}\gamma^\mu
+    \int\limits_0^1\dd{x}
+    \qty(\qty(1-x)\Gamma\qty(\epsilon)+1)\nonumber
+\end{align}
+
+Neglecting the finite part,
+
+\begin{align}
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\frac{g^3}{16\pi^2\epsilon} Z_{g\Psi}^3\delta_{bc}
+    \qty[{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}]_{ji}\gamma^\mu\nonumber
+\end{align}
+
+To further simplify we have to work on the algebra factor,
+
+\begin{align}
+    \delta_{bc}{\vb T^c_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}{\vb T^b_{\textnormal{f}}}&=\delta_{bc}{\vb T^c_{\textnormal{f}}}\qty{{\vb T^b_{\textnormal{f}}}{\vb T^a_{\textnormal{f}}}+\im \tensor{f}{^a^b_d}{\vb T^d_{\textnormal{f}}}}\nonumber\\
+    &=C\qty(\textnormal F){\vb T^a_{\textnormal{f}}}+\im\tensor{f}{^a_b_c}\vb T^b_{\textnormal f}\vb T^c_{\textnormal f}\nonumber\\
+    &=C\qty(\textnormal F){\vb T^a_{\textnormal{f}}}+\frac\im2\tensor{f}{^a_b_c}\comm{\vb T^b_{\textnormal f}}{\vb T^c_{\textnormal f}}\nonumber\\
+    &=C\qty(\textnormal F){\vb T^a_{\textnormal{f}}}+\frac\im2\tensor{f}{^a_b_c}\im\tensor{f}{^b^c_d}\vb T^d_{\textnormal f}\nonumber\\
+    &=C\qty(\textnormal F){\vb T^a_{\textnormal{f}}}-\frac12\tensor{f}{^a_b_c}\tensor{f}{_d^b^c}\vb T^d_{\textnormal f}\nonumber\\
+    &=C\qty(\textnormal F){\vb T^a_{\textnormal{f}}}-\frac12T\qty(\textnormal{A})\vb T^a_{\textnormal f}\nonumber
+\end{align}
+
+And hence,
+
+\begin{align}
+    \im{\Gamma^{\qty(2)}}^{a\mu}_{ij}&=-\frac{g^3}{16\pi^2\epsilon} Z_{g\Psi}^3
+    \qty[C\qty(\textnormal F)-\frac12T\qty(\textnormal{A})]\qty[{\vb T^a_{\textnormal{f}}}]_{ji}\gamma^\mu\nonumber
+\end{align}
+
+Let's go then to the third diagram,
+
+\begin{align}
+    \im{\Gamma^{\qty(3)}}^{a\mu}_{ij}&=-gZ_{g\Psi}\Lambda^\epsilon\qty[\vb T^d_{\textnormal f}]_{li}
+    \qty(-1)gZ_{g\Psi}\Lambda^\epsilon\qty[\vb T^e_{\textnormal f}]_{jk}gZ_{3g}\Lambda^\epsilon f^{abc}\times\nonumber\\
+    &\quad\quad\quad\times\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\gamma^\sigma
+    \frac{\delta^{lk}}{\im}\frac{-\im\slashed k+m}{k^2+m^2}\gamma^\rho
+    \frac{\delta_{bd}}{\im}\frac{g_{\rho\alpha}}{\qty(p-k)^2}
+    \frac{\delta_{ce}}{\im}\frac{g_{\beta\sigma}}{\qty(p'-k)^2}\times\nonumber\\
+    &\quad\quad\quad\times\qty[\qty(2k-p-p')^\mu g^{\alpha\beta}
+    +\qty(2p'-p-k)^\alpha g^{\beta\mu}+\qty(2p-p'-k)^\beta g^{\alpha\mu}]\nonumber
+\end{align}
+
+As as previously discussed, we only need to consider the zero external momentum case, thus,
+
+\begin{align}
+    \im{\Gamma^{\qty(3)}}^{a\mu}_{ij}&=\im g^3Z_{g\Psi}^2Z_{3g}\Lambda^{3\epsilon}
+    \tensor{f}{^a_b_c}\qty[\vb T^c_{\textnormal f}\vb T^b_{\textnormal f}]_{ji}\times\nonumber\\
+    &\quad\quad\quad\times\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\gamma_\beta
+    \frac{-\im\slashed k+m}{\qty(k^2)^2\qty(k^2+m^2)}\gamma_\alpha\qty[2k^\mu g^{\alpha\beta}
+    -k^\alpha g^{\beta\mu}-k^\beta g^{\alpha\mu}]\nonumber
+\end{align}
+
+Throwing away linear terms in `$k$',
+
+\begin{align}
+    \im{\Gamma^{\qty(3)}}^{a\mu}_{ij}&=g^3Z_{g\Psi}^2Z_{3g}\Lambda^{3\epsilon}
+    \tensor{f}{^a_b_c}\qty[\vb T^c_{\textnormal f}\vb T^b_{\textnormal f}]_{ji}\times\nonumber\\
+    &\quad\quad\quad\times\gamma_\beta\gamma_\nu\gamma_\alpha\int\frac{\dd[D]{k}}{\qty(2\pi)^D}
+    \frac{2k^\mu k^\nu g^{\alpha\beta}
+    -k^\alpha k^\nu g^{\beta\mu}-k^\beta k^\nu g^{\alpha\mu}}{\qty(k^2)^2\qty(k^2+m^2)}\nonumber\\
+    \im{\Gamma^{\qty(3)}}^{a\mu}_{ij}&=g^3Z_{g\Psi}^2Z_{3g}\Lambda^{3\epsilon}
+    \tensor{f}{^a_b_c}\qty[\vb T^c_{\textnormal f}\vb T^b_{\textnormal f}]_{ji}\times\nonumber\\
+    &\quad\quad\quad\times\gamma_\beta\gamma_\nu\gamma_\alpha\frac1D\int\frac{\dd[D]{k}}{\qty(2\pi)^D}
+    \frac{2k^2 g^{\mu\nu} g^{\alpha\beta}
+    -k^2 g^{\alpha\nu} g^{\beta\mu}-k^2 g^{\beta\nu}g^{\alpha\mu}}{\qty(k^2)^2\qty(k^2+m^2)}\nonumber\\
+    \im{\Gamma^{\qty(3)}}^{a\mu}_{ij}&=g^3Z_{g\Psi}^2Z_{3g}\Lambda^{3\epsilon}
+    \tensor{f}{^a_b_c}\qty[\vb T^c_{\textnormal f}\vb T^b_{\textnormal f}]_{ji}\times\nonumber\\
+    &\quad\quad\quad\times\frac1D\qty[2\gamma_\alpha\gamma^\mu\gamma^\alpha
+    -2D\gamma^\mu]\int\frac{\dd[D]{k}}{\qty(2\pi)^D}
+    \frac{1}{k^2\qty(k^2+m^2)}\nonumber\\
+    \im{\Gamma^{\qty(3)}}^{a\mu}_{ij}&=g^3Z_{g\Psi}^2Z_{3g}\Lambda^{3\epsilon}
+    \tensor{f}{^a_b_c}\qty[\vb T^c_{\textnormal f}\vb T^b_{\textnormal f}]_{ji}\times\nonumber\\
+    &\quad\quad\quad\times\frac2D\qty[\qty(2-D)\gamma^\mu
+    -D\gamma^\mu]\int\frac{\dd[D]{k}}{\qty(2\pi)^D}
+    \frac{1}{k^2\qty(k^2+m^2)}\nonumber\\
+    \im{\Gamma^{\qty(3)}}^{a\mu}_{ij}&=g^3Z_{g\Psi}^2Z_{3g}\Lambda^{3\epsilon}
+    \tensor{f}{^a_b_c}\qty[\vb T^c_{\textnormal f}\vb T^b_{\textnormal f}]_{ji}\frac4D\qty(1-D)\gamma^\mu\int\frac{\dd[D]{k}}{\qty(2\pi)^D}
+    \frac{1}{k^2\qty(k^2+m^2)}\nonumber
+\end{align}
+
+Going now for the momentum integral,
+
+\begin{align}
+    \im{\Gamma^{\qty(3)}}^{a\mu}_{ij}&=g^3Z_{g\Psi}^2Z_{3g}\Lambda^{3\epsilon}
+    \tensor{f}{^a_b_c}\qty[\vb T^c_{\textnormal f}\vb T^b_{\textnormal f}]_{ji}\frac4D\qty(1-D)\gamma^\mu
+    \int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{\qty[xk^2+\qty(1-x)\qty(k^2+m^2)]^2}\nonumber\\
+    \im{\Gamma^{\qty(3)}}^{a\mu}_{ij}&=g^3Z_{g\Psi}^2Z_{3g}\Lambda^{3\epsilon}
+    \tensor{f}{^a_b_c}\qty[\vb T^c_{\textnormal f}\vb T^b_{\textnormal f}]_{ji}\frac4D\qty(1-D)\gamma^\mu
+    \int\limits_0^1\dd{x}\int\frac{\dd[D]{k}}{\qty(2\pi)^D}\frac{1}{\qty[k^2+m^2\qty(1-x)]^2}\nonumber\\
+    \im{\Gamma^{\qty(3)}}^{a\mu}_{ij}&=g^3Z_{g\Psi}^2Z_{3g}\Lambda^{3\epsilon}
+    \tensor{f}{^a_b_c}\qty[\vb T^c_{\textnormal f}\vb T^b_{\textnormal f}]_{ji}\frac4D\qty(1-D)\gamma^\mu
+    \int\limits_0^1\dd{x}\frac{\im}{\qty(4\pi)^{\frac D2}}\Gamma\qty(2-\frac D2)\qty[m^2\qty(1-x)]^{\frac D2-2}\nonumber
+\end{align}
+
+Switching back `$D=4$',
+
+\begin{align}
+    \im{\Gamma^{\qty(3)}}^{a\mu}_{ij}&=-3\im\frac{g^3}{16\pi^2}Z_{g\Psi}^2Z_{3g}
+    \tensor{f}{^a_b_c}\qty[\vb T^c_{\textnormal f}\vb T^b_{\textnormal f}]_{ji}\gamma^\mu
+    \Gamma\qty(\epsilon)\nonumber
+\end{align}
+
+The color factor can be simplified as,
+
+\begin{align}
+    \tensor{f}{^a_b_c}\vb T^c_{\textnormal f}\vb T^b_{\textnormal f}&=\frac12\tensor{f}{^a_b_c}\comm{\vb T^c_{\textnormal f}}{\vb T^b_{\textnormal f}}\nonumber\\
+    &=\frac\im2\tensor{f}{^a_b_c}\tensor{f}{^c^b_d}\vb T^d_{\textnormal f}\nonumber\\
+    &=-\frac\im2\tensor{f}{^a_b_c}\tensor{f}{_d^b^c}\vb T^d_{\textnormal f}\nonumber\\
+    &=-\frac\im2T\qty(\textnormal A)\vb T^a_{\textnormal f}\nonumber
+\end{align}
+
+Substituting,
+
+\begin{align}
+    \im{\Gamma^{\qty(3)}}^{a\mu}_{ij}&=-\frac32\frac{g^3}{16\pi^2\epsilon}Z_{g\Psi}^2Z_{3g}
+    T\qty(\textnormal A)\qty[\vb T^a_{\textnormal f}]_{ji}\gamma^\mu\nonumber
+\end{align}
+
+Thus, putting the three contributions together,
+
+\begin{align}
+    \im{\Gamma}^{a\mu}_{ij}&=\im{\Gamma^{\qty(1)}}^{a\mu}_{ij}+\im{\Gamma^{\qty(2)}}^{a\mu}_{ij}+\im{\Gamma^{\qty(3)}}^{a\mu}_{ij}\nonumber\\
+    -g\gamma^\mu\qty[\vb T^a_{\textnormal{f}}]_{ji}&=-gZ_{g\Psi}\gamma^\mu\qty[\vb T^a_{\textnormal{f}}]_{ji}-\frac{g^3Z_{g\Psi}^3}{16\pi^2\epsilon} 
+    \qty[C\qty(\textnormal F)-\frac12T\qty(\textnormal{A})]\qty[{\vb T^a_{\textnormal{f}}}]_{ji}\gamma^\mu-\frac{3g^3Z_{g\Psi}^2}{32\pi^2\epsilon}Z_{3g}
+    T\qty(\textnormal A)\qty[\vb T^a_{\textnormal f}]_{ji}\gamma^\mu\nonumber
+\end{align}
+
+And again, we neglect higher powers of the `$Z$'s,
+
+\begin{align}
+    -1&=-Z_{g\Psi}-\frac{g^2}{16\pi^2\epsilon}\qty[C\qty(\textnormal F)-\frac12T\qty(\textnormal{A})]
+    -\frac32\frac{g^2}{16\pi^2\epsilon}T\qty(\textnormal A)\nonumber\\
+    Z_{g\Psi}&=1-\frac{g^2}{16\pi^2\epsilon}\qty[C\qty(\textnormal F)+T\qty(\textnormal{A})]\nonumber
+\end{align}
+
+\subsection{Computation of the Beta Function}
+
+Summarizing our discoveries,
+
+\begin{align}
+    \begin{cases}
+        Z_A&=1+\frac{g^2}{16\pi^2\epsilon}\qty[\frac{5}{3}T\qty(\textnormal{A})-\frac43N_{\textnormal{F}}T\qty(\textnormal{F})]\\
+        Z_\Psi&=1-\frac{g^2}{16\pi^2\epsilon}C\qty(\textnormal{F})\\
+        Z_{g\Psi}&=1-\frac{g^2}{16\pi^2\epsilon}\qty[C\qty(\textnormal F)+T\qty(\textnormal{A})]
+    \end{cases}\nonumber
+\end{align}
+
+Looking back to the Lagrangians \ref{lagrangian1} and \ref{lagrangianbare1}, we can do the matching between 
+the bare and renormalized parameters,
+
+\begin{align}
+    g_0&=g\frac{Z_{g\Psi}}{\sqrt{Z_A}Z_{\Psi}}\Lambda^\epsilon\nonumber
+\end{align}
+
+As what really shows up in the leading order is `$g^2$', it's easier to work temporarily with `$\alpha=g^2$',
+
+\begin{align}
+    \alpha_0&=\alpha\frac{Z_{g\Psi}^2}{Z_AZ^2_{\Psi}}\Lambda^{2\epsilon}\nonumber
+\end{align}
+
+Keeping only the leading pole,
+
+\begin{align}
+    \alpha_0&=\alpha\qty(1-\frac{\alpha}{8\pi^2\epsilon}\qty[C\qty(\textnormal F)+T\qty(\textnormal{A})])
+    \qty(1-\frac{\alpha}{16\pi^2\epsilon}\qty[\frac{5}{3}T\qty(\textnormal{A})-\frac43N_{\textnormal{F}}T\qty(\textnormal{F})])
+    \qty(1+\frac{\alpha}{8\pi^2\epsilon}C\qty(\textnormal{F}))\Lambda^{2\epsilon}\nonumber\\
+    \alpha_0&=\alpha\qty(1-\frac{11}{3}\frac{\alpha}{16\pi^2\epsilon}T\qty(\textnormal{A})
+    +\frac43\frac{\alpha}{16\pi^2\epsilon}N_{\textnormal{F}}T\qty(\textnormal{F}))\Lambda^{2\epsilon}\nonumber\\
+    0&=\beta\qty(1-\frac{11}{3}\frac{\alpha}{16\pi^2\epsilon}T\qty(\textnormal{A})
+    +\frac43\frac{\alpha}{16\pi^2\epsilon}N_{\textnormal{F}}T\qty(\textnormal{F}))\nonumber\\
+    &\quad\quad-\alpha\beta\qty(\frac{11}{3}\frac{1}{16\pi^2\epsilon}T\qty(\textnormal{A})
+    -\frac43\frac{1}{16\pi^2\epsilon}N_{\textnormal{F}}T\qty(\textnormal{F}))\nonumber\\
+    &\quad\quad+2\epsilon\alpha\qty(1-\frac{11}{3}\frac{\alpha}{16\pi^2\epsilon}T\qty(\textnormal{A})
+    +\frac43\frac{\alpha}{16\pi^2\epsilon}N_{\textnormal{F}}T\qty(\textnormal{F}))\nonumber\\
+    0&=\beta\qty(1-\frac{11}{3}\frac{\alpha}{8\pi^2\epsilon}T\qty(\textnormal{A})
+    +\frac43\frac{\alpha}{8\pi^2\epsilon}N_{\textnormal{F}}T\qty(\textnormal{F}))\nonumber\\
+    &\quad\quad+\epsilon\alpha\qty(1-\frac{11}{3}\frac{\alpha}{8\pi^2\epsilon}T\qty(\textnormal{A})
+    +\frac43\frac{\alpha}{8\pi^2\epsilon}N_{\textnormal{F}}T\qty(\textnormal{F}))+\epsilon\alpha\nonumber\\
+    -\epsilon\alpha&=\qty(\beta+\epsilon\alpha)\qty(1-\frac{11}{3}\frac{\alpha}{8\pi^2\epsilon}T\qty(\textnormal{A})
+    +\frac43\frac{\alpha}{8\pi^2\epsilon}N_{\textnormal{F}}T\qty(\textnormal{F}))\nonumber\\
+    \beta+\epsilon\alpha&=-\epsilon\alpha\qty(1+\frac{11}{3}\frac{\alpha}{8\pi^2\epsilon}T\qty(\textnormal{A})
+    -\frac43\frac{\alpha}{8\pi^2\epsilon}N_{\textnormal{F}}T\qty(\textnormal{F}))\nonumber\\
+    \beta&=-2\epsilon\alpha-\frac{11}{3}\frac{\alpha^2}{8\pi^2}T\qty(\textnormal{A})
+    +\frac43\frac{\alpha^2}{8\pi^2}N_{\textnormal{F}}T\qty(\textnormal{F}))\nonumber
+\end{align}
+
+Finally we take the limit `$\epsilon\rightarrow 0$' and get the so awaited result,
+
+\begin{align}
+    \beta&=-\frac{11}{3}\frac{\alpha^2}{8\pi^2}T\qty(\textnormal{A})
+    +\frac43\frac{\alpha^2}{8\pi^2}N_{\textnormal{F}}T\qty(\textnormal{F}))\nonumber
+\end{align}
+
+Or, changing from `$\alpha$' to `$g$',
+
+\begin{align}
+    \beta&=-\frac{g^3}{16\pi^2}\qty[\frac{11}{3}T\qty(\textnormal{A})
+    -\frac43N_{\textnormal{F}}T\qty(\textnormal{F})]\nonumber
+\end{align}

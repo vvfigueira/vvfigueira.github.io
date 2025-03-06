@@ -1,0 +1,48 @@
+\section{Introdução}
+
+Em 1967 Coleman e Mandula \cite{coleman1967} catalogaram todas as simetrias da matrix $S$, o resultado impressionante 
+obtido foi de que não é possível extender a álgebra de Poincaré\footnote{Toda vez que mencionado 
+álgebra(grupo) de Poincaré --- A não ser que explicitamente dito o contrário ---, nos referimos à(ao) 
+álgebra(grupo) inomogêneo(a) próprio(a) ortócrono(a) de Lorentz.}, $\mathfrak{iso}^+\qty(3,1)$, de uma 
+maneira não trivial, isto é, uma vez que a teoria é feita satisfazer a simetria de Poincaré,
+\begin{align*}
+    \comm{M^{\alpha\beta}}{M^{\mu\nu}}&=\im\qty(g^{\alpha\mu}M^{\beta\nu}-g^{\beta\mu}M^{\alpha\nu}+g^{\beta\nu}M^{\alpha\mu}-g^{\alpha\nu}M^{\beta\mu})\\
+    \comm{P^\alpha}{M^{\mu\nu}}&=\im\qty(g^{\alpha\nu}P^\mu-g^{\alpha\mu}P^{\nu})\numberthis\label{poincare}\\
+    \comm{P^\alpha}{P^\mu}&=0
+\end{align*}
+
+Quaisquer que sejam as outras simetrias da teoria, são restringidas à comutar com os elementos da álgebra 
+de Poincaré, além de pertencerem necessariamente uma soma direta de álgebras de Lie compactas e semi-simples, 
+e possíveis somas diretas de álgebras de $\mathfrak u\qty(1)$,
+\begin{align*}
+    \comm{Q^A}{P^\mu}&=\comm{Q^A}{M^{\mu\nu}}=0\\
+    \comm{Q^A}{Q^B}&=\im\tensor{f}{^A^B_C}Q^C
+\end{align*}
+
+Certamente implicando que geradores adicionais de simetrias não de Poincaré, são proibidos de possuírem índices 
+vetoriais. Porém há uma brecha neste teorema, foram apenas consideradas representações de $\mathcal L^\uparrow_+$, 
+e não de seu \textit{double cover}, $SL\qty(2,\mathbb C)$. Assim Coleman e Mandula não levaram em conta índices 
+spinoriais, e certamente, também não levaram em conta a necessidade de incluir anti-comutadores, devido ao 
+teorema da Spin-Estatística. A inclusão dos índices spinoriais no teorema não demanda muito mais trabalho, porém, 
+a inclusão de anti-comutadores sim, pois a estrutura matemática de Álgebras de Lie não é suficiente para acomodar 
+ambos comutadores e anti-comutadores, assim, é necessário a introdução do conceito de \textbf{Álgebras de Lie 
+Graduadas}, o qual descreveremos brevemente. Uma \textbf{Super-Álgebra de Lie} ou 
+\textbf{Álgebra de Lie $\mathbb Z_2$-Graduada}\footnote{O fato da álgebra ser $\mathbb Z_2$-Graduada deve-se a 
+estarmos em um espaço-tempo $3+1$ dimensional, o qual só admite bósons e férmions, isto é retratado de modo a 
+haver apenas dois valores diferentes para pesos. Um espaço-tempo $2+1$, por exemplo, possui outros tipos de 
+partículas, ânions.} $\mathfrak g$ é,
+
+\begin{itemize}
+    \item Um espaço vetorial sobre $\mathbb R$,
+    \item Cada elemento $T^A\in\mathfrak g$ possui peso, ou graduação, $\eta\qty(T^A)=\eta_A=0,1$
+    \item Produtos de elementos tem peso,\[\eta\qty(T^A\cdots T^Z)=\sum\eta_i\ \qty(\textnormal{mod }2)\]
+    \item Operação bilinear fechada na Álgebra,\[\comm{T^A}{T^B}=T^AT^B-\qty(-1)^{\eta_A\eta_B}T^BT^A=\im\tensor{f}{^A^B_C}T^C\]
+    \item Identidade de Jacobi\[\qty(-1)^{\eta_C\eta_A}\comm{\comm{T^A}{T^B}}{T^C}+\qty(-1)^{\eta_A\eta_B}\comm{\comm{T^B}{T^C}}{T^A}+\qty(-1)^{\eta_B\eta_C}\comm{\comm{T^C}{T^A}}{T^B}=0\]
+\end{itemize}
+
+Com a escolha natural de graduação $0$ para operadores bosônicos e graduação $1$ para operadores fermiônicos, 
+obtemos com naturalidade tanto comutadores quanto anti-comutadores da mesma operação bilinear $\comm{\cdot}{\cdot}$. 
+A extensão do Teorema de Coleman-Mandula para Álgebras de Lie $\mathbb Z_2$-Graduadas utilizando-se também de 
+representações com índices spinoriais foi feita por Haag-Łopuszański-Sohnius \cite{haag1975}, que concluíram 
+que é possível de se extender a Álgebra de Poincaré de maneira não trivial, desde que nisto sejam utilizados 
+geradores fermiônicos pertencendo as representações $\qty(\frac12,0)$ e $\qty(0,\frac12)$ de $\mathcal L^\uparrow_+$.

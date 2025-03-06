@@ -1,0 +1,85 @@
+\section{Consequências de Super-Poincaré}
+
+Vamos discutir aqui alguns aspectos não triviais de teorias que satisfazem a Álgebra de Super-Poincaré.
+\subsection{Positividade da Energia}
+
+Na verdade isto não é uma consequência, e sim uma hipótese na derivação da relação de comutação 
+da \cref{qqdagger}, porém, mostraremos aqui de uma maneira mais clara como podemos obter este fato\footnote{Aqui os índices $^A$ não estão sendo somados.}.
+\begin{align*}
+    \comm{Q^A_a}{Q^{\dagger A}_{\dot b}}&=-2\delta^{AA}\sigma_{\mu a\dot b}P^\mu,\ \textnormal{contração com }{\bar\sigma}^{\dot b a}_0\\
+    {\bar\sigma}^{0\dot b a}\comm{Q^A_a}{Q^{\dagger A}_{\dot b}}&=-2{\bar\sigma}^{0\dot b a}\sigma_{\mu a\dot b}P^\mu,\ \Tr\qty[{\bar\sigma}^\nu\sigma_\mu]=-2\tensor{g}{^\nu_\mu}\\
+    {\bar\sigma}^{0\dot b a}\comm{Q^A_a}{Q^{\dagger A}_{\dot b}}&=4P^0,\ {\bar\sigma}^{0\dot b a}=\delta^{a1}\delta^{\dot b\dot 1}+\delta^{a2}\delta^{\dot b\dot 2}\\
+    P^0&=\frac14\qty(Q_1^AQ^{\dagger A}_{\dot 1}+Q^{\dagger A}_{\dot 1}Q_1+Q_2Q^{\dagger A}_{\dot 2}+Q^{\dagger A}_{\dot 2}Q_2)
+\end{align*}
+Tomemos agora um estado arbitrário $\Psi$ do espaço de Hilbert,
+\begin{align*}
+    \qty(\Psi,P^0\Psi)&=\frac14\qty[\qty(\Psi,Q_1^AQ^{\dagger A}_{\dot 1}\Psi)+\qty(\Psi,Q^{\dagger A}_{\dot 1}Q_1^A\Psi)+\qty(\Psi,Q_2^AQ^{\dagger A}_{\dot 2}\Psi)+\qty(\Psi,Q^{\dagger A}_{\dot 2}Q_2^A\Psi)]\\
+    \qty(\Psi,P^0\Psi)&=\frac14\qty[\norm{Q^{\dagger A}_{\dot 1}\Psi}^2+\norm{Q_1^A\Psi}^2+\norm{Q^{\dagger A}_{\dot 2}\Psi}^2+\norm{Q_2^A\Psi}^2]\geq 0
+\end{align*}
+Isto por sí já é uma propriedade desejável de qualquer teoria física, e certamente impõe restrições fortes 
+sobre o tipo de espectro de partículas. Por exemplo, uma teoria livre com apenas férmions possui energia do 
+vácuo sendo menos infinito\footnote{Estamos aqui nos referindo ao Hamiltoniano sem o ordenamento normal, vale 
+lembrar que a prescrição de ordenamento normal é arbitrária.}. 
+\subsection{Índice de Witten}
+A positividade da energia deduzida no item anterior nos leva a crer que há de fato alguma relação entre o 
+número de estados bosônicos e estados fermiônicos em uma teoria que respeita a Álgebra de Super-Poincaré. 
+Um modo de verificar isto é utilizando-se do \textbf{Operador de Número Fermiônico}, $\mathsf F$, que retorna 
+0 quando atua num estado com estatística bosônica, e retorna 1 quando atua em um estado com estatística 
+fermiônica,\[\mathsf F\Psi_{\textnormal{Boson}}=0,\ \ \ \mathsf F\Psi_{\textnormal{Fermion}}=\Psi_{\textnormal{Fermion}}\]
+Com o qual definimos o \textbf{Operador de Estatística}, $\qty(-1)^{\mathsf F}$,
+\[\qty(-1)^{\mathsf F}\Psi_{\textnormal{Boson}}=\Psi_{\textnormal{Boson}},\ \ \ \qty(-1)^{\mathsf F}\Psi_{\textnormal{Fermion}}=-\Psi_{\textnormal{Fermion}}\]
+Como queremos saber a relação entre o número de estados bosônicos e fermiônicos vamos calcular, \[\Tr\qty[\qty(-1)^{\mathsf F}]\] 
+Para realizar esse cálculo vamos escolher uma base 
+do espaço de Hilbert que diagonaliza o operador de momentum, $\Psi_{q}^n$, no qual $P^\mu\Psi_{q}^n=q^\mu\Psi_{q}^n$, 
+e $n$ simboliza quaisquer outros números quânticos da base. Assim podemos escrever\footnote{Aqui 
+o símbolo $\ \ \mathclap{\displaystyle\int\limits_n}\mathclap{\textstyle\sum}\ \ $ é meramente uma soma formal sobre 
+quaisquer que sejam os índices $n$, e qualquer que seja seu espectro, discreto ou contínuo.}$^{,}$\footnote{Estamos usando de que o espaço de Hilbert 
+físico na base de momentum respeita as condições $P^0\geq 0$, derivada anteriormente, e também a condição $P_\mu P^\mu\leq 0$, positividade da massa.},
+\begin{align*}
+    \Tr\qty[\qty(-1)^{\mathsf F}P^0]=\ \ \ \ \ \ \mathclap{\displaystyle\int\limits_{q^2\leq 0,\ q^0\geq 0}}\mathclap{\textstyle\sum}\ \ \ \ \ \ \ \ \mathclap{\displaystyle\int\limits_n}\mathclap{\textstyle\sum}\ \ \qty(\Psi^n_q,\qty(-1)^{\mathsf F} P^0\Psi^n_q)&=\Tr\qty[\qty(-1)^{\mathsf F}\frac14{\bar\sigma}^{0 \dot b a}\comm{Q^A_a}{Q^{\dagger A}_{\dot b}}]\\
+    \ \ \ \ \ \ \mathclap{\displaystyle\int\limits_{q^2\leq 0,\ q^0\geq 0}}\mathclap{\textstyle\sum}\ \ \ \ \ \ \ \ \mathclap{\displaystyle\int\limits_n}\mathclap{\textstyle\sum}\ \ \qty(\Psi^n_q,\qty(-1)^{\mathsf F} q^0\Psi^n_q)&=\frac14\Tr\qty[\qty(-1)^{\mathsf F}\qty(Q_1^AQ^{\dagger A}_{\dot 1}+Q^{\dagger A}_{\dot 1}Q_1+Q_2Q^{\dagger A}_{\dot 2}+Q^{\dagger A}_{\dot 2}Q_2)]\\
+    \ \ \ \ \ \ \mathclap{\displaystyle\int\limits_{q^2\leq 0,\ q^0\geq 0}}\mathclap{\textstyle\sum}\ \ \ \ \ \ q^0\ \ \mathclap{\displaystyle\int\limits_n}\mathclap{\textstyle\sum}\ \ \qty(\Psi^n_q,\qty(-1)^{\mathsf F} \Psi^n_q)&=\frac14\Tr\qty[-Q_1^A\qty(-1)^{\mathsf F}Q^{\dagger A}_{\dot 1}+\qty(-1)^{\mathsf F}Q^{\dagger A}_{\dot 1}Q_1-Q_2\qty(-1)^{\mathsf F}Q^{\dagger A}_{\dot 2}+\qty(-1)^{\mathsf F}Q^{\dagger A}_{\dot 2}Q_2)]
+\end{align*}
+Aqui nos usamos o fato de que, $\comm{\qty(-1)^F}{Q^A_a}=\comm{\qty(-1)^F}{Q^{\dagger}_{\dot b}}=0$, isso é verdade 
+necessariamente por causa que as super-cargas mudam a graduação de um estado quando atuam neste. Utilizando agora da 
+propriedade cíclica do traço,
+\begin{align*}
+    \Tr\qty[\qty(-1)^{\mathsf F}P^0]=\ \ \ \ \ \ \mathclap{\displaystyle\int\limits_{q^2\leq 0,\ q^0\geq 0}}\mathclap{\textstyle\sum}\ \ \ \ \ \ q^0\ \ \mathclap{\displaystyle\int\limits_n}\mathclap{\textstyle\sum}\ \ \qty(\Psi^n_q,\qty(-1)^{\mathsf F} \Psi^n_q)&=\frac14\Tr\qty[-\qty(-1)^{\mathsf F}Q^{\dagger A}_{\dot 1}Q_1^A+\qty(-1)^{\mathsf F}Q^{\dagger A}_{\dot 1}Q_1-\qty(-1)^{\mathsf F}Q^{\dagger A}_{\dot 2}Q_2+\qty(-1)^{\mathsf F}Q^{\dagger A}_{\dot 2}Q_2)]\\
+    \ \ \ \ \ \ \mathclap{\displaystyle\int\limits_{q^2\leq 0,\ q^0\geq 0}}\mathclap{\textstyle\sum}\ \ \ \ \ \ q^0\ \ \mathclap{\displaystyle\int\limits_n}\mathclap{\textstyle\sum}\ \ \qty(\Psi^n_q,\qty(-1)^{\mathsf F} \Psi^n_q)&=0
+\end{align*}
+Bem, para o caso de $q^0=0\rightarrow q^\mu=0$ --- que nada mais nada menos é o estado de vácuo --- a contribuição para a igualdade é trivial, logo a restrição que obtemos é,
+\begin{align*}
+    \ \ \ \ \ \ \mathclap{\displaystyle\int\limits_{q^2\leq 0,\ q^0> 0}}\mathclap{\textstyle\sum}\ \ \ \ \ \ q^0\ \ \mathclap{\displaystyle\int\limits_n}\mathclap{\textstyle\sum}\ \ \qty(\Psi^n_q,\qty(-1)^{\mathsf F} \Psi^n_q)&=0
+\end{align*}
+Como necessariamente $q^0>0$, o único modo da igualdade ser satisfeita é se,
+\begin{align*}
+    \ \ \mathclap{\displaystyle\int\limits_n}\mathclap{\textstyle\sum}\ \ \qty(\Psi^n_q,\qty(-1)^{\mathsf F} \Psi^n_q)&=0,\ \ \ \forall q,\ q^2\leq 0,\ q^0>0
+\end{align*}
+Este é um resultado impressionante, a interpretação é de que para um dado momentum não nulo existem o mesmo número de 
+graus de liberdade bosônico e fermiônico, ou seja, teorias super-simétricas possuem o mesmo número de partículas bosônicas 
+e fermiônicas. Somos fortemente tentados a concluir que, $\Tr\qty[\qty(-1)^{\mathsf F}]=0$, porém isso não é necessariamente 
+verdade. Note que\footnote{Ao colocar um índice $n$ no estado de vácuo $\Psi_{\textnormal{vac}}^n$ estamos levando em conta possíveis degenerescências do vácuo.},
+\begin{align*}
+    \Tr\qty[\qty(-1)^{\mathsf F}]&=\ \ \ \ \ \ \mathclap{\displaystyle\int\limits_{q^2\leq 0,\ q^0\geq 0}}\mathclap{\textstyle\sum}\ \ \ \ \ \ \ \ \mathclap{\displaystyle\int\limits_n}\mathclap{\textstyle\sum}\ \ \qty(\Psi^n_q,\qty(-1)^{\mathsf F} \Psi^n_q)\\
+    \Tr\qty[\qty(-1)^{\mathsf F}]&=\ \ \mathclap{\displaystyle\int\limits_n}\mathclap{\textstyle\sum}\ \ \qty(\Psi^n_{\textnormal{vac}},\qty(-1)^{\mathsf F}\Psi^n_{\textnormal{vac}})+\ \ \ \ \ \ \mathclap{\displaystyle\int\limits_{q^2\leq 0,\ q^0> 0}}\mathclap{\textstyle\sum}\ \ \ \ \ \ \ \ \mathclap{\displaystyle\int\limits_n}\mathclap{\textstyle\sum}\ \ \qty(\Psi^n_q,\qty(-1)^{\mathsf F} \Psi^n_q)\\
+    \Tr\qty[\qty(-1)^{\mathsf F}]&=\ \ \mathclap{\displaystyle\int\limits_n}\mathclap{\textstyle\sum}\ \ \qty(\Psi^n_{\textnormal{vac}},\qty(-1)^{\mathsf F}\Psi^n_{\textnormal{vac}})=\#\qty(\textnormal{vácuos bosônicos})-\#\qty(\textnormal{vácuos fermiônicos})\numberthis\label{indice}
+\end{align*}
+A quantidade definida na \cref{indice} é chamada de \textbf{Índice de Witten}\cite{witten1982}, e ela nos diz que a única possibilidade de não ter um pareamento de um 
+para um de estados bosônicos e fermiônicos é no vácuo. Além disso, vale mencionar que o Índice de Witten é um \textit{invariante topológico} 
+da teoria analisada, isto quer dizer, ele é invariante por mudança de parâmetros na lagrangiana. Uma das principais utilidades é na \textit{Quebra 
+espontânea de Super-Simetria}, quando o vácuo da teoria não é super-simétrico. Por exemplo, uma teoria com $\Tr\qty[\qty(-1)^{\mathsf F}]>0$, possui ao menos um vácuo bosônico que 
+não possui parceiro fermiônico, assim,\[Q^A_a\Psi_{\textnormal{vac}}^n=Q^{\dagger B}_{\dot b}\Psi_{\textnormal{vac}}^n=0\] necessariamente, pois não há um vácuo fermiônico disponível para estar no lado 
+direito da igualdade\footnote{Note que a situação $\Tr\qty[\qty(-1)^{\mathsf F}]>0$ possibilita a existência de inúmeros vácuos, porém, assim como é feito na 
+análise de quebra espontânea de simetrias globais, alterações dos parâmetros da lagrangiana promovem certos vácuos --- ou combinações lineares deles --- a estados de partículas sem massa, 
+no nosso caso, para $\Tr\qty[\qty(-1)^{\mathsf F}]>0$, esta promoção de \textit{vácuos falsos} para estados de partículas é feita sempre em pares, uma bosônica e outra fermiônica, até 
+restarem apenas \textit{vácuos verdadeiros} bosônicos, nesta descrição de não quebra espontânea de super-simetria está claro o motivo de $Q^A_a\Psi^n_{\textnormal{vac}}=Q^{\dagger B}_{\dot b}\Psi_{\textnormal{vac}}^n=0$. Uma 
+vez que todos os \textit{vácuos falsos} foram promovidos para estados de partículas ao se variar os parâmetros da lagrangiana, não resta nenhum \textit{vácuo verdadeiro} fermiônico para entrar no lado direito da igualdade.}--- uma vez que não há um número igual de vácuos bosônicos e fermiônicos ---, e assim o vácuo é super-simétrico. O caso de 
+maior interesse físico\footnote{Até agora não há nenhuma evidência experimental da existência dos parceiros super-simétricos dos integrantes do Modelo Padrão, logo, 
+ou a super-simetria é quebrada espontâneamente, ou é quebrada explicitamente. Nem por isso a super-simetria deixa de ser um assunto interessante a ser estudado, teorias super-simétricas 
+fornecem uma grande gama de \textit{toy models} que extraem ao máximo os limites do que é possível uma Teoria Quântica de Campos fazer. Quanto a anomalia da super-simetria, não é possível haver anomalia de super-simetria, 
+pois do contrário, seria necessário modificar a relação de comutação da \cref{qp}, o que já foi mostrado que é impossível, devido as identidades de Jacobi.} é $\Tr\qty[\qty(-1)^{\mathsf F}]=0$, neste caso, todos os vácuos 
+bosônicos possuem parceiros fermiônicos, então é em princípio \textbf{possível}, mas não necessário, que\[Q^A_a\Psi^n_{\textnormal{vac bosônico}}\propto\Psi^m_{\textnormal{vac fermiônico}}\]De forma que o vácuo não seja super-simétrico\footnote{Na presença 
+de quebra espontânea de super-simetria, ao contrário de quebra espontânea de simetrias globais, temos a presença de um \textit{férmion} de Nambu-Goldstone. Neste caso, como uma das direções do potencial é plana --- 
+a direção do férmion sem massa que sinaliza a quebra espontânea de super-simetria ---, e a outra direção é não plana, possuímos uma disparidade nas energias dos estados, isto é, a energia do estado de vácuo é positiva não nula, do 
+contrário da energia do vácuo super-simétrico que é zero. 
+De fato, a energia do estado de vácuo tem o papel de parâmetro de ordem da quebra espontânea de super-simetria.}.

@@ -1,0 +1,452 @@
+\section{Poincarè Group Representations}
+
+The Poincarè Group is parametrized as,
+
+\begin{align}
+    U\qty(\Lambda, a) & = \exp\qty(+\frac\im 2\omega_{\mu\nu}M^{\mu\nu}-\im a_\mu P^\mu)\nonumber
+\end{align}
+
+With the multiplication law,
+
+\begin{align}
+    U\qty(\bar \Lambda, \bar a)U\qty(\Lambda, a) & = U\qty(\bar\Lambda\Lambda, \bar\Lambda a+\bar a) \nonumber
+\end{align}
+
+Which we can use to derive the algebra,
+
+\begin{align}
+    U\qty(\Lambda,a)U\qty(\bar\Lambda,\bar a)U^{-1}\qty(\Lambda,a)&=U\qty(\Lambda,a)U\qty(\bar\Lambda,\bar a)U\qty(\Lambda^{-1},-\Lambda^{-1}a)\nonumber\\
+    U\qty(\Lambda,a)U\qty(\bar\Lambda,\bar a)U^{-1}\qty(\Lambda,a)&=U\qty(\Lambda,a)U\qty(\bar\Lambda\Lambda^{-1},-\bar\Lambda\Lambda^{-1}a+\bar a)\nonumber\\
+    U\qty(\Lambda,a)U\qty(\bar\Lambda,\bar a)U^{-1}\qty(\Lambda,a)&=U\qty(\Lambda\bar\Lambda\Lambda^{-1},-\Lambda\bar\Lambda\Lambda^{-1}a+\Lambda\bar a+a)\nonumber\\
+    U\qty(\Lambda,a)U\qty(\mathbbm 1+\bar\omega,\bar a)U^{-1}\qty(\Lambda,a)&=U\qty(\mathbbm 1 +\Lambda\bar\omega\Lambda^{-1},-\Lambda\bar\omega\Lambda^{-1}a+\Lambda\bar a)\nonumber\\
+    U\qty(\Lambda,a)\qty[\mathbbm 1 +\frac\im 2{\bar\omega}_{\mu\nu}M^{\mu\nu}-\im {\bar a}_\mu P^\mu]U^{-1}\qty(\Lambda,a)&=\mathbbm 1 +\frac\im 2\qty(\Lambda\bar\omega\Lambda^{-1})_{\alpha\beta}M^{\alpha\beta}-\im \qty(\Lambda \bar a-\Lambda \bar \omega\Lambda^{-1} a)_\alpha P^\alpha \nonumber\\
+    \frac\im 2{\bar\omega}_{\mu\nu}UM^{\mu\nu}U^{-1}-\im {\bar a}_\mu UP^\mu U^{-1}&=\frac\im 2\qty(\Lambda\bar\omega\Lambda^{-1})_{\alpha\beta}M^{\alpha\beta}-\im \qty(\Lambda \bar a-\Lambda \bar \omega\Lambda^{-1} a)_\alpha P^\alpha \nonumber
+\end{align}
+
+As the generators are independent,
+
+\begin{align}
+    &\begin{cases}
+        {\bar\omega}_{\mu\nu}UM^{\mu\nu}U^{-1}&=\qty(\Lambda\bar\omega\Lambda^{-1})_{\alpha\beta}M^{\alpha\beta}+2\qty(\Lambda \bar \omega\Lambda^{-1} a)_\alpha P^\alpha \\
+        {\bar a}_\mu UP^\mu U^{-1}&=\qty(\Lambda \bar a )_\alpha P^\alpha
+    \end{cases}\nonumber\\
+    &\begin{cases}
+        {\bar\omega}_{\mu\nu}UM^{\mu\nu}U^{-1}&=\tensor{\Lambda}{_\alpha^\mu}\tensor{{\bar\omega}}{_\mu_\nu}\tensor{{\Lambda^{-1}}}{^\nu_\beta}M^{\alpha\beta} +2\tensor{\Lambda}{_\alpha^\mu}\tensor{{\bar \omega}}{_\mu_\nu}\tensor{{\Lambda^{-1}}}{^\nu_\beta} a^\beta P^\alpha \\
+        {\bar a}_\mu UP^\mu U^{-1}&=\tensor{\Lambda}{_\alpha^\mu}\tensor{{\bar a}}{_\mu} P^\alpha 
+    \end{cases}\nonumber\\
+    &\begin{cases}
+        UM^{\mu\nu}U^{-1}&=\tensor{\Lambda}{_\alpha^\mu}\tensor{\Lambda}{_\beta^\nu}\qty(M^{\alpha\beta} -a^\alpha P^\beta +a^\beta P^\alpha) \\
+        UP^\mu U^{-1}&=\tensor{\Lambda}{_\alpha^\mu} P^\alpha 
+    \end{cases}\nonumber
+\end{align}
+
+Expanding again gives us the commutation relations,
+
+\begin{align}
+    &\qty(\mathbbm 1 +\frac\im 2\omega_{\alpha\beta}M^{\alpha\beta}-\im a_\alpha P^\alpha)M^{\mu\nu}\qty(\mathbbm 1 -\frac\im 2\omega_{\alpha\beta}M^{\alpha\beta}+\im a_\alpha P^\alpha)=\nonumber\\&\quad\quad\quad\quad\quad\quad\quad\quad\qty(\tensor{\delta}{_\alpha^\mu}+\tensor{\omega}{_\alpha^\mu})\qty(\tensor{\delta}{_\beta^\nu}+\tensor{\omega}{_\beta^\nu})\qty(M^{\alpha\beta}-a^\alpha P^\beta+a^\beta P^\alpha)\nonumber\\
+    &\frac\im 2\omega_{\alpha\beta}\qty(M^{\alpha\beta}M^{\mu\nu}-M^{\mu\nu}M^{\alpha\beta})-\im a_\alpha\qty( P^\alpha M^{\mu\nu}-M^{\mu\nu} P^\alpha)=\nonumber\\&\quad\quad\quad\quad\quad\quad\quad\quad M^{\mu\beta}\tensor{\omega}{_\beta^\nu}+\tensor{\omega}{_\alpha^\mu}M^{\alpha\nu}-a^\mu P^\nu+a^\nu P^\mu\nonumber
+\end{align}
+
+Rewriting,
+
+\begin{align}
+    &\begin{cases}
+        \frac\im 2\omega_{\alpha\beta}\comm{M^{\alpha\beta}}{M^{\mu\nu}}&=\omega_{\alpha\beta}\qty(g^{\beta\mu}M^{\alpha\nu}-g^{\alpha\nu}M^{\mu\beta})\\
+        \im a_\alpha\comm{P^\alpha}{M^{\mu\nu}}&=a_\alpha\qty(g^{\alpha\mu}P^\nu-g^{\alpha\nu}P^{\mu})
+    \end{cases}\nonumber\\
+    &\begin{cases}
+        \comm{M^{\alpha\beta}}{M^{\mu\nu}}&=\im\qty(g^{\alpha\mu}M^{\beta\nu}-g^{\beta\mu}M^{\alpha\nu}+g^{\beta\nu}M^{\alpha\mu}-g^{\alpha\nu}M^{\beta\mu})\\
+        \comm{P^\alpha}{M^{\mu\nu}}&=\im\qty(g^{\alpha\nu}P^\mu-g^{\alpha\mu}P^{\nu})
+    \end{cases}\nonumber
+\end{align}
+
+The full algebra is then,
+
+\begin{align}
+    \begin{cases}
+        \comm{M^{\alpha\beta}}{M^{\mu\nu}}&=\im\qty(g^{\alpha\mu}M^{\beta\nu}-g^{\beta\mu}M^{\alpha\nu}+g^{\beta\nu}M^{\alpha\mu}-g^{\alpha\nu}M^{\beta\mu})\\
+        \comm{P^\alpha}{M^{\mu\nu}}&=\im\qty(g^{\alpha\nu}P^\mu-g^{\alpha\mu}P^{\nu})\\
+        \comm{P^\alpha}{P^\mu}&=0
+    \end{cases}\nonumber
+\end{align}
+
+In our conventions `$\epsilon_{\mu\nu\alpha\beta}$' is the totally anti-symmetric tensor, with the condition `$\epsilon_{0123}=+1$'. The totally anti-symmetric tensor in three dimensions is `$\epsilon_{ijk}=\epsilon_{0ijk}$'. We define,
+
+\begin{align}
+    \vb J = J_i&=\frac12\epsilon_{ijk}M^{jk}\nonumber\\
+    \vb K = K_i&=M^{i0}\nonumber
+\end{align}
+
+And now compute the commutation between these new generators,
+
+\begin{align}
+    \comm{J_i}{J_j}&=\frac14\epsilon_{iab}\epsilon_{jlm}\comm{M^{ab}}{M^{lm}}\nonumber\\
+    &=\frac\im 4\epsilon_{iab}\epsilon_{jlm}\qty(g^{al}M^{bm}-g^{bl}M^{am}+g^{bm}M^{al}-g^{am}M^{bl})\nonumber\\
+    &=\frac\im 2\epsilon_{iab}\epsilon_{jlm}\qty(g^{al}M^{bm}+g^{bm}M^{al})\nonumber\\
+    &=\frac\im 2\epsilon_{iab}\epsilon_{jlm}\qty(g^{al}M^{bm}-g^{am}M^{bl})\nonumber\\
+    &=\im\epsilon_{iab}\epsilon_{jlm}g^{al}M^{bm}=\im\tensor{\epsilon}{_i^l_b}\epsilon_{jlm}M^{bm}\nonumber\\
+    &=\im\tensor{\epsilon}{^l_b_i}\epsilon_{lmj}M^{bm}=\im\qty(g_{bm}g_{ij}-\tensor{g}{_b_j}\tensor{g}{_i_m})M^{bm}\nonumber\\
+    &=-\frac\im2\qty(\tensor{g}{_b_j}\tensor{g}{_m_i}-\tensor{g}{_b_i}\tensor{g}{_m_j})M^{bm}=\frac\im2\tensor{\epsilon}{_l_b_m}\tensor{\epsilon}{^l_i_j}M^{bm}\nonumber\\
+    &=\im\tensor{\epsilon}{_i_j^l}J_l\nonumber
+\end{align}
+
+\begin{align}
+    \comm{J_i}{K_j}&=\frac12\epsilon_{iab}\comm{M^{ab}}{M^{j0}}\nonumber\\
+    &=\frac\im2\epsilon_{iab}\qty(\tensor{g}{^a_j}M^{b0}-\tensor{g}{^b_j}M^{a0}+g^{b0}\tensor{M}{^a_j}-g^{a0}\tensor{M}{^b_j})\nonumber\\
+    &=\frac\im2\epsilon_{iab}2\tensor{g}{^a_j}M^{b0}=\im\epsilon_{ijb}M^{b0}\nonumber\\
+    &=\im\epsilon_{ijk}K^k\nonumber
+\end{align}
+
+\begin{align}
+    \comm{K_i}{K_j}&=\comm{M^{i0}}{M^{j0}}\nonumber\\
+    &=\im\qty(g_{ij}M^{00}-\tensor{g}{_i^0}\tensor{M}{^0_j}+\tensor{g}{^0^0}M_{ij}-\tensor{g}{^0_j}\tensor{M}{^i_0})\nonumber\\
+    &=-\im M_{ij}=-\im g_{ia}g_{jb}M^{ab}\nonumber\\
+    &=-\frac\im2\qty(g_{ia}g_{jb}-g_{ib}g_{ja})M^{ab}\nonumber\\
+    &=-\frac\im2\tensor{\epsilon}{^l_i_j}\epsilon_{lab}M^{ab}\nonumber\\
+    &=-\im\epsilon_{ijk}J^{k}\nonumber
+\end{align}
+
+So the full Lorentz algebra is,
+
+\begin{align}
+    \begin{cases}
+        \comm{J_i}{J_j}&=\im\tensor{\epsilon}{_i_j_l}J^l\\
+        \comm{J_i}{K_j}&=\im\epsilon_{ijk}K^k\\
+        \comm{K_i}{K_j}&=-\im\epsilon_{ijk}J^{k}
+    \end{cases}\nonumber
+\end{align}
+
+We diagonalize it by introducing,
+
+\begin{align}
+    \begin{cases}
+        N_i&=\frac12\qty(J_i-\im K_i)\\
+        N^\dagger_i&=\frac12\qty(J_i+\im K_i)
+    \end{cases}\nonumber
+\end{align}
+
+So the new diagonalized algebra is,
+
+\begin{align}
+    \comm{N_i}{N_j}&=\frac14\comm{J_i-\im K_i}{J_j-\im K_j}\nonumber\\
+    &=\frac\im4\epsilon_{ijk}J^k+\frac14\epsilon_{ijk}K^k+\frac14\epsilon_{ijk}K^k+\frac\im4\epsilon_{ijk}J^k\nonumber\\
+    &=\im\epsilon_{ijk}\frac12\qty(J^k-\im K^k)\nonumber\\
+    &=\im\epsilon_{ijk}N^k\nonumber
+\end{align}
+
+\begin{align}
+    \comm{N^\dagger_i}{N^\dagger_j}&=\frac14\comm{J_i+\im K_i}{J_j+\im K_j}\nonumber\\
+    &=\frac\im4\epsilon_{ijk}J^k-\frac14\epsilon_{ijk}K^k-\frac14\epsilon_{ijk}K^k+\frac\im4\epsilon_{ijk}J^k\nonumber\\
+    &=\im\epsilon_{ijk}\frac12\qty(J^k+\im K^k)\nonumber\\
+    &=\im\epsilon_{ijk}{N^\dagger}^k\nonumber
+\end{align}
+
+\begin{align}
+    \comm{N_i}{N^\dagger_j}&=\frac14\comm{J_i-\im K_i}{J_j+\im K_j}\nonumber\\
+    &=\frac\im4\epsilon_{ijk}j^k-\frac14\epsilon_{ijk}K^k+\frac14\epsilon_{ijk}K^k-\frac\im4\epsilon_{ijk}J^k\nonumber\\
+    &=0\nonumber
+\end{align}
+
+Hence we got the algebra diagonalized,
+
+\begin{align}
+    \begin{cases}
+        \comm{N_i}{N_j}&=\im\epsilon_{ijk}N^k\\
+        \comm{N^\dagger_i}{N^\dagger_j}&=\im\epsilon_{ijk}{N^\dagger}^k\\
+        \comm{N_i}{N^\dagger_j}&=0
+    \end{cases}\nonumber
+\end{align}
+
+So all the representations of the Lorentz group can be constructed from the fundamental representation of these two `$\mathfrak{su}\qty(2)$' algebra, which are indexed by two half integers `$\qty(n,n')$' corresponding to `$\vb N, {\vb N}^\dagger$'. The fundamental representation is,
+
+\begin{align}
+    \vb N=\frac{\boldsymbol\sigma}{2};\ \ \ \sigma_1=\mqty(0&1\\1&0),\ \sigma_2=\mqty(0&-\im\\\im&0),\ \sigma_3=\mqty(1&0\\0&-1)\nonumber
+\end{align}
+
+The index structure is to be red,
+
+\begin{align}
+    \tensor{{\vb N}}{_a^b}=\frac12\tensor{{\boldsymbol\sigma}}{_a^b}\nonumber
+\end{align}
+
+Together with,
+
+\begin{align}
+    {\vb N}^\dagger=0\nonumber
+\end{align}
+
+This is called the `$\qty(\frac12,0)$' representation, which can be get by inverting the relations to give,
+
+\begin{align}
+    \vb J&=\frac12\boldsymbol\sigma,\ \ \ \vb K=\frac\im2\boldsymbol\sigma\nonumber\\
+    \frac12\epsilon_{ijk}M^{jk}&=\frac12\sigma_i,\ \ \ M^{i0}=\frac\im2\sigma^i\nonumber\\
+    M_{\textnormal L}^{lm}&=\frac12\tensor{\epsilon}{^l^m_i}\sigma^i,\ \ \ M_{\textnormal L}^{i0}=\frac\im2\sigma^i\nonumber
+\end{align}
+
+This representation is called the Left-Handed one. As this is a `$\mathfrak{su}\qty(2)$' representation, it's well known that the representations of it are not equivalent to the complex conjugate representations, which we're going to call the Right-Handed, or, `$\qty(0,\frac12)$'. For this we're going to restore the indexes,
+
+\begin{align}
+    \tensor{{M_{\textnormal L}^{lm}}}{_a^b}&=\frac12\tensor{\epsilon}{^l^m_i}\tensor{{\sigma^i}}{_a^b},\ \ \ \tensor{{M_{\textnormal L}^{i0}}}{_a^b}=\frac\im2\tensor{{\sigma^i}}{_a^b}\nonumber
+\end{align}
+
+Under complex conjugate it will transform differently under Lorentz transformations, so, we'll keep track of this by using dotted index, `$\dot a$'. So,
+
+\begin{align}
+    \qty(\tensor{{M_{\textnormal L}^{lm}}}{_a^b})^\ast&=\frac12\tensor{\epsilon}{^l^m_i}\qty(\tensor{{\sigma^i}}{_a^b})^\ast,\ \ \ \qty(\tensor{{M_{\textnormal L}^{i0}}}{_a^b})^\ast=-\frac\im2\qty(\tensor{{\sigma^i}}{_a^b})^\ast\nonumber\\
+    \tensor{{{M}_{\textnormal R}^{lm}}}{_{\dot a}^{\dot b}}=\tensor{{{M^\ast}_{\textnormal L}^{lm}}}{_{\dot a}^{\dot b}}&=\frac12\tensor{\epsilon}{^l^m_i}\tensor{{{\sigma^i}^\ast}}{_{\dot a}^{\dot b}},\ \ \ \tensor{{M_{\textnormal R}^{i0}}}{_{\dot a}^{\dot b}}=\tensor{{{M^\ast}_{\textnormal L}^{i0}}}{_{\dot a}^{\dot b}}=-\frac\im2\tensor{{{\sigma^i}^\ast}}{_{\dot a}^{\dot b}}\nonumber\\
+    \tensor{{{M}_{\textnormal R}^{lm}}}{^{\dot b}_{\dot a}}&=\frac12\tensor{\epsilon}{^l^m_i}\tensor{{{\sigma^i}}}{^{\dot b}_{\dot a}},\ \ \ \tensor{{M_{\textnormal R}^{i0}}}{^{\dot b}_{\dot a}}=-\frac\im2\tensor{{{\sigma^i}}}{^{\dot b}_{\dot a}}\nonumber
+\end{align}
+
+Or with the index structure implicit,
+
+\begin{align}
+    M_{\textnormal R}^{lm}&=\frac12\tensor{\epsilon}{^l^m_i}{\sigma^i},\ \ \ M_{\textnormal R}^{i0}=-\frac\im2{\sigma^i}\nonumber
+\end{align}
+
+Which consistently can be verified to be generated by,
+
+\begin{align}
+    \vb N = 0,\ \ \ {\vb N}^\dagger=\frac12{\boldsymbol\sigma}\nonumber
+\end{align}
+
+Which gives a motif for calling this the `$\qty(0,\frac12)$' representation. Of course these two representations cannot, alone, be a vector. As they must be of spin `$\frac12$' and a vector should be of spin `$1$'. Possible vectorial representations encompass `$\qty(\frac32,0);\qty(0,\frac32);\qty(\frac12,\frac12)$'. The most promising is the `$\qty(\frac12,\frac12)$' as it has only \textit{bosonic} spins, also, it has the correct dimension `$4$'. Of course it is valid that,
+
+\begin{align}
+    \qty(\frac12,0)\otimes\qty(0,\frac12)=\qty(\frac12,\frac12)\nonumber
+\end{align}
+
+Which say me must be able to rewrite a vectorial index as a Left-Handed and a Right-Handed spinorial indexes. This can be seen more clearly in the group theoretical relation,
+
+\begin{align}
+    \qty(\frac12,0)\otimes\qty(0,\frac12)\otimes\qty(\frac12,\frac12)&=\qty(0,0)\oplus\qty(1,0)\oplus\qty(0,1)\oplus\qty(1,1)\nonumber
+\end{align}
+
+It's clear the left side should be a quantity with three indexes, `$\tensor{G}{^\mu^{\dot b}_a}$', but, on the right side we have a interesting combination of a scalar, together with more complicated structure. The presence of a scalar is a signal of the presence of a invariant quantity, just as for the vectorial indexes we have the metric and the Levi-Civita. The equation that sets it as a invariant quantity is,
+
+\begin{align}
+    \tensor{\Lambda}{^\alpha_\beta}\tensor{L\qty(\Lambda)}{_a^b}\tensor{{R^{-1}}\qty(\Lambda)}{^{\dot b}_{\dot a}}\tensor{\sigma}{^\beta_b_{\dot b}}=\tensor{\sigma}{^\alpha_a_{\dot a}}\nonumber\\
+    \qty(\tensor{\delta}{^\alpha_\beta}+\frac\im2\omega_{\mu\nu}\tensor{{{M_{\textnormal V}^{\mu\nu}}}}{^\alpha_\beta})\qty(\tensor{\delta}{_a^b}+\frac\im2\omega_{\mu\nu}\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^b})\qty(\tensor{\delta}{^{\dot b}_{\dot a}}-\frac\im2\omega_{\mu\nu}\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{^{\dot b}_{\dot a}})\tensor{\sigma}{^\beta_b_{\dot b}}=\tensor{\sigma}{^\alpha_a_{\dot a}}\nonumber\\
+    \frac\im2\omega_{\mu\nu}\qty{\tensor{{{M_{\textnormal V}^{\mu\nu}}}}{^\alpha_\beta}\tensor{\sigma}{^\beta_a_{\dot a}}+\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^b}\tensor{\sigma}{^\alpha_b_{\dot a}}-\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{^{\dot b}_{\dot a}}\tensor{\sigma}{^\alpha_a_{\dot b}}}&=0\nonumber
+\end{align}
+
+We're lucky, because we do know,
+
+\begin{align}
+    \tensor{{{M_{\textnormal V}^{\mu\nu}}}}{^\alpha_\beta}&=\frac1\im g^{\mu\alpha}\tensor{g}{^\nu_\beta}-\frac1\im g^{\nu\alpha}\tensor{g}{^\mu_\beta}\nonumber
+\end{align}
+
+Thus,
+
+\begin{align}
+    \qty(g^{\mu\alpha}\tensor{g}{^\nu_\beta}- g^{\nu\alpha}\tensor{g}{^\mu_\beta})\tensor{\sigma}{^\beta_a_{\dot a}}+\im\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^b}\tensor{\sigma}{^\alpha_b_{\dot a}}-\im\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{^{\dot b}_{\dot a}}\tensor{\sigma}{^\alpha_a_{\dot b}}&=0\nonumber
+\end{align}
+
+To solve this equation we analyze it case by case, starting by, `$\alpha=0,\mu=i,\nu=j$'
+
+\begin{align}
+    \tensor{{{M_{\textnormal L}^{ij}}}}{_a^b}\tensor{\sigma}{^0_b_{\dot a}}-\tensor{{{M_{\textnormal R}^{ij}}}}{^{\dot b}_{\dot a}}\tensor{\sigma}{^0_a_{\dot b}}&=0\nonumber\\
+    \frac12\tensor{\epsilon}{^i^j_k}\tensor{{\sigma^k}}{_a^b}\tensor{\sigma}{^0_b_{\dot a}}-\frac12\tensor{\epsilon}{^i^j_k}\tensor{{{\sigma^k}}}{^{\dot b}_{\dot a}}\tensor{\sigma}{^0_a_{\dot b}}&=0\nonumber\\
+    \tensor{{\sigma^k}}{_a^b}\tensor{\sigma}{^0_b_{\dot a}}-\tensor{{{\sigma^k}}}{^{\dot b}_{\dot a}}\tensor{\sigma}{^0_a_{\dot b}}&=0\nonumber
+\end{align}
+
+%For `$k=1,a=1,\dot a=\dot1$',
+
+% \begin{align}
+%     \tensor{{\sigma^1}}{_1^b}\tensor{\sigma}{^0_b_{\dot 1}}-\tensor{{{\sigma^1}^\ast}}{_{\dot 1}^{\dot b}}\tensor{\sigma}{^0_1_{\dot b}}&=0\nonumber\\
+%     \tensor{{\sigma^1}}{_1^1}\tensor{\sigma}{^0_1_{\dot 1}}+\tensor{{\sigma^1}}{_1^2}\tensor{\sigma}{^0_2_{\dot 1}}-\tensor{{{\sigma^1}^\ast}}{_{\dot 1}^{\dot 1}}\tensor{\sigma}{^0_1_{\dot 1}}-\tensor{{{\sigma^1}^\ast}}{_{\dot 1}^{\dot 2}}\tensor{\sigma}{^0_1_{\dot 2}}&=0\rightarrow \tensor{\sigma}{^0_1_{\dot 2}}=\tensor{\sigma}{^0_2_{\dot 1}}\nonumber
+% \end{align}
+
+% For `$k=1,a=2,\dot a=\dot1$',
+
+% \begin{align}
+%     \tensor{{\sigma^1}}{_2^b}\tensor{\sigma}{^0_b_{\dot 1}}-\tensor{{{\sigma^1}^\ast}}{_{\dot 1}^{\dot b}}\tensor{\sigma}{^0_2_{\dot b}}&=0\nonumber\\
+%     \tensor{{\sigma^1}}{_2^1}\tensor{\sigma}{^0_1_{\dot 1}}+\tensor{{\sigma^1}}{_2^2}\tensor{\sigma}{^0_2_{\dot 1}}-\tensor{{{\sigma^1}^\ast}}{_{\dot 1}^{\dot 1}}\tensor{\sigma}{^0_2_{\dot 1}}-\tensor{{{\sigma^1}^\ast}}{_{\dot 1}^{\dot 2}}\tensor{\sigma}{^0_2_{\dot 2}}&=0\rightarrow \tensor{\sigma}{^0_1_{\dot 1}}=\tensor{\sigma}{^0_2_{\dot 2}}\nonumber
+% \end{align}
+
+% For `$k=3,a=2,\dot a=\dot1$',
+
+% \begin{align}
+%     \tensor{{\sigma^3}}{_2^b}\tensor{\sigma}{^0_b_{\dot 1}}-\tensor{{{\sigma^3}^\ast}}{_{\dot 1}^{\dot b}}\tensor{\sigma}{^0_2_{\dot b}}&=0\nonumber\\
+%     \tensor{{\sigma^3}}{_2^1}\tensor{\sigma}{^0_1_{\dot 1}}+\tensor{{\sigma^3}}{_2^2}\tensor{\sigma}{^0_2_{\dot 1}}-\tensor{{{\sigma^3}^\ast}}{_{\dot 1}^{\dot 1}}\tensor{\sigma}{^0_2_{\dot 1}}-\tensor{{{\sigma^3}^\ast}}{_{\dot 1}^{\dot 2}}\tensor{\sigma}{^0_2_{\dot 2}}&=0\rightarrow \tensor{\sigma}{^0_2_{\dot 1}}=0\nonumber
+% \end{align}
+
+By Schur's lemma we conclude that,
+
+\begin{align}
+    \tensor{\sigma}{^0_a_{\dot a}}&=\delta_{a\dot a}\nonumber
+\end{align}
+
+Where we choose the normalization to be one. To get the other three matrices we have to look at the cases `$\mu=\alpha=0,\nu=i$',
+
+\begin{align}
+    \qty(g^{00}\tensor{g}{^i_\beta}- g^{i0}\tensor{g}{^0_\beta})\tensor{\sigma}{^\beta_a_{\dot a}}+\im\tensor{{{M_{\textnormal L}^{0i}}}}{_a^b}\tensor{\sigma}{^0_b_{\dot a}}-\im\tensor{{{M_{\textnormal R}^{0i}}}}{^{\dot b}_{\dot a}}\tensor{\sigma}{^0_a_{\dot b}}&=0\nonumber\\
+    -\tensor{\sigma}{^i_a_{\dot a}}-\im\tensor{{{M_{\textnormal L}^{i0}}}}{_a^b}\delta_{b\dot a}+\im\tensor{{{M_{\textnormal R}^{i0}}}}{^{\dot b}_{\dot a}}\delta_{a\dot b}&=0\nonumber\\
+    \frac12\tensor{\sigma}{^i_a^b}\delta_{b\dot a}+\frac12\tensor{{\sigma}}{^i^{\dot b}_{\dot a}}\delta_{a\dot b}&=\tensor{\sigma}{^i_a_{\dot a}}\nonumber
+\end{align}
+
+From this expression is straightforward to check that the solution is,
+
+\begin{align}
+    \tensor{\sigma}{^i_a_{\dot a}}&=\boldsymbol\sigma\nonumber
+\end{align}
+
+Hence, our invariant quantity is,
+
+\begin{align}
+    \tensor{\sigma}{^\mu_a_{\dot a}}&=\qty(\mathbbm 1,\boldsymbol \sigma)\nonumber
+\end{align}
+
+We could want to find a kind of metric in this spinor space to be able to rise and lower the index, for this we can be assured such an object exists due to the group theoretical fact that,
+
+\begin{align}
+    \qty(\frac12,0)\otimes\qty(\frac12,0)&=\qty(0,0)\oplus\qty(1,0)\nonumber
+\end{align}
+
+It's clear that the left side describes an object with two undotted indexes, while the right side describes the sum of a scalar with an other kind of object, the two must possess the same index structure, but, as one of them is a scalar this means that it must be an invariant symbol. We'll call it,
+
+\begin{align}
+    \tensor{L}{_a^c}\tensor{L}{_b^d}\epsilon_{cd}&=\epsilon_{ab}\nonumber\\
+    \qty(\tensor{\delta}{_a^c}+\frac\im2\omega_{\mu\nu}\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^c})\qty(\tensor{\delta}{_b^d}+\frac\im2\omega_{\mu\nu}\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_b^d})\epsilon_{cd}&=\epsilon_{ab}\nonumber\\
+    \tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_b^d}\epsilon_{ad}+\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^c}\epsilon_{cb}&=0\nonumber\\
+    \tensor{{{M_{\textnormal L}^{i0}}}}{_b^d}\epsilon_{ad}&=-\tensor{{{M_{\textnormal L}^{i0}}}}{_a^c}\epsilon_{cb}\nonumber\\
+    \tensor{\sigma}{^i_b^d}\epsilon_{ad}&=-\tensor{\sigma}{^i_a^c}\epsilon_{cb}\nonumber\\
+    \tensor{\sigma}{^i_b^d}\epsilon_{ad}&=-\tensor{\sigma}{^i_a^c}\epsilon_{cb}\nonumber
+\end{align}
+
+For `$i=1,a=1,b=1$',
+
+\begin{align}
+    \tensor{\sigma}{^1_1^d}\epsilon_{1d}&=-\tensor{\sigma}{^1_1^c}\epsilon_{c1}\nonumber\\
+    \tensor{\sigma}{^1_1^1}\epsilon_{11}+\tensor{\sigma}{^1_1^2}\epsilon_{12}&=-\tensor{\sigma}{^1_1^1}\epsilon_{11}-\tensor{\sigma}{^1_1^2}\epsilon_{21}\rightarrow\epsilon_{12}=-\epsilon_{21}\nonumber
+\end{align}
+
+For `$i=3,a=1,b=1$',
+
+\begin{align}
+    \tensor{\sigma}{^3_1^d}\epsilon_{1d}&=-\tensor{\sigma}{^3_1^c}\epsilon_{c1}\nonumber\\
+    \tensor{\sigma}{^3_1^1}\epsilon_{11}+\tensor{\sigma}{^3_1^2}\epsilon_{12}&=-\tensor{\sigma}{^3_1^1}\epsilon_{11}-\tensor{\sigma}{^3_1^2}\epsilon_{21}\rightarrow\epsilon_{11}=0\nonumber
+\end{align}
+
+For `$i=3,a=2,b=2$',
+
+\begin{align}
+    \tensor{\sigma}{^3_2^d}\epsilon_{1d}&=-\tensor{\sigma}{^3_2^c}\epsilon_{c2}\nonumber\\
+    \tensor{\sigma}{^3_2^1}\epsilon_{11}+\tensor{\sigma}{^3_2^2}\epsilon_{12}&=-\tensor{\sigma}{^3_2^1}\epsilon_{12}-\tensor{\sigma}{^3_2^2}\epsilon_{22}\rightarrow\epsilon_{22}=0\nonumber
+\end{align}
+
+Which the convention of normalization this gives,
+
+\begin{align}
+    \epsilon_{ab}=\epsilon_{\dot a \dot b}&=\mqty(0&-1\\1&0)\nonumber
+\end{align}
+
+So now we can construct the upper index version of these sigma matrices,
+
+\begin{align}
+    \tensor{{\bar\sigma}}{^\mu^{\dot a}^a}&=\epsilon^{\dot a\dot b}\epsilon^{a b}\tensor{\sigma}{^\mu_ a_{\dot b}}\nonumber\\
+    \tensor{{\bar\sigma}}{^\mu^{\dot a}^a}&=\qty(\mathbbm 1,-\boldsymbol\sigma)\nonumber
+\end{align}
+
+Other identities which are going to be useful are,
+
+\begin{align}
+    g_{\mu\nu}\tensor{\sigma}{^\mu_a_{\dot a}}\tensor{\sigma}{^\nu_b_{\dot b}}&=-\delta_{a\dot a}\delta_{b\dot b}+\tensor{\sigma}{^i_a_{\dot a}}\tensor{\sigma}{_i_b_{\dot b}}\nonumber\\
+    &=-\delta_{a\dot a}\delta_{b\dot b}+\qty(\delta_{a1}\delta_{\dot a\dot 2}+\delta_{a2}\delta_{\dot a\dot 1})\qty(\delta_{b1}\delta_{\dot b\dot 2}+\delta_{b2}\delta_{\dot b\dot 1})-\qty(\delta_{a1}\delta_{\dot a\dot 2}-\delta_{a2}\delta_{\dot a\dot 1})\qty(\delta_{b1}\delta_{\dot b\dot 2}-\delta_{b2}\delta_{\dot b\dot 1})\nonumber\\&\quad\quad\quad\quad+\qty(\delta_{a1}\delta_{\dot a\dot 1}-\delta_{a2}\delta_{\dot a \dot 2})\qty(\delta_{b1}\delta_{\dot b\dot 1}-\delta_{b2}\delta_{\dot b\dot 2})\nonumber\\
+    &=-\delta_{a\dot a}\delta_{b\dot b}+2\textcolor{red}{\delta_{a1}\delta_{\dot b\dot 1}\qty(\delta_{\dot a\dot 2}\delta_{b2})}+2\textcolor{blue}{\delta_{a2}\delta_{\dot b\dot 2}\qty(\delta_{\dot a\dot 1}\delta_{b1})}+\textcolor{red}{\delta_{a1}\delta_{\dot a\dot 1}\qty(\delta_{b1}\delta_{\dot b\dot 1})}+\textcolor{blue}{\delta_{a2}\delta_{\dot a\dot 2}\qty(\delta_{b2}\delta_{\dot b\dot 2})}\nonumber\\
+    &\quad\quad\quad\quad-\delta_{a1}\delta_{\dot a\dot 1}\qty(\delta_{b2}\delta_{\dot b \dot 2})-\delta_{a2}\delta_{\dot a\dot 2}\qty(\delta_{b1}\delta_{\dot b\dot 1})\nonumber\\
+    &=-\delta_{a\dot a}\delta_{b\dot b}+\delta_{a1}\delta_{\dot b\dot 1}\qty(\delta_{b1}\delta_{\dot a\dot 1}+\delta_{b2}\delta_{\dot a\dot 2})+\delta_{a2}\delta_{\dot b\dot 2}\qty(\delta_{b1}\delta_{\dot a\dot 1}+\delta_{b2}\delta_{\dot a\dot 2})\nonumber\\
+    &\quad\quad\quad\quad+\delta_{a1}\delta_{\dot b\dot 1}\qty(\delta_{\dot a\dot 2}\delta_{b2})+\delta_{a2}\delta_{\dot b\dot 2}\qty(\delta_{\dot a\dot 1}\delta_{b1})-\delta_{a1}\delta_{\dot a\dot 1}\qty(\delta_{b2}\delta_{\dot b \dot 2})-\delta_{a2}\delta_{\dot a\dot 2}\qty(\delta_{b1}\delta_{\dot b\dot 1})\nonumber\\
+    &=-\delta_{a\dot a}\delta_{b\dot b}+2\qty(\delta_{a1}\delta_{\dot b\dot 1}+\delta_{a2}\delta_{\dot b\dot 2})\qty(\delta_{b1}\delta_{\dot a\dot 1}+\delta_{b2}\delta_{\dot a\dot 2})\nonumber\\
+    &\quad\quad\quad\quad-\delta_{a1}\delta_{\dot b\dot 1}\delta_{b1}\delta_{\dot a\dot 1}-\delta_{a2}\delta_{\dot b\dot 2}\delta_{b2}\delta_{\dot a\dot 2}-\delta_{a1}\delta_{\dot a\dot 1}\delta_{b2}\delta_{\dot b \dot 2}-\delta_{a2}\delta_{\dot a\dot 2}\delta_{b1}\delta_{\dot b\dot 1}\nonumber\\
+    &=-\delta_{a\dot a}\delta_{b\dot b}+2\delta_{a\dot b}\delta_{b\dot a}\nonumber\\
+    &\quad\quad\quad\quad-\qty(\delta_{a1}\delta_{\dot a\dot 1}+\delta_{a2}\delta_{\dot a\dot 2})\qty(\delta_{b1}\delta_{\dot b\dot 1}+\delta_{b2}\delta_{\dot b\dot 2})\nonumber\\
+    g_{\mu\nu}\tensor{\sigma}{^\mu_a_{\dot a}}\tensor{\sigma}{^\nu_b_{\dot b}}&=-2\qty(\delta_{a\dot a}\delta_{b\dot b}-\delta_{a\dot b}\delta_{b\dot a})\nonumber\\
+    g_{\mu\nu}\tensor{\sigma}{^\mu_a_{\dot a}}\tensor{\sigma}{^\nu_b_{\dot b}}&=-2\epsilon_{ab}\epsilon_{\dot a\dot b}\nonumber
+\end{align}
+
+Other useful expression is,
+
+\begin{align}
+    \epsilon^{ab}\epsilon^{\dot a\dot b}\tensor{\sigma}{^\mu_a_{\dot a}}\tensor{\sigma}{^\nu_b_{\dot b}}&=\tensor{\sigma}{^\mu_a_{\dot a}}\tensor{{\bar\sigma}}{^\nu^{\dot a}^a}\nonumber\\
+    \epsilon^{ab}\epsilon^{\dot a\dot b}\tensor{\sigma}{^\mu_a_{\dot a}}\tensor{\sigma}{^\nu_b_{\dot b}}&=\Tr\qty[\sigma^\mu{\bar\sigma}^\nu]=-2g^{\mu\nu}\nonumber
+\end{align}
+
+Now we can go back to the generators to write a full covariant expression for them, that is,
+
+\begin{align}
+    \qty(g^{\mu\alpha}\tensor{g}{^\nu_\beta}- g^{\nu\alpha}\tensor{g}{^\mu_\beta})\tensor{\sigma}{^\beta_a_{\dot a}}+\im\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^b}\tensor{\sigma}{^\alpha_b_{\dot a}}+\im\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{_{\dot a}^{\dot b}}\tensor{\sigma}{^\alpha_a_{\dot b}}&=0\nonumber\\
+    g^{\mu\alpha}\tensor{\sigma}{^\nu_a_{\dot a}}- g^{\nu\alpha}\tensor{\sigma}{^\mu_a_{\dot a}}+\im\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^b}\tensor{\sigma}{^\alpha_b_{\dot a}}+\im\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{_{\dot a}^{\dot b}}\tensor{\sigma}{^\alpha_a_{\dot b}}&=0\nonumber
+\end{align}
+
+Multiplying everything by `$\tensor{\sigma}{_\alpha_c_{\dot c}}$', 
+
+\begin{align}
+    \tensor{\sigma}{^\mu_c_{\dot c}}\tensor{\sigma}{^\nu_a_{\dot a}}- \tensor{\sigma}{^\nu_c_{\dot c}}\tensor{\sigma}{^\mu_a_{\dot a}}+\im\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^b}\tensor{\sigma}{^\alpha_b_{\dot a}}\tensor{\sigma}{_\alpha_c_{\dot c}}+\im\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{_{\dot a}^{\dot b}}\tensor{\sigma}{^\alpha_a_{\dot b}}\tensor{\sigma}{_\alpha_c_{\dot c}}&=0\nonumber\\
+    \tensor{\sigma}{^\mu_c_{\dot c}}\tensor{\sigma}{^\nu_a_{\dot a}}- \tensor{\sigma}{^\nu_c_{\dot c}}\tensor{\sigma}{^\mu_a_{\dot a}}-2\im\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^b}\epsilon_{bc}\epsilon_{\dot a\dot c}-2\im\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{_{\dot a}^{\dot b}}\epsilon_{ac}\epsilon_{\dot b\dot c}&=0\nonumber
+\end{align}
+
+Now we use the identity `$\epsilon^{\dot a\dot c}\epsilon_{\dot a\dot c}=-2$', and the fact that,
+
+\begin{align}
+    \tensor{{M^{\mu\nu}_{\textnormal{L/R}}}}{_a^b}\epsilon_{bc}\epsilon^{ca}=0\nonumber
+\end{align}
+
+Which can be checked to be true with the old version of the generators. Then,
+
+\begin{align}
+    \epsilon^{\dot a\dot c}\tensor{\sigma}{^\mu_c_{\dot c}}\tensor{\sigma}{^\nu_a_{\dot a}}- \epsilon^{\dot a\dot c}\tensor{\sigma}{^\nu_c_{\dot c}}\tensor{\sigma}{^\mu_a_{\dot a}}-2\im\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^b}\epsilon_{bc}\epsilon^{\dot a\dot c}\epsilon_{\dot a\dot c}-\epsilon^{\dot a\dot c}2\im\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{_{\dot a}^{\dot b}}\epsilon_{ac}\epsilon_{\dot b\dot c}&=0\nonumber\\
+    \epsilon^{\dot a\dot c}\tensor{\sigma}{^\mu_c_{\dot c}}\tensor{\sigma}{^\nu_a_{\dot a}}- \epsilon^{\dot a\dot c}\tensor{\sigma}{^\nu_c_{\dot c}}\tensor{\sigma}{^\mu_a_{\dot a}}+4\im\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^b}\epsilon_{bc}&=0\nonumber\\
+    \epsilon^{dc}\epsilon^{\dot a\dot c}\tensor{\sigma}{^\mu_c_{\dot c}}\tensor{\sigma}{^\nu_a_{\dot a}}-\epsilon^{dc}\epsilon^{\dot a\dot c}\tensor{\sigma}{^\nu_c_{\dot c}}\tensor{\sigma}{^\mu_a_{\dot a}}+4\im\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^b}\epsilon^{dc}\epsilon_{bc}&=0\nonumber\\
+    \tensor{{\bar\sigma}}{^\mu^{\dot a}^d}\tensor{\sigma}{^\nu_a_{\dot a}}-\tensor{{\bar\sigma}}{^\nu^{\dot a}^d}\tensor{\sigma}{^\mu_a_{\dot a}}-4\im\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^b}\tensor{\delta}{^d_b}&=0\nonumber
+\end{align}
+
+Now,
+
+\begin{align}
+    4\im\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^d}&=\tensor{\sigma}{^\nu_a_{\dot a}}\tensor{{\bar\sigma}}{^\mu^{\dot a}^d}-\tensor{\sigma}{^\mu_a_{\dot a}}\tensor{{\bar\sigma}}{^\nu^{\dot a}^d}\nonumber\\
+    \tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^d}&=\frac\im 4\qty(\tensor{\sigma}{^\mu_a_{\dot a}}\tensor{{\bar\sigma}}{^\nu^{\dot a}^d}-\tensor{\sigma}{^\nu_a_{\dot a}}\tensor{{\bar\sigma}}{^\mu^{\dot a}^d})\nonumber\\
+    M_{\textnormal L}^{\mu\nu}&=\frac\im 4\qty(\tensor{\sigma}{^\mu}\tensor{{\bar\sigma}}{^\nu}-\tensor{\sigma}{^\nu}\tensor{{\bar\sigma}}{^\mu})\nonumber
+\end{align}
+
+The same can be done for the Right-Handed generator,
+
+\begin{align}
+    \epsilon^{ac}\tensor{\sigma}{^\mu_c_{\dot c}}\tensor{\sigma}{^\nu_a_{\dot a}}- \epsilon^{ac}\tensor{\sigma}{^\nu_c_{\dot c}}\tensor{\sigma}{^\mu_a_{\dot a}}-2\epsilon^{ac}\im\tensor{{{M_{\textnormal L}^{\mu\nu}}}}{_a^b}\epsilon_{bc}\epsilon_{\dot a\dot c}-2\im\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{_{\dot a}^{\dot b}}\epsilon^{ac}\epsilon_{ac}\epsilon_{\dot b\dot c}&=0\nonumber\\
+    \epsilon^{ac}\tensor{\sigma}{^\mu_c_{\dot c}}\tensor{\sigma}{^\nu_a_{\dot a}}- \epsilon^{ac}\tensor{\sigma}{^\nu_c_{\dot c}}\tensor{\sigma}{^\mu_a_{\dot a}}+4\im\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{_{\dot a}^{\dot b}}\epsilon_{\dot b\dot c}&=0\nonumber\\
+    \epsilon^{\dot d\dot c}\epsilon^{ac}\tensor{\sigma}{^\mu_c_{\dot c}}\tensor{\sigma}{^\nu_a_{\dot a}}- \epsilon^{\dot d\dot c}\epsilon^{ac}\tensor{\sigma}{^\nu_c_{\dot c}}\tensor{\sigma}{^\mu_a_{\dot a}}+4\im\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{_{\dot a}^{\dot b}}\epsilon^{\dot d\dot c}\epsilon_{\dot b\dot c}&=0\nonumber\\
+    \tensor{{\bar\sigma}}{^\mu^{\dot d}^a}\tensor{\sigma}{^\nu_a_{\dot a}}-\tensor{{\bar\sigma}}{^\nu^{\dot d}^a}\tensor{\sigma}{^\mu_a_{\dot a}}-4\im\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{_{\dot a}^{\dot b}}\tensor{\delta}{^{\dot d}_{\dot b}}&=0\nonumber
+\end{align}
+
+So,
+
+\begin{align}
+    \tensor{{{M_{\textnormal R}^{\mu\nu}}}}{_{\dot a}^{\dot d}}&=\frac\im 4\qty(\tensor{{\bar\sigma}}{^\nu^{\dot d}^a}\tensor{\sigma}{^\mu_a_{\dot a}}-\tensor{{\bar\sigma}}{^\mu^{\dot d}^a}\tensor{\sigma}{^\nu_a_{\dot a}})\nonumber
+\end{align}
+
+This is not a natural expression, due to the funny index placement, but, it is completely correct. Due to nature of the complex representation not being equivalent to the Left-Handed one, to consider this representation with a more natural index structure we have to fuzz a little bit around the generators, the answer turns out to be,
+
+\begin{align}
+    \tensor{{M_{\textnormal R}^{\mu\nu}}}{^{\dot d}_{\dot a}}=-\qty(\tensor{{{M_{\textnormal R}^{\mu\nu}}}}{_{\dot a}^{\dot d}})^{\textnormal T}&=-\frac\im 4\qty(\tensor{{\bar\sigma}}{^\nu^{\dot d}^a}\tensor{\sigma}{^\mu_a_{\dot a}}-\tensor{{\bar\sigma}}{^\mu^{\dot d}^a}\tensor{\sigma}{^\nu_a_{\dot a}})\nonumber\\
+    M_{\textnormal R}^{\mu\nu}&=\frac\im 4\qty(\tensor{{\bar\sigma}}{^\mu}\tensor{\sigma}{^\nu}-\tensor{{\bar\sigma}}{^\nu}\tensor{\sigma}{^\mu})\nonumber
+\end{align}
+
+Where the more convenient index convention takes place. A very interesting relation which tell us that `$\sigma^\mu$' are part of something bigger is that they obey the following \textit{algebra},
+
+\begin{align}
+    \sigma^\mu{\bar\sigma}^\nu+\sigma^\nu{\bar\sigma}^\mu&=-2g^{\mu\nu}\nonumber\\
+    {\bar\sigma}^\mu\sigma^\nu+{\bar\sigma}^\nu\sigma^\mu&=-2g^{\mu\nu}\nonumber
+\end{align}
+
+We also are going to set a notation for these generators,
+
+\begin{align}
+    M_{\textnormal L}^{\mu\nu}&=\frac\im 4\qty(\tensor{\sigma}{^\mu}\tensor{{\bar\sigma}}{^\nu}-\tensor{\sigma}{^\nu}\tensor{{\bar\sigma}}{^\mu})=\sigma^{\mu\nu}\nonumber\\
+    {M_{\textnormal R}^{\mu\nu}}&=\frac\im 4\qty(\tensor{{\bar\sigma}}{^\mu}\tensor{\sigma}{^\nu}-\tensor{{\bar\sigma}}{^\nu}\tensor{\sigma}{^\mu})={\bar\sigma}^{\mu\nu}\nonumber
+\end{align}
+
+Also some more refined identities,
+
+\begin{align}
+    \sigma^{\mu\nu}&=\frac\im2\epsilon^{\mu\nu\alpha\beta}\sigma_{\alpha\beta}\nonumber\\
+    {\bar\sigma}^{\mu\nu}&=-\frac\im2\epsilon^{\mu\nu\alpha\beta}{\bar\sigma}_{\alpha\beta}\nonumber
+\end{align}

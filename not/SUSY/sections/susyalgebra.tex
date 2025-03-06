@@ -1,0 +1,163 @@
+\section{SUSY Algebra}
+
+The Supersymmetric version of the Poincarè algebra, or the Super-Poincarè algebra, is given by,
+
+\begin{align}
+    \begin{cases}
+        \comm{M^{\alpha\beta}}{M^{\mu\nu}}&=\im\qty(g^{\alpha\mu}M^{\beta\nu}-g^{\beta\mu}M^{\alpha\nu}+g^{\beta\nu}M^{\alpha\mu}-g^{\alpha\nu}M^{\beta\mu})\\
+        \comm{P^\alpha}{M^{\mu\nu}}&=\im\qty(g^{\alpha\nu}P^\mu-g^{\alpha\mu}P^{\nu})\\
+        \comm{P^\alpha}{P^\mu}&=0\\
+        \comm{Q_a}{Q^\dagger_{\dot b}}&=-2\tensor{\sigma}{_\mu_{a}_{\dot b}}P^\mu\\
+        \comm{Q_a}{M^{\mu\nu}}&=\tensor{{\sigma^{\mu\nu}}}{_a^b}Q_b\\
+        \comm{{Q^\dagger}^{\dot a}}{M^{\mu\nu}}&=\tensor{{\bar\sigma}}{^\mu^\nu^{\dot a}_{\dot b}}{Q^\dagger}^{\dot b}\\
+        \comm{Q_a}{Q_b}&=0\\
+        \comm{Q_a}{P^\mu}&=0
+    \end{cases}\nonumber
+\end{align}
+
+We do now that the Casimir operators of the Poincarè algebra are,
+
+\begin{align}
+    P^\mu P_\mu, \ \ \ W^\mu W_\mu,\ \ \ W_\mu=\frac12\epsilon_{\beta\mu\nu\alpha}M^{\nu\alpha}P^\beta\nonumber
+\end{align}
+
+The momentum squared still succeed to be a Casimir of the full Super-Poincarè algebra, due to the trivial relation,
+
+\begin{align}
+    \comm{Q}{P^\mu}&=0\Rightarrow \comm{Q}{P^\mu P_\mu}=0\nonumber
+\end{align}
+
+What about the Pauli-Lubanski vector?
+
+\begin{align}
+    \comm{Q}{W_\mu}&=\frac12\epsilon_{\beta\mu\nu\alpha}\comm{Q}{M^{\nu\alpha}}P^\beta\nonumber\\
+    &=\frac12\epsilon_{\beta\mu\nu\alpha}\sigma^{\nu\alpha}QP^\beta\nonumber\\
+    &=-\im\frac\im2\epsilon_{\beta\mu\nu\alpha}\sigma^{\nu\alpha}QP^\beta\nonumber\\
+    &=-\im\sigma_{\beta\mu}QP^\beta\nonumber\\
+    &=-\im\frac\im4\qty(\sigma_\beta{\bar\sigma}_\mu-\sigma_\mu{\bar\sigma}_\beta)QP^\beta\nonumber\\
+    &=-\im\frac\im4\qty(\sigma_\beta{\bar\sigma}_\mu-\qty(-\sigma_\beta{\bar\sigma}_\mu-2g_{\mu\beta}))QP^\beta\nonumber\\
+    &=\frac12P^\beta\sigma_\beta{\bar\sigma}_\mu Q+\frac12 P_\mu Q\nonumber
+\end{align}
+
+Thus,
+
+\begin{align}
+    \comm{Q}{W_\mu W^\mu}&=W^\mu\comm{Q}{W_\mu}+\comm{Q}{W_\mu}W^\mu\nonumber\\
+    &=-W^\mu\im\sigma_{\beta\mu}QP^\beta-\im\sigma_{\beta\mu}QP^\beta W^\mu\nonumber\\
+    &=-\im\sigma_{\beta\mu}\qty(W^\mu QP^\beta+QP^\beta W^\mu)\nonumber\\
+    &=-\im\sigma_{\beta\mu}\qty(W^\mu Q+QW^\mu)P^\beta\nonumber\\
+    &=-\im\sigma_{\beta\mu}\qty(2W^\mu Q-\im\sigma^{\alpha\mu} QP_\alpha)P^\beta\nonumber\\
+    &=2\im W^\mu\sigma_{\mu\nu}P^\nu Q-\sigma_{\beta\mu}\sigma^{\alpha\mu}P_\alpha P^\beta Q\nonumber
+\end{align}
+
+Let us analyse the relation,
+
+\begin{align}
+    \sigma_{\mu\beta}\sigma^{\mu\alpha}&=-\frac{1}{16}\qty(\sigma_\mu{\bar\sigma}_\beta-\sigma_\beta{\bar\sigma}_\mu)\qty(\sigma^\mu{\bar\sigma}^\alpha-\sigma^\alpha{\bar\sigma}^\mu)\nonumber\\
+    &=-\frac{1}{16}\qty(\sigma_\mu{\bar\sigma}_\beta\sigma^\mu{\bar\sigma}^\alpha-\sigma_\mu{\bar\sigma}_\beta\sigma^\alpha{\bar\sigma}^\mu-\sigma_\beta{\bar\sigma}_\mu\sigma^\mu{\bar\sigma}^\alpha+\sigma_\beta{\bar\sigma}_\mu\sigma^\alpha{\bar\sigma}^\mu)\nonumber\\
+    &=-\frac{1}{16}\qty(\sigma_\mu\qty(-{\bar\sigma}^\mu\sigma_\beta-2\tensor{g}{_\beta^\mu}){\bar\sigma}^\alpha-\sigma_\mu{\bar\sigma}_\beta\sigma^\alpha{\bar\sigma}^\mu+4\sigma_\beta{\bar\sigma}^\alpha+\sigma_\beta{\bar\sigma}_\mu\qty(-\sigma^\mu{\bar\sigma}^\alpha-2g^{\alpha\mu}))\nonumber\\
+    &=-\frac{1}{16}\qty(\qty(4\sigma_\beta-2\sigma_\beta){\bar\sigma}^\alpha-\sigma_\mu{\bar\sigma}_\beta\sigma^\alpha{\bar\sigma}^\mu+4\sigma_\beta{\bar\sigma}^\alpha+\sigma_\beta\qty(4{\bar\sigma}^\alpha-2{\bar\sigma}^\alpha))\nonumber\\
+    &=-\frac{1}{16}\qty(-\qty(-\sigma_\beta{\bar\sigma}_\mu-2g_{\mu\beta})\qty(-\sigma^\mu{\bar\sigma}^\alpha-2g^{\mu\alpha})+8\sigma_\beta{\bar\sigma}^\alpha)\nonumber\\
+    &=-\frac{1}{16}\qty(-\sigma_\beta{\bar\sigma}_\mu\sigma^\mu{\bar\sigma}^\alpha-2g^{\mu\alpha}\sigma_\beta{\bar\sigma}_\mu-2g_{\mu\beta}\sigma^\mu{\bar\sigma}^\alpha-2g_{\mu\beta}2g^{\mu\alpha}+8\sigma_\beta{\bar\sigma}^\alpha)\nonumber\\
+    &=-\frac{1}{16}\qty(4\sigma_\beta{\bar\sigma}^\alpha-2\sigma_\beta{\bar\sigma}^\alpha-2\sigma_\beta{\bar\sigma}^\alpha-4\tensor{g}{_\beta^\alpha}+8\sigma_\beta{\bar\sigma}^\alpha)\nonumber\\
+    &=-\frac{1}{16}\qty(4\sigma_\beta{\bar\sigma}^\alpha-2\sigma_\beta{\bar\sigma}^\alpha-2\sigma_\beta{\bar\sigma}^\alpha-4\tensor{g}{_\beta^\alpha}+8\sigma_\beta{\bar\sigma}^\alpha)\nonumber\\
+    &=\frac{1}{16}\qty(4\tensor{g}{_\beta^\alpha}-8\sigma_\beta{\bar\sigma}^\alpha)\nonumber\\
+    &=\frac14\tensor{g}{_\beta^\alpha}-\frac12\sigma_\beta{\bar\sigma^\alpha}\nonumber
+\end{align}
+
+But for our contraction what matters is just the symmetric part,
+
+\begin{align}
+    \sigma_{\mu\beta}\sigma^{\mu\alpha}P_\alpha P^\beta&=\frac14P_\mu P^\mu-\frac12 P^\beta\sigma_\beta{\bar\sigma}^\alpha P_\alpha\nonumber\\
+    &=\frac14 P_\mu P^\mu-\frac14P^\beta P_\alpha\qty(\sigma_\beta{\bar\sigma}^\alpha+\sigma^\alpha{\bar\sigma}_\beta)\nonumber\\
+    &=\frac14 P_\mu P^\mu+\frac12P^\beta P_\alpha\tensor{g}{_\beta^\alpha}\nonumber\\
+    &=\frac34 P_\mu P^\mu\nonumber
+\end{align}
+
+Thus, up to now,
+
+\begin{align}
+    \comm{Q}{W_\mu W^\mu}&=2\im W^\mu\sigma_{\mu\nu}P^\nu Q-\frac34P_\alpha P^\alpha Q\nonumber
+\end{align}
+
+The last thing we can check to be zero or not is,
+
+\begin{align}
+    W^\mu\sigma_{\mu\nu}P^\nu&=\frac\im 4W^\mu P^\nu\qty(\sigma_\mu{\bar\sigma}_\nu-\sigma_\nu{\bar\sigma}_\mu)\nonumber\\
+    &=\frac\im 4W^\mu P^\nu\qty(\qty(-\sigma_\nu{\bar\sigma}_\mu-2g_{\mu\nu})-\sigma_\nu{\bar\sigma}_\mu)\nonumber\\
+    &=-\frac\im 4W^\mu P^\nu\qty(2\sigma_\nu{\bar\sigma}_\mu+2g_{\mu\nu})\nonumber\\
+    &=-\frac\im 2W^\mu P^\nu\sigma_\nu{\bar\sigma}_\mu\nonumber
+\end{align} 
+
+So at last we get,
+
+\begin{align}
+    \comm{Q}{W_\mu W^\mu}&=W^\mu P^\nu\sigma_\nu{\bar\sigma}_\mu  Q-\frac34P_\alpha P^\alpha Q\nonumber
+\end{align}
+
+Let us define for now, without any special reason,
+
+\begin{align}
+    X_\mu &= Q^\dagger{\bar\sigma}_\mu Q\nonumber
+\end{align}
+
+We take then the commutation relation,
+
+\begin{align}
+    \comm{Q}{X_\mu}&=\comm{Q}{Q^\dagger{\bar\sigma}_\mu Q}\nonumber\\
+    &=\comm{Q}{Q^\dagger}{\bar\sigma}_\mu Q-Q^\dagger{\bar\sigma}_\mu\comm{Q}{Q}\nonumber\\
+    &=-2P^\nu\sigma_\nu{\bar\sigma}_\mu Q\nonumber
+\end{align}
+
+And now,
+
+\begin{align}
+    B_\mu&=W_\mu+\alpha X_\mu\nonumber
+\end{align}
+
+We're going to choose `$\alpha$' to simplify the commutation relation,
+
+\begin{align}
+    \comm{Q}{B_\mu}&=\comm{Q}{W_\mu}+\alpha\comm{Q}{X_\mu}\nonumber\\
+    &=\frac12P^\beta\sigma_\beta{\bar\sigma}_\mu Q+\frac12 P_\mu Q-2\alpha P^\nu\sigma_\nu{\bar\sigma}_\mu Q\nonumber
+\end{align}
+
+That is, setting `$\alpha=\frac14$', we get,
+
+\begin{align}
+    B_\mu&=W_\mu+\frac14 X_\mu\nonumber
+\end{align}
+
+\begin{align}
+    \comm{Q}{B_\mu}&=\comm{Q}{W_\mu}+\frac14\comm{Q}{X_\mu}\nonumber\\
+    &=\frac12 P_\mu Q\nonumber
+\end{align}
+
+Construct now,
+
+\begin{align}
+    C_{\mu\nu}&=B_\mu P_\nu-B_\nu P_\mu\nonumber
+\end{align}
+
+The commutation relation is,
+
+\begin{align}
+    \comm{Q}{C_{\mu\nu}}&=\comm{Q}{B_\mu P_\nu}-\comm{Q}{B_\nu P_\mu}\nonumber\\
+    &=\comm{Q}{B_\mu}P_\nu+B_\mu\comm{Q}{P_\nu}-\comm{Q}{B_\nu}P_\mu-B_\nu\comm{Q}{P_\mu}\nonumber\\
+    &=\frac12 P_\mu Q P_\nu-\frac12P_\nu QP_\mu=0\nonumber
+\end{align}
+
+That could be a Casimir, let's take a look at the other commutation relations,
+
+\begin{align}
+    \comm{C_{\mu\nu}}{P_\alpha}&=\comm{B_\mu P_\nu}{P_\alpha}-\comm{B_\nu P_\mu}{P_\alpha}\nonumber\\
+    &=0
+\end{align}
+
+Because `$P^\mu$' commutes with everything apart from `$M^{\mu\nu}$'. The last commutation is then with `$M^{\mu\nu}$', which is clearly non-trivial, but, as long as we work with a scalar, it will be trivial, hence, we assert that,
+
+\begin{align}
+    C^2&=C_{\mu\nu}C^{\mu\nu}\nonumber
+\end{align}
+
+Is the other Casimir of the Super-Poincarè algebra.

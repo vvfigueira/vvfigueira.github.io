@@ -1,0 +1,197 @@
+\section{Construção de Ações Super-Simétricas}
+A construção de teorias que respeitem super-simetria é um trabalho não trivial, a princípio, se estivermos 
+interessados em uma teoria livre, poderíamos obter uma teoria super-simétrica apenas incluindo o mesmo número de 
+graus de liberdade fermiônico e bosônico, porém, é difícil de obter qual é a exata transformação entre os 
+campos bosônicos e fermiônicos que corresponde a transformação de super-simetria, ou então, analogamente, obter 
+uma corrente fermiônica conservada. Mesmo se em posse da virtude de visão além do alcance todos esses passos 
+forem corretamente concluídos, obtemos uma teoria super-simétrica, mas esta não será \textbf{manifestamente} 
+super-simétrica. Vamos aqui adotar o formalismo do \textbf{Super-Espaço}, no qual a super-simetria da Ação é 
+manifesta, e a inclusão de interações nas teorias é direta. Infelizmente este formalismo funciona apenas para 
+super-simetria mínima, $\mathcal N=1$, para a construção de ações super-simétricas com $\mathcal N=2,4,8$ é 
+necessário utilizar-se de outros métodos\footnote{É possível construir o espectro de teorias com super-simetria estendida, $\mathcal N>1$, como produtos diretos de multipletos de super-simetria simples.}, portanto vamos nos limitar a analisar a super-simetria mínima.
+\subsection{Formalismo de Super-Espaço}
+Sabemos que o gerador das translações no espaço-tempo é o momentum $P^\mu$, isto é, uma translação pode ser vista como um 
+elemento do grupo de Poincaré da forma\[g\qty(a)=\exp\qty(-\im a_\mu P^\mu)\] Vamos fazer um análogo para a 
+Álgebra\footnote{Sabemos na verdade que estamos lidando com uma Álgebra de Lie $\mathbb Z_2$-graduada, ou, Super-Álgebra de Lie. Mas não iremos nos preocupar em explicitar estes nomes.} de Super-Poincaré, como esta contém os geradores $Q_a,Q^\dagger_{\dot b}$, necessariamente temos que 
+o grupo\footnote{Super-Grupo, mas não iremos nos preocupar com isso.} de Super-Poincaré --- Aquele gerado pela Álgebra de Super-Poincaré ---, terá elementos da forma\footnote{Devido a estatística fermiônica 
+dos geradores $Q^{\qty(\dagger)}$ é necessário que $\theta^{\qty(\dagger)}$ sejam variáveis grassmanianas.},\[g\qty(\theta,\theta^\dagger)=\exp\qty(-\im\theta Q-\im\theta^\dagger Q^\dagger)\]A ideia do formalismo de Super-Espaço é 
+considerar que este elemento do grupo de Super-Poincaré simboliza uma \textit{translação} nos parâmetros $\theta^{\qty(\dagger)}$, assim, consideramos como 
+pontos do Super-Espaço o conjunto de valores $\qty(x,\theta,\theta^\dagger)$. Outro modo mais formal de definir o Super-Espaço é 
+como espaço quociente de um grupo com um sub-grupo normal, no caso de Minkowski,\[\mathbb R^{3,1}=ISO^+\qty(3,1)/SO^+\qty(3,1)\] Podemos 
+definir analogamente também para o Super-Espaço\footnote{Em geral, o grupo de Super-Poincaré é denotado como $ISO^+\qty(3,1|\mathcal N)$.},\[\textnormal{Super-Espaço}=ISO^+\qty(3,1|1)/SO^+\qty(3,1)\] Isto é 
+apenas um modo mais matemático de dizer que, assim como o espaço de Minkowski é gerado pelo conjunto de todas as 
+translações, o Super-Espaço é gerado pelo conjunto de todas as \textit{translações} da forma,\[g\qty(x,\theta,\theta^\dagger)=\exp\qty(-\im x_\mu P^\mu-\im\theta Q-\im\theta^\dagger Q^\dagger)\] O principal 
+motivo de se formular a teoria no Super-Espaço é, assim como existe uma representação infinito-dimensional para $P^\mu$ 
+no espaço de Minkowski, $-\im \partial^\mu$, iremos obter uma representação infinito-dimensional para $Q^{\qty(\dagger)}$ em formato 
+de operador diferencial sobre o Super-Espaço, isso facilita a obtenção das transformações super-simétricas nos campos da teoria.
+\subsection{Super-Campos}Definimos como \textbf{Super-Campo} uma função sobre o Super-Espaço que toma valores em $\mathbb C$, o exemplo 
+mais simples de tal função é a de um escalar,\[\Phi\qty(x,\theta,\theta^\dagger)\] A princípio poderíamos escolher 
+qualquer tipo de representação por Lorentz para um Super-Campo, mas, como veremos, a não ser que estejamos interessados 
+em construir teorias com partículas de spin $\frac32$ ou $2$, a representação escalar é suficiente. Assim como foi mencionado 
+anteriormente, conhecemos a representação de $P^\mu$ nos Super-Campos,\[\comm{\Phi\qty(x,\theta,\theta^\dagger)}{P^\mu}=-\im\partial^\mu\Phi\qty(x,\theta,\theta^\dagger)\] O que torna crível a 
+existência de um operador diferencial $\mathcal Q_a$ tal que,\[\comm{\Phi\qty(x,\theta,\theta^\dagger)}{Q_a}=-\im\mathcal Q_a\Phi\qty(x,\theta,\theta^\dagger)\] A tentativa mais direta é a de $\mathcal Q_a=\frac{\partial}{\partial\theta^a}=\partial_a$ e $\mathcal Q^\dagger_{\dot a}=-\frac{\partial}{\partial\theta^{\dagger\dot a}}=-\partial^\dagger_{\dot a}$\footnote{O 
+sinal de menos aqui é devido as variáveis serem grassmanianas.}. Isto não funciona, pois a \cref{qqdagger} não é respeitada. Para fazer estes operadores 
+uma representação da álgebra será necessário a inclusão de derivadas em $x^\mu$. A inclusão que de fato é representação da álgebra é,\[\mathcal Q_a=\partial_a+\im\sigma_{\mu a\dot c}\theta^{\dagger \dot c}\partial^\mu,\ \ \ \mathcal Q^\dagger_{\dot b}=-\partial^\dagger_{\dot b}-\im\theta^c\sigma_{\mu c\dot b}\partial^\mu\rightarrow \comm{\mathcal Q_a}{\mathcal Q^\dagger_{\dot b}}=-2\im\sigma_{\mu a\dot b}\partial^\mu\] A 
+qual pode ser verificada de respeitar todas as relações de comutação e identidades de Jacobi. A vantagem de ter esta representação é que dada uma 
+transformação infinitesimal super-simétrica, sabemos que os campos vao se transformar como,\[\Phi\rightarrow\Phi+\epsilon\mathcal Q\Phi+\epsilon^\dagger\mathcal Q^\dagger\Phi\] Sabemos então checar se uma 
+determinada ação possui super-simetria.
+
+Nossa abordagem para a construção de uma Ação Super-Simétrica é similar a construção de Ações invariantes por Poincaré. Tomamos uma função escalar e real, Lagrangiana, 
+e integramos por todo o espaço de Minkowski, similarmente, iremos partir de um Super-Campo escalar e real, e integrá-lo por todo o Super-Espaço,\[K^\dagger\qty(x,\theta,\theta^\dagger)=K\qty(x,\theta,\theta^\dagger)\rightarrow S=\int\dd[4]{x}\dd[2]{\theta}\dd[2]{\theta^\dagger}K\qty(x,\theta,\theta^\dagger)\] Dessa 
+forma, segue naturalmente que a Ação obtida é Super-Simetricamente invariante, pois, \[\delta S=\int\dd[4]{x}\dd[2]{\theta}\dd[2]{\theta^\dagger}\qty(\epsilon\mathcal QK+\epsilon^\dagger\mathcal Q^\dagger K)\] Como 
+os $\mathcal Q^{\qty(\dagger)}$ são operadores diferenciais nas variáveis que estão sendo integradas sobre, a variação da Ação é um mero termo de borda, para o qual 
+com devidas condições de contorno é zero. Portanto desde que obtemos um Super-Campo real e escalar teremos uma possível Ação, porém, 
+assim como as super-cargas não preservam o spin, \cref{qlorentz}, um Super-Campo não descreve uma partícula de spin definido, de fato, um 
+Super-Campo não descreve \textbf{uma} partícula\footnote{No sentido usual, uma partícula está associada a um auto-estado do operador massa $P_\mu P^\mu$ e do operador spin $W_\mu W^\mu$, $W_\mu=\frac12\epsilon_{\nu\mu\alpha\beta}P^\nu M^{\alpha\beta}$. Poderíamos definir uma super-partícula como descrita por um Super-Campo, mas o 
+quanto desta definição é útil pode ser questionada, uma vez que o que é mensurável são o spin e a massa.}, mas sim uma coleção de partículas de spin diferente e de mesma massa\footnote{Segue da \cref{qp}, $\comm{Q_a}{P^\mu}=0\rightarrow \comm{Q_a}{P^\mu P_\mu}=0$.}. Isso 
+pode ser visto se utilizar-mos das propriedades das variáveis grassmanianas\footnote{$\theta_a^{\qty(\dagger)}\theta_b^{\qty(\dagger)}=-\theta_b^{\qty(\dagger)}\theta_a^{\qty(\dagger)}$. Por completude vamos também relembrar a notação de $\theta\theta=\theta^a\theta_a$, $\theta^\dagger\theta^\dagger=\theta^\dagger_{\dot a}\theta^{\dagger\dot a}$} para expandir o Super-Campo 
+como,\[\Phi\qty(x,\theta,\theta^\dagger)=\phi\qty(x)+\theta\psi\qty(x)+\theta^\dagger\chi^\dagger\qty(x)+\theta\theta M\qty(x)+\theta^\dagger\theta^\dagger N\qty(x)+\theta\sigma^\mu\theta^\dagger v_\mu\qty(x)+\theta\theta\theta^\dagger\lambda^\dagger\qty(x)+\theta^\dagger\theta^\dagger\theta\xi\qty(x)+\theta\theta\theta^\dagger\theta^\dagger D\qty(x)\] Um único 
+Super-Campo possui 4 escalares complexos, 2 férmions de mão esquerda, 2 férmions de mão direita e um vetor complexo. Gostaríamos de reduzir esta quantidade de campos, logo, precisamos aplicar alguma restrição sobre estes, mas, 
+de forma a não destruir a Super-Simetria. Um método manifesto de aplicar restrições é introduzindo uma \textit{derivada super-covariante}\footnote{O porque de se não aplicar uma condição como $\partial_\mu\Phi=0$ é porque, apesar de diminuir o número de graus de liberdade total, esta restrição não elimina explicitamente um dos campos 
+da decomposição. Por exemplo, para eliminar completamente $N, D,\xi$ poderíamos multiplicar $\Phi$ por $\theta^{\dagger\dot a}$, porém, isto não é invariante super-simetricamente. É necessário obter um operador diferencial nos $\theta,\theta^\dagger$ que 
+mantenha a Super-Simetria.}, $\mathcal D_a^\dagger$, tal que,\[\comm{\mathcal D_a}{\mathcal Q_b}=\comm{\mathcal D_a}{\mathcal Q^\dagger_{\dot b}}=0\] Pelas 
+formas das relações de comutação esperamos que $\mathcal D_a$ seja similar a $\mathcal Q_a$, e de fato, a escolha,\[\mathcal D_a=\partial_a-\im\sigma_{\mu a\dot c}\theta^{\dagger \dot c}\partial^\mu,\ \ \ \mathcal D^\dagger_{\dot b}=-\partial^\dagger_{\dot b}+\im\theta^c\sigma_{\mu c\dot b}\partial^\mu\rightarrow \comm{\mathcal D_a}{\mathcal D^\dagger_{\dot b}}=2\im\sigma_{\mu a\dot b}\partial^\mu\] é a correta a ser tomada. 
+Assim podemos impor uma condição como, \[\mathcal D_{\dot a}^\dagger\Phi=0,\ \ \ \textnormal{ou, }\mathcal D_a\Phi^\dagger=0\] E devido aos motivos mencionados anteriormente, 
+essas condições continuam valendo após uma transformação super-simétrica. Super-Campos satisfazendo essas respectivas condições são denominados de \textbf{Chirais} e \textbf{Anti-Chirais}\footnote{Sempre 
+vamos denotar um Super-Campo Chiral por uma letra grega maiúscula e um Anti-Chiral por uma letra grega maiúscula com $\dagger$.},
+o motivo desses nomes será explicado posteriormente. Vamos então obter o que estas restrições impõem sobre o Super-Campo.
+\subsubsection{Super-Campo Chiral} \label{secchiral}Notemos primeiramente que,
+\begin{align*}
+    \mathcal D^\dagger_{\dot a}\theta_b&=-\partial^\dagger_{\dot a}\theta_b+\im\theta^c\sigma_{\mu c\dot a}\partial^\mu\theta_b=0\\
+    \mathcal D^\dagger_{\dot a}x_\nu&=-\partial^\dagger_{\dot a}x_\nu+\im\theta^c\sigma_{\mu c\dot a}\partial^\mu x_\nu=\im\theta^c\sigma_{\nu c\dot a}\\
+    \mathcal D^\dagger_{\dot a}\theta^{\dagger\dot b}&=-\partial^\dagger_{\dot a}\theta^{\dagger\dot b}+\im\theta^c\sigma_{\mu c\dot a}\partial^\mu\theta^{\dagger \dot b}=-\tensor{\delta}{_{\dot a}^{\dot b}}
+\end{align*}
+Logo, se definirmos $y_\nu=x_\nu-\im\theta\sigma_\nu\theta^\dagger$, \[\mathcal D^\dagger_{\dot a}y_\nu=\mathcal D^\dagger_{\dot a}x_\nu+\im\theta^c\sigma_{\nu c\dot b}\mathcal D^\dagger_{\dot a}\theta^{\dagger\dot b}=\im\theta^c\sigma_{\nu c \dot a}-\im\theta^c\sigma_{\nu c \dot a}=0\] Portanto, 
+qualquer função que dependa apenas de $y,\theta$ é naturalmente um Super-Campo Chiral, assim, podemos expandir naturalmente primeiro em $\theta$, para somente ao final expandir em $\theta^\dagger$, \begin{align*}
+\Phi\qty(y,\theta)&=\phi\qty(y)+\sqrt 2\theta\psi\qty(y)+\theta\theta F\qty(y)\\
+&=\phi\qty(x)+\sqrt2\theta\psi\qty(x)+\theta\theta F\qty(x)-\im\theta\sigma^\mu\theta^\dagger\partial_\mu\phi\qty(x)-\frac{\im}{\sqrt2}\theta\theta\theta^\dagger{\bar\sigma}^\mu\partial_\mu\psi\qty(x)+\frac14\theta\theta\theta^\dagger\theta^\dagger\partial^2\phi\qty(x)\numberthis\label{chiral}
+\end{align*}
+Com sucesso conseguimos eliminar graus de liberdade! Obtemos 2 campos complexos escalares e um campo fermiônico de mão esquerda\footnote{Esta é a razão deste Super-Campo ser chamado de Chiral, pois ele contêm um campo fermiônico de 
+mão esquerda, naturalmente, o Super-Campo Anti-Chiral irá possuir um campo fermiônico de mão direita. Esta é a menor coleção de campos com a qual é possível se construir uma teoria Super-Simétrica não trivial, é necessário haver o mesmo número de graus 
+de liberdade on-shell fermiônicos e bosônicos, embora não seja necessário que os números de graus de liberdade off-shell sejam iguais, esta é a única maneira de se 
+obter uma lagrangiana manifestamente Super-Simétrica. Este será o papel desempenhado pelo campo $F\qty(x)$, como será visto a seguir.}. Porém, este campo não é real, e a restrição de ser real e ser Chiral resulta em um campo trivial $\Phi=0$, logo, 
+não é possível construir uma ação real somente com campos chirais.
+\subsubsection{Super-Campo Anti-Chiral} Seguindo o mesmo raciocínio anterior, podemos calcular, \[\mathcal D_a y^\dagger_\nu=0,\ \ \ \mathcal D_a\theta^{\dagger\dot b}=0\] O que indica novamente que qualquer função de somente $y^\dagger,\theta^\dagger$ é naturalmente um Super-Campo Anti-Chiral, porém, note que,\[\qty[\Phi\qty(y,\theta)]^\dagger=\Phi^\dagger\qty(y^\dagger,\theta^\dagger)\] Isto é, todo Super-Campo Anti-Chiral é o conjugado de um Super-Campo Chiral! Assim,
+\begin{align*}
+    \Phi^\dagger\qty(y^\dagger,\theta^\dagger)&=\phi^\dagger\qty(x)+\sqrt2\theta^\dagger\psi^\dagger\qty(x)+\theta^\dagger\theta^\dagger F^\dagger\qty(x)+\im\theta\sigma^\mu\theta^\dagger\partial_\mu\phi^\dagger\qty(x)+\frac{\im}{\sqrt2}\theta^\dagger\theta^\dagger\partial_\mu\psi^\dagger\qty(x){\bar\sigma}^\mu\theta+\frac14\theta^\dagger\theta^\dagger\theta\theta\partial^2\phi^\dagger\qty(x)\numberthis\label{achiral}
+\end{align*}
+Análogo ao multipleto chiral, o multipleto anti-chiral possui 2 campos escalares complexos e um campo fermiônico de mão direita. O fato de todo multipleto anti-chiral ser o conjugado de um chiral nos fornece naturalmente um termo para a Ação,\[S=\int\dd[4]{x}\dd[2]{\theta}\dd[2]{\theta^\dagger}\Phi^\dagger\Phi\] A integral grassmaniana é trivial, pois ela apenas 
+seleciona o termo com coeficiente $\theta\theta\theta^\dagger\theta^\dagger$, vamos obtê-lo\footnote{Utilizando-se de identidades de Fierz e desprezando derivadas totais.}:
+\begin{align*}
+    \Phi^\dagger\Phi&\supset\theta\theta\theta^\dagger\theta^\dagger\frac14\phi^\dagger\partial^2\phi+\theta\theta\theta^\dagger\theta^\dagger\frac14\phi\partial^2\phi^\dagger-\im\theta^\dagger\psi^\dagger\theta\theta\theta^\dagger{\bar\sigma}^\mu\partial_\mu\psi+\im\theta\psi\theta^\dagger\theta^\dagger\partial_\mu\psi^\dagger{\bar\sigma}^\mu\theta+\theta\theta\theta^\dagger\theta^\dagger F^\dagger F+\theta\sigma^\mu\theta^\dagger\theta\sigma^\mu\theta^\dagger\partial_\mu\phi^\dagger\partial^\mu\phi\\
+    \Phi^\dagger\Phi&\supset\theta\theta\theta^\dagger\theta^\dagger\qty[F^\dagger F-\partial_\mu\phi^\dagger\partial^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu\partial_\mu\psi]
+\end{align*}
+Assim nossa Ação manifestamente Super-Simétrica é,\[S=\int\dd[4]{x}\qty[F^\dagger F-\partial_\mu\phi^\dagger\partial^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu\partial_\mu\psi]\] Onde claramente podemos ver a presença de $F$ como um campo auxiliar, isto é, está presente 
+somente para garantir a igualdade de graus de liberdade entre bosons e férmions off-shell --- 4 graus de liberdade bosônicos e 4 fermiônicos --- devido a não possuir termos cinéticos, on-shell apenas $\phi$ contribui e $\psi$ e $\psi^\dagger$ deixam de ser independentes --- 2 graus 
+de liberdade bosônicos e 2 fermiônicos ---. Fora este fato, a teoria obtida aqui é incrivelmente simples, uma teoria livre de duas partículas, uma bosônica e outra fermiônica. Gostaríamos de introduzir interações, a princípio renormalizáveis, porém, como $\Phi^\dagger\Phi$ já possui dimensão de 
+massa\footnote{Sabemos que $\qty[P^\mu]=+1,\qty[M^{\mu\nu}]=0$ e com a \cref{qp} podemos inferir que $\qty[Q^{\qty(\dagger)}]=+\frac12$, assim $\qty[\theta^{\qty(\dagger)}]=-\frac12$.} 2, e $\dd[4]{x}\dd[2]{\theta}\dd[2]{\theta^\dagger}$ apenas possui dimensão de massa 2, portanto não é possível introduzir termos da forma $\qty(\Phi^\dagger\Phi)^n$. O 
+método para obter uma interação é utilizar-se da propriedade de um campo Chiral, $\Phi\qty(x,\theta,\theta^\dagger)=\Phi\qty(y,\theta)$, para integrar apenas em metade do Super-Espaço de forma como se $y$ fosse a coordenada do espaço-tempo, isto é,\[\int\dd[4]{y}\dd[2]{\theta}\Phi\qty(y,\theta)\] Podemos ir além, 
+como qualquer função \textit{holomorfa} de um campo (Anti-)Chiral é ainda um campo (Anti-)Chiral, podemos introduzir uma interação como um termo\footnote{$W\qty(\Phi)$ aqui é uma função holomorfa qualquer, para garantir a realidade da ação é necessário adicionar o termo conjugado.},\[S_{\textnormal{int}}=\int\dd[4]{x}\dd[2]{\theta}W\qty(\Phi\qty(x,\theta))+\int\dd[4]{x}\dd[2]{\theta^\dagger}W^\dagger\qty(\Phi^\dagger\qty(x,\theta^\dagger))\] Sobre se este termo quebra ou não explicitamente a Super-Simetria, 
+podemos calcular,\[\delta S_{\textnormal{int}}=\int\dd[4]{x}\dd[2]{\theta}\qty{\epsilon\mathcal Q W+\epsilon^\dagger\mathcal Q^\dagger W}+\textnormal{h.c.}=\int\dd[4]{x}\dd[2]{\theta}\qty{\epsilon^a\partial_a W-\im\theta\sigma^\mu\epsilon^\dagger\partial_\mu W}+\textnormal{h.c}=0\] A igualdade a zero é garantida pois todos os termos da variação da 
+Ação são termos de borda, que são desprezados. Assim, obtermos um termo de interação Super-Simétrico, se requeremos que sejam renormalizáveis, ao menos por \textit{power-counting}, o \textit{Super-Potencial} mais geral é,\[W\qty(\Phi)=\frac m2\Phi^2+\frac{\lambda}{3!}\Phi^3\] O qual podemos ainda expandir em $\theta$,
+\begin{align*}
+    W\qty(\Phi)&=W\qty(\phi+\sqrt 2\theta\psi+\theta\theta F)\\
+    W\qty(\Phi)&=W\qty(\phi)+\sqrt 2\pdv{W}{\phi}\theta\psi+\theta\theta\qty(\pdv {W}{\phi} F-\frac12\pdv[2]{W}{\phi}\psi\psi)
+\end{align*}
+Obtemos assim então o famoso modelo de Wess-Zumino! Vamos explicitar os termos da ação,
+\begin{align*}
+    S&=\int\dd[4]{x}\qty[\int\dd[2]{\theta}\dd[2]{\theta^\dagger}\Phi^\dagger\Phi+\int\dd[2]{\theta}W\qty(\Phi)+\int\dd[2]{\theta^\dagger}W^\dagger\qty(\Phi^\dagger)]\\
+    &=\int\dd[4]{x}\qty[-\partial_\mu\phi^\dagger\partial^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu\partial_\mu\psi+F^\dagger F+F\pdv{W}{\phi}-\frac12\pdv[2]{W}{\phi}\psi\psi+F^\dagger\pdv{{W^\dagger}}{{\phi^\dagger}}-\frac12\pdv[2]{{W^\dagger}}{{\phi^\dagger}}\psi^\dagger\psi^\dagger]
+\end{align*}
+As equações de movimento para $F$ são triviais e podem ser resolvidas para obter,
+\begin{align*}
+    S&=\int\dd[4]{x}\qty[-\partial_\mu\phi^\dagger\partial^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu\partial_\mu\psi+\norm{\pdv{W}{\phi}}^2-\frac12\pdv[2]{W}{\phi}\psi\psi-\frac12\pdv[2]{{W^\dagger}}{{\phi^\dagger}}\psi^\dagger\psi^\dagger]\\
+    S&=\int\dd[4]{x}\qty[-\partial_\mu\phi^\dagger\partial^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu\partial_\mu\psi+\norm{m\phi+\frac\lambda2\phi^2}^2-\frac12\qty(m+\lambda\phi)\psi\psi-\frac12\qty(m^\dagger+\lambda^\dagger\phi^\dagger)\psi^\dagger\psi^\dagger]\\
+    S&=\int\dd[4]{x}\qty[-\partial_\mu\phi^\dagger\partial^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu\partial_\mu\psi+m^\dagger m\phi^\dagger\phi+\frac{m^\dagger\lambda}{2}\phi^\dagger\phi^2+\frac{m\lambda^\dagger}{2}\phi{\phi^\dagger}^2+\frac{\lambda^\dagger\lambda}{4}\qty(\phi^\dagger\phi)^2-\frac12\qty(m+\lambda\phi)\psi\psi-\frac12\qty(m^\dagger+\lambda^\dagger\phi^\dagger)\psi^\dagger\psi^\dagger]
+\end{align*}
+Agora podemos apreciar a beleza do formalismo de Super-Campos, onde todos esses termos estão contidos em $\Phi^\dagger\Phi$, e também podemos apreciar a não trivialidade dos termos de interação. 
+Se desejamos construir uma teoria Super-Simétrica, não é possível escolher a belo prazer os termos de interação, há restrições não triviais sobre estes imposta pela Super-Simetria, 
+assim, tentar construir um modelo interagente Super-Simétrico sem o formalismo de Super-Campos é uma tarefa de dificuldade colossal. Note que, a princípio apenas a nível árvore, o férmion e o bóson possuem 
+massas iguais, $\norm{m}$, isto é requerido pelo Índice de Witten, e portanto é válido não perturbativamente também. 
+
+Ao final, temos uma teoria, digamos, estritamente de matéria, como oposto a radiação, ou então, a portadores de força. Se a Super-Simetria tem algum valor à ser estudado, é necessário que esta consiga acomodar 
+uma descrição de uma teoria de calibre, vamos então aproveitar este gancho para apresentar outra possível restrição nos Super-Campos, uma que aparenta ser mais simples, mas que como veremos, dará origem a 
+campos vetoriais de calibre.
+\subsubsection{Super-Campos Reais/Vetoriais} A restrição imposta para um Super-Campos Real é, ser Real, \[V\qty(x,\theta,\theta^\dagger)=V^\dagger\qty(x,\theta,\theta^\dagger)\] Vamos obter qual restrição isso implica utilizando a expansão usual geral,
+\begin{align*}
+    V\qty(x,\theta,\theta^\dagger)&=C\qty(x)+\theta\chi\qty(x)+\theta^\dagger\psi^\dagger\qty(x)+\theta\theta M\qty(x)+\theta^\dagger\theta^\dagger N\qty(x)+\theta\sigma^\mu\theta^\dagger v_\mu\qty(x)+\theta\theta\theta^\dagger\lambda^\dagger\qty(x)+\theta^\dagger\theta^\dagger\theta\xi\qty(x)+\theta\theta\theta^\dagger\theta^\dagger D\qty(x)\\
+    V^\dagger\qty(x,\theta,\theta^\dagger)&=C^\dagger\qty(x)+\theta^\dagger\chi^\dagger\qty(x)+\theta\psi\qty(x)+\theta^\dagger\theta^\dagger M^\dagger\qty(x)+\theta\theta N^\dagger\qty(x)+\theta\sigma^\mu\theta^\dagger v^\dagger_\mu\qty(x)+\theta^\dagger\theta^\dagger\theta\lambda\qty(x)+\theta\theta\theta^\dagger\xi^\dagger\qty(x)+\theta\theta\theta^\dagger\theta^\dagger D^\dagger\qty(x)
+\end{align*}
+Portanto as restrições são, \[C\qty(x)=C^\dagger\qty(x),\ \ \psi\qty(x)=\chi\qty(x),\ \ N\qty(x)=M^\dagger\qty(x),\ \ v_\mu\qty(x)=v_\mu^\dagger\qty(x),\ \ \xi\qty(x)=\lambda\qty(x),\ \ D\qty(x)=D^\dagger\qty(x)\] Isto é, 
+\[V\qty(x,\theta,\theta^\dagger)=C\qty(x)+\theta\psi\qty(x)+\theta^\dagger\psi^\dagger\qty(x)+\theta\theta M\qty(x)+\theta^\dagger\theta^\dagger M^\dagger\qty(x)+\theta\sigma^\mu\theta^\dagger v_\mu\qty(x)+\theta\theta\theta^\dagger\lambda^\dagger\qty(x)+\theta^\dagger\theta^\dagger\theta\lambda\qty(x)+\theta\theta\theta^\dagger\theta^\dagger D\qty(x)\] O 
+conteúdo do multipleto real/vetorial é portanto, 2 campos reais escalares, 1 campo complexo escalar, 2 férmions de Weyl e um campo real vetorial. A presença de um campo vetorial sinaliza a possibilidade de 
+descrever bósons de calibre, assim como veremos, parte dos escalares está associado a campos auxiliares, enquanto parte está associado a liberdade de calibre, o mesmo vale para os 2 férmions. Perceba que, é possível 
+construir um campo real/vetorial apenas em posse de um campo chiral $\Xi$, pois a combinação $\im\qty(\Xi^\dagger-\Xi)$ é real! Assim, sendo \begin{align*}
+    \Xi&=B+\theta\xi+\theta\theta G-\im\theta\sigma^\mu\theta^\dagger\partial_\mu B-\frac\im 2\theta\theta\theta^\dagger{\bar\sigma}\partial_\mu\xi+\frac14\theta\theta\theta^\dagger\theta^\dagger\partial^2B\\
+    \im\qty(\Xi^\dagger-\Xi)&=2\textnormal{Im}B+\im\theta^\dagger\xi^\dagger-\im\theta\xi+\im\theta^\dagger\theta^\dagger G^\dagger-\im\theta\theta G-2\textnormal{Re}\theta\sigma^\mu\theta^\dagger\partial_\mu B-\frac12\theta^\dagger\theta^\dagger\partial_\mu\xi^\dagger{\bar\sigma}^\mu\theta-\frac12\theta\theta\theta^\dagger{\bar\sigma^\mu}\partial_\mu\xi+\theta\theta\theta^\dagger\theta^\dagger\frac12\textnormal{Im}\partial^2B
+\end{align*}
+Logo é sim possível definir uma transformação de calibre por, $V\rightarrow V+\im\qty(\Xi^\dagger-\Xi)$, que, além de outras mudanças, tem o efeito de, $v_\mu\rightarrow v_\mu-2\textnormal{Re}\partial_\mu B$. Como a transformação de calibre que estamos interessados 
+envolve apenas a parte real do campo $B$, podemos utilizar dos restantes graus de liberdade para escolher um calibre que elimine a mencionada anteriormente liberdade de calibre contida nos campos escalar e de Weyl do Super-Campo Vetorial. Uma das 
+escolhas mais úteis é o chamado \textbf{Calibre de Wess-Zumino}, caracterizado pela escolha de,\[\textnormal{Im}B=-\frac12 C,\ \ \xi=-\im\psi,\ \ G=-\im M\] No qual temos, 
+\[V\qty(x,\theta,\theta^\dagger)=\theta\sigma^\mu\theta^\dagger v_\mu\qty(x)+\theta\theta\theta^\dagger\qty(\lambda^\dagger\qty(x)-\frac12{\bar\sigma}^\mu\partial_\mu\xi\qty(x))+\theta^\dagger\theta^\dagger\qty(\lambda\qty(x)-\frac12\partial_\mu\xi^\dagger\qty(x){\bar\sigma}^\mu)\theta+\theta\theta\theta^\dagger\theta^\dagger\qty( D\qty(x)+\frac12\textnormal{Im}\partial^2 B\qty(x))\] Renomeando as variáveis podemos reescrever como,
+\[V\qty(x,\theta,\theta^\dagger)=\theta\sigma^\mu\theta^\dagger v_\mu\qty(x)+\theta\theta\theta^\dagger\lambda^\dagger\qty(x)+\theta^\dagger\theta^\dagger\theta\lambda\qty(x)+\theta\theta\theta^\dagger\theta^\dagger\frac12D\qty(x)\] Aqui é claro os papeis de $\lambda$ como o super-parceiro de $v_\mu$, e de $D$ como o campo auxiliar. Necessitamos portanto agora de escrever um termo cinético, porém, não é suficiente de ser qualquer 
+termo cinético, uma vez que este precisa ser invariante por uma transformação de calibre, aqui entra em jogo a importância da definição de um Super-Campo (Anti-)Chiral, note que $\partial_\mu V$ não tem nenhuma chance de ser invariante por calibre, porém, 
+algo como $\mathcal D_a V$ tem a possibilidade de ser invariante, pois, $\mathcal D_a\Xi^\dagger=0=\mathcal D^\dagger_{\dot a}\Xi$. Contudo, como as derivadas super-covariantes não anti-comutam, $\mathcal D^\dagger_{\dot a}\mathcal D_b V$ não é invariante por calibre, mas analisemos,
+\begin{align*}
+    \mathcal D^\dagger_{\dot a}\mathcal D^{\dagger \dot a}\mathcal D_b V\rightarrow\mathcal D^\dagger_{\dot a}\mathcal D^{\dagger \dot a}\mathcal D_b \qty{V+\im\qty(\Xi^\dagger-\Xi)}&=\mathcal D^\dagger_{\dot a}\mathcal D^{\dagger \dot a}\mathcal D_b V-\im\mathcal D^\dagger_{\dot a}\mathcal D^{\dagger \dot a}\mathcal D_b \Xi\\
+    &=\mathcal D^\dagger_{\dot a}\mathcal D^{\dagger \dot a}\mathcal D_b V-\im\mathcal D^\dagger_{\dot a}\qty[-\mathcal D_b\mathcal D^{\dagger \dot a} +2\im\epsilon^{\dot a\dot c}\sigma^{\mu}_{b\dot c}\partial_\mu]\Xi\\
+    &=\mathcal D^\dagger_{\dot a}\mathcal D^{\dagger \dot a}\mathcal D_b V+\im\qty[\mathcal D^\dagger_{\dot a}\mathcal D_b +2\im\sigma^{\mu}_{b\dot a}\partial_\mu]\mathcal D^{\dagger \dot a}\Xi\\
+    \mathcal D^\dagger_{\dot a}\mathcal D^{\dagger \dot a}\mathcal D_b V\rightarrow\mathcal D^\dagger_{\dot a}\mathcal D^{\dagger \dot a}\mathcal D_b \qty{V+\im\qty(\Xi^\dagger-\Xi)}&=\mathcal D^\dagger_{\dot a}\mathcal D^{\dagger \dot a}\mathcal D_b V
+\end{align*}
+De fato é invariante! Portanto este pode ser um possível componente do termo cinético, para conferir exatamente qual é o conteúdo deste campo vamos fazer alguns truques, primeiramente, este novo campo é Chiral! Isto é devido as 
+derivadas super-covariantes serem anti-comutativas,
+\begin{align*}
+    W_a=\mathcal D^\dagger_{\dot b}\mathcal D^{\dagger \dot b}\mathcal D_a V\rightarrow \mathcal D^\dagger_{\dot c}W_a=0
+\end{align*}
+Para usar-se so fato de $W_a$ ser Chiral, vamos substituir já em $V$, $x=y+\im\theta\sigma\theta^\dagger$, expandir e usar identidades de Fierz,
+\begin{align*}
+    V&=\theta\sigma^\mu\theta^\dagger v_\mu\qty(y+\im\theta\sigma\theta^\dagger)+\theta\theta\theta^\dagger\lambda^\dagger\qty(y+\theta\sigma\theta^\dagger)+\theta^\dagger\theta^\dagger\theta\lambda\qty(y+\im\theta\sigma\theta)+\theta\theta\theta^\dagger\theta^\dagger\frac12 D\qty(y+\theta\sigma\theta^\dagger)\\
+    V&=\theta\sigma^\mu\theta^\dagger v_\mu\qty(y)+\theta\theta\theta^\dagger\lambda^\dagger\qty(y)+\theta^\dagger\theta^\dagger\theta\lambda\qty(y)+\theta\theta\theta^\dagger\theta^\dagger\frac12\qty[ D\qty(y)-\im\partial^\mu v_\mu\qty(y)]\\
+    \mathcal D_aV&=\theta^\dagger\theta^\dagger\qty[\lambda_a\qty(y)+\theta_a\qty(D\qty(y)-\im\partial^\mu v_\mu\qty(y))-\im\qty(\sigma^\mu{\bar\sigma^\nu}\theta)_a\partial_\mu v_\nu\qty(y)+\im\theta\theta\qty(\sigma^\mu\partial_\mu\lambda^\dagger)_a]+\cdots
+\end{align*}
+Mantemos aqui apenas os termos com $\theta^\dagger\theta^\dagger$, pois, assim como foi visto no começo da \cref{secchiral}, $\mathcal D^\dagger_{\dot a}$ atua em funções de $y,\theta,\theta^\dagger$ como $-\partial^\dagger_{\dot a}$, 
+logo, $\mathcal D^\dagger_{\dot a}\mathcal D^{\dagger\dot a}=\partial^\dagger_{\dot a}\partial^{\dagger\dot a}$, portanto apenas contribuem para $W_a$ os termos com $\theta^\dagger\theta^\dagger$. Assim\footnote{Aqui utilizamos algumas igualdades dos 
+geradores da algebra de momentum angular, $\sigma^\mu{\bar\sigma}^\nu=-g^{\mu\nu}-2\im\sigma^{\mu\nu}$. Também aqui tomamos a definição usual de $F_{\mu\nu}=\partial_\mu v_\nu-\partial_\nu v_\mu$.},
+\begin{align*}
+    W_a&=\mathcal D^\dagger_{\dot b}\mathcal D^{\dagger \dot b}\mathcal D_a V\\
+    W_a&=\mathcal D^\dagger_{\dot b}\mathcal D^{\dagger \dot b}\qty{\theta^\dagger\theta^\dagger\qty[\lambda_a\qty(y)+\theta_a\qty(D\qty(y)-\im\partial^\mu v_\mu\qty(y))-\im\qty(\sigma^\mu{\bar\sigma^\nu}\theta)_a\partial_\mu v_\nu\qty(y)+\im\theta\theta\qty(\sigma^\mu\partial_\mu\lambda^\dagger)_a]+\cdots}\\
+    W_a&=\lambda_a\qty(y)+\theta_a\qty(D\qty(y)-\im\partial^\mu v_\mu\qty(y))-\im\qty(\sigma^\mu{\bar\sigma^\nu}\theta)_a\partial_\mu v_\nu\qty(y)+\im\theta\theta\qty(\sigma^\mu\partial_\mu\lambda^\dagger)_a\\
+    W_a&=\lambda_a\qty(y)+\theta_aD\qty(y)-\qty(\sigma^{\mu\nu}\theta)_aF_{\mu\nu}\qty(y)+\im\theta\theta\qty(\sigma^\mu\partial_\mu\lambda^\dagger)_a
+\end{align*}
+Exatamente o que precisávamos, note o aparecimento do termo cinético padrão, $F_{\mu\nu}$. Para construir um termo válido para ação, como $W_a$ é Chiral, necessitamos de 
+integrar somente pela metade do Super-Espaço, assim como já fizemos anteriormente, portanto, esperamos que a seguinte ação gere um termo 
+válido cinético\footnote{Aqui já adicionamos o termo conjugado para garantir a realidade da Ação, e, introduzimos o fator de $\frac14$ para garantir que os campos estejam normalizados canonicamente.},
+\begin{align*}
+    S&=\int\dd[4]{x}\dd[2]{\theta}\frac14W^aW_a+\int\dd[4]{x}\dd[2]{\theta^\dagger}\frac14W^\dagger_{\dot a}W^{\dagger\dot a}
+\end{align*}
+Vamos então obter os termos da ação, começamos notando que só precisamos dos termos com $\theta\theta$ em $W^aW_a$\footnote{Novamente usamos as identidades de Fierz, $\theta^a\theta^b=-\frac12\theta\theta\epsilon^{ab}$, e também a relação, $\Tr\qty[\sigma^{\mu\nu}\sigma^{\alpha\beta}]=\frac12\qty(g^{\mu\alpha}g^{\nu\beta}-g^{\mu\beta}g^{\nu\alpha})-\frac\im2\epsilon^{\mu\nu\alpha\beta}$. Aqui ocorre a aparição do 
+dual, $\star F_{\mu\nu}=\frac12\epsilon_{\mu\nu\alpha\beta}F^{\alpha\beta}$.},
+\begin{align*}
+    W^aW_a&\supset\theta\theta\qty[ D^2+2\im\lambda\sigma^\mu\partial_\mu\lambda^\dagger-\frac12\Tr\qty[\sigma^{\mu\nu}\sigma^{\alpha\beta}]F_{\mu\nu}F_{\alpha\beta}]\\
+    W^aW_a&\supset\theta\theta\qty[ D^2+2\im\lambda\sigma^\mu\partial_\mu\lambda^\dagger-\frac12F_{\mu\nu}F^{\mu\nu}-\frac\im2\star F_{\mu\nu}F^{\mu\nu}]\\
+    W_{\dot a}^\dagger W^{\dagger \dot a}&\supset\theta^\dagger\theta^\dagger\qty[ D^2-2\im\partial_\mu\lambda\sigma^\mu\lambda^\dagger-\frac12F_{\mu\nu}F^{\mu\nu}+\frac\im2\star F_{\mu\nu}F^{\mu\nu}]\\
+\end{align*}
+Portanto a Ação é,
+\[S=\int\dd[4]{x}\qty[-\frac14 F_{\mu\nu}F^{\mu\nu}+\im\lambda^\dagger{\bar\sigma}^\mu\partial^\mu\lambda+\frac12 D^2]\] No qual temos a ação cinética padrão de um bóson de calibre de $\mathfrak u\qty(1)$, mais o seu parceiro super-simétrico e um 
+campo auxiliar. Finalmente, precisamos construir como introduzir interações providas pelo multipleto vetorial em um multipleto de matéria, isto é, (Anti-)Chiral. Sabemos que em teorias de 
+calibre, o acoplamento entre os portadores de forças e os integrantes da matéria é descrito por uma modificação no termo cinético dos campos de matéria, portanto, devemos buscar uma modificação em $\Phi^\dagger \Phi$ que 
+possua invariância de calibre sobre\footnote{Aqui estamos utilizando o parâmetro de acoplamento $g$ na forma \textit{física}, isto é, na forma em que tem mais utilidade para teoria de perturbação e espalhamento. Mas, poderíamos usar em uma outra forma, a \textit{holomorfa}, na qual substituímos $gV\rightarrow V$, e o parâmetro de acoplamento aparece apenas em $S=\int\dd[4]{x}\dd[2]{\theta}\frac{1}{4g^2}W^aW_a+\textnormal{h.c.}$, esta forma é mais útil para análises de efeitos não perturbativos.} \[\Phi\rightarrow\exp\qty(-2\im g\Xi)\Phi,\ \ \ \Phi^\dagger\rightarrow\Phi\exp\qty(2\im g\Xi^\dagger),\ \ \ V\rightarrow V+\im\qty(\Xi^\dagger-\Xi)\] Como a transformação é linear em $V$ e exponencial em $\Phi^{\qty(\dagger)}$, 
+existe apenas uma função em que a multiplicação se torna linear, e esta é a exponencial, portanto, a variação do termo cinético mais simples que podemos escrever é,\[S=\int\dd[4]{x}\dd[2]{\theta}\dd[2]{\theta^\dagger}\Phi^\dagger\exp\qty(-2g V)\Phi\] Onde é claro, $g$ é o parâmetro de acoplamento adimensional. Tudo isto esta bem definido por que de fato 
+$V$ é adimensional, apesar de $v_\mu$ e $\lambda$ possuírem dimensões de massa usuais. Vamos obter que tipo de interações são geradas por este termo cinético, basta expandir em potências a exponencial e utilizar-se das propriedades das quantidades grassmanianas\footnote{Usamos $\theta\sigma^\mu\theta^\dagger\theta\sigma^\nu\theta^\dagger=-\frac12\theta\theta\theta^\dagger\theta^\dagger g^{\mu\nu}$.},
+\begin{align*}
+    V&=\theta\sigma^\mu\theta^\dagger v_\mu+\theta\theta\theta^\dagger\lambda^\dagger+\theta^\dagger\theta^\dagger\theta\lambda+\frac12\theta\theta\theta^\dagger\theta^\dagger D\\
+    V^2&=-\frac12\theta\theta\theta^\dagger\theta^\dagger v^\mu v_\mu\\
+    V^3&=0\\
+    \exp\qty(-2gV)&=1-2g\theta\sigma^\mu\theta^\dagger v_\mu-2g\theta\theta\theta^\dagger\lambda^\dagger-2g\theta^\dagger\theta^\dagger\theta\lambda-\theta\theta\theta^\dagger\theta^\dagger\qty(g D+g^2v_\mu v^\mu)
+\end{align*}
+Assim, como a integral grassmaniana seleciona apenas os termos com $\theta\theta\theta^\dagger\theta^\dagger$, o que resta é calcular as contribuições para este tipo de termo. O que é um trabalho direto, porém demorado, vamos 
+apenas citar a forma final sendo,
+\begin{align*}
+    S=\int\dd[4]{x}\qty[-D_\mu\phi^\dagger D^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu D_\mu\psi+F^\dagger F+\sqrt 2 g\psi^\dagger\lambda^\dagger\phi+\sqrt 2 g\phi^\dagger\lambda\psi-g\phi^\dagger\phi D]
+\end{align*}
+Nota-se aqui o aparecimento da derivada covariante $D_\mu=\partial_\mu-\im g v_\mu$ a qual atua igualmente nas partes bosônicas e fermiônicas do multipleto chiral. Como o campo auxiliar não possui termo cinético ele não é modificado. 
+Algo de interessante a se notar é, além da interação com o portador de força bosônico via derivada covariante, há termos de interação não triviais com o portador de força fermiônico. A extensão para teorias de calibre não abelianas pode ser feita, 
+basta-se tomar índices de grupo em $V$ e $\Xi$ contraídos com os seus respectivos geradores, para se manter a super-simetria, algo que deve ser respeitado é: Todos os integrantes de um mesmo multipleto devem possuir as mesmas cargas e as mesmas transformações 
+com relação a simetrias internas, portanto, assim como um bóson vetorial de calibre deve necessariamente se transformar na representação adjunta do grupo de calibre, seu super-parceiro fermiônico deve-se transformar na mesma representação, a adjunta.
+Muitos outros tópicos aqui poderiam ser abordados, como a existência de propriedades de não renormalização do super-potencial, teorias com Super-Simetria estendida e até um dos tópicos que conferem à Super-Simetria um interesse mor, a calibração da 
+Super-Simetria, isto é fazer da Super-Simetria uma simetria local, isto por sí é um tópico extremamente complexo, porém de altíssima beleza, uma vez que se a atuação de $Q_a$ é local, assim é a da \cref{qqdagger}, isto é, translações são locais. Portanto necessariamente uma teoria de Super-Simetria local é uma teoria de Gravitação.

@@ -1,0 +1,258 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{coleman1967}{article}{}
+    \name{author}{2}{}{%
+      {{hash=CS}{%
+         family={Coleman},
+         familyi={C\bibinitperiod},
+         given={Sidney},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Mandula},
+         familyi={M\bibinitperiod},
+         given={Jeffrey},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{CSMJ1}
+    \strng{fullhash}{CSMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1103/PhysRev.159.1251
+    \endverb
+    \field{issue}{5}
+    \field{pages}{1251\bibrangedash 1256}
+    \field{title}{All Possible Symmetries of the $S$ Matrix}
+    \verb{url}
+    \verb https://link.aps.org/doi/10.1103/PhysRev.159.1251
+    \endverb
+    \field{volume}{159}
+    \field{journaltitle}{Phys. Rev.}
+    \field{year}{1967}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{haag1975}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HR}{%
+         family={Haag},
+         familyi={H\bibinitperiod},
+         given={Rudolf},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=≈JT}{%
+         family={≈Åopusza≈Ñski},
+         familyi={≈\bibinitperiod},
+         given={Jan\bibnamedelima T.},
+         giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Sohnius},
+         familyi={S\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HR≈JTSM1}
+    \strng{fullhash}{HR≈JTSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    A generator of a symmetry or supersymmetry of the S-matrix has to have
+  three simple properties (see sect. 2). Starting from these properties one can
+  give a complete analysis of the possible structure of the pseudo Lie algebra
+  of these generators. In a theory with non-vanishing masses one finds that the
+  only extension of previously known relations is the possible appearance of
+  ‚Äúcentral charges‚Äù as anticommutators of Fermi charges. In the massless
+  case (disregarding infrared problems and symmetry breaking) the Fermi charges
+  may generate the conformal group together with a unitary internal symmetry
+  group.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/0550-3213(75)90279-5
+    \endverb
+    \field{issn}{0550-3213}
+    \field{number}{2}
+    \field{pages}{257\bibrangedash 274}
+    \field{title}{All possible generators of supersymmetries of the S-matrix}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/0550321375902795
+    \endverb
+    \field{volume}{88}
+    \field{journaltitle}{Nuclear Physics B}
+    \field{year}{1975}
+  \endentry
+
+  \entry{muller}{book}{}
+    \name{author}{2}{}{%
+      {{hash=MKH}{%
+         family={M{\"u}ller-Kirsten},
+         familyi={M\bibinithyphendelim K\bibinitperiod},
+         given={H.J.W.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=WA}{%
+         family={Wiedemann},
+         familyi={W\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {World Scientific}%
+    }
+    \strng{namehash}{MKHWA1}
+    \strng{fullhash}{MKHWA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{isbn}{9789814293426}
+    \field{series}{G - Reference,Information and Interdisciplinary Subjects
+  Series}
+    \field{title}{Introduction to Supersymmetry}
+    \verb{url}
+    \verb https://books.google.com.br/books?id=65DkngEACAAJ
+    \endverb
+    \field{year}{2010}
+  \endentry
+
+  \entry{srednicki}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SM}{%
+         family={Srednicki},
+         familyi={S\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{SM1}
+    \strng{fullhash}{SM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{isbn}{9781139462761}
+    \field{title}{Quantum Field Theory}
+    \verb{url}
+    \verb https://books.google.com.br/books?id=5OepxIG42B4C
+    \endverb
+    \field{year}{2007}
+  \endentry
+
+  \entry{tong}{online}{}
+    \name{author}{1}{}{%
+      {{hash=TD}{%
+         family={Tong},
+         familyi={T\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TD1}
+    \strng{fullhash}{TD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{Supersymmetric Field Theory}
+    \verb{url}
+    \verb http://www.damtp.cam.ac.uk/user/tong/susy.html
+    \endverb
+    \field{year}{2022}
+    \field{urlday}{10}
+    \field{urlmonth}{12}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{weinberg3}{book}{}
+    \name{author}{1}{}{%
+      {{hash=WS}{%
+         family={Weinberg},
+         familyi={W\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{WS1}
+    \strng{fullhash}{WS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{isbn}{9781139643436}
+    \field{title}{The Quantum Theory of Fields: Volume 3, Supersymmetry}
+    \verb{url}
+    \verb https://books.google.com.br/books?id=QMkgAwAAQBAJ
+    \endverb
+    \field{year}{2005}
+  \endentry
+
+  \entry{witten1982}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WE}{%
+         family={Witten},
+         familyi={W\bibinitperiod},
+         given={Edward},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WE1}
+    \strng{fullhash}{WE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{abstract}{%
+    Some non-perturbative constraints on supersymmetry breaking are derived. It
+  is demonstrated that dynamical supersymmetry breaking does not occur in
+  certain interesting classes of theories.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/0550-3213(82)90071-2
+    \endverb
+    \field{issn}{0550-3213}
+    \field{number}{2}
+    \field{pages}{253\bibrangedash 316}
+    \field{title}{Constraints on supersymmetry breaking}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/0550321382900712
+    \endverb
+    \field{volume}{202}
+    \field{journaltitle}{Nuclear Physics B}
+    \field{year}{1982}
+  \endentry
+\enddatalist
+\endinput

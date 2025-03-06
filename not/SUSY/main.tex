@@ -1,0 +1,129 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[a4paper,
+    left=2cm,
+    right=2cm,
+    top=2cm,
+    bottom=2cm]{geometry}
+\usepackage[font=small,labelfont=bf,
+   justification=justified,
+   format=plain]{caption}
+\makeindex
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage{mathrsfs}
+\usepackage{tikz-feynman}
+\usepackage{bbm}
+\usepackage{tensor}
+\usepackage{xcolor}
+
+\newtheoremstyle{dotless}% name
+    {}% space above
+    {}% space below
+    {\itshape}% body font
+    {}% indent amount
+    {\bfseries}% theorem head font
+    {}% punctuation after theorem head
+    { }% space after theorem head
+    {}% theorem head spec
+
+\theoremstyle{dotless}
+
+\newtheorem{p}{Exercício}%[section]
+
+\title{\textbf{Supersymmetry}}
+
+\author{\textbf{Vicente V. Figueira --- NUSP 11809301}}
+
+\date{\today}
+
+\newcommand{\chap}[1]{
+    \let\secstore\thesection
+    \let\thesection\mythesection
+    \section{#1}
+    \let\thesection\secstore
+}
+\newcommand{\insrt}[4]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#2\linewidth]{#1}
+        \caption{#3}
+        \label{#4}
+    \end{figure}
+}
+\newcommand{\letra}[1]{\begin{itemize}
+    \item{\textbf{Item (#1):}}
+    \end{itemize}
+}
+\newcommand{\prob}[1]{\begin{p}\label{#1}\end{p}}
+\newcommand{\cqd}{$\hfill\blacksquare$}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\trp}[1]{{#1}^{\textnormal{T}}}
+\newcommand{\Det}[1]{\textup{Det} #1}
+
+\numberwithin{equation}{section}
+
+\newtheoremstyle{dotless}% name
+    {}% space above
+    {}% space below
+    {}% body font
+    {}% indent amount
+    {\bfseries}% theorem head font
+    {}% punctuation after theorem head
+    { }% space after theorem head
+    {}% theorem head spec
+
+\theoremstyle{dotless}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defin}{Definição}[section]
+\newtheorem{corl}{Corolário}[teo]
+\newtheorem{lemm}{Lema}[defin]
+\newtheorem{exem}{Exemplo}[section]
+\newtheorem{prov}{Prova:}[section]
+\newenvironment{prova}{\paragraph{\nbold{Prova:}}}{\hfill$\blacksquare$\par}
+\newcommand{\nbold}[1]{\normalfont{\textbf{#1}}}
+\newcommand{\unit}{\mbox{\normalfont{id$_{\vb H}$}}}
+
+%% \doublespacing
+
+\begin{document}
+
+\maketitle
+
+%% \tableofcontents
+
+\input{sections/poincare}
+
+\newpage
+
+\input{sections/susyalgebra}
+
+\newpage
+
+\input{sections/repsusy}
+
+\appendix
+
+\newpage
+
+
+
+\end{document}

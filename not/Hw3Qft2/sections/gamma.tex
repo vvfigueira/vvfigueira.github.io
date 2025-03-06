@@ -1,0 +1,202 @@
+\section{Gamma Matrix Technology}
+
+We start with the trace properties, we're going to assume here that the space-time is `$D$' 
+dimensional, except when there is a `$\gamma_5$'. There is a small catch where, as what 
+is the dimension of the matrices for an arbitrary space-time dimensionality, the answer is 
+`$2^{\lfloor \frac D2\rfloor}$', but as we're always interested in the dimensional regularization, 
+this only amounts for an additional finite term in the counter terms, so, we're just assuming 
+the matrices are `$4$' dimensional,
+
+\begin{itemize}
+    \item $\Tr\qty[\gamma^\mu \gamma^\nu]=4g^{\mu\nu}$
+\end{itemize}
+
+This is simple,
+
+\begin{align}
+    \acomm{\gamma^\mu}{\gamma^\nu}&=2g^{\mu\nu}\mathbbm 1\nonumber\\
+    \Tr\qty[\acomm{\gamma^\mu}{\gamma^\nu}]&=2g^{\mu\nu}\Tr\qty[\mathbbm 1]\nonumber\\
+    2\Tr\qty[\gamma^\mu\gamma^\nu]&=8g^{\mu\nu}\nonumber\\
+    \Tr\qty[\gamma^\mu\gamma^\nu]&=4g^{\mu\nu}\nonumber
+\end{align}
+
+\begin{itemize}
+    \item $\Tr\qty[\gamma^\mu \gamma^\nu\gamma^{\alpha}\gamma^{\beta}]=4g^{\mu\beta}g^{\nu\alpha}-4g^{\nu\beta}g^{\alpha\mu}+4g^{\mu\nu}g^{\alpha\beta}$
+\end{itemize}
+
+\begin{align}
+    \Tr\qty[\gamma^\mu \gamma^\nu\gamma^{\alpha}\gamma^{\beta}]&=\Tr\qty[\gamma^\mu \gamma^\nu\qty(-\gamma^{\beta}\gamma^{\alpha}+2g^{\alpha\beta})]\nonumber\\
+    &=-\Tr\qty[\gamma^\mu \gamma^\nu\gamma^{\beta}\gamma^{\alpha}]+8g^{\mu\nu}g^{\alpha\beta}\nonumber\\
+    &=-\Tr\qty[\gamma^\mu\qty(- \gamma^\beta\gamma^{\nu}+2g^{\nu\beta})\gamma^{\alpha}]+8g^{\mu\nu}g^{\alpha\beta}\nonumber\\
+    &=\Tr\qty[\gamma^\mu\gamma^\beta\gamma^{\nu}\gamma^{\alpha}]-8g^{\nu\beta}g^{\alpha\mu}+8g^{\mu\nu}g^{\alpha\beta}\nonumber\\
+    &=\Tr\qty[\qty(-\gamma^\beta\gamma^\mu+2g^{\mu\beta})\gamma^{\nu}\gamma^{\alpha}]-8g^{\nu\beta}g^{\alpha\mu}+8g^{\mu\nu}g^{\alpha\beta}\nonumber\\
+    &=-\Tr\qty[\gamma^\beta\gamma^\mu\gamma^{\nu}\gamma^{\alpha}]+8g^{\mu\beta}g^{\nu\alpha}-8g^{\nu\beta}g^{\alpha\mu}+8g^{\mu\nu}g^{\alpha\beta}\nonumber\\
+    2\Tr\qty[\gamma^\mu\gamma^{\nu}\gamma^{\alpha}\gamma^\beta]&=8g^{\mu\beta}g^{\nu\alpha}-8g^{\nu\beta}g^{\alpha\mu}+8g^{\mu\nu}g^{\alpha\beta}\nonumber\\
+    \Tr\qty[\gamma^\mu\gamma^{\nu}\gamma^{\alpha}\gamma^\beta]&=4g^{\mu\beta}g^{\nu\alpha}-4g^{\nu\beta}g^{\alpha\mu}+4g^{\mu\nu}g^{\alpha\beta}\nonumber
+\end{align}
+
+\begin{itemize}
+    \item $\Tr\qty[\gamma_5]=0$
+\end{itemize}
+
+\begin{align}
+    \Tr\qty[\gamma_5]&=\im\Tr\qty[\gamma^0\gamma^1\gamma^2\gamma^3]\nonumber\\
+    &=\im4\qty(g^{03}g^{12}-g^{13}g^{20}+g^{01}g^{23})=0\nonumber
+\end{align}
+
+Now we'll need another result,
+
+\begin{itemize}
+    \item $\acomm{\gamma_5}{\gamma^\mu}=0$
+\end{itemize}
+
+This has to be proved case by case,
+
+\begin{align}
+    \acomm{\gamma_5}{\gamma^0}&=\im\gamma^0\gamma^1\gamma^2\gamma^3\gamma^0+\im\gamma^0\gamma^0\gamma^1\gamma^2\gamma^3\nonumber\\
+    &=-\im\gamma^0\gamma^1\gamma^2\gamma^0\gamma^3-\gamma^1\gamma^2\gamma^3\nonumber\\
+    &=\im\gamma^0\gamma^1\gamma^0\gamma^2\gamma^3-\gamma^1\gamma^2\gamma^3\nonumber\\
+    &=-\im\gamma^0\gamma^0\gamma^1\gamma^2\gamma^3-\gamma^1\gamma^2\gamma^3\nonumber\\
+    &=\im\gamma^1\gamma^2\gamma^3-\gamma^1\gamma^2\gamma^3\nonumber\\
+    &=0\nonumber
+\end{align}
+
+The proof for the other matrix are analogous,
+
+\begin{itemize}
+    \item $\gamma_5\gamma_5=\mathbbm 1$
+\end{itemize}
+
+\begin{align}
+    \gamma_5\gamma_5&=\im\gamma^0\gamma^1\gamma^2\gamma^3\im\gamma^0\gamma^1\gamma^2\gamma^3\nonumber\\
+    &=-\gamma^0\gamma^1\gamma^2\gamma^3\gamma^0\gamma^1\gamma^2\gamma^3\nonumber\\
+    &=\gamma^0\gamma^1\gamma^2\gamma^0\gamma^1\gamma^2\gamma^3\gamma^3\nonumber\\
+    &=\gamma^0\gamma^1\gamma^0\gamma^1\gamma^2\gamma^2\nonumber\\
+    &=-\gamma^0\gamma^0\gamma^1\gamma^1=\mathbbm 1\nonumber
+\end{align}
+
+\begin{itemize}
+    \item $\Tr\qty[\textnormal{odd number of }\gamma]=0$
+\end{itemize}
+
+\begin{align}
+    \Tr\qty[\gamma^{\mu_1}\cdots\gamma^{\mu_{2n+1}}]&=\Tr\qty[\gamma^{\mu_1}\cdots\gamma^{\mu_{2n+1}}\gamma_5\gamma_5]\nonumber\\
+    &=\qty(-1)^{2n+1}\Tr\qty[\gamma_5\gamma^{\mu_1}\cdots\gamma^{\mu_{2n+1}}\gamma_5]\nonumber\\
+    &=-\Tr\qty[\gamma^{\mu_1}\cdots\gamma^{\mu_{2n+1}}]\nonumber\\
+    \Tr\qty[\gamma^{\mu_1}\cdots\gamma^{\mu_{2n+1}}]&=0\nonumber
+\end{align}
+
+\begin{itemize}
+    \item $\Tr\qty[\gamma_5\textnormal{ odd number of }\gamma]=0$
+\end{itemize}
+
+\begin{align}
+    \Tr\qty[\gamma_5\gamma^{\mu_1}\cdots\gamma^{\mu_{2n+1}}]&=\Tr\qty[\gamma_5\gamma^{\mu_1}\cdots\gamma^{\mu_{2n+1}}\gamma_5\gamma_5]\nonumber\\
+    &=\qty(-1)^{2n+1}\Tr\qty[\gamma_5\gamma_5\gamma^{\mu_1}\cdots\gamma^{\mu_{2n+1}}\gamma_5]\nonumber\\
+    &=-\Tr\qty[\gamma_5\gamma^{\mu_1}\cdots\gamma^{\mu_{2n+1}}]\nonumber\\
+    \Tr\qty[\gamma_5\gamma^{\mu_1}\cdots\gamma^{\mu_{2n+1}}]&=0\nonumber
+\end{align}
+
+\begin{itemize}
+    \item $\Tr\qty[\gamma_5\gamma^\mu\gamma^\nu]=0$
+\end{itemize}
+
+Take `$\alpha\neq \mu$' and `$\alpha\neq \nu$', and the following is not assuming the summation 
+convention,
+
+\begin{align}
+    \Tr\qty[\gamma_5\gamma^\mu\gamma^\nu]&=\Tr\qty[\gamma_5g_{\alpha\alpha}\gamma^\alpha\gamma^\alpha\gamma^\mu\gamma^\nu]\nonumber\\
+    &=-\Tr\qty[\gamma_5g_{\alpha\alpha}\gamma^\alpha\gamma^\mu\gamma^\alpha\gamma^\nu]\nonumber\\
+    &=\Tr\qty[\gamma_5g_{\alpha\alpha}\gamma^\alpha\gamma^\mu\gamma^\nu\gamma^\alpha]\nonumber\\
+    &=-\Tr\qty[\gamma_5\gamma^\alpha g_{\alpha\alpha}\gamma^\alpha\gamma^\mu\gamma^\nu]\nonumber\\
+    \Tr\qty[\gamma_5\gamma^\mu\gamma^\nu]&=0\nonumber
+\end{align}
+
+\begin{itemize}
+    \item $\Tr\qty[\gamma_5\gamma^\mu\gamma^\nu\gamma^\alpha\gamma^\beta]=4\im\epsilon^{\mu\nu\alpha\beta}$
+\end{itemize}
+
+\begin{align}
+    \Tr\qty[\gamma_5\gamma^\mu\gamma^\nu\gamma^\alpha\gamma^\beta]
+\end{align}
+
+This is a little bit more complicated, but we can use some tricks, we see that if we have two or more indices 
+equal it gives zero, due to the last property,
+
+\begin{align}
+    \Tr\qty[\gamma_5\gamma^\mu\gamma^\mu\gamma^\alpha\gamma^\beta]&=g^{\mu\mu}\Tr\qty[\gamma_5\gamma^\alpha\gamma^\beta]=0\nonumber
+\end{align}
+
+Hence it can only be non-zero when all indices are different from each other. in this case, as the Gamma matrices 
+anticommute with each other, that is, this quantity is totally antisymmetric in all indices, thus, it must 
+be proportional to `$\epsilon^{\mu\nu\alpha\beta}$' as this is the only fully antisymmetric quantity in `$4$' 
+dimensions,
+
+\begin{align}
+    \Tr\qty[\gamma_5\gamma^\mu\gamma^\mu\gamma^\alpha\gamma^\beta]&\propto\epsilon^{\mu\nu\alpha\beta}\nonumber\\
+    \Tr\qty[\gamma_5\gamma^0\gamma^1\gamma^2\gamma^3]&\propto\epsilon^{0123}\nonumber\\
+    \im\Tr\qty[\gamma^0\gamma^1\gamma^2\gamma^3\gamma^0\gamma^1\gamma^2\gamma^3]&\propto-1\nonumber\\
+    -\im\Tr\qty[\gamma^0\gamma^0\gamma^1\gamma^2\gamma^3\gamma^1\gamma^2\gamma^3]&\propto-1\nonumber\\
+    \im\Tr\qty[\gamma^1\gamma^1\gamma^2\gamma^3\gamma^2\gamma^3]&\propto-1\nonumber\\
+    -\im\Tr\qty[\gamma^2\gamma^2\gamma^3\gamma^3]&\propto-1\nonumber\\
+    -4\im&\propto-1\nonumber\\
+\end{align}
+
+Hence,
+
+\begin{align}
+    \Tr\qty[\gamma_5\gamma^\mu\gamma^\mu\gamma^\alpha\gamma^\beta]&=4\im\epsilon^{\mu\nu\alpha\beta}\nonumber
+\end{align}
+
+Now we got for some other equalities,
+
+\begin{itemize}
+    \item $\qty(\gamma^\mu)^2=g^{\mu\mu}$
+\end{itemize}
+
+\begin{align}
+    \acomm{\gamma^\mu}{\gamma^\mu}&=2g^{\mu\mu}\nonumber\\
+    2\gamma^\mu=2g^{\mu\mu}\nonumber\\
+    \qty(\gamma^\mu)^2&=g^{\mu\mu}\nonumber
+\end{align} 
+
+\begin{itemize}
+    \item $\gamma_\mu\gamma^\mu=D$
+\end{itemize}
+
+\begin{align}
+    g_{\mu\nu}\acomm{\gamma^\mu}{\gamma^\nu}&=2g_{\mu\nu}g^{\mu\nu}\nonumber\\
+    2\gamma_\mu\gamma^\mu&=2D\nonumber\\
+    \gamma_\mu\gamma^\mu&=D\nonumber
+\end{align}
+
+\begin{itemize}
+    \item $\gamma_\mu\gamma^\alpha\gamma^\mu=\qty(2-D)\gamma^\alpha$
+\end{itemize}
+
+\begin{align}
+    \gamma_\mu\gamma^\alpha\gamma^\mu&=\gamma_\mu\qty(-\gamma^\mu\gamma^\alpha+2g^{\mu\alpha})\nonumber\\
+    &=-\gamma_\mu\gamma^\mu\gamma^\alpha+2\gamma^\alpha\nonumber\\
+    &=\qty(2-D)\gamma^\alpha
+\end{align}
+
+\begin{itemize}
+    \item $\gamma_\mu\gamma^\alpha\gamma^\beta\gamma^\mu=\qty(D-2)\gamma^\alpha\gamma^\beta+2\gamma^\beta\gamma^\alpha$
+\end{itemize}
+
+\begin{align}
+    \gamma_\mu\gamma^\alpha\gamma^\beta\gamma^\mu&=\gamma_\mu\gamma^\alpha\qty(-\gamma^\mu\gamma^\beta+2g^{\beta\mu})\nonumber\\
+    &=-\gamma_\mu\gamma^\alpha\alpha\gamma^\mu\gamma^\beta+\gamma^\beta\gamma^\alpha\nonumber\\
+    &=\qty(D-2)\gamma^\alpha\gamma^\beta+2\gamma^\beta\gamma^\alpha\nonumber
+\end{align}
+
+\begin{itemize}
+    \item $\gamma_\mu\gamma^\alpha\gamma^\beta\gamma^\delta\gamma^\mu=+2\gamma_\delta\gamma^\alpha\gamma^\beta-2\gamma^\beta\gamma^\alpha\gamma^\delta+\qty(2-D)\gamma^\alpha\gamma^\beta\gamma^\delta$
+\end{itemize}
+
+\begin{align}
+    \gamma_\mu\gamma^\alpha\gamma^\beta\gamma^\delta\gamma^\mu&=
+    \gamma_\mu\gamma^\alpha\gamma^\beta\qty(-\gamma^\mu\gamma^\delta+2g^{\mu\delta})\nonumber\\
+    &=-\gamma_\mu\gamma^\alpha\gamma^\beta\gamma^\mu\gamma^\delta+2\gamma_\delta\gamma^\alpha\gamma^\beta\nonumber\\
+    &=-\qty(D-2)\gamma^\alpha\gamma^\beta\gamma^\delta-2\gamma^\beta\gamma^\alpha\gamma^\delta+2\gamma_\delta\gamma^\alpha\gamma^\beta\nonumber
+\end{align}
