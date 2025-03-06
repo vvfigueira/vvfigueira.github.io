@@ -1,1 +1,91 @@
 \section{Capítulo 2}
+
+\subsection{Seção 2.1}
+
+\subsection{Seção 2.2}
+
+\prob{1}
+
+Seja o momento, 
+\[p^\mu=E\mqty(1&\sin\theta\cos\phi&\sin\theta\sin\phi&\cos\theta)\]
+Sabemos que,
+\[{\sigma}^{\mu}_{a\dot b}=\mqty(\mathbbm 1,\boldsymbol\sigma)\]
+Assim,
+\begin{align*}
+    p_{a\dot b}&=p_\mu\sigma^\mu_{a\dot b}=-p^0\mathbbm1+\vb p\cdot \boldsymbol\sigma\\
+    &=\mqty(-p^0+p^3&p^1-\im p^2\\p^1+\im p^2&-p^0-p^3)=-\mqty(p^0-p^3&-p^1+\im p^2\\-p^1-\im p^2&p^0+p^3)\\
+    &=-\mqty(\pm\sqrt{p^0-p^3}\qty(\pm)\sqrt{p^0-p^3}&\pm\sqrt{p^0-p^3}\qty(\pm)\frac{-p^1+\im p^2}{\sqrt{p^0-p^3}}\\
+    \pm\frac{-p^1-\im p^2}{\sqrt{p^0-p^3}}\qty(\pm)\sqrt{p^0-p^3}&\frac{\qty(p^0)^2-\qty(p^3)^2}{\pm\sqrt{p^0-p^3}\qty(\pm)\sqrt{p^0-p^3}})\\
+    &=-\mqty(\pm\sqrt{p^0-p^3}\qty(\pm)\sqrt{p^0-p^3}&\pm\sqrt{p^0-p^3}\qty(\pm)\frac{-p^1+\im p^2}{\sqrt{p^0-p^3}}\\
+    \pm\frac{-p^1-\im p^2}{\sqrt{p^0-p^3}}\qty(\pm)\sqrt{p^0-p^3}&\frac{\qty(p^1)^2+\qty(p^2)^2}{\pm\sqrt{p^0-p^3}\qty(\pm)\sqrt{p^0-p^3}})\\
+    &=-\mqty(\pm\sqrt{p^0-p^3}\qty(\pm)\sqrt{p^0-p^3}&\pm\sqrt{p^0-p^3}\qty(\pm)\frac{-p^1+\im p^2}{\sqrt{p^0-p^3}}\\
+    \pm\frac{-p^1-\im p^2}{\sqrt{p^0-p^3}}\qty(\pm)\sqrt{p^0-p^3}&\frac{-p^1-\im p^2}{\pm\sqrt{p^0-p^3}}\frac{-p^1+\im p^2}{\qty(\pm)\sqrt{p^0-p^3}})\\
+    &=-\qty(\pm)t\mqty(\sqrt{p^0-p^3}\\\frac{-p^1-\im p^2}{\sqrt{p^0-p^3}})\qty(\pm)t^{-1}\mqty(\sqrt{p^0-p^3}&\frac{-p^1+\im p^2}{\sqrt{p^0-p^3}})
+\end{align*}
+Para qualquer $t$, de fato podemos absorver o sinal da raiz quadrada nele,
+\begin{align*}
+    p_{a\dot b}&=-t\mqty(\sqrt{p^0-p^3}\\\frac{-p^1-\im p^2}{\sqrt{p^0-p^3}})t^{-1}\mqty(\sqrt{p^0-p^3}&\frac{-p^1+\im p^2}{\sqrt{p^0-p^3}})\\
+    p_{a\dot b}&=-|p]_a\langle p|_{\dot b}
+\end{align*}
+Vamos agora ignorar $t$, que está relacionado com a transformação pelo Little-Group. Assim obtemos,
+\begin{align*}
+    |p]_a&=\mqty(\sqrt{p^0-p^3}\\\frac{-p^1-\im p^2}{\sqrt{p^0-p^3}})\\
+    &=\sqrt{E}\mqty(\sqrt{1-\cos\theta}\\\frac{-\sin\theta\cos\phi-\im \sin\theta\sin\phi}{\sqrt{1-\cos\theta}})\\
+    &=\sqrt{E}\mqty(\sqrt{2\sin^2\qty(\frac\theta2)}\\\frac{-\sin\theta}{\sqrt{2\sin^2\qty(\frac\theta2)}}e^{\im\phi})\\
+    &=\sqrt{2E}\mqty(\sin\qty(\frac\theta2)\\-\cos\qty(\frac\theta2)e^{\im\phi})\sim\sqrt{2E}\mqty(-\sin\qty(\frac\theta2)e^{-\im\phi}\\\cos\qty(\frac\theta2))\\
+\end{align*}
+Partindo deste podemos obter os outros via conjugação,
+\begin{align*}
+    \qty(|p]_a)^\ast=\langle p|_{\dot a}&=\sqrt{2E}\mqty(-\sin\qty(\frac\theta2)e^{\im\phi}&\cos\qty(\frac\theta2))\\
+    \epsilon^{\dot b\dot a}\langle p|_{\dot a}=|p\rangle^{\dot b}&=\sqrt{2E}\mqty(0&1\\-1&0)\mqty(-\sin\qty(\frac\theta2)e^{\im\phi}\\\cos\qty(\frac\theta2))\\
+    |p\rangle^{\dot b}&=\sqrt{2E}\mqty(\cos\qty(\frac\theta2)\\\sin\qty(\frac\theta2)e^{\im\phi})\\
+    \qty(|p\rangle^{\dot b})^\ast=[p|^b&=\sqrt{2E}\mqty(\cos\qty(\frac\theta2)&\sin\qty(\frac\theta2)e^{-\im\phi})
+\end{align*}
+Para verificar que `$|p\rangle^{\dot a}$' satisfaz a equação de Weyl basta verificar que,
+\begin{align*}
+    \langle p|_{\dot a}| p\rangle^{\dot a}=0
+\end{align*}
+O que de fato é verdade, pois,
+\begin{align*}
+    \langle p|_{\dot a}| p\rangle^{\dot a}&=2E\mqty(-\sin\qty(\frac\theta2)e^{\im\phi}&\cos\qty(\frac\theta2))\mqty(\cos\qty(\frac\theta2)\\\sin\qty(\frac\theta2)e^{\im\phi})\\
+    &=2Ee^{\im\phi}\qty(-\sin\qty(\frac\theta2)\cos\qty(\frac\theta2)+\sin\qty(\frac\theta2)\cos\qty(\frac\theta2))=0
+\end{align*}
+Resta-nos checar que $p^{\dot a b}=-|p\rangle^{\dot a}[p|^b$,
+\begin{align*}
+    -|p\rangle^{\dot a}[p|^b&=-2E\mqty(\cos\qty(\frac\theta2)\\\sin\qty(\frac\theta2)e^{\im\phi})\mqty(\cos\qty(\frac\theta2)&\sin\qty(\frac\theta2)e^{-\im\phi})\\
+    &=E\mqty(-2\cos^2\qty(\frac\theta2)&-2\sin\qty(\frac\theta2)\cos\qty(\frac\theta2)e^{-\im\phi}\\-2\sin\qty(\frac\theta2)\cos\qty(\frac\theta2)e^{\im \phi}&-2\sin^2\qty(\frac\theta2))\\
+    &=E\mqty(-1-\cos\theta&-\sin\theta e^{-\im\phi}\\-\sin\theta e^{\im \phi}&-1+\cos\theta)\\
+    &=E\mqty(-1-\cos\theta&-\sin\theta\cos\phi+\im\sin\theta\sin\phi\\-\sin\theta\cos\phi-\im\sin\theta\sin\phi&-1+\cos\theta)\\
+    &=\mqty(-p^0-p^3&-p^1+\im p^2\\-p^1-\im p^2&-p^0+p^3)=-p^0\mathbbm 1-\vb p\cdot\boldsymbol\sigma=p_\mu{\bar\sigma}^{\mu\dot a b}
+\end{align*}
+
+\prob{2}
+
+O operador de helicidade é,
+\begin{align*}
+    \Sigma&=\frac\im4\comm{\gamma^\mu}{\gamma^\nu}\frac12\epsilon_{0\alpha\mu\nu}\frac{p^\alpha}{\norm{p^0}}
+\end{align*}
+Escolhendo um referencial como `$p^\alpha=\mqty(E&0&0&E)$',
+\begin{align*}
+    \Sigma&=\frac\im8\epsilon_{03\mu\nu}\comm{\gamma^\mu}{\gamma^\nu}\\
+    \Sigma&=\frac\im4\epsilon_{0312}\comm{\gamma^1}{\gamma^2}\\
+    \Sigma&=\frac\im4\mqty(\sigma^1{\bar\sigma}^2-\sigma^2{\bar\sigma}^1&\vb 0\\\vb 0&{\bar\sigma}^1\sigma^2-{\bar\sigma}^2\sigma^1)\\
+    \Sigma&=\frac\im4\qty(-2\im)\mqty(\tensor{{\sigma^3}}{_a^b}&\vb 0\\\vb 0&\tensor{{\sigma^3}}{^{\dot a}_{\dot b}})\\
+    \Sigma&=\frac12\mqty(\tensor{{\sigma^3}}{_a^b}&\vb 0\\\vb 0&\tensor{{\sigma^3}}{^{\dot a}_{\dot b}})
+\end{align*}
+Agora com as identificações,
+\[v_+=|p]_b=\sqrt{2E}\mqty(0\\1),\ \ \ v_-=|p\rangle^{\dot b}=\sqrt{2E}\mqty(1\\0)\]
+Temos,
+\begin{align*}
+    \Sigma v_+&=\frac12\tensor{{\sigma^3}}{_a^b}|p]_b\\
+    \Sigma v_+&=\frac12\mqty(1&0\\0&-1)\sqrt{2E}\mqty(0\\1)\\
+    \Sigma v_+&=-\frac12\sqrt{2E}\mqty(0\\1)=-\frac12v_+\\
+\end{align*}
+E,
+\begin{align*}
+    \Sigma v_-&=\frac12\tensor{{\sigma^3}}{^{\dot a}_{\dot b}}|p\rangle^{\dot b}\\
+    \Sigma v_-&=\frac12\mqty(1&0\\0&-1)\sqrt{2E}\mqty(1\\0)\\
+    \Sigma v_-&=\frac12\sqrt{2E}\mqty(1\\0)=\frac12v_-\\
+\end{align*}
+
+\subsection{Seção 2.3}
