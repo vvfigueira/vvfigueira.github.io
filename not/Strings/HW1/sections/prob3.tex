@@ -1,0 +1,62 @@
+\section{Problem 3}
+\subsection{3.A)}
+
+The Gamma Function can be represented in the complex plane domain, $\textnormal{Re}\qty(s)>1$, as the following integral,
+
+\begin{align*}
+    \Gamma(s)&=\int\limits_0^\infty\dd{t}\exp\qty(-t)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1
+\end{align*}
+
+Which is also the subset of the complex plane in which this integral converges, of course this representation of the Gamma Function 
+in a open set is sufficient for obtain an analytical continuation to the whole complex plane. Obviously, the integral is invariant under 
+relabeling the dummy variable $t$, we make the following choice $t\rightarrow nt$ --- Assuming $n>0$ ---,
+
+\begin{align*}
+    \Gamma(s)&=\int\limits_0^\infty\dd{\qty(nt)}\exp\qty(-nt)\qty(nt)^{s-1},\ \ \ \textnormal{Re}\qty(s)>1\\
+    \Gamma(s)&=n^s\int\limits_0^\infty\dd{t}\exp\qty(-nt)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1\\
+    n^{-s}\Gamma\qty(s)&=\int\limits_0^\infty\dd{t}\exp\qty(-nt)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1\\
+    \sum\limits_{n=1}^\infty n^{-s}\Gamma\qty(s)&=\sum\limits_{n=1}^\infty\int\limits_0^\infty\dd{t}\exp\qty(-nt)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1
+\end{align*}    
+
+The sum in the left-hand side is recognized as the representation for the Zeta Function in the domain $\textnormal{Re}\qty(s)>1$, which is also 
+the domain of convergence of the sum,
+
+\begin{align*}
+    \zeta(s)\Gamma\qty(s)&=\sum\limits_{n=1}^\infty\int\limits_0^\infty\dd{t}\exp\qty(-nt)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1\\
+\end{align*}
+
+About the right-hand side, to be able to exchange the integral and the sum is sufficient that,
+
+\begin{align*}
+    &\int\limits_0^\infty\dd{t}\sum\limits_{n=1}^\infty\norm{\exp\qty(-nt)t^{s-1}}<\infty,\ \ \ \textnormal{Re}\qty(s)>1\\
+    &\int\limits_0^\infty\dd{t}\sum\limits_{n=1}^\infty\exp\qty(-nt)\norm{t^{s-1}}<\infty,\ \ \ \textnormal{Re}\qty(s)>1\\
+    &\int\limits_0^\infty\dd{t}\sum\limits_{n=1}^\infty\exp\qty(-nt)t^{\textnormal{Re}\qty(s)-1}<\infty,\ \ \ \textnormal{Re}\qty(s)>1
+\end{align*}
+
+The sum now is a simple geometric series, giving,
+
+\begin{align*}
+    &\int\limits_0^\infty\dd{t}\frac{t^{\textnormal{Re}\qty(s)-1}}{\exp\qty(t)-1}<\infty,\ \ \ \textnormal{Re}\qty(s)>1
+\end{align*}
+
+The dangerous behavior that could make the integral diverges is the one at $t\rightarrow0$, thankfully, as $\textnormal{Re}\qty(s)>1$, the 
+possible zero in the denominator is cancelled by the stronger zero in the numerator, hence, the integral converges. That is, 
+is permissible to do the exchange of the sum and integral, and we get,
+
+\begin{align*}
+    \zeta(s)\Gamma\qty(s)&=\int\limits_0^\infty\dd{t}\sum\limits_{n=1}^\infty\exp\qty(-nt)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1\\
+    \zeta(s)\Gamma\qty(s)&=\int\limits_0^\infty\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1},\ \ \ \textnormal{Re}\qty(s)>1
+\end{align*}
+
+\subsection{3.B)}
+
+The objective here is to make an analytical continuation to $\textnormal{Re}\qty(s)>-2$ of the expression found in the later item. 
+First of all, the reason the later expression is only well defined in $\textnormal{Re}\qty(s)>1$, is due to the divergence of the 
+integrand at $t\rightarrow 0$ for $\textnormal{Re}\qty(s)\leq1$
+
+\begin{align*}
+    \zeta(s)\Gamma\qty(s)&=\int\limits_0^1\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1}+\int\limits_1^\infty\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1},\ \ \ \textnormal{Re}\qty(s)>1\\
+    \zeta(s)\Gamma\qty(s)&=\int\limits_0^1\dd{t}t^{s-1}\qty[\frac{1}{\exp\qty(t)-1}-\frac1t]+\int\limits_1^\infty\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1},\ \ \ \textnormal{Re}\qty(s)>1\\
+\end{align*}
+
+\subsection{3.C)}
