@@ -4,7 +4,7 @@
 The Gamma Function can be represented in the complex plane domain, $\textnormal{Re}\qty(s)>1$, as the following integral,
 
 \begin{align*}
-    \Gamma(s)&=\int\limits_0^\infty\dd{t}\exp\qty(-t)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1
+    \Gamma(s)&=\int\limits_0^\infty\dd{t}\exp\qty(-t)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1\numberthis\label{gamma}
 \end{align*}
 
 Which is also the subset of the complex plane in which this integral converges, of course this representation of the Gamma Function 
@@ -22,7 +22,13 @@ The sum in the left-hand side is recognized as the representation for the Zeta F
 the domain of convergence of the sum,
 
 \begin{align*}
-    \zeta(s)\Gamma\qty(s)&=\sum\limits_{n=1}^\infty\int\limits_0^\infty\dd{t}\exp\qty(-nt)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1\\
+    \zeta\qty(s)=\sum\limits_{n=1}^\infty n^{-s},\ \ \ \textnormal{Re}\qty(s)>1
+\end{align*}
+
+So that,
+
+\begin{align*}
+    \zeta(s)\Gamma\qty(s)&=\sum\limits_{n=1}^\infty\int\limits_0^\infty\dd{t}\exp\qty(-nt)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1
 \end{align*}
 
 About the right-hand side, to be able to exchange the integral and the sum is sufficient that,
@@ -39,12 +45,24 @@ The sum now is a simple geometric series, giving,
     &\int\limits_0^\infty\dd{t}\frac{t^{\textnormal{Re}\qty(s)-1}}{\exp\qty(t)-1}<\infty,\ \ \ \textnormal{Re}\qty(s)>1
 \end{align*}
 
-The dangerous behavior that could make the integral diverges is the one at $t\rightarrow0$, thankfully, as $\textnormal{Re}\qty(s)>1$, the 
-possible zero in the denominator is cancelled by the stronger zero in the numerator, hence, the integral converges. That is, 
-is permissible to do the exchange of the sum and integral, and we get,
+The dangerous behavior that could make the integral diverges is the one at $t\rightarrow0$, an indeed, $\textnormal{Re}\qty(s)>1$, is 
+sufficient for the convergence of this integral, which can be seen at,
 
 \begin{align*}
-    \zeta(s)\Gamma\qty(s)&=\int\limits_0^\infty\dd{t}\sum\limits_{n=1}^\infty\exp\qty(-nt)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1\\
+    \int\limits_0^\epsilon\dd{t}\frac{t^{\textnormal{Re}\qty(s)-1}}{\exp\qty(t)-1}\approx\int\limits_0^\epsilon\dd{t}\frac{t^{\textnormal{Re}\qty(s)-1}}{t+\mathcal O\qty(t^2)}\approx\int\limits_0^\epsilon t^{\textnormal{Re}\qty(s)-2}=\frac{t^{\textnormal{Re}\qty(s)-1}}{\textnormal{Re}\qty(s)-1}\eval_0^\epsilon
+\end{align*}
+
+Which shows the integral is really finite at $t\rightarrow 0$ with $\textnormal{Re}\qty(s)>1$, hence, switching the integral and the 
+sum is justified, so,
+
+\begin{align*}
+    \zeta(s)\Gamma\qty(s)&=\sum\limits_{n=1}^\infty\int\limits_0^\infty\dd{t}\exp\qty(-nt)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1\\
+    \zeta(s)\Gamma\qty(s)&=\dd{t}\int\limits_0^\infty\sum\limits_{n=1}^\infty\exp\qty(-nt)t^{s-1},\ \ \ \textnormal{Re}\qty(s)>1
+\end{align*}
+
+Where again we have the sum of a geometric series, giving,
+
+\begin{align*}
     \zeta(s)\Gamma\qty(s)&=\int\limits_0^\infty\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1},\ \ \ \textnormal{Re}\qty(s)>1
 \end{align*}
 
@@ -52,11 +70,89 @@ is permissible to do the exchange of the sum and integral, and we get,
 
 The objective here is to make an analytical continuation to $\textnormal{Re}\qty(s)>-2$ of the expression found in the later item. 
 First of all, the reason the later expression is only well defined in $\textnormal{Re}\qty(s)>1$, is due to the divergence of the 
-integrand at $t\rightarrow 0$ for $\textnormal{Re}\qty(s)\leq1$
+integrand at $t\rightarrow 0$ for $\textnormal{Re}\qty(s)\leq1$, this is only because $\qty(\exp\qty(t)-1)^{-1}$ has a simple pole at $t=0$, which 
+is also the only pole of this function, so to get the Laurent series we first find the residue of it,
+
+\begin{align*}
+    \textnormal{Res}_{t=0}\qty(\frac{1}{\exp\qty(t)-1})&=\frac{t}{\exp\qty(t)-1}\eval_{t=0}\\
+    \textnormal{Res}_{t=0}\qty(\frac{1}{\exp\qty(t)-1})&=\frac{t}{t+\mathcal O\qty(t^2)}\eval_{t=0}\\
+    \textnormal{Res}_{t=0}\qty(\frac{1}{\exp\qty(t)-1})&=\frac{1}{1+\mathcal O\qty(t)}\eval_{t=0}\\
+    \textnormal{Res}_{t=0}\qty(\frac{1}{\exp\qty(t)-1})&=1
+\end{align*}
+
+As this is the only pole, we get a Laurent series starting as,
+
+\begin{align*}
+    \frac{1}{\exp\qty(t)-1}&=\frac1t+\mathcal O\qty(t^0)
+\end{align*}
+
+To get the following terms we just make a trivial Taylor series of the function $\qty(\exp\qty(t)-1)^{-1}-t^{-1}$
+
+\begin{align*}
+    \qty[\frac{1}{\exp\qty(t)-1}-\frac1t]\eval_0&=\frac{1+t-\exp\qty(t)}{t\qty[\exp\qty(t)-1]}\eval_0\\
+    \qty[\frac{1}{\exp\qty(t)-1}-\frac1t]\eval_0&=\frac{-\frac{t^2}{2}+\mathcal O\qty(t^3)}{t\qty[t+\mathcal O\qty(t^2)]}\eval_0\\
+    \qty[\frac{1}{\exp\qty(t)-1}-\frac1t]\eval_0&=\frac{-\frac{t^2}{2}+\mathcal O\qty(t^3)}{t^2\qty[1+\mathcal O\qty(t)]}\eval_0\\
+    \qty[\frac{1}{\exp\qty(t)-1}-\frac1t]\eval_0&=-\frac12
+\end{align*}
+
+In other words,
+
+\begin{align*}
+    \frac{1}{\exp\qty(t)-1}&=\frac1t-\frac12+\mathcal O\qty(t)
+\end{align*}
+
+The next term of the series will be,
+
+\begin{align*}
+    \dv{}{t}\qty[\frac{1}{\exp\qty(t)-1}-\frac1t]\eval_0&=\frac{1}{t^2}-\frac{\exp\qty(t)}{\qty[\exp\qty(t)-1]^2}\\
+    &=\frac{\exp\qty(t)+\exp\qty(-t)-2-t^2}{t^2\qty[\exp\qty(t)+\exp\qty(-t)-2]}\eval_0\\
+    &=\frac{2\frac{t^4}{4!}+\mathcal O\qty(t^6)}{t^2\qty[t^2+\mathcal O\qty(t^4)]}\eval_0\\
+    &=\frac{1}{12}\frac{t^4+\mathcal O\qty(t^6)}{t^4\qty[1+\mathcal O\qty(t^2)]}\eval_0\\
+    &=\frac{1}{12}
+\end{align*}
+
+So up to first order we have,
+
+\begin{align*}
+    \frac{1}{\exp\qty(t)-1}&=\frac1t-\frac12+\frac{t}{12}+\mathcal O\qty(t^2)
+\end{align*}
+
+Why did we have done this? Because we do can soften the behavior of the integrand near $t\rightarrow0$ if we 
+subtract leading terms of the expansion of $\qty(\exp\qty(t)-1)^{-1}$, each leading term that we subtract, is 
+equivalent to gaining a power of $t$ in the numerator, which does soften the behavior near $t\rightarrow 0$, but also 
+makes it worse in the region $t\rightarrow\infty$, and as our only problem is related with the small $t$ region, 
+we can divide the integral in two parts,
 
 \begin{align*}
     \zeta(s)\Gamma\qty(s)&=\int\limits_0^1\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1}+\int\limits_1^\infty\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1},\ \ \ \textnormal{Re}\qty(s)>1\\
-    \zeta(s)\Gamma\qty(s)&=\int\limits_0^1\dd{t}t^{s-1}\qty[\frac{1}{\exp\qty(t)-1}-\frac1t]+\int\limits_1^\infty\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1},\ \ \ \textnormal{Re}\qty(s)>1\\
+    \zeta(s)\Gamma\qty(s)&=\int\limits_0^1\dd{t}t^{s-1}\qty[\frac{1}{\exp\qty(t)-1}-\frac1t+\frac12-\frac{t}{12}+\frac1t-\frac12+\frac{t}{12}]+\int\limits_1^\infty\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1},\ \ \ \textnormal{Re}\qty(s)>1
+\end{align*}
+
+Where we simply added and subtracted the leading terms of the expansion, the integral of the last three of them is 
+trivial and can be done to give,
+
+\begin{align*}
+    \zeta(s)\Gamma\qty(s)&=\int\limits_0^1\dd{t}t^{s-1}\qty[\frac{1}{\exp\qty(t)-1}-\frac1t+\frac12-\frac{t}{12}]+\int\limits_0^1\dd{t}\qty[t^{s-2}-\frac{t^{s-1}}{2}+\frac{t^s}{12}]+\int\limits_1^\infty\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1}\\
+    \zeta(s)\Gamma\qty(s)&=\int\limits_0^1\dd{t}t^{s-1}\qty[\frac{1}{\exp\qty(t)-1}-\frac1t+\frac12-\frac{t}{12}]+\frac{1}{s-1}-\frac{1}{2s}+\frac{1}{12\qty(s+1)}+\int\limits_1^\infty\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1}   
+\end{align*}
+
+Naively, this last expression should be well defined only for $\textnormal{Re}\qty(s)>1$, let's see this term by term, starting by the last one,
+
+\begin{align*}
+    \int\limits_1^\infty\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1}
+\end{align*}
+
+This is finite for all $s$, as it is exponentially decaying and is bounded in the integration interval, this term is well defined for all $s$. 
+The next three ones are,
+
+\begin{align*}
+    \frac{1}{s-1}-\frac{1}{2s}+\frac{1}{12\qty(s+1)}
+\end{align*}
+
+Also these are well defined in the whole complex plane, with three poles at $s=-1,0,1$. Finally we have,
+
+\begin{align*}
+    \int\limits_0^1\dd{t}t^{s-1}\qty[\frac{1}{\exp\qty(t)-1}-\frac1t+\frac12]
 \end{align*}
 
 \subsection{3.C)}
