@@ -114,10 +114,10 @@ The next term of the series will be,
 So up to first order we have,
 
 \begin{align*}
-    \frac{1}{\exp\qty(t)-1}&=\frac1t-\frac12+\frac{t}{12}+\mathcal O\qty(t^2)
+    \frac{1}{\exp\qty(t)-1}&=\frac1t-\frac12+\frac{t}{12}+\mathcal O\qty(t^2)\numberthis\label{laurent}
 \end{align*}
 
-Why did we have done this? Because we do can soften the behavior of the integrand near $t\rightarrow0$ if we 
+Why have we done this? Because we do can soften the behavior of the integrand near $t\rightarrow0$ if we 
 subtract leading terms of the expansion of $\qty(\exp\qty(t)-1)^{-1}$, each leading term that we subtract, is 
 equivalent to gaining a power of $t$ in the numerator, which does soften the behavior near $t\rightarrow 0$, but also 
 makes it worse in the region $t\rightarrow\infty$, and as our only problem is related with the small $t$ region, 
@@ -136,6 +136,10 @@ trivial and can be done to give,
     \zeta(s)\Gamma\qty(s)&=\int\limits_0^1\dd{t}t^{s-1}\qty[\frac{1}{\exp\qty(t)-1}-\frac1t+\frac12-\frac{t}{12}]+\frac{1}{s-1}-\frac{1}{2s}+\frac{1}{12\qty(s+1)}+\int\limits_1^\infty\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1}   
 \end{align*}
 
+Just what we wanted.
+
+\subsection{3.C)}
+
 Naively, this last expression should be well defined only for $\textnormal{Re}\qty(s)>1$, let's see this term by term, starting by the last one,
 
 \begin{align*}
@@ -152,7 +156,68 @@ The next three ones are,
 Also these are well defined in the whole complex plane, with three poles at $s=-1,0,1$. Finally we have,
 
 \begin{align*}
-    \int\limits_0^1\dd{t}t^{s-1}\qty[\frac{1}{\exp\qty(t)-1}-\frac1t+\frac12]
+    \int\limits_0^1\dd{t}t^{s-1}\qty[\frac{1}{\exp\qty(t)-1}-\frac1t+\frac12-\frac{t}{12}]
 \end{align*}
 
-\subsection{3.C)}
+The only potential not well defined behavior that can occur is near $t=0$, but we have already developed a 
+series expansion for the expression in brackets, \ref{laurent}, that means, near the critical value of $t=0$, 
+the integrand goes like,
+
+\begin{align*}
+    \int\limits_0^1\dd{t}t^{s-1}\qty[\frac{1}{\exp\qty(t)-1}-\frac1t+\frac12-\frac{t}{12}]\approx\int\limits_0^1\dd{t}t^{s-1}\mathcal O\qty(t^2)\approx \int\limits_0^1\dd{t}t^{s+1}=\frac{t^{s+2}}{s+2}\eval_0^1
+\end{align*}
+
+This is well defined as long as $\textnormal{Re}\qty(s)>-2$. Hence, the expression,
+
+\begin{align*}
+    \zeta(s)\Gamma\qty(s)&=\int\limits_0^1\dd{t}t^{s-1}\qty[\frac{1}{\exp\qty(t)-1}-\frac1t+\frac12-\frac{t}{12}]+\frac{1}{s-1}-\frac{1}{2s}+\frac{1}{12\qty(s+1)}+\int\limits_1^\infty\dd{t}\frac{t^{s-1}}{\exp\qty(t)-1}\numberthis\label{zetag}   
+\end{align*}
+
+Is well defined as long as $\textnormal{Re}\qty(s)>-2$. One might worry about the poles, but, these are the natural structure of $\zeta\qty(s)\Gamma\qty(s)$, 
+to be well defined does not mean to don't have poles, but means the representation can be assigned a number in an unique manner. 
+What is left to us now is to find the values $\zeta\qty(0),\zeta(-1)$, notice that our representation has a poles in both these 
+values of the argument, in fact these poles are structures of $\Gamma\qty(s)$, and not $\zeta(s)$. That the Gamma Function indeed has poles in those values 
+can be seen from,
+
+\begin{align*}
+    \Gamma\qty(s+1)&=s\Gamma\qty(s)\Rightarrow\begin{cases}\Gamma\qty(0)&=\frac{\Gamma\qty(1)}{0}\\\Gamma\qty(-1)&=\frac{\Gamma\qty(0)}{-1}\end{cases}
+\end{align*}
+
+And because the poles in our representation are just simple poles, they could not have been poles also in $\zeta$, as the two functions are multiplying 
+if there were a pole in $\zeta(0),\zeta(-1)$ they would have been apparent in our representation as double poles. Due to the absence of those, the poles at $s=0,-1$ are indeed only due to the Gamma Function. 
+This guarantees us that $\zeta(0),\zeta(-1)$ are both finite, and to determine those we just need to evaluate the residue of the expression. First, the residue of the Gamma Function,
+
+\begin{align*}
+    \textnormal{Res}_{s=0}\qty(\Gamma\qty(s))&=s\Gamma\qty(s)\eval_{s=0}=\Gamma\qty(s+1)\eval_{s=0}=\Gamma\qty(1)=1\\
+    \textnormal{Res}_{s=-1}\qty(\Gamma\qty(s))&=\qty(s+1)\Gamma\qty(s)\eval_{s=-1}=\frac{\qty(s+1)s\Gamma\qty(s)}{s}\eval_{s=-1}=\frac{\Gamma\qty(s+2)}{s}\eval_{s=-1}=-1
+\end{align*}
+
+As we argued that $\zeta(0),\zeta(-1)$ should be finite, what will happen is that when we multiply $\zeta$ by $\Gamma$, the residues of the poles of the Gamma Function will be 
+multiplied by the value of the Zeta Function at that point, that is,
+
+\begin{align*}
+    \textnormal{Res}_{s=0}\qty(\zeta\qty(s)\Gamma\qty(s))&=\zeta\qty(0)\textnormal{Res}_{s=0}\qty(\Gamma\qty(s))
+\end{align*}
+
+But, as can be seen directly from \ref{zetag}, the only contribution for the residue at $s=0$ will be by $-\frac{1}{2s}$, as all the other terms are finite at $s=0$, 
+thus,
+
+\begin{align*}
+    \textnormal{Res}_{s=0}\qty(\zeta\qty(s)\Gamma\qty(s))&=-\frac12=\zeta\qty(0)\textnormal{Res}_{s=0}\qty(\Gamma\qty(s))=\zeta(0)\\
+    \zeta\qty(0)&=-\frac12
+\end{align*}
+
+Analogously we have,
+
+\begin{align*}
+    \textnormal{Res}_{s=-1}\qty(\zeta\qty(s)\Gamma\qty(s))&=\zeta\qty(-1)\textnormal{Res}_{s=-1}\qty(\Gamma\qty(s))
+\end{align*}
+
+Again, as we discussed previously, all the terms are finite at $s=-1$, except for $\frac{1}{12\qty(s+1)}$, hence, the residue will be,
+
+\begin{align*}
+    \textnormal{Res}_{s=-1}\qty(\zeta\qty(s)\Gamma\qty(s))&=\frac{1}{12}=\zeta\qty(-1)\textnormal{Res}_{s=-1}\qty(\Gamma\qty(s))=-\zeta\qty(-1)\\
+    \zeta(-1)&=-\frac{1}{12}
+\end{align*}
+
+As desired.
