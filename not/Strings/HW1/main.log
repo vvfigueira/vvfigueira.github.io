@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.23)  25 MAR 2025 08:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.23)  25 MAR 2025 11:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -933,13 +933,27 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 [4])
 
-[5] (./sections/prob2.tex)
+[5] (./sections/prob2.tex
+Overfull \hbox (37.24892pt too wide) detected at line 40
+[]
+ []
 
-[6] (./sections/prob3.tex
 
-[7]
 
-[8]
+[6]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 88.
+
+ (c:/texlive/2024/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+
+[7])
+
+[8] (./sections/prob3.tex
+
+[9]
+
+[10]
 Overfull \hbox (1.39996pt too wide) in paragraph at lines 89--90
 []\OT1/cmr/m/n/12 To get the fol-low-ing terms we just make a triv-ial Tay-lor 
 se-ries of the func-tion $[][] \OMS/cmsy/m/n/12 ^^@
@@ -952,24 +966,24 @@ Overfull \hbox (3.6515pt too wide) detected at line 129
 
 
 
-[9]
+[11]
 Overfull \hbox (0.77202pt too wide) detected at line 137
 []
  []
 
 
 
-[10]
+[12]
 
-[11])
+[13])
 
-[12] (./sections/prob4.tex)
+[14] (./sections/prob4.tex)
 
-[13] (./sections/prob5.tex)
+[15] (./sections/prob5.tex)
 
-[14] (./sections/prob6.tex)
+[16] (./sections/prob6.tex)
 
-[15] (./main.aux)
+[17] (./main.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
@@ -978,25 +992,27 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 04032DBC0E26DE1D17FAD9E3150DBEBB;2244.
  ) 
 Here is how much of TeX's memory you used:
- 29872 strings out of 473362
- 590212 string characters out of 5725050
+ 29899 strings out of 473362
+ 590876 string characters out of 5725050
  1018646 words of memory out of 5000000
- 52420 multiletter control sequences out of 15000+600000
- 567822 words of font info for 76 fonts, out of 8000000 for 9000
+ 52438 multiletter control sequences out of 15000+600000
+ 568217 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,16n,107p,542b,465s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
-live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (15 pages, 140431 bytes).
+ <c:/Users/User/.texlive2024/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk
+><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texl
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texl
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (17 pages, 161094 bytes).
 PDF statistics:
- 266 PDF objects out of 1000 (max. 8388607)
- 228 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
+ 286 PDF objects out of 1000 (max. 8388607)
+ 243 compressed objects within 3 object streams
+ 58 named destinations out of 1000 (max. 500000)
  229 words of extra memory for PDF output out of 10000 (max. 10000000)
 

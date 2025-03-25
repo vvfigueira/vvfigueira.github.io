@@ -1,3 +1,119 @@
 \section{Problem 2}
 \subsection{2.A)}
+
+The Polyakov Action is given by,
+
+\begin{align*}
+    S_{\textnormal{P}}&=-\frac{1}{4\pi\alpha'}\int\dd[2]{\sigma}\sqrt{h}h^{ab}g_{\mu\nu}\partial_a X^\mu \partial_b X^\nu
+\end{align*}
+
+With $h^{ab}$ being the world-sheet metric, $h=\norm{\Det\qty[h_{ab}]}$, and $g_{\mu\nu}=\textnormal{diag}\qty(-1,1,\cdots,1)$ the 
+target space metric. A Poincare transformation of the fields $X$ is,
+
+\begin{align*}
+    X^\mu\qty(\tau,\sigma)&\rightarrow\tilde X^\mu\qty(\tau,\sigma)=\tensor{\Lambda}{^\mu_\nu}X^\nu\qty(\tau,\sigma)+a^\mu\\
+    \partial_a X^\mu&\rightarrow\partial_a\tilde X^\mu=\tensor{\Lambda}{^\mu_\nu}\partial_a X^\nu
+\end{align*}
+
+With of course $\Lambda$ satisfying the defining property of a Lorentz transformation,
+
+\begin{align*}
+    g_{\mu\nu}\tensor{\Lambda}{^\mu_\alpha}\tensor{\Lambda}{^\nu_\beta}=g_{\alpha\beta}
+\end{align*}
+
+The transformed Action is,
+
+\begin{align*}
+    \tilde S_{\textnormal{P}}&=-\frac{1}{4\pi\alpha'}\int\dd[2]{\sigma}\sqrt{h}h^{ab}g_{\mu\nu}\partial_a \tilde X^\mu \partial_b \tilde X^\nu\\
+    \tilde S_{\textnormal{P}}&=-\frac{1}{4\pi\alpha'}\int\dd[2]{\sigma}\sqrt{h}h^{ab}g_{\mu\nu}\tensor{\Lambda}{^\mu_\alpha}\tensor{\Lambda}{^\nu_\beta}\partial_a  X^\alpha \partial_b X^\beta\\
+    \tilde S_{\textnormal{P}}&=-\frac{1}{4\pi\alpha'}\int\dd[2]{\sigma}\sqrt{h}h^{ab}g_{\alpha\beta}\partial_a  X^\alpha \partial_b X^\beta=S_{\textnormal{P}}
+\end{align*}
+
+Hence the Poincare group is indeed a global symmetry of the Action. To obtain the conserved currents we have to first know what are the 
+equations of motion,
+
+\begin{align*}
+    \delta S_{\textnormal{P}}&=-\frac{1}{4\pi\alpha'}\int\dd[2]{\sigma}\qty{\sqrt{h}h^{ab}g_{\mu\nu}2\partial_aX^\mu\delta\partial_b X^\nu+\sqrt{h}\delta h^{ab}g_{\mu\nu}\partial_aX^\mu\partial_b X^\nu-\frac12\sqrt{h}h_{ab}\delta h^{ab}h^{cd}g_{\mu\nu}\partial_cX^\mu\partial_d X^\nu}\\
+    \delta S_{\textnormal{P}}&=-\frac{1}{4\pi\alpha'}\int\dd[2]{\sigma}\qty{\sqrt{h}h^{ab}2\partial_aX^\mu\delta\partial_b X_\mu+\sqrt{h}\delta h^{ab}\partial_aX^\mu\partial_b X_\mu-\frac12\sqrt{h}h_{ab}\delta h^{ab}\partial_cX^\mu\partial^c X_\mu}\\
+    \delta S_{\textnormal{P}}&=-\frac{1}{2\pi\alpha'}\int\dd[2]{\sigma}\partial_b\qty[\sqrt{h}\partial^bX^\mu\delta X_\mu]+\frac{1}{2\pi\alpha'}\int\dd[2]{\sigma}\partial_b\qty[\sqrt{h}\partial^bX^\mu]\delta X_\mu\\
+    &\quad\quad\quad-\frac{1}{4\pi\alpha'}\int\dd[2]{\sigma}\delta h^{ab}\qty[\sqrt{h}\partial_aX^\mu\partial_b X_\mu-\frac12\sqrt{h}h_{ab}\partial_cX^\mu\partial^c X_\mu]
+\end{align*}
+
+Each of the three terms has to vanish independently, the first of them is just a Boundary Condition,
+
+\begin{align*}
+    \int\dd[2]{\sigma}\partial_b\qty[\sqrt{h}\partial^bX^\mu\delta X_\mu]=0
+\end{align*}
+
+The second gives the equations for $X$,
+
+\begin{align*}
+    \partial_a\qty[\sqrt{h}\partial^aX^\mu]=0\numberthis\label{eomx}
+\end{align*}
+
+And the last one give the equations for $h$,
+
+\begin{align*}
+    \sqrt{h}\partial_aX^\mu\partial_bX_\mu-\frac12\sqrt{h}h_{ab}\partial_cX^\mu\partial^cX_\mu=0
+\end{align*}
+
+Armed with these, we can consider now just a variation on $X$, which is a symmetry of the Action, in our case this will be a Poincare transformation,
+
+\begin{align*}
+    \delta S_{\textnormal{P}}&=-\frac{1}{2\pi\alpha'}\int\dd[2]{\sigma}\sqrt{h}\partial^bX^\mu\partial_b \delta X_\mu\\
+    \delta S_{\textnormal{P}}&=-\frac{1}{2\pi\alpha'}\int\dd[2]{\sigma}\qty{\partial_b\qty[\sqrt{h}\partial^bX^\mu\delta X_\mu]-\partial_b\qty[\sqrt{h}\partial^bX^\mu]\delta X_\mu}
+\end{align*}
+
+Imposing the fields to obey the equations of motion, \ref{eomx}, the second term vanishes identically. And also using our 
+already derived result that $\tilde S_{\textnormal{P}}=S_{\textnormal{P}}\Rightarrow\delta S_{\textnormal{P}}=0$, we get the simple 
+expression, for $\delta X$ being the variation under a Poincare transformation,
+
+\begin{align*}
+    \delta S_{\textnormal{P}}&=-\frac{1}{2\pi\alpha'}\int\dd[2]{\sigma}\partial_b\qty[\sqrt{h}\partial^bX^\mu\delta X_\mu]=0
+\end{align*}
+
+In the case of a pure translation, $\delta X=\tilde X-X=a$,
+
+\begin{align*}
+    -\frac{1}{2\pi\alpha'}a_\mu\int\dd[2]{\sigma}\partial_b\qty[\sqrt{h}\partial^bX^\mu]=0
+\end{align*}
+
+From where we can read the conserved current associated with translations,
+
+\begin{align*}
+    \mathcal P^{b\mu}&=-\frac{\sqrt{h}}{2\pi\alpha'}\partial^bX^\mu,\ \ \ \partial_b\mathcal P^{b\mu}=0
+\end{align*}
+
+We can do the same for a Lorentz transformation, $\delta X^\mu=\tilde X^\mu-X^\mu=\tensor{\omega}{^\mu_\nu}X_\nu$, with of course $\omega_{\mu\nu}=-\omega_{\nu\mu}$, 
+being the infinitesimal part of the Lorentz transformation, $\Lambda=\mathbbm 1+\omega$,
+
+\begin{align*}
+    -\frac{1}{2\pi\alpha'}\int\dd[2]{\sigma}\partial_b\qty[\sqrt{h}\partial^bX^\mu\omega_{\mu\nu}X^\nu]&=0\\
+    -\frac{1}{2\pi\alpha'}\omega_{\mu\nu}\int\dd[2]{\sigma}\partial_b\qty[\sqrt{h}\partial^bX^\mu X^\nu-\sqrt{h}\partial^bX^\nu X^\mu]&=0
+\end{align*}
+
+So that the conserved current associated with Lorentz transformations is,
+
+\begin{align*}
+    \mathcal M^{b\mu\nu}=-\frac{\sqrt{h}}{2\pi\alpha'}\qty[\partial^b X^\mu X^\nu-\partial^b X^\nu X^\mu]=\mathcal P^{b\mu}X^\nu-\mathcal P^{b\nu}X^\mu,\ \ \ \partial\mathcal M^{b\mu\nu}=0
+\end{align*}
+
+Lastly, the conserved charges that follow from the conserved currents are,
+
+\begin{align*}
+    P^\mu&=\int\dd{\sigma}\mathcal P^{\tau\mu}=-\frac{1}{2\pi\alpha'}\int\dd{\sigma}\sqrt{h}\partial^\tau X^\mu\\
+    M^{\mu\nu}&=\int\dd{\sigma}\mathcal M^{\tau\mu\nu}=-\frac{1}{2\pi\alpha'}\int\dd{\sigma}\sqrt{h}\qty[\partial^\tau X^\mu X^\nu-\partial^\tau X^\nu X^\mu]
+\end{align*}
+
 \subsection{2.B)}
+
+We now turn to the matter of verifying that the conserved charges derived here do obey the Poincare algebra, for 
+this we'll need the Poisson Brackets, which are defined with respect to $X^\mu\qty(t,\sigma)$, and it's conjugate 
+momentum $\pdv{\mathcal L}{\partial_\tau X^\mu}=\tensor{{\mathcal P}}{^\tau_\mu}\equiv\Pi_\mu\qty(\tau,\sigma)$, which 
+fortunately we already computed. The metric $h$ does not enter in the Poisson Brackets because it's not dynamical, 
+it has three degrees of freedom, but we also have three gauge redundancies, just enough to make it non-dynamical. 
+The fundamental Poisson Bracket relations are,
+
+\begin{align*}
+    \acomm{}{}=
+\end{align*}
