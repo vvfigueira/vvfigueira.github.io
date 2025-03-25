@@ -89,46 +89,35 @@ Hence,
 
 That is, the Equations of Motion, \ref{eom}, are satisfied for this string configuration! 
 Now for the Boundary Conditions --- \ref{bc} ---, the first one, is trivially satisfied, that is due to the variations of the 
-target space position $X$ to which the Action is variated by, because, the initial and final time configuration of $X$ are fixed given conditions, 
+target space position, $X$, to which the Action is variated by, because, the initial and final time configuration of $X$ are fixed given conditions, 
 to change them would mean to solve another problem of initial conditions, so the variation $\delta X$ 
-is zero at the initial and final times,
+must be zero at the initial and final times,
 
 \begin{align*}
     \delta X_\alpha\eval_{\tau=-\infty}^{\tau=+\infty}=0\Rightarrow \delta X_\alpha\mathcal P^{\tau\alpha}\eval_{\tau=-\infty}^{\tau=+\infty}=0
 \end{align*}
 
-What confirms the first Boundary Condition is true. For the second one, unless the parametrization is such that, see \ref{mtau},
+What confirms the first Boundary Condition is true. For the second one, let's write the non null contributions to the 
+Boundary Condition,
 
 \begin{align*}
-    f'\qty(0)=f'\qty(\pi)=0\Rightarrow\mathcal P^{\sigma\alpha}\eval_{\sigma=0}^{\sigma=\pi}=0\Rightarrow \delta X_\alpha\mathcal P^{\sigma\alpha}\eval_{\sigma=0}^{\sigma=\pi}
+    \delta X_\alpha\mathcal P^{\sigma\alpha}\eval_{\sigma=0}^{\sigma=\pi}=\delta X_1\mathcal P^{\sigma1}\eval_{\sigma=0}^{\sigma=\pi}
 \end{align*}
 
-Which is of course not the most general parametrization possible, the only other possible way to satisfy it is by having,
+This is the case due to all the $\mathcal P^{\sigma\alpha}$ components being zero, except for $\alpha=1$. But we have completely fixed $X_1$ at the 
+endpoints, as know as the Dirichlet Boundary Conditions
 
 \begin{align*}
-    \delta X_\alpha\qty(\tau,0)=\delta X_\alpha\qty(\tau,\pi)=0,\ \forall\alpha\neq0\Rightarrow\delta X_\alpha\mathcal P^{\sigma\alpha}\eval_{\sigma=0}^{\sigma=\pi}=0
+    X_1\qty(\tau,0)=0,\ \ \ X_1\qty(\tau,\pi)=a\Rightarrow \delta X_1\eval_{\sigma=0}^{\sigma=\pi}
 \end{align*}
 
-The need for exclusion of $\alpha=0$ relies simply on the fact that it's not possible to do not have time evolution --- $\delta X_0=0$ ---. This last 
-constrain is merely saying that if the spatial coordinates of the endpoints are fixed in time, the Boundary Condition is satisfied. And happily, as seen in \ref{derivatives},
+Hence,
 
 \begin{align*}
-    \dot X&=\qty(\luz,0,\cdots,0)
+    \delta X_\alpha\mathcal P^{\sigma\alpha}\eval_{\sigma=0}^{\sigma=\pi}=\delta X_1\mathcal P^{\sigma1}\eval_{\sigma=0}^{\sigma=\pi}=0
 \end{align*}
 
-This is our case! Hence, our string configuration do satisfy the Boundary Conditions, in this case the Dirichlet Boundary Conditions,
-
-\begin{align*}
-    \pdv{\tau}X^\mu\qty(\tau,0)=0=\pdv{\tau}X^\mu\qty(\tau,\pi),\ \forall\mu\neq 0
-\end{align*}
-
-As opposed to the Neumann Boundary Conditions,
-
-\begin{align*}
-    \mathcal P^{\sigma\alpha}\qty(\tau,0)=0=\mathcal P^{\sigma\alpha}\qty(\tau,\pi)
-\end{align*}
-
-There are two more constrains we have to verify, which follow from \ref{momentumtau},
+Showing that our string configuration do satisfy the Boundary Conditions. There are two more constrains we have to verify, which follow from \ref{momentumtau},
 
 \begin{align*}
     \mathcal P^{\tau\alpha}{X'}_\alpha&=0\\
@@ -153,14 +142,14 @@ Now we'll prove that these two constrains are true for our string configuration,
 needed vectors, \ref{derivatives},\ref{mtau},
 
 \begin{align*}
-    \mathcal P^{\tau\alpha}{X'}_\alpha&=\frac{T_0}{\luz}f'\qty(1,0,\cdots,0)\trp{\qty(0,f',0,\cdots,0)}=0
+    \mathcal P^{\tau\alpha}{X'}_\alpha&=\frac{T_0}{\luz}f'\qty(1,0,\cdots,0)\cdot\trp{\qty(0,f',0,\cdots,0)}=0
 \end{align*}
 
 And,
 
 \begin{align*}
-    \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha&=\frac{T_0^2}{\luz^2}{f'}^2\qty(1,0,\cdots,0)\trp{\qty(-1,0,\cdots,0)}=-\frac{T_0^2}{\luz^2}{f'}^2\\
-    \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha&=-\frac{T_0^2}{\luz^2}\qty(0,f',\cdots,0)\trp{\qty(0,f',\cdots,0)}=-\frac{T_0^2}{\luz^2}{X'}^2\\
+    \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha&=\frac{T_0^2}{\luz^2}{f'}^2\qty(1,0,\cdots,0)\cdot\trp{\qty(-1,0,\cdots,0)}=-\frac{T_0^2}{\luz^2}{f'}^2\\
+    \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha&=-\frac{T_0^2}{\luz^2}\qty(0,f',\cdots,0)\cdot\trp{\qty(0,f',\cdots,0)}=-\frac{T_0^2}{\luz^2}{X'}^2\\
     \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha+\frac{T_0^2}{\luz^2}{X'}^2&=0
 \end{align*}
 
