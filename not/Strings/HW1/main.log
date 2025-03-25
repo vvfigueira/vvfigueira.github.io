@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.23)  22 MAR 2025 15:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.23)  24 MAR 2025 22:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -814,24 +814,24 @@ ternalshared.code.tex)))
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 138.
-LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -893,7 +893,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 138.
+Package hyperref Info: Link coloring OFF on input line 139.
 
 (./main.out) (./main.out)
 \@outlinefile=\write5
@@ -903,36 +903,43 @@ Package hyperref Info: Link coloring OFF on input line 138.
 
 Package tikz-feynman Warning: LuaTeX is required if you wish to have vertices a
 utomatically placed. You can disable this warning by setting /tikzfeynman/warn 
-luatex=false on input line 138.
+luatex=false on input line 139.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 141
+LaTeX Font Info:    Trying to load font information for U+msa on input line 142
 .
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 141
+LaTeX Font Info:    Trying to load font information for U+msb on input line 142
 .
 
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 14
-1.
+2.
 
 (c:/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) (./sections/prob1.tex)
+) (./sections/prob1.tex
 
 [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./sections/prob2.tex)
 
-[2] (./sections/prob3.tex
+[2]
 
 [3]
 
-[4]
+[4])
+
+[5] (./sections/prob2.tex)
+
+[6] (./sections/prob3.tex
+
+[7]
+
+[8]
 Overfull \hbox (1.39996pt too wide) in paragraph at lines 89--90
 []\OT1/cmr/m/n/12 To get the fol-low-ing terms we just make a triv-ial Tay-lor 
 se-ries of the func-tion $[][] \OMS/cmsy/m/n/12 ^^@
@@ -945,24 +952,24 @@ Overfull \hbox (3.6515pt too wide) detected at line 129
 
 
 
-[5]
+[9]
 Overfull \hbox (0.77202pt too wide) detected at line 137
 []
  []
 
 
 
-[6]
+[10]
 
-[7])
+[11])
 
-[8] (./sections/prob4.tex)
+[12] (./sections/prob4.tex)
 
-[9] (./sections/prob5.tex)
+[13] (./sections/prob5.tex)
 
-[10] (./sections/prob6.tex)
+[14] (./sections/prob6.tex)
 
-[11] (./main.aux)
+[15] (./main.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
@@ -971,10 +978,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 04032DBC0E26DE1D17FAD9E3150DBEBB;2244.
  ) 
 Here is how much of TeX's memory you used:
- 29840 strings out of 473362
- 589921 string characters out of 5725050
- 1014628 words of memory out of 5000000
- 52401 multiletter control sequences out of 15000+600000
+ 29872 strings out of 473362
+ 590212 string characters out of 5725050
+ 1018646 words of memory out of 5000000
+ 52420 multiletter control sequences out of 15000+600000
  567822 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,16n,107p,542b,465s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -986,10 +993,10 @@ ype1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (11 pages, 119646 bytes).
+Output written on main.pdf (15 pages, 141355 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
- 194 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
+ 268 PDF objects out of 1000 (max. 8388607)
+ 230 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
  229 words of extra memory for PDF output out of 10000 (max. 10000000)
 

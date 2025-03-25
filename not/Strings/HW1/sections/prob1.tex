@@ -1,3 +1,193 @@
 \section{Problem 1}
 \subsection{1.A)}
+
+The Nambu-Goto Action is given by:
+
+\begin{align*}
+    S_{\textnormal{NG}}=-\frac{T_0}{\luz}\int\limits_{-\infty}^{+\infty}\dd{\tau}\int\limits_0^\pi\dd{\sigma}\sqrt{\qty(\dot X\cdot X^\sidev)^2- \qty(\dot X\cdot \dot X)\qty(X^\sidev\cdot X^\sidev) }\numberthis\label{ngaction}
+\end{align*}
+
+Where we made the abbreviations,
+
+\begin{align*}
+    \dot X^\mu=\pdv{{X^\mu}}{\tau},\ \ \ {X'}^\mu=\pdv{{X^\mu}}{\sigma}
+\end{align*}
+
+The choice of the static gauge, together with considering the string being stretched only along the $X^1$ 
+direction can be written as,
+
+\begin{align*}
+    X^\mu\qty(\tau,\sigma)=\qty(\luz\tau,f\qty(\sigma),0,\cdots,0),\ \ \ f\qty(0)=0\ \&\ f\qty(\pi)=a
+\end{align*}
+
+Let's first compute what are the equations of motion,
+
+\begin{align*}
+    \delta S_{\textnormal{NG}}&=-\frac{T_0}{\luz}\int\dd[2]{\sigma}\frac{2\qty(\dot X\cdot X^\sidev)\qty({\dot X}^\alpha\delta{X^\sidev}_\alpha+{X^\sidev}^\alpha\delta{\dot X}_\alpha)-2{\dot X}^2{X^\sidev}^\alpha\delta{X^\sidev}_\alpha-2{X^\sidev}^2{\dot X}^\alpha\delta{\dot X}_\alpha}{2\sqrt{\qty(\dot X\cdot X^\sidev)^2- \qty(\dot X\cdot \dot X)\qty(X^\sidev\cdot X^\sidev) }}\\
+    &=-\frac{T_0}{\luz}\int\dd[2]{\sigma}\frac{\delta{\dot X}_\alpha\qty[\qty(\dot X\cdot X^\sidev){X^\sidev}^\alpha-{X^\sidev}^2{\dot X}^\alpha]+\delta{X^\sidev}_\alpha\qty[\qty(\dot X\cdot X^\sidev){\dot X}^\alpha-{\dot X}^2{X^\sidev}^\alpha]}{\sqrt{\qty(\dot X\cdot X^\sidev)^2- \qty(\dot X\cdot \dot X)\qty(X^\sidev\cdot X^\sidev) }}
+\end{align*}
+
+We define the conjugate momenta as to simplify our expression,
+
+\begin{align*}
+    \mathcal P^{\tau\alpha}&=-\frac{T_0}{\luz}\frac{\qty(\dot X\cdot X^\sidev){X^\sidev}^\alpha-{X^\sidev}^2{\dot X}^\alpha}{\sqrt{\qty(\dot X\cdot X^\sidev)^2- \qty(\dot X\cdot \dot X)\qty(X^\sidev\cdot X^\sidev) }}\label{momentumtau}\numberthis\\
+    \mathcal P^{\sigma\alpha}&=-\frac{T_0}{\luz}\frac{\qty(\dot X\cdot X^\sidev){\dot X}^\alpha-{\dot X}^2{X^\sidev}^\alpha}{\sqrt{\qty(\dot X\cdot X^\sidev)^2- \qty(\dot X\cdot \dot X)\qty(X^\sidev\cdot X^\sidev) }}\numberthis\label{momentumsigma}
+\end{align*}
+
+So that our variation of the Action is,
+
+\begin{align*}
+    \delta S_{\textnormal{NG}}&=\int\dd[2]{\sigma}\qty{\delta{\dot X}_\alpha\mathcal P^{\tau\alpha}+\delta{X^\sidev}_\alpha\mathcal P^{\sigma\alpha}}\\
+    \delta S_{\textnormal{NG}}&=\int\dd[2]{\sigma}\qty{\pdv{\tau}\qty[\delta{X}_\alpha\mathcal P^{\tau\alpha}]-\delta{X}_\alpha\pdv{\tau}\mathcal P^{\tau\alpha}+\pdv{\sigma}\qty[\delta{X}_\alpha\mathcal P^{\sigma\alpha}]-\delta{X}_\alpha\pdv{\sigma}\mathcal P^{\sigma\alpha}}\\
+    \delta S_{\textnormal{NG}}&=-\int\dd[2]{\sigma}\delta{X}_\alpha\qty{\pdv{\tau}\mathcal P^{\tau\alpha}+\pdv{\sigma}\mathcal P^{\sigma\alpha}}+\int\limits_0^\pi\dd{\sigma}\qty[\delta{X}_\alpha\mathcal P^{\tau\alpha}]\eval_{\tau=-\infty}^{\tau=+\infty}+\int\limits_{-\infty}^{+\infty}\dd{\tau}\qty[\delta{X}_\alpha\mathcal P^{\sigma\alpha}]\eval_{\sigma=0}^{\sigma=\pi}
+\end{align*}
+
+From imposing the Stationary Action Principle, we can easily read out both the Equations of Motion,
+
+\begin{align*}
+    \pdv{\tau}\mathcal P^{\tau\alpha}+\pdv{\sigma}\mathcal P^{\sigma\alpha}=0\numberthis\label{eom}
+\end{align*}
+
+And the Boundary Conditions
+
+\begin{align*}
+    \delta{X}_\alpha\mathcal P^{\tau\alpha}\eval_{\tau=-\infty}^{\tau=+\infty}=0=\delta{X}_\alpha\mathcal P^{\sigma\alpha}\eval_{\sigma=0}^{\sigma=\pi}\numberthis\label{bc}
+\end{align*}
+
+With this three equations in hand, we just have to compute if the stretched string in the Static Gauge is a solution of them, 
+first we calculate the derivatives,
+
+\begin{align*}
+    \dot X&=\qty(\luz,0,\cdots,0),\ \ \ X'=\qty(0,f'\qty(\sigma),0,\cdots,0)\numberthis\label{derivatives}
+\end{align*}
+
+So now it's trivial that,
+
+\begin{align*}
+    \dot X\cdot X'=0,\ \ \ \dot X\cdot\dot X=-\luz^2,\ \ \ X'\cdot X'={f'}^2\numberthis\label{dots}
+\end{align*}
+
+Plugging in those in \ref{momentumtau},\ref{momentumsigma}:
+
+\begin{align*}
+    \mathcal P^{\tau\alpha}&=-\frac{T_0}{\luz}\frac{-{f'}^2{\dot X}^\alpha}{\sqrt{\luz^2{f'}^2}}=\frac{T_0}{\luz}f'\qty(1,0,\cdots,0)\numberthis\label{mtau}\\
+    \mathcal P^{\sigma\alpha}&=-\frac{T_0}{\luz}\frac{\luz^2{X^\sidev}^\alpha}{\sqrt{\luz^2{f'}^2}}=-T_0\qty(0,1,0,\cdots,0)\numberthis\label{msigma}
+\end{align*}
+
+From where follows,
+
+\begin{align*}
+    \pdv{\tau}\mathcal P^{\tau\alpha}=\frac{T_0}{\luz}\pdv{f'}{\tau}\qty(1,0,\cdots,0)=0\\
+    \pdv{\sigma}\mathcal P^{\sigma\alpha}=0
+\end{align*}
+
+Hence,
+
+\begin{align*}
+    \pdv{\tau}\mathcal P^{\tau\alpha}+\pdv{\sigma}\mathcal P^{\sigma\alpha}=0+0=0
+\end{align*}
+
+That is, the Equations of Motion, \ref{eom}, are satisfied for this string configuration! 
+Now for the Boundary Conditions --- \ref{bc} ---, the first one, is trivially satisfied, that is due to the variations of the 
+target space position $X$ to which the Action is variated by, because, the initial and final time configuration of $X$ are fixed given conditions, 
+to change them would mean to solve another problem of initial conditions, so the variation $\delta X$ 
+is zero at the initial and final times,
+
+\begin{align*}
+    \delta X_\alpha\eval_{\tau=-\infty}^{\tau=+\infty}=0\Rightarrow \delta X_\alpha\mathcal P^{\tau\alpha}\eval_{\tau=-\infty}^{\tau=+\infty}=0
+\end{align*}
+
+What confirms the first Boundary Condition is true. For the second one, unless the parametrization is such that, see \ref{mtau},
+
+\begin{align*}
+    f'\qty(0)=f'\qty(\pi)=0\Rightarrow\mathcal P^{\sigma\alpha}\eval_{\sigma=0}^{\sigma=\pi}=0\Rightarrow \delta X_\alpha\mathcal P^{\sigma\alpha}\eval_{\sigma=0}^{\sigma=\pi}
+\end{align*}
+
+Which is of course not the most general parametrization possible, the only other possible way to satisfy it is by having,
+
+\begin{align*}
+    \delta X_\alpha\qty(\tau,0)=\delta X_\alpha\qty(\tau,\pi)=0,\ \forall\alpha\neq0\Rightarrow\delta X_\alpha\mathcal P^{\sigma\alpha}\eval_{\sigma=0}^{\sigma=\pi}=0
+\end{align*}
+
+The need for exclusion of $\alpha=0$ relies simply on the fact that it's not possible to do not have time evolution --- $\delta X_0=0$ ---. This last 
+constrain is merely saying that if the spatial coordinates of the endpoints are fixed in time, the Boundary Condition is satisfied. And happily, as seen in \ref{derivatives},
+
+\begin{align*}
+    \dot X&=\qty(\luz,0,\cdots,0)
+\end{align*}
+
+This is our case! Hence, our string configuration do satisfy the Boundary Conditions, in this case the Dirichlet Boundary Conditions,
+
+\begin{align*}
+    \pdv{\tau}X^\mu\qty(\tau,0)=0=\pdv{\tau}X^\mu\qty(\tau,\pi),\ \forall\mu\neq 0
+\end{align*}
+
+As opposed to the Neumann Boundary Conditions,
+
+\begin{align*}
+    \mathcal P^{\sigma\alpha}\qty(\tau,0)=0=\mathcal P^{\sigma\alpha}\qty(\tau,\pi)
+\end{align*}
+
+There are two more constrains we have to verify, which follow from \ref{momentumtau},
+
+\begin{align*}
+    \mathcal P^{\tau\alpha}{X'}_\alpha&=0\\
+    \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha+\frac{T_0^2}{\luz^2}{X'}^2&=0
+\end{align*}
+
+First let us show that these are the right constrains,
+
+\begin{align*}
+    \mathcal P^{\tau\alpha}{X'}_\alpha&=-\frac{T_0}{\luz}\frac{\qty(\dot X\cdot X^\sidev){X^\sidev\cdot X^\sidev}-{X^\sidev}^2{\dot X\cdot X^\sidev}}{\sqrt{\qty(\dot X\cdot X^\sidev)^2- \qty(\dot X\cdot \dot X)\qty(X^\sidev\cdot X^\sidev) }}=0
+\end{align*}
+
+And,
+
+\begin{align*}
+    \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha&=\frac{T_0^2}{\luz^2}\frac{\qty(\dot X\cdot X^\sidev)^2{X^\sidev}^2+{X^\sidev}^4{\dot X}^2-2\qty(\dot X\cdot X^\sidev)^2{X^\sidev}^2}{\qty(\dot X\cdot X^\sidev)^2- \qty(\dot X\cdot \dot X)\qty(X^\sidev\cdot X^\sidev) }\\
+    \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha&=\frac{T_0^2}{\luz^2}{X^\sidev}^2\frac{-\qty(\dot X\cdot X^\sidev)^2+{X^\sidev}^2{\dot X}^2}{\qty(\dot X\cdot X^\sidev)^2- \qty(\dot X\cdot \dot X)\qty(X^\sidev\cdot X^\sidev) }\\
+    \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha&=-\frac{T_0^2}{\luz^2}{X^\sidev}^2\Rightarrow \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha+\frac{T_0^2}{\luz^2}{X^\sidev}^2=0
+\end{align*}
+
+Now we'll prove that these two constrains are true for our string configuration, this is easy, as we already have computed all the 
+needed vectors, \ref{derivatives},\ref{mtau},
+
+\begin{align*}
+    \mathcal P^{\tau\alpha}{X'}_\alpha&=\frac{T_0}{\luz}f'\qty(1,0,\cdots,0)\trp{\qty(0,f',0,\cdots,0)}=0
+\end{align*}
+
+And,
+
+\begin{align*}
+    \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha&=\frac{T_0^2}{\luz^2}{f'}^2\qty(1,0,\cdots,0)\trp{\qty(-1,0,\cdots,0)}=-\frac{T_0^2}{\luz^2}{f'}^2\\
+    \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha&=-\frac{T_0^2}{\luz^2}\qty(0,f',\cdots,0)\trp{\qty(0,f',\cdots,0)}=-\frac{T_0^2}{\luz^2}{X'}^2\\
+    \mathcal P^{\tau\alpha}\mathcal P^{\tau}_\alpha+\frac{T_0^2}{\luz^2}{X'}^2&=0
+\end{align*}
+
+This finishes our confirmation that indeed this string configuration is a proper solution.
+
 \subsection{1.B)}
+
+To evaluate the Nambu-Goto Action in this solution, we just have to make use of \ref{dots} in \ref{ngaction},
+
+\begin{align*}
+    S_{\textnormal{NG-static}}&=-\frac{T_0}{\luz}\int\limits_{-\infty}^{+\infty}\dd{\tau}\int\limits_0^\pi\dd{\sigma}\sqrt{\qty(\dot X\cdot X^\sidev)^2- \qty(\dot X\cdot \dot X)\qty(X^\sidev\cdot X^\sidev) }\\
+    S_{\textnormal{NG-static}}&=-\frac{T_0}{\luz}\int\limits_{-\infty}^{+\infty}\dd{\tau}\int\limits_0^\pi\dd{\sigma}\sqrt{\luz^2{f'}^2}=-T_0\int\limits_{-\infty}^{+\infty}\dd{\tau}\int\limits_0^\pi\dd{\sigma}f'\\
+    S_{\textnormal{NG-static}}&=-T_0\int\limits_{-\infty}^{+\infty}\dd{\tau}\qty(f\qty(\pi)-f(0))=-T_0\int\limits_{-\infty}^{+\infty}\dd{\tau}a
+\end{align*}
+
+If we argue that the Action is of the form,
+
+\begin{align*}
+    S&=\int\dd{t}\qty[K-V]
+\end{align*}
+
+Where $K$ is the kinetic energy and $V$ is the potential energy. As in our configuration everything is static, we shouldn't expect any kinetic energy present in the Action/Lagrangian, in other words, all the contribution of the action is solely from 
+the potential energy, thus, making this identification,
+
+\begin{align*}
+    S_{\textnormal{NG-static}}&=-\int\limits_{-\infty}^{+\infty}\dd{\tau}T_0a=-\int\limits_{-\infty}^{+\infty}\dd{\tau}V\\
+    V&=T_0a
+\end{align*}
+
+This is a hint that $T_0$ may be interpreted as energy per length, or, the tension of the string.
