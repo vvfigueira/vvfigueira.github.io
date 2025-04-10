@@ -1,3 +1,49 @@
 \section{Problem 4}
 \subsection{4.A)}
+
+First, one remark, we're going to derive everything in this problem for the \textbf{open} string with 
+Neumann Boundary Conditions at both ends. To get the classical solution we just have to solve both
+\ref{eomx} and \ref{eomh}. Of course, we do know the Polyakov Action has  Diff$\times$Weyl gauge freedom, hence, 
+none of the components of the metric $h$ are in fact dynamical, because by fixing this gauge freedom we actually 
+fix all the components of $h$, what makes of \ref{eomh} not an equation of motion for $h$, but merely a set of 
+constrains regarding the choice of gauge for $h$. But, fixing all three components of the metric isn't the 
+only possible choice for picking a gauge, another option is to fix $\tau$, and two of the components 
+of $h$, as we have in total 3 gauge degrees of freedom. We could in principle assign any function to $\tau$, but 
+what seems to be the optimal choice is to work in the Light-cone gauge. First, for any target space vector we define,
+
+\begin{align*}
+    A^\pm=\frac{1}{\sqrt2}\qty(A^0+A^1)
+\end{align*}
+
+And now we state the Light-cone gauge condition, which is the pining $\tau$ condition, is then given by,
+
+\begin{align*}
+    X^+\qty(\tau,\sigma)=2\alpha'p^+\tau
+\end{align*}
+
+Where $p^+$ is the light-cone component of the conserved charge associated with target space translations --- the momentum, \ref{p} ---. This 
+condition do not allow for any more reparametrizations of $\tau$, as,
+
+\begin{align*}
+    {X'}^+\qty(\tau',\sigma')&=X^+\qty(\tau,\sigma)\\
+    2\alpha'p^+\tau'&=2\alpha'p^+\tau
+\end{align*}
+
+Which states the only reparametrization compatible with the light-cone gauge condition is $\tau'\qty(\tau,\sigma)=\tau$. Hence, from our 
+initial freedom we can only make $\sigma$ reparametrizations now. Let now $f=\frac{1}{\sqrt h}h_{\sigma\sigma}$, at fixed $\tau$, and 
+under $\sigma'=\sigma'\qty(\sigma)$,
+
+\begin{align*}
+    f'\dd{\sigma'}=\dv{\sigma'}{\sigma}\frac{1}{\sqrt h}\dv{\sigma}{\sigma'}\dv{\sigma}{\sigma'}h_{\sigma\sigma}\dv{\sigma'}{\sigma}\dd{\sigma}=\frac{1}{\sqrt h}h_{\sigma\sigma}\dd{\sigma}=f\dd{\sigma}
+\end{align*}
+
+That is, $f\dd{\sigma}$ gives us a $\sigma$ independent notion of length of the string, despite being still $\tau$ dependent. 
+Thus, we choose $\sigma'=\sigma'\qty(\tau,\sigma)$ as the 
+
+For those the mode expansion is given by,
+
+\begin{align*}
+    X^\mu\qty(\tau,\sigma)=x_0^\mu+\sqrt{2\alpha'}\alpha_0^\mu\tau+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\exp\qty(-\im n\tau)\cos\qty(n\sigma)
+\end{align*}
+
 \subsection{4.B)}

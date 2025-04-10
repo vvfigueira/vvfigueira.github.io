@@ -54,7 +54,7 @@ The second gives the equations for $X$,
 And the last one give the equations for $h$,
 
 \begin{align*}
-    \sqrt{h}\partial_aX^\mu\partial_bX_\mu-\frac12\sqrt{h}h_{ab}\partial_cX^\mu\partial^cX_\mu=0
+    \sqrt{h}\partial_aX^\mu\partial_bX_\mu-\frac12\sqrt{h}h_{ab}\partial_cX^\mu\partial^cX_\mu=0\numberthis\label{eomh}
 \end{align*}
 
 Armed with these, we can consider now just a variation on $X$, which is a symmetry of the Action, in our case this will be a Poincare transformation,
@@ -95,14 +95,14 @@ being the infinitesimal part of the Lorentz transformation, $\Lambda=\mathbbm 1+
 So that the conserved current associated with Lorentz transformations is,
 
 \begin{align*}
-    \mathcal M^{b\mu\nu}=-\frac{\sqrt{h}}{2\pi\alpha'}\qty[\partial^b X^\mu X^\nu-\partial^b X^\nu X^\mu]=\mathcal P^{b\mu}X^\nu-\mathcal P^{b\nu}X^\mu,\ \ \ \partial\mathcal M^{b\mu\nu}=0
+    \mathcal M^{b\mu\nu}=-\frac{\sqrt{h}}{2\pi\alpha'}\qty[X^\mu\partial^b X^\nu - X^\nu\partial^b X^\mu]=X^\mu\mathcal P^{b\nu}-X^\nu\mathcal P^{b\mu},\ \ \ \partial_b\mathcal M^{b\mu\nu}=0
 \end{align*}
 
 Lastly, the conserved charges that follow from the conserved currents are,
 
 \begin{align*}
     P^\mu&=\int\dd{\sigma}\mathcal P^{\tau\mu}=-\frac{1}{2\pi\alpha'}\int\dd{\sigma}\sqrt{h}\partial^\tau X^\mu\numberthis\label{p}\\
-    M^{\mu\nu}&=\int\dd{\sigma}\mathcal M^{\tau\mu\nu}=-\frac{1}{2\pi\alpha'}\int\dd{\sigma}\sqrt{h}\qty[\partial^\tau X^\mu X^\nu-\partial^\tau X^\nu X^\mu]\numberthis\label{m}
+    M^{\mu\nu}&=\int\dd{\sigma}\mathcal M^{\tau\mu\nu}=-\frac{1}{2\pi\alpha'}\int\dd{\sigma}\sqrt{h}\qty[X^\mu\partial^\tau X^\nu -X^\nu\partial^\tau X^\mu ]\numberthis\label{m}
 \end{align*}
 
 \subsection{2.B)}
@@ -115,14 +115,14 @@ it has three degrees of freedom, but we also have three gauge redundancies, just
 The fundamental Poisson Bracket relations are,
 
 \begin{align*}
-    \acomm{X^\mu\qty(\tau,\sigma)}{X^\nu\qty(\tau,\sigma')}=0,\ \ \ \acomm{\Pi^\mu\qty(\tau,\sigma)}{\Pi^\nu\qty(\tau,\sigma')}=0,\ \ \ \acomm{\Pi^\nu\qty(\tau,\sigma')}{X^\mu\qty(\tau,\sigma)}=\delta\qty(\sigma-\sigma')g^{\mu\nu}
+    \acomm{X^\mu\qty(\tau,\sigma)}{X^\nu\qty(\tau,\sigma')}=0,\ \ \ \acomm{\Pi^\mu\qty(\tau,\sigma)}{\Pi^\nu\qty(\tau,\sigma')}=0,\ \ \ \acomm{X^\mu\qty(\tau,\sigma)}{\Pi^\nu\qty(\tau,\sigma')}=\delta\qty(\sigma-\sigma')g^{\mu\nu}
 \end{align*}
 
 Just for completeness, we'll rewrite \ref{p},\ref{m} in function of the canonical variables,
 
 \begin{align*}
     P^\mu&=\int\dd{\sigma}\Pi^\mu\\
-    M^{\mu\nu}&=\int\dd{\sigma}\qty[\Pi^\mu X^\nu-\Pi^\nu X^\mu]
+    M^{\mu\nu}&=\int\dd{\sigma}\qty[X^\mu\Pi^\nu -X^\nu\Pi^\mu ]
 \end{align*}
 
 We'll start by the $P-P$ --- we'll not keep track of the $\tau$ dependence in the conserved charges, because, they are conserved. But 
@@ -135,10 +135,10 @@ nevertheless, everything is assumed to be evaluated at equal $\tau$ ---,
 Next the $P-M$,
 
 \begin{align*}
-    \acomm{P^\mu}{M^{\alpha\beta}}&=\int\dd{\sigma}\dd{\sigma'}\acomm{\Pi^\mu\qty(\tau,\sigma)}{\Pi^\alpha\qty(\tau,\sigma')X^\beta\qty(\tau,\sigma')-\Pi^\beta\qty(\tau,\sigma')X^\alpha\qty(\tau,\sigma')}\\
-    &=\int\dd{\sigma}\dd{\sigma'}\qty[\Pi^\alpha\qty(\tau,\sigma')\acomm{\Pi^\mu\qty(\tau,\sigma)}{X^\beta\qty(\tau,\sigma')}+\acomm{\Pi^\mu\qty(\tau,\sigma)}{\Pi^\alpha\qty(\tau,\sigma')}X^\beta\qty(\tau,\sigma')-\qty(\alpha\leftrightarrow\beta)]\\
-    &=\int\dd{\sigma}\dd{\sigma'}\qty[\Pi^\alpha\qty(\tau,\sigma')g^{\mu\beta}\delta\qty(\sigma-\sigma')-\qty(\alpha\leftrightarrow\beta)]\\
-    &=\int\dd{\sigma}\dd{\sigma'}\qty[\Pi^\alpha\qty(\tau,\sigma')g^{\mu\beta}\delta\qty(\sigma-\sigma')-\Pi^\beta\qty(\tau,\sigma')g^{\mu\alpha}\delta\qty(\sigma-\sigma')]\\
+    \acomm{P^\mu}{M^{\alpha\beta}}&=\int\dd{\sigma}\dd{\sigma'}\acomm{\Pi^\mu\qty(\tau,\sigma)}{X^\alpha\qty(\tau,\sigma')\Pi^\beta\qty(\tau,\sigma')-X^\beta\qty(\tau,\sigma')\Pi^\alpha\qty(\tau,\sigma')}\\
+    &=\int\dd{\sigma}\dd{\sigma'}\qty[X^\alpha\qty(\tau,\sigma')\acomm{\Pi^\mu\qty(\tau,\sigma)}{\Pi^\beta\qty(\tau,\sigma')}+\acomm{\Pi^\mu\qty(\tau,\sigma)}{X^\alpha\qty(\tau,\sigma')}\Pi^\beta\qty(\tau,\sigma')-\qty(\alpha\leftrightarrow\beta)]\\
+    &=\int\dd{\sigma}\dd{\sigma'}\qty[-\Pi^\beta\qty(\tau,\sigma')g^{\mu\alpha}\delta\qty(\sigma-\sigma')-\qty(\alpha\leftrightarrow\beta)]\\
+    &=\int\dd{\sigma}\dd{\sigma'}\qty[-\Pi^\beta\qty(\tau,\sigma')g^{\mu\alpha}\delta\qty(\sigma-\sigma')+\Pi^\alpha\qty(\tau,\sigma')g^{\mu\beta}\delta\qty(\sigma-\sigma')]\\
     &=\int\dd{\sigma}\qty[\Pi^\alpha\qty(\tau,\sigma)g^{\mu\beta}-\Pi^\beta\qty(\tau,\sigma)g^{\mu\alpha}]\\
     \acomm{P^\mu}{M^{\alpha\beta}}&=g^{\mu\beta}P^\alpha -g^{\mu\alpha}P^\beta 
 \end{align*}
@@ -146,39 +146,39 @@ Next the $P-M$,
 And lastly, the $M-M$,
 
 \begin{align*}
-    \acomm{M^{\mu\nu}}{M^{\alpha\beta}}&=\int\dd{\sigma}\dd{\sigma'}\acomm{\Pi^\mu\qty(\tau,\sigma)X^\nu\qty(\tau,\sigma)-\Pi^\nu\qty(\tau,\sigma)X^\mu\qty(\tau,\sigma)}{\Pi^\alpha\qty(\tau,\sigma')X^\beta\qty(\tau,\sigma')-\Pi^\beta\qty(\tau,\sigma')X^\alpha\qty(\tau,\sigma')}\\
-    &=\int\dd{\sigma}\dd{\sigma'}\acomm{\Pi^\mu\qty(\tau,\sigma)X^\nu\qty(\tau,\sigma)-\Pi^\nu\qty(\tau,\sigma)X^\mu\qty(\tau,\sigma)}{\Pi^\alpha\qty(\tau,\sigma')X^\beta\qty(\tau,\sigma')}-\qty(\alpha\leftrightarrow\beta)\\
-    &=\int\dd{\sigma}\dd{\sigma'}\qty[\acomm{\Pi^\mu\qty(\tau,\sigma)X^\nu\qty(\tau,\sigma)}{\Pi^\alpha\qty(\tau,\sigma')X^\beta\qty(\tau,\sigma')}-\qty(\alpha\leftrightarrow\beta)]-\qty(\mu\leftrightarrow\nu)
+    \acomm{M^{\mu\nu}}{M^{\alpha\beta}}&=\int\dd{\sigma}\dd{\sigma'}\acomm{X^\mu\qty(\tau,\sigma)\Pi^\nu\qty(\tau,\sigma)-X^\nu\qty(\tau,\sigma)\Pi^\mu\qty(\tau,\sigma)}{X^\alpha\qty(\tau,\sigma')\Pi^\beta\qty(\tau,\sigma')-X^\beta\qty(\tau,\sigma')\Pi^\alpha\qty(\tau,\sigma')}\\
+    &=\int\dd{\sigma}\dd{\sigma'}\acomm{X^\mu\qty(\tau,\sigma)\Pi^\nu\qty(\tau,\sigma)-X^\nu\qty(\tau,\sigma)\Pi^\mu\qty(\tau,\sigma)}{X^\alpha\qty(\tau,\sigma')\Pi^\beta\qty(\tau,\sigma')}-\qty(\alpha\leftrightarrow\beta)\\
+    &=\qty[\int\dd{\sigma}\dd{\sigma'}\acomm{X^\mu\qty(\tau,\sigma)\Pi^\nu\qty(\tau,\sigma)}{X^\alpha\qty(\tau,\sigma')\Pi^\beta\qty(\tau,\sigma')}-\qty(\alpha\leftrightarrow\beta)]-\qty(\mu\leftrightarrow\nu)
 \end{align*}
 
 Notice that,
 
 \begin{align*}
-    &\acomm{\Pi^\mu\qty(\tau,\sigma)X^\nu\qty(\tau,\sigma)}{\Pi^\alpha\qty(\tau,\sigma')X^\beta\qty(\tau,\sigma')}\\
-    &=\acomm{\Pi^\mu\qty(\tau,\sigma)}{\Pi^\alpha\qty(\tau,\sigma')X^\beta\qty(\tau,\sigma')}X^\nu\qty(\tau,\sigma)+\Pi^\mu\qty(\tau,\sigma)\acomm{X^\nu\qty(\tau,\sigma)}{\Pi^\alpha\qty(\tau,\sigma')X^\beta\qty(\tau,\sigma')}\\
-    &=\Pi^\alpha\qty(\tau,\sigma')\acomm{\Pi^\mu\qty(\tau,\sigma)}{X^\beta\qty(\tau,\sigma')}X^\nu\qty(\tau,\sigma)+\Pi^\mu\qty(\tau,\sigma)\acomm{X^\nu\qty(\tau,\sigma)}{\Pi^\alpha\qty(\tau,\sigma')}X^\beta\qty(\tau,\sigma')\\
-    &=\Pi^\alpha\qty(\tau,\sigma')g^{\mu\beta}\delta\qty(\sigma-\sigma')X^\nu\qty(\tau,\sigma)-\Pi^\mu\qty(\tau,\sigma)g^{\nu\alpha}\delta\qty(\sigma-\sigma')X^\beta\qty(\tau,\sigma')
+    &\acomm{X^\mu\qty(\tau,\sigma)\Pi^\nu\qty(\tau,\sigma)}{X^\alpha\qty(\tau,\sigma')\Pi^\beta\qty(\tau,\sigma')}\\
+    &=\acomm{X^\mu\qty(\tau,\sigma)}{X^\alpha\qty(\tau,\sigma')\Pi^\beta\qty(\tau,\sigma')}\Pi^\nu\qty(\tau,\sigma)+X^\mu\qty(\tau,\sigma)\acomm{\Pi^\nu\qty(\tau,\sigma)}{X^\alpha\qty(\tau,\sigma')\Pi^\beta\qty(\tau,\sigma')}\\
+    &=X^\alpha\qty(\tau,\sigma')\acomm{X^\mu\qty(\tau,\sigma)}{\Pi^\beta\qty(\tau,\sigma')}\Pi^\nu\qty(\tau,\sigma)+X^\mu\qty(\tau,\sigma)\acomm{\Pi^\nu\qty(\tau,\sigma)}{X^\alpha\qty(\tau,\sigma')}\Pi^\beta\qty(\tau,\sigma')\\
+    &=X^\alpha\qty(\tau,\sigma')g^{\mu\beta}\delta\qty(\sigma-\sigma')\Pi^\nu\qty(\tau,\sigma)-X^\mu\qty(\tau,\sigma)g^{\nu\alpha}\delta\qty(\sigma-\sigma')\Pi^\beta\qty(\tau,\sigma')
 \end{align*}
 
 Using this back in our expression,
 
 \begin{align*}
-    \acomm{M^{\mu\nu}}{M^{\alpha\beta}}&=\int\dd{\sigma}\qty[\Pi^\alpha\qty(\tau,\sigma)g^{\mu\beta}X^\nu\qty(\tau,\sigma)-\Pi^\mu\qty(\tau,\sigma)g^{\nu\alpha}X^\beta\qty(\tau,\sigma)-\qty(\alpha\leftrightarrow\beta)]-\qty(\mu\leftrightarrow\nu)\\
-    &=\int\dd{\sigma}\qty[\Pi^\alpha\qty(\tau,\sigma)g^{\mu\beta}X^\nu\qty(\tau,\sigma)-\Pi^\mu\qty(\tau,\sigma)g^{\nu\alpha}X^\beta\qty(\tau,\sigma)]\\
-    &\quad\quad\quad-\int\dd{\sigma}\qty[\Pi^\beta\qty(\tau,\sigma)g^{\mu\alpha}X^\nu\qty(\tau,\sigma)-\Pi^\mu\qty(\tau,\sigma)g^{\nu\beta}X^\alpha\qty(\tau,\sigma)]-\qty(\mu\leftrightarrow\nu)\\
-    &=\int\dd{\sigma}\qty[\Pi^\alpha\qty(\tau,\sigma)g^{\mu\beta}X^\nu\qty(\tau,\sigma)-\Pi^\mu\qty(\tau,\sigma)g^{\nu\alpha}X^\beta\qty(\tau,\sigma)]\\
-    &\quad\quad\quad-\int\dd{\sigma}\qty[\Pi^\beta\qty(\tau,\sigma)g^{\mu\alpha}X^\nu\qty(\tau,\sigma)-\Pi^\mu\qty(\tau,\sigma)g^{\nu\beta}X^\alpha\qty(\tau,\sigma)]\\
-    &\quad\quad\quad-\int\dd{\sigma}\qty[\Pi^\alpha\qty(\tau,\sigma)g^{\nu\beta}X^\mu\qty(\tau,\sigma)-\Pi^\nu\qty(\tau,\sigma)g^{\mu\alpha}X^\beta\qty(\tau,\sigma)]\\
-    &\quad\quad\quad+\int\dd{\sigma}\qty[\Pi^\beta\qty(\tau,\sigma)g^{\nu\alpha}X^\mu\qty(\tau,\sigma)-\Pi^\nu\qty(\tau,\sigma)g^{\mu\beta}X^\alpha\qty(\tau,\sigma)]
+    \acomm{M^{\mu\nu}}{M^{\alpha\beta}}&=\qty[\int\dd{\sigma}X^\alpha\qty(\tau,\sigma)g^{\mu\beta}\Pi^\nu\qty(\tau,\sigma)-\Pi^\mu\qty(\tau,\sigma)g^{\nu\alpha}\Pi^\beta\qty(\tau,\sigma)-\qty(\alpha\leftrightarrow\beta)]-\qty(\mu\leftrightarrow\nu)\\
+    &=\int\dd{\sigma}\qty[X^\alpha\qty(\tau,\sigma)g^{\mu\beta}\Pi^\nu\qty(\tau,\sigma)-X^\mu\qty(\tau,\sigma)g^{\nu\alpha}\Pi^\beta\qty(\tau,\sigma)]\\
+    &\quad\quad\quad-\int\dd{\sigma}\qty[X^\beta\qty(\tau,\sigma)g^{\mu\alpha}\Pi^\nu\qty(\tau,\sigma)-X^\mu\qty(\tau,\sigma)g^{\nu\beta}\Pi^\alpha\qty(\tau,\sigma)]-\qty(\mu\leftrightarrow\nu)\\
+    &=\int\dd{\sigma}\qty[X^\alpha\qty(\tau,\sigma)g^{\mu\beta}\Pi^\nu\qty(\tau,\sigma)-X^\mu\qty(\tau,\sigma)g^{\nu\alpha}\Pi^\beta\qty(\tau,\sigma)]\\
+    &\quad\quad\quad-\int\dd{\sigma}\qty[X^\beta\qty(\tau,\sigma)g^{\mu\alpha}\Pi^\nu\qty(\tau,\sigma)-X^\mu\qty(\tau,\sigma)g^{\nu\beta}\Pi^\alpha\qty(\tau,\sigma)]\\
+    &\quad\quad\quad-\int\dd{\sigma}\qty[X^\alpha\qty(\tau,\sigma)g^{\nu\beta}\Pi^\mu\qty(\tau,\sigma)-X^\nu\qty(\tau,\sigma)g^{\mu\alpha}\Pi^\beta\qty(\tau,\sigma)]\\
+    &\quad\quad\quad+\int\dd{\sigma}\qty[X^\beta\qty(\tau,\sigma)g^{\nu\alpha}\Pi^\mu\qty(\tau,\sigma)-X^\nu\qty(\tau,\sigma)g^{\mu\beta}\Pi^\alpha\qty(\tau,\sigma)]
 \end{align*}
 
 Collecting the terms with same metric index,
 
 \begin{align*}
-    \acomm{M^{\mu\nu}}{M^{\alpha\beta}}&=g^{\mu\beta}\int\dd{\sigma}\qty[\Pi^\alpha\qty(\tau,\sigma)X^\nu\qty(\tau,\sigma)-\Pi^\nu\qty(\tau,\sigma)X^\alpha\qty(\tau,\sigma)]\\
-    &\quad\quad\quad+g^{\nu\beta}\int\dd{\sigma}\qty[\Pi^\mu\qty(\tau,\sigma)X^\alpha\qty(\tau,\sigma)-\Pi^\alpha\qty(\tau,\sigma)X^\mu\qty(\tau,\sigma)]\\
-    &\quad\quad\quad+g^{\mu\alpha}\int\dd{\sigma}\qty[\Pi^\nu\qty(\tau,\sigma)X^\beta\qty(\tau,\sigma)-\Pi^\beta\qty(\tau,\sigma)X^\nu\qty(\tau,\sigma)]\\
-    &\quad\quad\quad+g^{\nu\alpha}\int\dd{\sigma}\qty[\Pi^\beta\qty(\tau,\sigma)X^\mu\qty(\tau,\sigma)-\Pi^\mu\qty(\tau,\sigma)X^\beta\qty(\tau,\sigma)]\\
+    \acomm{M^{\mu\nu}}{M^{\alpha\beta}}&=g^{\mu\beta}\int\dd{\sigma}\qty[X^\alpha\qty(\tau,\sigma)\Pi^\nu\qty(\tau,\sigma)-X^\nu\qty(\tau,\sigma)\Pi^\alpha\qty(\tau,\sigma)]\\
+    &\quad\quad\quad+g^{\nu\beta}\int\dd{\sigma}\qty[X^\mu\qty(\tau,\sigma)\Pi^\alpha\qty(\tau,\sigma)-X^\alpha\qty(\tau,\sigma)\Pi^\mu\qty(\tau,\sigma)]\\
+    &\quad\quad\quad+g^{\mu\alpha}\int\dd{\sigma}\qty[X^\nu\qty(\tau,\sigma)\Pi^\beta\qty(\tau,\sigma)-X^\beta\qty(\tau,\sigma)\Pi^\nu\qty(\tau,\sigma)]\\
+    &\quad\quad\quad+g^{\nu\alpha}\int\dd{\sigma}\qty[X^\beta\qty(\tau,\sigma)\Pi^\mu\qty(\tau,\sigma)-X^\mu\qty(\tau,\sigma)\Pi^\beta\qty(\tau,\sigma)]\\
     \acomm{M^{\mu\nu}}{M^{\alpha\beta}}&=g^{\mu\beta}M^{\alpha\nu}+g^{\nu\beta}M^{\mu\alpha}+g^{\mu\alpha}M^{\nu\beta}+g^{\nu\alpha}M^{\beta\mu}\\
     \acomm{M^{\mu\nu}}{M^{\alpha\beta}}&=g^{\mu\alpha}M^{\nu\beta}-g^{\mu\beta}M^{\nu\alpha}+g^{\nu\beta}M^{\mu\alpha}-g^{\nu\alpha}M^{\mu\beta}
 \end{align*}
