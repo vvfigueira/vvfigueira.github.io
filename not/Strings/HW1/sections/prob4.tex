@@ -30,20 +30,209 @@ condition do not allow for any more reparametrizations of $\tau$, as,
 \end{align*}
 
 Which states the only reparametrization compatible with the light-cone gauge condition is $\tau'\qty(\tau,\sigma)=\tau$. Hence, from our 
-initial freedom we can only make $\sigma$ reparametrizations now. Let now $f=\frac{1}{\sqrt h}h_{\sigma\sigma}$, at fixed $\tau$, and 
-under $\sigma'=\sigma'\qty(\sigma)$,
+initial freedom we can only make $\sigma$ reparametrizations now. One way of fixing this remaining reparametrization, is to choose $\sigma$ proportional 
+to the energy carried by the string, actually, we're going to choose a reparametrization such that the energy density in the string, at fixed $\tau$, is independent of 
+$\sigma$. One might suspect that the energy density is given by $\mathcal P^{\tau0}$, as in \ref{defcalp}, but, in the light-cone coordinates, the one that has 
+the role of energy density is $\mathcal P^{\tau+}$, we'll choose a sigma parametrization such that $\partial_\sigma\mathcal P^{\tau+}=0$, to see how can this 
+be done we take the transformation of this object under a reparametrization, $\tau'=\tau,\sigma'=\sigma'\qty(\sigma,\tau)$, as,
 
 \begin{align*}
-    f'\dd{\sigma'}=\dv{\sigma'}{\sigma}\frac{1}{\sqrt h}\dv{\sigma}{\sigma'}\dv{\sigma}{\sigma'}h_{\sigma\sigma}\dv{\sigma'}{\sigma}\dd{\sigma}=\frac{1}{\sqrt h}h_{\sigma\sigma}\dd{\sigma}=f\dd{\sigma}
+    \mathcal P^{\tau+}&=-\frac{\sqrt h\partial^\tau X^+}{2\pi\alpha'}=-\frac{\sqrt h h^{\tau\tau}}{2\pi\alpha'}2\alpha'p^+=-\sqrt h h^{\tau\tau}\frac{p^+}{\pi}\\
+    {\mathcal P'}^{\tau+}\qty(\tau,\sigma')&=-\pdv{\sigma}{\sigma'}\sqrt h h^{\tau\tau}\frac{p^+}{\pi}=\pdv{\sigma}{\sigma'}\mathcal P^{\tau+}
 \end{align*}
 
-That is, $f\dd{\sigma}$ gives us a $\sigma$ independent notion of length of the string, despite being still $\tau$ dependent. 
-Thus, we choose $\sigma'=\sigma'\qty(\tau,\sigma)$ as the 
-
-For those the mode expansion is given by,
+Hence, given ${\mathcal P'}^{\tau+}\qty(\tau,\sigma')$, we can choose $\sigma=\sigma\qty(\tau,\sigma')$, so that $\partial_\sigma\mathcal P^{\tau+}$, as long as,
 
 \begin{align*}
-    X^\mu\qty(\tau,\sigma)=x_0^\mu+\sqrt{2\alpha'}\alpha_0^\mu\tau+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\exp\qty(-\im n\tau)\cos\qty(n\sigma)
+    \pdv{}{\sigma}\qty[{\pdv{\sigma'}{\sigma}}{\mathcal P'}^{\tau+}]&=0\Rightarrow{\pdv[2]{\sigma'}{\sigma}}{\mathcal P'}^{\tau+}+\qty(\pdv{\sigma'}{\sigma})^2\pdv{{\mathcal P'}^{\tau+}}{\sigma'}=0
+\end{align*}
+
+This is simply a differential equation which can be solved. But this really fixes all the $\sigma$ reparametrization? Let's see if it's possible to 
+make further changes of $\sigma\rightarrow \sigma''$ preserving this condition,
+
+\begin{align*}
+    {\pdv{}{\sigma}}\qty[{\pdv{\sigma''}{\sigma}}{\pdv{\sigma'}{\sigma''}}]{\mathcal P'}^{\tau+}+\qty(\pdv{\sigma'}{\sigma''}\pdv{\sigma''}{\sigma})^2\pdv{{\mathcal P'}^{\tau+}}{\sigma'}&=0\\
+    {\pdv[2]{\sigma''}{\sigma}}{\pdv{\sigma'}{\sigma''}}{\mathcal P'}^{\tau+}+\qty(\pdv{\sigma''}{\sigma})^2\qty[{\pdv[2]{{\sigma'}}{{\sigma''}}}{\mathcal P'}^{\tau+}
+    +\qty(\pdv{\sigma'}{\sigma''})^2\pdv{{\mathcal P'}^{\tau+}}{\sigma'}
+    ]&=0
+\end{align*}
+
+Imposing that $\sigma''$ also satisfy the parametrization condition,
+
+\begin{align*}
+    {\pdv[2]{\sigma''}{\sigma}}{\pdv{\sigma'}{\sigma''}}{\mathcal P'}^{\tau+}&=0\Rightarrow {\pdv[2]{\sigma''}{\sigma}}=0\Rightarrow \sigma''=a\sigma+b
+\end{align*}
+
+Our condition of constancy of $\mathcal P^{\tau+}$ in sigma, has a residual affine reparametrization, which we can use to set $\sigma=0$ in one of the ends of the 
+string, and $\sigma=\pi$ in the other one. This completely fixes the $\sigma$ parametrization. What remains now is to fix the Weyl redundancy, as necessarily 
+$h_{ab}$ has a inverse, $\Det\qty[h_{ab}]\neq 0$, thus, by a Weyl transformation is always possible to make $\Det\qty[h_{ab}]=-1$ --- We're using Lorentzian signature ---. There is 
+no more room for any transformation now, hence, the gauge is fully fixed. Notice, as $\mathcal P^{\tau+}$ is constant in $\sigma$, we have the following,
+
+\begin{align*}
+    p^+&=\int\limits_0^\pi\dd{\sigma}\mathcal P^{\tau+}=\mathcal P^{\tau+}\pi=-p^+\sqrt h h^{\tau\tau}\\
+    -1&=h^{\tau\tau}
+\end{align*}
+
+Furthermore, using the equation of motion \ref{eomx} at $\mu=+$, we get,
+
+\begin{align*}
+    0&=\partial_\tau\qty[h^{\tau\sigma}\partial_\sigma X^+h^{\tau\tau}\partial_\tau X^+]+\partial_\sigma\qty[h^{\sigma\sigma}\partial_\sigma X^++h^{\sigma\tau}\partial_\tau X^+]\\
+    0&=\partial_\tau h^{\tau\tau}+\partial_\sigma h^{\sigma\tau}\\
+    0&=\partial_\sigma h^{\sigma\tau}
+\end{align*}
+
+But, using the Neumann Boundary conditions \ref{boundaryc} at $\mu=+$,
+
+\begin{align*}
+    0&=\partial^\sigma X^+\eval_{\sigma=0}^{\sigma=\pi}\\
+    0&=h^{\sigma\tau}\partial_\tau X^++h^{\sigma\sigma}\partial_\sigma X^+\eval_{\sigma=0}^{\sigma=\pi}\\
+    0&=h^{\tau\sigma}\eval_{\sigma=0}^{\sigma=\pi}\Rightarrow h^{\tau\sigma}\eval_{\sigma=0}=h^{\tau\sigma}\eval_{\sigma=\pi}=0
+\end{align*}
+
+Together with $\partial_\sigma h^{\tau\sigma}=0$, this simply states that $h^{\tau\sigma}=h^{\sigma\tau}\equiv0$. This, with $h^{\tau\tau}=-1$, 
+and with the determinant condition, says that $h=\textnormal{Diag}\mqty(-1&1)$. That simplifies the equations of motion \ref{eomx} to,
+
+\begin{align*}
+    \partial_\tau\partial_\tau X^\mu-\partial_\sigma\partial_\sigma X^\mu={\ddot X}^\mu-{X''}^\mu=0
+\end{align*}
+
+And also the consistency conditions \ref{eomh} as,
+
+\begin{align*}
+    0=&\partial_a X^\mu \partial_b X_\mu-\frac12 h_{ab}\qty(-{\dot X}^2+{X'}^2)\\
+    0=&\begin{cases}
+        \partial_\tau X^\mu \partial_\tau X_\mu+\frac12\qty(-{\dot X}^2+{X'}^2)&=\frac12\qty[{\dot X}^2+{X'}^2]\\
+        \partial_\tau X^\mu \partial_\sigma X_\mu&=\dot X\cdot X'\\
+        \partial_\sigma X^\mu \partial_\sigma X_\mu-\frac12\qty(-{\dot X}^2+{X'}^2)&=\frac12\qty[{\dot X}^2+{X'}^2]
+    \end{cases}
+\end{align*}
+
+These constrains can be recast as,
+
+\begin{align*}
+    \qty(\dot X\pm X')^2=0\numberthis\label{constrains}
+\end{align*}
+
+Lastly, but not less important, we have the Boundary Conditions, \ref{boundaryc}, which take the form,
+
+\begin{align*}
+    \partial_\sigma X^\mu\eval_{\sigma=0}=\partial_\sigma X^\mu\eval_{\sigma=\pi}=0
+\end{align*}
+
+We have now to solve the equation of motion with the right Boundary conditions, for this, is easier to change 
+coordinates to $\sigma^\pm=\tau\pm\sigma$,
+
+\begin{align*}
+    0&=\pdv[2]{}{\tau} X^\mu-\pdv[2]{}{\sigma}X^\mu\\
+    0&=\pdv{}{\tau}\qty[\pdv{\sigma^+}{\tau}\pdv{}{\sigma^+}X^\mu+\pdv{\sigma^-}{\tau}\pdv{}{\sigma^-}X^\mu]-\pdv{}{\sigma}\qty[\pdv{\sigma^+}{\sigma}\pdv{}{\sigma^+}X^\mu+\pdv{\sigma^-}{\sigma}\pdv{}{\sigma^-}X^\mu]\\
+    0&=\pdv{}{\tau}\qty[\pdv{}{\sigma^+}X^\mu+\pdv{}{\sigma^-}X^\mu]-\pdv{}{\sigma}\qty[\pdv{}{\sigma^+}X^\mu-\pdv{}{\sigma^-}X^\mu]\\
+    0&=\qty(\pdv{}{\sigma^+}+\pdv{}{\sigma^-})\qty[\pdv{}{\sigma^+}X^\mu+\pdv{}{\sigma^-}X^\mu]-\qty(\pdv{}{\sigma^+}-\pdv{}{\sigma^-})\qty[\pdv{}{\sigma^+}X^\mu-\pdv{}{\sigma^-}X^\mu]\\
+    0&=\partial_+\partial_-X^\mu
+\end{align*}
+
+This is easily solved for,
+
+\begin{align*}
+    X^\mu=\frac12\qty(f^\mu\qty(\sigma^+)+g^\mu\qty(\sigma^-))
+\end{align*}
+
+Imposing the boundary condition at $\sigma=0$,
+
+\begin{align*}
+    {X'}^\mu\qty(\tau,\sigma=0)&=\frac12\qty({f'}^\mu\qty(\tau)-{g'}^\mu\qty(\tau))=0
+\end{align*}
+
+This states that $g^\mu$ is equal to $f^\mu$ apart from a constant, which we'll absorb in the definition of $f^\mu$. Now, the boundary condition 
+on $\sigma=\pi$,
+
+\begin{align*}
+    X^\mu&=\frac12\qty(f^\mu\qty(\sigma^+)+f^\mu\qty(\sigma^-))\\
+    {X'}^\mu\qty(\tau,\pi)&=\frac12\qty({f'}^\mu\qty(\tau+\pi)-{f'}^\mu\qty(\tau-\pi))=0
+\end{align*}
+
+That is, ${f'}^\mu$ is periodic with period $2\pi$. The most general real function with period $2\pi$ is,
+
+\begin{align*}
+    {f'}^\mu\qty(u)&=f_1^\mu+\sqrt{2\alpha'}\sum\limits_{n=1}^\infty\qty({\alpha^\ast_n}^\mu\exp\qty(\im n u)+\alpha_n^\mu\exp\qty(-\im n u))\\
+    f^\mu\qty(u)&=f_0^\mu+f_1^\mu u-\im\sqrt{2\alpha'}\sum\limits_{n=1}^\infty\frac1n\qty({\alpha^\ast_n}^\mu\exp\qty(\im n u)-\alpha_n^\mu\exp\qty(-\im n u))
+\end{align*}
+
+Defining $\alpha_{-n}^\mu={\alpha^\ast_n}^\mu$,
+
+\begin{align*}
+    f^\mu\qty(u)&=f_0^\mu+f_1^\mu u+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\exp\qty(-\im n u)
+\end{align*}
+
+Now, back in $X$,
+
+\begin{align*}
+    X^\mu&=f_0^\mu+\frac12f_1^\mu\qty(\sigma^++\sigma^-)+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\frac12\qty[\exp\qty(-\im n \sigma^+)+\exp\qty(-\im n\sigma^-)]\\
+    X^\mu&=f_0^\mu+f_1^\mu\tau+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\exp\qty(-\im n\tau)\frac12\qty[\exp\qty(-\im n \sigma)+\exp\qty(\im n\sigma)]\\
+    X^\mu&=f_0^\mu+f_1^\mu\tau+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\exp\qty(-\im n\tau)\cos\qty(n\sigma)   
+\end{align*}
+
+Setting $f_0^\mu=x_0^\mu$, and also noting that,
+
+\begin{align*}
+    p^\mu&=\int\limits_0^\pi\dd{\sigma}\mathcal P^{\tau\mu}=\int\limits_0^\pi\dd{\sigma}\frac{\partial_\tau X^\mu}{2\pi\alpha'}\\
+    p^\mu&=\frac{1}{2\pi\alpha'}\int\limits_0^\pi\dd{\sigma}\qty[f_1^\mu+\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\alpha_n^\mu\exp\qty(-\im n\tau)\cos\qty(n\sigma)]=\frac{f_1^\mu}{2\alpha'}   
+\end{align*}
+
+So that,
+
+\begin{align*}
+    X^\mu&=x_0^\mu+2\alpha' p^\mu\tau+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\exp\qty(-\im n\tau)\cos\qty(n\sigma)   
+\end{align*}
+
+Also is useful to define a additional mode, $\alpha_0^\mu=\sqrt{2\alpha'}p^\mu$. 
+
+This is not the end of it, because we need to make sure the two constrains are satisfied, namely, \ref{constrains}. With the convention of 
+uppercase latin index referring to non-light-cone components, $I=2,\cdots,D-1$, the constrains are,
+
+\begin{align*}
+    0&=-2\qty({\dot X}^-\pm{X'}^-)\qty({\dot X}^+\pm{X'}^+)+\qty({\dot X}^I\pm{X'}^I)^2\\
+    4\alpha'p^+\qty({\dot X}^-\pm{X'}^-)&=\qty({\dot X}^I\pm{X'}^I)^2\\
+    {\dot X}^-\pm{X'}^-&=\frac{1}{4\alpha'p^+}\qty({\dot X}^I\pm{X'}^I)^2
+\end{align*}
+
+That is, the two constrains implies that $X^-$ is not dynamical, and, the collection of $X^I$ fully determine $X^-$, 
+apart from a single integration constant, $x_0^-$. To see this is helpful to note,
+
+\begin{align*}
+    {\dot X}^\mu&=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^\mu\exp\qty(-\im n\tau)\cos\qty(n\sigma)\\
+    {X'}&=-\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^\mu\exp\qty(-\im n\tau)\sin\qty(n\sigma)
+\end{align*}
+
+Which implies,
+
+\begin{align*}
+    {\dot X}^\mu\pm{X'}^\mu&=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^\mu\exp\qty(-\im n\qty(\tau\pm \sigma))
+\end{align*}
+
+So that,
+
+\begin{align*}
+    {\dot X}^-\pm{X'}^-&=\frac{1}{4\alpha'\pi}\qty({\dot X}^I\pm{X'}^I)^2\\
+    \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha^-_n\exp\qty(-\im n\qty(\tau\pm\sigma))&=\frac{2\alpha'}{4\alpha' p^+}\sum\limits_{p,q\in\mathbb Z}\alpha^I_p\alpha^I_q\exp\qty(-\im\qty(p+q)\qty(\tau\pm\sigma))\\
+    \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha^-_n\exp\qty(-\im n\qty(\tau\pm\sigma))&=\frac{1}{2p^+}\sum\limits_{n,p\in\mathbb Z}\alpha^I_p\alpha^I_{n-p}\exp\qty(-\im n\qty(\tau\pm\sigma))\\
+    \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha^-_n\exp\qty(-\im n\qty(\tau\pm\sigma))&=\frac{1}{p^+}\sum\limits_{n\in\mathbb Z}\qty(\frac12\sum\limits_{p\in\mathbb Z}\alpha^I_p\alpha^I_{n-p})\exp\qty(-\im n\qty(\tau\pm\sigma))\\
+    \sqrt{2\alpha'}\alpha_n^-&=\frac{1}{2p^+}\sum\limits_{p\in\mathbb Z}\alpha_p^I\alpha_{n-p}^I=\frac{1}{p^+}L_n^\perp
+\end{align*}
+
+Hence, all the fourrier modes of $X^-$ are completely determined by the transverse modes ones, apart from of course the integration constant $x^-_0$. In the 
+last passage we also defined the Virasoro modes $L_n^\perp$. This is it, we fully solved the equation of motion with all the constrains and boundary 
+conditions, the dynamical objects we found are:
+
+\begin{align*}
+    X^I\qty(\tau,\sigma),p^+,x_0^-
+\end{align*}
+
+Because $X^+=2\alpha'p^+\tau$, it's not dynamical, apart from $p^+$. From this list of classical dynamical objects we can start the quantization of 
+our theory! This is done by imposing the canonical commutation relations dictated by the Poisson bracket between the degrees of freedom and their correspondent 
+conjugated momentum, those are given by,
+
+\begin{align*}
+    \comm{X^I\qty(\tau,\sigma)}{\mathcal P^{\tau J}\qty(\tau,\sigma')}&=\im g^{IJ}\delta\qty(\sigma-\sigma'),\ \ \ \comm{x_0^-}{p^+}=-\im
 \end{align*}
 
 \subsection{4.B)}
