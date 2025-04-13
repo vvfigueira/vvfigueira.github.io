@@ -378,7 +378,7 @@ relations of the Virasoro modes with all the other objects, we start with,
     &=\frac12\sum\limits_{p\geq0}\qty{\alpha_{m-p}^I\comm{\alpha_p^I}{\alpha_n^J}+\comm{\alpha_{m-p}^I}{\alpha_n^J}\alpha_p^I}+\frac12\sum\limits_{p<0}\qty{\alpha_{p}^I\comm{\alpha_{m-p}^I}{\alpha_n^J}+\comm{\alpha_{p}^I}{\alpha_n^J}\alpha_{m-p}^I}\\
     &=\frac12\sum\limits_{p\in\mathbb Z}\qty{\alpha_{m-p}^I g^{IJ}p\delta_{p+n,0}+\qty(m-p)\delta_{m-p+n,0}g^{IJ}\alpha_p^I}\\
     &=\frac12\qty{-\alpha_{m+n}^Jn+\qty(m-m-n)\alpha_{m+n}^J}\\
-    \comm{L_m^\perp}{\alpha^J_n}&=-n\alpha_{n+m}^J
+    \comm{L_m^\perp}{\alpha^J_n}&=-n\alpha_{n+m}^J\numberthis\label{virasoroalpha}
 \end{align*}
 
 Now,
@@ -449,6 +449,113 @@ Which finishes our proof. Hence,
     \comm{L_m^\perp}{L_n^\perp}&=\qty(m-n)L_{m+n}^\perp+\frac{D-2}{12}\qty(m^3-m)\delta_{m+n,0}
 \end{align*}
 
-This completes the set of all needed commutation relations. We can now discuss the Lorentz generators in the Light-cone gauge.
+This completes the set of all needed commutation relations. We can now discuss the Lorentz generators in the Light-cone gauge. 
+We have already computed them in \ref{m}, but of course we have two remarks, neither they are quantum, nor are in the light-cone gauge, 
+about the later, the actual quantum light-cone gauge Lorentz generators \textbf{should} satisfy the same algebra as \ref{lorentzalgebra} in the 
+light-cone coordinates. The failure to met this requirement is related to an anomaly in this global symmetry of the Quantum Poincare Action. 
+And about the former, we'll change the definition accordingly to ensure the quantum generators do satisfy being Hermitian. With that being said, 
+let's evaluate the classical version of \ref{m} in the light-cone gauge,
+
+\begin{align*}
+    M^{\mu\nu}&\stackrel{?}{=}\frac{1}{2\pi\alpha'}\int\limits_0^\pi\dd{\sigma}\qty(X^\mu{\dot X}^\nu-X^\nu{\dot X}^\mu)\\
+    &\stackrel{?}{=}\frac{1}{2\pi\alpha'}\int\limits_0^\pi\dd{\sigma}\qty(x_0^\mu+2\alpha'p^\mu\tau+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha^\mu_n}{n}\exp\qty(-\im n\tau)\cos\qty(n\sigma))\times\\
+    &\quad\quad\quad\times\sqrt{2\alpha'}\sum\limits_{m\in\mathbb Z}\alpha^\nu_m\exp\qty(-\im m\tau)\cos\qty(m\sigma)-\qty(\mu\leftrightarrow\nu)\\
+    &\stackrel{?}{=}\frac{1}{2\pi\alpha'}\left[\sqrt{2\alpha'}\sum\limits_{m\in\mathbb Z}x_0^\mu\alpha^\nu_m\exp\qty(-\im m\tau)\pi\delta_{m,0}\right.\\
+    &\quad\quad\quad+2\alpha'\tau\sqrt{2\alpha'}\sum\limits_{m\in\mathbb Z}p^\mu\alpha^\nu_m\exp\qty(-\im m\tau)\pi\delta_{m,0}\\
+    &\quad\quad\quad\left.+\im 2\alpha'\sum\limits_{n\in\mathbb Z^\ast}\sum\limits_{m\in\mathbb Z}\frac{\alpha^\mu_n}{n}\exp\qty(-\im n\tau)\alpha^\nu_m\exp\qty(-\im m\tau)\frac\pi2\qty(\delta_{m,n}+\delta_{m,-n})\right]-\qty(\mu\leftrightarrow\nu)\\
+    M^{\mu\nu}&\stackrel{?}{=}\left[\frac{1}{\sqrt{2\alpha'}}x_0^\mu\alpha^\nu_0\right.+\tau\sqrt{2\alpha'}p^\mu\alpha^\nu_0+\frac\im2 \sum\limits_{n\in\mathbb Z^\ast}\frac{1}{n}\alpha^\mu_n\alpha^\nu_n\exp\qty(-\im \qty(n+m)\tau)\left.+\frac\im2\sum\limits_{n\in\mathbb Z^\ast}\frac{1}{n}\alpha^\mu_n\alpha^\nu_{-n}\right]-\qty(\mu\leftrightarrow\nu)
+\end{align*}
+
+Employing the before mentioned equality $\alpha^\mu_0=\sqrt{2\alpha'}p^\mu$,
+
+\begin{align*}
+    M^{\mu\nu}&\stackrel{?}{=}\left[x_0^\mu p^\nu-x_0^\nu p^\mu+\tau\alpha_0^\mu \alpha_0^\nu-\tau\alpha_0^\nu \alpha_0^\mu+\frac\im2\sum\limits_{n\in\mathbb Z^\ast}\frac{1}{n}\qty(\alpha^\mu_n\alpha^\nu_{-n}-\alpha^\nu_n\alpha^\mu_{-n})\right.\\
+    &\quad\quad\quad\left.+\frac\im2 \sum\limits_{n\in\mathbb Z^\ast}\frac{1}{n}\qty(\alpha^\mu_n\alpha^\nu_n-\alpha^\nu_n\alpha^\mu_n)\exp\qty(-\im 2n\tau)\right]\\
+    M^{\mu\nu}&\stackrel{?}{=}\left[x_0^\mu p^\nu-x_0^\nu p^\mu+\frac\im2\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha^\mu_n\alpha^\nu_{-n}-\alpha^\nu_n\alpha^\mu_{-n}-\alpha^\mu_{-n}\alpha^\nu_{n}+\alpha^\nu_{-n}\alpha^\mu_{n})\right]\\
+    M^{\mu\nu}&\stackrel{?}{=}\left[x_0^\mu p^\nu-x_0^\nu p^\mu+\im\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha^\mu_n\alpha^\nu_{-n}-\alpha^\nu_n\alpha^\mu_{-n})\right]
+\end{align*}
+
+This is the classical version of the generators in the light-cone gauge. Does it is a good Quantum Lorentz Generator Operator? 
+For a positive answer, it has to be both Hermitian and normal-ordered, let's consider one by one,
+
+\begin{align*}
+    M^{IJ}&\stackrel{?}{=}\left[x_0^I p^J-x_0^J p^I+\im\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha^I_n\alpha^J_{-n}-\alpha^J_n\alpha^I_{-n})\right]\\
+    \qty(M^{IJ})^\dagger-M^{IJ}&\stackrel{?}{=}\left[p^Jx_0^I -p^Ix_0^J -x_0^I p^J+x_0^J p^I-\im\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha^J_{n}\alpha^I_{-n}-\alpha^I_{n}\alpha^J_{-n}+\alpha^I_n\alpha^J_{-n}-\alpha^J_n\alpha^I_{-n})\right]\\
+    \qty(M^{IJ})^\dagger-M^{IJ}&\stackrel{?}{=}\left[\comm{p^J}{x_0^I} -\comm{p^I}{x_0^J}\right]\\
+    \qty(M^{IJ})^\dagger-M^{IJ}&\stackrel{?}{=}\left[-\im g^{IJ} +\im  g^{IJ}\right]=0
+\end{align*}
+
+Yes! And about normal-ordered? No. Both terms inside the sum are reversed normal-ordered, just reversing those, 
+our quantum operator related to the Lorentz Generators is,
+
+\begin{align*}
+    M^{IJ}&=\left[x_0^I p^J-x_0^J p^I-\im\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\right]
+\end{align*}
+
+Now, already changing to the normal-ordered one, and looking at Hermiticity,
+
+\begin{align*}
+    M^{I+}&\stackrel{?}{=}\left[x_0^I p^+-x_0^+ p^I-\im\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha^I_{-n}\alpha^+_{n}-\alpha^+_{-n}\alpha^I_{n})\right]\\
+    M^{I+}&\stackrel{?}{=}x_0^I p^+
+\end{align*}
+
+Which is of course Hermitian, hence,
+
+\begin{align*}
+    M^{I+}&=x_0^I p^+
+\end{align*}
+
+By the same reasoning, that is, $x_0^+=0=\alpha_n^+,\ n\neq 0$,
+
+\begin{align*}
+    M^{-+}&\stackrel{?}{=}x_0^- p^+
+\end{align*}
+
+Which fails to be Hermitian, due the canonical commutation relations. One way to avoid this is to symmetrize it,
+
+\begin{align*}
+    M^{-+}&=\frac{1}{2}\qty(x_0^-p^++p^+x_0^-)
+\end{align*}
+
+Which now is both normal ordered and hermitian. Now,
+
+\begin{align*}
+    M^{++}&\stackrel{?}{=}x_0^+p^+=0
+\end{align*}
+
+Which is expected by the anti-symmetry of the generators, we have another which is zero by the anti-symmetry,
+
+\begin{align*}
+    M^{--}&\stackrel{?}{=}\qty[x_0^-p^--x_0^-p^--\im\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty(\alpha_{-n}^-\alpha^-_{n}-\alpha^-_{-n}\alpha^-_n)]=0
+\end{align*}
+
+At last, we have the most important generator,
+
+\begin{align*}
+    M^{-I}&\stackrel{?}{=}\left[x_0^- p^I-x_0^I p^--\im\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha^-_{-n}\alpha^I_{n}-\alpha^I_{-n}\alpha^-_{n})\right]
+\end{align*}
+
+Is it Hermitian? No. 
+
+\begin{align*}
+    \qty(M^{-I})^\dagger-M^{-I}&\stackrel{?}{=}\left[p^Ix_0^- -p^-x_0^I -x_0^- p^I+x_0^I p^-+\im\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha^I_{-n}\alpha^-_{n}-\alpha^-_{-n}\alpha^I_{n}+\alpha^-_{-n}\alpha^I_{n}-\alpha^I_{-n}\alpha^-_{n})\right]\\
+    \qty(M^{-I})^\dagger-M^{-I}&\stackrel{?}{=}\left[\comm{p^I}{x_0^-} -\comm{p^-}{x_0^I}\right]\\
+    \qty(M^{-I})^\dagger-M^{-I}&\stackrel{?}{=}-\comm{p^-}{x_0^I}\\
+    \qty(M^{-I})^\dagger-M^{-I}&\stackrel{?}{=}-\frac{1}{\sqrt{2\alpha'}}\comm{\alpha_0^-}{x_0^I}\\
+    \qty(M^{-I})^\dagger-M^{-I}&\stackrel{?}{=}-\frac{1}{2\alpha'p^+}\comm{L^\perp_0+a}{x_0^I}=\frac{\im}{\sqrt{2\alpha'}p^+}\alpha^I_0
+\end{align*}
+
+Again, if we symmetrize the $x_0^Ip^-$ term this issue is resolved,
+
+\begin{align*}
+    M^{-I}&\stackrel{?}{=}x_0^- p^I-\frac12\qty(x_0^I p^-+p^-x_0^I)-\im\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha^-_{-n}\alpha^I_{n}-\alpha^I_{-n}\alpha^-_{n})
+\end{align*}
+
+Is this expression normal-ordered? Yes! Due to the $\alpha_n^-$ being proportional to the Virasoro modes, which are already normal-ordered. Hence, the expression for this 
+Lorentz Generator is, using Virasoro modes,
+
+\begin{align*}
+    M^{-I}&=x_0^- p^I-\frac{1}{4\alpha'p^+}\qty(x_0^I\qty(L_0^\perp+a)+\qty(L_0^\perp+a)x_0^I)-\frac{\im}{\sqrt{2\alpha'p^+}}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(L^\perp_{-n}\alpha^I_{n}-\alpha^I_{-n}L^\perp_n)
+\end{align*}
 
 \subsection{4.B)}
