@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.23)  12 APR 2025 21:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.23)  13 APR 2025 23:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1028,13 +1028,47 @@ Overfull \hbox (7.36586pt too wide) detected at line 546
 []
  []
 
-)
 
-[28] (./sections/prob5.tex)
 
-[29] (./sections/prob6.tex)
+[28]
 
-[30] (./main.aux)
+[29]
+Overfull \hbox (9.0415pt too wide) detected at line 628
+[]
+ []
+
+
+Overfull \hbox (42.14688pt too wide) detected at line 651
+[]
+ []
+
+
+
+[30]
+
+[31]
+Overfull \hbox (1.67184pt too wide) detected at line 684
+[]
+ []
+
+
+Overfull \hbox (3.00482pt too wide) detected at line 722
+[]
+ []
+
+
+
+[32]
+
+[33]
+
+[34])
+
+[35] (./sections/prob5.tex)
+
+[36] (./sections/prob6.tex)
+
+[37] (./main.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
@@ -1043,9 +1077,9 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 04032DBC0E26DE1D17FAD9E3150DBEBB;2244.
  ) 
 Here is how much of TeX's memory you used:
- 29954 strings out of 473362
- 591427 string characters out of 5725050
- 1030646 words of memory out of 5000000
+ 29961 strings out of 473362
+ 591476 string characters out of 5725050
+ 1047646 words of memory out of 5000000
  52467 multiletter control sequences out of 15000+600000
  568524 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1062,10 +1096,10 @@ cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (30 pages, 232562 bytes).
+Output written on main.pdf (37 pages, 254642 bytes).
 PDF statistics:
- 392 PDF objects out of 1000 (max. 8388607)
- 331 compressed objects within 4 object streams
- 84 named destinations out of 1000 (max. 500000)
+ 426 PDF objects out of 1000 (max. 8388607)
+ 358 compressed objects within 4 object streams
+ 91 named destinations out of 1000 (max. 500000)
  229 words of extra memory for PDF output out of 10000 (max. 10000000)
 
