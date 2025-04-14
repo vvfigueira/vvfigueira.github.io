@@ -563,16 +563,44 @@ Lorentz Generator is, using Virasoro modes,
 This is the real deal, now is the time of truth. We'll \textbf{ensure} the Lorentz invariance of this theory, you may ask how? 
 By making sure the Lorentz algebra is satisfied by the Light-cone Lorentz generators. We're not computing all of the commutators in 
 the Light-cone gauge, but only $\comm{M^{-I}}{M^{-J}}$, as this is the only one with unknown constants, $a$. The calculus is long and 
-cumbersome, hence, we'll split into various parts. Let's compute term by term.
+cumbersome, hence, we'll split into various parts. Let's compute term by term. We define the auxiliary variables as,
 
-First-First,
+\begin{align*}
+    A^I&=x_0^- p^I\\
+    B^I&=-\frac{1}{4\alpha'p^+}\qty(x_0^I\qty(L_0^\perp+a)+\qty(L_0^\perp+a)x_0^I)\\
+    C^I&=\frac{\im}{\sqrt{2\alpha'}p^+}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(L^\perp_{-n}\alpha^I_{n}-\alpha^I_{-n}L^\perp_n)
+\end{align*}
+
+It's clear then that the commutator is,
+
+\begin{align*}
+    \comm{M^{-I}}{M^{-J}}&=\comm{A^I}{A^J}+\comm{A^I}{B^J}+\comm{B^I}{A^J}+\comm{B^I}{B^J}\\
+    &\quad\quad\quad+\comm{A^I}{C^J}+\comm{C^I}{A^J}+\comm{B^I}{C^J}+\comm{C^I}{B^J}+\comm{C^I}{C^J}
+\end{align*}
+
+Which can be rewritten as,
+
+\begin{align*}
+    \comm{M^{-I}}{M^{-J}}&=\comm{A^I}{A^J}+\comm{B^I}{B^J}+\comm{C^I}{C^J}\\
+    &\quad\quad\quad+\qty{\comm{A^I}{B^J}+\comm{A^I}{C^J}+\comm{B^I}{C^J}-\qty(I\leftrightarrow J)}
+\end{align*}
+
+That is, for the mixed commutator, we just need to compute the anti-symmetrical part, a fact that we'll exploit,
+$$$$
+Now, $\comm{A^I}{A^J}$,
 
 \begin{align*}
     \comm{x^-_0p^I}{x_0^-p^J}&=x^-_0\comm{p^I}{x_0^-p^J}+\comm{x^-_0}{x_0^-p^J}p^I\\
     \comm{x^-_0p^I}{x_0^-p^J}&=x^-_0x_0^-\comm{p^I}{p^J}+x_0^-\comm{x^-_0}{p^J}p^I=0
 \end{align*}
 
-First-Second,
+That is,
+
+\begin{align*}
+    \comm{A^I}{A^J}&=0\numberthis
+\end{align*}
+$$$$
+Now, $\comm{A^I}{B^J}$,
 
 \begin{align*}
     &-\frac{1}{4\alpha'}\comm{x_0^-p^I}{\frac{1}{p^+}\qty(x_0^J\qty(L_0^\perp+a)+\qty(L_0^\perp+a)x_0^J)}+\frac{1}{4\alpha'}\comm{x_0^-p^J}{\frac{1}{p^+}\qty(x_0^I\qty(L_0^\perp+a)+\qty(L_0^\perp+a)x_0^I)}\\
@@ -583,7 +611,13 @@ First-Second,
     &=-\frac{\im}{2\alpha'{p^+}^2}\qty(L_0^\perp+a)\qty(x_0^Jp^I-x_0^Ip^J)\\
 \end{align*}
 
-Second-Second,
+That is,
+
+\begin{align*}
+    \comm{A^I}{B^J}-\comm{A^J}{B^I}&=-\frac{\im}{2\alpha'{p^+}^2}\qty(L_0^\perp+a)\qty(x_0^Jp^I-x_0^Ip^J)\numberthis
+\end{align*}
+$$$$
+Now, $\comm{B^I}{B^J}$,
 
 \begin{align*}
     &\frac{1}{16{\alpha'}^2{p^+}^2}\comm{x_0^I\qty(L_0^\perp+a)+\qty(L_0^\perp+a)x_0^I}{x_0^J\qty(L_0^\perp+a)+\qty(L_0^\perp+a)x_0^J}\\
@@ -591,162 +625,339 @@ Second-Second,
     &=\frac{1}{4{\alpha'}^2{p^+}^2}\qty{\comm{\qty(L_0^\perp+a)x_0^I}{\qty(L_0^\perp+a)x_0^J}+\im\alpha'\qty(\comm{p^I}{\qty(L_0^\perp+a)x_0^J}-\comm{p^J}{\qty(L_0^\perp+a)x_0^I})}\\
     &=\frac{1}{4{\alpha'}^2{p^+}^2}\qty{\qty(L_0^\perp+a)\comm{x_0^I}{L_0^\perp}x_0^J+\qty(L_0^\perp+a)\comm{L_0^\perp}{x_0^J}x_0^I+\im\alpha'\qty(\comm{p^I}{L_0^\perp}x_0^J-\comm{p^J}{L_0^\perp}x_0^I)}\\
     &=\frac{1}{4{\alpha'}^2{p^+}^2}\qty{\qty(L_0^\perp+a)\im 2\alpha' p^Ix_0^J+\qty(L_0^\perp+a)\qty(-\im 2\alpha' p_0^J)x_0^I}\\
-    &=\frac{\im}{2{\alpha'}{p^+}^2}\qty(L_0^\perp+a)\qty{p^Ix_0^J-p_0^Jx_0^I}\\
-    &=\frac{\im}{2{\alpha'}{p^+}^2}\qty(L_0^\perp+a)\qty{x_0^Jp^I+\comm{p^I}{x_0^J}-x_0^Ip_0^J-\comm{p_0^J}{x_0^I}}\\
-    &=\frac{\im}{2{\alpha'}{p^+}^2}\qty(L_0^\perp+a)\qty{x_0^Jp^I-x_0^Ip_0^J}
+    &=\frac{\im}{2{\alpha'}{p^+}^2}\qty(L_0^\perp+a)\qty(p^Ix_0^J-p_0^Jx_0^I)\\
+    &=\frac{\im}{2{\alpha'}{p^+}^2}\qty(L_0^\perp+a)\qty(x_0^Jp^I+\comm{p^I}{x_0^J}-x_0^Ip_0^J-\comm{p_0^J}{x_0^I})\\
+    &=\frac{\im}{2{\alpha'}{p^+}^2}\qty(L_0^\perp+a)\qty(x_0^Jp^I-x_0^Ip_0^J)
 \end{align*}
 
-First-Third,
+That is,
 
 \begin{align*}
-    &-\frac{\im}{\sqrt{2\alpha'}}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty{\comm{x_0^-p^I}{\frac{1}{p^+}\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})}-\comm{x_0^-p^J}{\frac{1}{p^+}\qty(L^\perp_{-n}\alpha_n^I-\alpha_{-n}^IL^\perp_{n})}}\\
-    &=-\frac{\im}{\sqrt{2\alpha'}}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty{x_0^-\frac{1}{p^+}\comm{p^I}{L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n}}-x_0^-\frac{1}{p^+}\comm{p^J}{L^\perp_{-n}\alpha_n^I-\alpha_{-n}^IL^\perp_{n}}}\\
-    &\quad\quad\quad-\frac{\im}{\sqrt{2\alpha'}}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty{\comm{x_0^-}{\frac{1}{p^+}}\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})p^I-\comm{x_0^-}{\frac{1}{p^+}}\qty(L^\perp_{-n}\alpha_n^I-\alpha_{-n}^IL^\perp_{n})p^J}\\
-    &=-\frac{\im}{\sqrt{2\alpha'}}x_0^-\frac{1}{p^+}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty{L^\perp_{-n}\comm{p^I}{\alpha_n^J}-\comm{p^I}{\alpha_{-n}^J}L^\perp_{n}-L^\perp_{-n}\comm{p^J}{\alpha_n^I}-\comm{p^J}{\alpha_{-n}^I}L^\perp_{n}}\\
-    &\quad\quad\quad+\frac{1}{\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty{\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})p^I-\qty(L^\perp_{-n}\alpha_n^I-\alpha_{-n}^IL^\perp_{n})p^J}\\
-    &=\frac{1}{\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty{\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})p^I-\qty(L^\perp_{-n}\alpha_n^I-\alpha_{-n}^IL^\perp_{n})p^J}
+    \comm{B^I}{B^J}&=\frac{\im}{2\alpha'{p^+}^2}\qty(L_0^\perp+a)\qty(x_0^Jp^I-x_0^Ip^J)\numberthis
 \end{align*}
 
-Second-Third
+Notice that we have $\comm{A^I}{A^J}+\comm{B^I}{B^J}+\qty(\comm{A^I}{B^J}-\comm{B^I}{A^J})=0$.
+$$$$ 
+Now, $\comm{A^I}{C^J}$,
 
 \begin{align*}
-    &\frac{\im}{4\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\left\{\comm{2\qty(L_0^\perp+a)x_0^I+2\im\alpha' p^I}{L^\perp_{-n}\alpha_n^J-\alpha^J_{-n}L^\perp_n}\right.\\
-    &\quad\quad\quad\left.-\comm{2\qty(L_0^\perp+a)x_0^J+2\im\alpha' p^J}{L^\perp_{-n}\alpha_n^I-\alpha^I_{-n}L^\perp_n}\right\}\\
-    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\left\{\comm{\qty(L_0^\perp+a)x_0^I}{L^\perp_{-n}\alpha_n^J-\alpha^J_{-n}L^\perp_n}\right.\\
-    &\quad\quad\quad\left.-\comm{\qty(L_0^\perp+a)x_0^J}{L^\perp_{-n}\alpha_n^I-\alpha^I_{-n}L^\perp_n}\right\}\\
-    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\left\{\comm{L_0^\perp}{L^\perp_{-n}\alpha_n^J-\alpha^J_{-n}L^\perp_n}x_0^I+\qty(L_0^\perp+a)\comm{x_0^I}{L^\perp_{-n}}\alpha_n^J-\qty(L_0^\perp+a)\alpha^J_{-n}\comm{x_0^I}{L^\perp_n}\right.\\
-    &\quad\quad\quad\left.-\comm{L_0^\perp}{L^\perp_{-n}\alpha_n^I-\alpha^I_{-n}L^\perp_n}x_0^J-\qty(L_0^\perp+a)\comm{x_0^J}{L^\perp_{-n}}\alpha_n^I+\qty(L_0^\perp+a)\alpha^I_{-n}\comm{x_0^J}{L^\perp_n}\right\}\\
-    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\left\{\comm{L_0^\perp}{L^\perp_{-n}\alpha_n^J-\alpha^J_{-n}L^\perp_n}x_0^I+\im\sqrt{2\alpha'}\qty(L_0^\perp+a)\qty(\alpha_{-n}^I\alpha_n^J-\alpha^J_{-n}\alpha_n^J)\right.\\
-    &\quad\quad\quad\left.-\comm{L_0^\perp}{L^\perp_{-n}\alpha_n^I-\alpha^I_{-n}L^\perp_n}x_0^J-\im \sqrt{2\alpha'}\qty(L_0^\perp+a)\qty(\alpha_{-n}^J\alpha_n^I-\alpha^I_{-n}\alpha_n^J)\right\}\\
-    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\left\{\im2\sqrt{2\alpha'}\qty(L_0^\perp+a)\qty(\alpha_{-n}^I\alpha_n^J-\alpha^J_{-n}\alpha_n^J)\right.\\
-    &\quad\quad\quad\left.\comm{L_0^\perp}{L^\perp_{-n}\alpha_n^J}x_0^I-\comm{L_0^\perp}{\alpha^J_{-n}L^\perp_n}x_0^I-\qty(I\leftrightarrow J)\right\}\\
-    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\left\{\im2\sqrt{2\alpha'}\qty(L_0^\perp+a)\qty(\alpha_{-n}^I\alpha_n^J-\alpha^J_{-n}\alpha_n^J)\right.\\
-    &\quad\quad\quad\left.L^\perp_{-n}\comm{L_0^\perp}{\alpha_n^J}x_0^I+\comm{L_0^\perp}{L^\perp_{-n}}\alpha_n^Jx_0^I-\alpha^J_{-n}\comm{L_0^\perp}{L^\perp_n}x_0^I-\comm{L_0^\perp}{\alpha^J_{-n}}L^\perp_nx_0^I-\qty(I\leftrightarrow J)\right\}\\
-    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\left\{\im2\sqrt{2\alpha'}\qty(L_0^\perp+a)\qty(\alpha_{-n}^I\alpha_n^J-\alpha^J_{-n}\alpha_n^J)\right.\\
-    &\quad\quad\quad\left.-nL^\perp_{-n}\alpha_n^Jx_0^I+nL^\perp_{-n}\alpha_n^Jx_0^I+\alpha^J_{-n}nL_{n}^\perp x_0^I-n\alpha^J_{-n}L^\perp_nx_0^I-\qty(I\leftrightarrow J)\right\}\\
-    &=-\frac{1}{\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty(L_0^\perp+a)\qty(\alpha_{-n}^I\alpha_n^J-\alpha^J_{-n}\alpha_n^J)
+    &-\frac{\im}{\sqrt{2\alpha'}}\sum\limits_{n\in\mathbb N^\ast}\frac1n\comm{x_0^-p^I}{\frac{1}{p^+}\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})}\\
+    &=-\frac{\im}{\sqrt{2\alpha'}}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty{x_0^-\comm{p^I}{\frac{1}{p^+}\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})}+\comm{x_0^-}{\frac{1}{p^+}\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})}p^I}\\
+    &=-\frac{\im}{\sqrt{2\alpha'}}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty{x_0^-\frac{1}{p^+}\comm{p^I}{L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n}}+\comm{x_0^-}{\frac{1}{p^+}}\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})p^I}\\
+    &=-\frac{\im}{\sqrt{2\alpha'}}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty{x_0^-\frac{1}{p^+}\qty(\comm{p^I}{L^\perp_{-n}\alpha_n^J}-\comm{p^I}{\alpha_{-n}^JL^\perp_{n}})+\frac{\im}{{p^+}^2}\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})p^I}\\
+    &=-\frac{\im}{\sqrt{2\alpha'}}\sum\limits_{n\in\mathbb N^\ast}\frac1n\left\{x_0^-\frac{1}{p^+}\qty(\comm{p^I}{L^\perp_{-n}}\alpha_n^J+L^\perp_{-n}\comm{p^I}{\alpha_n^J}-\alpha_{-n}^J\comm{p^I}{L^\perp_{n}}-\comm{p^I}{\alpha_{-n}^J}L^\perp_{n})\right.\\
+    &\quad\quad\quad\left.+\frac{\im}{{p^+}^2}\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})p^I\right\}\\
+    &=\frac{1}{\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})p^I\\
+    &=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})\alpha^I_0
 \end{align*}
 
-At last, Third-Third,
+That is,
 
 \begin{align*}
-    &-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\comm{L^\perp_{-n}\alpha^I_n-\alpha^I_{-n}L^\perp_n}{L^\perp_{-m}\alpha^J_m-\alpha^J_{-m}L^\perp_m}\\
-    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left\{\comm{L^\perp_{-n}\alpha^I_n}{L^\perp_{-m}\alpha^J_m}-\comm{\alpha^I_{-n}L^\perp_n}{L^\perp_{-m}\alpha^J_m}-\comm{L^\perp_{-n}\alpha^I_n}{\alpha^J_{-m}L^\perp_m}+\comm{\alpha^I_{-n}L^\perp_n}{\alpha^J_{-m}L^\perp_m}\right\}\\
-    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left\{L^\perp_{-n}\comm{\alpha^I_n}{L^\perp_{-m}\alpha^J_m}+\comm{L^\perp_{-n}}{L^\perp_{-m}\alpha^J_m}\alpha^I_n\right.\\
-    &\quad\quad\quad-\alpha^I_{-n}\comm{L^\perp_n}{L^\perp_{-m}\alpha^J_m}-\comm{\alpha^I_{-n}}{L^\perp_{-m}\alpha^J_m}L^\perp_n\\
-    &\quad\quad\quad-L^\perp_{-n}\comm{\alpha^I_n}{\alpha^J_{-m}L^\perp_m}-\comm{L^\perp_{-n}}{\alpha^J_{-m}L^\perp_m}\alpha^I_n\\
-    &\quad\quad\quad\left.+\alpha^I_{-n}\comm{L^\perp_n}{\alpha^J_{-m}L^\perp_m}+\comm{\alpha^I_{-n}}{\alpha^J_{-m}L^\perp_m}L^\perp_n\right\}\\
-    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left\{L^\perp_{-n}L^\perp_{-m}\comm{\alpha^I_n}{\alpha^J_m}+L^\perp_{-n}\comm{\alpha^I_n}{L^\perp_{-m}}\alpha^J_m+L^\perp_{-m}\comm{L^\perp_{-n}}{\alpha^J_m}\alpha^I_n+\comm{L^\perp_{-n}}{L^\perp_{-m}}\alpha^J_m\alpha^I_n\right.\\
-    &\quad\quad\quad-\alpha^I_{-n}L^\perp_{-m}\comm{L^\perp_n}{\alpha^J_m}-\alpha^I_{-n}\comm{L^\perp_n}{L^\perp_{-m}}\alpha^J_m-L^\perp_{-m}\comm{\alpha^I_{-n}}{\alpha^J_m}L^\perp_n-\comm{\alpha^I_{-n}}{L^\perp_{-m}}\alpha^J_mL^\perp_n\\
-    &\quad\quad\quad-L^\perp_{-n}\alpha^J_{-m}\comm{\alpha^I_n}{L^\perp_m}-L^\perp_{-n}\comm{\alpha^I_n}{\alpha^J_{-m}}L^\perp_m-\alpha^J_{-m}\comm{L^\perp_{-n}}{L^\perp_m}\alpha^I_n-\comm{L^\perp_{-n}}{\alpha^J_{-m}}L^\perp_m\alpha^I_n\\
-    &\quad\quad\quad\left.+\alpha^I_{-n}\alpha^J_{-m}\comm{L^\perp_n}{L^\perp_m}+\alpha^I_{-n}\comm{L^\perp_n}{\alpha^J_{-m}}L^\perp_m+\alpha^J_{-m}\comm{\alpha^I_{-n}}{L^\perp_m}L^\perp_n+\comm{\alpha^I_{-n}}{\alpha^J_{-m}}L^\perp_mL^\perp_n\right\}\\
-    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left\{L^\perp_{-n}L^\perp_{-m}ng^{IJ}\delta_{n+m,0}+L^\perp_{-n}n\alpha^I_{n-m}\alpha^J_m-mL^\perp_{-m}\alpha^J_{m-n}\alpha^I_n+\comm{L^\perp_{-n}}{L^\perp_{-m}}\alpha^J_m\alpha^I_n\right.\\
-    &\quad\quad\quad+m\alpha^I_{-n}L^\perp_{-m}\alpha^J_{n+m}-\alpha^I_{-n}\comm{L^\perp_n}{L^\perp_{-m}}\alpha^J_m+nL^\perp_{-m}g^{IJ}\delta_{m-n,0}L^\perp_n+n\alpha^I_{-n-m}\alpha^J_mL^\perp_n\\
-    &\quad\quad\quad-nL^\perp_{-n}\alpha^J_{-m}\alpha^I_{n+m}-nL^\perp_{-n}g^{IJ}\delta_{n-m,0}L^\perp_m-\alpha^J_{-m}\comm{L^\perp_{-n}}{L^\perp_m}\alpha^I_n-m\alpha^J_{-n-m}L^\perp_m\alpha^I_n\\
-    &\quad\quad\quad\left.+\alpha^I_{-n}\alpha^J_{-m}\comm{L^\perp_n}{L^\perp_m}+\alpha^I_{-n}m\alpha^J_{n-m}L^\perp_m-n\alpha^J_{-m}\alpha^I_{m-n}L^\perp_n-ng^{IJ}\delta_{-n-m,0}L^\perp_mL^\perp_n\right\}\\
-    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left\{L^\perp_{-n}n\alpha^I_{n-m}\alpha^J_m-mL^\perp_{-m}\alpha^J_{m-n}\alpha^I_n+\comm{L^\perp_{-n}}{L^\perp_{-m}}\alpha^J_m\alpha^I_n\right.\\
-    &\quad\quad\quad+m\alpha^I_{-n}L^\perp_{-m}\alpha^J_{n+m}-\alpha^I_{-n}\comm{L^\perp_n}{L^\perp_{-m}}\alpha^J_m+n\alpha^I_{-n-m}\alpha^J_mL^\perp_n\\
-    &\quad\quad\quad-nL^\perp_{-n}\alpha^J_{-m}\alpha^I_{n+m}-\alpha^J_{-m}\comm{L^\perp_{-n}}{L^\perp_m}\alpha^I_n-m\alpha^J_{-n-m}L^\perp_m\alpha^I_n\\
-    &\quad\quad\quad\left.+\alpha^I_{-n}\alpha^J_{-m}\comm{L^\perp_n}{L^\perp_m}+\alpha^I_{-n}m\alpha^J_{n-m}L^\perp_m-n\alpha^J_{-m}\alpha^I_{m-n}L^\perp_n\right\}
+    \comm{A^I}{C^J}-\comm{A^J}{C^I}&=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty[\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})\alpha^I_0-\qty(L^\perp_{-n}\alpha_n^I-\alpha_{-n}^IL^\perp_{n})\alpha^J_0]\numberthis
 \end{align*}
-
-Let's look only at the terms with multiplied by $n$ --- We can permute freely the $\alpha$s, because $n,m>0$ ---,
+$$$$
+Now, $\comm{B^I}{C^J}$,
 
 \begin{align*}
-    &\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{m}\qty{L^\perp_{-n}\alpha^J_m\alpha^I_{n-m}-L^\perp_{-n}\alpha^J_{-m}\alpha^I_{n+m}+\alpha^J_m\alpha^I_{-n-m}L^\perp_n-\alpha^J_{-m}\alpha^I_{m-n}L^\perp_n}\\
-    &=\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{m}\left\{\qty(\comm{L^\perp_{-n}}{\alpha^J_m}+\alpha^J_mL^\perp_{-n})\alpha^I_{n-m}-\qty(\comm{L^\perp_{-n}}{\alpha^J_{-m}}+\alpha^J_{-m}L^\perp_{-n})\alpha^I_{n+m}\right.\\
-    &\quad\quad\quad\left.+\alpha^J_m\qty(\comm{\alpha^I_{-n-m}}{L^\perp_n}+L^\perp_n\alpha^I_{-n-m})-\alpha^J_{-m}\qty(\comm{\alpha^I_{m-n}}{L^\perp_n}+L^\perp_n\alpha^I_{m-n})\right\}\\
-    &=\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{m}\left\{\qty(-m\alpha^J_{m-n}+\alpha^J_{m}L^\perp_{-n})\alpha^I_{n-m}-\qty(m\alpha^J_{-n-m}+\alpha^J_{-m}L^\perp_{-n})\alpha^I_{n+m}\right.\\
-    &\quad\quad\quad\left.+\alpha^J_{m}\qty(\qty(-n-m)\alpha^I_{-m}+L^\perp_n\alpha^I_{-n-m})-\alpha^J_{-m}\qty(\qty(m-n)\alpha^I_m+L^\perp_n\alpha^I_{m-n})\right\}\\
-    &=\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{m}\left\{-m\alpha^J_{m-n}\alpha^I_{n-m}-m\alpha^J_{-n-m}\alpha^I_{n+m}+\alpha^J_{m}\qty(-n-m)\alpha^I_{-m}-\qty(m-n)\alpha^J_{-m}\alpha^I_m\right.\\
-    &\quad\quad\quad\left.+\alpha^J_{m}L^\perp_{-n}\alpha^I_{n-m}-\alpha^J_{-m}L^\perp_{-n}\alpha^I_{n+m}+\alpha^J_{m}L^\perp_n\alpha^I_{-n-m}-\alpha^J_{-m}L^\perp_n\alpha^I_{m-n}\right\}\\
-    &=-\sum\limits_{n\in\mathbb N^\ast,m\in\mathbb Z^\ast}\frac{1}{m}\left\{m\alpha^J_{-n-m}\alpha^I_{n+m}+\qty(m-n)\alpha^J_{-m}\alpha^I_m\right\}+\sum\limits_{n,m\in\mathbb Z^\ast}\frac1m\alpha^J_{m}L^\perp_n\alpha^I_{-n-m}\\
-    &=-\sum\limits_{n\in\mathbb N^\ast,m\in\mathbb Z^\ast}\alpha^J_{-m}\alpha^I_m-\sum\limits_{n\in\mathbb N^\ast,m\in\mathbb Z^\ast}\frac{n}{m}\alpha^J_{m}\alpha^I_{-m}-\sum\limits_{n\in\mathbb N^\ast,m\in\mathbb Z^\ast}\alpha^J_{-n-m}\alpha^I_{n+m}+\sum\limits_{n,m\in\mathbb Z^\ast}\frac1m\alpha^J_{m}L^\perp_n\alpha^I_{-n-m}
+    &\frac{\im}{4\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\comm{x_0^I\qty(L_0^\perp+a)+\qty(L_0^\perp+a)x_0^I}{L^\perp_{-n}\alpha_n^J-\alpha^J_{-n}L^\perp_n}\\
+    &=\frac{\im}{4\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\comm{\comm{x_0^I}{\qty(L_0^\perp+a)}+\qty(L^\perp+a)x_0^I+\qty(L_0^\perp+a)x_0^I}{L^\perp_{-n}\alpha_n^J-\alpha^J_{-n}L^\perp_n}\\
+    &=\frac{\im}{4\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\comm{2\qty(L_0^\perp+a)x_0^I+\im\sqrt{2\alpha'} \alpha_0^I}{L^\perp_{-n}\alpha_n^J-\alpha^J_{-n}L^\perp_n}\\
+    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\comm{\qty(L_0^\perp+a)x_0^I}{L^\perp_{-n}\alpha_n^J-\alpha^J_{-n}L^\perp_n}\\
+    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty{\comm{L_0^\perp}{L^\perp_{-n}\alpha_n^J-\alpha^J_{-n}L^\perp_n}x_0^I+\qty(L_0^\perp+a)\comm{x_0^I}{L^\perp_{-n}}\alpha_n^J-\qty(L_0^\perp+a)\alpha^J_{-n}\comm{x_0^I}{L^\perp_n}}\\
+    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty{\comm{L_0^\perp}{L^\perp_{-n}\alpha_n^J-\alpha^J_{-n}L^\perp_n}x_0^I+\im\sqrt{2\alpha'}\qty(L_0^\perp+a)\qty(\alpha_{-n}^I\alpha_n^J-\alpha^J_{-n}\alpha_n^I)}\\
+    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\left\{\im\sqrt{2\alpha'}\qty(L_0^\perp+a)\qty(\alpha_{-n}^I\alpha_n^J-\alpha^J_{-n}\alpha_n^I)\right.\\
+    &\quad\quad\quad\left.+\comm{L_0^\perp}{L^\perp_{-n}\alpha_n^J}x_0^I-\comm{L_0^\perp}{\alpha^J_{-n}L^\perp_n}x_0^I\right\}\\
+    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\left\{\im\sqrt{2\alpha'}\qty(L_0^\perp+a)\qty(\alpha_{-n}^I\alpha_n^J-\alpha^J_{-n}\alpha_n^I)\right.\\
+    &\quad\quad\quad\left.+L^\perp_{-n}\comm{L_0^\perp}{\alpha_n^J}x_0^I+\comm{L_0^\perp}{L^\perp_{-n}}\alpha_n^Jx_0^I-\alpha^J_{-n}\comm{L_0^\perp}{L^\perp_n}x_0^I-\comm{L_0^\perp}{\alpha^J_{-n}}L^\perp_nx_0^I\right\}\\
+    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\left\{\im\sqrt{2\alpha'}\qty(L_0^\perp+a)\qty(\alpha_{-n}^I\alpha_n^J-\alpha^J_{-n}\alpha_n^I)\right.\\
+    &\quad\quad\quad\left.-nL^\perp_{-n}\alpha_n^Jx_0^I+nL^\perp_{-n}\alpha_n^Jx_0^I+\alpha^J_{-n}nL_{n}^\perp x_0^I-n\alpha^J_{-n}L^\perp_nx_0^I\right\}\\
+    &=\frac{\im}{2\alpha'\sqrt{2\alpha'}{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\left\{\im\sqrt{2\alpha'}\qty(L_0^\perp+a)\qty(\alpha_{-n}^I\alpha_n^J-\alpha^J_{-n}\alpha_n^I)\right\}\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty(L_0^\perp+a)\qty(\alpha_{-n}^I\alpha_n^J-\alpha^J_{-n}\alpha_n^J)\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty(\comm{L_0^\perp+a}{\alpha_{-n}^I}\alpha_n^J+\alpha_{-n}^I\qty(L_0^\perp +a)\alpha_n^J-\comm{L_0^\perp+a}{\alpha_{-n}^J}\alpha_n^I-\alpha_{-n}^J\qty(L^\perp_0+a)\alpha_n^I)\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty(n\alpha_{-n}^I\alpha_n^J+\alpha_{-n}^I\qty(L_0^\perp +a)\alpha_n^J-n\alpha_{-n}^J\alpha_n^I-\alpha_{-n}^J\qty(L^\perp_0+a)\alpha_n^I)\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty(\alpha_{-n}^I\qty(L_0^\perp +a+n)\alpha_n^J-\alpha_{-n}^J\qty(L^\perp_0+a+n)\alpha_n^I)
 \end{align*}
 
-Doing the same procedure, but now for the terms multiplied by $m$,
+Where at the end we made some tweaks for the whole expression stay normal-ordered. Summing the anti-symmetric part,
 
 \begin{align*}
-    &-\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{n}\qty{L^\perp_{-m}\alpha^J_{m-n}\alpha^I_{n}-\alpha^I_{-n}L^\perp_{-m}\alpha^J_{n+m}+\alpha^J_{-n-m}L^\perp_m\alpha^I_{n}-\alpha^J_{n-m}\alpha^I_{-n}L^\perp_m}\\
-    &=-\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{n}\left\{\qty(\comm{L^\perp_{-m}}{\alpha^J_{m-n}}+\alpha^J_{m-n}L^\perp_{-m})\alpha^I_{n}-\alpha^I_{-n}\qty(\comm{L^\perp_{-m}}{\alpha^J_{n+m}}+\alpha^J_{n+m}L^\perp_{-m})\right\}\\
-    &\quad\quad\quad\left.+\alpha^J_{-n-m}L^\perp_m\alpha^I_{n}-\alpha^J_{n-m}\qty(\comm{\alpha^I_{-n}}{L^\perp_m}+L^\perp_m\alpha^I_{-n})\right\}\\
-    &=-\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{n}\left\{\qty(\qty(n-m)\alpha^J_{-n}+\alpha^J_{m-n}L^\perp_{-m})\alpha^I_{n}-\alpha^I_{-n}\qty(\qty(-n-m)\alpha^J_n+\alpha^J_{n+m}L^\perp_{-m})\right\}\\
-    &\quad\quad\quad\left.+\alpha^J_{-n-m}L^\perp_m\alpha^I_{n}-\alpha^J_{n-m}\qty(\qty(-n)\alpha^I_{m-n}+L^\perp_m\alpha^I_{-n})\right\}\\
-    &=-\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{n}\left\{\qty(n-m)\alpha^J_{-n}\alpha^I_{n}+n\alpha^J_{n-m}\alpha^I_{m-n}+\qty(n+m)\alpha^I_{-n}\alpha^J_n\right\}\\
-    &\quad\quad\quad\left.+\alpha^J_{-n-m}L^\perp_m\alpha^I_{n}-\alpha^J_{n-m}L^\perp_m\alpha^I_{-n}+\alpha^J_{m-n}L^\perp_{-m}\alpha^I_{n}-\alpha^J_{n+m}\qty(\comm{\alpha^I_{-n}}{L^\perp_{-m}}+L^\perp_{-m}\alpha^I_{-n})\right\}\\
-    &=-\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{n}\left\{\qty(n-m)\alpha^J_{-n}\alpha^I_{n}+n\alpha^J_{n-m}\alpha^I_{m-n}+\qty(n+m)\alpha^I_{-n}\alpha^J_n+n\alpha^J_{n+m}\alpha^I_{-n-m}\right\}\\
-    &\quad\quad\quad\left.+\alpha^J_{-n-m}L^\perp_m\alpha^I_{n}-\alpha^J_{n-m}L^\perp_m\alpha^I_{-n}+\alpha^J_{m-n}L^\perp_{-m}\alpha^I_{n}-\alpha^J_{n+m}L^\perp_{-m}\alpha^I_{-n}\right\}\\
-    &=-\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{n}\left\{\qty(n-m)\alpha^J_{-n}\alpha^I_{n}+n\alpha^J_{n-m}\alpha^I_{m-n}+\qty(n+m)\alpha^J_{n}\alpha^I_{-n}-n\qty(n+m)g^{IJ}+n\alpha^J_{n+m}\alpha^I_{-n-m}\right\}\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb Z^\ast}\frac1n\alpha^J_{-n-m}L^\perp_m\alpha^I_{n}\\
-    &=-\sum\limits_{m\in\mathbb N^\ast,n\in\mathbb Z^\ast}\frac{n-m}{n}\alpha^J_{-n}\alpha^I_{n}-\sum\limits_{n\in\mathbb N^\ast,m\in\mathbb Z^\ast}\alpha^J_{n-m}\alpha^I_{m-n}+\sum\limits_{m,n\in\mathbb N^\ast}\qty(n+m)g^{IJ}-\sum\limits_{n,m\in\mathbb Z^\ast}\frac1n\alpha^J_{-n-m}L^\perp_m\alpha^I_{n}\\
-    &=-\sum\limits_{n\in\mathbb N^\ast,m\in\mathbb Z^\ast}\frac{n}{m}\alpha^J_{m}\alpha^I_{-m}-\sum\limits_{n\in\mathbb N^\ast,m\in\mathbb Z^\ast}\alpha^J_{-m}\alpha^I_{m}-\sum\limits_{n\in\mathbb N^\ast,m\in\mathbb Z^\ast}\alpha^J_{n-m}\alpha^I_{m-n}\\
-    &\quad\quad\quad+\sum\limits_{m,n\in\mathbb N^\ast}\qty(n+m)g^{IJ}-\sum\limits_{n,m\in\mathbb Z^\ast}\frac1n\alpha^J_{-n-m}L^\perp_m\alpha^I_{n}
+    \comm{B^I}{C^J}-\comm{B^J}{C^I}&=-\frac{1}{\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty(\alpha_{-n}^I\qty(L_0^\perp +a+n)\alpha_n^J-\alpha_{-n}^J\qty(L^\perp_0+a+n)\alpha_n^I)\numberthis
 \end{align*}
+$$$$
 
-And at last, we do the same for the terms with Virasoro commutators,
+At last, $\comm{C^I}{C^J}$, this is the hardest one. So we'll need to split again into even more parts to make the result intelligible, first, notice that 
+the full commutator is,
 
 \begin{align*}
-    &\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty{\comm{L^\perp_{-n}}{L^\perp_{-m}}\alpha^J_m\alpha^I_n+\alpha^J_{-m}\alpha^I_{-n}\comm{L^\perp_n}{L^\perp_m}-\alpha_{-n}^I\comm{L_n^\perp}{L_{-m}^\perp}\alpha_m^J-\alpha_{-m}^J\comm{L^\perp_{-n}}{L^\perp_m}\alpha^I_n}\\
-    &=\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left\{\qty(\qty(m-n)L^\perp_{-n-m}-\frac{D-2}{12}\qty(n^3-n)\delta_{-n-m,0})\alpha^J_m\alpha^I_n\right.\\
-    &\quad\quad\quad+\alpha^J_{-m}\alpha^I_{-n}\qty(\qty(n-m)L^\perp_{n+m}+\frac{D-2}{12}\qty(n^3-n)\delta_{n+m,0})\\
-    &\quad\quad\quad-\alpha_{-n}^I\qty(\qty(n+m)L^\perp_{n-m}+\frac{D-2}{12}\qty(n^3-n)\delta_{n-m,0})\alpha_m^J\\
-    &\quad\quad\quad\left.-\alpha_{-m}^J\qty(\qty(-n-m)L^\perp_{-n+m}-\frac{D-2}{12}\qty(n^3-n)\delta_{-n+m,0})\alpha^I_n\right\}\\
-    &=\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left\{\qty(m-n)\qty(\comm{L^\perp_{-n-m}}{\alpha^J_m}+\alpha^J_mL^\perp_{-n-m})\alpha^I_n+\qty(n-m)\alpha^J_{-m}\qty(\comm{\alpha^I_{-n}}{L^\perp_{n+m}}+L^\perp_{n+m}\alpha^I_{-n})\right.\\
-    &\quad\quad\quad\left.-\alpha_{-n}^I\qty(n+m)L^\perp_{n-m}\alpha^J_m-\alpha_{-m}^J\qty(-n-m)L^\perp_{-n+m}\alpha^I_n\right\}\\
-    &\quad\quad\quad+\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{mn}\left\{-\alpha_{-n}^I\frac{D-2}{12}\qty(n^3-n)\delta_{n-m,0}\alpha_m^J+\alpha_{-m}^J\frac{D-2}{12}\qty(n^3-n)\delta_{-n+m,0}\alpha^I_n\right\}\\
-    &=\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left\{\qty(m-n)\qty(\qty(-m)\alpha^J_{-n}+\alpha^J_mL^\perp_{-n-m})\alpha^I_n+\qty(n-m)\alpha^J_{-m}\qty(\qty(-n)\alpha^I_{m}+L^\perp_{n+m}\alpha^I_{-n})\right.\\
-    &\quad\quad\quad\left.-\qty(n+m)\alpha_{-n}^I\qty(\comm{L^\perp_{n-m}}{\alpha^J_m}+\alpha^J_mL^\perp_{n-m})+\qty(n+m)\alpha_{-m}^JL^\perp_{-n+m}\alpha^I_n\right\}\\
-    &\quad\quad\quad-\sum\limits_{n\in\mathbb N^\ast}\frac{D-2}{12}\frac{n^2-1}n\left\{\alpha_{-n}^I\alpha_n^J-\alpha_{-n}^J\alpha^I_n\right\}\\
-    &=\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left\{2\qty(m-n)\qty(-m)\alpha^J_{-n}\alpha^I_n+\qty(m-n)\alpha^J_mL^\perp_{-n-m}\alpha^I_n+\qty(n-m)\alpha^J_{-m}L^\perp_{n+m}\alpha^I_{-n}\right.\\
-    &\quad\quad\quad\left.-\qty(n+m)\alpha_{-n}^I\qty(\qty(-m)\alpha^J_n+\alpha^J_mL^\perp_{n-m})+\qty(n+m)\alpha_{-m}^JL^\perp_{-n+m}\alpha^I_n\right\}\\
-    &\quad\quad\quad-\sum\limits_{n\in\mathbb N^\ast}\frac{D-2}{12}\frac{n^2-1}n\left\{\alpha_{-n}^I\alpha_n^J-\alpha_{-n}^J\alpha^I_n\right\}\\
-    &=\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left\{\qty(m-n)\alpha^J_mL^\perp_{-n-m}\alpha^I_n+\qty(n-m)\alpha^J_{-m}L^\perp_{n+m}\alpha^I_{-n}+\qty(n+m)\alpha_{-m}^JL^\perp_{-n+m}\alpha^I_n\right.\\
-    &\quad\quad\quad\left.+m\qty(n+m)\alpha_{-n}^I\alpha^J_n-\qty(n+m)\alpha^J_m\qty(\comm{\alpha_{-n}^I}{L^\perp_{n-m}}+L^\perp_{n-m}\alpha_{-n}^I)+2m\qty(n-m)\alpha^J_{-n}\alpha^I_n\right\}\\
-    &\quad\quad\quad-\sum\limits_{n\in\mathbb N^\ast}\frac{D-2}{12}\frac{n^2-1}n\left\{\alpha_{-n}^I\alpha_n^J-\alpha_{-n}^J\alpha^I_n\right\}\\
-    &=\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left\{\qty(m-n)\alpha^J_mL^\perp_{-n-m}\alpha^I_n+\qty(n-m)\alpha^J_{-m}L^\perp_{n+m}\alpha^I_{-n}+\qty(n+m)\alpha_{-m}^JL^\perp_{-n+m}\alpha^I_n\right.\\
-    &\quad\quad\quad\left.+m\qty(n+m)\alpha_{-n}^I\alpha^J_n-\qty(n+m)\alpha^J_m\qty(\qty(-n)\alpha^I_{-m}+L^\perp_{n-m}\alpha_{-n}^I)+2m\qty(n-m)\alpha^J_{-n}\alpha^I_n\right\}\\
-    &\quad\quad\quad-\sum\limits_{n\in\mathbb N^\ast}\frac{D-2}{12}\frac{n^2-1}n\left\{\alpha_{-n}^I\alpha_n^J-\alpha_{-n}^J\alpha^I_n\right\}\\
-    &=\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left\{\qty(m-n)\alpha^J_mL^\perp_{-n-m}\alpha^I_n+\qty(n-m)\alpha^J_{-m}L^\perp_{n+m}\alpha^I_{-n}+\qty(n+m)\alpha_{-m}^JL^\perp_{-n+m}\alpha^I_n\right.\\
-    &\quad\quad\quad\left.-\qty(n+m)\alpha^J_mL^\perp_{n-m}\alpha^I_{-n}+m\qty(n+m)\alpha_{-n}^I\alpha^J_n+n\qty(n+m)\alpha^J_m\alpha^I_{-m}+2m\qty(n-m)\alpha^J_{-n}\alpha^I_n\right\}\\
-    &\quad\quad\quad-\sum\limits_{n\in\mathbb N^\ast}\frac{D-2}{12}\frac{n^2-1}n\left\{\alpha_{-n}^I\alpha_n^J-\alpha_{-n}^J\alpha^I_n\right\}\\
-    &=\sum\limits_{n,m\in\mathbb Z^\ast}\frac{m-n}{nm}\alpha^J_mL^\perp_{-n-m}\alpha^I_n-\sum\limits_{n\in\mathbb N^\ast}\frac{D-2}{12}\frac{n^2-1}n\left\{\alpha_{-n}^I\alpha_n^J-\alpha_{-n}^J\alpha^I_n\right\}\\
-    &\quad\quad\quad+\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty{m\qty(m+n)\alpha_{-n}^I\alpha^J_n+m\qty(m+n)\alpha^J_n\alpha^I_{-n}+2m\qty(n-m)\alpha^J_{-n}\alpha^I_n}\\
-    &=\sum\limits_{n,m\in\mathbb Z^\ast}\frac{m-n}{nm}\alpha^J_mL^\perp_{-n-m}\alpha^I_n-\sum\limits_{n\in\mathbb N^\ast}\frac{D-2}{12}\frac{n^2-1}n\left\{\alpha_{-n}^I\alpha_n^J-\alpha_{-n}^J\alpha^I_n\right\}\\
-    &\quad\quad\quad+\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty{m\qty(m+n)\qty(\comm{\alpha_{-n}^I}{\alpha^J_n}+\alpha^J_n\alpha_{-n}^I)+m\qty(m+n)\alpha^J_n\alpha^I_{-n}+2m\qty(n-m)\alpha^J_{-n}\alpha^I_n}\\
-    &=\sum\limits_{n,m\in\mathbb Z^\ast}\frac{m-n}{nm}\alpha^J_mL^\perp_{-n-m}\alpha^I_n-\sum\limits_{n\in\mathbb N^\ast}\frac{D-2}{12}\frac{n^2-1}n\left\{\alpha_{-n}^I\alpha_n^J-\alpha_{-n}^J\alpha^I_n\right\}\\
-    &\quad\quad\quad+\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty{m\qty(m+n)\qty(\qty(-n)g^{IJ}+\alpha^J_n\alpha_{-n}^I)+m\qty(m+n)\alpha^J_n\alpha^I_{-n}+2m\qty(n-m)\alpha^J_{-n}\alpha^I_n}\\
-    &=\sum\limits_{n,m\in\mathbb Z^\ast}\frac{m-n}{nm}\alpha^J_mL^\perp_{-n-m}\alpha^I_n-\sum\limits_{n\in\mathbb N^\ast}\frac{D-2}{12}\frac{n^2-1}n\left\{\alpha_{-n}^I\alpha_n^J-\alpha_{-n}^J\alpha^I_n\right\}\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb N^\ast}\qty(m+n)g^{IJ}+\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{n}\qty{\qty(m+n)\alpha^J_n\alpha_{-n}^I+\qty(m+n)\alpha^J_n\alpha^I_{-n}+2\qty(n-m)\alpha^J_{-n}\alpha^I_n}\\
-    &=\sum\limits_{n,m\in\mathbb Z^\ast}\frac{m-n}{nm}\alpha^J_mL^\perp_{-n-m}\alpha^I_n-\sum\limits_{n\in\mathbb N^\ast}\frac{D-2}{12}\frac{n^2-1}n\left\{\alpha_{-n}^I\alpha_n^J-\alpha_{-n}^J\alpha^I_n\right\}\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb N^\ast}\qty(m+n)g^{IJ}+2\sum\limits_{n N^\ast,m\in\mathbb Z^\ast}\alpha_m^J\alpha_{-m}^I+2\sum\limits_{n N^\ast,m\in\mathbb Z^\ast}\frac{n}{m}\alpha_m^J\alpha_{-m}^I
+    \comm{C^I}{C^J}=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\comm{L^\perp_{-n}\alpha^I_n-\alpha^I_{-n}L^\perp_n}{L^\perp_{-m}\alpha^J_m-\alpha^J_{-m}L^\perp_m}
 \end{align*}
 
-Summing these three contributions, all the divergent terms cancel, and we get,
+From which we subdivide as,
 
 \begin{align*}
-    &\sum\limits_{n\in\mathbb Z^\ast}\frac1n\sum\limits_{m\in\mathbb Z^\ast}\qty{\alpha^J_mL^\perp_{-n-m}-\alpha^J_{-n-m}L^\perp_m}\alpha^I_n+\sum\limits_{m\in\mathbb Z^\ast}\frac1m\alpha_m^J\sum\limits_{n\in\mathbb Z^\ast}\qty{L_n^\perp\alpha^I_{-n-m}-L^\perp_{-n-m}\alpha^I_n}\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb Z^\ast}\alpha_{-n-m}^J\alpha^I_{n+m}-\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty{\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n}\\
-    &=\sum\limits_{n\in\mathbb Z^\ast}\frac1n\qty[\sum\limits_{m\in\mathbb Z}\qty{\alpha^J_mL^\perp_{-n-m}-\alpha^J_{-n-m}L^\perp_m}-\alpha_0^JL^\perp_{-n}-\alpha^J_{-n}L^\perp_0]\alpha^I_n\\
-    &\quad\quad\quad+\sum\limits_{m\in\mathbb Z^\ast}\frac1m\alpha_m^J\qty[\sum\limits_{n\in\mathbb Z}\qty{L_n^\perp\alpha^I_{-n-m}-L^\perp_{-n-m}\alpha^I_n}-L^\perp_0\alpha^I_{-m}-L^\perp_{-m}\alpha^I_0]\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb Z^\ast}\alpha_{-n-m}^J\alpha^I_{n+m}-\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty{\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n}\\
-    &=\sum\limits_{n\in\mathbb Z^\ast,m\in\mathbb Z}\frac1n\qty{\alpha^J_mL^\perp_{-n-m}-\alpha^J_{-n-m}L^\perp_m}\alpha^I_n+\sum\limits_{m\in\mathbb Z^\ast,n\in\mathbb Z}\frac1m\alpha_m^J\qty{L_n^\perp\alpha^I_{-n-m}-L^\perp_{-n-m}\alpha^I_n}\\
-    &\quad\quad\quad+\sum\limits_{n\in\mathbb Z^\ast}\frac1n\qty[-\alpha_0^JL^\perp_{-n}-\alpha^J_{-n}L^\perp_0]\alpha_n^I+\sum\limits_{m\in\mathbb Z^\ast}\frac1m\alpha_m^J\qty[-L^\perp_0\alpha^I_{-m}-L^\perp_{-m}\alpha^I_0]\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb Z^\ast}\alpha_{-n-m}^J\alpha^I_{n+m}-\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty{\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n}\\
-    &=\sum\limits_{n\in\mathbb Z^\ast,m\in\mathbb Z}\frac1n\qty{\alpha^J_mL^\perp_{-n-m}\alpha^I_n-\alpha^J_{-n-m}L^\perp_m\alpha^I_n+\alpha_n^JL_m^\perp\alpha^I_{-n-m}-\alpha_n^JL^\perp_{-n-m}\alpha^I_m}\\
-    &\quad\quad\quad+\sum\limits_{n\in\mathbb Z^\ast}\frac1n\qty[-\alpha_0^JL^\perp_{-n}-\alpha^J_{-n}L^\perp_0]\alpha_n^I+\sum\limits_{m\in\mathbb Z^\ast}\frac1m\alpha_m^J\qty[-L^\perp_0\alpha^I_{-m}-L^\perp_{-m}\alpha^I_0]\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb Z^\ast}\alpha_{-n-m}^J\alpha^I_{n+m}-\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty{\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n}\\
-    &=\sum\limits_{n\in\mathbb Z^\ast,m\in\mathbb Z}\frac1n\qty{\alpha^J_mL^\perp_{-n-m}\alpha^I_n-\alpha^J_{-n-\qty(-m-n)}L^\perp_{-m-n}\alpha^I_n+\alpha_n^JL_{-m-n}^\perp\alpha^I_{-n-\qty(-m-n)}-\alpha_n^JL^\perp_{-n-m}\alpha^I_{m}}\\
-    &\quad\quad\quad+\sum\limits_{n\in\mathbb Z^\ast}\frac1n\qty[-\alpha_0^JL^\perp_{-n}-\alpha^J_{-n}L^\perp_0]\alpha_n^I+\sum\limits_{m\in\mathbb Z^\ast}\frac1m\alpha_m^J\qty[-L^\perp_0\alpha^I_{-m}-L^\perp_{-m}\alpha^I_0]\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb Z^\ast}\alpha_{-n-m}^J\alpha^I_{n+m}-\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty{\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n}\\
-    &=\sum\limits_{n\in\mathbb Z^\ast}\frac1n\qty[-\alpha_0^JL^\perp_{-n}-\alpha^J_{-n}L^\perp_0]\alpha_n^I+\sum\limits_{m\in\mathbb Z^\ast}\frac1m\alpha_m^J\qty[-L^\perp_0\alpha^I_{-m}-L^\perp_{-m}\alpha^I_0]\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb Z^\ast}\alpha_{-n-m}^J\alpha^I_{n+m}-\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty{\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n}\\
-    &=\sum\limits_{n\in\mathbb Z^\ast}\frac1n\qty[-\alpha_0^JL^\perp_{-n}\alpha_n^I-\alpha^J_{-n}L^\perp_0\alpha_n^I-\alpha_n^JL^\perp_0\alpha^I_{-n}-\alpha_n^JL^\perp_{-n}\alpha^I_0]\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb Z^\ast}\alpha_{-n-m}^J\alpha^I_{n+m}-\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty{\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n}\\
-    &=-\sum\limits_{n\in\mathbb Z^\ast}\frac1n\qty[L^\perp_{-n}\alpha_n^I\alpha_0^J+\alpha_n^JL^\perp_{-n}\alpha^I_0]-\sum\limits_{n\in\mathbb Z^\ast}\frac1n\qty[\alpha^J_{-n}L^\perp_0\alpha_n^I+\alpha_n^JL^\perp_0\alpha^I_{-n}]\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb Z^\ast}\alpha_{-n-m}^J\alpha^I_{n+m}-\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty{\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n}\\
-    &=-\sum\limits_{n\in\mathbb Z^\ast}\frac1n\qty[L^\perp_{-n}\alpha_n^I\alpha_0^J-\alpha_{-n}^JL^\perp_{n}\alpha^I_0]-\sum\limits_{n\in\mathbb Z^\ast}\frac1n\qty[\alpha^J_{-n}L^\perp_0\alpha_n^I-\alpha_{-n}^JL^\perp_0\alpha^I_{n}]\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb Z^\ast}\alpha_{-n-m}^J\alpha^I_{n+m}-\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty{\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n}\\
-    &=-\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty[L^\perp_{-n}\alpha_n^I\alpha_0^J-L^\perp_{n}\alpha_{-n}^I\alpha_0^J-\alpha_{-n}^JL^\perp_{n}\alpha^I_0+\alpha_{n}^JL^\perp_{-n}\alpha^I_0]\\
-    &\quad\quad\quad-\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty[\alpha^J_{-n}L^\perp_0\alpha_n^I-\alpha_{-n}^JL^\perp_0\alpha^I_{n}]\\
-    &\quad\quad\quad-\sum\limits_{n,m\in\mathbb Z^\ast}\alpha_{-n-m}^J\alpha^I_{n+m}-\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty{\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n}
+    C_{11}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\comm{L^\perp_{-n}\alpha^I_n}{L^\perp_{-m}\alpha^J_m}\\
+    C_{21}^{IJ}&=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\comm{\alpha^I_{-n}L^\perp_n}{L^\perp_{-m}\alpha^J_m}\\
+    C_{12}^{IJ}&=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\comm{L^\perp_{-n}\alpha^I_n}{\alpha^J_{-m}L^\perp_m}\\
+    C_{22}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\comm{\alpha^I_{-n}L^\perp_n}{\alpha^J_{-m}L^\perp_m}
 \end{align*}
+
+Starting by $C_{11}^{IJ}$,
+
+\begin{align*}
+    &-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\comm{L^\perp_{-n}\alpha^I_n}{L^\perp_{-m}\alpha^J_m}\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(L^\perp_{-n}\comm{\alpha^I_n}{L^\perp_{-m}\alpha^J_m}+\comm{L^\perp_{-n}}{L^\perp_{-m}\alpha^J_m}\alpha^I_n)\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(L^\perp_{-n}L^\perp_{-m}\comm{\alpha^I_n}{\alpha^J_m}+L^\perp_{-n}\comm{\alpha^I_n}{L^\perp_{-m}}\alpha^J_m+L^\perp_{-m}\comm{L^\perp_{-n}}{\alpha^J_m}\alpha^I_n\right.\\
+    &\quad\quad\quad\left.+\comm{L^\perp_{-n}}{L^\perp_{-m}}\alpha^J_m\alpha^I_n\right)\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(L^\perp_{-n}L^\perp_{-m}ng^{IJ}\delta_{n+m,0}+L^\perp_{-n}n\alpha^I_{n-m}\alpha^J_m-L^\perp_{-m}m\alpha^J_{m-n}\alpha^I_n\right.\\
+    &\quad\quad\quad\left.+\qty(\qty(-n+m)L^\perp_{-n-m}-\frac{D-2}{12}\qty(n^3-n)\delta_{-n-m,0})\alpha^J_m\alpha^I_n\right)\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(L^\perp_{-n}n\alpha^I_{n-m}\alpha^J_m-L^\perp_{-m}m\alpha^J_{m-n}\alpha^I_n+\qty(-n+m)L^\perp_{-n-m}\alpha^J_m\alpha^I_n\right)
+\end{align*}
+
+Notice that the last term is already normal-ordered, but, the two first ones aren't. We'll rewrite them in normal ordered form. First, 
+change labels $n\leftrightarrow m$ in the first term. Then,
+
+\begin{align*}
+    C_{11}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(m-n)L^\perp_{-n-m}\alpha^J_m\alpha^I_n-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{n}\left(L^\perp_{-m}\alpha^I_{m-n}\alpha^J_n-L^\perp_{-m}\alpha^J_{m-n}\alpha^I_n\right)\\
+    C_{11}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(m-n)L^\perp_{-n-m}\alpha^J_m\alpha^I_n\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\sum\limits_{m>n}^\infty+\sum\limits_{m>0}^{n})\left(L^\perp_{-m}\alpha^I_{m-n}\alpha^J_n-L^\perp_{-m}\alpha^J_{m-n}\alpha^I_n\right)\\
+    C_{11}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(m-n)L^\perp_{-n-m}\alpha^J_m\alpha^I_n\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>n}^\infty\left(L^\perp_{-m}\alpha^I_{m-n}\alpha^J_n-L^\perp_{-m}\alpha^J_{m-n}\alpha^I_n\right)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^{n}\left(L^\perp_{-m}\alpha^I_{m-n}\alpha^J_n-L^\perp_{-m}\alpha^J_{m-n}\alpha^I_n\right)
+\end{align*}
+
+It's clear in this form that the first and second ine are normal-ordered, but the third isn't, let's fix this. Also, we relabel the sum over $m$ in the second line, 
+we make $m\rightarrow m+n$, this makes the sum over $m$ to be over $m>0$,
+
+\begin{align*}
+    C_{11}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(m-n)L^\perp_{-n-m}\alpha^J_m\alpha^I_n\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>n}^\infty\left(L^\perp_{-m}\alpha^I_{m-n}\alpha^J_n-L^\perp_{-m}\alpha^J_{m-n}\alpha^I_n\right)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^{n}\left(\qty(\comm{L^\perp_{-m}}{\alpha^I_{m-n}}+\alpha_{m-n}^IL^\perp_{-m})\alpha^J_n-\qty(\comm{L^\perp_{-m}}{\alpha^J_{m-n}}+\alpha^J_{m-n}L^\perp_{-m})\alpha^I_n\right)\\
+    C_{11}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(m-n)L^\perp_{-n-m}\alpha^J_m\alpha^I_n\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^\infty\left(L^\perp_{-m-n}\alpha^I_{m}\alpha^J_n-L^\perp_{-m-n}\alpha^J_{m}\alpha^I_n\right)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^{n}\left(\qty(\qty(n-m)\alpha^I_{-n}+\alpha_{m-n}^IL^\perp_{-m})\alpha^J_n-\qty(\qty(n-m)\alpha^J_{-n}+\alpha^J_{m-n}L^\perp_{-m})\alpha^I_n\right)\\
+    C_{11}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(m-n)L^\perp_{-n-m}\alpha^J_m\alpha^I_n\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(mL^\perp_{-m-n}\alpha^I_{m}\alpha^J_n-mL^\perp_{-m-n}\alpha^J_{m}\alpha^I_n\right)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^{n}\left(\qty(\qty(n-m)\alpha^I_{-n}+\alpha_{m-n}^IL^\perp_{-m})\alpha^J_n-\qty(\qty(n-m)\alpha^J_{-n}+\alpha^J_{m-n}L^\perp_{-m})\alpha^I_n\right)
+\end{align*}
+
+As the $\alpha$s commute in the second line, due to $n,m>0$, we exchange them in the first term and them relabel $n\leftrightarrow m$ in it,
+
+\begin{align*}
+    C_{11}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(m-n)L^\perp_{-n-m}\alpha^J_m\alpha^I_n\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(nL^\perp_{-m-n}\alpha^J_m\alpha^I_{n}-mL^\perp_{-m-n}\alpha^J_{m}\alpha^I_n\right)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^{n}\left(\qty(\qty(n-m)\alpha^I_{-n}+\alpha_{m-n}^IL^\perp_{-m})\alpha^J_n-\qty(\qty(n-m)\alpha^J_{-n}+\alpha^J_{m-n}L^\perp_{-m})\alpha^I_n\right)\\
+    C_{11}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(m-n)L^\perp_{-n-m}\alpha^J_m\alpha^I_n-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(n-m)L^\perp_{-m-n}\alpha^J_m\alpha^I_{n}\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^{n}\left(\qty(\qty(n-m)\alpha^I_{-n}+\alpha_{m-n}^IL^\perp_{-m})\alpha^J_n-\qty(\qty(n-m)\alpha^J_{-n}+\alpha^J_{m-n}L^\perp_{-m})\alpha^I_n\right)\\
+    C_{11}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^{n}\left(\qty(\qty(n-m)\alpha^I_{-n}+\alpha_{m-n}^IL^\perp_{-m})\alpha^J_n-\qty(\qty(n-m)\alpha^J_{-n}+\alpha^J_{m-n}L^\perp_{-m})\alpha^I_n\right)\\
+    C_{11}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\sum\limits_{m>0}^{n}\qty(n-m)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^{n}\qty(\alpha_{m-n}^IL^\perp_{-m}\alpha^J_n-\alpha^J_{m-n}L^\perp_{-m}\alpha^I_n)
+\end{align*}
+
+The sum over $m$ in the first line is trivial, $\sum\limits_{m>0}^nn=n^2$ and, $\sum\limits_{m>0}^nm=\frac12n\qty(n+1)$. In the second line we make a 
+change of summation variables of $m\rightarrow n-m$, this makes the sum range go to $0\leq m\leq n-1$,
+
+\begin{align*}
+    C_{11}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\qty(n^2-\frac12n\qty(n+1))\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m\geq0}^{n-1}\qty(\alpha_{-m}^IL^\perp_{m-n}\alpha^J_n-\alpha^J_{-m}L^\perp_{m-n}\alpha^I_n)\\
+    C_{11}^{IJ}&=-\frac{1}{4\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(n-1)\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m\geq0}^{n-1}\qty(\alpha_{-m}^IL^\perp_{m-n}\alpha^J_n-\alpha^J_{-m}L^\perp_{m-n}\alpha^I_n)
+\end{align*}
+
+Now, the next one, $C_{12}^{IJ}$, notice that $C_{21}^{IJ}=-C_{12}^{JI}$. That is, we just need to compute $C_{12}^{IJ}$ 
+and sum with it's anti-symmetric part.
+
+\begin{align*}
+    C_{12}^{IJ}&=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\comm{L^\perp_{-n}\alpha_n^I}{\alpha^J_{-m}L^\perp_m}\\
+    &=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(L^\perp_{-n}\comm{\alpha_n^I}{\alpha^J_{-m}L^\perp_m}+\comm{L^\perp_{-n}}{\alpha^J_{-m}L^\perp_m}\alpha_n^I)\\
+    &=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(L^\perp_{-n}\alpha^J_{-m}\comm{\alpha_n^I}{L^\perp_m}+L^\perp_{-n}\comm{\alpha_n^I}{\alpha^J_{-m}}L^\perp_m+\comm{L^\perp_{-n}}{\alpha^J_{-m}}L^\perp_m\alpha_n^I\right.\\
+    &\quad\quad\quad\left.+\alpha^J_{-m}\comm{L^\perp_{-n}}{L^\perp_m}\alpha_n^I\right)\\
+    &=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(L^\perp_{-n}\alpha^J_{-m}n\alpha^I_{n+m}+L^\perp_{-n}ng^{IJ}\delta_{n-m,0}L^\perp_m+m\alpha^J_{-m-n}L^\perp_m\alpha_n^I\right.\\
+    &\quad\quad\quad\left.+\alpha^J_{-m}\qty(\qty(-n-m)L^\perp_{-n+m}-\frac{D-2}{12}\qty(n^3-n)\delta_{-n+m,0})\alpha_n^I\right)
+\end{align*}
+
+It's obvious that when we anti-symmetrize the $g^{IJ}$ term will drop out, so we'll not even attempt to normal-order it, but we won't 
+omit it either for sake of completeness. The only relevant non-normal-ordered term is the first one,
+
+\begin{align*}
+    &=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(n\qty(\comm{L^\perp_{-n}}{\alpha^J_{-m}}+\alpha^J_{-m}L^\perp_{-n})\alpha^I_{n+m}+m\alpha^J_{-m-n}L^\perp_m\alpha_n^I-\qty(n+m)\alpha^J_{-m}L^\perp_{-n+m}\alpha_n^I\right.\\
+    &\quad\quad\quad\left.+L^\perp_{-n}ng^{IJ}\delta_{n-m,0}L^\perp_m\right)-\frac{1}{2\alpha'{p^+}^2}\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\alpha^J_{-n}\alpha_n^I\\
+    &=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(nm\alpha^J_{-m-n}\alpha^I_{n+m}+n\alpha^J_{-m}L^\perp_{-n}\alpha^I_{n+m}+m\alpha^J_{-m-n}L^\perp_m\alpha_n^I-\qty(n+m)\alpha^J_{-m}L^\perp_{-n+m}\alpha_n^I\right.\\
+    &\quad\quad\quad\left.+L^\perp_{-n}ng^{IJ}\delta_{n-m,0}L^\perp_m\right)-\frac{1}{2\alpha'{p^+}^2}\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\alpha^J_{-n}\alpha_n^I\\
+    &=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{m}\alpha^J_{-m}L^\perp_{-n}\alpha^I_{n+m}\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{n}\alpha^J_{-m-n}L^\perp_m\alpha_n^I\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\qty[\frac1n\alpha^J_{-m}L^\perp_{-n+m}\alpha_n^I+\frac1m\alpha^J_{-m}L^\perp_{-n+m}\alpha_n^I]\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(nm\alpha^J_{-m-n}\alpha^I_{n+m}+L^\perp_{-n}ng^{IJ}\delta_{n-m,0}L^\perp_m\right)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\alpha^J_{-n}\alpha_n^I
+\end{align*}
+
+We'll relabel in the first line $n\rightarrow n+m$, which change the range of the sum to $n>m$, and in the second line we make $m\rightarrow m+n$, and the new 
+range will be $m>n$,
+
+\begin{align*}
+    C_{12}^{IJ}&=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{m\in\mathbb N^\ast}\frac{1}{m}\sum\limits_{n>m}^\infty\alpha^J_{-m}L^\perp_{-n+m}\alpha^I_{n}\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>n}\alpha^J_{-m}L^\perp_{m-n}\alpha_n^I\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\qty[\frac1n\alpha^J_{-m}L^\perp_{-n+m}\alpha_n^I+\frac1m\alpha^J_{-m}L^\perp_{-n+m}\alpha_n^I]\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(nm\alpha^J_{-m-n}\alpha^I_{n+m}+L^\perp_{-n}ng^{IJ}\delta_{n-m,0}L^\perp_m\right)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\alpha^J_{-n}\alpha_n^I\\
+    C_{12}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\qty[\sum\limits_{n\in\mathbb N^\ast}\frac1n\sum\limits_{m>0}^n\alpha^J_{-m}L^\perp_{-n+m}\alpha_n^I+\sum\limits_{m\in\mathbb N^\ast}\frac1m\sum\limits_{n>0}^m\alpha^J_{-m}L^\perp_{-n+m}\alpha_n^I]\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(nm\alpha^J_{-m-n}\alpha^I_{n+m}+L^\perp_{-n}ng^{IJ}\delta_{n-m,0}L^\perp_m\right)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\alpha^J_{-n}\alpha_n^I
+\end{align*}
+
+So that,
+
+\begin{align*}
+    C_{12}^{IJ}-C_{12}^{JI}&=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\sum\limits_{m>0}^n\qty[\alpha^I_{-m}L^\perp_{-n+m}\alpha_n^J-\alpha^J_{-m}L^\perp_{-n+m}\alpha_n^I]\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\sum\limits_{m\in\mathbb N^\ast}\frac1m\sum\limits_{n>0}^m\qty[\alpha^I_{-m}L^\perp_{-n+m}\alpha_n^J-\alpha^J_{-m}L^\perp_{-n+m}\alpha_n^I]\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\left(\alpha^I_{-m-n}\alpha^J_{n+m}-\alpha^J_{-m-n}\alpha^I_{n+m}\right)\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty(\alpha^I_{-n}\alpha_n^J-\alpha^J_{-n}\alpha_n^I)
+\end{align*}
+
+At last, we compute $C_{22}^{IJ}$,
+
+\begin{align*}
+    C_{22}^{IJ}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\comm{\alpha_{-n}^IL^\perp_n}{\alpha^J_{-m}L^\perp_m}\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(\alpha_{-n}^I\comm{L^\perp_n}{\alpha^J_{-m}L^\perp_m}+\comm{\alpha_{-n}^I}{\alpha^J_{-m}L^\perp_m}L^\perp_n)\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(\alpha_{-n}^I\comm{L^\perp_n}{\alpha^J_{-m}}L^\perp_m+\alpha^J_{-m}\comm{\alpha_{-n}^I}{L^\perp_m}L^\perp_n+\comm{\alpha_{-n}^I}{\alpha^J_{-m}}L^\perp_mL^\perp_n\right.\\
+    &\quad\quad\quad\left.+\alpha_{-n}^I\alpha^J_{-m}\comm{L^\perp_n}{L^\perp_m}\right)\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(\alpha_{-n}^I\comm{L^\perp_n}{\alpha^J_{-m}}L^\perp_m+\alpha^J_{-m}\comm{\alpha_{-n}^I}{L^\perp_m}L^\perp_n+\comm{\alpha_{-n}^I}{\alpha^J_{-m}}L^\perp_mL^\perp_n\right.\\
+    &\quad\quad\quad\left.+\alpha_{-n}^I\alpha^J_{-m}\comm{L^\perp_n}{L^\perp_m}\right)\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(\alpha_{-n}^Im\alpha^J_{n-m}L^\perp_m-\alpha^J_{-m}n\alpha^I_{-n+m}L^\perp_n-ng^{IJ}\delta_{-n-m,0}L^\perp_mL^\perp_n\right.\\
+    &\quad\quad\quad\left.+\alpha_{-n}^I\alpha^J_{-m}\qty(\qty(n-m)L^\perp_{n+m}+\frac{D-2}{12}\qty(n^3-n)\delta_{n+m,0})\right)\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\left(m\alpha_{-n}^I\alpha^J_{n-m}L^\perp_m-n\alpha^J_{-m}\alpha^I_{-n+m}L^\perp_n+\qty(n-m)\alpha_{-n}^I\alpha^J_{-m}L^\perp_{n+m}\right)\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(n-m)\alpha_{-n}^I\alpha^J_{-m}L^\perp_{n+m}\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{n}\alpha_{-n}^I\alpha^J_{n-m}L^\perp_m\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{m}\alpha^J_{-m}\alpha^I_{-n+m}L^\perp_n\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(n-m)\alpha_{-n}^I\alpha^J_{-m}L^\perp_{n+m}\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{n}\alpha_{-n}^I\alpha^J_{n-m}L^\perp_m\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{n}\alpha^J_{-n}\alpha^I_{n-m}L^\perp_m\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(n-m)\alpha_{-n}^I\alpha^J_{-m}L^\perp_{n+m}\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty[\sum\limits_{m>0}^n+\sum\limits_{m>n}^\infty]\qty(\alpha_{-n}^I\alpha^J_{n-m}-\alpha_{-n}^J\alpha^I_{n-m})L^\perp_m\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(n-m)\alpha_{-n}^I\alpha^J_{-m}L^\perp_{n+m}-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>n}^\infty\qty(\alpha_{-n}^I\alpha^J_{n-m}-\alpha_{-n}^J\alpha^I_{n-m})L^\perp_m\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^n\qty(\alpha_{-n}^I\alpha^J_{n-m}-\alpha_{-n}^J\alpha^I_{n-m})L^\perp_m\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(n-m)\alpha_{-n}^I\alpha^J_{-m}L^\perp_{n+m}-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^\infty\qty(\alpha_{-n}^I\alpha^J_{-m}-\alpha_{-n}^J\alpha^I_{-m})L^\perp_{m+n}\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^n\qty(\alpha_{-n}^I\alpha^J_{n-m}-\alpha_{-n}^J\alpha^I_{n-m})L^\perp_m\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(n-m)\alpha_{-n}^I\alpha^J_{-m}L^\perp_{n+m}-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(m\alpha_{-n}^I\alpha^J_{-m}-m\alpha_{-n}^J\alpha^I_{-m})L^\perp_{m+n}\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^n\qty(\alpha_{-n}^I\alpha^J_{n-m}-\alpha_{-n}^J\alpha^I_{n-m})L^\perp_m\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(n-m)\alpha_{-n}^I\alpha^J_{-m}L^\perp_{n+m}-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(m\alpha_{-n}^I\alpha^J_{-m}-n\alpha_{-m}^J\alpha^I_{-n})L^\perp_{m+n}\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^n\qty(\alpha_{-n}^I\alpha^J_{n-m}-\alpha_{-n}^J\alpha^I_{n-m})L^\perp_m\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(n-m)\alpha_{-n}^I\alpha^J_{-m}L^\perp_{n+m}-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\frac{1}{nm}\qty(m-n)\alpha_{-n}^I\alpha^J_{-m}L^\perp_{m+n}\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^n\qty(\alpha_{-n}^I\alpha^J_{n-m}-\alpha_{-n}^J\alpha^I_{n-m})L^\perp_m\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^n\qty(\alpha_{-n}^I\alpha^J_{n-m}-\alpha_{-n}^J\alpha^I_{n-m})L^\perp_m\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^n\qty(\alpha_{-n}^I\comm{\alpha^J_{n-m}}{L^\perp_m}+\alpha_{-n}^IL^\perp_m\alpha^J_{n-m}-\alpha_{-n}^J\comm{\alpha^I_{n-m}}{L^\perp_m}-\alpha_{-n}^JL^\perp_m\alpha^I_{n-m})\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^n\qty(\alpha_{-n}^I\qty(n-m)\alpha^J_{n}+\alpha_{-n}^IL^\perp_m\alpha^J_{n-m}-\alpha_{-n}^J\qty(n-m)\alpha^I_n-\alpha_{-n}^JL^\perp_m\alpha^I_{n-m})\\
+    &=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha_{-n}^I\alpha^J_{n}-\alpha_{-n}^J\alpha^I_n)\sum\limits_{m>0}^n\qty(n-m)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^n\qty(\alpha_{-n}^IL^\perp_m\alpha^J_{n-m}-\alpha_{-n}^JL^\perp_m\alpha^I_{n-m})\\
+    &=-\frac{1}{4\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(n-1)\qty(\alpha_{-n}^I\alpha^J_{n}-\alpha_{-n}^J\alpha^I_n)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m>0}^n\qty(\alpha_{-n}^IL^\perp_m\alpha^J_{n-m}-\alpha_{-n}^JL^\perp_m\alpha^I_{n-m})\\
+    C_{22}^{IJ}&=-\frac{1}{4\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(n-1)\qty(\alpha_{-n}^I\alpha^J_{n}-\alpha_{-n}^J\alpha^I_n)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m\geq0}^{n-1}\qty(\alpha_{-n}^IL^\perp_{-m+n}\alpha^J_{m}-\alpha_{-n}^JL^\perp_{-m+n}\alpha^I_{m})
+\end{align*}
+
+Ok. Let's sum all the three expressions,
+
+\begin{align*}
+    \comm{C^{I}}{C^{J}}&=-\frac{1}{4\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(n-1)\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m\geq0}^{n-1}\qty(\alpha_{-m}^IL^\perp_{m-n}\alpha^J_n-\alpha^J_{-m}L^\perp_{m-n}\alpha^I_n)\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\sum\limits_{m>0}^n\qty[\alpha^I_{-m}L^\perp_{-n+m}\alpha_n^J-\alpha^J_{-m}L^\perp_{-n+m}\alpha_n^I]\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\sum\limits_{m\in\mathbb N^\ast}\frac1m\sum\limits_{n>0}^m\qty[\alpha^I_{-m}L^\perp_{-n+m}\alpha_n^J-\alpha^J_{-m}L^\perp_{-n+m}\alpha_n^I]\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\left(\alpha^I_{-m-n}\alpha^J_{n+m}-\alpha^J_{-m-n}\alpha^I_{n+m}\right)\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty(\alpha^I_{-n}\alpha_n^J-\alpha^J_{-n}\alpha_n^I)\\
+    &\quad\quad\quad-\frac{1}{4\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(n-1)\qty(\alpha_{-n}^I\alpha^J_{n}-\alpha_{-n}^J\alpha^I_n)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\sum\limits_{m\geq0}^{n-1}\qty(\alpha_{-n}^IL^\perp_{-m+n}\alpha^J_{m}-\alpha_{-n}^JL^\perp_{-m+n}\alpha^I_{m})
+\end{align*}
+
+The second and third line cancel each other apart from the $m=0$ and $m=n$ contributions, the same is true for the fourth and eight lines but now leaving the $m=0$ and $n=m$ terms. We also sum the 
+first and seventh lines,
+
+\begin{align*}
+    \comm{C^{I}}{C^{J}}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(n-1)\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha_{0}^IL^\perp_{-n}\alpha^J_n-\alpha^J_{0}L^\perp_{0-n}\alpha^I_n)\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty[\alpha^I_{-n}L^\perp_{0}\alpha_n^J-\alpha^J_{-n}L^\perp_{0}\alpha_n^I]\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\sum\limits_{m\in\mathbb N^\ast}\frac1m\qty[\alpha^I_{-m}L^\perp_{0}\alpha_m^J-\alpha^J_{-m}L^\perp_{0}\alpha_m^I]\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\left(\alpha^I_{-m-n}\alpha^J_{n+m}-\alpha^J_{-m-n}\alpha^I_{n+m}\right)\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty(\alpha^I_{-n}\alpha_n^J-\alpha^J_{-n}\alpha_n^I)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha_{-n}^IL^\perp_{n}\alpha^J_{0}-\alpha_{-n}^JL^\perp_{n}\alpha^I_{0})
+\end{align*}
+
+Relabeling the forth line to $m\rightarrow n$, we can sum most of the lines,
+
+\begin{align*}
+    \comm{C^{I}}{C^{J}}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(n-1)\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha_{0}^IL^\perp_{-n}\alpha^J_n-\alpha^J_{0}L^\perp_{0-n}\alpha^I_n)\\
+    &\quad\quad\quad+\frac{1}{ \alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty[\alpha^I_{-n}L^\perp_{0}\alpha_n^J-\alpha^J_{-n}L^\perp_{0}\alpha_n^I]\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\left(\alpha^I_{-m-n}\alpha^J_{n+m}-\alpha^J_{-m-n}\alpha^I_{n+m}\right)\\
+    &\quad\quad\quad+\frac{1}{2\alpha'{p^+}^2}\frac{D-2}{12}\sum\limits_{n\in\mathbb N^\ast}\frac{n^2-1}{n}\qty(\alpha^I_{-n}\alpha_n^J-\alpha^J_{-n}\alpha_n^I)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty(\alpha_{-n}^IL^\perp_{n}\alpha^J_{0}-\alpha_{-n}^JL^\perp_{n}\alpha^I_{0})\\
+    \comm{C^{I}}{C^{J}}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty[\qty(L^\perp_{-n}\alpha^J_n-\alpha_{-n}L^\perp_n)\alpha_0^I-\qty(L^\perp_{0-n}\alpha^I_n-\alpha^I_{-n}L^\perp_n)\alpha^J_{0}]\\
+    &\quad\quad\quad+\frac{1}{ \alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty[\alpha^I_{-n}L^\perp_{0}\alpha_n^J-\alpha^J_{-n}L^\perp_{0}\alpha_n^I]\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\left(\alpha^I_{-m-n}\alpha^J_{n+m}-\alpha^J_{-m-n}\alpha^I_{n+m}\right)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\qty[-\frac{D-2}{12}\frac{n^2-1}{n}+\qty(n-1)]\\
+    \comm{C^{I}}{C^{J}}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty[\qty(L^\perp_{-n}\alpha^J_n-\alpha_{-n}L^\perp_n)\alpha_0^I-\qty(L^\perp_{0-n}\alpha^I_n-\alpha^I_{-n}L^\perp_n)\alpha^J_{0}]\\
+    &\quad\quad\quad+\frac{1}{ \alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty[\alpha^I_{-n}L^\perp_{0}\alpha_n^J-\alpha^J_{-n}L^\perp_{0}\alpha_n^I]\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n,m\in\mathbb N^\ast}\left(\alpha^I_{-m-n}\alpha^J_{n+m}-\alpha^J_{-m-n}\alpha^I_{n+m}\right)\\
+    &\quad\quad\quad-\frac{1}{\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\qty[n\qty(\frac12-\frac{D-2}{24})+\frac1n\qty(\frac{D-2}{24})-\frac12]
+\end{align*}
+
+The third line in this expression is a little bit off, it depends only in $n+m$, hence, we can change the two sums to just one sum over $u=n+m>1$, of course just doing this 
+is not enough, because we would be undercounting as there are various $n,m$ such that $n+m=u>1$, in fact, this is a not hard to solve combinatorial problem, 
+we have $n+m=u$ `objects', to subdivide into two, $n,m$. As each one has to be $n,m>0$, the number of `objects' are in fact $n+m-2$. It's simpler to solve visually 
+by imagining we have a line of $n+m-2$ balls and some kind of wall separating them into two sets, the possibles arrangements are $\frac{\qty(n+m-2+1)!}{\qty(n+m-2)!1!}=n+m-1$, hence, 
+we have the equality,
+
+\begin{align*}
+    \sum\limits_{n,m\in\mathbb N^\ast}f(n+m)=\sum\limits_{n>1}^\infty\qty(n-1)f(n)\equiv \sum\limits_{n\in\mathbb N^\ast}\qty(n-1)f(n)
+\end{align*}
+
+Using this fact in our expression get to us,
+
+\begin{align*}
+    \comm{C^{I}}{C^{J}}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty[\qty(L^\perp_{-n}\alpha^J_n-\alpha_{-n}L^\perp_n)\alpha_0^I-\qty(L^\perp_{0-n}\alpha^I_n-\alpha^I_{-n}L^\perp_n)\alpha^J_{0}]\\
+    &\quad\quad\quad+\frac{1}{ \alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty[\alpha^I_{-n}L^\perp_{0}\alpha_n^J-\alpha^J_{-n}L^\perp_{0}\alpha_n^I]\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(n-1)\left(\alpha^I_{-n}\alpha^J_{n}-\alpha^J_{-n}\alpha^I_{n}\right)\\
+    &\quad\quad\quad-\frac{1}{\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\qty[n\qty(\frac12-\frac{D-2}{24})+\frac1n\qty(\frac{D-2}{24})-\frac12]\\
+    \comm{C^{I}}{C^{J}}&=-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty[\qty(L^\perp_{-n}\alpha^J_n-\alpha_{-n}L^\perp_n)\alpha_0^I-\qty(L^\perp_{0-n}\alpha^I_n-\alpha^I_{-n}L^\perp_n)\alpha^J_{0}]\\
+    &\quad\quad\quad+\frac{1}{ \alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty[\alpha^I_{-n}L^\perp_{0}\alpha_n^J-\alpha^J_{-n}L^\perp_{0}\alpha_n^I]\\
+    &\quad\quad\quad-\frac{1}{\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\qty[n\qty(1-\frac{D-2}{24})+\frac1n\qty(\frac{D-2}{24})-1]
+\end{align*}
+
+Now, what remains is to sum all the three terms, remembering we already had $\comm{A^I}{A^J}+\comm{B^I}{B^J}+\qty(\comm{A^I}{B^J}-\comm{B^I}{A^J})=0$,
+
+\begin{align*}
+    \comm{M^{-I}}{M^{-J}}&=\comm{A^I}{C^J}-\comm{A^J}{C^I}+\comm{B^I}{C^J}-\comm{C^I}{B^J}+\comm{C^I}{C^J}\\
+    \comm{M^{-I}}{M^{-J}}&=\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty[\qty(L^\perp_{-n}\alpha_n^J-\alpha_{-n}^JL^\perp_{n})\alpha^I_0-\qty(L^\perp_{-n}\alpha_n^I-\alpha_{-n}^IL^\perp_{n})\alpha^J_0]\\
+    &\quad\quad\quad-\frac{1}{\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty(\alpha_{-n}^I\qty(L_0^\perp +a+n)\alpha_n^J-\alpha_{-n}^J\qty(L^\perp_0+a+n)\alpha_n^I)\\
+    &\quad\quad\quad-\frac{1}{2\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac{1}{n}\qty[\qty(L^\perp_{-n}\alpha^J_n-\alpha_{-n}L^\perp_n)\alpha_0^I-\qty(L^\perp_{0-n}\alpha^I_n-\alpha^I_{-n}L^\perp_n)\alpha^J_{0}]\\
+    &\quad\quad\quad+\frac{1}{ \alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty[\alpha^I_{-n}L^\perp_{0}\alpha_n^J-\alpha^J_{-n}L^\perp_{0}\alpha_n^I]\\
+    &\quad\quad\quad-\frac{1}{\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\qty[n\qty(1-\frac{D-2}{24})+\frac1n\qty(\frac{D-2}{24})-1]\\
+    \comm{M^{-I}}{M^{-J}}&=-\frac{1}{\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty(\alpha_{-n}^I\qty(a+n)\alpha_n^J-\alpha_{-n}^J\qty(a+n)\alpha_n^I)\\
+    &\quad\quad\quad-\frac{1}{\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\qty[n\qty(1-\frac{D-2}{24})+\frac1n\qty(\frac{D-2}{24})-1]\\
+    \comm{M^{-I}}{M^{-J}}&=-\frac{1}{\alpha'{p^+}^2}\sum\limits_{n\in\mathbb N^\ast}\qty(\alpha^I_{-n}\alpha^J_n-\alpha^J_{-n}\alpha^I_n)\qty[n\qty(1-\frac{D-2}{24})+\frac1n\qty(\frac{D-2}{24}+a)]
+\end{align*}
+
+To impose $\comm{M^{-I}}{M^{-J}}=0$ is to impose the charges in the light-cone gauge satisfy the Lorentz algebra --- Although we didn't computed all the commutators, granted that this one is zero, all the others will be ---, that is,
+the quantum theory possesses a global Lorentz invariance. Let's see what this constrain implies, first, all the $\alpha$s are independent operators, this means the expression has to vanish 
+term by term, also, the combination of $\alpha$s in each term cannot be zero for all states of the Hilbert space, hence, we're forced to conclude that what should be zero is the prefactor,
+
+\begin{align*}
+    0&=n\qty(1-\frac{D-2}{24})+\frac1n\qty(\frac{D-2}{24}+a)\\
+    0&=n^2\qty(1-\frac{D-2}{24})+\qty(a+\frac{D-2}{24})
+\end{align*}
+
+This has to vanish for every $n$, and both $D$ and $a$ cannot depend on $n$, thus, the coefficient of $n^2$ 
+has to vanish,
+
+\begin{align*}
+    1-\frac{D-2}{24}&=0\\
+    D&=26
+\end{align*}
+
+This implies,
+
+\begin{align*}
+    0&=a+\frac{D-2}{24}\\
+    a&=-1
+\end{align*}
+
+That is, imposing Lorentz invariance fixes the normal-ordering constant and the space-time dimension!

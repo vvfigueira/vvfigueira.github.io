@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.23)  13 APR 2025 23:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.23)  14 APR 2025 16:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1033,42 +1033,64 @@ Overfull \hbox (7.36586pt too wide) detected at line 546
 [28]
 
 [29]
-Overfull \hbox (9.0415pt too wide) detected at line 628
-[]
- []
-
-
-Overfull \hbox (42.14688pt too wide) detected at line 651
-[]
- []
-
-
 
 [30]
+Overfull \hbox (12.84157pt too wide) detected at line 680
+[]
+ []
+
+
 
 [31]
-Overfull \hbox (1.67184pt too wide) detected at line 684
-[]
- []
-
-
-Overfull \hbox (3.00482pt too wide) detected at line 722
-[]
- []
-
-
 
 [32]
+Overfull \hbox (5.21895pt too wide) detected at line 727
+[]
+ []
+
+
+Overfull \hbox (12.06367pt too wide) detected at line 742
+[]
+ []
+
+
 
 [33]
+Overfull \hbox (3.4441pt too wide) detected at line 755
+[]
+ []
 
-[34])
 
-[35] (./sections/prob5.tex)
 
-[36] (./sections/prob6.tex)
+[34]
+Overfull \hbox (14.20306pt too wide) detected at line 792
+[]
+ []
 
-[37] (./main.aux)
+
+
+[35]
+Overfull \hbox (25.7905pt too wide) detected at line 856
+[]
+ []
+
+
+
+[36]
+
+[37]
+
+[38]
+
+[39]
+
+[40])
+
+[41] (./sections/prob5.tex)
+
+[42] (./sections/prob6.tex)
+
+[43] (./main.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
@@ -1077,9 +1099,9 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 04032DBC0E26DE1D17FAD9E3150DBEBB;2244.
  ) 
 Here is how much of TeX's memory you used:
- 29961 strings out of 473362
- 591476 string characters out of 5725050
- 1047646 words of memory out of 5000000
+ 29972 strings out of 473362
+ 591548 string characters out of 5725050
+ 1044646 words of memory out of 5000000
  52467 multiletter control sequences out of 15000+600000
  568524 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1096,10 +1118,10 @@ cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (37 pages, 254642 bytes).
+Output written on main.pdf (43 pages, 273143 bytes).
 PDF statistics:
- 426 PDF objects out of 1000 (max. 8388607)
- 358 compressed objects within 4 object streams
- 91 named destinations out of 1000 (max. 500000)
+ 457 PDF objects out of 1000 (max. 8388607)
+ 383 compressed objects within 4 object streams
+ 102 named destinations out of 1000 (max. 500000)
  229 words of extra memory for PDF output out of 10000 (max. 10000000)
 
