@@ -1,6 +1,111 @@
 \section{Problem 5}
 \subsection{5.A)}
+
+We're assuming the dimension of the theory in consideration is $D=26$, so we'll assume the compactification is done in the $X^{D-1}=X^{25}$ target 
+space direction. The usual mode expansion is,
+
+\begin{align*}
+    X^{25}\qty(\tau,\sigma)&=x_0^{25}+\sqrt{2\alpha'}\alpha_0^{25}\tau+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n \tau}}{n}\qty(\alpha_n^{25}\e^{\im n\sigma}+{\bar\alpha}_n^{25}\e^{-\im n\sigma})\\
+    UX^{25}\qty(\tau,\sigma)U^{-1}&=Ux_0^{25}U^{-1}+\sqrt{2\alpha'}U\alpha_0^{25}U^{-1}\tau+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n \tau}}{n}\qty(U\alpha_n^{25}U^{-1}\e^{\im n\sigma}+U{\bar\alpha}_n^{25}U^{-1}\e^{-\im n\sigma})\\
+    -X^{25}\qty(\tau,\sigma)&=Ux_0^{25}U^{-1}+\sqrt{2\alpha'}U\alpha_0^{25}U^{-1}\tau+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n \tau}}{n}\qty(U\alpha_n^{25}U^{-1}\e^{\im n\sigma}+U{\bar\alpha}_n^{25}U^{-1}\e^{-\im n\sigma})\numberthis\label{ux}
+\end{align*}
+
+But, what is also true is,
+
+\begin{align*}
+    -X^{25}\qty(\tau,\sigma)&=-x_0^{25}+\sqrt{2\alpha'}\qty(-\alpha_0^{25})\tau+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n \tau}}{n}\qty(-\alpha_n^{25}\e^{\im n\sigma}-{\bar\alpha}_n^{25}\e^{-\im n\sigma})\numberthis\label{-x}
+\end{align*}
+
+But as both \ref{ux} and \ref{-x} are different representations of the same operator, and, the decomposition in Fourier modes is unique, we 
+must have an equality of the two equations term by term, that is,
+
+\begin{align*}
+    Ux_0^{25}U^{-1}=-x_0^{25},\ \ \ U{\bar\alpha}_n^{25}U^{-1}=-{\bar\alpha}_n^{25},\ \ \ U\alpha_n^{25}U^{-1}=-\alpha_n^{25}
+\end{align*}
+
+We can summarize the action of $U$ in all operators as,
+
+\begin{align*}
+    Ux_0^\mu U^{-1}=\qty(-1)^{g^{25 I}}x_0^\mu,\ \ \ U{\bar\alpha}_n^\mu U^{-1}=\qty(-1)^{g^{25 I}}{\bar\alpha}_n^\mu,\ \ \ U\alpha_n^\mu U^{-1}=\qty(-1)^{g^{25 I}}\alpha_n^\mu
+\end{align*}
+
+So that we can study whether of not the light-cone gauge Hamiltonian is invariant under this transformation,
+
+\begin{align*}
+    H&={\bar L}_0^\perp+L_0^\perp-2=\frac12{\bar\alpha}_0^I{\bar\alpha}_0^I+\frac12{\alpha}_0^I{\alpha}_0^I+\sum\limits_{n\in\mathbb N^\ast}{\bar\alpha}_{-n}^I{\bar\alpha}_{n}^I+\sum\limits_{n\in\mathbb N^\ast}{\alpha}_{-n}^I{\alpha}_{n}^I-2\\
+    UHU^{-1}&=\frac12U{\bar\alpha}_0^IU^{-1}U{\bar\alpha}_0^IU^{-1}+\frac12U{\alpha}_0^IU^{-1}U{\alpha}_0^IU^{-1}\\
+    &\quad\quad\quad+\sum\limits_{n\in\mathbb N^\ast}U{\bar\alpha}_{-n}^IU^{-1}U{\bar\alpha}_{n}^IU^{-1}+\sum\limits_{n\in\mathbb N^\ast}U{\alpha}_{-n}^IU^{-1}U{\alpha}_{n}^IU^{-1}-2\\
+    UHU^{-1}&=\frac12\qty[(-1)^{g^{25I}}{\bar\alpha}_0^I]\qty[(-1)^{g^{25I}}{\bar\alpha}_0^I]+\frac12\qty[(-1)^{g^{25I}}{\alpha}_0^I]\qty[(-1)^{g^{25I}}{\alpha}_0^I]\\
+    &\quad\quad\quad+\sum\limits_{n\in\mathbb N^\ast}\qty[(-1)^{g^{25I}}{\bar\alpha}_{-n}^I]\qty[(-1)^{g^{25I}}{\bar\alpha}_{n}^I]+\sum\limits_{n\in\mathbb N^\ast}\qty[(-1)^{g^{25I}}{\alpha}_{-n}^I]\qty[(-1)^{g^{25I}}{\alpha}_{n}^I]-2\\
+    UHU^{-1}&=\frac12(-1)^{2g^{25I}}{\bar\alpha}_0^I{\bar\alpha}_0^I+\frac12(-1)^{2g^{25I}}{\alpha}_0^I{\alpha}_0^I\\
+    &\quad\quad\quad+\sum\limits_{n\in\mathbb N^\ast}(-1)^{2g^{25I}}{\bar\alpha}_{-n}^I{\bar\alpha}_{n}^I+\sum\limits_{n\in\mathbb N^\ast}(-1)^{2g^{25I}}{\alpha}_{-n}^I{\alpha}_{n}^I-2\\
+    UHU^{-1}&=\frac12(-1)^{2g^{25I}}{\bar\alpha}_0^I{\bar\alpha}_0^I+\frac12(-1)^{2g^{25I}}{\alpha}_0^I{\alpha}_0^I\\
+    &\quad\quad\quad+\sum\limits_{n\in\mathbb N^\ast}(-1)^{2g^{25I}}{\bar\alpha}_{-n}^I{\bar\alpha}_{n}^I+\sum\limits_{n\in\mathbb N^\ast}(-1)^{2g^{25I}}{\alpha}_{-n}^I{\alpha}_{n}^I-2,\ \ \ 2g^{25 I}=\qty{0,2}\rightarrow \qty(-1)^{2g^{25I}}=1\\
+    UHU^{-1}&=\frac12{\bar\alpha}_0^I{\bar\alpha}_0^I+\frac12{\alpha}_0^I{\alpha}_0^I+\sum\limits_{n\in\mathbb N^\ast}{\bar\alpha}_{-n}^I{\bar\alpha}_{n}^I+\sum\limits_{n\in\mathbb N^\ast}{\alpha}_{-n}^I{\alpha}_{n}^I-2\\
+    UHU^{-1}&=H
+\end{align*}
+
+Hence, the Hamiltonian is invariant.
+
 \subsection{5.B)}
+
+The closed string vacuum is defined by $25$ numbers, namely, $q^+,q^I$, we'll reserve the name $p$ for the momentum operators, and use $q$ 
+for the eigenvalues of those. In this way the vacuum satisfy,
+
+\begin{align*}
+    p^+\ket{q^+,q^I}=q^+\ket{q^+,q^I},\ \ \ p^J\ket{q^+,q^I}=q^J\ket{q^+,q^I},\ \ \ \alpha_{-n}^I\ket{q^+,q^I}=0,\ n\geq 1
+\end{align*}
+
+Let's look at which of those properties does the new state defined by the action of $U$ over the vacuum fails to met,
+
+\begin{align*}
+    p^+U\ket{q^+,q^I}=UU^{-1}p^+U\ket{q^+,q^I}=U\qty(-1)^{g25+}p^+\ket{q^+,q^I}=Uq^+\ket{q^+,q^I}=q^+U\ket{q^+,q^I}
+\end{align*}
+
+So it still an eigenvector of $p^+$ with eigenvalue $q^+$,
+
+\begin{align*}
+    p^JU\ket{q^+,q^I}&=UU^{-1}p^JU\ket{q^+,q^I}=U\qty(-1)^{g^{25J}}p^J\ket{q^+,q^I}\\
+    p^JU\ket{q^+,q^I}&=\qty(-1)^{g^{25J}}Uq^J\ket{q^+,q^I}=\qty(-1)^{g^{25J}}q^JU\ket{q^+,q^I}
+\end{align*}
+
+That is, the state still a eigenvector of $p^J$, but, the presence of $\qty(-1)^{g^{25J}}$ makes the eigenvalue of the $p^{25}$ momentum operator to 
+have the opposite sign then before, before concluding that this state is also a vacuum, we have to ensure that all the annihilation operators 
+still annihilate it,
+
+\begin{align*}
+    \alpha_{-n}^JU\ket{q^+,q^I}=UU^{-1}\alpha_{-n}^JU\ket{q^+,q^I}=U\qty(-1)^{g^{25J}}\alpha_{-n}^J\ket{q^+,q^I}=0
+\end{align*}
+
+So now we can be sure that $U\ket{q^+,q^I}$ is a closed string vacuum with the same eigenvalues as the former, with exception of the $q^{25}$. This 
+can be written in a simplified manner using the convention of upper case roman letters to non-light-cone gauge target space index $I=2,\cdots,25$, 
+and lower case roman letters to non-compactified non-light-cone gauge target space index $i=2,\cdots,24$,
+
+\begin{align*}
+    U\ket{q^+,q^i,q^{25}}=\ket{q^+,q^i,-q^{25}}\numberthis\label{uvac}
+\end{align*}
+
+This has to be true as we shown that this new state has all the correct eigenvalues.
+
 \subsection{5.C)}
+
+We know the mass operator is,
+
+\begin{align*}
+    M^2&=\frac{2}{\alpha'}\qty(N^\perp+{\bar N}^\perp-2)
+\end{align*}
+
+Hence, for a state to have zero mass, it has to have eigenvalues $N^\perp+{\bar N}^\perp=2$, but, by the level matching, $N^\perp={\bar N}^\perp$, 
+this fixes the spectrum as states with eigenvalues $N^\perp={\bar N}^\perp=1$, that is, is necessary to have exactly one $\alpha^I_{-1}$ and one 
+${\bar \alpha}_{-1}^J$, so the most general state is given by a sum over linear combination of those,
+
+\begin{align*}
+    \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{-\infty}^{+\infty}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\\
+    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{-\infty}^{+\infty}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})U\alpha^I_{-1}U^{-1}U{\bar\alpha}^J_{-1}U^{-1}U\ket{q^+,q^i,q^{25}}\\
+    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{-\infty}^{+\infty}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}\\
+    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{-\infty}^{+\infty}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{\qty(-q^{25})}\xi_{IJ}\qty(q^+,q^i,q^{25})\qty(-1)^{g^{25I}+g^{25J}+1}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}\\
+    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{-\infty}^{+\infty}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,-q^{25})\qty(-1)^{g^{25I}+g^{25J}+1}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}
+\end{align*}
+
 \subsection{5.D)}
 \subsection{5.E)}
