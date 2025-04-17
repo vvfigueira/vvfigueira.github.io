@@ -1,5 +1,5 @@
-\section{Problem 5}
-\subsection{5.A)}
+\problem{}
+\subsection{}
 
 We're assuming the dimension of the theory in consideration is $D=26$, so we'll assume the compactification is done in the $X^{D-1}=X^{25}$ target 
 space direction. The usual mode expansion is,
@@ -47,7 +47,7 @@ So that we can study whether of not the light-cone gauge Hamiltonian is invarian
 
 Hence, the Hamiltonian is invariant.
 
-\subsection{5.B)}
+\subsection{}
 
 The closed string vacuum is defined by $25$ numbers, namely, $q^+,q^I$, we'll reserve the name $p$ for the momentum operators, and use $q$ 
 for the eigenvalues of those. In this way the vacuum satisfy,
@@ -87,8 +87,6 @@ and lower case roman letters to non-compactified non-light-cone gauge target spa
 
 This has to be true as we shown that this new state has all the correct eigenvalues.
 
-\subsection{5.C)}
-
 We know the mass operator is,
 
 \begin{align*}
@@ -100,12 +98,72 @@ this fixes the spectrum as states with eigenvalues $N^\perp={\bar N}^\perp=1$, t
 ${\bar \alpha}_{-1}^J$, so the most general state is given by a sum over linear combination of those,
 
 \begin{align*}
-    \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{-\infty}^{+\infty}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\\
-    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{-\infty}^{+\infty}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})U\alpha^I_{-1}U^{-1}U{\bar\alpha}^J_{-1}U^{-1}U\ket{q^+,q^i,q^{25}}\\
-    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{-\infty}^{+\infty}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}\\
-    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{-\infty}^{+\infty}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{\qty(-q^{25})}\xi_{IJ}\qty(q^+,q^i,q^{25})\qty(-1)^{g^{25I}+g^{25J}+1}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}\\
-    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{-\infty}^{+\infty}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,-q^{25})\qty(-1)^{g^{25I}+g^{25J}+1}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}
+    \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\\
+    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})U\alpha^I_{-1}U^{-1}U{\bar\alpha}^J_{-1}U^{-1}U\ket{q^+,q^i,q^{25}}\\
+    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}\\
+    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{+\infty}^{-\infty}\dd{\qty(-q^{25})}\xi_{IJ}\qty(q^+,q^i,-q^{25})\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\\
+    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,-q^{25})\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}
 \end{align*}
 
-\subsection{5.D)}
-\subsection{5.E)}
+This new state $U\ket\xi$ still have mass zero, because it still has one $\alpha^I_{-1}$ and one ${\bar\alpha}^J_{-1}$, to impose invariance under $U$ 
+is simply to impose $U\ket\xi=\ket\xi$, this condition can be red from the last expression as,
+
+\begin{align*}
+    \xi_{IJ}\qty(q^+,q^i,-q^{25})\qty(-1)^{g^{25I}+g^{25J}}&=\xi_{IJ}\qty(q^+,q^i,q^{25})
+\end{align*}
+
+Notice that with this information we can write,
+
+\begin{align*}
+    \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\\
+    \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\left[\int\limits_{0}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\right.\\
+    &\quad\quad\quad\left.+\int\limits_{-\infty}^{0}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\right]\\
+    \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\left[\int\limits_{0}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\right.\\
+    &\quad\quad\quad\left.-\int\limits_{0}^{-\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\right]\\
+    \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\left[\int\limits_{0}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\right.\\
+    &\quad\quad\quad\left.+\int\limits_{0}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,-q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}\right]\\
+    \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\left[\int\limits_{0}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\right.\\
+    &\quad\quad\quad\left.+\int\limits_{0}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}\right]
+\end{align*}
+
+It's clear to see that, if we manually force the integration in $q^{25}$ to be from $-\infty$ to $+\infty$, we'll under the same procedure get 
+the same two terms, hence, we can just integrate over the reals and divide by two after,
+
+\begin{align*}
+    \ket{\xi}&=\frac12\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\left[\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\right.\\
+    &\quad\quad\quad\left.+\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}\right]\\
+    \ket{\xi}&=\frac12\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\times\\
+    &\quad\quad\quad\times\qty[\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}+\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}]
+\end{align*}
+
+In this form it's clear that this state $\ket\xi$ is $U$-invariant,
+
+\begin{align*}
+    U\ket{\xi}&=\frac12\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\times\\
+    &\quad\quad\quad\times\qty[U\alpha^I_{-1}U^{-1}U{\bar\alpha}^J_{-1}U^{-1}U\ket{q^+,q^i,q^{25}}+\qty(-1)^{g^{25I}+g^{25J}}U\alpha^I_{-1}U^{-1}U{\bar\alpha}^J_{-1}U^{-1}U\ket{q^+,q^i,-q^{25}}]\\
+    U\ket{\xi}&=\frac12\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\times\\
+    &\quad\quad\quad\times\qty[\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}+\qty(-1)^{2g^{25I}+2g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}]\\
+    U\ket{\xi}&=\frac12\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\times\\
+    &\quad\quad\quad\times\qty[\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}+\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}]\\
+    U\ket{\xi}&=\ket\xi
+\end{align*}
+
+With $\xi_{IJ}\qty(q^+,q^i,q^{25})$ being arbitrary, in other words, we found a $U$-independent basis of the massless excitations of the string, the basis can be 
+subdivided in $4$ categories,
+
+\begin{align*}
+    \alpha^i_{-1}{\bar\alpha}^j_{-1}\ket{q^+,q^i,q^{25}}+\qty(-1)^{g^{25i}+g^{25j}}\alpha^i_{-1}{\bar\alpha}^j_{-1}\ket{q^+,q^i,-q^{25}}&=\alpha^i_{-1}{\bar\alpha}^j_{-1}\ket{q^+,q^i,q^{25}}+\alpha^i_{-1}{\bar\alpha}^j_{-1}\ket{q^+,q^i,-q^{25}}\\
+    \alpha^{25}_{-1}{\bar\alpha}^j_{-1}\ket{q^+,q^i,q^{25}}+\qty(-1)^{g^{2525}+g^{25j}}\alpha^{25}_{-1}{\bar\alpha}^j_{-1}\ket{q^+,q^i,-q^{25}}&=\alpha^{25}_{-1}{\bar\alpha}^j_{-1}\ket{q^+,q^i,q^{25}}-\alpha^{25}_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}\\
+    \alpha^i_{-1}{\bar\alpha}^{25}_{-1}\ket{q^+,q^i,q^{25}}+\qty(-1)^{g^{25i}+g^{2525}}\alpha^i_{-1}{\bar\alpha}^{25}_{-1}\ket{q^+,q^i,-q^{25}}&=\alpha^i_{-1}{\bar\alpha}^{25}_{-1}\ket{q^+,q^i,q^{25}}-\alpha^i_{-1}{\bar\alpha}^{25}_{-1}\ket{q^+,q^i,-q^{25}}\\
+    \alpha^{25}_{-1}{\bar\alpha}^{25}_{-1}\ket{q^+,q^i,q^{25}}+\qty(-1)^{g^{2525}+g^{2525}}\alpha^{25}_{-1}{\bar\alpha}^{25}_{-1}\ket{q^+,q^i,-q^{25}}&=\alpha^{25}_{-1}{\bar\alpha}^{25}_{-1}\ket{q^+,q^i,q^{25}}+\alpha^{25}_{-1}{\bar\alpha}^{25}_{-1}\ket{q^+,q^i,-q^{25}}
+\end{align*}
+
+\subsection{}
+
+
+
+\subsection{}
+
+
+
+\subsection{}

@@ -26,6 +26,8 @@
 \usepackage{tensor}
 \usepackage{bbm}
 \usepackage{simpler-wick}
+\usepackage[compact,explicit]{titlesec}
+
 
 \newtheoremstyle{dotless}% name
     {}% space above
@@ -108,31 +110,19 @@
 
 %% \doublespacing
 
-\makeatletter
-\def\@seccntformat#1{%
-    \ifcsname the#1\endcsname
-        \ifcsname #1notheorem\endcsname
-            \hspace{-1em} % Oculta visualmente no texto
-        \else
-            \csname the#1\endcsname\quad % Mantém para teoremas
-        \fi
-    \fi}
-\let\sectionnotheorem\relax
-\let\subsectionnotheorem\relax
+%\titleformat{\section}[runin]{\large\bfseries}{}{0pt}{Problem \thesection}
 
-% Modificação para evitar que seções/subseções tenham número no sumário
-\let\latex@numberline\numberline
-\def\numberline#1{%
-    \ifcsname thechapter\endcsname
-        \ifnum\value{secnumdepth}>0 % Verifica se numeração está ativada
-            \if\relax#1\relax
-                % Se for uma seção/subseção, oculta o número no sumário
-            \else
-                \latex@numberline{#1} % Mantém para teoremas e outros
-            \fi
-        \fi
-    \fi}
-\makeatother
+\newcommand{\problem}{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{Problem \thesection}%
+  \vspace{1.5em}
+  \noindent
+  {\large\bfseries Problem \thesection}%
+  \par\nopagebreak\vspace{0.5em}
+}
+
+
+\renewcommand{\thesubsection}{\thesection.\Alph{subsection})}
 
 \allowdisplaybreaks
 
@@ -140,7 +130,7 @@
 
 \maketitle
 
-%% \tableofcontents
+\tableofcontents
 
 \input{sections/prob1}
 
@@ -163,5 +153,15 @@
 \newpage
 
 \input{sections/prob6}
+
+%\newpage
+
+%\appendix
+
+%\input{appendix/lcgaugeopen}
+
+%\newpage
+
+%\input{appendix/lcgaugeclosed}
 
 \end{document}
