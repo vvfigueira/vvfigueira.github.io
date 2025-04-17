@@ -1,1 +1,230 @@
 \section{Light-Cone Gauge for the Closed String}
+
+Here, we're going to fix the gauge and solve the classical equations of motion for the closed string. The procedure here 
+is pretty much the same as we already done in the Appendix \ref{app-openclass}, the gauge fixing conditions are very similar 
+to the ones used there, that is,
+
+\begin{align*}
+    X^+\qty(\tau,\sigma)&=\alpha'p^+\tau\\
+    \partial_\sigma\mathcal P^{\tau +}&=0\\
+    \Det\qty[h_{ab}]&=-1
+\end{align*}
+
+This three conditions almost fully fix the gauge, but, as discussed already in Appendix \ref{app-openclass}, the second condition in this 
+list allows for a residual gauge \ref{sigmaresidual},
+
+\begin{align*}
+    \sigma'=a\sigma+b\numberthis\label{sres}
+\end{align*}
+
+But now we have to impose we're dealing with a closed string, that is, the $\sigma$ parameter lives in a topology of a 
+circle, in other words, exists $l\in\mathbb R$, such that,
+
+\begin{align*}
+    X\qty(\tau,l+\sigma)=X\qty(\tau,\sigma)
+\end{align*}
+
+Or in an even better description, $\sigma\sim \sigma+l\textnormal{ mod }l$. Notice that we can use \ref{sres} partially to 
+set $l$ to whatever value we like, we'll choose $l=2\pi$, which facilitates some computations, but, the translational 
+part of \ref{sres}, $\sigma'=\sigma+b\qty(\tau)$ is impossible to get fully rid off, we have no privileged point to call $\sigma=0$, but, we can remove the 
+$\tau$ dependence in it by choosing a specific family of $\sigma=\textnormal{cte}$ curves, this choice will be of the 
+$\sigma=\textnormal{cte}$ lines to be orthogonal to the $\tau=\textnormal{cte}$ lines, this is of course another condition 
+on the metric,
+
+\begin{align*}
+    h^{\sigma\tau}\qty(\tau,\sigma_0)=0
+\end{align*}
+
+Where $\sigma_0$ is just any fixed value. This leaves again a residual reparametrization, a solid translation of the $\sigma$ 
+coordinate, $\sigma'=\sigma+a$, this cannot be resolved, and we'll have to live with.
+With also the same reasoning of \ref{httcond} we can obtain,
+
+\begin{align*}
+    p^+&=\int\limits_{\sigma_0}^{\sigma_0+2\pi}\dd{\sigma}\mathcal P^{\tau+}=\mathcal P^{\tau+}2\pi=-\frac{2\pi\alpha' p^+\sqrt h h^{\tau\tau}}{2\pi\alpha'}\\
+    -1&=h^{\tau\tau}\numberthis\label{httcond}
+\end{align*}
+
+Furthermore, using the equation of motion \ref{eomx} at $\mu=+$, we get,
+
+\begin{align*}
+    0&=\partial_\tau\qty[h^{\tau\sigma}\partial_\sigma X^+h^{\tau\tau}\partial_\tau X^+]+\partial_\sigma\qty[h^{\sigma\sigma}\partial_\sigma X^++h^{\sigma\tau}\partial_\tau X^+]\\
+    0&=\partial_\tau h^{\tau\tau}+\partial_\sigma h^{\sigma\tau}\\
+    0&=\partial_\sigma h^{\sigma\tau}
+\end{align*}
+
+Together with $h^{\tau\sigma}\qty(\tau,\sigma_0)=0$, this simply states that $h^{\tau\sigma}=h^{\sigma\tau}\equiv0$. This, with $h^{\tau\tau}=-1$ 
+and the determinant condition, says that $h=\textnormal{Diag}\mqty(-1&1)$. That simplifies the equations of motion \ref{eomx} to,
+
+\begin{align*}
+    \partial_\tau\partial_\tau X^\mu-\partial_\sigma\partial_\sigma X^\mu={\ddot X}^\mu-{X''}^\mu=0
+\end{align*}
+
+And also the consistency conditions \ref{eomh} as,
+
+\begin{align*}
+    0=&\partial_a X^\mu \partial_b X_\mu-\frac12 h_{ab}\qty(-{\dot X}^2+{X'}^2)\\
+    0=&\begin{cases}
+        \partial_\tau X^\mu \partial_\tau X_\mu+\frac12\qty(-{\dot X}^2+{X'}^2)&=\frac12\qty[{\dot X}^2+{X'}^2]\\
+        \partial_\tau X^\mu \partial_\sigma X_\mu&=\dot X\cdot X'\\
+        \partial_\sigma X^\mu \partial_\sigma X_\mu-\frac12\qty(-{\dot X}^2+{X'}^2)&=\frac12\qty[{\dot X}^2+{X'}^2]
+    \end{cases}
+\end{align*}
+
+These constrains can be recast as,
+
+\begin{align*}
+    {\dot X}^2+{X'}^2\pm&=0\\
+    \qty(\dot X\pm X')^2&=0\numberthis\label{constrains2}
+\end{align*}
+
+And luckily, we don't need to worry about the boundary conditions, as the $\sigma$ lives in a circle, there is no 
+boundary on which we could impose boundary equations, instead we have another consistency equation,
+
+\begin{align*}
+    X^\mu\qty(\tau,\sigma+2\pi)&=X^\mu\qty(\tau,\sigma)
+\end{align*}
+
+We have now to solve the equation of motion with the consistency conditions, we already computed the equations of motion 
+in the variables $\sigma^\pm=\tau\pm\sigma$, \ref{fulleqom},
+
+\begin{align*}
+    \partial_+\partial_-X^\mu&=0
+\end{align*}
+
+This is easily solved for,
+
+\begin{align*}
+    X^\mu=X_L^\mu\qty(\sigma^+)+X_R^\mu\qty(\sigma^-)
+\end{align*}
+
+Imposing the consistency condition,
+
+\begin{align*}
+    X^\mu\qty(\tau,\sigma+2\pi)&=X^\mu\qty(\tau,\sigma)\\
+    X_L^\mu\qty(\sigma^++2\pi)+X_R^\mu\qty(\sigma^--2\pi)&=X_L^\mu\qty(\sigma^+)+X_R^\mu\qty(\sigma^-)\\
+    X_L^\mu\qty(\sigma^++2\pi)-X_L^\mu\qty(\sigma^+)&=X_R^\mu\qty(\sigma^-)-X_R^\mu\qty(\sigma^--2\pi)
+\end{align*}
+
+As $\sigma^\pm$ are independent variables,
+
+\begin{align*}
+    {X_L'}^\mu\qty(\sigma^++2\pi)-{X_L'}^\mu\qty(\sigma^+)&=0={X_R'}^\mu\qty(\sigma^-)-{X_R'}^\mu\qty(\sigma^--2\pi)
+\end{align*}
+
+This states that the two functions $X'_{L,R}$ are both periodic in $2\pi$, hence, we can expand then in Fourier modes, 
+we write it as,
+
+\begin{align*}
+    {X'_L}^\mu\qty(\sigma^+)&=\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z}{\bar\alpha}^\mu_n\exp\qty(-\im n \sigma^+)\\
+    {X'_R}^\mu\qty(\sigma^-)&=\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z}{\alpha}^\mu_n\exp\qty(-\im n \sigma^-)
+\end{align*}
+
+Integrating this equation we get,
+
+\begin{align*}
+    X_L^\mu\qty(\sigma^+)&=\frac12 x_{0,L}^\mu+\sqrt{\frac{\alpha'}{2}}{\bar\alpha}_0^\mu\sigma^++\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{{\bar\alpha}^\mu_n}{n}\exp\qty(-\im n \sigma^+)\\
+    X_R^\mu\qty(\sigma^-)&=\frac12 x_{0,R}^\mu+\sqrt{\frac{\alpha'}{2}}\alpha_0^\mu\sigma^-+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{{\alpha}^\mu_n}{n}\exp\qty(-\im n \sigma^-)
+\end{align*}
+
+Let's see what does the consistency condition of the closed string imply also,
+
+\begin{align*}
+    X_L^\mu\qty(\sigma^++2\pi)-X_L^\mu\qty(\sigma^+)&=X_R^\mu\qty(\sigma^-)-X_R^\mu\qty(\sigma^--2\pi)\\
+    \sqrt{\frac{\alpha'}{2}}{\bar\alpha}_0^\mu2\pi&=\sqrt{\frac{\alpha'}{2}}{\bar\alpha}_0^\mu2\pi\\
+    {\bar\alpha}_0^\mu&=\alpha_0^\mu
+\end{align*}
+
+This allows us to sum both the parts to obtain the full solution,
+
+\begin{align*}
+    X^\mu\qty(\tau,\sigma)&=\frac12\qty(x_{0,L}^\mu+x_{0,R}^\mu)+\sqrt{\frac{\alpha'}{2}}{\bar\alpha}_0^\mu\qty(\sigma^++\sigma^-)+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{1}{n}\qty({\bar\alpha}^\mu_n\exp\qty(-\im n \sigma^+)+{\alpha}^\mu_n\exp\qty(-\im n \sigma^-))\\
+    X^\mu\qty(\tau,\sigma)&=x_{0}^\mu+\sqrt{2\alpha'}{\bar\alpha}_0^\mu\tau+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}\qty({\bar\alpha}^\mu_n\e^{-\im n\sigma}+{\alpha}^\mu_n\e^{\im n\sigma})
+\end{align*}
+
+Notice that,
+
+\begin{align*}
+    p^\mu&=\int\limits_{\sigma_0}^{\sigma_0+2\pi}\dd{\sigma}\mathcal P^{\tau\mu}=\int\limits_{\sigma_0}^{\sigma_0+2\pi}\dd{\sigma}\frac{\partial_\tau X^\mu}{2\pi\alpha'},\ \ \ \textnormal{Because }h=\textnormal{Diag}\mqty(-1&1)\\
+    p^\mu&=\frac{1}{2\pi\alpha'}\int\limits_{\sigma_0}^{2\pi}\dd{\sigma}\qty[\sqrt{2\alpha'}{\bar\alpha_0}^\mu+\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\e^{-\im n\tau}\qty({\bar\alpha}_n^\mu\e^{-\im n\sigma}+{\alpha}_n^\mu\e^{\im n\sigma})]=\sqrt{\frac{2}{\alpha'}}{\bar\alpha}_0^\mu\\
+    \alpha_0^\mu&={\bar\alpha}_0^\mu=\sqrt{\frac{\alpha'}{2}}p^\mu
+\end{align*}
+
+Rewriting again,
+
+\begin{align*}
+    X^\mu\qty(\tau,\sigma)&=x_{0}^\mu+\sqrt{2\alpha'}{\bar\alpha}_0^\mu\tau+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}\qty({\bar\alpha}^\mu_n\e^{-\im n\sigma}+{\alpha}^\mu_n\e^{\im n\sigma})
+\end{align*}
+
+This is not the end of it, because we need to make sure the two constrains are satisfied, namely, \ref{constrains2}. With the convention of 
+uppercase latin index referring to non-light-cone components, $I=2,\cdots,D-1$, the constrains are,
+
+\begin{align*}
+    0&=-2\qty({\dot X}^-\pm{X'}^-)\qty({\dot X}^+\pm{X'}^+)+\qty({\dot X}^I\pm{X'}^I)^2\\
+    4\alpha'p^+\qty({\dot X}^-\pm{X'}^-)&=\qty({\dot X}^I\pm{X'}^I)^2\\
+    {\dot X}^-\pm{X'}^-&=\frac{1}{4\alpha'p^+}\qty({\dot X}^I\pm{X'}^I)^2
+\end{align*}
+
+That is, the two constrains implies that $X^-$ is not dynamical, and, the collection of $X^I$ fully determine $X^-$, 
+apart from a single integration constant, $x_0^-$. To see this is helpful to note,
+
+\begin{align*}
+    {\dot X}^\mu&=\sqrt{2\alpha'}{\bar\alpha}_0^\mu+\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\e^{-\im n\tau}\qty({\bar\alpha}^\mu_n\e^{-\im n\sigma}+{\alpha}^\mu_n\e^{\im n\sigma})\\
+    {\dot X}^\mu&=\sqrt{\frac{\alpha'}{2}}\qty(\alpha_0^\mu+{\bar\alpha}_0^\mu)+\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\e^{-\im n\tau}\qty({\bar\alpha}^\mu_n\e^{-\im n\sigma}+{\alpha}^\mu_n\e^{\im n\sigma})\\
+    {\dot X}^\mu&=\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z}\e^{-\im n\tau}\qty({\bar\alpha}^\mu_n\e^{-\im n\sigma}+{\alpha}^\mu_n\e^{\im n\sigma})
+\end{align*}
+
+And,
+
+\begin{align*}
+    {X'}^\mu&=\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\e^{-\im n\tau}\qty({\bar\alpha}^\mu_n\e^{-\im n\sigma}-{\alpha}^\mu_n\e^{\im n\sigma})\\
+    {X'}^\mu&=\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z}\e^{-\im n\tau}\qty({\bar\alpha}^\mu_n\e^{-\im n\sigma}-{\alpha}^\mu_n\e^{\im n\sigma})
+\end{align*}
+
+Which implies,
+
+\begin{align*}
+    {\dot X}^\mu+{X'}^\mu&=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}{\bar\alpha}_n^\mu\exp\qty(-\im n\sigma^+)\\
+    {\dot X}^\mu-{X'}^\mu&=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}{\alpha}_n^\mu\exp\qty(-\im n\sigma^-)
+\end{align*}
+
+So that,
+
+\begin{align*}
+    {\dot X}^-+{X'}^-&=\frac{1}{4\alpha'{p^+}}\qty({\dot X}^I+{X'}^I)^2\\
+    \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}{\bar\alpha}^-_n\exp\qty(-\im n\sigma^+)&=\frac{2\alpha'}{2\alpha' p^+}\sum\limits_{p,q\in\mathbb Z}\alpha^I_p\alpha^I_q\exp\qty(-\im\qty(p+q)\sigma^+)\\
+    \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}{\bar\alpha}^-_n\exp\qty(-\im n\sigma^+)&=\frac{1}{2p^+}\sum\limits_{n,p\in\mathbb Z}\alpha^I_p\alpha^I_{n-p}\exp\qty(-\im n\qty(\tau\pm\sigma))\\
+    \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}{\bar\alpha}^-_n\exp\qty(-\im n\sigma^+)&=\frac{1}{p^+}\sum\limits_{n\in\mathbb Z}\qty(\frac12\sum\limits_{p\in\mathbb Z}\alpha^I_p\alpha^I_{n-p})\exp\qty(-\im n\qty(\tau\pm\sigma))\\
+    \sqrt{2\alpha'}{\bar\alpha}_n^-&=\frac{1}{2p^+}\sum\limits_{p\in\mathbb Z}\alpha_p^I\alpha_{n-p}^I=\frac{1}{p^+}L_n^\perp\numberthis\label{virasorodef}
+\end{align*}
+
+And,
+
+\begin{align*}
+    {\dot X}^-\pm{X'}^-&=\frac{1}{4\alpha'{p^+}}\qty({\dot X}^I\pm{X'}^I)^2\\
+    \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha^-_n\exp\qty(-\im n\qty(\tau\pm\sigma))&=\frac{2\alpha'}{4\alpha' p^+}\sum\limits_{p,q\in\mathbb Z}\alpha^I_p\alpha^I_q\exp\qty(-\im\qty(p+q)\qty(\tau\pm\sigma))\\
+    \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha^-_n\exp\qty(-\im n\qty(\tau\pm\sigma))&=\frac{1}{2p^+}\sum\limits_{n,p\in\mathbb Z}\alpha^I_p\alpha^I_{n-p}\exp\qty(-\im n\qty(\tau\pm\sigma))\\
+    \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha^-_n\exp\qty(-\im n\qty(\tau\pm\sigma))&=\frac{1}{p^+}\sum\limits_{n\in\mathbb Z}\qty(\frac12\sum\limits_{p\in\mathbb Z}\alpha^I_p\alpha^I_{n-p})\exp\qty(-\im n\qty(\tau\pm\sigma))\\
+    \sqrt{2\alpha'}\alpha_n^-&=\frac{1}{2p^+}\sum\limits_{p\in\mathbb Z}\alpha_p^I\alpha_{n-p}^I=\frac{1}{p^+}L_n^\perp\numberthis\label{virasorodef}
+\end{align*}
+
+Hence, all the fourier modes of $X^-$ are completely determined by the transverse modes ones, apart from of course the integration constant $x^-_0$. In the 
+last passage we also defined the Virasoro modes $L_n^\perp$. This is it, we fully solved the equation of motion with all the constrains and boundary 
+conditions, let's rewrite them here just for completeness,
+
+\begin{align*}
+    X^I&=x_0^I+\sqrt{2\alpha'} \alpha_0^I\tau+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^I}{n}\exp\qty(-\im n\tau)\cos\qty(n\sigma)\\
+    X^-&=x_0^-+\sqrt{2\alpha'} \alpha_0^-\tau+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^-}{n}\exp\qty(-\im n\tau)\cos\qty(n\sigma),\ \ \ \alpha^-_n=\frac{1}{\sqrt{2\alpha'}p^+}L^\perp_n\\
+    X^+&=2\alpha'p^+\tau
+\end{align*}
+
+The degrees of freedom we found are,
+
+\begin{align*}
+    X^I\qty(\tau,\sigma),p^+,x_0^-
+\end{align*}
+
+Or,
+
+\begin{align*}
+    \alpha_n^I,x_0^I,p^+,x_0^-
+\end{align*}

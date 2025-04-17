@@ -1,5 +1,5 @@
 \section{Light-Cone Gauge for the Open String}
-
+\label{app-openclass}
 
 Here, we're going to fix the gauge and solve the classical equations of motion for the open string with 
 Neumann Boundary Conditions at both ends. To get the classical solution we just have to solve both
@@ -62,7 +62,7 @@ make further changes of $\sigma\rightarrow \sigma''$ preserving this condition,
 Imposing that $\sigma''$ also satisfy the parametrization condition,
 
 \begin{align*}
-    {\pdv[2]{\sigma''}{\sigma}}{\pdv{\sigma'}{\sigma''}}{\mathcal P'}^{\tau+}&=0\Rightarrow {\pdv[2]{\sigma''}{\sigma}}=0\Rightarrow \sigma''=a\sigma+b
+    {\pdv[2]{\sigma''}{\sigma}}{\pdv{\sigma'}{\sigma''}}{\mathcal P'}^{\tau+}&=0\Rightarrow {\pdv[2]{\sigma''}{\sigma}}=0\Rightarrow \sigma''=a\sigma+b\numberthis\label{sigmaresidual}
 \end{align*}
 
 Our condition of constancy of $\mathcal P^{\tau+}$ in sigma, has a residual affine reparametrization, which we can use to set $\sigma=0$ in one of the ends of the 
@@ -73,7 +73,7 @@ no more room for any transformation now, hence, the gauge is fully fixed. Notice
 
 \begin{align*}
     p^+&=\int\limits_0^\pi\dd{\sigma}\mathcal P^{\tau+}=\mathcal P^{\tau+}\pi=-p^+\sqrt h h^{\tau\tau}\\
-    -1&=h^{\tau\tau}
+    -1&=h^{\tau\tau}\numberthis\label{httcond}
 \end{align*}
 
 Furthermore, using the equation of motion \ref{eomx} at $\mu=+$, we get,
@@ -113,7 +113,7 @@ And also the consistency conditions \ref{eomh} as,
 These constrains can be recast as,
 
 \begin{align*}
-    {\dot X}^2+{X'}^2\pm&=0
+    {\dot X}^2+{X'}^2\pm&=0\\
     \qty(\dot X\pm X')^2&=0\numberthis\label{constrains}
 \end{align*}
 
@@ -131,7 +131,7 @@ coordinates to $\sigma^\pm=\tau\pm\sigma$, in which the new equations of motion 
     0&=\pdv{}{\tau}\qty[\pdv{\sigma^+}{\tau}\pdv{}{\sigma^+}X^\mu+\pdv{\sigma^-}{\tau}\pdv{}{\sigma^-}X^\mu]-\pdv{}{\sigma}\qty[\pdv{\sigma^+}{\sigma}\pdv{}{\sigma^+}X^\mu+\pdv{\sigma^-}{\sigma}\pdv{}{\sigma^-}X^\mu]\\
     0&=\pdv{}{\tau}\qty[\pdv{}{\sigma^+}X^\mu+\pdv{}{\sigma^-}X^\mu]-\pdv{}{\sigma}\qty[\pdv{}{\sigma^+}X^\mu-\pdv{}{\sigma^-}X^\mu]\\
     0&=\qty(\pdv{}{\sigma^+}+\pdv{}{\sigma^-})\qty[\pdv{}{\sigma^+}X^\mu+\pdv{}{\sigma^-}X^\mu]-\qty(\pdv{}{\sigma^+}-\pdv{}{\sigma^-})\qty[\pdv{}{\sigma^+}X^\mu-\pdv{}{\sigma^-}X^\mu]\\
-    0&=\partial_+\partial_-X^\mu
+    0&=\partial_+\partial_-X^\mu\numberthis\label{fulleqom}
 \end{align*}
 
 This is easily solved for,
@@ -214,13 +214,23 @@ That is, the two constrains implies that $X^-$ is not dynamical, and, the collec
 apart from a single integration constant, $x_0^-$. To see this is helpful to note,
 
 \begin{align*}
-    {\dot X}^\mu&=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^\mu\exp\qty(-\im n\tau)\cos\qty(n\sigma)\\
-    {X'}&=-\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^\mu\exp\qty(-\im n\tau)\sin\qty(n\sigma)
+    {\dot X}^\mu&=\sqrt{2\alpha'} \alpha_0^\mu+\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\alpha_n^\mu\exp\qty(-\im n\tau)\cos\qty(n\sigma)\\
+    {\dot X}^\mu&=\sqrt{2\alpha'} \alpha_0^\mu\exp(-\im 0 \tau)\cos\qty(0\sigma)+\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\alpha_n^\mu\exp\qty(-\im n\tau)\cos\qty(n\sigma)\\
+    {\dot X}^\mu&=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^\mu\exp\qty(-\im n\tau)\cos\qty(n\sigma)
+\end{align*}
+
+And,
+
+\begin{align*}
+    {X'}^\mu&=-\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\alpha_n^\mu\exp\qty(-\im n\tau)\sin\qty(n\sigma)\\
+    {X'}^\mu&=-\im\sqrt{2\alpha'}\alpha_0^\mu\exp\qty(-\im 0\tau)\sin(0\sigma)-\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\alpha_n^\mu\exp\qty(-\im n\tau)\sin\qty(n\sigma)\\
+    {X'}^\mu&=-\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^\mu\exp\qty(-\im n\tau)\sin\qty(n\sigma)
 \end{align*}
 
 Which implies,
 
 \begin{align*}
+    {\dot X}^\mu\pm{X'}^\mu&=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^\mu\exp\qty(-\im n\tau)\qty(\cos\qty(n\sigma)\mp\im\sin\qty(n\sigma))\\
     {\dot X}^\mu\pm{X'}^\mu&=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^\mu\exp\qty(-\im n\qty(\tau\pm \sigma))\numberthis\label{pmdot}
 \end{align*}
 
@@ -236,8 +246,22 @@ So that,
 
 Hence, all the fourier modes of $X^-$ are completely determined by the transverse modes ones, apart from of course the integration constant $x^-_0$. In the 
 last passage we also defined the Virasoro modes $L_n^\perp$. This is it, we fully solved the equation of motion with all the constrains and boundary 
-conditions, the degrees of freedom we found are:
+conditions, let's rewrite them here just for completeness,
+
+\begin{align*}
+    X^I&=x_0^I+\sqrt{2\alpha'} \alpha_0^I\tau+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^I}{n}\exp\qty(-\im n\tau)\cos\qty(n\sigma)\\
+    X^-&=x_0^-+\sqrt{2\alpha'} \alpha_0^-\tau+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^-}{n}\exp\qty(-\im n\tau)\cos\qty(n\sigma),\ \ \ \alpha^-_n=\frac{1}{\sqrt{2\alpha'}p^+}L^\perp_n\\
+    X^+&=2\alpha'p^+\tau
+\end{align*}
+
+The degrees of freedom we found are,
 
 \begin{align*}
     X^I\qty(\tau,\sigma),p^+,x_0^-
+\end{align*}
+
+Or,
+
+\begin{align*}
+    \alpha_n^I,x_0^I,p^+,x_0^-
 \end{align*}

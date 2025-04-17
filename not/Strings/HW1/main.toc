@@ -27,4 +27,4 @@
 \contentsline {subsection}{\numberline {6.F)}}{46}{subsection.6.6}%
 \contentsline {subsection}{\numberline {6.G)}}{46}{subsection.6.7}%
 \contentsline {section}{\numberline {A}Light-Cone Gauge for the Open String}{47}{appendix.A}%
-\contentsline {section}{\numberline {B}Light-Cone Gauge for the Closed String}{52}{appendix.B}%
+\contentsline {section}{\numberline {B}Light-Cone Gauge for the Closed String}{53}{appendix.B}%
