@@ -1,0 +1,99 @@
+\section{Light-Cone Gauge Quantization of the Closed String}
+\label{closedapp-closedqnt}
+
+We already did a lot in \ref{app-openqnt}, in particular we should use the same quantization conditions,
+
+\begin{align*}
+    \comm{X^I\qty(\tau,\sigma)}{\mathcal P^{\tau J}\qty(\tau,\sigma')}&=\im g^{IJ}\delta\qty(\sigma-\sigma'),\ \ \ \comm{x_0^-}{p^+}=-\im\numberthis\label{closedqntconditions}
+\end{align*}
+
+Any other commutator between these $4$ operators is zero. Of course now, $X^-$ has to be considered as a function 
+of the $X^I$ and $\mathcal P^{\tau I}$, so, it has non trivial commutators. The first thing we need to do here is go from these 
+canonical commutation relations, to the commutation relations of the modes $\alpha_n^I, {\bar\alpha}_n^I$. The best way of doing this is working with the 
+expressions \ref{+dot} and \ref{-dot}, as was done in the open string, and computing the following commutator,
+
+\begin{align*}
+    \comm{{\dot X}^I\pm{X'}^I}{{\dot X}^I\pm{X'}^I}
+\end{align*}
+
+For now everything is equal to the open string, hence, we can use some of the results derived there, as \ref{commpm} and \ref{commmp},
+
+\begin{align*}
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma')}&=\pm4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\numberthis\label{closedcommpm}\\
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\mp{X'}^I)\qty(\tau,\sigma')}&=0\numberthis\label{closedcommmp}
+\end{align*}
+
+For our luck, unlike the open string, everything here is defined for the interval $\sigma\in\qty[0,2\pi]$, hence, using \ref{+dot} and \ref{-dot} we can compute,
+
+\begin{align*}
+    4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')&=\comm{\qty({\dot X}^I+{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J+{X'}^J)\qty(\tau,\sigma')}\\
+    4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')&=2\alpha'\sum\limits_{n',m'\in\mathbb Z}\e^{-\im n'\qty(\tau+\sigma')}\e^{-\im m'\qty(\tau+\sigma)}\comm{{\bar\alpha}_{m'}^I}{{\bar\alpha}_{n'}^J}\\
+    2\pi\im g^{IJ}\int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\e^{\im m\sigma}&=\int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{\im m\sigma}\sum\limits_{m',n'\in\mathbb Z}\e^{-\im \tau\qty(n'+m')}\e^{-\im \sigma' n'-\im\sigma m'}\comm{{\bar\alpha}_{m'}^I}{{\bar\alpha}_{n'}^J}\\
+    mg^{IJ}\e^{\im m\sigma'}&=\sum\limits_{m',n'\in\mathbb Z}\e^{-\im \tau\qty(n'+m')}\e^{-\im \sigma' n'}\delta_{m,m'}\comm{{\bar\alpha}_{m'}^I}{{\bar\alpha}_{n'}^J}\\
+    \int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{\im n\sigma'}mg^{IJ}\e^{\im m\sigma'}&=\int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{\im n\sigma'}\sum\limits_{n'\in\mathbb Z}\e^{-\im \tau\qty(n'+m)}\e^{-\im \sigma' n'}\comm{{\bar\alpha}_{m}^I}{{\bar\alpha}_{n'}^J}\\
+    mg^{IJ}\delta_{m+n,0}&=\sum\limits_{n'\in\mathbb Z}\delta_{n,n'}\e^{-\im \tau\qty(n'+m)}\comm{{\bar\alpha}_{m}^I}{{\bar\alpha}_{n'}^J}\\
+    mg^{IJ}\delta_{m+n,0}\e^{\im \tau\qty(n+m)}&=\comm{{\bar\alpha}_{m}^I}{{\bar\alpha}_{n}^J}\\
+    \comm{{\bar\alpha}_{m}^I}{{\bar\alpha}_{n}^J}&=mg^{IJ}\delta_{m+n,0}\numberthis\label{closedalphacommbarbar}
+\end{align*}
+
+And,
+
+\begin{align*}
+    0&=\comm{\qty({\dot X}^I+{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J-{X'}^J)\qty(\tau,\sigma')}\\
+    0&=2\alpha'\sum\limits_{n',m'\in\mathbb Z}\e^{-\im n'\qty(\tau-\sigma')}\e^{-\im m'\qty(\tau+\sigma)}\comm{{\bar\alpha}_{m'}^I}{{\alpha}_{n'}^J}\\
+    0&=\int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{\im m\sigma}\sum\limits_{m',n'\in\mathbb Z}\e^{-\im \tau\qty(n'+m')}\e^{\im \sigma' n'-\im\sigma m'}\comm{{\bar\alpha}_{m'}^I}{{\alpha}_{n'}^J}\\
+    0&=\sum\limits_{m',n'\in\mathbb Z}\e^{-\im \tau\qty(n'+m')}\e^{\im \sigma' n'}\delta_{m,m'}\comm{{\bar\alpha}_{m'}^I}{{\alpha}_{n'}^J}\\
+    0&=\int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{-\im n\sigma'}\sum\limits_{n'\in\mathbb Z}\e^{-\im \tau\qty(n'+m)}\e^{\im \sigma' n'}\comm{{\bar\alpha}_{m}^I}{{\alpha}_{n'}^J}\\
+    0&=\sum\limits_{n'\in\mathbb Z}\delta_{n,n'}\e^{-\im \tau\qty(n'+m)}\comm{{\bar\alpha}_{m}^I}{{\alpha}_{n'}^J}\\
+    \comm{{\bar\alpha}_{m}^I}{{\alpha}_{n}^J}&=0\numberthis\label{closedalphacommbarnobar}
+\end{align*}
+
+And lastly,
+
+\begin{align*}
+    -4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')&=\comm{\qty({\dot X}^I-{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J-{X'}^J)\qty(\tau,\sigma')}\\
+    -4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')&=2\alpha'\sum\limits_{n',m'\in\mathbb Z}\e^{-\im n'\qty(\tau-\sigma')}\e^{-\im m'\qty(\tau-\sigma)}\comm{{\alpha}_{m'}^I}{{\alpha}_{n'}^J}\\
+    -2\pi\im g^{IJ}\int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\e^{-\im m\sigma}&=\int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{-\im m\sigma}\sum\limits_{m',n'\in\mathbb Z}\e^{-\im \tau\qty(n'+m')}\e^{\im \sigma' n'+\im\sigma m'}\comm{{\alpha}_{m'}^I}{{\alpha}_{n'}^J}\\
+    mg^{IJ}\e^{-\im m\sigma'}&=\sum\limits_{m',n'\in\mathbb Z}\e^{-\im \tau\qty(n'+m')}\e^{\im \sigma' n'}\delta_{m,m'}\comm{{\alpha}_{m'}^I}{{\alpha}_{n'}^J}\\
+    \int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{-\im n\sigma'}mg^{IJ}\e^{-\im m\sigma'}&=\int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{-\im n\sigma'}\sum\limits_{n'\in\mathbb Z}\e^{-\im \tau\qty(n'+m)}\e^{\im \sigma' n'}\comm{{\alpha}_{m}^I}{{\alpha}_{n'}^J}\\
+    mg^{IJ}\delta_{m+n,0}&=\sum\limits_{n'\in\mathbb Z}\delta_{n,n'}\e^{-\im \tau\qty(n'+m)}\comm{{\alpha}_{m}^I}{{\alpha}_{n'}^J}\\
+    mg^{IJ}\delta_{m+n,0}\e^{\im \tau\qty(n+m)}&=\comm{{\alpha}_{m}^I}{{\alpha}_{n}^J}\\
+    \comm{{\alpha}_{m}^I}{{\alpha}_{n}^J}&=mg^{IJ}\delta_{m+n,0}\numberthis\label{closedalphacommnobarnobar}
+\end{align*}
+
+This is not the end, we still have two more commutation relation to get,
+
+\begin{align*}
+    2\pi\alpha'\im g^{IJ}\delta\qty(\sigma-\sigma')&=\comm{X^I\qty(\tau,\sigma)}{{\dot X}^J\qty(\tau,\sigma')}\\
+    \int\limits_0^{2\pi}\dd{\sigma}2\pi\alpha'\im g^{IJ}\delta\qty(\sigma-\sigma')&=\int\limits_0^{2\pi}\dd{\sigma}\comm{X^I\qty(\tau,\sigma)}{{\dot X}^J\qty(\tau,\sigma')},\ \ \ \int\limits_0^{2\pi}\dd{\sigma}\e^{-\im n\sigma}=0,\ n\in\mathbb Z^\ast\\
+    2\pi\alpha'\im g^{IJ}&=2\pi\comm{x_0^I+\sqrt{2\alpha'}\alpha_0^I\tau}{{\dot X}^J\qty(\tau,\sigma')}\\
+    \alpha'\im g^{IJ}&=\sqrt{\frac{\alpha'}{2}}\sum\limits_{n'\in\mathbb Z}\e^{-\im n'\tau}\comm{x_0^I+\sqrt{2\alpha'}\tau\alpha_0^I}{{\bar\alpha}_{n'}^J\e^{-\im n'\sigma}+{\alpha}_{n'}^J\e^{\im n'\sigma}}\\
+    \sqrt{2\alpha'}\im g^{IJ}&=\sum\limits_{n'\in\mathbb Z}\e^{-\im n'\tau}\comm{x_0^I}{{\bar\alpha}_{n'}^J\e^{-\im n'\sigma}+{\alpha}_{n'}^J\e^{\im n'\sigma}}\\
+    \int\limits_0^{2\pi}\frac{\dd{\sigma'}}{2\pi}\e^{\im n\sigma'}\sqrt{2\alpha'}\im g^{IJ}&=\int\limits_0^{2\pi}\frac{\dd{\sigma'}}{2\pi}\e^{\im n\sigma'}\sum\limits_{n'\in\mathbb Z}\e^{-\im n'\tau}\comm{x_0^I}{{\bar\alpha}_{n'}^J\e^{-\im n'\sigma}+{\alpha}_{n'}^J\e^{\im n'\sigma}}\\
+    \sqrt{2\alpha'}\im g^{IJ}\delta_{n,0}&=\e^{-\im n\tau}\comm{x_0^I}{{\bar\alpha}_{n}^J}+\e^{\im n\tau}\comm{x_0^J}{{\alpha}_{-n}^J}    
+\end{align*}
+
+Notice that the right-handed side cannot have $\tau$ dependence, as the left side doesn't have any, and, as the exponential are both linearly independent, both commutators have to vanish,
+well, this is the case if $n\neq0$, but, if $n=0$ there is no $\tau$ dependence anywhere, and as ${\bar\alpha}_0^\mu=\alpha_0^\mu$, we simply get the following result,
+
+\begin{align*}
+    \comm{x_0^I}{{\bar\alpha}_{n}^J}=\comm{x_0^I}{{\alpha}_{n}^J}&=\sqrt{\frac{\alpha'}{2}}\im g^{IJ}\delta_{n,0}\numberthis\label{closedalphacommx}
+\end{align*}
+
+The last thing we need to discuss before going to the Lorentz generators is about the Virasoro operators, these were defined as,
+
+\begin{align*}
+    L^\perp_n&=\frac12\sum\limits_{p\in\mathbb Z}\alpha_{n-p}^I\alpha_{p},\ \ \ {\bar L}^\perp_n&=\frac12\sum\limits_{p\in\mathbb Z}{\bar \alpha}_{n-p}^I{\bar \alpha}_{p}\numberthis\label{closednonnormalvirasoro}
+\end{align*}
+
+Again, we have the same normal ordering problem discussed in Appendix \ref{app-openqnt}, what we should do is to define the Virasoro modes as normal ordered and add a normal 
+ordering constant to the ambiguous operators, in this case these are just
+
+\begin{align*}
+    &L^\perp_0\rightarrow L_0^\perp+a\\
+    &{\bar L}^\perp_0\rightarrow {\bar L}_0^\perp+\bar a
+\end{align*}
+
+For now these are not know, but, it's true that $a=\bar a=-1$ and $D=26$ for the Global Poincare symmetry to hold, we'll not prove this. From here on, as we shown that the two $\bar\alpha$ and 
+$\alpha$ decouple, it's as we had two copies of an open string, Hence, all the remaining commutation relations can be read directly from the open string, with mixed terms of barred and non-barred 
+commuting among themselves.

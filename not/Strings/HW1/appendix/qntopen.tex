@@ -1,0 +1,246 @@
+\section{Light-Cone Gauge Quantization of the Open String}
+\label{app-openqnt}
+
+To get a grasp on how the quantization should proceed we have to look at the classical Polyakov Action \ref{polyakovaction} in the Light-Cone gauge, using \ref{solopen1},\ref{solopen2} and \ref{solopen3},
+
+\begin{align*}
+    S_{\textnormal{P}}&=-\frac{1}{4\pi\alpha'}\int\dd[2]{\sigma}\sqrt{h}h^{ab}g_{\mu\nu}\partial_a X^\mu \partial_b X^\nu\\
+    &=-\frac{1}{4\pi\alpha'}\int\dd{\tau}\int\limits_0^\pi\dd{\sigma}\qty(-g_{\mu\nu}{\dot X}^\mu {\dot X}^\nu+g_{\mu\nu}{X'}^\mu { X'}^\nu)\\
+    &=-\frac{1}{4\pi\alpha'}\int\dd{\tau}\int\limits_0^\pi\dd{\sigma}\qty(2{\dot X}^- {\dot X}^+-{\dot X}^I{\dot X}^I-2{X'}^- { X'}^++{X'}^I{X'}^I)\\
+    &=-\frac{1}{4\pi\alpha'}\int\dd{\tau}\int\limits_0^\pi\dd{\sigma}\qty(4{\dot X}^-\alpha'p^+-{\dot X}^I{\dot X}^I+{X'}^I{X'}^I)\\
+    &=-\frac{1}{\pi}\int\dd{\tau}\int\limits_0^\pi\dd{\sigma}{\dot X}^-p^+-\frac{1}{4\pi\alpha'}\int\dd{\tau}\int\limits_0^\pi\dd{\sigma}\qty(-{\dot X}^I{\dot X}^I+{X'}^I{X'}^I)\\
+    &=-\int\dd{\tau}{\dot x_0}^-p^+-\frac{1}{4\pi\alpha'}\int\dd{\tau}\int\limits_0^\pi\dd{\sigma}\qty(-{\dot X}^I{\dot X}^I+{X'}^I{X'}^I),
+\end{align*}
+
+From this we can read the canonical conjugated momenta,
+
+\begin{align*}
+    p_-=-p^+&=\fdv{S_{\textnormal{P}}}{{\dot x}_0^-}=-p^+\\
+    \mathcal P^{\tau I}&=\fdv{S_{\textnormal{P}}}{{\dot X}^I}=\frac{1}{2\pi\alpha'}{\dot X}^I
+\end{align*}
+
+Hence, the Poisson Brackets in this theory will be,
+
+\begin{align*}
+    \acomm{X^I\qty(\tau,\sigma)}{\mathcal P^{\tau J}\qty(\tau,\sigma')}&=g^{IJ}\delta\qty(\sigma-\sigma')\\
+    \acomm{x_0^-}{p_-}&=g^{IJ}\Rightarrow\acomm{x_0^-}{p^+}=-g^{IJ}
+\end{align*}
+
+From which we quantize following $\comm{.}{.}=\im\acomm{.}{.}$,
+
+\begin{align*}
+    \comm{X^I\qty(\tau,\sigma)}{\mathcal P^{\tau J}\qty(\tau,\sigma')}&=\im g^{IJ}\delta\qty(\sigma-\sigma'),\ \ \ \comm{x_0^-}{p^+}=-\im\numberthis\label{qntconditions}
+\end{align*}
+
+Any other commutator between these $4$ operators is zero. Of course now, $X^-$ has to be considered as a function 
+of the $X^I$ and $\mathcal P^{\tau I}$, so, it has non trivial commutators. The first thing we need to do here is go from these 
+canonical commutation relations, to the commutation relations of the modes $\alpha_n^I$. The best way of doing this is working with the 
+expression \ref{pmdot}, and computing the following commutator,
+
+\begin{align*}
+    \comm{{\dot X}^I\pm{X'}^I}{{\dot X}^I\pm{X'}^I}
+\end{align*}
+
+For this is useful to note,
+
+\begin{align*}
+    \comm{X^I\qty(\tau,\sigma)}{X^J\qty(\tau,\sigma')}=0&\Rightarrow\comm{{X'}^I\qty(\tau,\sigma)}{{X'}^J\qty(\tau,\sigma')}=0\\
+    \comm{X^I\qty(\tau,\sigma)}{\mathcal P^{\tau J}\qty(\tau,\sigma')}=\im g^{IJ}\delta\qty(\sigma-\sigma')&\Rightarrow\comm{{X'}^I\qty(\tau,\sigma)}{{\dot X}^J\qty(\tau,\sigma')}=2\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
+    \comm{\mathcal P^{\tau I}\qty(\tau,\sigma)}{\mathcal P^{\tau J}\qty(\tau,\sigma')}=0&\Rightarrow\comm{{\dot X}^I\qty(\tau,\sigma)}{{\dot X}^J\qty(\tau,\sigma')}=0
+\end{align*}
+
+Hence, the non-vanishing contributions are,
+
+\begin{align*}
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma')}&=\pm\comm{{\dot X}^I\qty(\tau,\sigma)}{{X'}^I\qty(\tau,\sigma')}\pm\comm{{X'}^I\qty(\tau,\sigma)}{{\dot X}^I\qty(\tau,\sigma')}\\
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma')}&=\mp2\pi\alpha'\im g^{IJ}\dv{}{\sigma'}\delta\qty(\sigma'-\sigma)\pm2\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma')}&=\pm4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\numberthis\label{commpm}
+\end{align*}
+
+And with opposite signs,
+
+\begin{align*}
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\mp{X'}^I)\qty(\tau,\sigma')}&=\mp\comm{{\dot X}^I\qty(\tau,\sigma)}{{X'}^I\qty(\tau,\sigma')}\pm\comm{{X'}^I\qty(\tau,\sigma)}{{\dot X}^I\qty(\tau,\sigma')}\\
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\mp{X'}^I)\qty(\tau,\sigma')}&=\pm2\pi\alpha'\im g^{IJ}\dv{}{\sigma'}\delta\qty(\sigma'-\sigma)\pm2\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\mp{X'}^I)\qty(\tau,\sigma')}&=0\numberthis\label{commmp}
+\end{align*}
+
+But these expressions, and of course $X$ also, are only defined for $\sigma\in\qty[0,\pi]$, as we want to use \ref{pmdot} to 
+isolate the fourier modes, we'll need to integrate over $2\pi$, the only option here is to find an extension of this expression to the whole interval 
+$\qty[0,2\pi]$. As everything is periodic in $\sigma$ with $2\pi$ period, it's sufficient to find an extension to $\sigma\in\qty[-\pi,\pi]$. 
+See that,
+
+\begin{align*}
+    \qty({\dot X}^I+{X'}^I)\qty(\tau,\sigma)&=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^I\exp\qty(-\im n\qty(\tau+ \sigma)),\ \ \ \sigma\in\qty[0,\pi]\\
+    \qty({\dot X}^I-{X'}^I)\qty(\tau,\sigma)&=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^I\exp\qty(-\im n\qty(\tau- \sigma)),\ \ \ \sigma\in\qty[0,\pi]
+\end{align*}
+
+Performing a change of variables $\sigma\rightarrow-\sigma$ in the second expression,
+
+\begin{align*}
+    \qty({\dot X}^I+{X'}^I)\qty(\tau,\sigma)&=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^I\exp\qty(-\im n\qty(\tau+ \sigma)),\ \ \ \sigma\in\qty[0,\pi]\\
+    \qty({\dot X}^I-{X'}^I)\qty(\tau,-\sigma)&=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^I\exp\qty(-\im n\qty(\tau+\sigma)),\ \ \ \sigma\in\qty[-\pi,0]
+\end{align*}
+
+That's interesting, because we found a representation of the modes in the whole domain $\qty[-\pi,\pi]$,
+
+\begin{align*}
+    A^I\qty(\tau,\sigma)=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^I\exp\qty(-\im n\qty(\tau+ \sigma))=\begin{cases}
+        \qty({\dot X}^I+{X'}^I)\qty(\tau,\sigma),& \sigma\in\qty[0,\pi]\\
+        \qty({\dot X}^I-{X'}^I)\qty(\tau,-\sigma),& \sigma\in\qty[-\pi,0]
+    \end{cases}
+\end{align*}
+
+And of course, as everything where, we still have $A^I\qty(\tau,\sigma+2\pi)=A^I\qty(\tau,\sigma)$. Also, by \ref{commpm} we do have, using the $+$ sign,
+
+\begin{align*}
+    \comm{A^I\qty(\tau,\sigma)}{A^J\qty(\tau,\sigma')}=4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma'),\ \ \ \sigma,\sigma'\in\qty[0,\pi]
+\end{align*}
+
+By \ref{commmp}, we get that when $\sigma\in\qty[0,\pi]$ and $\sigma'\in\qty[-\pi,0]$ this commutator is zero, which is consistent as the Dirac delta is 
+zero in this domain. At last we use \ref{commpm} with both $-$ sign, and $-\sigma,-\sigma'\in\qty[-\pi,0]$, which get us,
+
+\begin{align*}
+    \comm{A^I\qty(\tau,\sigma)}{A^J\qty(\tau,\sigma')}=4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma'),\ \ \ \sigma,\sigma'\in\qty[-\pi,0]
+\end{align*}
+
+Putting all together, what we have is,
+
+\begin{align*}
+    \comm{A^I\qty(\tau,\sigma)}{A^J\qty(\tau,\sigma')}=4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma'),\ \ \ \sigma,\sigma'\in\qty[-\pi,\pi]
+\end{align*}
+
+And, also as everything is periodic in $2\pi$, this fully determines the commutation relation over $\sigma,\sigma'\in\qty[0,2\pi]$. Inserting now the definition of 
+$A^I\qty(\tau,\sigma)$,
+
+\begin{align*}
+    4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')&=2\alpha'\sum\limits_{n',m'\in\mathbb Z}\e^{-\im n'\qty(\tau+\sigma')}\e^{-\im m'\qty(\tau+\sigma)}\comm{\alpha_{m'}^I}{\alpha_{n'}^J}\\
+    2\pi\im g^{IJ}\int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\e^{\im m\sigma}&=\int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{\im m\sigma}\sum\limits_{m',n'\in\mathbb Z}\e^{-\im \tau\qty(n'+m')}\e^{-\im \sigma' n'-\im\sigma m'}\comm{\alpha_{m'}^I}{\alpha_{n'}^J}\\
+    mg^{IJ}\e^{\im m\sigma'}&=\sum\limits_{m',n'\in\mathbb Z}\e^{-\im \tau\qty(n'+m')}\e^{-\im \sigma' n'}\delta_{m,m'}\comm{\alpha_{m'}^I}{\alpha_{n'}^J}\\
+    \int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{\im n\sigma'}mg^{IJ}\e^{\im m\sigma'}&=\int_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{\im n\sigma'}\sum\limits_{n'\in\mathbb Z}\e^{-\im \tau\qty(n'+m)}\e^{-\im \sigma' n'}\comm{\alpha_{m}^I}{\alpha_{n'}^J}\\
+    mg^{IJ}\delta_{m+n,0}&=\sum\limits_{n'\in\mathbb Z}\delta_{n,n'}\e^{-\im \tau\qty(n'+m)}\comm{\alpha_{m}^I}{\alpha_{n'}^J}\\
+    mg^{IJ}\delta_{m+n,0}\e^{\im \tau\qty(n+m)}&=\comm{\alpha_{m}^I}{\alpha_{n}^J}\\
+    \comm{\alpha_{m}^I}{\alpha_{n}^J}&=mg^{IJ}\delta_{m+n,0}\numberthis\label{alphacomm}
+\end{align*}
+
+This is not the end, we still have one more commutation relation to get,
+
+\begin{align*}
+    2\pi\alpha'\im g^{IJ}\delta\qty(\sigma-\sigma')&=\comm{X^I\qty(\tau,\sigma)}{{\dot X}^J\qty(\tau,\sigma')}\\
+    \int\limits_0^\pi\dd{\sigma}2\pi\alpha'\im g^{IJ}\delta\qty(\sigma-\sigma')&=\int\limits_0^\pi\dd{\sigma}\comm{X^I\qty(\tau,\sigma)}{{\dot X}^J\qty(\tau,\sigma')},\ \ \ \int\limits_0^\pi\dd{\sigma}\cos\qty(n\sigma)=0,\ n\in\mathbb Z^\ast\\
+    2\pi\alpha'\im g^{IJ}&=\pi\comm{x_0^I+\sqrt{2\alpha'}\alpha_0^I\tau}{{\dot X}^J\qty(\tau,\sigma')}\\
+    2\alpha'\im g^{IJ}&=\sqrt{2\alpha'}\sum\limits_{n'\in\mathbb Z}\exp\qty(-\im n'\tau)\cos\qty(n'\sigma')\qty{\comm{x_0^I}{\alpha_{n'}^J}+\sqrt{2\alpha'}\tau\comm{\alpha_0^I}{\alpha_{n'}^J}}\\
+    \sqrt{2\alpha'}\im g^{IJ}&=\sum\limits_{n'\in\mathbb Z}\exp\qty(-\im n'\tau)\cos\qty(n'\sigma')\comm{x_0^I}{\alpha_{n'}^J}\\
+    \int\limits_0^\pi\frac{\dd{\sigma'}}{\pi}\cos\qty(n\sigma')\sqrt{2\alpha'}\im g^{IJ}&=\int\limits_0^\pi\frac{\dd{\sigma'}}{\pi}\cos\qty(n\sigma')\sum\limits_{n'\in\mathbb Z}\exp\qty(-\im n'\tau)\cos\qty(n'\sigma')\comm{x_0^I}{\alpha_{n'}^J}\\
+    \delta_{n,0}\sqrt{2\alpha'}\im g^{IJ}&=\sum\limits_{n'\in\mathbb Z}\exp\qty(-\im n'\tau)\delta_{n',n}\comm{x_0^I}{\alpha_{n'}^J}\\
+    \comm{x_0^I}{\alpha_{n}^J}&=\delta_{n,0}\sqrt{2\alpha'}\im g^{IJ}\exp\qty(-\im n\tau)=\delta_{n,0}\sqrt{2\alpha'}\im g^{IJ}\numberthis\label{alphaxcomm}
+\end{align*}
+
+The last thing we need to discuss before going to the Lorentz generators is about the Virasoro operators, these were defined as,
+
+\begin{align*}
+    L^\perp_n&=\frac12\sum\limits_{p\in\mathbb Z}\alpha_{n-p}^I\alpha_{p}\numberthis\label{nonnormalvirasoro}
+\end{align*}
+
+We should be aware of possible ambiguities in the ordering of these, as we now have the commutation relations \ref{alphacomm}, two alphas fail 
+to commute only if their mode number sum up to $0$, but, notice that $n-p+p=0\rightarrow n=0$, hence, the only not well defined Virasoro mode is 
+$L^\perp_0$. As the difference between any two ordering prescriptions is always proportional to the identity operator, we'll \textbf{define} $L^\perp_0$ 
+to be on the \textbf{normal ordered} prescription --- All $\alpha_n^I,\ n\geq 0$ need to be to the right of all $\alpha_n^I,\ n<0$ ---, and wherever there is 
+mention to this Virasoro mode we should use the normal ordered one plus an addition undetermined normal ordering constant,
+
+\begin{align*}
+    L^\perp_0\rightarrow L_0^\perp+a
+\end{align*}
+
+As an example, in \ref{virasorodef}, with $n=0$, the quantum version should read,
+
+\begin{align*}
+    2\alpha'p^-=\sqrt{2\alpha'}\alpha^-_0&=\frac{1}{p^+}\qty(L_0^\perp+a)\\
+    L_0^\perp&=\frac12\alpha_0^I\alpha_0^I+\sum\limits_{p\in\mathbb N^\ast}\alpha_{-p}^I\alpha_p^I
+\end{align*}
+
+We can write a manifestly normal ordered form for all $n$,
+
+\begin{align*}
+    L_n^\perp=\frac12\sum\limits_{p\geq 0}\alpha_{n-p}^I\alpha_p^I+\frac12\sum\limits_{p<0}\alpha_p^I\alpha_{n-p}^I\numberthis\label{normalvirasoro}
+\end{align*}
+
+Using these, every calculation we do is manifestly normal ordered, which will prevent us from making mistakes. As classically we had, $\qty(\alpha_n^I)^\ast=\alpha_{-n}^I$, in the quantization we have, $\qty(\alpha_n^I)^\dagger=\alpha_{-n}^I$. This 
+allows us to conclude that, $\qty(L^\perp_n)^\dagger=L_{-n}^\perp$. A few more properties we'll need are the commutation 
+relations of the Virasoro modes with all the other objects, we start with,
+
+\begin{align*}
+    \comm{L_m^\perp}{\alpha^J_n}&=\frac12\sum\limits_{p\geq 0}\comm{\alpha_{m-p}^I\alpha_p^I}{\alpha_n^J}+\frac12\sum\limits_{p< 0}\comm{\alpha_{p}^I\alpha_{m-p}^I}{\alpha_n^J}\\
+    &=\frac12\sum\limits_{p\geq0}\qty{\alpha_{m-p}^I\comm{\alpha_p^I}{\alpha_n^J}+\comm{\alpha_{m-p}^I}{\alpha_n^J}\alpha_p^I}+\frac12\sum\limits_{p<0}\qty{\alpha_{p}^I\comm{\alpha_{m-p}^I}{\alpha_n^J}+\comm{\alpha_{p}^I}{\alpha_n^J}\alpha_{m-p}^I}\\
+    &=\frac12\sum\limits_{p\in\mathbb Z}\qty{\alpha_{m-p}^I g^{IJ}p\delta_{p+n,0}+\qty(m-p)\delta_{m-p+n,0}g^{IJ}\alpha_p^I}\\
+    &=\frac12\qty{-\alpha_{m+n}^Jn+\qty(m-m-n)\alpha_{m+n}^J}\\
+    \comm{L_m^\perp}{\alpha^J_n}&=-n\alpha_{n+m}^J\numberthis\label{virasoroalpha}
+\end{align*}
+
+Now,
+
+\begin{align*}
+    \comm{L_m^\perp}{x_0^J}&=\frac12\sum\limits_{p\geq0}\comm{\alpha_{m-p}^I\alpha_p^I}{x_0^J}+\frac12\sum\limits_{p<0}\comm{\alpha_{p}^I\alpha_{m-p}^I}{x_0^J}\\
+    &=\frac12\sum\limits_{p\geq0}\qty{\alpha_{m-p}^I\comm{\alpha_p^I}{x_0^J}+\comm{\alpha_{m-p}^I}{x_0^J}\alpha_p^I}+\frac12\sum\limits_{p<0}\qty{\alpha_{p}^I\comm{\alpha_{m-p}^I}{x_0^J}+\comm{\alpha_{p}^I}{x_0^J}\alpha_{m-p}^I}\\
+    &=\frac12\sum\limits_{p\in\mathbb Z}\qty{-\im\sqrt{2\alpha'}g^{IJ}\delta_{p,0}\alpha_{m-p}^I-\im\sqrt{2\alpha'}g^{IJ}\delta_{m-p,0}\alpha_p^I}\\
+    &=-\im\sqrt{2\alpha'}\frac12\qty{\alpha_{m}^J+\alpha_m^J}\\
+    \comm{L_m^\perp}{x_0^J}&=-\im\sqrt{2\alpha'}\alpha_m^J\numberthis\label{virasorox}
+\end{align*}
+
+And lastly, but not less important, we have to know the commutation relation between the Virasoro modes themselves, this is more subtle, 
+because we defined them being normal ordered, thus, every step of the calculation we have to make sure all terms are normal ordered,
+
+\begin{align*}
+    \comm{L_m^\perp}{L_n^\perp}&=\frac12\sum\limits_{p\geq 0}\comm{\alpha_{m-p}^I\alpha_{p}^I}{L^\perp_n}+\frac12\sum\limits_{p< 0}\comm{\alpha_{p}^I\alpha_{m-p}^I}{L^\perp_n}\\
+    &=\frac12\sum\limits_{p\geq 0}\qty{\alpha_{m-p}^I\comm{\alpha_{p}^I}{L^\perp_n}+\comm{\alpha_{m-p}^I}{L^\perp_n}\alpha_{p}^I}\\
+    &\quad\quad\quad+\frac12\sum\limits_{p< 0}\qty{\alpha_{p}^I\comm{\alpha_{m-p}^I}{L^\perp_n}+\comm{\alpha_{p}^I}{L^\perp_n}\alpha_{m-p}^I}\\
+    &=\frac12\sum\limits_{p\geq 0}\qty{p\alpha_{m-p}^I\alpha_{p+n}^I+\qty(m-p)\alpha_{n+m-p}^I\alpha_{p}^I}\\
+    &\quad\quad\quad+\frac12\sum\limits_{p< 0}\qty{\qty(m-p)\alpha_{p}^I\alpha_{m+n-p}^I+p\alpha_{p+n}^I\alpha_{m-p}^I}\\
+    &=\frac12\sum\limits_{p\geq 0}\qty(m-p)\alpha_{n+m-p}^I\alpha_{p}^I+\frac12\sum\limits_{p< 0}\qty(m-p)\alpha_{p}^I\alpha_{m+n-p}^I\\
+    &\quad\quad\quad+\frac12\sum\limits_{p\geq 0}p\alpha_{m-p}^I\alpha_{p+n}^I+\frac12\sum\limits_{p< 0}p\alpha_{p+n}^I\alpha_{m-p}^I\\
+    &=\frac12\sum\limits_{p\geq 0}\qty(m-p)\alpha_{n+m-p}^I\alpha_{p}^I+\frac12\sum\limits_{p< 0}\qty(m-p)\alpha_{p}^I\alpha_{m+n-p}^I\\
+    &\quad\quad\quad+\frac12\sum\limits_{p\geq n}\qty(p-n)\alpha_{m+n-p}^I\alpha_{p}^I+\frac12\sum\limits_{p< n}\qty(p-n)\alpha_{p}^I\alpha_{m+n-p}^I\\
+    &=\frac12\sum\limits_{p\geq 0}\qty(m-p)\alpha_{n+m-p}^I\alpha_{p}^I+\frac12\sum\limits_{p< 0}\qty(m-p)\alpha_{p}^I\alpha_{m+n-p}^I\\
+    &\quad\quad\quad+\frac12\sum\limits_{p\geq 0}\qty(p-n)\alpha_{m+n-p}^I\alpha_{p}^I+\frac12\sum\limits_{p< 0}\qty(p-n)\alpha_{p}^I\alpha_{m+n-p}^I\\
+    &\quad\quad\quad+\frac12\qty(\frac12-\frac{n}{2\abs{n}})\qty[\sum\limits_{p= n}^{-1}\qty(p-n)\alpha_{m+n-p}^I\alpha_{p}^I-\sum\limits_{p= n}^{-1}\qty(p-n)\alpha_{p}^I\alpha_{m+n-p}^I]\\
+    &\quad\quad\quad+\frac12\qty(\frac12+\frac{n}{2\abs{n}})\qty[-\sum\limits_{p= 0}^{n-1}\qty(p-n)\alpha_{m+n-p}^I\alpha_{p}^I+\sum\limits_{p= 0}^{n-1}\qty(p-n)\alpha_{p}^I\alpha_{m+n-p}^I]\\
+    &=\frac12\qty(m-n)\sum\limits_{p\geq 0}\alpha_{n+m-p}^I\alpha_{p}^I+\frac12\qty(m-n)\sum\limits_{p< 0}\alpha_{p}^I\alpha_{m+n-p}^I\\
+    &\quad\quad\quad+\frac12\qty(\frac12-\frac{n}{2\abs{n}})\qty[\sum\limits_{p= n}^{-1}\qty(p-n)\qty{\comm{\alpha_{m+n-p}^I}{\alpha_{p}^I}+\alpha_{p}^I\alpha_{m+n-p}^I}-\sum\limits_{p= n}^{-1}\qty(p-n)\alpha_{p}^I\alpha_{m+n-p}^I]\\
+    &\quad\quad\quad+\frac12\qty(\frac12+\frac{n}{2\abs{n}})\qty[-\sum\limits_{p= 0}^{n-1}\qty(p-n)\alpha_{m+n-p}^I\alpha_{p}^I+\sum\limits_{p= 0}^{n-1}\qty(p-n)\qty{\comm{\alpha_{p}^I}{\alpha_{m+n-p}^I}+\alpha_{m+n-p}^I\alpha_{p}^I}]\\
+    &=\qty(m-n)L_{m+n}^\perp\\
+    &\quad\quad\quad-\frac{g^{II}}{2}\qty(\frac12-\frac{n}{2\abs{n}})\sum\limits_{p= n}^{-1}\qty(p-n)p\delta_{m+n,0}+\frac{g^{II}}{2}\qty(\frac12+\frac{n}{2\abs{n}})\sum\limits_{p= 0}^{n-1}\qty(p-n)p\delta_{m+n,0}\\
+    &=\qty(m-n)L_{m+n}^\perp\\
+    &\quad\quad\quad+\frac{D-2}{2}\qty(\frac12-\frac{n}{2\abs{n}})\sum\limits_{p= 0}^{\abs{n}-1}\qty(-p-n)p\delta_{m+n,0}+\frac{D-2}{2}\qty(\frac12+\frac{n}{2\abs{n}})\sum\limits_{p= 0}^{\abs{n}-1}\qty(p-n)p\delta_{m+n,0}\\
+    &=\qty(m-n)L_{m+n}^\perp\\
+    &\quad\quad\quad+\frac{D-2}{2}\delta_{m+n,0}\sum\limits_{p= 0}^{\abs{n}-1}p\qty[\qty(\frac12-\frac{n}{2\abs{n}})\qty(-p-n)+\qty(\frac12+\frac{n}{2\abs{n}})\qty(p-n)]\\
+    &=\qty(m-n)L_{m+n}^\perp\\
+    &\quad\quad\quad+\frac{D-2}{2}\delta_{m+n,0}\sum\limits_{p= 0}^{\abs{n}-1}p\qty[-n+\frac{n}{2\abs{n}}\qty(p+n)+\frac{n}{2\abs{n}}\qty(p-n)]\\
+    &=\qty(m-n)L_{m+n}^\perp+\frac{D-2}{2}\delta_{m+n,0}\frac{n}{\abs{n}}\sum\limits_{p= 0}^{\abs{n}-1}p\qty[p-\abs{n}]
+\end{align*}
+
+In the middle of the calculus we introduced factors of $\frac12\qty(1\pm \frac{n}{\abs{n}})$ just to account for the two possible cases, $n>0$ and $n<0$ --- Of course, the case $n=0$ is trivial 
+due to not being necessary to introduce any other factors to ensure the normal ordering of the expression---. 
+Now, we're going to prove by induction that the value of the sum is,
+
+\begin{align*}
+    \sum\limits_{p=0}^{\abs{n}-1}p\qty(p-\abs{n})=\frac16\qty(\abs{n}-\abs{n}^3),\ \ \ \abs{n}\geq 1
+\end{align*}
+
+It's trivial to check it's validity from $\abs{n}=1$, now, suppose it's valid for $\abs{n}=k$,
+
+\begin{align*}
+    \sum\limits_{p=0}^{k}p\qty(p-k-1)&=\sum\limits_{p=0}^{k}p\qty(p-k)-\sum\limits_{p=0}^kp\\
+    \sum\limits_{p=0}^{k}p\qty(p-k-1)&=\sum\limits_{p=0}^{k-1}p\qty(p-k)-\sum\limits_{p=0}^kp\\
+    \sum\limits_{p=0}^{k}p\qty(p-k-1)&=\frac16\qty(k-k^3)-\frac12k\qty(k+1)\\
+    \sum\limits_{p=0}^{k}p\qty(p-k-1)&=\frac16\qty(-3k^2-2k-k^3)\\
+    \sum\limits_{p=0}^{k}p\qty(p-k-1)&=\frac16\qty(k+1-1-3k-3k^2-k^3)=\frac16\qty(k+1-\qty(k+1)^3)
+\end{align*}
+
+Which finishes our proof. Hence,
+
+\begin{align*}
+    \comm{L_m^\perp}{L_n^\perp}&=\qty(m-n)L_{m+n}^\perp+\frac{D-2}{2}\delta_{m+n,0}\frac{n}{\abs{n}}\sum\limits_{p= 0}^{\abs{n}-1}p\qty[p-\abs{n}]\\
+    \comm{L_m^\perp}{L_n^\perp}&=\qty(m-n)L_{m+n}^\perp+\frac{D-2}{12}\delta_{m+n,0}\frac{n}{\abs{n}}\qty(\abs{n}-\abs{n}^3)\\
+    \comm{L_m^\perp}{L_n^\perp}&=\qty(m-n)L_{m+n}^\perp+\frac{D-2}{12}\delta_{m+n,0}\qty(n-n^3)\\
+    \comm{L_m^\perp}{L_n^\perp}&=\qty(m-n)L_{m+n}^\perp+\frac{D-2}{12}\qty(m^3-m)\delta_{m+n,0}\numberthis\label{virasorovirasoro}
+\end{align*}

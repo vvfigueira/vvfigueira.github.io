@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.4.2)  17 APR 2025 17:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.4.2)  19 APR 2025 16:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -809,64 +809,27 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \c@exem=\count338
 \c@prov=\count339
 
-(./main.aux
-
-LaTeX Warning: Label `constrains' multiply defined.
-
-
-LaTeX Warning: Label `constrains@cref' multiply defined.
-
-
-LaTeX Warning: Label `pmdot' multiply defined.
-
-
-LaTeX Warning: Label `pmdot@cref' multiply defined.
-
-
-LaTeX Warning: Label `virasorodef' multiply defined.
-
-
-LaTeX Warning: Label `virasorodef@cref' multiply defined.
-
-
-LaTeX Warning: Label `httcond' multiply defined.
-
-
-LaTeX Warning: Label `httcond@cref' multiply defined.
-
-
-LaTeX Warning: Label `virasorodef' multiply defined.
-
-
-LaTeX Warning: Label `virasorodef@cref' multiply defined.
-
-
-LaTeX Warning: Label `virasorodef' multiply defined.
-
-
-LaTeX Warning: Label `virasorodef@cref' multiply defined.
-
-)
+(./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -936,7 +899,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 129.
+Package hyperref Info: Link coloring OFF on input line 138.
  (./main.out)
 (./main.out)
 \@outlinefile=\write5
@@ -946,21 +909,21 @@ Package hyperref Info: Link coloring OFF on input line 129.
 
 Package tikz-feynman Warning: LuaTeX is required if you wish to have vertices a
 utomatically placed. You can disable this warning by setting /tikzfeynman/warn 
-luatex=false on input line 129.
+luatex=false on input line 138.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 132
+LaTeX Font Info:    Trying to load font information for U+msa on input line 141
 .
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 132
+LaTeX Font Info:    Trying to load font information for U+msb on input line 141
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 13
-2.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 14
+1.
 
 (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1033,106 +996,83 @@ Overfull \hbox (0.77202pt too wide) detected at line 137
 
 
 
-[13])
+[13]
 
-[14] (./sections/prob4.tex
+[14])
 
-[15]
+[15] (./sections/prob4.tex
+Overfull \hbox (12.16364pt too wide) detected at line 37
+[]
+ []
+
+
 
 [16]
 
 [17]
+Overfull \hbox (7.36586pt too wide) detected at line 115
+[]
+ []
+
+
 
 [18]
 
 [19]
 
 [20]
+Overfull \hbox (12.84157pt too wide) detected at line 251
+[]
+ []
+
+
 
 [21]
 
 [22]
-Overfull \hbox (30.22362pt too wide) detected at line 423
+Overfull \hbox (5.21895pt too wide) detected at line 298
+[]
+ []
+
+
+Overfull \hbox (12.06367pt too wide) detected at line 313
 []
  []
 
 
 
 [23]
+Overfull \hbox (3.4441pt too wide) detected at line 326
+[]
+ []
+
+
 
 [24]
-Overfull \hbox (12.16364pt too wide) detected at line 467
+Overfull \hbox (14.20306pt too wide) detected at line 363
 []
  []
 
 
 
 [25]
-
-[26]
-Overfull \hbox (7.36586pt too wide) detected at line 546
+Overfull \hbox (25.7905pt too wide) detected at line 427
 []
  []
 
 
+
+[26]
 
 [27]
 
 [28]
 
 [29]
-Overfull \hbox (12.84157pt too wide) detected at line 680
-[]
- []
 
+[30])
 
-
-[30]
-
-[31]
-Overfull \hbox (5.21895pt too wide) detected at line 727
-[]
- []
-
-
-Overfull \hbox (12.06367pt too wide) detected at line 742
-[]
- []
-
-
-
-[32]
-Overfull \hbox (3.4441pt too wide) detected at line 755
-[]
- []
-
-
-
-[33]
-Overfull \hbox (14.20306pt too wide) detected at line 792
-[]
- []
-
-
-
-[34]
-Overfull \hbox (25.7905pt too wide) detected at line 856
-[]
- []
-
-
-
-[35]
-
-[36]
-
-[37]
-
-[38]
-
-[39])
-
-[40] (./sections/prob5.tex
+[31] (./sections/prob5.tex
 Overfull \hbox (3.504pt too wide) detected at line 11
 []
  []
@@ -1144,11 +1084,11 @@ Overfull \hbox (11.60466pt too wide) detected at line 46
 
 
 
-[41]
+[32]
 
-[42]
+[33]
 
-[43]
+[34]
 Overfull \hbox (20.85925pt too wide) detected at line 149
 []
  []
@@ -1160,54 +1100,88 @@ Overfull \hbox (35.52847pt too wide) detected at line 159
 
 
 
-[44])
+[35]
 
-[45] (./sections/prob6.tex)
+[36])
 
-[46] (./appendix/lcgaugeopen.tex
+[37] (./sections/prob6.tex)
+
+[38] (./appendix/lcgaugeopen.tex
+
+[39]
+
+[40]
+
+[41]
+
+[42]
+
+[43])
+
+[44] (./appendix/qntopen.tex
+
+[45]
+
+[46]
 
 [47]
 
 [48]
-
-[49]
-
-[50]
-
-[51])
-
-[52] (./appendix/lcgaugeclosed.tex
-
-[53]
-
-[54]
-Overfull \hbox (17.3376pt too wide) detected at line 142
+Overfull \hbox (30.22362pt too wide) detected at line 219
 []
  []
 
 
 
-[55]
+[49]
 
-[56])
+[50])
 
-[57] (./main.aux)
+[51] (./appendix/lcgaugeclosed.tex
+
+LaTeX Warning: Reference `sres' on page 52 undefined on input line 28.
+
+
+LaTeX Warning: Reference `sres' on page 52 undefined on input line 30.
+
+
+
+[52]
+
+[53]
+Overfull \hbox (17.3376pt too wide) detected at line 144
+[]
+ []
+
+
+
+[54]
+
+[55])
+
+[56] (./appendix/qntclosed.tex
+
+[57]
+
+[58])
+
+[59] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6321CC3F82007A0C63E8C482ECBC07DC;2083.
+(rerunfilecheck)             Checksum: 2C9DFEBCEDF9AED48D5EC7ECB3D763B8;3350.
  ) 
 Here is how much of TeX's memory you used:
- 30398 strings out of 475151
- 595512 string characters out of 5766387
- 1048831 words of memory out of 5000000
- 52733 multiletter control sequences out of 15000+600000
+ 30519 strings out of 475151
+ 597312 string characters out of 5766387
+ 1049893 words of memory out of 5000000
+ 52818 multiletter control sequences out of 15000+600000
  570496 words of font info for 87 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  98i,18n,105p,581b,465s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1226,10 +1200,10 @@ share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist
 ublic/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
 usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (57 pages, 372409 bytes).
+Output written on main.pdf (59 pages, 379223 bytes).
 PDF statistics:
- 628 PDF objects out of 1000 (max. 8388607)
- 528 compressed objects within 6 object streams
- 134 named destinations out of 1000 (max. 500000)
- 245 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 714 PDF objects out of 1000 (max. 8388607)
+ 602 compressed objects within 7 object streams
+ 164 named destinations out of 1000 (max. 500000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 

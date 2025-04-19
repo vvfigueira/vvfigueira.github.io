@@ -121,6 +121,15 @@
   \par\nopagebreak\vspace{0.5em}
 }
 
+\newcommand{\probitem}{%
+  \refstepcounter{subsection}%
+  \addcontentsline{toc}{subsection}{\thesubsection}%
+  \vspace{1.5em}
+  \noindent
+  {\large\bfseries\thesubsection}%
+  \par\nopagebreak\vspace{0.5em}
+}
+
 
 \renewcommand{\thesubsection}{\thesection.\Alph{subsection})}
 
@@ -162,6 +171,14 @@
 
 \newpage
 
+\input{appendix/qntopen}
+
+\newpage
+
 \input{appendix/lcgaugeclosed}
+
+\newpage
+
+\input{appendix/qntclosed}
 
 \end{document}

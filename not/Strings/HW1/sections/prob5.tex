@@ -1,5 +1,5 @@
 \problem{}
-\subsection{}
+\probitem{}
 
 We're assuming the dimension of the theory in consideration is $D=26$, so we'll assume the compactification is done in the $X^{D-1}=X^{25}$ target 
 space direction. The usual mode expansion is,
@@ -47,7 +47,7 @@ So that we can study whether of not the light-cone gauge Hamiltonian is invarian
 
 Hence, the Hamiltonian is invariant.
 
-\subsection{}
+\probitem{}
 
 The closed string vacuum is defined by $25$ numbers, namely, $q^+,q^I$, we'll reserve the name $p$ for the momentum operators, and use $q$ 
 for the eigenvalues of those. In this way the vacuum satisfy,
@@ -158,12 +158,68 @@ subdivided in $4$ categories,
     \alpha^{25}_{-1}{\bar\alpha}^{25}_{-1}\ket{q^+,q^i,q^{25}}+\qty(-1)^{g^{2525}+g^{2525}}\alpha^{25}_{-1}{\bar\alpha}^{25}_{-1}\ket{q^+,q^i,-q^{25}}&=\alpha^{25}_{-1}{\bar\alpha}^{25}_{-1}\ket{q^+,q^i,q^{25}}+\alpha^{25}_{-1}{\bar\alpha}^{25}_{-1}\ket{q^+,q^i,-q^{25}}
 \end{align*}
 
-\subsection{}
+\probitem{}
 
+We proceed here solving the light-cone gauge classical equation of motion for the \textbf{open} string with the boundary condition,
 
+\begin{align*}
+    X^{25}\qty(\tau,\sigma+2\pi)=-X^{25}\qty(\tau,\sigma)\numberthis\label{twist}
+\end{align*}
 
-\subsection{}
+And Neumann boundary condition on the other coordinates. Much of this follows in the same lines of what as already done in Appendix \ref{app-openclass}, we start from the light-cone gauge equation of motion \ref{fulleqom}, decomposing our 
+solution as,
 
+\begin{align*}
+    0&=\partial_+\partial_-X^\mu\Rightarrow X^\mu\qty(\tau,\sigma)=X_L^\mu\qty(\sigma^+)+X_R^\mu\qty(\sigma^-)
+\end{align*}
 
+Such that the boundary condition \ref{twist} implies,
 
-\subsection{}
+\begin{align*}
+    X^{25}\qty(\tau,\sigma+2\pi)&=-X^{25}\qty(\tau,\sigma)\\
+    X_L^{25}\qty(\sigma^++2\pi)+X_R^{25}\qty(\sigma^--2\pi)&=-X_L^{25}\qty(\sigma^+)-X_R^{25}\qty(\sigma^-)\\
+    X_L^{25}\qty(\sigma^++2\pi)+X_L^{25}\qty(\sigma^+)&=-X_R^{25}\qty(\sigma^-)-X_R^{25}\qty(\sigma^--2\pi)
+\end{align*}
+
+As the variables $\sigma^\pm$ are independent, this basically states that the derivatives of these modes are antiperiodic,
+
+\begin{align*}
+    {X'}_L^{25}\qty(\sigma^++2\pi)+{X'}_L^{25}\qty(\sigma^+)&=0=-{X'}_R^{25}\qty(\sigma^-)-{X'}_R^{25}\qty(\sigma^--2\pi)\\
+    {X'}_L^{25}\qty(\sigma^++2\pi)=-{X'}_L^{25}\qty(\sigma^+)&,\ \ \ {X'}_R^{25}\qty(\sigma^-+2\pi)=-{X'}_R^{25}\qty(\sigma^-)
+\end{align*}
+
+As a periodic function can be written as the Fourier sum over integers, an antiperiodic function can be written as a Fourier sum over half-integers,
+
+\begin{align*}
+    {X'}_L^{25}\qty(\sigma^+)&=\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z+\frac12}{\bar\alpha}_{n}^{25}\exp\qty(-\im n \sigma^+)\\
+    {X'}_R^{25}\qty(\sigma^-)&=\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z+\frac12}{\alpha}_{n}^{25}\exp\qty(-\im n \sigma^-)
+\end{align*}
+
+Integrating those we get,
+
+\begin{align*}
+    {X}_L^{25}\qty(\sigma^+)&=x_L+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z+\frac12}\frac1n{\bar\alpha}_{n}^{25}\exp\qty(-\im n \sigma^+)\\
+    {X}_R^{25}\qty(\sigma^-)&=x_R+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z+\frac12}\frac1n{\alpha}_{n}^{25}\exp\qty(-\im n \sigma^-)
+\end{align*}
+
+And finally we can sum the two contributions to get,
+
+\begin{align*}
+    X^{25}&=x_L+x_R+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z+\frac12}\frac{\e^{-\im n\tau}}{n}\qty({\bar\alpha}_n^{25}\e^{-\im n\sigma}+\alpha_n^{25}\e^{\im n\sigma})
+\end{align*}
+
+Which from the condition \ref{twist}, can be seen to imply, $x_L+x_R=0$, thus, the most general solution with Neumann boundary condition in all coordinates apart from the $X^{25}$ 
+with a twist boundary condition is,
+
+\begin{align*}
+    X^i&=x_0^i+\sqrt{2\alpha'} \alpha_0^i\tau+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^i}{n}\exp\qty(-\im n\tau)\cos\qty(n\sigma)\\
+    X^{25}&=\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z+\frac12}\frac{\e^{-\im n\tau}}{n}\qty({\bar\alpha}_n^{25}\e^{-\im n\sigma}+\alpha_n^{25}\e^{\im n\sigma})
+\end{align*}
+
+\probitem{}
+
+Let's compute the commutation between the $\alpha$s. It's not needed to compute $\comm{\alpha_n^i}{\alpha_m^j}$, as we already done this, and this new boundary condition won't change it, as 
+is clear from \ref{alphacomm}. We just need to compute $\comm{\alpha_n^i}{\alpha_m^{25}},\comm{\alpha_n^i}{{\bar\alpha}_m^{25}},\comm{\alpha_n^{25}}{\alpha_m^{25}},\comm{\alpha_n^{25}}{{\bar\alpha}_m^{25}},\comm{{\bar\alpha}_n^{25}}{{\bar\alpha}_m^{25}}$, 
+the procedure is the same of \ref{alphacomm}.
+
+\probitem{}
