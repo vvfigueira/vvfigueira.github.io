@@ -305,7 +305,7 @@ This state is only invariant if $\xi_{I,ij}\qty(q^+,q^K)=\xi_{I,ji}\qty(q^+,q^K)
 \end{align*}
 
 \probitem{}
-
+\label{6f}
 We assume now $\Omega\ket{q^+,q^I}=-\ket{q^+,q^I}$, and follow as usual,
 
 \begin{align*}
@@ -326,8 +326,45 @@ This state is only invariant if $\xi_{I,ij}\qty(q^+,q^K)=-\xi_{I,ji}\qty(q^+,q^K
 
 \probitem{}
 
-Let's take a closer look at the case of \ref{6e}, the massless states can be written as,
+First let us recall why the oriented DD open string in $2N$ parallel D-branes has a $U\qty(2N)$ gauge group, first, 
+we can characterize all these states in a basis of all the $\qty(2N)^2$ possible choices of a pair $ij$, that is, 
+we choose $\qty(2N)^2$ matrices $\qty(2N)^2$ dimensional, $\lambda^{a}_{ij}$, in this way we can construct the new independent states as,
 
 \begin{align*}
-    
+    \ket{a,q^+,q^I}=\sum\limits_{ij}\lambda^{a}_{ij}\ket{ij,q^+,q^I}
 \end{align*}
+
+But, these new matrices have reality constrains, namely, ${\qty(\lambda_{ji}^a)}^\ast=\lambda_{ij}^a$. This is the definition of an element of the $\mathfrak u\qty(m)$ algebra, for some $m$. To know what is this dimension we note that we have exactly $\qty(2N)^2$ matrices, which are $\qty(2N)^2$ dimensional, as the $\mathfrak u\qty(m)$ algebra dimension is $m^2$, and the fundamental representation is $m^2$ dimensional matrices, it's obvious that $\lambda^a$ are the fundamental representation of the 
+$\mathfrak u\qty(2N)$ algebra, so that we say the gauge group is $U\qty(2N)$. Now back to the \ref{6e}, in this case, apart from $\lambda^a\in \mathfrak u\qty(2N)$, we 
+also have the constrain of ${\lambda^a}^{\textnormal{T}}=\lambda^a$, which can be seen from trying to construct a generic state from the basis 
+we derived in \ref{6e},
+
+\begin{align*}
+    \ket{a,q^+,q^I}=\sum\limits_{ij}\lambda^{a}_{ij}\xi_I\alpha^I_{-1}\qty(\ket{ij,q^+,q^I}+\ket{ji,q^+,q^I})
+\end{align*}
+
+Which is the same of
+
+\begin{align*}
+    \ket{a,q^+,q^I}=\sum\limits_{ij}\lambda^{a}_{ij}\xi_I\alpha^I_{-1}\ket{ij,q^+,q^I}
+\end{align*}
+
+As long we guarantee that $\lambda^{a}_{ij}=\lambda^{a}_{ji}$, that is, ${\lambda^a}^{\textnormal{T}}=\lambda^a$, this is a $N\qty(2N+1)$ dimensional subspace of $\mathfrak u\qty(2N)$, 
+as there are just as many symmetrical states, this can be seen from the counting of symmetric traceless $\frac{2N\qty(2N-1)}{2}$, plus pure trace $2N$. The symmetry of the generators is a 
+characteristic special to the $\mathfrak {sp}\qty(m)$ algebras, which have dimension $m\qty(2m+1)$, so this is exactly our case, the gauge algebra is $\mathfrak{sp}\qty(N)$ and the gauge group is $Sp\qty(N)$. 
+
+Finally, we have \ref{6f}, the additional constrain is ${\lambda^a}^{\textnormal{T}}=-\lambda^a$, which can be seen from the basis we derived in \ref{6f}, 
+
+\begin{align*}
+    \ket{a,q^+,q^I}=\sum\limits_{ij}\lambda^{a}_{ij}\xi_I\alpha^I_{-1}\qty(\ket{ij,q^+,q^I}-\ket{ji,q^+,q^I})
+\end{align*}
+
+Which is the same of
+
+\begin{align*}
+    \ket{a,q^+,q^I}=\sum\limits_{ij}\lambda^{a}_{ij}\xi_I\alpha^I_{-1}\ket{ij,q^+,q^I}
+\end{align*}
+
+As long as we guarantee that $\lambda^a_{ij}=-\lambda^a_{ji}$, that is, ${\lambda^a}^{\textnormal{T}}=-\lambda^a$, this is a $N\qty(2N-1)$ dimensional subspace of $\mathfrak u\qty(2N)$, as 
+there are just as many anti-symmetrical states, $\frac{2N\qty(2N-1)}{2}$. Notice that this condition already implies $\Tr\qty[\lambda^a]=0$, the anti-symmetry of the generators is a property of 
+only the $\mathfrak o\qty(m)$ algebras, but, together with $\Tr\qty[\lambda ^a]=0$ this reduces to $\mathfrak{so}\qty(m)$, which has dimension $\frac{m\qty(m-1)}{2}$, thus, we conclude that the gauge algebra is $\mathfrak {so}\qty(2N)$ and the gauge group $SO\qty(2N)$.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.23)  20 APR 2025 13:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.23)  20 APR 2025 17:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1147,13 +1147,18 @@ Overfull \hbox (10.76312pt too wide) detected at line 344
 
 [48]
 
-[49])
+[49]
 
 [50]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 337
+.
+ (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+))
 
-[51] (./appendix/lcgaugeopen.tex
+[51]
 
-[52]
+[52] (./appendix/lcgaugeopen.tex
 
 [53]
 
@@ -1161,53 +1166,55 @@ Overfull \hbox (10.76312pt too wide) detected at line 344
 
 [55]
 
-[56])
+[56]
 
-[57] (./appendix/qntopen.tex
+[57])
 
-[58]
+[58] (./appendix/qntopen.tex
 
 [59]
 
 [60]
 
 [61]
+
+[62]
 Overfull \hbox (30.22362pt too wide) detected at line 219
 []
  []
 
 
 
-[62]
-
 [63]
 
-[64])
+[64]
 
-[65] (./appendix/lcgaugeclosed.tex
+[65])
 
-[66]
+[66] (./appendix/lcgaugeclosed.tex
 
 [67]
+
+[68]
 Overfull \hbox (17.3376pt too wide) detected at line 144
 []
  []
 
 
 
-[68]
+[69]
 
-[69])
+[70])
 
-[70] (./appendix/qntclosed.tex
-
-[71]
+[71] (./appendix/qntclosed.tex
 
 [72]
 
-[73])
+[73]
 
-[74] (./main.aux)
+[74])
+
+[75] (./main.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
@@ -1216,13 +1223,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2C9DFEBCEDF9AED48D5EC7ECB3D763B8;3350.
  ) 
 Here is how much of TeX's memory you used:
- 30555 strings out of 473362
- 599743 string characters out of 5725050
+ 30579 strings out of 473362
+ 600090 string characters out of 5725050
  1053100 words of memory out of 5000000
- 52936 multiletter control sequences out of 15000+600000
- 570065 words of font info for 88 fonts, out of 8000000 for 9000
+ 52953 multiletter control sequences out of 15000+600000
+ 571481 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,18n,107p,581b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,18n,107p,608b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/User/.texlive2024/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk
 ><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texl
 ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/
@@ -1238,12 +1245,13 @@ fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
-><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:
-/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (74 pages, 436313 bytes).
+><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/t
+exlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texli
+ve/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on main.pdf (75 pages, 443780 bytes).
 PDF statistics:
- 808 PDF objects out of 1000 (max. 8388607)
- 679 compressed objects within 7 object streams
- 185 named destinations out of 1000 (max. 500000)
+ 821 PDF objects out of 1000 (max. 8388607)
+ 689 compressed objects within 7 object streams
+ 186 named destinations out of 1000 (max. 500000)
  261 words of extra memory for PDF output out of 10000 (max. 10000000)
 

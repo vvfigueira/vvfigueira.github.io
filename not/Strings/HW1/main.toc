@@ -26,7 +26,7 @@
 \contentsline {subsection}{6.E)}{49}{subsection.6.5}%
 \contentsline {subsection}{6.F)}{50}{subsection.6.6}%
 \contentsline {subsection}{6.G)}{51}{subsection.6.7}%
-\contentsline {section}{\numberline {A}Light-Cone Gauge for the Open String}{52}{appendix.A}%
-\contentsline {section}{\numberline {B}Light-Cone Gauge Quantization of the Open String}{58}{appendix.B}%
-\contentsline {section}{\numberline {C}Light-Cone Gauge for the Closed String}{66}{appendix.C}%
-\contentsline {section}{\numberline {D}Light-Cone Gauge Quantization of the Closed String}{71}{appendix.D}%
+\contentsline {section}{\numberline {A}Light-Cone Gauge for the Open String}{53}{appendix.A}%
+\contentsline {section}{\numberline {B}Light-Cone Gauge Quantization of the Open String}{59}{appendix.B}%
+\contentsline {section}{\numberline {C}Light-Cone Gauge for the Closed String}{67}{appendix.C}%
+\contentsline {section}{\numberline {D}Light-Cone Gauge Quantization of the Closed String}{72}{appendix.D}%
