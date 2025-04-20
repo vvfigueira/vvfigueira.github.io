@@ -1,8 +1,333 @@
 \problem{}
 \probitem{}
+
+We define the Parity operator such that,
+
+\begin{align*}
+    \Omega X^\mu\qty(\tau,\sigma)\Omega^{-1}&=X^\mu\qty(\tau,l-\sigma)
+\end{align*}
+
+Let's take a look how this operator acts on each string mode, case by case,
+
+\begin{itemize}
+    \item Action in the Closed string
+\end{itemize}
+\begin{align*}
+    X^\mu\qty(\tau,\sigma)&=x^\mu_0+\sqrt{2\alpha'}\alpha^\mu_0\tau+\im \sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}\qty({\bar\alpha}^\mu_n\e^{-\im n\sigma}+{\alpha}^\mu_n\e^{\im n\sigma})\\
+    \Omega X^\mu\qty(\tau,\sigma)\Omega^{-1}&=\Omega x^\mu_0\Omega^{-1}+\sqrt{2\alpha'}\Omega\alpha^\mu_0\Omega^{-1}\tau+\im \sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}\qty(\Omega{\bar\alpha}^\mu_n\Omega^{-1}\e^{-\im n\sigma}+\Omega{\alpha}^\mu_n\Omega^{-1}\e^{\im n\sigma})\\
+    X^\mu\qty(\tau,2\pi-\sigma)&=\Omega x^\mu_0\Omega^{-1}+\sqrt{2\alpha'}\Omega\alpha^\mu_0\Omega^{-1}\tau+\im \sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}\qty(\Omega{\bar\alpha}^\mu_n\Omega^{-1}\e^{-\im n\sigma}+\Omega{\alpha}^\mu_n\Omega^{-1}\e^{\im n\sigma})
+\end{align*}
+
+But, we also have,
+
+\begin{align*}
+    X^\mu\qty(\tau,2\pi-\sigma)&=x^\mu_0+\sqrt{2\alpha'}\alpha^\mu_0\tau+\im \sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}\qty({\bar\alpha}^\mu_n\e^{-\im n\qty(2\pi-\sigma)}+{\alpha}^\mu_n\e^{\im n\qty(2\pi-\sigma)})\\
+    X^\mu\qty(\tau,2\pi-\sigma)&=x^\mu_0+\sqrt{2\alpha'}\alpha^\mu_0\tau+\im \sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}\qty({\bar\alpha}^\mu_n\e^{\im n\sigma}+{\alpha}^\mu_n\e^{-\im n\sigma})
+\end{align*}
+
+As the Fourier decomposition is unique, we just have to match term by term of the expansion, which gives,
+
+\begin{align*}
+    \Omega x_0^\mu \Omega^{-1}&=x_0^\mu\\
+    \Omega \alpha_n^\mu \Omega^{-1}&={\bar\alpha}_n^\mu
+\end{align*}
+
+As ${\bar \alpha_0}^\mu=\alpha_0^\mu$.
+
+\begin{itemize}
+    \item Action in the NN Open string
+\end{itemize}
+\begin{align*}
+    X^{\mu}\qty(\tau,\sigma)&=x^\mu_0+\sqrt{2\alpha'}\alpha^\mu_0\tau+\im \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}{\alpha}^\mu_n\cos\qty( n\sigma)\\
+    \Omega X ^{\mu}\qty(\tau,\sigma)\Omega^{-1}&=\Omega x^\mu_0\Omega^{-1}+\sqrt{2\alpha'}\Omega\alpha^\mu_0\Omega^{-1}\tau+\im \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}\Omega{\alpha}^\mu_n\Omega^{-1}\cos\qty( n\sigma)\\
+    X^{\mu}\qty(\tau,\pi-\sigma)&=\Omega x^\mu_0\Omega^{-1}+\sqrt{2\alpha'}\Omega\alpha^\mu_0\Omega^{-1}\tau+\im \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}\Omega{\alpha}^\mu_n\Omega^{-1}\cos\qty( n\sigma)
+\end{align*}
+
+But,
+
+\begin{align*}
+    X^{\mu}\qty(\tau,\pi-\sigma)&=x^\mu_0+\sqrt{2\alpha'}\alpha^\mu_0\tau+\im \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}{\alpha}^\mu_n\cos\qty( n\qty(\pi-\sigma))\\
+    X^{\mu}\qty(\tau,\pi-\sigma)&=x^\mu_0+\sqrt{2\alpha'}\alpha^\mu_0\tau+\im \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}\qty(-{\alpha}^\mu_n)\cos\qty( n\sigma)
+\end{align*}
+
+Matching term by term of the Fourier expansion,
+
+\begin{align*}
+    \Omega x_0^\mu\Omega^{-1}=x_0,\ \ \ \Omega\alpha_0^\mu\Omega^{-1}=\alpha_0^\mu,\ \ \ \Omega \alpha_n^\mu\Omega^{-1}=-\alpha_n,\ n\in\mathbb Z^\ast
+\end{align*}
+
+\begin{itemize}
+    \item Action in the DD Open string
+\end{itemize}
+We didn't derive the DD Open string solution, but we'll argue here what it should be from our knowledge of the NN Open string, the diference of 
+the boundary conditions are instead of imposing $\partial_\sigma X^\mu\qty(\tau,0)=\partial_\sigma X^\mu\qty(\tau,\pi)=0$, we impose $\partial_\tau X^\mu\qty(\tau,0)=\partial_\tau X^\mu\qty(\tau,\pi)$. 
+From the same arguments preceding Equation \ref{fulleqom}, we get that our solution should be $X^\mu=\frac12\qty(f\qty(\sigma^+)+g\qty(\sigma^-))$, and imposing the first
+boundary condition amounts to fixing, ${g'}^\mu\qty(\tau)=-{f'}^\mu\qty(\tau)\Rightarrow g^\mu\qty(\tau)=-f^\mu\qty(\tau)+2x_0^\mu$, so that our solution is $X^\mu=\frac12\qty(f\qty(\sigma^+)-f\qty(\sigma^-)+2x_0^\mu)$, 
+imposing the second boundary condition gives, ${f'}^\mu\qty(\tau+\pi)={f'}^\mu\qty(\tau-\pi)$, which implies that ${f'}^\mu$ is a periodic function with period $2\pi$, and now 
+we can just make the usual Fourier mode expansion,
+
+\begin{align*}
+    {f'}^\mu\qty(\sigma^+)=f_1^\mu+\sqrt{2\alpha'}\sum\limits_{n\in\mathbb N^\ast}\qty(\alpha_{-n}^\mu\e^{\im n \sigma^+}+\alpha_n^\mu\e^{-\im n \sigma})\\
+    f^\mu\qty(\sigma^+)=f_0^\mu+f_1^\mu\sigma^+-\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb N^\ast}\frac1n\qty(\alpha_{-n}^\mu\e^{\im n \sigma^+}-\alpha_n^\mu\e^{-\im n \sigma^+})\\
+    f^\mu\qty(\sigma^+)=f_0^\mu+f_1^\mu\sigma^++\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac1n\alpha_n^\mu\e^{-\im n \sigma^+}
+\end{align*}
+
+So that our solution is,
+
+\begin{align*}
+    X^\mu\qty(\tau,\sigma)&=x_0^\mu+\frac12\qty(f^\mu\qty(\sigma^+)-f^\mu\qty(\sigma^-))\\
+    X^\mu\qty(\tau,\sigma)&=x_0^\mu+f_1^\mu\sigma+\frac12\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\qty(\e^{-\im n \sigma^+}-\e^{-\im n \sigma^-})\\
+    X^\mu\qty(\tau,\sigma)&=x_0^\mu+f_1^\mu\sigma+\frac12\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\e^{-\im n \tau}\qty(\e^{-\im n \sigma}-\e^{\im n \sigma})\\
+    X^\mu\qty(\tau,\sigma)&=x_0^\mu+f_1^\mu\sigma+\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\e^{-\im n \tau}\sin\qty(n\sigma)\\
+    X^\mu\qty(\tau,\sigma)&=x_0^\mu+\sqrt{2\alpha'}\alpha_0^\mu\sigma+\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\e^{-\im n \tau}\sin\qty(n\sigma)
+\end{align*}
+
+We just called $f_1^\mu=\sqrt{2\alpha'}\alpha^\mu$. So now we can continue,
+
+\begin{align*}
+    \Omega X^\mu\qty(\tau,\sigma)\Omega^{-1}&=\Omega x_0^\mu\Omega^{-1}+\sqrt{2\alpha'}\Omega\alpha_0^\mu\Omega^{-1}\sigma+\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\Omega\alpha_n^\mu\Omega^{-1}}{n}\e^{-\im n \tau}\sin\qty(n\sigma)\\
+    X^\mu\qty(\tau,\pi-\sigma)&=\Omega x_0^\mu\Omega^{-1}+\sqrt{2\alpha'}\Omega\alpha_0^\mu\Omega^{-1}\sigma+\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\Omega\alpha_n^\mu\Omega^{-1}}{n}\e^{-\im n \tau}\sin\qty(n\sigma)
+\end{align*}
+
+But,
+
+\begin{align*}
+    X^\mu\qty(\tau,\pi-\sigma)&=x_0^\mu+\sqrt{2\alpha'}\alpha_0^\mu\qty(\pi-\sigma)+\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\e^{-\im n \tau}\sin\qty(n\qty(\pi-\sigma))\\
+    X^\mu\qty(\tau,\pi-\sigma)&=x_0^\mu+\sqrt{2\alpha'}\alpha_0^\mu\pi-\sqrt{2\alpha'}\alpha_0^\mu\sigma+\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^\mu}{n}\e^{-\im n \tau}\sin\qty(n\sigma)
+\end{align*}
+
+Matching term by term,
+
+\begin{align*}
+    \Omega x_0^\mu\Omega^{-1}=x_0^\mu+\sqrt{2\alpha'}\alpha_0^\mu\pi,\ \ \ \Omega \alpha_0^\mu\Omega^{-1}=-\alpha_0^\mu,\ \ \ \Omega \alpha_n^\mu\Omega^{-1}=\alpha_n^\mu,\ n\in\mathbb Z^\ast
+\end{align*}
+
 \probitem{}
+
+Let's recall the expression for the Hamiltonian, \ref{openhamilton2} and \ref{closedhamilton2}, respectively for 
+the open and closed string,
+
+\begin{align*}
+    H&=\begin{cases}
+        L_0^\perp-1\\L_0^\perp+{\bar L}_0^\perp-2
+    \end{cases}
+\end{align*}
+
+And also let us recall the expression for the Virasoro zero mode,
+
+\begin{align*}
+    L^\perp_0=\frac12\alpha_0^I\alpha_0^I+\sum\limits_{p>0}\alpha^I_{-p}\alpha^I_p\\
+    {\bar L}^\perp_0=\frac12\alpha_0^I\alpha_0^I+\sum\limits_{p>0}{\bar \alpha}^I_{-p}{\bar\alpha}^I_p
+\end{align*}
+
+\begin{itemize}
+    \item Action on the Closed string
+\end{itemize}
+\begin{align*}
+    \Omega L^\perp_0\Omega^{-1}=\frac12\Omega\alpha_0^I\Omega^{-1}\Omega\alpha_0^I\Omega^{-1}+\sum\limits_{p>0}\Omega\alpha^I_{-p}\Omega^{-1}\Omega\alpha^I_p\Omega^{-1}\\
+    \Omega L^\perp_0\Omega^{-1}=\frac12{\bar\alpha}_0^I{\bar\alpha}_0^I+\sum\limits_{p>0}{\bar\alpha}^I_{-p}{\bar\alpha}^I_p\\
+    \Omega L^\perp_0\Omega^{-1}={\bar L}_0^\perp
+\end{align*}
+
+And,
+
+\begin{align*}
+    \Omega {\bar L}^\perp_0\Omega^{-1}=\frac12\Omega{\bar \alpha}_0^I\Omega^{-1}\Omega{\bar \alpha}_0^I\Omega^{-1}+\sum\limits_{p>0}\Omega{\bar \alpha}^I_{-p}\Omega^{-1}\Omega{\bar \alpha}^I_p\Omega^{-1}\\
+    \Omega {\bar L}^\perp_0\Omega^{-1}=\frac12{\alpha}_0^I{\alpha}_0^I+\sum\limits_{p>0}{\alpha}^I_{-p}{\alpha}^I_p\\
+    \Omega {\bar L}^\perp_0\Omega^{-1}={ L}_0^\perp
+\end{align*}
+
+Hence,
+
+\begin{align*}
+    \Omega H\Omega^{-1}&=\Omega L^\perp_0\Omega+\Omega{\bar L}^\perp_0\Omega^{-1}-2\\
+    \Omega H\Omega^{-1}&={\bar L}^\perp_0+ L^\perp_0-2=H
+\end{align*}
+
+That is, the closed string is indeed invariant with respect to this symmetry.
+
+\begin{itemize}
+    \item Action on the Open NN string
+\end{itemize}
+\begin{align*}
+    \Omega L^\perp_0\Omega^{-1}=\frac12\Omega\alpha_0^I\Omega^{-1}\Omega\alpha_0^I\Omega^{-1}+\sum\limits_{p>0}\Omega\alpha^I_{-p}\Omega^{-1}\Omega\alpha^I_p\Omega^{-1}\\
+    \Omega L^\perp_0\Omega^{-1}=\frac12{\alpha}_0^I{\alpha}_0^I+\sum\limits_{p>0}\qty(-1){\alpha}^I_{-p}\qty(-1){\alpha}^I_p\\
+    \Omega L^\perp_0\Omega^{-1}={L}_0^\perp
+\end{align*}
+
+Hence,
+
+\begin{align*}
+    \Omega H\Omega^{-1}&=\Omega L^\perp_0\Omega-1\\
+    \Omega H\Omega^{-1}&=L^\perp_0-1=H
+\end{align*}
+
+That is, the open NN string is indeed invariant with respect to this symmetry.
+
+\begin{itemize}
+    \item Action on the Open DD string
+\end{itemize}
+\begin{align*}
+    \Omega L^\perp_0\Omega^{-1}=\frac12\Omega\alpha_0^I\Omega^{-1}\Omega\alpha_0^I\Omega^{-1}+\sum\limits_{p>0}\Omega\alpha^I_{-p}\Omega^{-1}\Omega\alpha^I_p\Omega^{-1}\\
+    \Omega L^\perp_0\Omega^{-1}=\frac12\qty(-1){\alpha}_0^I\qty(-1){\alpha}_0^I+\sum\limits_{p>0}{\alpha}^I_{-p}{\alpha}^I_p\\
+    \Omega L^\perp_0\Omega^{-1}={L}_0^\perp
+\end{align*}
+
+Hence,
+
+\begin{align*}
+    \Omega H\Omega^{-1}&=\Omega L^\perp_0\Omega-1\\
+    \Omega H\Omega^{-1}&=L^\perp_0-1=H
+\end{align*}
+
+That is, the open DD string is indeed invariant with respect to this symmetry.
+
 \probitem{}
+
+We assume the vacuum is orientation invariant,
+
+\begin{align*}
+    \Omega\ket{q^+,q^I}=\ket{q^+,q^I}
+\end{align*}
+
+This is similar to the reasoning done in \ref{5b}, the massless condition is, from \ref{5b}, $N^\perp_0+{\bar N}^\perp_0=2$, but, 
+we also have the level matching condition, $N^\perp_0={\bar N}^\perp_0$, which simply implies $N^\perp_0={\bar N}^\perp_0=1$ as the unique 
+massless state, which is a combination of the operators $\alpha^I_{-1}{\bar \alpha}^J_{-1}$, that is, the most general massless state is, \ref{5b}, 
+
+\begin{align*}
+    \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{IJ}\qty(q^+,q^K)\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^K}
+\end{align*}
+
+Now we impose it should be orientation invariant,
+
+\begin{align*}
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{IJ}\qty(q^+,q^K)\Omega\alpha^I_{-1}\Omega^{-1}\Omega{\bar\alpha}^J_{-1}\Omega^{-1}\Omega\ket{q^+,q^K}\\
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{IJ}\qty(q^+,q^K){\bar\alpha}^I_{-1}{\alpha}^J_{-1}\ket{q^+,q^K}\\
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{IJ}\qty(q^+,q^K){\alpha}^J_{-1}{\bar\alpha}^I_{-1}\ket{q^+,q^K}\\
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{JI}\qty(q^+,q^K){\alpha}^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^K}
+\end{align*}
+
+We see here, the state $\ket\xi$ is only orientation invariant if $\xi_{IJ}\qty(q^+,q^K)=\xi_{JI}\qty(q^+,q^K)$. Thus, a possible base of massless invariant states is,
+
+\begin{itemize}
+    \item $\frac{24\cdot 23}{2}$ Symmetric traceless states
+\end{itemize}
+\begin{align*}
+    \qty(\alpha^I_{-1}{\bar\alpha}^J_{-1}+\alpha^J_{-1}{\bar\alpha}^I_{-1})\ket{q^+,q^K}
+\end{align*}
+
+\begin{itemize}
+    \item $24$ Trace states
+\end{itemize}
+\begin{align*}
+    \alpha^I_{-1}{\bar\alpha}^I_{-1}\ket{q^+,q^K},\ \ \ \textnormal{no sum}
+\end{align*}
+
 \probitem{}
+
+Now for the open string, the Mass operator is,
+
+\begin{align*}
+    M^2&=-p^2=2p^+p^--p^Ip^I=2p^+\frac{1}{\sqrt{2\alpha'}}\alpha_0^--p^Ip^I\\
+    M^2&=2p^+\frac{1}{2\alpha'}\frac{1}{p^+}\qty(L^\perp_0+a)-\frac{1}{2\alpha'}\alpha_0^I\alpha_0^I\\
+    M^2&=\frac{1}{\alpha'}\qty(\frac12\alpha_0^i\alpha_0^i+\sum\limits_{p> 0}\alpha^I_{-p}\alpha^I_{p}+a)-\frac{1}{2\alpha'}\alpha_0^I\alpha_0^I\\
+    \alpha'M^2&=N^\perp+a\\
+    \alpha'M^2&=N^\perp-1
+\end{align*}
+
+Where we also defined the number operator,
+
+\begin{align*}
+    N^\perp&=\sum\limits_{p> 0}\alpha^I_{-p}\alpha^I_{p}
+\end{align*}
+
+Hence, for the state to be massless it has to have $N^\perp=1$, which implies having just one $\alpha_{-1}^I$ applied to the vacuum, 
+the most generic such state is
+
+\begin{align*}
+    \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{I}\qty(q^+,q^K)\alpha^I_{-1}\ket{q^+,q^K}
+\end{align*}
+
+Now let's compute the action of the reversing orientation operator in each boundary condition case,
+
+\begin{itemize}
+    \item NN Open String
+\end{itemize}
+\begin{align*}
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{I}\qty(q^+,q^K)\Omega\alpha^I_{-1}\Omega^{-1}\Omega\ket{q^+,q^K}\\
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{I}\qty(q^+,q^K)\qty(-1)\alpha^I_{-1}\ket{q^+,q^K}\\
+    \Omega\ket{\xi}&=-\ket\xi
+\end{align*}
+
+One could argue that if we're looking to the Projective Hilbert space, equivalence classes of rays of the original Hilbert space, then $\ket \xi$ and $-\ket \xi$ 
+are both equally good representatives of the same equivalence class of a single ray, thus, as long as we work with the Projective Hilbert space, 
+they should be the same state, and hence all the massless NN open string spectrum is orientation invariant. But, as we're in fact gauging this symmetry, 
+we're in fact restricting the original Hilbert space to a set of physical states, characterized by choosing an specific eigenvalue of the 
+gauge transformation operator --- in our case, we chose $\Omega\ket{\psi}=+1\ket\psi$---, that is, our Physical Hilbert space don't contain the state $\ket\xi$ and neither $-\ket\xi$, so that the Projective version 
+of it won't contain none equivalence classes associated with them. Thus, none of the massless NN open string spectrum is orientation invariant.
+
+\begin{itemize}
+    \item DD Open String
+\end{itemize}
+\begin{align*}
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{I}\qty(q^+,q^K)\Omega\alpha^I_{-1}\Omega^{-1}\Omega\ket{q^+,q^K}\\
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{I}\qty(q^+,q^K)\alpha^I_{-1}\ket{q^+,q^K}\\
+    \Omega\ket{\xi}&=\ket\xi
+\end{align*}
+
+The result is just trivial, all the massless DD open string spectrum are orientation invariant.
+
 \probitem{}
+\label{6e}
+Let's consider the most general massless state with Chan-Paton factors,
+
+\begin{align*}
+    \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{I,ij}\qty(q^+,q^K)\alpha^I_{-1}\ket{ij,q^+,q^K}\\
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{I,ij}\qty(q^+,q^K)\Omega\alpha^I_{-1}\Omega^{-1}\Omega\ket{ij,q^+,q^K}\\
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{I,ij}\qty(q^+,q^K)\alpha^I_{-1}\ket{ji,q^+,q^K}\\
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{I,ji}\qty(q^+,q^K)\alpha^I_{-1}\ket{ij,q^+,q^K}
+\end{align*}
+
+This state is only invariant if $\xi_{I,ij}\qty(q^+,q^K)=\xi_{I,ji}\qty(q^+,q^K)$, this means we have a base of states as,
+
+\begin{itemize}
+    \item $24\cdot\frac{2N\cdot \qty(2N-1)}{2}$ Symmetric traceless states
+\end{itemize}
+\begin{align*}
+    \alpha^I_{-1}\qty(\ket{ij,q^+,q^K}+\ket{ji,q^+,q^K})
+\end{align*}
+
+\begin{itemize}
+    \item $24\cdot 2N$ Trace states
+\end{itemize}
+\begin{align*}
+    \alpha^I_{-1}\ket{ii,q^+,q^K}
+\end{align*}
+
 \probitem{}
+
+We assume now $\Omega\ket{q^+,q^I}=-\ket{q^+,q^I}$, and follow as usual,
+
+\begin{align*}
+    \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{I,ij}\qty(q^+,q^K)\alpha^I_{-1}\ket{ij,q^+,q^K}\\
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{I,ij}\qty(q^+,q^K)\Omega\alpha^I_{-1}\Omega^{-1}\Omega\ket{ij,q^+,q^K}\\
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\xi_{I,ij}\qty(q^+,q^K)\alpha^I_{-1}\qty(-1)\ket{ji,q^+,q^K}\\
+    \Omega\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{24}}\dd[24]{q^K}\qty(-1)\xi_{I,ji}\qty(q^+,q^K)\alpha^I_{-1}\ket{ij,q^+,q^K}
+\end{align*}
+
+This state is only invariant if $\xi_{I,ij}\qty(q^+,q^K)=-\xi_{I,ji}\qty(q^+,q^K)$, this means we have a base of states as,
+
+\begin{itemize}
+    \item $24\cdot\frac{2N\cdot \qty(2N-1)}{2}$ Antisymmetric states
+\end{itemize}
+\begin{align*}
+    \alpha^I_{-1}\qty(\ket{ij,q^+,q^K}-\ket{ji,q^+,q^K})
+\end{align*}
+
 \probitem{}
+
+Let's take a closer look at the case of \ref{6e}, the massless states can be written as,
+
+\begin{align*}
+    
+\end{align*}

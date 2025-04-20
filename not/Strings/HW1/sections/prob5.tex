@@ -48,7 +48,7 @@ So that we can study whether of not the light-cone gauge Hamiltonian is invarian
 Hence, the Hamiltonian is invariant.
 
 \probitem{}
-
+\label{5b}
 The closed string vacuum is defined by $25$ numbers, namely, $q^+,q^I$, we'll reserve the name $p$ for the momentum operators, and use $q$ 
 for the eigenvalues of those. In this way the vacuum satisfy,
 
@@ -90,7 +90,19 @@ This has to be true as we shown that this new state has all the correct eigenval
 We know the mass operator is,
 
 \begin{align*}
-    M^2&=\frac{2}{\alpha'}\qty(N^\perp+{\bar N}^\perp-2)
+    M^2&=-p^2=2p^+p^--p^Ip^I=2p^+\sqrt{\frac{2}{\alpha'}}\alpha_0^--p^Ip^I\\
+    M^2&=2p^+\frac{2}{\alpha'}\frac{1}{p^+}\qty(L^\perp_0+a)-\frac{2}{\alpha'}\alpha_0^I\alpha_0^I\\
+    M^2&=\frac{2}{\alpha'}\qty(\frac12\alpha_0^i\alpha_0^i+\sum\limits_{p> 0}\alpha^I_{-p}\alpha^I_{p}+a+\bar a)-\frac{2}{\alpha'}\alpha_0^I\alpha_0^I\\
+    &\quad\quad\quad+\frac{2}{\alpha'}\qty(\frac12\alpha_0^i\alpha_0^i+\sum\limits_{p> 0}{\bar\alpha}^I_{-p}{\bar\alpha}^I_{p})\\
+    \frac{\alpha'}{2}M^2&=N^\perp+{\bar N}^\perp+a+\bar a\\
+    \frac{\alpha'}{2}M^2&=N^\perp+{\bar N}^\perp-2
+\end{align*}
+
+Where we also defined the number operators,
+
+\begin{align*}
+    N^\perp&=\sum\limits_{p> 0}\alpha^I_{-p}\alpha^I_{p}\\
+    {\bar N}^\perp&=\sum\limits_{p> 0}{\bar\alpha}^I_{-p}{\bar\alpha}^I_{p}
 \end{align*}
 
 Hence, for a state to have zero mass, it has to have eigenvalues $N^\perp+{\bar N}^\perp=2$, but, by the level matching, $N^\perp={\bar N}^\perp$, 
@@ -100,7 +112,7 @@ ${\bar \alpha}_{-1}^J$, so the most general state is given by a sum over linear 
 \begin{align*}
     \ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\\
     U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})U\alpha^I_{-1}U^{-1}U{\bar\alpha}^J_{-1}U^{-1}U\ket{q^+,q^i,q^{25}}\\
-    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,-q^{25}}\\
+    U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,q^{25})\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^j_{-1}\ket{q^+,q^i,-q^{25}}\\
     U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{+\infty}^{-\infty}\dd{\qty(-q^{25})}\xi_{IJ}\qty(q^+,q^i,-q^{25})\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}\\
     U\ket{\xi}&=\int\limits_0^\infty\dd{q^+}\int\limits_{\mathbb R^{23}}\dd[23]{q^i}\int\limits_{-\infty}^{+\infty}\dd{q^{25}}\xi_{IJ}\qty(q^+,q^i,-q^{25})\qty(-1)^{g^{25I}+g^{25J}}\alpha^I_{-1}{\bar\alpha}^J_{-1}\ket{q^+,q^i,q^{25}}
 \end{align*}

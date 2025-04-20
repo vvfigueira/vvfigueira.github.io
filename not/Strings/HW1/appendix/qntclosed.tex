@@ -97,3 +97,41 @@ ordering constant to the ambiguous operators, in this case these are just
 For now these are not know, but, it's true that $a=\bar a=-1$ and $D=26$ for the Global Poincare symmetry to hold, we'll not prove this. From here on, as we shown that the two $\bar\alpha$ and 
 $\alpha$ decouple, it's as we had two copies of an open string, Hence, all the remaining commutation relations can be read directly from the open string, with mixed terms of barred and non-barred 
 commuting among themselves.
+
+As completeness, we're going to derive what should be the Hamiltonian of this theory, of course, the Hamiltonian isn't the $X^0$ 
+evolution operator, but rather the $\tau$ evolution, we get simply from the Legendre transform,
+
+\begin{align*}
+    H&=-p^+{\dot x}_0^-+\int\limits_0^{2\pi}\dd{\sigma}\mathcal P^{\tau I}{\dot X}^I-L\\
+    H&=2\pi\alpha'\int\limits_0^{2\pi}\dd{\sigma}\mathcal P^{\tau I}\mathcal P^{\tau I}-\pi\alpha'\int\limits_0^{2\pi}\dd{\sigma}\mathcal P^{\tau I}\mathcal P^{\tau I}+\frac{1}{4\pi\alpha'}\int\limits_0^{2\pi}\dd{\sigma}{X'}^I{X'}^I\\
+    H&=\pi\alpha'\int\limits_0^{2\pi}\dd{\sigma}\qty(\mathcal P^{\tau I}\mathcal P^{\tau I}+\frac{1}{4\pi^2{\alpha'}^2}{X'}^I{X'}^I)
+\end{align*}
+
+But, notice, by the constrains,
+
+\begin{align*}
+    {\dot X}^-+{X'}^-&=\frac{1}{2\alpha'p^+}\qty({\dot X}^I+{X'}^I)^2\\
+    {\dot X}^--{X'}^-&=\frac{1}{2\alpha'p^+}\qty({\dot X}^I-{X'}^I)^2\\
+\end{align*}
+
+Implies,
+
+\begin{align*}
+    {\dot X}^-&=\frac{1}{2\alpha'p^+}\qty({\dot X}^I{\dot X}^I+{X'}^I{X'}^I)\\
+    {\dot X}^-&=\frac{4\pi^2{\alpha'}^2}{2\alpha'p^+}\qty(\mathcal P^{\tau I}\mathcal P^{\tau I}+\frac{1}{4\pi^2{\alpha'}^2}{X'}^I{X'}^I)\\
+    \frac{p^+}{2\pi}{\dot X}^-&=\pi\alpha'\qty(\mathcal P^{\tau I}\mathcal P^{\tau I}+\frac{1}{4\pi^2{\alpha'}^2}{X'}^I{X'}^I)\\
+    \frac{p^+}{2\pi}\int\limits_0^{2\pi}\dd{\sigma}{\dot X}^-&=\pi\alpha'\int\limits_0^{2\pi}\dd{\sigma}\qty(\mathcal P^{\tau I}\mathcal P^{\tau I}+\frac{1}{4\pi^2{\alpha'}^2}{X'}^I{X'}^I)
+\end{align*}
+
+Thus,
+
+\begin{align*}
+    H&=\frac{2\pi\alpha'p^+}{2\pi}\int\limits_0^{2\pi}\dd{\sigma}\frac{1}{2\pi\alpha'}{\dot X}^-=\alpha'p^+p^-\numberthis\label{closedhamilton}
+\end{align*}
+
+We can put it in a more useful form, using the level matching,
+
+\begin{align*}
+    H&=2\alpha'p^+p^-=\alpha'p^+\sqrt{\frac{2}{\alpha'}}\sqrt{\frac{2}{\alpha'}}\frac{1}{p^+}\qty(L^\perp_0+a)\\
+    H&=L^\perp_0+{\bar L }^\perp_0+a+\bar a\numberthis\label{closedhamilton2}
+\end{align*}
