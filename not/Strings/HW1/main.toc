@@ -17,16 +17,16 @@
 \contentsline {subsection}{5.B)}{33}{subsection.5.2}%
 \contentsline {subsection}{5.C)}{36}{subsection.5.3}%
 \contentsline {subsection}{5.D)}{37}{subsection.5.4}%
-\contentsline {subsection}{5.E)}{37}{subsection.5.5}%
-\contentsline {section}{Problem 6}{38}{section.6}%
-\contentsline {subsection}{6.A)}{38}{subsection.6.1}%
-\contentsline {subsection}{6.B)}{38}{subsection.6.2}%
-\contentsline {subsection}{6.C)}{38}{subsection.6.3}%
-\contentsline {subsection}{6.D)}{38}{subsection.6.4}%
-\contentsline {subsection}{6.E)}{38}{subsection.6.5}%
-\contentsline {subsection}{6.F)}{38}{subsection.6.6}%
-\contentsline {subsection}{6.G)}{38}{subsection.6.7}%
-\contentsline {section}{\numberline {A}Light-Cone Gauge for the Open String}{39}{appendix.A}%
-\contentsline {section}{\numberline {B}Light-Cone Gauge Quantization of the Open String}{45}{appendix.B}%
-\contentsline {section}{\numberline {C}Light-Cone Gauge for the Closed String}{52}{appendix.C}%
-\contentsline {section}{\numberline {D}Light-Cone Gauge Quantization of the Closed String}{57}{appendix.D}%
+\contentsline {subsection}{5.E)}{42}{subsection.5.5}%
+\contentsline {section}{Problem 6}{43}{section.6}%
+\contentsline {subsection}{6.A)}{43}{subsection.6.1}%
+\contentsline {subsection}{6.B)}{43}{subsection.6.2}%
+\contentsline {subsection}{6.C)}{43}{subsection.6.3}%
+\contentsline {subsection}{6.D)}{43}{subsection.6.4}%
+\contentsline {subsection}{6.E)}{43}{subsection.6.5}%
+\contentsline {subsection}{6.F)}{43}{subsection.6.6}%
+\contentsline {subsection}{6.G)}{43}{subsection.6.7}%
+\contentsline {section}{\numberline {A}Light-Cone Gauge for the Open String}{44}{appendix.A}%
+\contentsline {section}{\numberline {B}Light-Cone Gauge Quantization of the Open String}{50}{appendix.B}%
+\contentsline {section}{\numberline {C}Light-Cone Gauge for the Closed String}{57}{appendix.C}%
+\contentsline {section}{\numberline {D}Light-Cone Gauge Quantization of the Closed String}{62}{appendix.D}%

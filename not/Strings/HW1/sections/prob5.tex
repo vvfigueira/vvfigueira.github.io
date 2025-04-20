@@ -166,7 +166,7 @@ We proceed here solving the light-cone gauge classical equation of motion for th
     X^{25}\qty(\tau,\sigma+2\pi)=-X^{25}\qty(\tau,\sigma)\numberthis\label{twist}
 \end{align*}
 
-And Neumann boundary condition on the other coordinates. Much of this follows in the same lines of what as already done in Appendix \ref{app-openclass}, we start from the light-cone gauge equation of motion \ref{fulleqom}, decomposing our 
+And closed string boundary condition on the other coordinates. Much of this follows in the same lines of what as already done in Appendix \ref{app-closedclass}, we start from the light-cone gauge equation of motion \ref{fulleqom}, decomposing our 
 solution as,
 
 \begin{align*}
@@ -208,18 +208,206 @@ And finally we can sum the two contributions to get,
     X^{25}&=x_L+x_R+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z+\frac12}\frac{\e^{-\im n\tau}}{n}\qty({\bar\alpha}_n^{25}\e^{-\im n\sigma}+\alpha_n^{25}\e^{\im n\sigma})
 \end{align*}
 
-Which from the condition \ref{twist}, can be seen to imply, $x_L+x_R=0$, thus, the most general solution with Neumann boundary condition in all coordinates apart from the $X^{25}$ 
+Which from the condition \ref{twist}, can be seen to imply, $x_L+x_R=0$, thus, the most general solution with Closed string boundary condition in all coordinates apart from the $X^{25}$ 
 with a twist boundary condition is,
 
 \begin{align*}
-    X^i&=x_0^i+\sqrt{2\alpha'} \alpha_0^i\tau+\im\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z^\ast}\frac{\alpha_n^i}{n}\exp\qty(-\im n\tau)\cos\qty(n\sigma)\\
+    X^i&=x_0^i+\sqrt{2\alpha'} \alpha_0^i\tau+\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z^\ast}\frac{\e^{-\im n\tau}}{n}\qty({\bar\alpha}^i_n\e^{-\im n\sigma}+{\alpha}^i_n\e^{\im n\sigma})\\
     X^{25}&=\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z+\frac12}\frac{\e^{-\im n\tau}}{n}\qty({\bar\alpha}_n^{25}\e^{-\im n\sigma}+\alpha_n^{25}\e^{\im n\sigma})
 \end{align*}
 
 \probitem{}
 
 Let's compute the commutation between the $\alpha$s. It's not needed to compute $\comm{\alpha_n^i}{\alpha_m^j}$, as we already done this, and this new boundary condition won't change it, as 
-is clear from \ref{alphacomm}. We just need to compute $\comm{\alpha_n^i}{\alpha_m^{25}},\comm{\alpha_n^i}{{\bar\alpha}_m^{25}},\comm{\alpha_n^{25}}{\alpha_m^{25}},\comm{\alpha_n^{25}}{{\bar\alpha}_m^{25}},\comm{{\bar\alpha}_n^{25}}{{\bar\alpha}_m^{25}}$, 
-the procedure is the same of \ref{alphacomm}.
+is clear from \ref{closedalphacommbarbar}. We just need to compute $\comm{\alpha_n^i}{\alpha_m^{25}},\comm{\alpha_n^i}{{\bar\alpha}_m^{25}},\comm{{\bar\alpha}_n^i}{\alpha_m^{25}},\comm{{\bar\alpha}_n^i}{{\bar\alpha}_m^{25}},\comm{\alpha_n^{25}}{\alpha_m^{25}},\comm{\alpha_n^{25}}{{\bar\alpha}_m^{25}},\comm{{\bar\alpha}_n^{25}}{{\bar\alpha}_m^{25}}$, 
+the procedure is the same of \ref{closedalphacommbarbar}, in particular, as the quantization conditions are the same, \ref{closedqntconditions}, we do actually get the same set of relations as \ref{closedcommpm} and \ref{closedcommmp}. 
+
+\begin{align*}
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J\pm{X'}^J)\qty(\tau,\sigma')}&=\pm4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J\mp{X'}^J)\qty(\tau,\sigma')}&=0
+\end{align*}
+
+So the computation is exactly equal \ref{closedalphacommbarbar}. Now let's do it case by case, starting by $\comm{\alpha^i_n}{{\bar\alpha}^{25}_m}$,
+
+\begin{align*}
+    0&=\comm{\qty({\dot X}^i-{X'}^i)\qty(\tau,\sigma)}{\qty({\dot X}^{25}+{X'}^{25})\qty(\tau,\sigma')},\ \ \ \sigma,\sigma'\in\qty[0,2\pi]\\
+    0&=\comm{\qty({\dot X}^i-{X'}^i)\qty(\tau,\sigma)}{\qty({\dot X}^{25}+{X'}^{25})\qty(\tau,\sigma')}\\
+    0&=\sqrt{2\alpha'}\sum\limits_{n'\in\mathbb Z}\e^{-\im n'\qty(\tau-\sigma)}\sqrt{2\alpha'}\sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im m'\qty(\tau+\sigma)}\comm{\alpha^i_{n'}}{{\bar\alpha}^{25}_{m'}}\\
+    0&=\int\limits_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{-\im n\sigma}\int\limits_0^{2\pi}\frac{\dd{\sigma'}}{2\pi}\e^{\im m\sigma'}\sum\limits_{n'\in\mathbb Z}\e^{-\im n'\qty(\tau-\sigma)}\sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im m'\qty(\tau+\sigma)}\comm{\alpha^i_{n'}}{{\bar\alpha}^{25}_{m'}}\\
+    0&=\sum\limits_{n'\in\mathbb Z}\sum\limits_{m'\in\mathbb Z+\frac12}\delta_{n,n'}\delta_{m,m'}\comm{\alpha^i_{n'}}{{\bar\alpha}^{25}_{m'}}\\
+    0&=\comm{\alpha^i_{n}}{{\bar\alpha}^{25}_{m}}
+\end{align*}
+
+Now, $\comm{\alpha_n^i}{{\alpha}_m^{25}}$,
+
+\begin{align*}
+    -4\pi\alpha'\im g^{i25}\dv{}{\sigma}\delta\qty(\sigma-\sigma')&=\comm{\qty({\dot X}^i-{X'}^i)\qty(\tau,\sigma)}{\qty({\dot X}^{25}-{X'}^{25})\qty(\tau,\sigma')},\ \ \ \sigma,\sigma'\in\qty[0,2\pi]\\
+    0&=\comm{\qty({\dot X}^i-{X'}^i)\qty(\tau,\sigma)}{\qty({\dot X}^{25}-{X'}^{25})\qty(\tau,\sigma')}\\
+    0&=\sqrt{2\alpha'}\sum\limits_{n'\in\mathbb Z}\e^{-\im n'\qty(\tau-\sigma)}\sqrt{2\alpha'}\sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im m'\qty(\tau-\sigma)}\comm{\alpha^i_{n'}}{{\alpha}^{25}_{m'}}\\
+    0&=\int\limits_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{-\im n\sigma}\int\limits_0^{2\pi}\frac{\dd{\sigma'}}{2\pi}\e^{-\im m\sigma'}\sum\limits_{n'\in\mathbb Z}\e^{-\im n'\qty(\tau-\sigma)}\sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im m'\qty(\tau-\sigma)}\comm{\alpha^i_{n'}}{{\alpha}^{25}_{m'}}\\
+    0&=\sum\limits_{n'\in\mathbb Z}\sum\limits_{m'\in\mathbb Z+\frac12}\delta_{n,n'}\delta_{m,m'}\comm{\alpha^i_{n'}}{{\alpha}^{25}_{m'}}\\
+    0&=\comm{\alpha^i_{n}}{{\alpha}^{25}_{m}}
+\end{align*}
+
+Now $\comm{{\bar\alpha}^i_n}{{\bar\alpha}^{25}_m}$,
+
+\begin{align*}
+    4\pi\alpha'\im g^{i25}\dv{}{\sigma}\delta\qty(\sigma-\sigma')&=\comm{\qty({\dot X}^i+{X'}^i)\qty(\tau,\sigma)}{\qty({\dot X}^{25}+{X'}^{25})\qty(\tau,\sigma')},\ \ \ \sigma,\sigma'\in\qty[0,2\pi]\\
+    0&=\comm{\qty({\dot X}^i+{X'}^i)\qty(\tau,\sigma)}{\qty({\dot X}^{25}+{X'}^{25})\qty(\tau,\sigma')}\\
+    0&=\sqrt{2\alpha'}\sum\limits_{n'\in\mathbb Z}\e^{-\im n'\qty(\tau+\sigma)}\sqrt{2\alpha'}\sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im m'\qty(\tau+\sigma)}\comm{{\bar\alpha}^i_{n'}}{{\bar\alpha}^{25}_{m'}}\\
+    0&=\int\limits_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{\im n\sigma}\int\limits_0^{2\pi}\frac{\dd{\sigma'}}{2\pi}\e^{\im m\sigma'}\sum\limits_{n'\in\mathbb Z}\e^{-\im n'\qty(\tau+\sigma)}\sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im m'\qty(\tau+\sigma)}\comm{{\bar\alpha}^i_{n'}}{{\bar\alpha}^{25}_{m'}}\\
+    0&=\sum\limits_{n'\in\mathbb Z}\sum\limits_{m'\in\mathbb Z+\frac12}\delta_{n,n'}\delta_{m,m'}\comm{\alpha^i_{n'}}{{\bar\alpha}^{25}_{m'}}\\
+    0&=\comm{\alpha^i_{n}}{{\bar\alpha}^{25}_{m}}
+\end{align*}
+
+Now, $\comm{{\bar\alpha}_n^i}{{\alpha}_m^{25}}$,
+
+\begin{align*}
+    0&=\comm{\qty({\dot X}^i+{X'}^i)\qty(\tau,\sigma)}{\qty({\dot X}^{25}-{X'}^{25})\qty(\tau,\sigma')},\ \ \ \sigma,\sigma'\in\qty[0,2\pi]\\
+    0&=\comm{\qty({\dot X}^i+{X'}^i)\qty(\tau,\sigma)}{\qty({\dot X}^{25}-{X'}^{25})\qty(\tau,\sigma')}\\
+    0&=\sqrt{2\alpha'}\sum\limits_{n'\in\mathbb Z}\e^{-\im n'\qty(\tau+\sigma)}\sqrt{2\alpha'}\sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im m'\qty(\tau-\sigma)}\comm{{\bar\alpha}^i_{n'}}{{\alpha}^{25}_{m'}}\\
+    0&=\int\limits_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{\im n\sigma}\int\limits_0^{2\pi}\frac{\dd{\sigma'}}{2\pi}\e^{-\im m\sigma'}\sum\limits_{n'\in\mathbb Z}\e^{-\im n'\qty(\tau+\sigma)}\sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im m'\qty(\tau-\sigma)}\comm{{\bar\alpha}^i_{n'}}{{\alpha}^{25}_{m'}}\\
+    0&=\sum\limits_{n'\in\mathbb Z}\sum\limits_{m'\in\mathbb Z+\frac12}\delta_{n,n'}\delta_{m,m'}\comm{\alpha^i_{n'}}{{\alpha}^{25}_{m'}}\\
+    0&=\comm{\alpha^i_{n}}{{\alpha}^{25}_{m}}
+\end{align*}
+
+Now $\comm{\alpha^{25}_n}{\alpha^{25}_m}$,
+
+\begin{align*}
+    \comm{\qty({\dot X}^{25}-{X'}^{25})\qty(\tau,\sigma)}{\qty({\dot X}^{25}-{X'}^{25})\qty(\tau,\sigma')}&=-4\pi\alpha'\im g^{2525}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
+    2\alpha'\sum\limits_{n',m'\in\mathbb Z+\frac12}\e^{-\im n'\qty(\tau-\sigma)}\e^{-\im m'\qty(\tau-\sigma')}\comm{\alpha^{25}_{n'}}{\alpha^{25}_{m'}}&=-4\pi\alpha'\im \dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
+    \int\limits_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{-\im n\sigma}\sum\limits_{n',m'\in\mathbb Z+\frac12}\e^{-\im n'\qty(\tau-\sigma)}\e^{-\im m'\qty(\tau-\sigma)}\comm{\alpha^{25}_{n'}}{\alpha^{25}_{m'}}&=-2\pi\im \int\limits_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{-\im n\sigma}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
+    \sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im n\tau}\e^{-\im m'\qty(\tau-\sigma)}\comm{\alpha^{25}_{n}}{\alpha^{25}_{m'}}&= n\e^{-\im n\sigma'}\\
+    \int\limits_0^{2\pi}\frac{\dd{\sigma'}}{2\pi}\e^{-\im m\sigma'}\sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im n\tau}\e^{-\im m'\qty(\tau-\sigma)}\comm{\alpha^{25}_{n}}{\alpha^{25}_{m'}}&=n\int\limits_0^{2\pi}\frac{\dd{\sigma'}}{2\pi}\e^{-\im m\sigma'}\e^{-\im n\sigma'}\\
+    \e^{-\im \qty(n+m)\tau}\comm{\alpha^{25}_{n}}{\alpha^{25}_{m}}&=n\delta_{n+m,0}\\
+    \comm{\alpha^{25}_{n}}{\alpha^{25}_{m}}&=n\delta_{n+m,0}
+\end{align*}
+
+Now, $\comm{{\bar\alpha}^{25}_n}{{\bar\alpha}^{25}_m}$,
+
+\begin{align*}
+    \comm{\qty({\dot X}^{25}+{X'}^{25})\qty(\tau,\sigma)}{\qty({\dot X}^{25}+{X'}^{25})\qty(\tau,\sigma')}&=4\pi\alpha'\im g^{2525}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
+    2\alpha'\sum\limits_{n',m'\in\mathbb Z+\frac12}\e^{-\im n'\qty(\tau+\sigma)}\e^{-\im m'\qty(\tau+\sigma')}\comm{{\bar\alpha}^{25}_{n'}}{{\bar\alpha}^{25}_{m'}}&=4\pi\alpha'\im \dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
+    \int\limits_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{\im n\sigma}\sum\limits_{n',m'\in\mathbb Z+\frac12}\e^{-\im n'\qty(\tau+\sigma)}\e^{-\im m'\qty(\tau+\sigma)}\comm{{\bar\alpha}^{25}_{n'}}{{\bar\alpha}^{25}_{m'}}&=2\pi\im \int\limits_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{\im n\sigma}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
+    \sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im n\tau}\e^{-\im m'\qty(\tau+\sigma)}\comm{{\bar\alpha}^{25}_{n}}{{\bar\alpha}^{25}_{m'}}&= n\e^{\im n\sigma'}\\
+    \int\limits_0^{2\pi}\frac{\dd{\sigma'}}{2\pi}\e^{\im m\sigma'}\sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im n\tau}\e^{-\im m'\qty(\tau-\sigma)}\comm{{\bar\alpha}^{25}_{n}}{{\bar\alpha}^{25}_{m'}}&=n\int\limits_0^{2\pi}\frac{\dd{\sigma'}}{2\pi}\e^{\im m\sigma'}\e^{\im n\sigma'}\\
+    \e^{-\im \qty(n+m)\tau}\comm{{\bar\alpha}^{25}_{n}}{{\bar\alpha}^{25}_{m}}&=n\delta_{n+m,0}\\
+    \comm{{\bar\alpha}^{25}_{n}}{{\bar\alpha}^{25}_{m}}&=n\delta_{n+m,0}
+\end{align*}
+
+And by last, $\comm{\alpha^{25}_n}{{\bar\alpha}^{25}_m}$,
+
+\begin{align*}
+    \comm{\qty({\dot X}^{25}-{X'}^{25})\qty(\tau,\sigma)}{\qty({\dot X}^{25}+{X'}^{25})\qty(\tau,\sigma')}&=0\\
+    2\alpha'\sum\limits_{n',m'\in\mathbb Z+\frac12}\e^{-\im n'\qty(\tau-\sigma)}\e^{-\im m'\qty(\tau+\sigma')}\comm{{\alpha}^{25}_{n'}}{{\bar\alpha}^{25}_{m'}}&=0\\
+    \int\limits_0^{2\pi}\frac{\dd{\sigma}}{2\pi}\e^{-\im n\sigma}\sum\limits_{n',m'\in\mathbb Z+\frac12}\e^{-\im n'\qty(\tau-\sigma)}\e^{-\im m'\qty(\tau+\sigma)}\comm{{\alpha}^{25}_{n'}}{{\bar\alpha}^{25}_{m'}}&=0\\
+    \sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im n\tau}\e^{-\im m'\qty(\tau+\sigma)}\comm{{\alpha}^{25}_{n}}{{\bar\alpha}^{25}_{m'}}&=0\\
+    \int\limits_0^{2\pi}\frac{\dd{\sigma'}}{2\pi}\e^{\im m\sigma'}\sum\limits_{m'\in\mathbb Z+\frac12}\e^{-\im n\tau}\e^{-\im m'\qty(\tau-\sigma)}\comm{{\alpha}^{25}_{n}}{{\bar\alpha}^{25}_{m'}}&=0\\
+    \e^{-\im \qty(n+m)\tau}\comm{{\alpha}^{25}_{n}}{{\bar\alpha}^{25}_{m}}&=0\\
+    \comm{{\alpha}^{25}_{n}}{{\bar\alpha}^{25}_{m}}&=0
+\end{align*}
+
+What finishes all the commutation relations. We have to define the new Virasoro operators for this case, 
+those appear in the constrain, namely \ref{virasorodef},
+
+\begin{align*}
+    {\dot X}^--{X'}^-&=\frac{1}{4\alpha'{p^+}}\qty({\dot X}^I-{X'}^I)^2\\
+    \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha^-_n\exp\qty(-\im n\qty(\tau+\sigma))&=\frac{2\alpha'}{4\alpha' p^+}\sum\limits_{p,q\in\mathbb Z}\alpha^i_p\alpha^i_q\exp\qty(-\im\qty(p+q)\qty(\tau+\sigma))\\
+    &\quad\quad\quad+\frac{2\alpha'}{4\alpha' p^+}\sum\limits_{p,q\in\mathbb Z+\frac12}\alpha^{25}_p\alpha^{25}_q\exp\qty(-\im\qty(p+q)\qty(\tau+\sigma))\\
+    \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha^-_n\exp\qty(-\im n\qty(\tau+\sigma))&=\frac{1}{2 p^+}\sum\limits_{p,n\in\mathbb Z}\alpha^i_p\alpha^i_{n-p}\exp\qty(-\im n\qty(\tau+\sigma))\\
+    &\quad\quad\quad+\frac{1}{2p^+}\sum\limits_{p\in\mathbb Z+\frac12}\sum\limits_{n\in\mathbb Z}\alpha^{25}_p\alpha^{25}_{n-p}\exp\qty(-\im n\qty(\tau+\sigma))\\
+    \sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha^-_n\exp\qty(-\im n\qty(\tau+\sigma))&=\frac{1}{p^+}\sum\limits_{n\in\mathbb Z}\qty(\frac12\sum\limits_{p\in\mathbb Z}\alpha^i_p\alpha^i_{n-p}+\frac12\sum\limits_{p\in\mathbb Z+\frac12}\alpha^{25}_p\alpha^{25}_{n-p})\exp\qty(-\im n\qty(\tau+\sigma))\\
+    \sqrt{2\alpha'}\alpha_n^-&=\frac{1}{p^+}\qty(L_n^\perp+a)
+\end{align*}
+
+From where is easy to see what should be the Virasoro operators, in particular the $n=0$ one it's the normal ordered version of,
+
+\begin{align*}
+    L^\perp_0+a&=\frac12\sum\limits_{p\in\mathbb Z}\alpha^i_p\alpha^i_{-p}+\frac12\sum\limits_{p\in\mathbb Z+\frac12}\alpha^{25}_p\alpha^{25}_{-p}\\
+    &=\frac12\sum\limits_{p\geq 0}\alpha^i_p\alpha^i_{-p}+\frac12\sum\limits_{p< 0}\alpha^i_p\alpha^i_{-p}+\frac12\sum\limits_{p\geq\frac12}\alpha^{25}_p\alpha^{25}_{-p}+\frac12\sum\limits_{p\leq-\frac12}\alpha^{25}_p\alpha^{25}_{-p}\\
+    &=\frac12\sum\limits_{p\geq 0}\qty(\comm{\alpha^i_p}{\alpha^i_{-p}}+\alpha^i_{-p}\alpha_p^i)+\frac12\sum\limits_{p> 0}\alpha^i_{-p}\alpha^i_{p}+\frac12\sum\limits_{p\geq\frac12}\qty(\comm{\alpha^{25}_p}{\alpha^{25}_{-p}}+\alpha^{25}_{-p}\alpha^{25}_p)+\frac12\sum\limits_{p\geq\frac12}\alpha^{25}_{-p}\alpha^{25}_{p}\\
+    &=\frac12\sum\limits_{p\geq 0}\qty(23p+\alpha^i_{-p}\alpha_p^i)+\frac12\sum\limits_{p> 0}\alpha^i_{-p}\alpha^i_{p}+\frac12\sum\limits_{p\geq\frac12}\qty(p+\alpha^{25}_{-p}\alpha^{25}_p)+\frac12\sum\limits_{p\geq\frac12}\alpha^{25}_{-p}\alpha^{25}_{p}\\
+    &=\frac12\sum\limits_{p\geq 0}\alpha^i_{-p}\alpha_p^i+\frac12\sum\limits_{p> 0}\alpha^i_{-p}\alpha^i_{p}+\frac12\sum\limits_{p\geq\frac12}\alpha^{25}_{-p}\alpha^{25}_p+\frac12\sum\limits_{p\geq\frac12}\alpha^{25}_{-p}\alpha^{25}_{p}+\frac{23}{2}\sum\limits_{p=1}^\infty p+\frac12\sum\limits_{p=\frac12}^\infty p\\
+    &=\frac12\alpha_0^i\alpha_0^i+\sum\limits_{p> 0}\alpha^i_{-p}\alpha^i_{p}+\sum\limits_{p\geq\frac12}\alpha^{25}_{-p}\alpha^{25}_{p}+\frac{23}{2}\sum\limits_{p=1}^\infty p+\frac12\sum\limits_{p=\frac12}^\infty p
+\end{align*}
+
+It's clear from here that the first four normal-ordered terms correspond to $L^\perp_0$, while the two last sums are the normal ordering constants, which, 
+are in fact divergent, and need to be regulated, we'll choose the most convenient type of regulator, the zeta function, because we already derived much of what we'll 
+need, that is, \ref{zeta-1}, so that the first sum is already $-\frac{23}{24}$,
+
+\begin{align*}
+    a&=-\frac{23}{24}+\frac12\sum\limits_{p=\frac12}^\infty p\\
+    a&=-\frac{23}{24}+\frac14\sum\limits_{p=\frac12}^\infty 2p\\
+    a&=-\frac{23}{24}+\frac14\sum\limits_{p=1,3,5,\cdots} p\\
+    a&=-\frac{23}{24}+\frac14\sum\limits_{p=1,3,5,\cdots} p+\frac14\sum\limits_{p=2,4,6,\cdots}p-\frac14\sum\limits_{p=2,4,6,\cdots}p\\
+    a&=-\frac{23}{24}+\frac14\sum\limits_{p=1}^\infty p-\frac14\sum\limits_{p=1,2,3,\cdots}2p\\
+    a&=-\frac{23}{24}+\frac14\sum\limits_{p=1}^\infty p-\frac12\sum\limits_{p=1}^\infty p\\
+    a&=-\frac{23}{24}-\frac14\sum\limits_{p=1}^\infty p\\
+    a&=-\frac{23}{24}+\frac{1}{48}=-\frac{15}{16}
+\end{align*}
+
+Actually this is not the end of it, we would have to use the constrain equation with the plus sign to derive a similar expression for ${\bar L}^\perp_0$, 
+from where we would have,
+
+\begin{align*}
+    \sqrt{2\alpha'}{\bar\alpha}^-_0=\frac{1}{p^+}\qty({\bar L}^\perp_0+\bar a)=\frac{1}{p^+}\qty({ L}^\perp_0+ a)
+\end{align*}
+
+As the level matching condition. No need to say, the computation is exactly the same to obtain $\bar a=a$. But, nevertheless, this 
+is relevant for writing the Mass Operator,
+
+\begin{align*}
+    M^2&=-p^2=2p^+p^--p^Ip^I=2p^+\sqrt{\frac{2}{\alpha'}}\alpha_0^--p^ip^i-p^{25}p^{25}\\
+    M^2&=2p^+\frac{2}{\alpha'}\frac{1}{p^+}\qty(L^\perp_0+a)-p^ip^i-p^{25}p^{25}\\
+    M^2&=\frac{2}{\alpha'}\qty(L^\perp_0+{\bar L}^\perp_0+a+\bar a)-p^ip^i-p^{25}p^{25}
+\end{align*}
+
+We seen also that $p^{25}=0$, and additionally, we substitute in this the expression we found for the Virasoro modes,
+
+\begin{align*}
+    M^2&=\frac{2}{\alpha'}\qty(\frac12\alpha_0^i\alpha_0^i+\sum\limits_{p> 0}\alpha^i_{-p}\alpha^i_{p}+\sum\limits_{p\geq\frac12}\alpha^{25}_{-p}\alpha^{25}_{p}+a+\bar a)-p^ip^i\\
+    M^2&=\frac{2}{\alpha'}\qty(\frac12\alpha_0^i\alpha_0^i+\sum\limits_{p> 0}\alpha^i_{-p}\alpha^i_{p}+\sum\limits_{p\geq\frac12}\alpha^{25}_{-p}\alpha^{25}_{p}+a+\bar a)-\frac{2}{\alpha'}\alpha_0^i\alpha_0^i\\
+    &\quad\quad\quad+\frac{2}{\alpha'}\qty(\frac12\alpha_0^i\alpha_0^i+\sum\limits_{p> 0}{\bar\alpha}^i_{-p}{\bar\alpha}^i_{p}+\sum\limits_{p\geq\frac12}{\bar\alpha}^{25}_{-p}{\bar\alpha}^{25}_{p})\\
+    \frac{\alpha'}{2}M^2&=N^\perp+{\bar N}^\perp+a+\bar a\\
+    \frac{\alpha'}{2}M^2&=N^\perp+{\bar N}^\perp-2\frac{15}{16}\\
+    \frac{\alpha'}{2}M^2&=N^\perp+{\bar N}^\perp-\frac{15}{8}
+\end{align*}
+
+Where we defined the number operators,
+
+\begin{align*}
+    N^\perp&=\sum\limits_{p> 0}\alpha^i_{-p}\alpha^i_{p}+\sum\limits_{p\geq\frac12}\alpha^{25}_{-p}\alpha^{25}_{p}\\
+    {\bar N}^\perp&=\sum\limits_{p> 0}{\bar\alpha}^i_{-p}{\bar\alpha}^i_{p}+\sum\limits_{p\geq\frac12}{\bar\alpha}^{25}_{-p}{\bar\alpha}^{25}_{p}
+\end{align*}
 
 \probitem{}
+
+As mentioned, twisted states doesn't have a zero mode oscillator, hence, it don't possesses conserved momentum in the identified direction, 
+we can label a twisted vacuum as,
+
+\begin{align*}
+    \ket{q^+,q^i}&\equiv\ket{q^+,q^i,q^{25}=0}
+\end{align*}
+
+It's obvious that the vacuum has $N^\perp={\bar N}^\perp=0$, hence, the mass is,
+
+\begin{align*}
+    M^2\ket{q^+,q^i}&=\frac{2}{\alpha'}\qty(N^\perp+{\bar N}^\perp-\frac{15}{8})\ket{q^+,q^i}\\
+    M^2\ket{q^+,q^i}&=-\frac{15}{4\alpha'}\ket{q^+,q^i}
+\end{align*}
+
+That is, the mass of the vacuum state is $M^2=-\frac{15}{4\alpha'}$. Now the first excited state, 
+we must always remember to impose the level matching condition, $N^\perp={\bar N}^\perp$, usually, the 
+lowest value for the number operator is one, but, here in the twisted case, we do have creation operators with 
+half-integer value, $\alpha_{-\frac12}^{25},{\bar\alpha}_{-\frac12}^{25}$, so, the lowest excited state is the state with, 
+$N^\perp={\bar N}^\perp=\frac12$, which is the state,
+
+\begin{align*}
+    \alpha_{\frac12}^{25}{\bar\alpha}_{\frac12}^{25}\ket{q^+,q^i}\\
+    M^2\alpha_{\frac12}^{25}{\bar\alpha}_{\frac12}^{25}\ket{q^+,q^i}&=\frac{2}{\alpha'}\qty(N^\perp+{\bar N}^\perp-\frac{15}{8})\alpha_{-\frac12}^{25}{\bar\alpha}_{-\frac12}^{25}\ket{q^+,q^i}\\
+    M^2\alpha_{\frac12}^{25}{\bar\alpha}_{\frac12}^{25}\ket{q^+,q^i}&=\frac{2}{\alpha'}\qty(\frac12+\frac12-\frac{15}{8})\alpha_{-\frac12}^{25}{\bar\alpha}_{-\frac12}^{25}\ket{q^+,q^i}\\
+    M^2\alpha_{\frac12}^{25}{\bar\alpha}_{\frac12}^{25}\ket{q^+,q^i}&=\frac{2}{\alpha'}\qty(\frac{8}{8}-\frac{15}{8})\alpha_{-\frac12}^{25}{\bar\alpha}_{-\frac12}^{25}\ket{q^+,q^i}\\
+    M^2\alpha_{\frac12}^{25}{\bar\alpha}_{\frac12}^{25}\ket{q^+,q^i}&=-\frac{7}{4\alpha'}\alpha_{-\frac12}^{25}{\bar\alpha}_{-\frac12}^{25}\ket{q^+,q^i}
+\end{align*}
+
+That is, the mass of the first excited state is $M^2=-\frac74$.

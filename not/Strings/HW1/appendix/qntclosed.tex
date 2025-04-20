@@ -13,14 +13,14 @@ canonical commutation relations, to the commutation relations of the modes $\alp
 expressions \ref{+dot} and \ref{-dot}, as was done in the open string, and computing the following commutator,
 
 \begin{align*}
-    \comm{{\dot X}^I\pm{X'}^I}{{\dot X}^I\pm{X'}^I}
+    \comm{{\dot X}^I\pm{X'}^I}{{\dot X}^J\pm{X'}^J}
 \end{align*}
 
 For now everything is equal to the open string, hence, we can use some of the results derived there, as \ref{commpm} and \ref{commmp},
 
 \begin{align*}
-    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma')}&=\pm4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\numberthis\label{closedcommpm}\\
-    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\mp{X'}^I)\qty(\tau,\sigma')}&=0\numberthis\label{closedcommmp}
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J\pm{X'}^J)\qty(\tau,\sigma')}&=\pm4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\numberthis\label{closedcommpm}\\
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J\mp{X'}^J)\qty(\tau,\sigma')}&=0\numberthis\label{closedcommmp}
 \end{align*}
 
 For our luck, unlike the open string, everything here is defined for the interval $\sigma\in\qty[0,2\pi]$, hence, using \ref{+dot} and \ref{-dot} we can compute,
@@ -83,7 +83,7 @@ well, this is the case if $n\neq0$, but, if $n=0$ there is no $\tau$ dependence 
 The last thing we need to discuss before going to the Lorentz generators is about the Virasoro operators, these were defined as,
 
 \begin{align*}
-    L^\perp_n&=\frac12\sum\limits_{p\in\mathbb Z}\alpha_{n-p}^I\alpha_{p},\ \ \ {\bar L}^\perp_n&=\frac12\sum\limits_{p\in\mathbb Z}{\bar \alpha}_{n-p}^I{\bar \alpha}_{p}\numberthis\label{closednonnormalvirasoro}
+    L^\perp_n=\frac12\sum\limits_{p\in\mathbb Z}\alpha_{n-p}^I\alpha_{p},\ \ \ {\bar L}^\perp_n&=\frac12\sum\limits_{p\in\mathbb Z}{\bar \alpha}_{n-p}^I{\bar \alpha}_{p}\numberthis\label{closednonnormalvirasoro}
 \end{align*}
 
 Again, we have the same normal ordering problem discussed in Appendix \ref{app-openqnt}, what we should do is to define the Virasoro modes as normal ordered and add a normal 

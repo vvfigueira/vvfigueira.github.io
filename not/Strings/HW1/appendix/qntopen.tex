@@ -52,17 +52,17 @@ For this is useful to note,
 Hence, the non-vanishing contributions are,
 
 \begin{align*}
-    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma')}&=\pm\comm{{\dot X}^I\qty(\tau,\sigma)}{{X'}^I\qty(\tau,\sigma')}\pm\comm{{X'}^I\qty(\tau,\sigma)}{{\dot X}^I\qty(\tau,\sigma')}\\
-    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma')}&=\mp2\pi\alpha'\im g^{IJ}\dv{}{\sigma'}\delta\qty(\sigma'-\sigma)\pm2\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
-    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma')}&=\pm4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\numberthis\label{commpm}
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J\pm{X'}^J)\qty(\tau,\sigma')}&=\pm\comm{{\dot X}^I\qty(\tau,\sigma)}{{X'}^J\qty(\tau,\sigma')}\pm\comm{{X'}^I\qty(\tau,\sigma)}{{\dot X}^J\qty(\tau,\sigma')}\\
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J\pm{X'}^J)\qty(\tau,\sigma')}&=\mp2\pi\alpha'\im g^{IJ}\dv{}{\sigma'}\delta\qty(\sigma'-\sigma)\pm2\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J\pm{X'}^J)\qty(\tau,\sigma')}&=\pm4\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\numberthis\label{commpm}
 \end{align*}
 
 And with opposite signs,
 
 \begin{align*}
-    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\mp{X'}^I)\qty(\tau,\sigma')}&=\mp\comm{{\dot X}^I\qty(\tau,\sigma)}{{X'}^I\qty(\tau,\sigma')}\pm\comm{{X'}^I\qty(\tau,\sigma)}{{\dot X}^I\qty(\tau,\sigma')}\\
-    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\mp{X'}^I)\qty(\tau,\sigma')}&=\pm2\pi\alpha'\im g^{IJ}\dv{}{\sigma'}\delta\qty(\sigma'-\sigma)\pm2\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
-    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^I\mp{X'}^I)\qty(\tau,\sigma')}&=0\numberthis\label{commmp}
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J\mp{X'}^J)\qty(\tau,\sigma')}&=\mp\comm{{\dot X}^I\qty(\tau,\sigma)}{{X'}^J\qty(\tau,\sigma')}\pm\comm{{X'}^I\qty(\tau,\sigma)}{{\dot X}^J\qty(\tau,\sigma')}\\
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J\mp{X'}^J)\qty(\tau,\sigma')}&=\pm2\pi\alpha'\im g^{IJ}\dv{}{\sigma'}\delta\qty(\sigma'-\sigma)\pm2\pi\alpha'\im g^{IJ}\dv{}{\sigma}\delta\qty(\sigma-\sigma')\\
+    \comm{\qty({\dot X}^I\pm{X'}^I)\qty(\tau,\sigma)}{\qty({\dot X}^J\mp{X'}^J)\qty(\tau,\sigma')}&=0\numberthis\label{commmp}
 \end{align*}
 
 But these expressions, and of course $X$ also, are only defined for $\sigma\in\qty[0,\pi]$, as we want to use \ref{pmdot} to 
@@ -88,7 +88,7 @@ That's interesting, because we found a representation of the modes in the whole 
     A^I\qty(\tau,\sigma)=\sqrt{2\alpha'}\sum\limits_{n\in\mathbb Z}\alpha_n^I\exp\qty(-\im n\qty(\tau+ \sigma))=\begin{cases}
         \qty({\dot X}^I+{X'}^I)\qty(\tau,\sigma),& \sigma\in\qty[0,\pi]\\
         \qty({\dot X}^I-{X'}^I)\qty(\tau,-\sigma),& \sigma\in\qty[-\pi,0]
-    \end{cases}
+    \end{cases}\numberthis\label{atrick}
 \end{align*}
 
 And of course, as everything where, we still have $A^I\qty(\tau,\sigma+2\pi)=A^I\qty(\tau,\sigma)$. Also, by \ref{commpm} we do have, using the $+$ sign,
