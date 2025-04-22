@@ -21,9 +21,9 @@
 \contentsline {section}{Problem 6}{44}{section.6}%
 \contentsline {subsection}{6.A)}{44}{subsection.6.1}%
 \contentsline {subsection}{6.B)}{46}{subsection.6.2}%
-\contentsline {subsection}{6.C)}{47}{subsection.6.3}%
+\contentsline {subsection}{6.C)}{48}{subsection.6.3}%
 \contentsline {subsection}{6.D)}{48}{subsection.6.4}%
-\contentsline {subsection}{6.E)}{49}{subsection.6.5}%
+\contentsline {subsection}{6.E)}{50}{subsection.6.5}%
 \contentsline {subsection}{6.F)}{50}{subsection.6.6}%
 \contentsline {subsection}{6.G)}{51}{subsection.6.7}%
 \contentsline {section}{\numberline {A}Light-Cone Gauge for the Open String}{53}{appendix.A}%
