@@ -141,11 +141,41 @@ Let's focus in the left-hand side,
 
 \begin{align*}
     \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\nabla^\mu\nabla_\mu\nabla_\alpha\xi^\alpha\\
-    \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\nabla^\mu\partial_\mu\qty(\partial_\alpha\xi^\alpha+\Gamma^\alpha_{\alpha\lambda}\xi^\lambda)\\
-    \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\partial^\mu\partial_\mu\qty(\partial_\alpha\xi^\alpha+\Gamma^\alpha_{\alpha\lambda}\xi^\lambda)-g^{\mu\kappa}\Gamma^\beta_{\kappa\mu}\partial_\beta\qty(\partial_\alpha\xi^\alpha+\Gamma^\alpha_{\alpha\lambda}\xi^\lambda)\\
-    \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\square\partial\cdot\xi+\partial^\mu\partial_\mu\qty(\Gamma^\alpha_{\alpha\lambda}\xi^\lambda)-g^{\mu\kappa}\Gamma^\beta_{\kappa\mu}\partial_\beta\qty(\partial_\alpha\xi^\alpha+\Gamma^\alpha_{\alpha\lambda}\xi^\lambda)
+    \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\nabla^\mu\partial_\mu\qty(\frac{1}{\sqrt{-g}}\partial_\alpha\qty(\sqrt{-g}\xi^\alpha))\\
+    \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\frac{1}{\sqrt{-g}}\partial^\mu\qty(\sqrt{-g}\partial_\mu\qty(\frac{1}{\sqrt{-g}}\partial_\alpha\qty(\sqrt{-g}\xi^\alpha)))
 \end{align*}
 
-Here we take the time to compute
+% \begin{align*}
+%     \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=g^{\alpha\beta}\nabla^\mu\nabla_\mu\nabla_\alpha\xi_\beta\\
+%     \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=g^{\alpha\beta}\nabla^\mu\nabla_\mu\qty(\partial_\alpha\xi_\beta-\Gamma^\lambda_{\alpha\beta}\xi_\lambda)\\
+%     \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=g^{\alpha\beta}\nabla^\mu\qty{\partial_\mu\qty(\partial_\alpha\xi_\beta-\Gamma^\lambda_{\alpha\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\alpha}\qty(\partial_\kappa\xi_\beta-\Gamma^\lambda_{\kappa\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\beta}\qty(\partial_\alpha\xi_\kappa-\Gamma^\lambda_{\alpha\kappa}\xi_\lambda)}\\
+%     \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=g^{\alpha\beta}\partial^\mu\qty{\partial_\mu\qty(\partial_\alpha\xi_\beta-\Gamma^\lambda_{\alpha\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\alpha}\qty(\partial_\kappa\xi_\beta-\Gamma^\lambda_{\kappa\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\beta}\qty(\partial_\alpha\xi_\kappa-\Gamma^\lambda_{\alpha\kappa}\xi_\lambda)}\\
+%     &\quad\quad\quad-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\mu}\qty{\partial_\rho\qty(\partial_\alpha\xi_\beta-\Gamma^\lambda_{\alpha\beta}\xi_\lambda)-\Gamma^\kappa_{\rho\alpha}\qty(\partial_\kappa\xi_\beta-\Gamma^\lambda_{\kappa\beta}\xi_\lambda)-\Gamma^\kappa_{\rho\beta}\qty(\partial_\alpha\xi_\kappa-\Gamma^\lambda_{\alpha\kappa}\xi_\lambda)}\\
+%     &\quad\quad\quad-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\alpha}\qty{\partial_\mu\qty(\partial_\rho\xi_\beta-\Gamma^\lambda_{\rho\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\rho}\qty(\partial_\kappa\xi_\beta-\Gamma^\lambda_{\kappa\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\beta}\qty(\partial_\rho\xi_\kappa-\Gamma^\lambda_{\rho\kappa}\xi_\lambda)}\\
+%     &\quad\quad\quad-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\beta}\qty{\partial_\mu\qty(\partial_\alpha\xi_\rho-\Gamma^\lambda_{\alpha\rho}\xi_\lambda)-\Gamma^\kappa_{\mu\alpha}\qty(\partial_\kappa\xi_\rho-\Gamma^\lambda_{\kappa\rho}\xi_\lambda)-\Gamma^\kappa_{\mu\rho}\qty(\partial_\alpha\xi_\kappa-\Gamma^\lambda_{\alpha\kappa}\xi_\lambda)}
+% \end{align*}
+
+% This looks like a mess, but, it isn't that bad, let's group the terms which have two or three derivatives of $\xi$,
+
+% \begin{align*}
+%     \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=g^{\alpha\beta}\partial^\mu\partial_\mu\partial_\alpha\xi_\beta-g^{\alpha\beta}\Gamma^\kappa_{\mu\alpha}\partial^\mu\partial_\kappa\xi_\beta-g^{\alpha\beta}\Gamma^\kappa_{\mu\beta}\partial^\mu\partial_\alpha\xi_\kappa\\
+%     &\quad\quad\quad-g^{\alpha\beta}\Gamma^\lambda_{\alpha\beta}\partial^\mu\partial_\mu\xi_\lambda-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\mu}\partial_\rho\partial_\alpha\xi_\beta-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\alpha}\partial_\mu\partial_\rho\xi_\beta-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\beta}\partial_\mu\partial_\alpha\xi_\rho\\
+%     &\quad\quad\quad+g^{\alpha\beta}\qty{-\partial^\mu\partial_\mu\Gamma^\lambda_{\alpha\beta}\xi_\lambda-2\partial_\mu\Gamma^\lambda_{\alpha\beta}\partial^\mu\xi_\lambda-\partial^\mu\Gamma^\kappa_{\mu\alpha}\partial_\kappa\xi_\beta-\partial^\mu\Gamma^\kappa_{\mu\beta}\partial_\alpha\xi_\kappa}\\
+%     &\quad\quad\quad+g^{\alpha\beta}\partial^\mu\qty{\Gamma^\kappa_{\mu\alpha}\Gamma^\lambda_{\kappa\beta}\xi_\lambda+\Gamma^\kappa_{\mu\beta}\Gamma^\lambda_{\alpha\kappa}\xi_\lambda}\\
+%     &\quad\quad\quad-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\mu}\qty{-\partial_\rho\qty(\Gamma^\lambda_{\alpha\beta}\xi_\lambda)-\Gamma^\kappa_{\rho\alpha}\qty(\partial_\kappa\xi_\beta-\Gamma^\lambda_{\kappa\beta}\xi_\lambda)-\Gamma^\kappa_{\rho\beta}\qty(\partial_\alpha\xi_\kappa-\Gamma^\lambda_{\alpha\kappa}\xi_\lambda)}\\
+%     &\quad\quad\quad-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\alpha}\qty{-\partial_\mu\qty(\Gamma^\lambda_{\rho\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\rho}\qty(\partial_\kappa\xi_\beta-\Gamma^\lambda_{\kappa\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\beta}\qty(\partial_\rho\xi_\kappa-\Gamma^\lambda_{\rho\kappa}\xi_\lambda)}\\
+%     &\quad\quad\quad-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\beta}\qty{-\partial_\mu\qty(\Gamma^\lambda_{\alpha\rho}\xi_\lambda)-\Gamma^\kappa_{\mu\alpha}\qty(\partial_\kappa\xi_\rho-\Gamma^\lambda_{\kappa\rho}\xi_\lambda)-\Gamma^\kappa_{\mu\rho}\qty(\partial_\alpha\xi_\kappa-\Gamma^\lambda_{\alpha\kappa}\xi_\lambda)}
+% \end{align*}
+
+% The first term, the one with three derivatives on $\xi$, is the most important one, the remaining terms in the first and second line there are all the two $\xi$ derivative terms, which now we'll show is zero, we start by relabeling all index,
+
+% \begin{align*}
+%     &-g^{\alpha\beta}\Gamma^\lambda_{\alpha\beta}\partial^\mu\partial_\mu\xi_\lambda-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\mu}\partial_\rho\partial_\alpha\xi_\beta-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\alpha}\partial_\mu\partial_\rho\xi_\beta-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\beta}\partial_\mu\partial_\alpha\xi_\rho\\
+%     &\quad\quad\quad-g^{\alpha\beta}\Gamma^\kappa_{\mu\alpha}\partial^\mu\partial_\kappa\xi_\beta-g^{\alpha\beta}\Gamma^\kappa_{\mu\beta}\partial^\mu\partial_\alpha\xi_\kappa\\
+%     &=-g^{\alpha\beta}g^{\rho\sigma}\Gamma^\lambda_{\alpha\beta}\partial_\rho\partial_\sigma\xi_\lambda-g^{\sigma\lambda}g^{\alpha\beta}\Gamma^{\rho}_{\alpha\beta}\partial_\rho\partial_\sigma\xi_\lambda-g^{\beta\lambda}g^{\rho\alpha}\Gamma^\sigma_{\alpha\beta}\partial_\rho\partial_\sigma\xi_\lambda-g^{\sigma\beta}g^{\rho\alpha}\Gamma^\lambda_{\alpha\beta}\partial_\rho\partial_\sigma\xi_\lambda\\
+%     &\quad\quad\quad-g^{\beta\lambda}g^{\alpha\rho}\Gamma^\sigma_{\alpha\beta}\partial_\rho\partial_\sigma\xi_\lambda-g^{\sigma\beta}g^{\rho\alpha}\Gamma^\lambda_{\alpha\beta}\partial_\rho\partial_\sigma\xi_\lambda\\
+%     &=-\qty[g^{\alpha\beta}g^{\rho\sigma}\Gamma^\lambda_{\alpha\beta}+g^{\sigma\lambda}g^{\alpha\beta}\Gamma^{\rho}_{\alpha\beta}+g^{\beta\lambda}g^{\rho\alpha}\Gamma^\sigma_{\alpha\beta}+g^{\sigma\beta}g^{\rho\alpha}\Gamma^\lambda_{\alpha\beta}+g^{\beta\lambda}g^{\alpha\rho}\Gamma^\sigma_{\alpha\beta}+g^{\sigma\beta}g^{\rho\alpha}\Gamma^\lambda_{\alpha\beta}]\partial_\rho\partial_\sigma\xi_\lambda\\
+%     &=-\qty[g^{\alpha\beta}g^{\rho\sigma}\Gamma^\lambda_{\alpha\beta}+g^{\sigma\lambda}g^{\alpha\beta}\Gamma^{\rho}_{\alpha\beta}+2g^{\beta\lambda}g^{\rho\alpha}\Gamma^\sigma_{\alpha\beta}+2g^{\sigma\beta}g^{\rho\alpha}\Gamma^\lambda_{\alpha\beta}]\partial_\rho\partial_\sigma\xi_\lambda
+% \end{align*}
 
 \probitem{}
