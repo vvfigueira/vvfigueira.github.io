@@ -1,3 +1,151 @@
 \problem{}
 \probitem{}
+
+Let $M$ be our $D>2$ dimensional $C^\infty$ manifold and $\phi:\mathbb R\times M\rightarrow M$ be a one parameter family of diffeomorphisms, that is, $\forall t\in\mathbb R|\ \phi_t:M\rightarrow M$ is a diffeomorphism such that, 
+
+\begin{itemize}
+    \item $\forall p\in M|\ \phi_0\qty(p)=p$
+    \item $\forall p\in M; \forall t,s\in\mathbb R|\ \phi_{t+s}\qty(p)=\qty(\phi_t\circ\phi_s)\qty(p)$
+    \item $\forall p\in M|\ \phi\qty(p):\mathbb R\rightarrow M$ is at least $C^1$
+\end{itemize}
+
+Then this family of diffeomorphisms define in a natural manner a vector which generate these transformations, 
+we define at each point $p\in M$ this vector by it's action in a function $f:M\rightarrow \mathbb R$,
+
+\begin{align*}
+    \xi_p\qty(f)&=\dv{}{t}\qty(\qty(f\circ\phi_t)\qty(p))\eval_{t=0}
+\end{align*}
+
+And from this we define $\xi$ as a vector field in $M$, this vector field has as integral curves exactly $\phi$. Let's 
+open a little bit more in some chart $x:M\rightarrow \mathbb R^D$,
+
+\begin{align*}
+    \xi_p\qty(f)&=\dv{}{t}\qty(\qty(f\circ x^{-1}\circ x\circ\phi_t)\qty(p))\eval_{t=0}\\
+    \xi_p\qty(f)&=\dv{}{t}\qty(\qty(f\circ x^{-1})\circ\qty(x\circ\phi_t)\qty(p))\eval_{t=0}\\
+    \xi_p\qty(f)&=\partial_\mu\qty(f\circ x^{-1})\eval_{x\circ\phi_0\qty(p)}\dv{}{t}\qty(\qty(x\circ\phi_t)^\mu\qty(p))\eval_{t=0}\\
+    \xi_p^\mu\partial_\mu\qty(f\circ x^{-1})\eval_{x\qty(p)}&=\partial_\mu\qty(f\circ x^{-1})\eval_{x\qty(p)}\dv{}{t}\qty(\qty(x\circ\phi_t)^\mu\qty(p))\eval_{t=0}
+\end{align*}
+
+Where of curse $\partial_\mu$ is to be interpreted as the derivative of the $\mu$-th component in the chart $x$. Here we have a clear definition of the 
+values of the $\xi$ vector field in a chart $x$,
+
+\begin{align*}
+    \xi_p^\mu&=\dv{}{t}\qty(\qty(x\circ\phi_t)^\mu\qty(p))\eval_{t=0}
+\end{align*}
+
+The term inside the derivative is just the pullback of the chart $x$ --- the chart can be seen as a $\mathbb R^D$-valued function ---, which 
+in it's own can be seen as a new chart $x'_t$ defined by the transformations of the diffeomorphism family $\phi$, that is,
+
+\begin{align*}
+    x'_t=\phi^\ast_tx=x\circ\phi_t:M\rightarrow \mathbb R^D
+\end{align*}
+
+All of this is consistent with our interpretation of the diffeomorphisms being a `\textit{coordinate change}', in principle, with 
+enough derivability of $\phi$ we can actually write,
+
+\begin{align*}
+    x'_t&=x'_0+t\dv{}{t}\qty(x'_t)\eval_{t=0}+\mathcal O\qty(t^2)\\
+    {x'_1}^\mu\eqcolon {x'}^\mu&={x}^\mu+\xi^\mu+\cdots
+\end{align*}
+
+We just restored the index to not confuse the components of the vector field $\xi$ in the basis $x$ with the vector field itself. 
+That is, we showed that the transformation done by $\phi_1$ is equivalent to a `\textit{infinitesimal coordinate change}' by $\xi^\mu$. 
+Actually, all this we did is the special case of a more general type of derivative, the Lie Derivative, given a vector field $\xi$ and it's 
+family of integral curves $\phi$, it's defined in terms of the pushforward of the object under analysis,
+
+\begin{align*}
+    \pounds_\xi T=\dv{}{t}\qty(\phi_{-t\ast}T)\eval_{t=0}
+\end{align*}
+
+For a $\qty(0,2)$ tensor, that is, for the metric,
+
+\begin{align*}
+    \pounds_\xi g_{\mu\nu}=\nabla_\xi g_{\mu\nu}+g_{\mu\alpha}\nabla_\nu\xi^\alpha+g_{\alpha\nu}\nabla_\mu\xi^\alpha
+\end{align*}
+
+And as the connection is metric compatible,
+
+\begin{align*}
+    \pounds_\xi g_{\mu\nu}=\nabla_\nu\xi_\mu+\nabla_\mu\xi_\nu=2\nabla_{(\mu}\xi_{\nu)}
+\end{align*}
+
+This amounts for the first term in an expansion in $t$ of the diffeomorphism transformed metric $\phi_{-t\ast}g=g'_{t\mu\nu}$, that is, 
+
+\begin{align*}
+    \phi_{-t\ast}g_{\mu\nu}\eqcolon g'_{t\mu\nu}&=g_{\mu\nu}+t\pounds _\xi g_{\mu\nu}+\mathcal O\qty(t^2)\\
+    g'_{t\mu\nu}&=g_{\mu\nu}+2t\nabla_{(\mu}\xi_{\nu)}+\mathcal O\qty(t^2)
+\end{align*}
+
+Which also can be interpreted as the infinitesimal transformation of the metric. Imposing that the initial and transformed metric are conformally flat,
+
+\begin{align*}
+    \exp\qty(2\omega'_t)\eta_{\mu\nu}&=\exp\qty(2\omega)\eta_{\mu\nu}+2t\nabla_{(\mu}\xi_{\nu)}+\mathcal O\qty(t^2)\\
+    \exp\qty(2\omega'_0+2t\dv{}{t}\qty(\omega'_t)\eval_{t=0}+\mathcal O\qty(t^2))\eta_{\mu\nu}&=\exp\qty(2\omega)\eta_{\mu\nu}+2t\nabla_{(\mu}\xi_{\nu)}+\mathcal O\qty(t^2)\\
+    \exp\qty(2\omega)\exp\qty(2t\dv{}{t}\qty(\omega'_t)\eval_{t=0}+\mathcal O\qty(t^2))\eta_{\mu\nu}&=\exp\qty(2\omega)\eta_{\mu\nu}+2t\nabla_{(\mu}\xi_{\nu)}+\mathcal O\qty(t^2)\\
+    \exp\qty(2\omega)\qty(1+2t\dv{}{t}\qty(\omega'_t)\eval_{t=0}+\mathcal O\qty(t^2))\eta_{\mu\nu}&=\exp\qty(2\omega)\eta_{\mu\nu}+2t\nabla_{(\mu}\xi_{\nu)}+\mathcal O\qty(t^2)\\
+    \exp\qty(2\omega)2t\dv{}{t}\qty(\omega'_t)\eval_{t=0}\eta_{\mu\nu}&=2t\nabla_{(\mu}\xi_{\nu)}\\
+    \dv{}{t}\qty(\omega'_t)\eval_{t=0}g_{\mu\nu}&=\nabla_{(\mu}\xi_{\nu)}
+\end{align*}
+
+The term $\dv{}{t}\qty(\omega '_t)\eval_{t=0}$ is fully determined by $\xi$, to see this just contract both sides with the metric,
+
+\begin{align*}
+    \dv{}{t}\qty(\omega'_t)\eval_{t=0}g^{\mu\nu}g_{\mu\nu}&=g^{\mu\nu}\nabla_{(\mu}\xi_{\nu)}\\
+    \dv{}{t}\qty(\omega'_t)\eval_{t=0}D&=\nabla_{\mu}\xi^{\mu}
+\end{align*}
+
+Substituting this back in the original equation,
+
+\begin{align*}
+    \nabla_\alpha \xi^\alpha g_{\mu\nu}&=D\nabla_{(\mu}\xi_{\nu)}\numberthis\label{conformaldefeq}
+\end{align*}
+
+This is the condition upon $\xi$ that ensures the diffeomorphism maintain the conformally flatness of the metric. Now we'll solve it. 
+First, apply $\nabla^\nu$ in both sides,
+
+\begin{align*}
+    \nabla^\nu\nabla_\alpha \xi^\alpha g_{\mu\nu}&=D\nabla^\nu\nabla_{(\mu}\xi_{\nu)}\\
+    \frac2D\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla^\nu\nabla_{\mu}\xi_{\nu}+\nabla^\nu\nabla_{\nu}\xi_{\mu}\\
+    \frac2D\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla^\alpha\nabla_{\mu}\xi_{\alpha}+\nabla^\alpha\nabla_{\alpha}\xi_{\mu}\\
+    \frac2D\nabla_\mu\nabla_\alpha \xi^\alpha -\nabla_\mu\nabla^\alpha\xi_\alpha&=\qty(\nabla^\alpha\nabla_{\mu}-\nabla_\mu\nabla^\alpha)\xi_{\alpha}+\nabla^\alpha\nabla_{\alpha}\xi_{\mu}\\
+    \frac2D\nabla_\mu\nabla_\alpha \xi^\alpha -\nabla_\mu\nabla_\alpha\xi^\alpha&=\tensor{R}{^\alpha_\mu_\alpha^\beta}\xi_{\beta}+\nabla^\alpha\nabla_{\alpha}\xi_{\mu}\\
+    \qty(\frac2D-1)\nabla_\mu\nabla_\alpha \xi^\alpha &=\tensor{R}{_\mu^\alpha}\xi_{\alpha}+\nabla^\alpha\nabla_{\alpha}\xi_{\mu}
+\end{align*}
+
+Apply $\nabla_\nu$ to the both sides,
+
+\begin{align*}
+    \qty(\frac2D-1)\nabla_\nu\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla_\nu\qty(\tensor{R}{_\mu^\alpha}\xi_{\alpha})+\nabla_\nu\nabla^\alpha\nabla_{\alpha}\xi_{\mu}\\
+    \qty(\frac2D-1)\nabla_\nu\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla_\nu\qty(\tensor{R}{_\mu^\alpha}\xi_{\alpha})+\qty(\nabla_\nu\nabla^\alpha-\nabla^\alpha\nabla_\nu)\nabla_{\alpha}\xi_{\mu}+\nabla^\alpha\nabla_\nu\nabla_\alpha\xi_\mu\\
+    \qty(\frac2D-1)\nabla_\nu\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla_\nu\qty(\tensor{R}{_\mu^\alpha}\xi_{\alpha})+\tensor{R}{_\nu^\alpha_\alpha^\beta}\nabla_{\beta}\xi_{\mu}+\tensor{R}{_\nu^\alpha_\mu^\beta}\nabla_{\alpha}\xi_{\beta}+\nabla^\alpha\nabla_\nu\nabla_\alpha\xi_\mu\\
+    \qty(\frac2D-1)\nabla_\nu\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla_\nu\qty(\tensor{R}{_\mu^\alpha}\xi_{\alpha})-\tensor{R}{_\nu^\beta}\nabla_{\beta}\xi_{\mu}+\tensor{R}{_\nu^\alpha_\mu^\beta}\nabla_{\alpha}\xi_{\beta}+\nabla^\alpha\qty(\nabla_\nu\nabla_\alpha-\nabla_\alpha\nabla_\nu)\xi_\mu+\nabla^\alpha\nabla_\alpha\nabla_\nu\xi_\mu\\
+    \qty(\frac2D-1)\nabla_\nu\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla_\nu\qty(\tensor{R}{_\mu^\alpha}\xi_{\alpha})-\tensor{R}{_\nu^\alpha}\nabla_{\alpha}\xi_{\mu}+\tensor{R}{_\nu^\alpha_\mu^\beta}\nabla_{\alpha}\xi_{\beta}+\nabla^\alpha\qty(\tensor{R}{_\nu_\alpha_\mu^\beta}\xi_\beta)+\nabla^\alpha\nabla_\alpha\nabla_\nu\xi_\mu
+\end{align*}
+
+We symmetrize the $\mu\nu$ indices, make use of \ref{conformaldefeq}, and after contract with $g^{\mu\nu}$,
+
+\begin{align*}
+    \qty(\frac2D-1)\nabla_{(\nu}\nabla_{\mu)}\nabla_\alpha \xi^\alpha &=\nabla_{(\nu}\qty(\tensor{R}{_{\mu)}^\alpha}\xi_{\alpha})-\tensor{R}{_{(\nu|}^\alpha}\nabla_{\alpha}\xi_{|\mu)}+\tensor{R}{_{(\nu|}^\alpha_{|\mu)}^\beta}\nabla_{\alpha}\xi_{\beta}\\
+    &\quad\quad\quad+\nabla^\alpha\qty(\tensor{R}{_{(\nu|}_\alpha_{| \mu)}^\beta}\xi_\beta)+\nabla^\alpha\nabla_\alpha\nabla_{(\nu}\xi_{\mu)}\\
+    \qty(\frac2D-1)\nabla_{(\nu}\nabla_{\mu)}\nabla_\alpha \xi^\alpha &=\nabla_{(\nu}\qty(\tensor{R}{_{\mu)}^\alpha}\xi_{\alpha})-\tensor{R}{_{(\nu|}^\alpha}\nabla_{\alpha}\xi_{|\mu)}+\tensor{R}{_{(\nu|}^\alpha_{|\mu)}^\beta}\nabla_{\alpha}\xi_{\beta}\\
+    &\quad\quad\quad+\nabla^\alpha\qty(\tensor{R}{_{(\nu|}_\alpha_{| \mu)}^\beta}\xi_\beta)+\frac1Dg_{\mu\nu}\nabla^\alpha\nabla_\alpha\nabla_\beta\xi^\beta\\
+    \qty(\frac2D-1)\nabla_{\mu}\nabla^{\mu}\nabla_\alpha \xi^\alpha &=\nabla_{\mu}\qty(\tensor{R}{^{\mu}^\alpha}\xi_{\alpha})-\tensor{R}{^{\mu}^\alpha}\nabla_{\alpha}\xi_{\mu}+\tensor{R}{_{\mu}^\alpha^{\mu}^\beta}\nabla_{\alpha}\xi_{\beta}\\
+    &\quad\quad\quad+\nabla^\alpha\qty(\tensor{R}{_{\mu}_\alpha^{\mu}^\beta}\xi_\beta)+\nabla^\alpha\nabla_\alpha\nabla_\beta\xi^\beta\\
+    \qty(\frac2D-1)\nabla_{\mu}\nabla^{\mu}\nabla_\alpha \xi^\alpha &=2\nabla_{\mu}\qty(\tensor{R}{^{\mu}^\alpha}\xi_{\alpha})+\nabla^\alpha\nabla_\alpha\nabla_\beta\xi^\beta\\
+    &\quad\quad\quad+\nabla^\alpha\qty(\tensor{R}{_{\mu}_\alpha^{\mu}^\beta}\xi_\beta)+\nabla^\alpha\nabla_\alpha\nabla_\beta\xi^\beta\\
+    \qty(\frac2D-2)\nabla_{\mu}\nabla^{\mu}\nabla_\alpha \xi^\alpha &=2\nabla_{\mu}\qty(\tensor{R}{^{\mu}^\alpha}\xi_{\alpha})\\
+    \qty(1-D)\nabla_{\mu}\nabla^{\mu}\nabla_\alpha \xi^\alpha &=D\nabla_{\mu}\qty(\tensor{R}{^{\mu}^\alpha}\xi_{\alpha})\numberthis\label{conformal1}
+\end{align*}
+
+Let's focus in the left-hand side,
+
+\begin{align*}
+    \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\nabla^\mu\nabla_\mu\nabla_\alpha\xi^\alpha\\
+    \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\nabla^\mu\partial_\mu\qty(\partial_\alpha\xi^\alpha+\Gamma^\alpha_{\alpha\lambda}\xi^\lambda)\\
+    \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\partial^\mu\partial_\mu\qty(\partial_\alpha\xi^\alpha+\Gamma^\alpha_{\alpha\lambda}\xi^\lambda)-g^{\mu\kappa}\Gamma^\beta_{\kappa\mu}\partial_\beta\qty(\partial_\alpha\xi^\alpha+\Gamma^\alpha_{\alpha\lambda}\xi^\lambda)\\
+    \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\square\partial\cdot\xi+\partial^\mu\partial_\mu\qty(\Gamma^\alpha_{\alpha\lambda}\xi^\lambda)-g^{\mu\kappa}\Gamma^\beta_{\kappa\mu}\partial_\beta\qty(\partial_\alpha\xi^\alpha+\Gamma^\alpha_{\alpha\lambda}\xi^\lambda)
+\end{align*}
+
+Here we take the time to compute
+
 \probitem{}
