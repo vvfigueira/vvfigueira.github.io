@@ -76,7 +76,7 @@ This amounts for the first term in an expansion in $t$ of the diffeomorphism tra
     g'_{t\mu\nu}&=g_{\mu\nu}+2t\nabla_{(\mu}\xi_{\nu)}+\mathcal O\qty(t^2)
 \end{align*}
 
-Which also can be interpreted as the infinitesimal transformation of the metric. Imposing that the initial and transformed metric are conformally flat,
+Which also can be interpreted as the `\textit{infinitesimal transformation}' of the metric. Imposing that the initial and transformed metric are conformally flat,
 
 \begin{align*}
     \exp\qty(2\omega'_t)\eta_{\mu\nu}&=\exp\qty(2\omega)\eta_{\mu\nu}+2t\nabla_{(\mu}\xi_{\nu)}+\mathcal O\qty(t^2)\\
@@ -100,82 +100,80 @@ Substituting this back in the original equation,
     \nabla_\alpha \xi^\alpha g_{\mu\nu}&=D\nabla_{(\mu}\xi_{\nu)}\numberthis\label{conformaldefeq}
 \end{align*}
 
-This is the condition upon $\xi$ that ensures the diffeomorphism maintain the conformally flatness of the metric. Now we'll solve it. 
-First, apply $\nabla^\nu$ in both sides,
+This is the condition upon $\xi$ that ensures the diffeomorphism maintain the conformally flatness of the metric. To solve it 
+in it's full generality is hard, so, we'll make some use of symmetry, first, let's write it again in a coordinate free form,
 
 \begin{align*}
-    \nabla^\nu\nabla_\alpha \xi^\alpha g_{\mu\nu}&=D\nabla^\nu\nabla_{(\mu}\xi_{\nu)}\\
-    \frac2D\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla^\nu\nabla_{\mu}\xi_{\nu}+\nabla^\nu\nabla_{\nu}\xi_{\mu}\\
-    \frac2D\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla^\alpha\nabla_{\mu}\xi_{\alpha}+\nabla^\alpha\nabla_{\alpha}\xi_{\mu}\\
-    \frac2D\nabla_\mu\nabla_\alpha \xi^\alpha -\nabla_\mu\nabla^\alpha\xi_\alpha&=\qty(\nabla^\alpha\nabla_{\mu}-\nabla_\mu\nabla^\alpha)\xi_{\alpha}+\nabla^\alpha\nabla_{\alpha}\xi_{\mu}\\
-    \frac2D\nabla_\mu\nabla_\alpha \xi^\alpha -\nabla_\mu\nabla_\alpha\xi^\alpha&=\tensor{R}{^\alpha_\mu_\alpha^\beta}\xi_{\beta}+\nabla^\alpha\nabla_{\alpha}\xi_{\mu}\\
-    \qty(\frac2D-1)\nabla_\mu\nabla_\alpha \xi^\alpha &=\tensor{R}{_\mu^\alpha}\xi_{\alpha}+\nabla^\alpha\nabla_{\alpha}\xi_{\mu}
+    \textnormal{Div}_g\qty(\xi)g=\frac D2\pounds_\xi g\numberthis\label{confnocoor}
 \end{align*}
 
-Apply $\nabla_\nu$ to the both sides,
+Where $\textnormal{Div}_g\qty(\xi)$ is just $\nabla_\alpha\xi^\alpha$, but with the connection $\nabla$ defined with respect with the metric $g$, now, suppose we have a function $f:M\rightarrow \mathbb R$, 
+define $\tilde g =\exp\qty(2f)g$, thus,
 
 \begin{align*}
-    \qty(\frac2D-1)\nabla_\nu\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla_\nu\qty(\tensor{R}{_\mu^\alpha}\xi_{\alpha})+\nabla_\nu\nabla^\alpha\nabla_{\alpha}\xi_{\mu}\\
-    \qty(\frac2D-1)\nabla_\nu\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla_\nu\qty(\tensor{R}{_\mu^\alpha}\xi_{\alpha})+\qty(\nabla_\nu\nabla^\alpha-\nabla^\alpha\nabla_\nu)\nabla_{\alpha}\xi_{\mu}+\nabla^\alpha\nabla_\nu\nabla_\alpha\xi_\mu\\
-    \qty(\frac2D-1)\nabla_\nu\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla_\nu\qty(\tensor{R}{_\mu^\alpha}\xi_{\alpha})+\tensor{R}{_\nu^\alpha_\alpha^\beta}\nabla_{\beta}\xi_{\mu}+\tensor{R}{_\nu^\alpha_\mu^\beta}\nabla_{\alpha}\xi_{\beta}+\nabla^\alpha\nabla_\nu\nabla_\alpha\xi_\mu\\
-    \qty(\frac2D-1)\nabla_\nu\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla_\nu\qty(\tensor{R}{_\mu^\alpha}\xi_{\alpha})-\tensor{R}{_\nu^\beta}\nabla_{\beta}\xi_{\mu}+\tensor{R}{_\nu^\alpha_\mu^\beta}\nabla_{\alpha}\xi_{\beta}+\nabla^\alpha\qty(\nabla_\nu\nabla_\alpha-\nabla_\alpha\nabla_\nu)\xi_\mu+\nabla^\alpha\nabla_\alpha\nabla_\nu\xi_\mu\\
-    \qty(\frac2D-1)\nabla_\nu\nabla_\mu\nabla_\alpha \xi^\alpha &=\nabla_\nu\qty(\tensor{R}{_\mu^\alpha}\xi_{\alpha})-\tensor{R}{_\nu^\alpha}\nabla_{\alpha}\xi_{\mu}+\tensor{R}{_\nu^\alpha_\mu^\beta}\nabla_{\alpha}\xi_{\beta}+\nabla^\alpha\qty(\tensor{R}{_\nu_\alpha_\mu^\beta}\xi_\beta)+\nabla^\alpha\nabla_\alpha\nabla_\nu\xi_\mu
+    \pounds_\xi \tilde g&=\pounds _\xi\qty(\exp\qty(2f)g)\\
+    \pounds_\xi \tilde g&=\exp\qty(2f)\pounds _\xi g+g\pounds _\xi \exp\qty(2f)\\
+    \pounds_\xi \tilde g&=\exp\qty(2f)\pounds _\xi g+g\xi\qty(\exp\qty(2f))\\
+    \pounds_\xi \tilde g&=\exp\qty(2f)\pounds _\xi g+g\xi\qty(f)\exp\qty(2f)\\
+    \pounds_\xi \tilde g&=\exp\qty(2f)\pounds _\xi g+\tilde g\xi\qty(2f)\numberthis\label{lievers}
 \end{align*}
 
-We symmetrize the $\mu\nu$ indices, make use of \ref{conformaldefeq}, and after contract with $g^{\mu\nu}$,
+Also,
 
 \begin{align*}
-    \qty(\frac2D-1)\nabla_{(\nu}\nabla_{\mu)}\nabla_\alpha \xi^\alpha &=\nabla_{(\nu}\qty(\tensor{R}{_{\mu)}^\alpha}\xi_{\alpha})-\tensor{R}{_{(\nu|}^\alpha}\nabla_{\alpha}\xi_{|\mu)}+\tensor{R}{_{(\nu|}^\alpha_{|\mu)}^\beta}\nabla_{\alpha}\xi_{\beta}\\
-    &\quad\quad\quad+\nabla^\alpha\qty(\tensor{R}{_{(\nu|}_\alpha_{| \mu)}^\beta}\xi_\beta)+\nabla^\alpha\nabla_\alpha\nabla_{(\nu}\xi_{\mu)}\\
-    \qty(\frac2D-1)\nabla_{(\nu}\nabla_{\mu)}\nabla_\alpha \xi^\alpha &=\nabla_{(\nu}\qty(\tensor{R}{_{\mu)}^\alpha}\xi_{\alpha})-\tensor{R}{_{(\nu|}^\alpha}\nabla_{\alpha}\xi_{|\mu)}+\tensor{R}{_{(\nu|}^\alpha_{|\mu)}^\beta}\nabla_{\alpha}\xi_{\beta}\\
-    &\quad\quad\quad+\nabla^\alpha\qty(\tensor{R}{_{(\nu|}_\alpha_{| \mu)}^\beta}\xi_\beta)+\frac1Dg_{\mu\nu}\nabla^\alpha\nabla_\alpha\nabla_\beta\xi^\beta\\
-    \qty(\frac2D-1)\nabla_{\mu}\nabla^{\mu}\nabla_\alpha \xi^\alpha &=\nabla_{\mu}\qty(\tensor{R}{^{\mu}^\alpha}\xi_{\alpha})-\tensor{R}{^{\mu}^\alpha}\nabla_{\alpha}\xi_{\mu}+\tensor{R}{_{\mu}^\alpha^{\mu}^\beta}\nabla_{\alpha}\xi_{\beta}\\
-    &\quad\quad\quad+\nabla^\alpha\qty(\tensor{R}{_{\mu}_\alpha^{\mu}^\beta}\xi_\beta)+\nabla^\alpha\nabla_\alpha\nabla_\beta\xi^\beta\\
-    \qty(\frac2D-1)\nabla_{\mu}\nabla^{\mu}\nabla_\alpha \xi^\alpha &=2\nabla_{\mu}\qty(\tensor{R}{^{\mu}^\alpha}\xi_{\alpha})+\nabla^\alpha\nabla_\alpha\nabla_\beta\xi^\beta\\
-    &\quad\quad\quad+\nabla^\alpha\qty(\tensor{R}{_{\mu}_\alpha^{\mu}^\beta}\xi_\beta)+\nabla^\alpha\nabla_\alpha\nabla_\beta\xi^\beta\\
-    \qty(\frac2D-2)\nabla_{\mu}\nabla^{\mu}\nabla_\alpha \xi^\alpha &=2\nabla_{\mu}\qty(\tensor{R}{^{\mu}^\alpha}\xi_{\alpha})\\
-    \qty(1-D)\nabla_{\mu}\nabla^{\mu}\nabla_\alpha \xi^\alpha &=D\nabla_{\mu}\qty(\tensor{R}{^{\mu}^\alpha}\xi_{\alpha})\numberthis\label{conformal1}
+    \textnormal{Div}_g\qty(\xi)&=\partial_\alpha\xi^\alpha+\Gamma^\alpha_{\alpha\lambda}\xi^\lambda\\
+    \textnormal{Div}_g\qty(\xi)&=\partial_\alpha\xi^\alpha+\frac12g^{\alpha\beta}\qty(\partial_\alpha g_{\beta\lambda}+\partial_\lambda g_{\beta\alpha}-\partial_\beta g_{\alpha\lambda})\xi^\lambda\\
+    \textnormal{Div}_g\qty(\xi)&=\partial_\alpha\xi^\alpha+g^{\alpha\beta}\qty(\partial_\alpha \omega g_{\beta\lambda}+\partial_\lambda \omega g_{\beta\alpha}-\partial_\beta \omega g_{\alpha\lambda})\xi^\lambda\\
+    \textnormal{Div}_g\qty(\xi)&=\partial_\alpha\xi^\alpha+\qty(\partial_\lambda \omega +D\partial_\lambda \omega-\partial_\lambda \omega )\xi^\lambda\\
+    \textnormal{Div}_g\qty(\xi)&=\partial_\alpha\xi^\alpha+D\partial_\lambda \omega\xi^\lambda
 \end{align*}
 
-Let's focus in the left-hand side,
+And as $\tilde g= \exp\qty(2f)g=\exp\qty(2\qty(f+w))\eta$,
 
 \begin{align*}
-    \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\nabla^\mu\nabla_\mu\nabla_\alpha\xi^\alpha\\
-    \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\nabla^\mu\partial_\mu\qty(\frac{1}{\sqrt{-g}}\partial_\alpha\qty(\sqrt{-g}\xi^\alpha))\\
-    \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=\frac{1}{\sqrt{-g}}\partial^\mu\qty(\sqrt{-g}\partial_\mu\qty(\frac{1}{\sqrt{-g}}\partial_\alpha\qty(\sqrt{-g}\xi^\alpha)))
+    \textnormal{Div}_{\tilde g}\qty(\xi)&=\partial_\alpha\xi^\alpha+D\partial_\lambda \qty(f+\omega)\xi^\lambda\\
+    \textnormal{Div}_{\tilde g}\qty(\xi)&=\partial_\alpha\xi^\alpha+D\partial_\lambda \omega\xi^\lambda+D\xi^\lambda\partial_\lambda f\\
+    \textnormal{Div}_{\tilde g}\qty(\xi)&=\textnormal{Div}_{g}\qty(\xi)+D\xi\qty(f)\numberthis\label{divrel}
 \end{align*}
 
-% \begin{align*}
-%     \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=g^{\alpha\beta}\nabla^\mu\nabla_\mu\nabla_\alpha\xi_\beta\\
-%     \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=g^{\alpha\beta}\nabla^\mu\nabla_\mu\qty(\partial_\alpha\xi_\beta-\Gamma^\lambda_{\alpha\beta}\xi_\lambda)\\
-%     \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=g^{\alpha\beta}\nabla^\mu\qty{\partial_\mu\qty(\partial_\alpha\xi_\beta-\Gamma^\lambda_{\alpha\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\alpha}\qty(\partial_\kappa\xi_\beta-\Gamma^\lambda_{\kappa\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\beta}\qty(\partial_\alpha\xi_\kappa-\Gamma^\lambda_{\alpha\kappa}\xi_\lambda)}\\
-%     \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=g^{\alpha\beta}\partial^\mu\qty{\partial_\mu\qty(\partial_\alpha\xi_\beta-\Gamma^\lambda_{\alpha\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\alpha}\qty(\partial_\kappa\xi_\beta-\Gamma^\lambda_{\kappa\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\beta}\qty(\partial_\alpha\xi_\kappa-\Gamma^\lambda_{\alpha\kappa}\xi_\lambda)}\\
-%     &\quad\quad\quad-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\mu}\qty{\partial_\rho\qty(\partial_\alpha\xi_\beta-\Gamma^\lambda_{\alpha\beta}\xi_\lambda)-\Gamma^\kappa_{\rho\alpha}\qty(\partial_\kappa\xi_\beta-\Gamma^\lambda_{\kappa\beta}\xi_\lambda)-\Gamma^\kappa_{\rho\beta}\qty(\partial_\alpha\xi_\kappa-\Gamma^\lambda_{\alpha\kappa}\xi_\lambda)}\\
-%     &\quad\quad\quad-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\alpha}\qty{\partial_\mu\qty(\partial_\rho\xi_\beta-\Gamma^\lambda_{\rho\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\rho}\qty(\partial_\kappa\xi_\beta-\Gamma^\lambda_{\kappa\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\beta}\qty(\partial_\rho\xi_\kappa-\Gamma^\lambda_{\rho\kappa}\xi_\lambda)}\\
-%     &\quad\quad\quad-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\beta}\qty{\partial_\mu\qty(\partial_\alpha\xi_\rho-\Gamma^\lambda_{\alpha\rho}\xi_\lambda)-\Gamma^\kappa_{\mu\alpha}\qty(\partial_\kappa\xi_\rho-\Gamma^\lambda_{\kappa\rho}\xi_\lambda)-\Gamma^\kappa_{\mu\rho}\qty(\partial_\alpha\xi_\kappa-\Gamma^\lambda_{\alpha\kappa}\xi_\lambda)}
-% \end{align*}
+Multiplying \ref{divrel} by $g$ and subtracting \ref{lievers},
 
-% This looks like a mess, but, it isn't that bad, let's group the terms which have two or three derivatives of $\xi$,
+\begin{align*}
+    \textnormal{Div}_{\tilde g}\qty(\xi)\tilde g-\frac D2\pounds_\xi\tilde g&=\textnormal{Div}_{g}\qty(\xi)\tilde g+D\tilde g\xi\qty(f)-\frac D2\exp\qty(2f)\pounds_\xi g-\frac D2\tilde g \xi\qty(2f)\\
+    \textnormal{Div}_{\tilde g}\qty(\xi)\tilde g-\frac D2\pounds_\xi\tilde g&=\exp\qty(2f)\textnormal{Div}_{g}\qty(\xi)g-\exp\qty(2f)\frac D2\pounds_\xi g+D\tilde g\xi\qty(f)-D\tilde g \xi\qty(f)\\
+    \textnormal{Div}_{\tilde g}\qty(\xi)\tilde g-\frac D2\pounds_\xi\tilde g&=\exp\qty(2f)\qty[\textnormal{Div}_{g}\qty(\xi)g-\frac D2\pounds_\xi g]
+\end{align*}
 
-% \begin{align*}
-%     \nabla_\mu\nabla^\mu\nabla_\alpha\xi^\alpha&=g^{\alpha\beta}\partial^\mu\partial_\mu\partial_\alpha\xi_\beta-g^{\alpha\beta}\Gamma^\kappa_{\mu\alpha}\partial^\mu\partial_\kappa\xi_\beta-g^{\alpha\beta}\Gamma^\kappa_{\mu\beta}\partial^\mu\partial_\alpha\xi_\kappa\\
-%     &\quad\quad\quad-g^{\alpha\beta}\Gamma^\lambda_{\alpha\beta}\partial^\mu\partial_\mu\xi_\lambda-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\mu}\partial_\rho\partial_\alpha\xi_\beta-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\alpha}\partial_\mu\partial_\rho\xi_\beta-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\beta}\partial_\mu\partial_\alpha\xi_\rho\\
-%     &\quad\quad\quad+g^{\alpha\beta}\qty{-\partial^\mu\partial_\mu\Gamma^\lambda_{\alpha\beta}\xi_\lambda-2\partial_\mu\Gamma^\lambda_{\alpha\beta}\partial^\mu\xi_\lambda-\partial^\mu\Gamma^\kappa_{\mu\alpha}\partial_\kappa\xi_\beta-\partial^\mu\Gamma^\kappa_{\mu\beta}\partial_\alpha\xi_\kappa}\\
-%     &\quad\quad\quad+g^{\alpha\beta}\partial^\mu\qty{\Gamma^\kappa_{\mu\alpha}\Gamma^\lambda_{\kappa\beta}\xi_\lambda+\Gamma^\kappa_{\mu\beta}\Gamma^\lambda_{\alpha\kappa}\xi_\lambda}\\
-%     &\quad\quad\quad-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\mu}\qty{-\partial_\rho\qty(\Gamma^\lambda_{\alpha\beta}\xi_\lambda)-\Gamma^\kappa_{\rho\alpha}\qty(\partial_\kappa\xi_\beta-\Gamma^\lambda_{\kappa\beta}\xi_\lambda)-\Gamma^\kappa_{\rho\beta}\qty(\partial_\alpha\xi_\kappa-\Gamma^\lambda_{\alpha\kappa}\xi_\lambda)}\\
-%     &\quad\quad\quad-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\alpha}\qty{-\partial_\mu\qty(\Gamma^\lambda_{\rho\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\rho}\qty(\partial_\kappa\xi_\beta-\Gamma^\lambda_{\kappa\beta}\xi_\lambda)-\Gamma^\kappa_{\mu\beta}\qty(\partial_\rho\xi_\kappa-\Gamma^\lambda_{\rho\kappa}\xi_\lambda)}\\
-%     &\quad\quad\quad-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\beta}\qty{-\partial_\mu\qty(\Gamma^\lambda_{\alpha\rho}\xi_\lambda)-\Gamma^\kappa_{\mu\alpha}\qty(\partial_\kappa\xi_\rho-\Gamma^\lambda_{\kappa\rho}\xi_\lambda)-\Gamma^\kappa_{\mu\rho}\qty(\partial_\alpha\xi_\kappa-\Gamma^\lambda_{\alpha\kappa}\xi_\lambda)}
-% \end{align*}
+That is, as long as $f$ is sufficiently well behaved, we have,
 
-% The first term, the one with three derivatives on $\xi$, is the most important one, the remaining terms in the first and second line there are all the two $\xi$ derivative terms, which now we'll show is zero, we start by relabeling all index,
+\begin{align*}
+    \textnormal{Div}_g\qty(\xi)g=\frac D2\pounds_\xi g\Leftrightarrow \textnormal{Div}_{\tilde g}\qty(\xi)\tilde g=\frac D2\pounds_\xi \tilde g\numberthis\label{eqcond}
+\end{align*}
 
-% \begin{align*}
-%     &-g^{\alpha\beta}\Gamma^\lambda_{\alpha\beta}\partial^\mu\partial_\mu\xi_\lambda-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\mu}\partial_\rho\partial_\alpha\xi_\beta-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\alpha}\partial_\mu\partial_\rho\xi_\beta-g^{\alpha\beta}g^{\mu\sigma}\Gamma^\rho_{\sigma\beta}\partial_\mu\partial_\alpha\xi_\rho\\
-%     &\quad\quad\quad-g^{\alpha\beta}\Gamma^\kappa_{\mu\alpha}\partial^\mu\partial_\kappa\xi_\beta-g^{\alpha\beta}\Gamma^\kappa_{\mu\beta}\partial^\mu\partial_\alpha\xi_\kappa\\
-%     &=-g^{\alpha\beta}g^{\rho\sigma}\Gamma^\lambda_{\alpha\beta}\partial_\rho\partial_\sigma\xi_\lambda-g^{\sigma\lambda}g^{\alpha\beta}\Gamma^{\rho}_{\alpha\beta}\partial_\rho\partial_\sigma\xi_\lambda-g^{\beta\lambda}g^{\rho\alpha}\Gamma^\sigma_{\alpha\beta}\partial_\rho\partial_\sigma\xi_\lambda-g^{\sigma\beta}g^{\rho\alpha}\Gamma^\lambda_{\alpha\beta}\partial_\rho\partial_\sigma\xi_\lambda\\
-%     &\quad\quad\quad-g^{\beta\lambda}g^{\alpha\rho}\Gamma^\sigma_{\alpha\beta}\partial_\rho\partial_\sigma\xi_\lambda-g^{\sigma\beta}g^{\rho\alpha}\Gamma^\lambda_{\alpha\beta}\partial_\rho\partial_\sigma\xi_\lambda\\
-%     &=-\qty[g^{\alpha\beta}g^{\rho\sigma}\Gamma^\lambda_{\alpha\beta}+g^{\sigma\lambda}g^{\alpha\beta}\Gamma^{\rho}_{\alpha\beta}+g^{\beta\lambda}g^{\rho\alpha}\Gamma^\sigma_{\alpha\beta}+g^{\sigma\beta}g^{\rho\alpha}\Gamma^\lambda_{\alpha\beta}+g^{\beta\lambda}g^{\alpha\rho}\Gamma^\sigma_{\alpha\beta}+g^{\sigma\beta}g^{\rho\alpha}\Gamma^\lambda_{\alpha\beta}]\partial_\rho\partial_\sigma\xi_\lambda\\
-%     &=-\qty[g^{\alpha\beta}g^{\rho\sigma}\Gamma^\lambda_{\alpha\beta}+g^{\sigma\lambda}g^{\alpha\beta}\Gamma^{\rho}_{\alpha\beta}+2g^{\beta\lambda}g^{\rho\alpha}\Gamma^\sigma_{\alpha\beta}+2g^{\sigma\beta}g^{\rho\alpha}\Gamma^\lambda_{\alpha\beta}]\partial_\rho\partial_\sigma\xi_\lambda
-% \end{align*}
+In other words, the vector field $\xi$ which generates diffeomorphisms that preserves the conformally flat condition, does not depend on $\omega$ of our 
+conformally flat metric $g=\exp\qty(2\omega)\eta$, so, we can choose $f=-\omega$, such that $\tilde g=\eta$, and by \ref{eqcond}, we just have to solve for,
+
+\begin{align*}
+    \partial_\alpha\xi^\alpha\eta_{\mu\nu}&=D\partial_{(\mu}\xi_{\nu)}\numberthis\label{theeq}
+\end{align*}
+
+Which is a lot easier then \ref{conformaldefeq}, first, we apply $\partial^\nu$ to the both sides, relabel the index, apply $\partial_\nu$, symmetrize $\mu\leftrightarrow \nu$ and use \ref{theeq},
+
+\begin{align*}
+    \partial^\nu\partial_\alpha\xi^\alpha\eta_{\mu\nu}&=D\partial^\nu\partial_{(\mu}\xi_{\nu)}\\
+    \frac2D\partial_\mu\partial_\alpha\xi^\alpha&=\partial^\nu\partial_{\mu}\xi_{\nu}+\partial^\nu\partial_{\nu}\xi_{\mu}\\
+    \frac2D\partial_\mu\partial_\alpha\xi^\alpha&=\partial^\alpha\partial_{\mu}\xi_{\alpha}+\partial^\alpha\partial_{\alpha}\xi_{\mu}\\
+    \frac2D\partial_\nu\partial_\mu\partial_\alpha\xi^\alpha&=\partial_\nu\partial^\alpha\partial_{\mu}\xi_{\alpha}+\partial_\nu\partial^\alpha\partial_{\alpha}\xi_{\mu}\\
+    \frac2D\partial_{(\nu}\partial_{\mu)}\partial_\alpha\xi^\alpha&=\partial_{(\nu}\partial_{\mu)}\partial^\alpha\xi_{\alpha}+\partial^\alpha\partial_{\alpha}\partial_{(\nu}\xi_{\mu)}\\
+    \frac2D\partial_{\nu}\partial_{\mu}\partial_\alpha\xi^\alpha&=\partial_{\nu}\partial_{\mu}\partial_\alpha\xi^{\alpha}+\frac{\eta_{\mu\nu}}{D}\partial^\alpha\partial_{\alpha}\partial_{\beta}\xi^\beta\\
+    \qty(2-D)\partial_{\nu}\partial_{\mu}\partial_\alpha\xi^\alpha&=\eta_{\mu\nu}\partial^\alpha\partial_{\alpha}\partial_{\beta}\xi^\beta
+\end{align*}
+
+Here enters the hypothesis of $D>2$, if $D=2$ the left-hand side of this equation would vanish, but in $D>2$, contracting with $\eta^{\mu\nu}$ gives,
+
+\begin{align*}
+    \qty(2-D)\partial^{\mu}\partial_{\mu}\partial_\alpha\xi^\alpha&=D\partial^\alpha\partial_{\alpha}\partial_{\beta}\xi^\beta\\
+    2\qty(1-D)\partial^{\mu}\partial_{\mu}\partial_\alpha\xi^\alpha&=0
+\end{align*}
 
 \probitem{}
