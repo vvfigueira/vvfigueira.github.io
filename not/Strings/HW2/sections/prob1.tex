@@ -246,6 +246,15 @@ Notice that the right-hand side is not symmetric in $\mu\leftrightarrow\nu$ exch
 not be symmetric in $\mu\leftrightarrow\nu$ exchanges the vector field $f$ needs to not be of class $C^2$ or higher, this is a contradiction, as 
 we are in a $C^\infty$ manifold, $\xi$, our vector field, \textbf{needs} to be of class $C^\infty$, hence, it cannot have a contribution of only class $C^1$ 
 or lower. In other words, equation \ref{fdef} together with the imposition of $f$ being $C^\infty$ leads to two possible conclusions, either $f_\lambda=0$, or $a_\lambda=0\Rightarrow a_{\lambda\mu\nu}=0$, of this two options, 
-let us analyze the option $a_\lambda=a_{\lambda\mu\nu}=0$ with $f$ non zero,
+let us analyze the option $a_\lambda=a_{\lambda\mu\nu}=0$ with $f$ non zero, that is, we have to integrate,
+
+\begin{align*}
+    \partial_\mu\partial_\nu f_\lambda&=0\\
+    \partial_\nu f_\lambda&=A_{\nu\lambda}\\
+    f_\lambda&=A_{\nu\lambda}x^\nu+B_\lambda
+\end{align*}
+
+With the condition of divergenceless being $\tensor{A}{^\lambda_\lambda}=0$, but this amounts just to a trivial redefinition of the constants $b,c$ in \ref{xisol}, which 
+per se can be seen as a especial case of the $f_\lambda=0$ case, with $\tensor{a}{_\lambda_\mu_\nu}=0$. Hence, the most general solution we found is just
 
 \probitem{}
