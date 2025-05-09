@@ -166,14 +166,86 @@ Which is a lot easier then \ref{conformaldefeq}, first, we apply $\partial^\nu$ 
     \frac2D\partial_\nu\partial_\mu\partial_\alpha\xi^\alpha&=\partial_\nu\partial^\alpha\partial_{\mu}\xi_{\alpha}+\partial_\nu\partial^\alpha\partial_{\alpha}\xi_{\mu}\\
     \frac2D\partial_{(\nu}\partial_{\mu)}\partial_\alpha\xi^\alpha&=\partial_{(\nu}\partial_{\mu)}\partial^\alpha\xi_{\alpha}+\partial^\alpha\partial_{\alpha}\partial_{(\nu}\xi_{\mu)}\\
     \frac2D\partial_{\nu}\partial_{\mu}\partial_\alpha\xi^\alpha&=\partial_{\nu}\partial_{\mu}\partial_\alpha\xi^{\alpha}+\frac{\eta_{\mu\nu}}{D}\partial^\alpha\partial_{\alpha}\partial_{\beta}\xi^\beta\\
-    \qty(2-D)\partial_{\nu}\partial_{\mu}\partial_\alpha\xi^\alpha&=\eta_{\mu\nu}\partial^\alpha\partial_{\alpha}\partial_{\beta}\xi^\beta
+    \qty(2-D)\partial_{\nu}\partial_{\mu}\partial_\alpha\xi^\alpha&=\eta_{\mu\nu}\partial^\alpha\partial_{\alpha}\partial_{\beta}\xi^\beta\numberthis\label{d2}
 \end{align*}
 
-Here enters the hypothesis of $D>2$, if $D=2$ the left-hand side of this equation would vanish, but in $D>2$, contracting with $\eta^{\mu\nu}$ gives,
+Contracting with $\eta^{\mu\nu}$ gives,
 
 \begin{align*}
     \qty(2-D)\partial^{\mu}\partial_{\mu}\partial_\alpha\xi^\alpha&=D\partial^\alpha\partial_{\alpha}\partial_{\beta}\xi^\beta\\
-    2\qty(1-D)\partial^{\mu}\partial_{\mu}\partial_\alpha\xi^\alpha&=0
+    2\qty(1-D)\partial^{\mu}\partial_{\mu}\partial_\alpha\xi^\alpha&=0\\
+    \partial^{\mu}\partial_{\mu}\partial_\alpha\xi^\alpha&=0\numberthis\label{d2next}
 \end{align*}
+
+The last step is justified by merely $D\geq2$, so that up to now, we haven't fully used the hypothesis of being in $D>2$. So, we'll invoke it now, by using \ref{d2next} in equation \ref{d2}, this is only justified if $D\neq2$, 
+because, for $D=2$ the left-hand side of \ref{d2} is identically zero, but, for $D> 2$ the use of \ref{d2next} in \ref{d2} results in 
+another constraint,
+
+\begin{align*}
+    \qty(2-D)\partial_\mu\partial_\nu\partial_\alpha\xi^\alpha&=0\\
+    \partial_\mu\partial_\nu\partial_\alpha\xi^\alpha&=0\numberthis\label{d2nn}
+\end{align*}
+
+It's clear that equation \ref{d2} allows for much more solutions than \ref{d2nn}, for example, $\partial\cdot\xi=\cos\qty(k_\mu x^\mu)$ with $k_\mu k^\mu=0$ is a 
+solution for \ref{d2next}, but, isn't for \ref{d2nn}. To integrate \ref{d2nn} is also a lot easier than \ref{d2next},
+
+\begin{align*}
+    \partial_\mu\partial_\nu\partial_\alpha\xi^\alpha&=0\\
+    \partial_\nu\partial_\alpha\xi^\alpha&=a_\nu\\
+    \partial_\alpha\xi^\alpha&=a_\nu x^\nu +b\numberthis\label{divxi}
+\end{align*}
+
+With $a_\nu,b$ arbitrary constants, this is also automatically a solution of \ref{d2next}. To integrate \ref{divxi} is not trivial, as there might be some divergenceless current contributing to $\xi^\alpha$, 
+that is, the integration gives,
+
+\begin{align*}
+    \partial_\alpha\xi^\alpha&=a_\nu x^\nu +b\\
+    \xi^\alpha&=\frac12\tensor{a}{^\alpha_\mu_\nu}x^\mu x^\nu+\tensor{b}{^\alpha_\mu}x^\mu+c^\alpha+f^\alpha\numberthis\label{xisol}
+\end{align*}
+    
+With of course $\tensor{a}{^\alpha_\mu_\nu}=\tensor{a}{^\alpha_{(\mu}_{\nu)}},\tensor{a}{^\alpha_\alpha_\nu}=\tensor{a}{_\nu},\tensor{b}{^\alpha_\alpha}=b,c^\alpha$ being constants, with exception of $f^\alpha$, which is some non constant divergenceless vector field $\partial_\alpha f^\alpha=0$. To know what choice of $f^\alpha$ is the correct one 
+we have to go back to equation \ref{theeq}, and apply to it $\partial_\lambda$,
+
+\begin{align*}
+    \frac2D\partial_\lambda\partial_\alpha\xi^\alpha\eta_{\mu\nu}&=\partial_\lambda\partial_{\mu}\xi_{\nu}+\partial_\lambda\partial_{\nu}\xi_{\mu}
+\end{align*}
+
+Now we permute the index,
+
+\begin{align*}
+    \frac2D\partial_\lambda\partial_\alpha\xi^\alpha\eta_{\mu\nu}&=\partial_\lambda\partial_{\mu}\xi_{\nu}+\partial_{\nu}\partial_\lambda\xi_{\mu}\\
+    \frac2D\partial_\mu\partial_\alpha\xi^\alpha\eta_{\nu\lambda}&=\partial_\mu\partial_{\nu}\xi_{\lambda}+\partial_\lambda\partial_{\mu}\xi_{\nu}\\
+    \frac2D\partial_\nu\partial_\alpha\xi^\alpha\eta_{\lambda\mu}&=\partial_\nu\partial_{\lambda}\xi_{\mu}+\partial_\mu\partial_{\nu}\xi_{\lambda}
+\end{align*}
+
+Sum the two first equations and subtract the third one,
+
+\begin{align*}
+    \frac2D\qty(\partial_\lambda\partial_\alpha\xi^\alpha\eta_{\mu\nu}+\partial_\mu\partial_\alpha\xi^\alpha\eta_{\nu\lambda}-\partial_\nu\partial_\alpha\xi^\alpha\eta_{\lambda\mu})&=\partial_\lambda\partial_{\mu}\xi_{\nu}+\partial_{\nu}\partial_\lambda\xi_{\mu}+\partial_\mu\partial_{\nu}\xi_{\lambda}+\partial_\lambda\partial_{\mu}\xi_{\nu}-\partial_\nu\partial_{\lambda}\xi_{\mu}-\partial_\mu\partial_{\nu}\xi_{\lambda}
+\end{align*}
+
+By use of \ref{divxi},
+
+\begin{align*}
+    \frac2D\qty(a_\lambda\eta_{\mu\nu}+a_\mu\eta_{\nu\lambda}-a_\nu\eta_{\lambda\mu})&=2\partial_\lambda\partial_{\mu}\xi_{\nu}
+\end{align*}
+
+And substituting \ref{xisol} in the right-hand side,
+
+\begin{align*}
+    \frac2D\qty(a_\lambda\eta_{\mu\nu}+a_\mu\eta_{\nu\lambda}-a_\nu\eta_{\lambda\mu})&=2a_{\lambda\mu\nu}+2\partial_\mu\partial_\nu f_\lambda
+\end{align*}
+
+We can thus use this to fix $f_\lambda$,
+
+\begin{align*}
+    \partial_\mu\partial_\nu f_\lambda&=\frac1D\qty(a_\lambda\eta_{\mu\nu}+a_\mu\eta_{\nu\lambda}-a_\nu\eta_{\lambda\mu})-a_{\lambda\mu\nu}\numberthis\label{fdef}
+\end{align*}
+
+Notice that the right-hand side is not symmetric in $\mu\leftrightarrow\nu$ exchanges, but for the left-hand side to 
+not be symmetric in $\mu\leftrightarrow\nu$ exchanges the vector field $f$ needs to not be of class $C^2$ or higher, this is a contradiction, as 
+we are in a $C^\infty$ manifold, $\xi$, our vector field, \textbf{needs} to be of class $C^\infty$, hence, it cannot have a contribution of only class $C^1$ 
+or lower. In other words, equation \ref{fdef} together with the imposition of $f$ being $C^\infty$ leads to two possible conclusions, either $f_\lambda=0$, or $a_\lambda=0\Rightarrow a_{\lambda\mu\nu}=0$, of this two options, 
+let us analyze the option $a_\lambda=a_{\lambda\mu\nu}=0$ with $f$ non zero,
 
 \probitem{}
