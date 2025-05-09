@@ -233,28 +233,64 @@ By use of \ref{divxi},
 And substituting \ref{xisol} in the right-hand side,
 
 \begin{align*}
-    \frac2D\qty(a_\lambda\eta_{\mu\nu}+a_\mu\eta_{\nu\lambda}-a_\nu\eta_{\lambda\mu})&=2a_{\lambda\mu\nu}+2\partial_\mu\partial_\nu f_\lambda
+    \frac2D\qty(a_\lambda\eta_{\mu\nu}+a_\mu\eta_{\nu\lambda}-a_\nu\eta_{\lambda\mu})&=2a_{\nu\mu\lambda}+2\partial_\lambda\partial_\mu f_\nu
 \end{align*}
 
-We can thus use this to fix $f_\lambda$,
+We can thus use this to fix $f_\lambda$, it's trivial to carry out the integration,
 
 \begin{align*}
-    \partial_\mu\partial_\nu f_\lambda&=\frac1D\qty(a_\lambda\eta_{\mu\nu}+a_\mu\eta_{\nu\lambda}-a_\nu\eta_{\lambda\mu})-a_{\lambda\mu\nu}\numberthis\label{fdef}
+    \partial_\lambda\partial_\mu f_\nu&=\frac1D\qty(a_\lambda\eta_{\mu\nu}+a_\mu\eta_{\nu\lambda}-a_\nu\eta_{\lambda\mu})-a_{\nu\mu\lambda}\numberthis\label{fdef}\\
+    \partial_\mu f_\nu&=\frac1D\qty(a\cdot x\eta_{\mu\nu}+a_\mu x_\nu-a_\nu x_\mu)-a_{\nu\mu\lambda}x^\lambda+A_{\nu\mu}\\
+    f_\nu&=\frac1D\qty(a\cdot x x_\nu-\frac12a_\nu x\cdot x)-\frac12a_{\nu\mu\lambda}x^\lambda x^\mu+A_{\nu\mu}x^\mu+B_{\nu}\\
+    \partial_\mu f^\mu&=\frac1D\qty(a\cdot x D+a\cdot x-a\cdot x)-a\cdot x+\tensor{A}{^\mu_\mu}=\tensor{A}{^\mu_\mu}
 \end{align*}
 
-Notice that the right-hand side is not symmetric in $\mu\leftrightarrow\nu$ exchanges, but for the left-hand side to 
-not be symmetric in $\mu\leftrightarrow\nu$ exchanges the vector field $f$ needs to not be of class $C^2$ or higher, this is a contradiction, as 
-we are in a $C^\infty$ manifold, $\xi$, our vector field, \textbf{needs} to be of class $C^\infty$, hence, it cannot have a contribution of only class $C^1$ 
-or lower. In other words, equation \ref{fdef} together with the imposition of $f$ being $C^\infty$ leads to two possible conclusions, either $f_\lambda=0$, or $a_\lambda=0\Rightarrow a_{\lambda\mu\nu}=0$, of this two options, 
-let us analyze the option $a_\lambda=a_{\lambda\mu\nu}=0$ with $f$ non zero, that is, we have to integrate,
+Where we just computed also the divergence, which implies the constraint $\tensor{A}{^\mu_\mu}=0$. Substituting this back in \ref{xisol} get us, 
+% the most general solution we found to equation \ref{d2nn} is,
 
 \begin{align*}
-    \partial_\mu\partial_\nu f_\lambda&=0\\
-    \partial_\nu f_\lambda&=A_{\nu\lambda}\\
-    f_\lambda&=A_{\nu\lambda}x^\nu+B_\lambda
+    \xi^\alpha&=\frac12\tensor{a}{^\alpha_\mu_\nu}x^\mu x^\nu+\tensor{b}{^\alpha_\mu}x^\mu+c^\alpha+\frac1D\qty(a\cdot x x^\alpha-\frac12a^\alpha x\cdot x)-\frac12\tensor{a}{^\alpha_\mu_\lambda}x^\lambda x^\mu+\tensor{A}{^\alpha_\mu}x^\mu+B^{\alpha}\\
+    \xi^\alpha&=\frac1D\qty(a\cdot x x^\alpha-\frac12a^\alpha x\cdot x)+\qty(\tensor{A}{^\alpha_\mu}+\tensor{b}{^\alpha_\mu})x^\mu+\qty(B^{\alpha}+c^\alpha)\\
+    \xi^\alpha&=\frac1D\qty(a\cdot x x^\alpha-\frac12a^\alpha x\cdot x)+\tensor{b}{^\alpha_\mu}x^\mu+c^\alpha
 \end{align*}
 
-With the condition of divergenceless being $\tensor{A}{^\lambda_\lambda}=0$, but this amounts just to a trivial redefinition of the constants $b,c$ in \ref{xisol}, which 
-per se can be seen as a especial case of the $f_\lambda=0$ case, with $\tensor{a}{_\lambda_\mu_\nu}=0$. Hence, the most general solution we found is just
+In the last line we just redefined the tensors. All of this with $a^\alpha,\tensor{b}{^\alpha_\mu},c^\alpha$ arbitrary constants, but, we didn't really 
+confirmed this is solution of \ref{d2nn} is a fully compatible with \ref{theeq}, we just checked it satisfy some derived equations from \ref{theeq}, now, let's put it to 
+the real test,
+
+\begin{align*}
+    \partial_\alpha\xi^\alpha\eta_{\mu\nu}&=D\partial_{(\mu}\xi_{\nu)}\\
+    \qty[\frac1D\qty(a\cdot x D+a\cdot x-2\frac12a\cdot x)+\tensor{b}{^\alpha_\alpha}]\eta_{\mu\nu}&=D\qty[\frac1D\qty(a\cdot x \eta_{\mu\nu}+a_{(\mu} x_{\nu)}-a_{(\nu} x_{\mu)})+\tensor{b}{_{(\nu}_{\mu)}}]\\
+    a\cdot x\eta_{\mu\nu} +\tensor{b}{^\alpha_\alpha}\eta_{\mu\nu}&=a\cdot x \eta_{\mu\nu}+D\tensor{b}{_{(\nu}_{\mu)}}\\
+    \tensor{b}{^\alpha_\alpha}\eta_{\mu\nu}&=D\tensor{b}{_{(\nu}_{\mu)}}\\
+    \tensor{b}{_{(\nu}_{\mu)}}&=\frac1D\tensor{b}{^\alpha_\alpha}\eta_{\mu\nu}
+\end{align*}
+
+This constrains the symmetric part of $b_{\mu\nu}$ being a pure trace, so that the degrees of freedom reduces from $b_{\mu\nu}$ to $b_{[\mu\nu]}, \tensor{b}{^\alpha_\alpha}$. This is not the end! 
+We haven't show all the solutions we found are in fact all the solutions from \ref{theeq}, as we obtained them from a different approach than direct integration of the equation \ref{theeq}, so let's show this, 
+first, \ref{theeq} is a set of first order partial differential equations, there are $D^2$ such equation, but, they're symmetric in exchange $\mu\leftrightarrow\nu$, so we have to account only for $\frac{D^2+D}{2}$ of them, still, we have to account for 
+the possible constants which can be added to $\xi$ without changing the equation, $D$ of them, and also for another boundary condition on the divergence, $1$, so that the full number of constants is,
+
+\begin{align*}
+    \frac{D^2+D}{2}+D+1=\frac12\qty(D+1)\qty(D+2)
+\end{align*}
+
+Now let's count the number of constants in the solution we found, namely,
+
+\begin{align*}
+    \xi_\alpha&=\frac1D\qty(a\cdot x x_\alpha-\frac12a_\alpha x\cdot x)+\tensor{b}{_{[\alpha}_{\mu]}}x^\mu+\frac1D\tensor{b}{^\mu_\mu}x_\alpha+c^\alpha
+\end{align*}
+
+Both $c^\alpha,a^\alpha$ contributes with $D$, $\tensor{b}{^\mu_\mu}$ contributes with $1$, and lastly $\tensor{b}{_{[\alpha}_{\mu]}}$ contributes with $\frac{D^2-D}{2}$, hence, the total number of constants is,
+
+\begin{align*}
+    \frac{D^2-D}{2}+2D+1=\frac12\qty(D+1)\qty(D+2)
+\end{align*}
+
+Matching exactly the number from the original equation, that is, we already got all the solutions, hence, the most general solution of \ref{theeq}, for $D>2$, is given by,
+
+\begin{align*}
+    \xi_\alpha&=\frac1D\qty(a\cdot x x_\alpha-\frac12a_\alpha x\cdot x)+\tensor{b}{_{[\alpha}_{\mu]}}x^\mu+\frac1D\tensor{b}{^\mu_\mu}x_\alpha+c^\alpha
+\end{align*}
 
 \probitem{}
