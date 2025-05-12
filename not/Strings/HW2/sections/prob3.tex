@@ -1,5 +1,75 @@
 \problem{}
 \probitem{}
+
+Our action is,
+
+\begin{align*}
+    S&=\frac{1}{4\pi}\int\dd[2]{z}\psi\bar\partial\psi
+\end{align*}
+
+To obtain the equation of motion is simple, first we set up the path integral of a total derivative, which is zero, the argument of the total derivative 
+we set to $\exp\qty(-S)\mathcal O$, where $\mathcal O$ is any combination of local fields that does not contain $\psi\qty(z_1,{\bar z}_1)$, then,
+
+\begin{align*}
+    0&=\int\mathcal D\psi\fdv{}{\psi\qty(z_1,\bar z_1)}\qty[\exp\qty(-S)\mathcal O]\\
+    0&=\int\mathcal D\psi\fdv{}{\psi\qty(z_1,\bar z_1)}\qty[\exp\qty(-S)]\mathcal O
+\end{align*}
+
+As $\fdv{}{\psi\qty(z_1,{\bar z}_1)}\mathcal O$ is zero except for $\mathcal O=\psi\qty(z_1,{\bar z}_1)$, to which it's $\delta^{\qty(2)}\qty(0)$, but, that's not the case,
+
+\begin{align*}
+    0&=\int\mathcal D\psi\fdv{}{\psi\qty(z_1,\bar z_1)}\qty[\exp\qty(-S)]\mathcal O\\
+    0&=-\frac{1}{4\pi}\int\mathcal D\psi\fdv{}{\psi\qty(z_1,\bar z_1)}\qty[\int\dd[2]{z_2}\psi\qty(z_2,\bar z_2)\partial_{{\bar z}_2}\psi\qty(z_2,{\bar z}_2)]\mathcal O\exp\qty(-S)\\
+    0&=-\frac{1}{4\pi}\int\mathcal D\psi\int\dd[2]{z_2}\qty[\delta^{\qty(2)}\qty(z_2-z_1)\partial_{{\bar z}_2}\psi\qty(z_2,{\bar z}_2)-\psi\qty(z_2,\bar z_2)\partial_{{\bar z}_2}\delta^{\qty(2)}\qty(z_2-z_1)]\mathcal O\exp\qty(-S)
+\end{align*}
+
+As long as we're dealing with the closed fermion, we need not to worry about the boundary conditions, as there is no boundary, so,
+
+\begin{align*}
+    0&=-\frac{1}{4\pi}\int\mathcal D\psi\int\dd[2]{z_2}\qty[\delta^{\qty(2)}\qty(z_2-z_1)\partial_{{\bar z}_2}\psi\qty(z_2,{\bar z}_2)+\partial_{{\bar z}_2}\psi\qty(z_2,\bar z_2)\delta^{\qty(2)}\qty(z_2-z_1)]\mathcal O\exp\qty(-S)\\
+    0&=-\frac{1}{2\pi}\int\mathcal D\psi\partial_{{\bar z}_1}\psi\qty(z_1,{\bar z}_1)\mathcal O\exp\qty(-S)
+\end{align*}
+
+What in the Operator formalism would account for some radially ordered expectation value under some state, which is specified with the boundary conditions on the path integral itself, 
+
+\begin{align*}
+    \partial_{{\bar z}_1}\expval{\psi\qty(z_1,{\bar z}_1)\mathcal O}&=0
+\end{align*}
+
+As both the operator $\mathcal O$ and the state are arbitrary, as long as there is no insertion of $\psi\qty(z_1,{\bar z}_1)$, we conclude the 
+equation of motion in the operator form is just,
+
+\begin{align*}
+    \bar\partial\psi=0\Rightarrow \psi\qty(z,\bar z)\equiv\psi\qty(z)
+\end{align*}
+
+That is, $\psi$ is, at least, a meromorphic operator/function. Now, let's repeat this to obtain the two point function, this time we include in 
+$\mathcal O$ a single factor of $\psi\qty(z_1,{\bar z}_1)$ disguised as $\psi\qty(z_2,{\bar z}_2)$, this also can be phrased as we being interested 
+in the limit $z_2\rightarrow z_1$,
+
+\begin{align*}
+    0&=\int\mathcal D\psi\fdv{}{\psi\qty(z_1,\bar z_1)}\qty[\exp\qty(-S)\psi\qty(z_2,{\bar z}_2)\mathcal O]\\
+    0&=\int\mathcal D\psi\fdv{}{\psi\qty(z_1,\bar z_1)}\qty[\exp\qty(-S)\psi\qty(z_2,{\bar z}_2)]\mathcal O\\
+    0&=\int\mathcal D\psi\qty{\fdv{}{\psi\qty(z_1,\bar z_1)}\qty[\exp\qty(-S)]\psi\qty(z_2,{\bar z}_2)+\fdv{}{\psi\qty(z_1,{\bar z}_1)}\qty[\psi\qty(z_2,{\bar z}_2)]\exp\qty(-S)}\mathcal O\\
+    0&=\int\mathcal D\psi\qty{\fdv{}{\psi\qty(z_1,\bar z_1)}\qty[-S]\psi\qty(z_2,{\bar z}_2)+\delta^{\qty(2)}\qty(z_2-z_1)}\exp\qty(-S)\mathcal O
+\end{align*}
+
+As we derived before, $\fdv{}{\psi\qty(z_1,\bar z_1)}\qty[-S]=-\frac{1}{2\pi}\partial_{{\bar z}_1}\psi\qty(z_1,{\bar z}_1)$,
+
+\begin{align*}
+    0&=\int\mathcal D\psi\qty{-\frac{1}{2\pi}\partial_{{\bar z}_1}\psi\qty(z_1,{\bar z}_1)\psi\qty(z_2,{\bar z}_2)+\delta^{\qty(2)}\qty(z_2-z_1)}\exp\qty(-S)\mathcal O
+\end{align*}
+
+Which is, translating to the operator formalism,
+
+\begin{align*}
+    \partial_{{\bar z}_1}\expval{\psi\qty(z_1,{\bar z}_1)\psi\qty(z_2,{\bar z}_2)\mathcal O}&=\expval{2\pi\delta^{\qty(2)}\qty(z_2-z_1)\mathcal O}\\
+    \partial_{{\bar z}_1}\psi\qty(z_1,{\bar z}_1)\psi\qty(z_2,{\bar z}_2)&=2\pi\delta^{\qty(2)}\qty(z_2-z_1),\ \ \ \abs{z_1}\geq\abs{z_2}
+\end{align*}
+
+So that we can interpret this as a operator identity. The condition $\abs{z_1}\geq \abs{z_2}$ is due to the implicit radial ordering in the expectation 
+value.
+
 \probitem{}
 \probitem{}
 \probitem{}
