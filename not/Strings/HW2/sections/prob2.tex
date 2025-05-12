@@ -1,3 +1,83 @@
 \problem{}
 \probitem{}
+
+We define the vacuum state, $\Psi_0$, as the one for which,
+
+\begin{align*}
+    L_m\Psi_0=0,\ \ \ m\geq -1
+\end{align*}
+
+Let's analyze the action of $\alpha_n$ in it,
+
+\begin{align*}
+    L_m\alpha_n^\mu\Psi_0&=\qty(L_m\alpha_n^\mu-\alpha^\mu_n L_m)\Psi_0,\ \ \ m\geq -1\\
+    L_m\alpha_n^\mu\Psi_0&=\comm{L_m}{\alpha_n^\mu}\Psi_0,\ \ \ m\geq -1\\
+    L_m\alpha_n^\mu\Psi_0&=-n\alpha_{n+m}^\mu\Psi_0,\ \ \ m\geq -1
+\end{align*}
+
+In the special case of $n=0$, we have,
+
+\begin{align*}
+    L_m\alpha_0^\mu\Psi_0&=0,\ \ \ m\geq -1
+\end{align*}
+
+That implies $\alpha_0^\mu\Psi_0$ has exactly all the symmetries of the vacuum, hence, it must be proportional to it, $\alpha_0^\mu\Psi_0=k^\mu\Psi_0$ for some constants $k^\mu$, now we have to 
+evoke that we are in an unitary CFT with an inner product $\qty(\cdot,\cdot)$, what also implies that we can define the adjoints of operators, which happen to be, $L_m^\dagger=L_{-m}$, so that in the special case of 
+$n=-m$,
+
+\begin{align*}
+    L_m\alpha_{-m}^\mu\Psi_0&=m\alpha_{0}^\mu\Psi_0,\ \ \ m\geq -1\\
+    L_m\alpha_{-m}^\mu\Psi_0&=mk^\mu\Psi_0,\ \ \ m\geq -1\\
+    \qty(\Psi_0,L_m\alpha_{-m}^\mu\Psi_0)&=\qty(\Psi_0,mk^\mu\Psi_0),\ \ \ m\geq -1\\
+    \qty(L_m^\dagger\Psi_0,\alpha_{-m}^\mu\Psi_0)&=mk^\mu\qty(\Psi_0,\Psi_0),\ \ \ m\geq -1\\
+    \qty(L_{-m}\Psi_0,\alpha_{-m}^\mu\Psi_0)&=mk^\mu\qty(\Psi_0,\Psi_0),\ \ \ m\geq -1
+\end{align*}
+
+For $m=0$ the equation is trivial, and for $m\geq 2$ gives no new information, but, for $m=\pm 1$,
+
+\begin{align*}
+    \qty(L_{\mp1}\Psi_0,\alpha_{\mp1}^\mu\Psi_0)&=\pm k^\mu\qty(\Psi_0,\Psi_0)\\
+    \qty(0,\alpha_{\mp1}^\mu\Psi_0)&=\pm k^\mu\qty(\Psi_0,\Psi_0)\\
+    0&=\pm k^\mu\qty(\Psi_0,\Psi_0)
+\end{align*}
+
+Of course $\qty(\Psi_0,\Psi_0)\neq 0$, hence, $k^\mu=0\Rightarrow \alpha_0^\mu\Psi_0=0$. This is very interesting
+
+% Let $\ket 0$ be the vacuum, we act with $\partial X^\mu\qty(z)$ in it, and analyze the following,
+
+% \begin{align*}
+%     L_m\partial X^\mu\qty(z)\ket 0&=\oint\limits_{C_z}\frac{\dd{z_1}}{2\pi \im}z_1^{m+1}T\qty(z_1)\partial X^\mu\qty(z)\ket 0
+% \end{align*}
+
+% In principle $C_z$ could be any contour encircling the origin, but, as we want to use the $T\partial X$ OPE, we'll choose a contour such that 
+% $\norm{z_1}>\norm{z}$, so now,
+
+% \begin{align*}
+%     L_m\partial X^\mu\qty(z)\ket 0&=\oint\limits_{C_z}\frac{\dd{z_1}}{2\pi \im}z_1^{m+1}\qty(\frac{\partial X^\mu\qty(z)}{\qty(z_1-z)^2}+\frac{\partial^2 X^\mu\qty(z)}{\qty(z_1-z)}+\textnormal{regular})\ket 0
+% \end{align*}
+
+% The integrand clearly has only poles at $z_1=0,z$, so, we just have to compute these two residi and this will be the result of the integral. Working with $m\geq-1$ makes the integral of the 
+% regular terms vanish, and also removes all the $z_1=0$ poles,
+
+% \begin{align*}
+%     L_m\partial X^\mu\qty(z)\ket 0&=\oint\limits_{C_z}\frac{\dd{z_1}}{2\pi \im}z_1^{m+1}\qty(\frac{\partial X^\mu\qty(z)}{\qty(z_1-z)^2}+\frac{\partial^2 X^\mu\qty(z)}{\qty(z_1-z)})\ket 0,\ \ \ m\geq -1\\
+%     L_m\partial X^\mu\qty(z)\ket 0&=\textnormal{Res}_{z_1=z}\frac{z_1^{m+1}}{\qty(z_1-z)^2}\partial X^\mu\qty(z)\ket 0+\textnormal{Res}_{z_1=z}\frac{z_1^{m+1}}{\qty(z_1-z)}\partial^2 X^\mu\qty(z)\ket 0,\ \ \ m\geq -1\\
+%     L_m\partial X^\mu\qty(z)\ket 0&=\pdv{}{z_1}\qty(\frac{z_1^{m+1}\qty(z_1-z)^2}{\qty(z_1-z)^2})\eval_{z_1=z}\partial X^\mu\qty(z)\ket 0+\frac{z_1^{m+1}\qty(z_1-z)}{\qty(z_1-z)}\eval_{z_1=z}\partial^2 X^\mu\qty(z)\ket 0,\ \ \ m\geq -1\\
+%     L_m\partial X^\mu\qty(z)\ket 0&=\qty(m+1)z^m\partial X^\mu\qty(z)\ket 0+z^{m+1}\partial^2 X^\mu\qty(z)\ket 0,\ \ \ m\geq -1
+% \end{align*}
+
+% Writing all of this with the mode expansion $\partial X^\mu\qty(z)=-\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z}\alpha^\mu_nz^{-n-1}$,
+
+% \begin{align*}
+%     \sum\limits_{n\in\mathbb Z}z^{-n-1}L_m \alpha_n^\mu\ket 0&=\sum\limits_{n\in\mathbb Z}z^{-n-1}\qty(m+1)z^m\alpha_n^\mu\ket 0+\sum\limits_{n\in\mathbb Z}\qty(-n-1)z^{-n-2}z^{m+1}\alpha_n^\mu\ket 0,\ \ \ m\geq -1\\
+%     \sum\limits_{n\in\mathbb Z}z^{-n-1}L_m \alpha_n^\mu\ket 0&=\sum\limits_{n\in\mathbb Z}z^{m-n-1}\qty(m+1)\alpha_n^\mu\ket 0+\sum\limits_{n\in\mathbb Z}\qty(-n-1)z^{m-n-1}\alpha_n^\mu\ket 0,\ \ \ m\geq -1
+% \end{align*}
+
+% Relabeling the $n$ index in the right-hand side,
+
+% \begin{align*}
+%     \sum\limits_{n\in\mathbb Z}z^{-n-1}L_m \alpha_n^\mu\ket 0&=\sum\limits_{n\in\mathbb Z}z^{-n-1}\qty(m+1)\alpha_{n+m}^\mu\ket 0+\sum\limits_{n\in\mathbb Z}\qty(-n-m-1)z^{-n-1}\alpha_{n+m}^\mu\ket 0,\ \ \ m\geq -1\\
+%     L_m \alpha_n^\mu\ket 0&=\qty(m+1)\alpha_{n+m}^\mu\ket 0+\qty(-n-m-1)\alpha_{n+m}^\mu\ket 0,\ \ \ m\geq -1
+% \end{align*}
+
 \probitem{}
