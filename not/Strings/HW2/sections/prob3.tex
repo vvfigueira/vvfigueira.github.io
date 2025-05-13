@@ -222,6 +222,186 @@ energy momentum tensor, and the central charge are,
 \end{align*}
 
 \probitem{}
+
+Now let $\psi$ have an additional index, $\psi^i$ which takes two values $i=1,2$. This is a realization of a internal $SO\qty(2)$ symmetry, to why, 
+let $\psi'^i=\tensor{\Lambda}{^i_j}\psi^j$, the change in the action is,
+
+\begin{align*}
+    S&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\psi^i\bar\partial\psi^j\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\psi'^i\bar\partial\psi'^j\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\tensor{\Lambda}{^i_k}\tensor{\Lambda}{^j_l}\psi^k\bar\partial\psi^l
+\end{align*}
+
+As long as $\delta_{ij}\tensor{\Lambda}{^i_k}\tensor{\Lambda}{^j_l}=\delta_{kl}$, this transformation is a symmetry. But that's exactly the 
+definition of $\Lambda$ belonging to the $O\qty(2)$ group, but as we're just interested in elements continuously connected to the identity, 
+we set $SO\qty(2)$. The group definition under an infinitesimal transformation,
+
+\begin{align*}
+    \delta_{kl}&=\delta_{ij}\tensor{\Lambda}{^i_k}\tensor{\Lambda}{^j_l}\\
+    \delta_{kl}&=\delta_{ij}\qty(\tensor{\delta}{^i_k}+\tensor{\omega}{^i_k}+\mathcal O\qty(\omega^2))\qty(\tensor{\delta}{^j_l}+\tensor{\omega}{^j_l}+\mathcal O\qty(\omega^2))\\
+    \delta_{kl}&=\delta_{kl}+\omega_{lk}+\omega_{kl}+\mathcal O\qty(\omega^2)\\
+    \omega_{lk}&=-\omega_{kl}
+\end{align*}
+
+We can use this information to write,
+
+\begin{align*}
+    \tensor{\Lambda}{^i_j}&=\tensor{\delta}{^i_j}+\tensor{\omega}{^i_j}+\mathcal O\qty(\omega^2)\\
+    \tensor{\Lambda}{^i_j}&=\tensor{\delta}{^i_j}+\frac12\tensor{\omega}{_l_k}\qty(\tensor{\delta}{^i^l}\tensor{\delta}{^k_j}-\tensor{\delta}{^i^k}\tensor{\delta}{^l_j})+\mathcal O\qty(\omega^2)\\
+    \tensor{\Lambda}{^i_j}&=\tensor{\delta}{^i_j}-\frac\im2\tensor{\omega}{_l_k}\im\qty(\tensor{\delta}{^i^l}\tensor{\delta}{^k_j}-\tensor{\delta}{^i^k}\tensor{\delta}{^l_j})+\mathcal O\qty(\omega^2)\\
+    \tensor{\Lambda}{^i_j}&=\tensor{\delta}{^i_j}-\frac\im2\tensor{\omega}{_{\qty[lk]}}\tensor{T}{^{\qty[lk]}^i_j}+\mathcal O\qty(\omega^2)
+\end{align*}
+
+Where we defined the generator of the group, $\tensor{T}{^{\qty[lk]}^i_j}=\im\qty(\tensor{\delta}{^i^l}\tensor{\delta}{^k_j}-\tensor{\delta}{^i^k}\tensor{\delta}{^l_j})$. The sign of the 
+definition is arbitrary. A finite transformation is then,
+
+\begin{align*}
+    \psi ^i\rightarrow\tensor{\Lambda}{^i_j}\psi^j=\tensor{\exp\qty(-\frac\im2\tensor{\omega}{_{\qty[lk]}}\tensor{T}{^{\qty[lk]}})}{^i_j}\psi^j
+\end{align*}
+
+To obtain the conserved current of this symmetry we make a little trick, set $\omega$ as a function $\omega\qty(z,\bar z)$, so that the infinitesimal variation of the action is,
+
+\begin{align*}
+    S&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\psi^i\bar\partial\psi^j\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\psi'^i\bar\partial\psi'^j\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\tensor{\Lambda}{^i_k}\psi^k\bar\partial\qty(\tensor{\Lambda}{^j_l}\psi^l)\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\tensor{\Lambda}{^i_k}\psi^k\qty{\tensor{\Lambda}{^j_l}\bar\partial\psi^l+\psi^l\bar\partial\tensor{\Lambda}{^j_l}}\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\tensor{\Lambda}{^i_k}\psi^k\qty{\tensor{\Lambda}{^j_l}\bar\partial\psi^l-\frac\im 2\tensor{T}{^{\qty[ab]}^m_l}\psi^l\tensor{\Lambda}{^j_m}\bar\partial\omega_{\qty[ab]}}\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\tensor{\Lambda}{_j_k}\psi^k\tensor{\Lambda}{^j_l}\bar\partial\psi^l-\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\tensor{\Lambda}{_j_k}\psi^k\tensor{T}{^{\qty[ab]}^m_l}\psi^l\tensor{\Lambda}{^j_m}\bar\partial\omega_{\qty[ab]}\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{kl}\psi^k\bar\partial\psi^l-\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\delta_{km}\psi^k\tensor{T}{^{\qty[ab]}^m_l}\psi^l\bar\partial\omega_{\qty[ab]}\\
+    S'&=S-\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\psi^k\tensor{T}{^{\qty[ab]}_k_l}\psi^l\bar\partial\omega_{\qty[ab]}\\
+    \delta S&=-\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\bar\partial\qty{\psi^k\tensor{T}{^{\qty[ab]}_k_l}\psi^l\omega_{\qty[ab]}}+\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\bar\partial\qty{\psi^k\tensor{T}{^{\qty[ab]}_k_l}\psi^l}\omega_{\qty[ab]}
+\end{align*}
+
+With suitable boundary conditions on $\omega_{\qty[ab]}$, or, with no boundaries, we conclude,
+
+\begin{align*}
+    \delta S&=\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\bar\partial\qty{\psi^k\tensor{T}{^{\qty[ab]}_k_l}\psi^l}\omega_{\qty[ab]}
+\end{align*}
+
+Now back to $\omega_{\qty[ab]}$ being a constant --- so that $\delta S=0$ ---, using also that there is just one two index anti-symmetric tensor in two dimensions, the Levi-Civita $\epsilon_{ab},\ \epsilon_{12}=1$, 
+we conclude that $\omega_{\qty[ab]}=\omega\epsilon_{ab}$,
+
+\begin{align*}
+    0&=\frac{1}{4\pi}\frac\im 2\omega\epsilon_{ab}\tensor{T}{^{\qty[ab]}_k_l}\int\dd[2]{z}\bar\partial\qty{\psi^k\psi^l}\\
+    0&=-\frac{\omega\epsilon_{12}}{2\pi\im}\frac12\tensor{T}{^{12}_k_l}\int\dd[2]{z}\bar\partial\qty{\psi^k\psi^l}
+\end{align*}
+
+So there is just one current, as there is just one linear independent generator. The classical current can be read from the last equation as,
+
+\begin{align*}
+    j\qty(z)&=\frac12\tensor{T}{^{12}_k_l}{\psi^k\psi^l}\qty(z)
+\end{align*}
+
+We factored out the $-\frac{\omega\epsilon_{12}}{2\pi\im}$ as is usual to obtain an interpretation of the residue of the $j$ OPE. 
+The quantum version of it will require normal ordering,
+
+\begin{align*}
+    j\qty(z)&=\frac12\tensor{T}{^{12}_k_l}\cnord{\psi^k\psi^l}\qty(z)\\
+    j\qty(z)&=\frac12\im\qty(\tensor{\delta}{_k^1}\tensor{\delta}{^2_l}-\tensor{\delta}{_k^2}\tensor{\delta}{^1_l})\cnord{\psi^k\psi^l}\qty(z)\\
+    j\qty(z)&=\frac\im2\qty(\cnord{\psi^1\psi^2}\qty(z)-\cnord{\psi^2\psi^1}\qty(z))\\
+    j\qty(z)&=\im\cnord{\psi^1\psi^2}\qty(z)
+\end{align*}
+
+Now, to get it's OPE we proceed as usual, computing the following normal ordered operator,
+
+\begin{align*}
+    \cnord{j\qty(z_1)j\qty(z_2)}&=j\qty(z_1)j\qty(z_2)-\wick{\cnord{\c1\psi^1\psi^2}\qty(z_1)\cnord{\c1\psi^1\psi^2}\qty(z_2)}-\wick{\cnord{\psi^1\c1\psi^2}\qty(z_1)\cnord{\psi^1\c1\psi^2}\qty(z_2)}\\
+    &\quad\quad\quad-\wick{\cnord{\c1\psi^1\c2\psi^2}\qty(z_1)\cnord{\c1\psi^1\c2\psi^2}\qty(z_2)}\\
+    \cnord{j\qty(z_1)j\qty(z_2)}&=j\qty(z_1)j\qty(z_2)-\frac{1}{z_1-z_2}\psi^2\qty(z_1)\psi^2\qty(z_2)-\frac{1}{z_1-z_2}\psi^1\qty(z_1)\psi^1\qty(z_2)\\
+    &\quad\quad\quad-\frac{1}{\qty(z_1-z_2)^2}\\
+    \cnord{j\qty(z_1)j\qty(z_2)}&=j\qty(z_1)j\qty(z_2)-\frac{1}{z_1-z_2}\psi^2\qty(z_2)\psi^2\qty(z_2)-\frac{1}{z_1-z_2}\psi^1\qty(z_1)\psi^1\qty(z_1)\\
+    &\quad\quad\quad-\frac{1}{\qty(z_1-z_2)^2}+\textnormal{regular}
+\end{align*}
+
+In the first to second like we used the $\psi\psi$ OPE, remembering that the $\psi^1\psi^2$ OPE has no poles, from the second line to third, we expanded 
+every term around $z_2$. And now we set the terms which are zero by statistics,
+
+\begin{align*}
+    \cnord{j\qty(z_1)j\qty(z_2)}&=j\qty(z_1)j\qty(z_2)-\frac{1}{\qty(z_1-z_2)^2}+\textnormal{regular}\\
+    j\qty(z_1)j\qty(z_2)&=\frac{1}{\qty(z_1-z_2)^2}+\textnormal{regular}
+\end{align*}
+
+A rather simple OPE.
+
 \probitem{}
+
+Much of what we did can be recycled here. First, we start with $N$ real fermions $\psi^i,\ i=1,\cdots, N$, and by similar arguments analyzing the action,
+
+\begin{align*}
+    S&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\psi^i\bar\partial\psi^j\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\psi'^i\bar\partial\psi'^j\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\tensor{\Lambda}{^i_k}\tensor{\Lambda}{^j_l}\psi^k\bar\partial\psi^l
+\end{align*}
+
+We obtain the constraint of this being a symmetry, $\delta_{ij}\tensor{\Lambda}{^i_k}\tensor{\Lambda}{^j_l}=\delta_{kl}$, which is the defining 
+property of the $O\qty(N)$ group. Of course, the relevant part for generators and Lie Algebras is just the part connected to the identity, $SO\qty(N)$, 
+the same reasoning of infinitesimal transformations allows us to write,
+
+\begin{align*}
+    \delta_{kl}&=\delta_{ij}\tensor{\Lambda}{^i_k}\tensor{\Lambda}{^j_l}\\
+    \delta_{kl}&=\delta_{ij}\qty(\tensor{\delta}{^i_k}+\tensor{\omega}{^i_k}+\mathcal O\qty(\omega^2))\qty(\tensor{\delta}{^j_l}+\tensor{\omega}{^j_l}+\mathcal O\qty(\omega^2))\\
+    \delta_{kl}&=\delta_{kl}+\omega_{lk}+\omega_{kl}+\mathcal O\qty(\omega^2)\\
+    \omega_{lk}&=-\omega_{kl}
+\end{align*}
+
+We can use this information to write,
+
+\begin{align*}
+    \tensor{\Lambda}{^i_j}&=\tensor{\delta}{^i_j}+\tensor{\omega}{^i_j}+\mathcal O\qty(\omega^2)\\
+    \tensor{\Lambda}{^i_j}&=\tensor{\delta}{^i_j}+\frac12\tensor{\omega}{_l_k}\qty(\tensor{\delta}{^i^l}\tensor{\delta}{^k_j}-\tensor{\delta}{^i^k}\tensor{\delta}{^l_j})+\mathcal O\qty(\omega^2)\\
+    \tensor{\Lambda}{^i_j}&=\tensor{\delta}{^i_j}-\frac\im2\tensor{\omega}{_l_k}\im\qty(\tensor{\delta}{^i^l}\tensor{\delta}{^k_j}-\tensor{\delta}{^i^k}\tensor{\delta}{^l_j})+\mathcal O\qty(\omega^2)\\
+    \tensor{\Lambda}{^i_j}&=\tensor{\delta}{^i_j}-\frac\im2\tensor{\omega}{_{\qty[lk]}}\tensor{T}{^{\qty[lk]}^i_j}+\mathcal O\qty(\omega^2)\\
+    \tensor{\Lambda}{^i_j}&=\tensor{\exp\qty(-\frac\im 2\omega_{\qty[lk]}\tensor{T}{^{\qty[lk]}})}{^i_j}
+\end{align*}
+
+To obtain the current we do again the same trick of promoting $\omega_{\qty[lk]}$ to a function and computing the change in the action,
+
+\begin{align*}
+    S&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\psi^i\bar\partial\psi^j\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\psi'^i\bar\partial\psi'^j\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\tensor{\Lambda}{^i_k}\psi^k\bar\partial\qty(\tensor{\Lambda}{^j_l}\psi^l)\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\tensor{\Lambda}{^i_k}\psi^k\qty{\tensor{\Lambda}{^j_l}\bar\partial\psi^l+\psi^l\bar\partial\tensor{\Lambda}{^j_l}}\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\tensor{\Lambda}{^i_k}\psi^k\qty{\tensor{\Lambda}{^j_l}\bar\partial\psi^l-\frac\im 2\tensor{T}{^{\qty[ab]}^m_l}\psi^l\tensor{\Lambda}{^j_m}\bar\partial\omega_{\qty[ab]}}\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\tensor{\Lambda}{_j_k}\psi^k\tensor{\Lambda}{^j_l}\bar\partial\psi^l-\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\tensor{\Lambda}{_j_k}\psi^k\tensor{T}{^{\qty[ab]}^m_l}\psi^l\tensor{\Lambda}{^j_m}\bar\partial\omega_{\qty[ab]}\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{kl}\psi^k\bar\partial\psi^l-\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\delta_{km}\psi^k\tensor{T}{^{\qty[ab]}^m_l}\psi^l\bar\partial\omega_{\qty[ab]}\\
+    S'&=S-\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\psi^k\tensor{T}{^{\qty[ab]}_k_l}\psi^l\bar\partial\omega_{\qty[ab]}\\
+    \delta S&=-\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\bar\partial\qty{\psi^k\tensor{T}{^{\qty[ab]}_k_l}\psi^l\omega_{\qty[ab]}}+\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\bar\partial\qty{\psi^k\tensor{T}{^{\qty[ab]}_k_l}\psi^l}\omega_{\qty[ab]}
+\end{align*}
+
+With suitable boundary conditions on $\omega_{\qty[ab]}$, or, with no boundaries, we conclude,
+
+\begin{align*}
+    \delta S&=\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\bar\partial\qty{\psi^k\tensor{T}{^{\qty[ab]}_k_l}\psi^l}\omega_{\qty[ab]}
+\end{align*}
+
+Demoting $\omega_{\qty[ab]}$ back to being a constant --- so that $\delta S=0$ ---, we obtain,
+
+\begin{align*}
+    0&=-\frac{\omega_{\qty[ab]}}{2\pi\im}\frac1 2\tensor{T}{^{\qty[ab]}_k_l}\int\dd[2]{z}\bar\partial\qty{\psi^k\psi^l}
+\end{align*}
+
+Again, the usual normalization is done by removing $-\frac{\omega_{\qty[ab]}}{2\pi\im}$, so that the current is,
+
+\begin{align*}
+    j^{\qty[ab]}\qty(z)&=\frac1 2\tensor{T}{^{\qty[ab]}_k_l}\cnord{\psi^k\psi^l}\qty(z)
+\end{align*}
+
+This is not a very orthodox way of displaying, all of our index here have the range $1,\cdots, N$, but notice the generators are indexed by an 
+anti-symmetric pair of index, $\qty[ab]$, so there are $\frac{N\qty(N-1)}{2}$ such, this is only useful if we work in the fundamental representation, 
+so, we'll change now to a more common notation, instead of labeling the generators by $\frac{N\qty(N-1)}{2}$ anti-symmetric pairs of index, we'll 
+label them by just one index with range $A=1,\cdots , \frac{N\qty(N-1)}{2}$, so that the same equation reads,
+
+\begin{align*}
+    j^A\qty(z)&=\frac1 2\tensor{T}{^A_k_l}\cnord{\psi^k\psi^l}\qty(z)
+\end{align*}
+
+This is more aesthetic for Lie Algebras in general, but not always desired --- Lorentz group as example ---. Now we proceed by computing the 
+OPE associated with this collection of currents,
+
+\begin{align*}
+    \cnord{j^A\qty(z_1)j^B\qty(z_2)}&=
+\end{align*}
+
 \probitem{}
 \probitem{}

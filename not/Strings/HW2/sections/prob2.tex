@@ -1,47 +1,89 @@
 \problem{}
 \probitem{}
 
-We define the vacuum state, $\Psi_0$, as the one for which,
+First, let's state a few remarks, we have at our disposal the following algebras,
+
+\begin{align*}
+    \comm{L_m}{L_n}&=\qty(m-n)L_{n+m}+\frac{c}{12}m\qty(m^2-1)\delta_{m,-n}\\
+    \comm{\alpha^\mu_m}{\alpha^\nu_n}&=mg^{\mu\nu}\delta_{m,-n}\\
+    \comm{L_m}{\alpha^\nu_n}&=-n\alpha^\nu_{n+m}
+\end{align*}
+
+Which should be interpreted only as elements of a Lie Algebra. But, we seek representations of this algebra as linear 
+maps in our physical Hilbert space, as any Hilbert space, it'll contain a notion of inner product, to which can be defined 
+adjoint of linear maps. Let's formally manipulate the adjoints of the algebra,
+
+\begin{align*}
+    &\begin{cases}
+        \comm{L_m}{L_n}^\dagger&=\qty(m-n)L^\dagger_{n+m}+\frac{c}{12}m\qty(m^2-1)\delta_{m,-n}\\
+        \comm{\alpha^\mu_m}{\alpha^\nu_n}^\dagger&=mg^{\mu\nu}\delta_{m,-n}\\
+        \comm{L_m}{\alpha^\nu_n}^\dagger&=-n\qty(\alpha^\nu_{n+m})^\dagger
+    \end{cases}\\
+    &\begin{cases}
+        \comm{L^\dagger_n}{L^\dagger_m}&=\qty(-n-\qty(-m))L^\dagger_{n+m}+\frac{c}{12}\qty(-n)\qty(\qty(-n)^2-1)\delta_{-n,-\qty(-m)}\\
+        \comm{\qty(\alpha^\nu_n)^\dagger}{\qty(\alpha^\mu_m)^\dagger}&=-ng^{\mu\nu}\delta_{-n,-\qty(-m)}\\
+        \comm{\qty(\alpha^\nu_n)^\dagger}{L^\dagger_m}=-\comm{L^\dagger_m}{\qty(\alpha^\nu_n)^\dagger}&=-n\qty(\alpha^\nu_{n+m})^\dagger
+    \end{cases}
+\end{align*}
+
+In this format it's clear to see that the algebra span by $L^\dagger_n,\qty(\alpha_m^\mu)^\dagger$ is isomorphic to the algebra span by $L_n,\alpha_m^\mu$, 
+in particular, the isomorphism is given by, $L^\dagger_n\rightarrow L_{-n},\qty(\alpha^\mu_m)\rightarrow\alpha^\mu_{-m}$, as can be seen directly from 
+the algebra by making the substitutions,
+
+\begin{align*}
+    \comm{L_{-n}}{L_{-m}}&=\qty(-n-\qty(-m))L_{-n-m}+\frac{c}{12}\qty(-n)\qty(\qty(-n)^2-1)\delta_{-n,-\qty(-m)}\\
+    \comm{\alpha^\nu_{-n}}{\alpha^\mu_{-m}}&=-ng^{\mu\nu}\delta_{-n,-\qty(-m)}\\
+    \comm{L_{-m}}{\alpha^\nu_{-n}}&=n\alpha^\nu_{-n-m}
+\end{align*}
+
+Which is exactly the right algebra. We'll suppose that in our representation we have exactly $L^\dagger_n=L_{-n},\qty(\alpha^\mu_n)^\dagger=\alpha^\mu_{-n}$ as hinted 
+above. A few comments on the inner product of our Hilbert space, it is non degenerate and non negative. About the non 
+negative part, as we have a Lorentzian metric in the target space, at least one of the components of $X$ --- the time-like one --- has a wrong sign in the kinetic term in the 
+action, that is, some of the modes will inevitably `\textit{create}' negative norm states, but, these cannot be physical, and therefore must/can 
+be removed. One way of doing such is fixing the gauge a priori, which isn't the case, the other way is restricting the polarization vectors 
+to which the modes, of $\partial X$ can couple to. That is, as example, if $\alpha^\mu_n$ when acting in the vacuum creates a negative norm state, 
+this by itself is not enough to guarantee that it annihilate the vacuum, we have to show that no matter what choice of $\xi_\mu$ is done, $\xi_\mu \alpha^\mu_n$ 
+always is a negative norm state, then we can conclude $\alpha^\mu_n$ annihilate the vacuum. Closing these initial remarks, we start by defining the vacuum state, $\Psi_0$, as the one for which,
 
 \begin{align*}
     L_m\Psi_0=0,\ \ \ m\geq -1
 \end{align*}
 
-Let's analyze the action of $\alpha_n$ in it,
+Let's analyze the action of $\xi_\mu\alpha^\mu_n$ in it,
 
-% \begin{align*}
-%     L_m\alpha_n^\mu\Psi_0&=\qty(L_m\alpha_n^\mu-\alpha^\mu_n L_m)\Psi_0,\ \ \ m\geq -1\\
-%     L_m\alpha_n^\mu\Psi_0&=\comm{L_m}{\alpha_n^\mu}\Psi_0,\ \ \ m\geq -1\\
-%     L_m\alpha_n^\mu\Psi_0&=-n\alpha_{n+m}^\mu\Psi_0,\ \ \ m\geq -1
-% \end{align*}
+\begin{align*}
+    L_m\xi_\mu\alpha_n^\mu\Psi_0&=\xi_\mu\qty(L_m\alpha_n^\mu-\alpha^\mu_n L_m)\Psi_0,\ \ \ m\geq -1\\
+    L_m\xi_\mu\alpha_n^\mu\Psi_0&=\xi_\mu\comm{L_m}{\alpha_n^\mu}\Psi_0,\ \ \ m\geq -1\\
+    L_m\xi_\mu\alpha_n^\mu\Psi_0&=-n\xi_\mu\alpha_{n+m}^\mu\Psi_0,\ \ \ m\geq -1\numberthis\label{2prim}
+\end{align*}
 
-% In the special case of $n=0$, we have,
+The first step was add $0=\xi_\mu\alpha^\mu_nL_m\Psi_0$, as $L_m,\ m\geq -1$ annihilate the vacuum. In the special case of $n=0$, we have,
 
-% \begin{align*}
-%     L_m\alpha_0^\mu\Psi_0&=0,\ \ \ m\geq -1
-% \end{align*}
+\begin{align*}
+    L_m\xi_\mu\alpha_0^\mu\Psi_0&=0,\ \ \ m\geq -1
+\end{align*}
 
-% That implies $\alpha_0^\mu\Psi_0$ has exactly all the symmetries of the vacuum, hence, it must be proportional to it, $\alpha_0^\mu\Psi_0=k^\mu\Psi_0$ for some constants $k^\mu$, now we have to 
-% evoke that we are in an unitary CFT with an inner product $\qty(\cdot,\cdot)$, what also implies that we can define the adjoints of operators, which happen to be, $L_m^\dagger=L_{-m}$, so that in the special case of 
-% $n=-m$,
+That implies $\xi_\mu\alpha_0^\mu\Psi_0$ has exactly all the symmetries of the vacuum, hence, it must be proportional to it, $\xi_\mu\alpha_0^\mu\Psi_0=\xi\Psi_0$ for some constant $\xi$, now we have to 
+evoke that we do have an inner product $\qty(\cdot,\cdot)$, so that the special case of $n=-m$ in \ref{2prim} is,
 
-% \begin{align*}
-%     L_m\alpha_{-m}^\mu\Psi_0&=m\alpha_{0}^\mu\Psi_0,\ \ \ m\geq -1\\
-%     L_m\alpha_{-m}^\mu\Psi_0&=mk^\mu\Psi_0,\ \ \ m\geq -1\\
-%     \qty(\Psi_0,L_m\alpha_{-m}^\mu\Psi_0)&=\qty(\Psi_0,mk^\mu\Psi_0),\ \ \ m\geq -1\\
-%     \qty(L_m^\dagger\Psi_0,\alpha_{-m}^\mu\Psi_0)&=mk^\mu\qty(\Psi_0,\Psi_0),\ \ \ m\geq -1\\
-%     \qty(L_{-m}\Psi_0,\alpha_{-m}^\mu\Psi_0)&=mk^\mu\qty(\Psi_0,\Psi_0),\ \ \ m\geq -1
-% \end{align*}
+\begin{align*}
+    L_m\xi_\mu\alpha_{-m}^\mu\Psi_0&=m\xi_\mu\alpha_{0}^\mu\Psi_0,\ \ \ m\geq -1\\
+    L_m\xi_\mu\alpha_{-m}^\mu\Psi_0&=m\xi\Psi_0,\ \ \ m\geq -1\\
+    \qty(\Psi_0,L_m\xi_\mu\alpha_{-m}^\mu\Psi_0)&=\qty(\Psi_0,m\xi\Psi_0),\ \ \ m\geq -1\\
+    \qty(L_m^\dagger\Psi_0,\xi_\mu\alpha_{-m}^\mu\Psi_0)&=m\xi\qty(\Psi_0,\Psi_0),\ \ \ m\geq -1\\
+    \qty(L_{-m}\Psi_0,\xi_\mu\alpha_{-m}^\mu\Psi_0)&=m\xi\qty(\Psi_0,\Psi_0),\ \ \ m\geq -1
+\end{align*}
 
-% For $m=0$ the equation is trivial, and for $m\geq 2$ gives no new information, but, for $m=\pm 1$,
+For $m=\pm 1$,
 
-% \begin{align*}
-%     \qty(L_{\mp1}\Psi_0,\alpha_{\mp1}^\mu\Psi_0)&=\pm k^\mu\qty(\Psi_0,\Psi_0)\\
-%     \qty(0,\alpha_{\mp1}^\mu\Psi_0)&=\pm k^\mu\qty(\Psi_0,\Psi_0)\\
-%     0&=\pm k^\mu\qty(\Psi_0,\Psi_0)
-% \end{align*}
+\begin{align*}
+    \qty(L_{\mp1}\Psi_0,\xi_\mu\alpha_{\mp1}^\mu\Psi_0)&=\pm \xi\qty(\Psi_0,\Psi_0)\\
+    \qty(0,\xi_\mu\alpha_{\mp1}^\mu\Psi_0)&=\pm \xi\qty(\Psi_0,\Psi_0)\\
+    0&=\pm \xi\qty(\Psi_0,\Psi_0)
+\end{align*}
 
-% Of course $\qty(\Psi_0,\Psi_0)\neq 0$, hence, $k^\mu=0\Rightarrow \alpha_0^\mu\Psi_0=0$. This is very interesting
+Of course $\qty(\Psi_0,\Psi_0)\neq 0$ otherwise it would be the null state, hence, $\xi=0\Rightarrow \xi_\mu\alpha_0^\mu\Psi_0=\xi\Psi_0=0$. As this 
+is valid for any choice of $\xi_\mu$, we just proved that $\alpha^\mu_0\Psi_0=0$.
 
 % Let $\ket 0$ be the vacuum, we act with $\partial X^\mu\qty(z)$ in it, and analyze the following,
 
