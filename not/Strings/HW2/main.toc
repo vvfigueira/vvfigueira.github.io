@@ -7,23 +7,23 @@
 \contentsline {subsection}{2.B)}{13}{subsection.2.2}%
 \contentsline {section}{Problem 3}{14}{section.3}%
 \contentsline {subsection}{3.A)}{14}{subsection.3.1}%
-\contentsline {subsection}{3.B)}{15}{subsection.3.2}%
-\contentsline {subsection}{3.C)}{15}{subsection.3.3}%
-\contentsline {subsection}{3.D)}{15}{subsection.3.4}%
-\contentsline {subsection}{3.E)}{15}{subsection.3.5}%
-\contentsline {subsection}{3.F)}{15}{subsection.3.6}%
-\contentsline {section}{Problem 4}{16}{section.4}%
-\contentsline {subsection}{4.A)}{16}{subsection.4.1}%
-\contentsline {subsection}{4.B)}{16}{subsection.4.2}%
-\contentsline {subsection}{4.C)}{16}{subsection.4.3}%
-\contentsline {subsection}{4.D)}{16}{subsection.4.4}%
-\contentsline {subsection}{4.E)}{16}{subsection.4.5}%
-\contentsline {section}{Problem 5}{17}{section.5}%
-\contentsline {subsection}{5.A)}{17}{subsection.5.1}%
-\contentsline {subsection}{5.B)}{17}{subsection.5.2}%
-\contentsline {section}{Problem 6}{18}{section.6}%
-\contentsline {subsection}{6.A)}{18}{subsection.6.1}%
-\contentsline {subsection}{6.B)}{18}{subsection.6.2}%
-\contentsline {subsection}{6.C)}{18}{subsection.6.3}%
-\contentsline {subsection}{6.D)}{18}{subsection.6.4}%
-\contentsline {section}{\numberline {A}Bosonic CFT}{19}{appendix.A}%
+\contentsline {subsection}{3.B)}{16}{subsection.3.2}%
+\contentsline {subsection}{3.C)}{19}{subsection.3.3}%
+\contentsline {subsection}{3.D)}{19}{subsection.3.4}%
+\contentsline {subsection}{3.E)}{19}{subsection.3.5}%
+\contentsline {subsection}{3.F)}{19}{subsection.3.6}%
+\contentsline {section}{Problem 4}{20}{section.4}%
+\contentsline {subsection}{4.A)}{20}{subsection.4.1}%
+\contentsline {subsection}{4.B)}{20}{subsection.4.2}%
+\contentsline {subsection}{4.C)}{20}{subsection.4.3}%
+\contentsline {subsection}{4.D)}{20}{subsection.4.4}%
+\contentsline {subsection}{4.E)}{20}{subsection.4.5}%
+\contentsline {section}{Problem 5}{21}{section.5}%
+\contentsline {subsection}{5.A)}{21}{subsection.5.1}%
+\contentsline {subsection}{5.B)}{21}{subsection.5.2}%
+\contentsline {section}{Problem 6}{22}{section.6}%
+\contentsline {subsection}{6.A)}{22}{subsection.6.1}%
+\contentsline {subsection}{6.B)}{22}{subsection.6.2}%
+\contentsline {subsection}{6.C)}{22}{subsection.6.3}%
+\contentsline {subsection}{6.D)}{22}{subsection.6.4}%
+\contentsline {section}{\numberline {A}Bosonic CFT}{23}{appendix.A}%

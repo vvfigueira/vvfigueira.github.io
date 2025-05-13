@@ -63,14 +63,164 @@ As we derived before, $\fdv{}{\psi\qty(z_1,\bar z_1)}\qty[-S]=-\frac{1}{2\pi}\pa
 Which is, translating to the operator formalism,
 
 \begin{align*}
-    \partial_{{\bar z}_1}\expval{\psi\qty(z_1,{\bar z}_1)\psi\qty(z_2,{\bar z}_2)\mathcal O}&=\expval{2\pi\delta^{\qty(2)}\qty(z_2-z_1)\mathcal O}\\
-    \partial_{{\bar z}_1}\psi\qty(z_1,{\bar z}_1)\psi\qty(z_2,{\bar z}_2)&=2\pi\delta^{\qty(2)}\qty(z_2-z_1),\ \ \ \abs{z_1}\geq\abs{z_2}
+    \partial_{{\bar z}_1}\expval{\psi\qty(z_1)\psi\qty(z_2)\mathcal O}&=\expval{2\pi\delta^{\qty(2)}\qty(z_2-z_1)\mathcal O}\\
+    \partial_{{\bar z}_1}\psi\qty(z_1)\psi\qty(z_2)&=2\pi\delta^{\qty(2)}\qty(z_2-z_1),\ \ \ \abs{z_1}\geq\abs{z_2}
 \end{align*}
 
-So that we can interpret this as a operator identity. The condition $\abs{z_1}\geq \abs{z_2}$ is due to the implicit radial ordering in the expectation 
-value.
+So that we can interpret this as a operator equality. The condition $\abs{z_1}\geq \abs{z_2}$ is due to the implicit radial ordering in the expectation 
+value, and also notice that in the path integral formulation $\psi=\psi\qty(z_1,{\bar z}_1)$, but in the operator formalism $\psi=\psi\qty(z_1)$, as every operator is 
+always `\textit{on-shell}', while the path integral integrands aren't. Now we integrate this two point function, pick any compact closed region $R$ in the complex plane which 
+contains $z_2$ and not any other of the points of the insertions $\mathcal O$, with also the boundary being a continuous curve, for all $m\in\mathbb N$ the following is true,
+
+\begin{align*}
+    \partial_{{\bar z}_1}\expval{\psi\qty(z_1)\psi\qty(z_2)\mathcal O}&=2\pi\delta^{\qty(2)}\qty(z_2-z_1)\expval{\mathcal O}\\
+    \qty(z_1-z_2)^m\partial_{{\bar z}_1}\expval{\psi\qty(z_1)\psi\qty(z_2)\mathcal O}&=2\pi\qty(z_1-z_2)^m\delta^{\qty(2)}\qty(z_2-z_1)\expval{\mathcal O},\ \ \ m\in\mathbb N\\
+    \int\limits_R\dd[2]{z_1}\qty(z_1-z_2)^m\partial_{{\bar z}_1}\expval{\psi\qty(z_1)\psi\qty(z_2)\mathcal O}&=2\pi\int\limits_R\dd[2]{z_1}\qty(z_1-z_2)^m\delta^{\qty(2)}\qty(z_2-z_1)\expval{\mathcal O},\ \ \ m\in\mathbb N\\
+    \int\limits_R\dd[2]{z_1}\partial_{{\bar z}_1}\qty{\qty(z_1-z_2)^m\expval{\psi\qty(z_1)\psi\qty(z_2)\mathcal O}}&=2\pi\qty(z_1-z_2)^m\eval_{z_1=z_2}\expval{\mathcal O},\ \ \ m\in\mathbb N
+\end{align*}
+
+In the last line we used the fact `\textit{trivial}' fact that $\partial_{{\bar z}_1}\qty(z_1-z_2)^m=0$, which is valid for $m\in\mathbb N$, but isn't for 
+negative non-integer values.
+
+\begin{align*}
+    \int\limits_R\dd[2]{z_1}\partial_{{\bar z}_1}\qty{\qty(z_1-z_2)^m\expval{\psi\qty(z_1)\psi\qty(z_2)\mathcal O}}&=2\pi\qty(z_1-z_2)^m\eval_{z_1=z_2}\expval{\mathcal O},\ \ \ m\in\mathbb N\\
+    -\im\int\limits_{\partial R}\dd{z_1}\qty(z_1-z_2)^m\expval{\psi\qty(z_1)\psi\qty(z_2)\mathcal O}&=2\pi\delta_{m,0}\expval{\mathcal O},\ \ \ m\in\mathbb N
+\end{align*}
+
+This is simply the complex version of the divergence theorem,
+
+\begin{align*}
+    -\im\int\limits_{\partial R}\dd{z_1}\qty(z_1-z_2)^m\expval{\psi\qty(z_1)\psi\qty(z_2)\mathcal O}&=2\pi\delta_{m,0}\expval{\mathcal O},\ \ \ m\in\mathbb N\\
+    \int\limits_{\partial R}\frac{\dd{z_1}}{2\pi\im}\qty(z_1-z_2)^m\expval{\psi\qty(z_1)\psi\qty(z_2)\mathcal O}&=\delta_{m,0}\expval{\mathcal O},\ \ \ m\in\mathbb N
+\end{align*}
+
+Well, the left-hand side of this last equation picks up the pole of $m$-th order of the expression $\expval{\psi\qty(z_1)\psi\qty(z_2)\mathcal O}$ under $z_1\rightarrow z_2$, but, 
+the right-hand side is only non-zero for $m=0$, this is telling us that $\expval{\psi\qty(z_1)\psi\qty(z_2)\mathcal O}$ doesn't have any pole besides the first order one with residue $\expval{\mathcal O}$, 
+so we can write,
+
+\begin{align*}
+    \expval{\psi\qty(z_1)\psi\qty(z_2)\mathcal O}=\frac{1}{z_1-z_2}\expval{\mathcal O}+\textnormal{regular}
+\end{align*}
+
+Or, in the operator formalism,
+
+\begin{align*}
+    \psi\qty(z_1)\psi\qty(z_2)&=\frac{1}{z_1-z_2}+\textnormal{regular},\ \ \ \abs{z_1}\geq \abs{z_2}\\
+    \psi\qty(z_1)\psi\qty(z_2)&=\frac{1}{z_1-z_2}+\cnord{\psi\qty(z_1)\psi\qty(z_2)},\ \ \ \abs{z_1}\geq \abs{z_2}
+\end{align*}
+
+Which is the OPE.
 
 \probitem{}
+
+The energy momentum tensor has two components, a meromorphic one $T\qty(z)$, and an anti-meromorphic one $\bar T\qty(\bar z)$, 
+as we have at our disposal only a weight $\qty(\frac12,0)$ field, it's impossible to construct a anti-meromorphic energy momentum tensor, 
+but, for the meromorphic one, let us see what kind of combinations have the right weights. First, we remember that our energy momentum tensor 
+must be normal ordered, so, all the possible normal ordered weight $\qty(2,0)$ combinations of $\psi$ and derivatives are,
+
+\begin{align*}
+    \cnord{\psi\partial\psi}\qty(z),\ \cnord{(\partial\psi)\psi}\qty(z), \ \cnord{\partial\qty(\psi\psi)}\qty(z),\ \cnord{\psi\psi\psi\psi}\qty(z)
+\end{align*} 
+
+The third and fourth are zero due to the fermionic statistic, and the first and second are linear dependent also because the 
+fermionic statistic. Hence, up to a unknown constant $\alpha$, the meromorphic energy momentum tensor is,
+
+\begin{align*}
+    T\qty(z)=\alpha\cnord{\psi\partial\psi}\qty(z)
+\end{align*}
+
+Let's use this expression to compute the following,
+
+\begin{align*}
+    \cnord{T\qty(z_1) T\qty(z_2)}&=T\qty(z_1)T\qty(z_2)+\alpha^2\textnormal{ contractions}\qty{\cnord{\qty(\psi\partial\psi)\qty(z_1)\qty(\psi\partial\psi)\qty(z_2)}},\ \ \ \abs{z_1}\geq \abs{z_2}
+\end{align*}
+
+Where the contraction part means exchanging pairs of $\psi$ with different $z$ by $-\qty(z_1-z_2)^{-1}$, as cause of the fermion 
+statistic, we have to pay attention to the signs, also, we'll omit for now the $\abs{z_1}\geq\abs{z_2}$, but it will still be imposed, 
+
+\begin{align*}
+    \cnord{T\qty(z_1) T\qty(z_2)}&={ T\qty(z_1)T\qty(z_2)}+\alpha^2\cnord{\wick[offset=1.2em]{(\c{\psi}\partial\psi)\qty(z_1)(\c{\psi}\partial\psi)\qty(z_2)}}+\alpha^2\cnord{\wick[offset=1.2em]{(\c{\psi}\partial\psi)\qty(z_1)({\psi}\partial\c{\psi})\qty(z_2)}}\\
+    &\quad\quad\quad+\alpha^2\cnord{\wick[offset=1.2em]{({\psi}\partial\c{\psi})\qty(z_1)(\c{\psi}\partial{\psi})\qty(z_2)}}+\alpha^2\cnord{\wick[offset=1.2em]{({\psi}\partial\c{\psi})\qty(z_1)({\psi}\partial\c{\psi})\qty(z_2)}}\\
+    &\quad\quad\quad+\alpha^2\cnord{\wick[offset=1.2em]{(\c1{\psi}\partial\c2{\psi})\qty(z_1)(\c1{\psi}\partial\c2{\psi})\qty(z_2)}}+\alpha^2\cnord{\wick[offset=1.2em]{(\c1{\psi}\partial\c2{\psi})\qty(z_1)(\c2{\psi}\partial\c1{\psi})\qty(z_2)}}\\
+    \cnord{T\qty(z_1) T\qty(z_2)}&={ T\qty(z_1)T\qty(z_2)}+\frac{1}{z_1-z_2}\alpha^2\cnord{\partial\psi\qty(z_1)\partial\psi\qty(z_2)}-\partial_{z_2}\qty(\frac{1}{z_1-z_2})\alpha^2\cnord{\partial\psi\qty(z_1)\psi\qty(z_2)}\\
+    &\quad\quad\quad-\alpha^2\partial_{z_1}\qty(\frac{1}{z_1-z_2})\cnord{{\psi}\qty(z_1)\partial{\psi}\qty(z_2)}+\alpha^2\partial_{z_1}\partial_{z_2}\qty(\frac{1}{z_1-z_2})\cnord{{\psi}\qty(z_1){\psi}\qty(z_2)}\\
+    &\quad\quad\quad+\alpha^2\frac{1}{z_1-z_2}\partial_{z_1}\partial_{z_2}\qty(\frac{1}{z_1-z_2})-\alpha^2\partial_{z_2}\qty(\frac{1}{z_1-z_2})\partial_{z_1}\qty(\frac{1}{z_1-z_2})\\
+    \cnord{T\qty(z_1) T\qty(z_2)}&={ T\qty(z_1)T\qty(z_2)}+\frac{\alpha^2}{z_1-z_2}\cnord{\partial\psi\qty(z_1)\partial\psi\qty(z_2)}-\frac{\alpha^2}{\qty(z_1-z_2)^2}\cnord{\partial\psi\qty(z_1)\psi\qty(z_2)}\\
+    &\quad\quad\quad+\frac{\alpha^2}{\qty(z_1-z_2)^2}\cnord{{\psi}\qty(z_1)\partial{\psi}\qty(z_2)}+\partial_{z_1}\qty(\frac{\alpha^2}{\qty(z_1-z_2)^2})\cnord{{\psi}\qty(z_1){\psi}\qty(z_2)}\\
+    &\quad\quad\quad+\frac{\alpha^2}{z_1-z_2}\partial_{z_1}\qty(\frac{1}{\qty(z_1-z_2)^2})-\frac{\alpha^2}{\qty(z_1-z_2)^2}\partial_{z_1}\qty(\frac{1}{z_1-z_2})\\
+    \cnord{T\qty(z_1) T\qty(z_2)}&={ T\qty(z_1)T\qty(z_2)}+\frac{\alpha^2}{z_1-z_2}\cnord{\partial\psi\qty(z_1)\partial\psi\qty(z_2)}-\frac{\alpha^2}{\qty(z_1-z_2)^2}\cnord{\partial\psi\qty(z_1)\psi\qty(z_2)}\\
+    &\quad\quad\quad+\frac{\alpha^2}{\qty(z_1-z_2)^2}\cnord{{\psi}\qty(z_1)\partial{\psi}\qty(z_2)}-2\frac{\alpha^2}{\qty(z_1-z_2)^3}\cnord{{\psi}\qty(z_1){\psi}\qty(z_2)}\\
+    &\quad\quad\quad-2\frac{\alpha^2}{z_1-z_2}\frac{1}{\qty(z_1-z_2)^3}+\frac{\alpha^2}{\qty(z_1-z_2)^2}\frac{1}{\qty(z_1-z_2)^2}\\
+    \cnord{T\qty(z_1) T\qty(z_2)}&={ T\qty(z_1)T\qty(z_2)}+\frac{\alpha^2}{z_1-z_2}\cnord{\partial\psi\qty(z_1)\partial\psi\qty(z_2)}-\frac{\alpha^2}{\qty(z_1-z_2)^2}\cnord{\partial\psi\qty(z_1)\psi\qty(z_2)}\\
+    &\quad\quad\quad+\frac{\alpha^2}{\qty(z_1-z_2)^2}\cnord{{\psi}\qty(z_1)\partial{\psi}\qty(z_2)}-2\frac{\alpha^2}{\qty(z_1-z_2)^3}\cnord{{\psi}\qty(z_1){\psi}\qty(z_2)}\\
+    &\quad\quad\quad-\frac{\alpha^2}{\qty(z_1-z_2)^4}
+\end{align*}
+
+To proceed further we have to Taylor expand both $\psi\qty(z_1),\partial\psi\qty(z_1)$, of course this will generate regular terms in our expansion, as for example, the second term in the right-hand side,
+
+\begin{align*}
+    \frac{1}{z_1-z_2}\cnord{\partial\psi\qty(z_1)\partial\psi\qty(z_2)}&=\frac{1}{z_1-z_2}\cnord{\partial\psi\qty(z_2)\partial\psi\qty(z_2)}+\sum\limits_{n=1}^\infty\frac{1}{z_1-z_2}\frac{1}{n!}\qty(z_1-z_2)^n\cnord{\partial^n\psi\qty(z_2)\partial\psi\qty(z_2)}\\
+    \frac{1}{z_1-z_2}\cnord{\partial\psi\qty(z_1)\partial\psi\qty(z_2)}&=\frac{1}{z_1-z_2}\cnord{\partial\psi\partial\psi}\qty(z_2)+\sum\limits_{n=1}^\infty\frac{\qty(z_1-z_2)^{n-1}}{n!}\cnord{\partial^n\psi\partial\psi}\qty(z_2)
+\end{align*}
+
+It's clear that the sum in the right-hand side is of only regular terms, so that,
+
+\begin{align*}
+    \frac{1}{z_1-z_2}\cnord{\partial\psi\qty(z_1)\partial\psi\qty(z_2)}&=\frac{1}{z_1-z_2}\cnord{\partial\psi\partial\psi}\qty(z_2)+\textnormal{regular}
+\end{align*}
+
+But $\cnord{\partial\psi\partial\psi}$ is zero by statistics, hence, 
+
+\begin{align*}
+    \frac{1}{z_1-z_2}\cnord{\partial\psi\qty(z_1)\partial\psi\qty(z_2)}&=\textnormal{regular}
+\end{align*}
+
+We do this procedure for all the terms in the expansion,
+
+\begin{align*}
+    \cnord{T\qty(z_1) T\qty(z_2)}&={ T\qty(z_1)T\qty(z_2)}-\frac{\alpha^2}{\qty(z_1-z_2)^2}\cnord{\partial\psi\psi}\qty(z_2)-\frac{\alpha^2}{\qty(z_1-z_2)}\cnord{\partial^2\psi\psi}\qty(z_2)\\
+    &\quad\quad\quad+\frac{\alpha^2}{\qty(z_1-z_2)^2}\cnord{{\psi}\partial{\psi}}\qty(z_2)+\frac{\alpha^2}{\qty(z_1-z_2)}\cnord{\partial{\psi}\partial{\psi}}\qty(z_2)\\
+    &\quad\quad\quad-2\frac{\alpha^2}{\qty(z_1-z_2)^3}\cnord{{\psi}{\psi}}\qty(z_2)-2\frac{\alpha^2}{\qty(z_1-z_2)^2}\cnord{\partial{\psi}{\psi}}\qty(z_2)-\frac{\alpha^2}{\qty(z_1-z_2)}\cnord{\partial^2{\psi}{\psi}}\qty(z_2)\\
+    &\quad\quad\quad-\frac{\alpha^2}{\qty(z_1-z_2)^4}+\textnormal{regular}
+\end{align*}
+
+Removing the terms which are zero by statistics and grouping the others,
+
+\begin{align*}
+    \cnord{T\qty(z_1) T\qty(z_2)}&={ T\qty(z_1)T\qty(z_2)}+\frac{4\alpha^2}{\qty(z_1-z_2)^2}\cnord{\psi\partial\psi}\qty(z_2)+\frac{2\alpha^2}{\qty(z_1-z_2)}\cnord{\psi\partial^2\psi}\qty(z_2)\\
+    &\quad\quad\quad-\frac{\alpha^2}{\qty(z_1-z_2)^4}+\textnormal{regular}
+\end{align*}
+
+As $\cnord{\partial\psi\partial\psi}\equiv0$ we can add it as we please,
+
+\begin{align*}
+    \cnord{T\qty(z_1) T\qty(z_2)}&={ T\qty(z_1)T\qty(z_2)}+\frac{4\alpha^2}{\qty(z_1-z_2)^2}\cnord{\psi\partial\psi}\qty(z_2)+\frac{2\alpha^2}{\qty(z_1-z_2)}\cnord{\psi\partial^2\psi+\partial\psi\partial\psi}\qty(z_2)\\
+    &\quad\quad\quad-\frac{\alpha^2}{\qty(z_1-z_2)^4}+\textnormal{regular}\\
+    \cnord{T\qty(z_1) T\qty(z_2)}&={ T\qty(z_1)T\qty(z_2)}+\frac{4\alpha^2}{\qty(z_1-z_2)^2}\cnord{\psi\partial\psi}\qty(z_2)+\frac{2\alpha^2}{\qty(z_1-z_2)}\partial\cnord{\psi\partial\psi}\qty(z_2)\\
+    &\quad\quad\quad-\frac{\alpha^2}{\qty(z_1-z_2)^4}+\textnormal{regular}\\
+    \cnord{T\qty(z_1) T\qty(z_2)}&={ T\qty(z_1)T\qty(z_2)}+\frac{4\alpha}{\qty(z_1-z_2)^2}T\qty(z_2)+\frac{2\alpha}{\qty(z_1-z_2)}\partial T\qty(z_2)\\
+    &\quad\quad\quad-\frac{\alpha^2}{\qty(z_1-z_2)^4}+\textnormal{regular}
+\end{align*}
+
+Well, $\cnord{T\qty(z_1)T\qty(z_2)}$ itself is regular, then,
+
+\begin{align*}
+    { T\qty(z_1)T\qty(z_2)}&=-\frac{4\alpha}{\qty(z_1-z_2)^2}T\qty(z_2)-\frac{2\alpha}{\qty(z_1-z_2)}\partial T\qty(z_2)+\frac{\alpha^2}{\qty(z_1-z_2)^4}+\textnormal{regular}
+\end{align*}
+
+But we know the general form of the $TT$ OPE,
+
+\begin{align*}
+    { T\qty(z_1)T\qty(z_2)}&=\frac{2}{\qty(z_1-z_2)^2}T\qty(z_2)+\frac{1}{\qty(z_1-z_2)}\partial T\qty(z_2)+\frac{c}{2\qty(z_1-z_2)^4}+\textnormal{regular}
+\end{align*}
+
+From where is easy to read $\alpha=-\frac12$, and also, $c=2\alpha^2=2\frac14=\frac12$, that is, the meromorphic component of the 
+energy momentum tensor, and the central charge are,
+
+\begin{align*}
+    T\qty(z)&=-\frac12\cnord{\psi\partial\psi}\qty(z),\ \ \ c=\frac12
+\end{align*}
+
 \probitem{}
 \probitem{}
 \probitem{}
