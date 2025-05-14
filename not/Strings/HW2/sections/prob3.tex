@@ -306,11 +306,11 @@ The quantum version of it will require normal ordering,
 Now, to get it's OPE we proceed as usual, computing the following normal ordered operator,
 
 \begin{align*}
-    \cnord{j\qty(z_1)j\qty(z_2)}&=j\qty(z_1)j\qty(z_2)-\wick{\cnord{\c1\psi^1\psi^2}\qty(z_1)\cnord{\c1\psi^1\psi^2}\qty(z_2)}-\wick{\cnord{\psi^1\c1\psi^2}\qty(z_1)\cnord{\psi^1\c1\psi^2}\qty(z_2)}\\
-    &\quad\quad\quad-\wick{\cnord{\c1\psi^1\c2\psi^2}\qty(z_1)\cnord{\c1\psi^1\c2\psi^2}\qty(z_2)}\\
-    \cnord{j\qty(z_1)j\qty(z_2)}&=j\qty(z_1)j\qty(z_2)-\frac{1}{z_1-z_2}\psi^2\qty(z_1)\psi^2\qty(z_2)-\frac{1}{z_1-z_2}\psi^1\qty(z_1)\psi^1\qty(z_2)\\
+    \cnord{j\qty(z_1)j\qty(z_2)}&=j\qty(z_1)j\qty(z_2)-\wick{\cnord{(\c1\psi^1\psi^2)\qty(z_1)(\c1\psi^1\psi^2)\qty(z_2)}}-\wick{\cnord{(\psi^1\c1\psi^2)\qty(z_1)(\psi^1\c1\psi^2)\qty(z_2)}}\\
+    &\quad\quad\quad-\wick{\cnord{(\c1\psi^1\c2\psi^2)\qty(z_1)(\c1\psi^1\c2\psi^2)\qty(z_2)}}\\
+    \cnord{j\qty(z_1)j\qty(z_2)}&=j\qty(z_1)j\qty(z_2)-\frac{1}{z_1-z_2}\cnord{\psi^2\qty(z_1)\psi^2\qty(z_2)}-\frac{1}{z_1-z_2}\cnord{\psi^1\qty(z_1)\psi^1\qty(z_2)}\\
     &\quad\quad\quad-\frac{1}{\qty(z_1-z_2)^2}\\
-    \cnord{j\qty(z_1)j\qty(z_2)}&=j\qty(z_1)j\qty(z_2)-\frac{1}{z_1-z_2}\psi^2\qty(z_2)\psi^2\qty(z_2)-\frac{1}{z_1-z_2}\psi^1\qty(z_1)\psi^1\qty(z_1)\\
+    \cnord{j\qty(z_1)j\qty(z_2)}&=j\qty(z_1)j\qty(z_2)-\frac{1}{z_1-z_2}\cnord{\psi^2\qty(z_2)\psi^2\qty(z_2)}-\frac{1}{z_1-z_2}\cnord{\psi^1\qty(z_1)\psi^1\qty(z_1)}\\
     &\quad\quad\quad-\frac{1}{\qty(z_1-z_2)^2}+\textnormal{regular}
 \end{align*}
 
@@ -400,8 +400,256 @@ This is more aesthetic for Lie Algebras in general, but not always desired --- L
 OPE associated with this collection of currents,
 
 \begin{align*}
-    \cnord{j^A\qty(z_1)j^B\qty(z_2)}&=
+    \cnord{j^A\qty(z_1)j^B\qty(z_2)}&=j^A\qty(z_1)j ^B\qty(z_2)+\frac14\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\wick{\cnord{(\c1\psi^i\psi^j)\qty(z_1)(\c1\psi^k\psi^l)\qty(z_2)}}\\
+    &\quad\quad\quad+\frac14\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\wick{\cnord{(\c1\psi^i\psi^j)\qty(z_1)(\psi^k\c1\psi^l)\qty(z_2)}}+\frac14\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\wick{\cnord{(\psi^i\c1\psi^j)\qty(z_1)(\c1\psi^k\psi^l)\qty(z_2)}}\\
+    &\quad\quad\quad+\frac14\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\wick{\cnord{(\psi^i\c1\psi^j)\qty(z_1)(\psi^k\c1\psi^l)\qty(z_2)}}+\frac14\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\wick{\cnord{(\c1\psi^i\c2\psi^j)\qty(z_1)(\c1\psi^k\c2\psi^l)\qty(z_2)}}\\
+    &\quad\quad\quad+\frac14\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\wick{\cnord{(\c1\psi^i\c2\psi^j)\qty(z_1)(\c2\psi^k\c1\psi^l)\qty(z_2)}}
+\end{align*}
+
+As we stated before, the contraction only is non zero for equal index $\psi$,
+
+\begin{align*}
+    \cnord{j^A\qty(z_1)j^B\qty(z_2)}&=j^A\qty(z_1)j ^B\qty(z_2)+\frac{\delta^{ik}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\cnord{\psi^j\qty(z_1)\psi^l\qty(z_2)}\\
+    &\quad\quad\quad-\frac{\delta^{il}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\cnord{\psi^j\qty(z_1)\psi^k\qty(z_2)}-\frac{\delta^{jk}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\cnord{\psi^i\qty(z_1)\psi^l\qty(z_2)}\\
+    &\quad\quad\quad+\frac{\delta^{jl}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\cnord{\psi^i\qty(z_1)\psi^k\qty(z_2)}+\frac{\delta^{ik}\delta^{jl}}{4\qty(z_1-z_2)^2}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\\
+    &\quad\quad\quad-\frac{\delta^{il}\delta^{jk}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}
+\end{align*}
+
+Expanding in Taylor everything around $z_2$,
+
+\begin{align*}
+    \cnord{j^A\qty(z_1)j^B\qty(z_2)}&=j^A\qty(z_1)j ^B\qty(z_2)+\frac{\delta^{ik}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\cnord{\psi^j\qty(z_2)\psi^l\qty(z_2)}\\
+    &\quad\quad\quad-\frac{\delta^{il}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\cnord{\psi^j\qty(z_2)\psi^k\qty(z_2)}-\frac{\delta^{jk}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\cnord{\psi^i\qty(z_2)\psi^l\qty(z_2)}\\
+    &\quad\quad\quad+\frac{\delta^{jl}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\cnord{\psi^i\qty(z_2)\psi^k\qty(z_2)}+\frac{\delta^{ik}\delta^{jl}}{4\qty(z_1-z_2)^2}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\\
+    &\quad\quad\quad-\frac{\delta^{il}\delta^{jk}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}+\textnormal{regular}
+\end{align*}
+
+It's clear we have two kinds of terms, with $\cnord{\psi\psi}$ and without, to group together all of them, we'll go under a massive round of relabeling, 
+first, relabel all $\psi$ index to be $b$ in the right one and $a$ in the left one,
+
+\begin{align*}
+    \cnord{j^A\qty(z_1)j^B\qty(z_2)}&=j^A\qty(z_1)j ^B\qty(z_2)+\frac{\delta^{ik}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ia}}\tensor{T}{^B_{kb}}\cnord{\psi^a\psi^b}\qty(z_2)\\
+    &\quad\quad\quad-\frac{\delta^{il}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ia}}\tensor{T}{^B_{bl}}\cnord{\psi^a\psi^b}\qty(z_2)-\frac{\delta^{jk}}{4\qty(z_1-z_2)}\tensor{T}{^A_{aj}}\tensor{T}{^B_{kb}}\cnord{\psi^a\psi^b}\qty(z_2)\\
+    &\quad\quad\quad+\frac{\delta^{jl}}{4\qty(z_1-z_2)}\tensor{T}{^A_{aj}}\tensor{T}{^B_{bl}}\cnord{\psi^a\psi^b}\qty(z_2)+\frac{\delta^{ik}\delta^{jl}}{4\qty(z_1-z_2)^2}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}\\
+    &\quad\quad\quad-\frac{\delta^{il}\delta^{jk}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}+\textnormal{regular}
+\end{align*}
+
+Notice that $\tensor{T}{^A_{ij}}=\tensor{T}{^{\qty[ab]}_{ij}}=\im\qty(\tensor{\delta}{_i^a}\tensor{\delta}{^b_j}-\tensor{\delta}{_i^b}\tensor{\delta}{^a_j})$ is antisymmetric in $ij$, so we reverse the order of every pair of $TT$ to be with 
+$T^A$ with the index $a$ at left and $T^B$ with index $b$ in the right,
+
+\begin{align*}
+    \cnord{j^A\qty(z_1)j^B\qty(z_2)}&=j^A\qty(z_1)j ^B\qty(z_2)-\frac{\delta^{ik}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ai}}\tensor{T}{^B_{kb}}\cnord{\psi^a\psi^b}\qty(z_2)\\
+    &\quad\quad\quad-\frac{\delta^{il}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ai}}\tensor{T}{^B_{lb}}\cnord{\psi^a\psi^b}\qty(z_2)-\frac{\delta^{jk}}{4\qty(z_1-z_2)}\tensor{T}{^A_{aj}}\tensor{T}{^B_{kb}}\cnord{\psi^a\psi^b}\qty(z_2)\\
+    &\quad\quad\quad-\frac{\delta^{jl}}{4\qty(z_1-z_2)}\tensor{T}{^A_{aj}}\tensor{T}{^B_{lb}}\cnord{\psi^a\psi^b}\qty(z_2)-\frac{\delta^{ik}\delta^{jl}}{4\qty(z_1-z_2)^2}\tensor{T}{^A_{ji}}\tensor{T}{^B_{kl}}\\
+    &\quad\quad\quad-\frac{\delta^{il}\delta^{jk}}{4\qty(z_1-z_2)}\tensor{T}{^A_{ij}}\tensor{T}{^B_{kl}}+\textnormal{regular}
+\end{align*}
+
+Now it's trivial to sum the terms,
+
+\begin{align*}
+    \cnord{j^A\qty(z_1)j^B\qty(z_2)}&=j^A\qty(z_1)j ^B\qty(z_2)-\frac{\delta^{ik}\tensor{T}{^A_{ai}}\tensor{T}{^B_{kb}}}{\qty(z_1-z_2)}\cnord{\psi^a\psi^b}\qty(z_2)-\frac{\delta^{ik}\delta^{jl}}{2\qty(z_1-z_2)^2}\tensor{T}{^A_{ji}}\tensor{T}{^B_{kl}}\\
+    &\quad\quad\quad+\textnormal{regular}
+\end{align*}
+
+Due to the statistic we have to anti-symmetrize the second term in the right-hand side in the index $ab$
+
+\begin{align*}
+    \cnord{j^A\qty(z_1)j^B\qty(z_2)}&=j^A\qty(z_1)j ^B\qty(z_2)-\frac{\tensor{T}{^A_{a}^i}\tensor{T}{^B_{ib}}-\tensor{T}{^A_{b}^i}\tensor{T}{^B_{ia}}}{2\qty(z_1-z_2)}\cnord{\psi^a\psi^b}\qty(z_2)-\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\\
+    &\quad\quad\quad+\textnormal{regular}\\
+    \cnord{j^A\qty(z_1)j^B\qty(z_2)}&=j^A\qty(z_1)j ^B\qty(z_2)-\frac{\tensor{T}{^A_{a}^i}\tensor{T}{^B_{ib}}-\tensor{T}{^B_{ai}}\tensor{T}{^A^i_{b}}}{2\qty(z_1-z_2)}\cnord{\psi^a\psi^b}\qty(z_2)-\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\\
+    &\quad\quad\quad+\textnormal{regular}
+\end{align*}
+
+Well the numerator in the second term in the right-hand side is just the commutator of the $T$'s, which is of course written in terms of the 
+structure constants,
+
+\begin{align*}
+    \cnord{j^A\qty(z_1)j^B\qty(z_2)}&=j^A\qty(z_1)j ^B\qty(z_2)-\frac{\im\tensor{f}{^A^B_C}\tensor{T}{^C_a_b}}{2\qty(z_1-z_2)}\cnord{\psi^a\psi^b}\qty(z_2)-\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\\
+    &\quad\quad\quad+\textnormal{regular}\\
+    \cnord{j^A\qty(z_1)j^B\qty(z_2)}&=j^A\qty(z_1)j ^B\qty(z_2)-\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}j^C\qty(z_2)-\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\\
+    &\quad\quad\quad+\textnormal{regular}
+\end{align*}
+
+So that, finally,
+
+\begin{align*}
+    j^A\qty(z_1)j ^B\qty(z_2)&=\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}j^C\qty(z_2)+\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}+\textnormal{regular}\numberthis\label{jope}
 \end{align*}
 
 \probitem{}
+
+As $\psi$ has conformal weight $\qty(\frac12,0)$ it's clear that $j^A$ will have conformal weight $\qty(1,0)$, so that a mode expansion is,
+
+\begin{align*}
+    j^A\qty(z)&=\sum\limits_{n\in\mathbb Z}\frac{j^A_n}{z^{n+1}}\\
+    j^A_n&=\oint\limits_C\frac{\dd{z}}{2\pi\im}z^nj^A\qty(z)
+\end{align*}
+
+Where $C$ is any sufficiently well behaved closed curve around the origin. To obtain the algebra of the current modes, 
+is easier to rewrite \ref{jope} back in the path integral formalism, from which the radial order is always manifest,
+
+\begin{align*}
+    \expval{j^A\qty(z_1)j ^B\qty(z_2)\mathcal O}&=\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}\expval{j^C\qty(z_2)\mathcal O}+\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\expval{\mathcal O}+\textnormal{regular}
+\end{align*}
+
+We now integrate this expression with two different contours, $C_1$ and $C_2$, $C_1$ is a contour around the origin which also 
+encloses the point $z_2$, and $C_2$ is a contour around the origin that does not encloses $z_2$, hence,
+
+\begin{align*}
+    \oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\expval{j^A\qty(z_1)j ^B\qty(z_2)\mathcal O}&=\oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}\expval{j^C\qty(z_2)\mathcal O}+\oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\expval{\mathcal O}+\textnormal{regular}\\
+    \oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\expval{j^A\qty(z_1)j ^B\qty(z_2)\mathcal O}&=\oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}\expval{j^C\qty(z_2)\mathcal O}+\oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\expval{\mathcal O}+\textnormal{regular}
+\end{align*}
+
+Notice that for the second contour, the order of the $j$ inside the expectation value will change once we go to the operator formalism, as for $C_2$, $\abs{z_2}>\abs{z_1}$, 
+we'll use this to our advantage, first, as for the expectation value the order is irrelevant, due to the implicit radial ordering, we exchange the order of the two $j$, as we're 
+in the region $\abs{z_2}>\abs{z_1}$,
+
+\begin{align*}
+    \oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\expval{j^A\qty(z_1)j ^B\qty(z_2)\mathcal O}&=\oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}\expval{j^C\qty(z_2)\mathcal O}+\oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\expval{\mathcal O}+\textnormal{regular}\\
+    \oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\expval{j ^B\qty(z_2)j^A\qty(z_1)\mathcal O}&=\oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}\expval{j^C\qty(z_2)\mathcal O}+\oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\expval{\mathcal O}+\textnormal{regular}
+\end{align*}
+
+Now we subtract the second equation from the first,
+
+\begin{align*}
+    \oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\expval{j^A\qty(z_1)j ^B\qty(z_2)\mathcal O}&-\oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\expval{j ^B\qty(z_2)j^A\qty(z_1)\mathcal O}=\\
+    &\quad\quad\quad+\oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}\expval{j^C\qty(z_2)\mathcal O}-\oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}\expval{j^C\qty(z_2)\mathcal O}\\
+    &\quad\quad\quad+\oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\expval{\mathcal O}-\oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\expval{\mathcal O}\\
+    &\quad\quad\quad+\oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\textnormal{regular}-\oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\textnormal{regular}\\
+    \oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\expval{j^A\qty(z_1)j ^B\qty(z_2)\mathcal O}&-\oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\expval{j ^B\qty(z_2)j^A\qty(z_1)\mathcal O}=\\
+    &\quad\quad\quad+\qty[\oint\limits_{C_1}-\oint\limits_{C_2}]\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}\expval{j^C\qty(z_2)\mathcal O}\\
+    &\quad\quad\quad+\qty[\oint\limits_{C_1}-\oint\limits_{C_2}]\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\expval{\mathcal O}\\
+    &\quad\quad\quad+\qty[\oint\limits_{C_1}-\oint\limits_{C_2}]\frac{\dd{{z_1}}}{2\pi\im}z_1^n\textnormal{regular}
+\end{align*}
+
+The subtraction of two integrals, one contouring the origin and $z_2$, $C_1$, by other just contouring the origin, $C_2$, is given by an integral 
+over a contour of $z_2$ but not of the origin $C_3$,
+
+\begin{align*}
+    \oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\expval{j^A\qty(z_1)j ^B\qty(z_2)\mathcal O}&-\oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\expval{j ^B\qty(z_2)j^A\qty(z_1)\mathcal O}=\\
+    &\quad\quad\quad+\oint\limits_{C_3}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}\expval{j^C\qty(z_2)\mathcal O}\\
+    &\quad\quad\quad+\oint\limits_{C_3}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\expval{\mathcal O}\\
+    &\quad\quad\quad+\oint\limits_{C_3}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\textnormal{regular}
+\end{align*}
+
+As the regular part doesn't have poles at $z_1=z_2$, 
+
+\begin{align*}
+    \oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\expval{j^A\qty(z_1)j ^B\qty(z_2)\mathcal O}&-\oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\expval{j ^B\qty(z_2)j^A\qty(z_1)\mathcal O}=\\
+    &\quad\quad\quad+\oint\limits_{C_3}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}\expval{j^C\qty(z_2)\mathcal O}\\
+    &\quad\quad\quad+\oint\limits_{C_3}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\expval{\mathcal O}
+\end{align*}
+
+We now can go back to the operator formalism, and, as $z_1$ is integrated, there is no ordering ambiguities,
+
+\begin{align*}
+    \oint\limits_{C_1}\frac{\dd{{z_1}}}{2\pi\im}z_1^nj^A\qty(z_1)j ^B\qty(z_2)&-\oint\limits_{C_2}\frac{\dd{{z_1}}}{2\pi\im}z_1^nj ^B\qty(z_2)j^A\qty(z_1)=\\
+    &\quad\quad\quad+\oint\limits_{C_3}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}j^C\qty(z_2)\\
+    &\quad\quad\quad+\oint\limits_{C_3}\frac{\dd{{z_1}}}{2\pi\im}z_1^n\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}\\
+    j_n^Aj ^B\qty(z_2)&-j ^B\qty(z_2)j^A_n=z_2^n\im\tensor{f}{^A^B_C}j^C\qty(z_2)+\qty(\partial_{z_1}z_1^n)\eval_{z_1=z_2}\frac{\Tr\qty[T^A T^B]}{2}\\
+    j_n^Aj ^B\qty(z_2)&-j ^B\qty(z_2)j^A_n=z_2^n\im\tensor{f}{^A^B_C}j^C\qty(z_2)+nz_2^{n-1}\frac{\Tr\qty[T^A T^B]}{2}
+\end{align*}
+
+Now integrating over a contour $C$ around the origin to get the modes of $j ^B$,
+
+\begin{align*}
+    \oint\limits_C\frac{\dd{z_2}}{2\pi\im}z_2^m \qty(j_n^Aj ^B\qty(z_2)-j ^B\qty(z_2)j^A_n)&=\oint\limits_C\frac{\dd{z_2}}{2\pi\im}z_2^m z_2^n\im\tensor{f}{^A^B_C}j^C\qty(z_2)+\oint\limits_C\frac{\dd{z_2}}{2\pi\im}z_2^m nz_2^{n-1}\frac{\Tr\qty[T^A T^B]}{2}\\
+    j_n^Aj ^B_m-j ^B_mj^A_n&=\im\tensor{f}{^A^B_C}j^C_{n+m}+\frac{n}{2}\delta_{m+n,0} \Tr\qty[T^A T^B]\\
+    \comm{j_n^A}{j ^B_m}&=\im\tensor{f}{^A^B_C}j^C_{n+m}+\frac{n}{2}\delta_{m+n,0} \Tr\qty[T^A T^B]
+\end{align*}
+
+This is the algebra of the modes! We used that $z_2^{n+m-1}$ only has a residue at $z_2=0$ for $n+m=0$. The value $\Tr\qty[T^A T^B]$ 
+is dependent of the normalization of the algebra and the representation, but usually it can be taken to be $\Tr\qty[T^A T^B]=k\delta^{AB}$.
+
 \probitem{}
+
+To have a $SU\qty(N)$ group, it's obvious that we need a transformation law $\psi'^i=\tensor{\Lambda}{^i_ j}\psi^j$, such that, 
+
+\begin{align*}
+    \delta_{ij}&=\delta_{kl}\tensor{{\Lambda^\ast}}{^i_k}\tensor{\Lambda}{^j_l}\Leftrightarrow \Lambda^\dagger\Lambda=\mathbbm 1
+\end{align*}
+
+This is only possible if we include in the action a complex fermion, and, one of them being a complex conjugate, that is, now we have a collection of 
+$2N$ real fermions,
+
+\begin{align*}
+    \psi^i=\textnormal{Re}\qty[\psi^i]+\im \textnormal{Im}\qty[\psi^i]
+\end{align*}
+
+Which compose a $N$ dimensional vector, while seems natural to express a complex field as a pair $\psi,\bar\psi$, 
+the notation $\bar\psi$ is kind of misleading, does it is a meromorphic or anti-meromorphic function/operator? So, we will 
+choose do denote the complex fermion, and it's complex conjugate by,
+
+\begin{align*}
+    \psi^i&=\textnormal{Re}\qty[\psi^i]+\im \textnormal{Im}\qty[\psi^i]\\
+    {\tilde\psi}^i&=\textnormal{Re}\qty[\psi^i]-\im \textnormal{Im}\qty[\psi^i]
+\end{align*}
+
+This could be seen as a change of variables from a model of $2N$ free real fermions, which of course enjoy a $O\qty(2N)$ 
+symmetry, and as $U\qty(N)\subset O\qty(2N)$, it's possible for us to have a $SU\qty(N)$ symmetry. We impose the 
+following transformations,
+
+\begin{align*}
+    {\psi}'^i=\tensor{\Lambda}{^i_j}\psi^j,\ \ \ {\tilde\psi}'^i=\tensor{{\Lambda^\ast}}{^i_j}{\tilde \psi}^j
+\end{align*}
+
+So that the action is,
+
+\begin{align*}
+    S&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}{\tilde\psi}^i\bar\partial\psi^j\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}{\tilde\psi}'^i\bar\partial\psi'^j\\
+    S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\tensor{{\Lambda^\ast}}{^i_k}\tensor{\Lambda}{^j_l}{\tilde\psi}^k\bar\partial\psi^l
+\end{align*}
+
+From where we get our long waited $U\qty(N)$ constraint, $\delta_{ij}\tensor{{\Lambda^\ast}}{^i_k}\tensor{\Lambda}{^j_l}=\delta_{kl}$, but, 
+no longer we have any problem requiring the group to be connected, as $U\qty(N)$ is already connected, but nevertheless, there is a number of 
+reasons why we would prefer to have only $SU\qty(N)$, to go from $U\qty(N)$ to $SU\qty(N)$ is simple, just impose $\Det\qty[\Lambda]=1$.
+
+% \begin{align*}
+%     \delta_{kl}&=\delta_{ij}\tensor{\Lambda}{^i_k}\tensor{\Lambda}{^j_l}\\
+%     \delta_{kl}&=\delta_{ij}\qty(\tensor{\delta}{^i_k}+\tensor{\omega}{^i_k}+\mathcal O\qty(\omega^2))\qty(\tensor{\delta}{^j_l}+\tensor{\omega}{^j_l}+\mathcal O\qty(\omega^2))\\
+%     \delta_{kl}&=\delta_{kl}+\omega_{lk}+\omega_{kl}+\mathcal O\qty(\omega^2)\\
+%     \omega_{lk}&=-\omega_{kl}
+% \end{align*}
+
+% We can use this information to write,
+
+% \begin{align*}
+%     \tensor{\Lambda}{^i_j}&=\tensor{\delta}{^i_j}+\tensor{\omega}{^i_j}+\mathcal O\qty(\omega^2)\\
+%     \tensor{\Lambda}{^i_j}&=\tensor{\delta}{^i_j}+\frac12\tensor{\omega}{_l_k}\qty(\tensor{\delta}{^i^l}\tensor{\delta}{^k_j}-\tensor{\delta}{^i^k}\tensor{\delta}{^l_j})+\mathcal O\qty(\omega^2)\\
+%     \tensor{\Lambda}{^i_j}&=\tensor{\delta}{^i_j}-\frac\im2\tensor{\omega}{_l_k}\im\qty(\tensor{\delta}{^i^l}\tensor{\delta}{^k_j}-\tensor{\delta}{^i^k}\tensor{\delta}{^l_j})+\mathcal O\qty(\omega^2)\\
+%     \tensor{\Lambda}{^i_j}&=\tensor{\delta}{^i_j}-\frac\im2\tensor{\omega}{_{\qty[lk]}}\tensor{T}{^{\qty[lk]}^i_j}+\mathcal O\qty(\omega^2)\\
+%     \tensor{\Lambda}{^i_j}&=\tensor{\exp\qty(-\frac\im 2\omega_{\qty[lk]}\tensor{T}{^{\qty[lk]}})}{^i_j}
+% \end{align*}
+
+% To obtain the current we do again the same trick of promoting $\omega_{\qty[lk]}$ to a function and computing the change in the action,
+
+% \begin{align*}
+%     S&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\psi^i\bar\partial\psi^j\\
+%     S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\psi'^i\bar\partial\psi'^j\\
+%     S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\tensor{\Lambda}{^i_k}\psi^k\bar\partial\qty(\tensor{\Lambda}{^j_l}\psi^l)\\
+%     S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\tensor{\Lambda}{^i_k}\psi^k\qty{\tensor{\Lambda}{^j_l}\bar\partial\psi^l+\psi^l\bar\partial\tensor{\Lambda}{^j_l}}\\
+%     S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{ij}\tensor{\Lambda}{^i_k}\psi^k\qty{\tensor{\Lambda}{^j_l}\bar\partial\psi^l-\frac\im 2\tensor{T}{^{\qty[ab]}^m_l}\psi^l\tensor{\Lambda}{^j_m}\bar\partial\omega_{\qty[ab]}}\\
+%     S'&=\frac{1}{4\pi}\int\dd[2]{z}\tensor{\Lambda}{_j_k}\psi^k\tensor{\Lambda}{^j_l}\bar\partial\psi^l-\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\tensor{\Lambda}{_j_k}\psi^k\tensor{T}{^{\qty[ab]}^m_l}\psi^l\tensor{\Lambda}{^j_m}\bar\partial\omega_{\qty[ab]}\\
+%     S'&=\frac{1}{4\pi}\int\dd[2]{z}\delta_{kl}\psi^k\bar\partial\psi^l-\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\delta_{km}\psi^k\tensor{T}{^{\qty[ab]}^m_l}\psi^l\bar\partial\omega_{\qty[ab]}\\
+%     S'&=S-\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\psi^k\tensor{T}{^{\qty[ab]}_k_l}\psi^l\bar\partial\omega_{\qty[ab]}\\
+%     \delta S&=-\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\bar\partial\qty{\psi^k\tensor{T}{^{\qty[ab]}_k_l}\psi^l\omega_{\qty[ab]}}+\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\bar\partial\qty{\psi^k\tensor{T}{^{\qty[ab]}_k_l}\psi^l}\omega_{\qty[ab]}
+% \end{align*}
+
+% With suitable boundary conditions on $\omega_{\qty[ab]}$, or, with no boundaries, we conclude,
+
+% \begin{align*}
+%     \delta S&=\frac{1}{4\pi}\frac\im 2\int\dd[2]{z}\bar\partial\qty{\psi^k\tensor{T}{^{\qty[ab]}_k_l}\psi^l}\omega_{\qty[ab]}
+% \end{align*}
+
+% Demoting $\omega_{\qty[ab]}$ back to being a constant --- so that $\delta S=0$ ---, we obtain,
+
+% \begin{align*}
+%     0&=-\frac{\omega_{\qty[ab]}}{2\pi\im}\frac1 2\tensor{T}{^{\qty[ab]}_k_l}\int\dd[2]{z}\bar\partial\qty{\psi^k\psi^l}
+% \end{align*}
+
+% Again, the usual normalization is done by removing $-\frac{\omega_{\qty[ab]}}{2\pi\im}$, so that the current is,
+
+% \begin{align*}
+%     j^{\qty[ab]}\qty(z)&=\frac1 2\tensor{T}{^{\qty[ab]}_k_l}\cnord{\psi^k\psi^l}\qty(z)
+% \end{align*}

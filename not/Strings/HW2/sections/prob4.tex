@@ -1,6 +1,188 @@
 \problem{}
 \probitem{}
+
+Just restating the hypothesis,
+
+\begin{align*}
+    X\qty(z)X\qty(w)&=-\ln\qty(z-w)+\textnormal{regular}\\
+    T\qty(z)&=-\frac12\cnord{\partial X\partial X}\qty(z)\\
+    V_n\qty(z)&=\cnord{\exp\qty(\im n X)}\qty(z,\bar z)
+\end{align*}
+
+To compute the $TV_n$ OPE, we start by computing the normal ordered product,
+
+\begin{align*}
+    \cnord{T\qty(z)V_n\qty(w)}&=T\qty(z)V_n\qty(w)-\frac12\cnord{\wick{(\partial \c1X\partial X)\qty(z)\exp(in \c1X)\qty(w)}}\\
+    &\quad\quad\quad-\frac12\cnord{\wick{(\partial X\partial \c1X)\qty(z)\exp(in \c1X)\qty(w)}}-\frac12\cnord{\wick{(\partial \c1X\partial\c2 X)\qty(z)\exp(in \c1 X\mkern-4mu \c2 {\mathclap{\phantom{X}}})\qty(w)}}\\
+    \cnord{T\qty(z)V_n\qty(w)}&=T\qty(z)V_n\qty(w)-\frac{\im n}{2}\partial_z\qty(\ln\qty(z-w))\cnord{\partial X\qty(z)\exp(in X)\qty(w)}\\
+    &\quad\quad\quad-\frac{\im n}{2}\partial_z\qty(\ln\qty(z-w))\cnord{\partial X\exp(in X)\qty(w)}\\
+    &\quad\quad\quad+\frac{\im n \im n}{2}\partial_z\qty(\ln\qty(z-w))\partial_z\qty(\ln\qty(z-w))\cnord{\exp(in X)\qty(w)}\\
+    \cnord{T\qty(z)V_n\qty(w)}&=T\qty(z)V_n\qty(w)-\frac{\im n}{2\qty(z-w)}\cnord{\partial X\qty(z)\exp(in X)\qty(w)}\\
+    &\quad\quad\quad-\frac{\im n}{2\qty(z-w)}\cnord{\partial X\qty(z)\exp(in X)\qty(w)}\\
+    &\quad\quad\quad-\frac{n^2}{2\qty(z-w)^2}\cnord{\exp(in X)\qty(w)}\\
+    \cnord{T\qty(z)V_n\qty(w)}&=T\qty(z)V_n\qty(w)-\frac{\im n}{\qty(z-w)}\cnord{\partial X\qty(z)\exp(in X)\qty(w)}-\frac{n^2}{2\qty(z-w)^2}\cnord{\exp(in X)}\qty(w)\\
+    \cnord{T\qty(z)V_n\qty(w)}&=T\qty(z)V_n\qty(w)-\frac{\im n}{\qty(z-w)}\cnord{\partial X\exp(in X)}\qty(w)-\frac{n^2V_n\qty(w)}{2\qty(z-w)^2}+\textnormal{regular}\\
+    \cnord{T\qty(z)V_n\qty(w)}&=T\qty(z)V_n\qty(w)-\frac{1}{\qty(z-w)}\partial\cnord{\exp(in X)}\qty(w)-\frac{n^2V_n\qty(w)}{2\qty(z-w)^2}+\textnormal{regular}\\
+    \cnord{T\qty(z)V_n\qty(w)}&=T\qty(z)V_n\qty(w)-\frac{\partial V_n\qty(w)}{\qty(z-w)}-\frac{n^2V_n\qty(w)}{2\qty(z-w)^2}+\textnormal{regular}
+\end{align*}
+
+That is, the OPE is,
+
+\begin{align*}
+    T\qty(z)V_n\qty(w)&=\frac{\partial V_n\qty(w)}{\qty(z-w)}+\frac{n^2V_n\qty(w)}{2\qty(z-w)^2}+\textnormal{regular}\numberthis\label{TVope}
+\end{align*}
+
 \probitem{}
+
+First, the OPE of $j$ with itself,
+
+\begin{align*}
+    \cnord{j\qty(z)j\qty(w)}&=j\qty(z)j\qty(w)-\cnord{\wick{\partial \c1X\qty(z)\partial \c1X\qty(w)}}\\
+    \cnord{j\qty(z)j\qty(w)}&=j\qty(z)j\qty(w)-\partial_z\partial_w\qty(\ln\qty(z-w))\\
+    \cnord{j\qty(z)j\qty(w)}&=j\qty(z)j\qty(w)+\partial_z\frac{1}{z-w}\\
+    \cnord{j\qty(z)j\qty(w)}&=j\qty(z)j\qty(w)-\frac{1}{\qty(z-w)^2}
+\end{align*}
+
+So that,
+
+\begin{align*}
+    j\qty(z)j\qty(w)&=\frac{1}{\qty(z-w)^2}+\textnormal{regular}
+\end{align*}
+
+Now the $jV_n$ OPE,
+
+\begin{align*}
+    \cnord{j\qty(z)V_n\qty(w)}&=j\qty(z)V_n\qty(w)+\im \cnord{\wick{\c1\partial X\qty(z)\exp(\im n\c1X)\qty(w)}}\\
+    \cnord{j\qty(z)V_n\qty(w)}&=j\qty(z)V_n\qty(w)+\im\im n\partial_z\qty(\ln\qty(z-w)) \cnord{\exp\qty(\im nX)}\qty(w)\\
+    \cnord{j\qty(z)V_n\qty(w)}&=j\qty(z)V_n\qty(w)-\frac{n}{z-w}\cnord{\exp\qty(\im nX)}\qty(w)\\
+    \cnord{j\qty(z)V_n\qty(w)}&=j\qty(z)V_n\qty(w)-\frac{n}{z-w}V_n\qty(w)
+\end{align*}
+
+So that the OPE is,
+
+\begin{align*}
+    j\qty(z)V_n\qty(w)&=\frac{n}{z-w}V_n\qty(w)+\textnormal{regular}
+\end{align*}
+
+In the last problem we already derived how to obtain the algebra of modes from the OPE, we simply integrate over a contour 
+around $w$ with weight $z^p$, we need to remember that $j$ has conformal weight $\qty(1,0)$, so that the integration with respect to $z^p$ 
+around the origin gives $j_p$,
+
+\begin{align*}
+    \comm{j_p}{j\qty(w)}=\oint\limits_C\frac{\dd{z}}{2\pi\im}z^p j\qty(z)j\qty(w)&=\oint\limits_C\frac{\dd{z}}{2\pi\im}\frac{z^p}{\qty(z-w)^2}+\oint\limits_C\frac{\dd{z}}{2\pi\im}z^p\textnormal{regular}\\
+    \comm{j_p}{V_n\qty(w)}=\oint\limits_C\frac{\dd{z}}{2\pi\im}z^p j\qty(z)V_n\qty(w)&=\oint\limits_C\frac{\dd{z}}{2\pi\im}\frac{nz^p}{z-w}V_n\qty(w)+\oint\limits_C\frac{\dd{z}}{2\pi\im}z^p \textnormal{regular}
+\end{align*}
+
+The regular part doesn't have any pole at $z=w$, hence,
+
+\begin{align*}
+    \comm{j_p}{j\qty(w)}&=\oint\limits_C\frac{\dd{z}}{2\pi\im}\frac{z^p}{\qty(z-w)^2}=\partial_z\qty(z^p)\eval_{z=w}=pw^{p-1}\\
+    \comm{j_p}{V_n\qty(w)}&=\oint\limits_C\frac{\dd{z}}{2\pi\im}\frac{nz^p}{z-w}V_n\qty(w)=nw^pV_n\qty(w)\numberthis\label{jVcom}
+\end{align*}
+
+We integrate over again to obtain the commutator of the modes only, this time with a contour around the origin, but, notice from \ref{TVope}, 
+$V_n$ has conformal weight $\qty(\frac{n^2}{2},0)$, thus, when integrating around the origin with $w^q$, this will give the mode $V_{n\qty(q+1-\frac{n^2}{2})}$,
+
+\begin{align*}
+    \comm{j_p}{j_q}&=\oint\limits_C\frac{\dd{w}}{2\pi\im}w^q\comm{j_n}{j\qty(w)}=\oint\limits_C\frac{\dd{w}}{2\pi\im}w^qpw^{p-1}=p\delta_{p+q,0}\\
+    \comm{j_p}{V_{n\qty(q+1-\frac{n^2}{2})}}&=\oint\limits_C\frac{\dd{w}}{2\pi\im}w^q\comm{j_n}{V_n\qty(w)}=\oint\limits_C\frac{\dd{w}}{2\pi\im}w^qnw^pV_n\qty(w)=nV_{n\qty(p+q+1-\frac{n^2}{2})}
+\end{align*}
+
+From the first algebra, the $jj$ one, we get that $j$ is the current associated with some $SO\qty(2)$ or $U\qty(1)$ algebra, as there is no 
+structure constants and just one current, and the first algebra is just the Kac-Moody central extension of this $SO\qty(2)$ or $U\qty(1)$ algebra. 
+The usual conserved charge obtained from a conserved current is just $j_0$, from where we can see that,
+
+\begin{align*}
+    \comm{j_0}{V_{n\qty(q+1-\frac{n^2}{2})}}&=nV_{n\qty(q+1-\frac{n^2}{2})}
+\end{align*}
+
+Or even from \ref{jVcom},
+
+\begin{align*}
+    \comm{j_0}{V_n\qty(w)}&=nV_n\qty(w)
+\end{align*}
+
+This is saying to us that, under transformations generated by $j_0$ --- Which are the symmetries that originate the $j$ current ---, the modes of $V_n$, 
+and of course also $V_n$ itself, change just by a scaling of $n$, the correct relation between commutator with current and change of operators is,
+
+\begin{align*}
+    \comm{j_0}{A}=\frac{1}{\im }\dv{}{t} A\eval_{t=0}
+\end{align*}
+
+Where $t$ is a parametrization of the transformation, in our case,
+
+\begin{align*}
+    \dv{}{t}V_n\qty(w)\eval_{t=0}&=\im nV_n\qty(w)\\
+    \dv{}{t}V_n\qty(w;t)&=\im nV_n\qty(w;t)\Rightarrow V_n\qty(w;t)=V_n\qty(w)\exp\qty(\im n t)
+\end{align*}
+
+This makes clear that the transformation generated by $j_0$ is a $U\qty(1)$ transformation, or in particular, 
+$V_n\qty(w)$ transforms under a $U\qty(1)$ representation of the symmetry generated by $j_0$, with `\textit{charge}' $n$.
+
 \probitem{}
+
+The energy momentum tensor has to have conformal weight $\qty(2,0)$ and be symmetric under the $U\qty(1)$, 
+
+\begin{align*}
+    \psi\rightarrow \exp\qty(\im t)\psi,\ \ \ \tilde\psi\rightarrow\exp\qty(-\im t)\tilde\psi
+\end{align*}
+
+There are just two terms which are compatible with this,
+
+\begin{align*}
+    T_\psi\qty(z)&=\alpha\cnord{\tilde\psi\partial\psi}\qty(z)+\beta\cnord{\partial\tilde\psi\psi}\qty(z)
+\end{align*}
+
+To fix $\alpha,\beta$ we have to compute the OPE's $T\psi,T\tilde\psi$,
+
+\begin{align*}
+    \cnord{T_\psi\qty(z)\psi\qty(w)}&=T_\psi\qty(z)\psi\qty(w)+\alpha\cnord{\wick[offset=1.2em]{(\c1{\tilde\psi}\partial\psi)\qty(z)\c1\psi\qty(w)}}+\beta\cnord{\wick[offset=1.2em]{(\partial\c1{\tilde\psi}\psi)\qty(z)\c1\psi\qty(w)}}\\
+    \cnord{T_\psi\qty(z)\psi\qty(w)}&=T_\psi\qty(z)\psi\qty(w)+\alpha\frac{1}{z-w}\partial\psi\qty(z)+\beta\partial_z\qty(\frac{1}{z-w})\psi\qty(z)\\
+    \cnord{T_\psi\qty(z)\psi\qty(w)}&=T_\psi\qty(z)\psi\qty(w)+\alpha\frac{1}{z-w}\partial\psi\qty(w)-\frac{\beta}{\qty(z-w)^2}\psi\qty(z)+\textnormal{regular}\\
+    T_\psi\qty(z)\psi\qty(w)&=-\alpha\frac{1}{z-w}\partial\psi\qty(w)+\frac{\beta}{\qty(z-w)^2}\psi\qty(z)+\textnormal{regular}
+\end{align*}
+
+This fixes $\alpha=-1,\beta=\frac12$, otherwise we have the wrong conformal transformations, so,
+
+\begin{align*}
+    T_\psi\qty(z)&=-\cnord{\tilde\psi\partial\psi}\qty(z)+\frac12\cnord{\partial\tilde\psi\psi}\qty(z)
+\end{align*}
+
+For the current, we need it to have conformal weight $\qty(1,0)$ and to be hermitian, the only possible term is,
+
+\begin{align*}
+    j_\psi\qty(z)&=\alpha\cnord{\tilde\psi\psi}\qty(z)
+\end{align*}
+ 
+With $\alpha$ real. To fix it we compute the $j\psi$ OPE,
+
+\begin{align*}
+    \cnord{j_\psi\qty(z)\psi\qty(w)}&=j_\psi\qty(z)\psi\qty(w)+\alpha\cnord{\wick[offset=1.2em]{(\c1{\tilde\psi}\psi)\qty(z)\c1\psi\qty(w)}}\\
+    \cnord{j_\psi\qty(z)\psi\qty(w)}&=j_\psi\qty(z)\psi\qty(w)+\frac{\alpha}{z-w}\psi\qty(z)\\
+    \cnord{j_\psi\qty(z)\psi\qty(w)}&=j_\psi\qty(z)\psi\qty(w)+\frac{\alpha}{z-w}\psi\qty(w)+\textnormal{regular}\\
+    j_\psi\qty(z)\psi\qty(w)&=-\frac{\alpha}{z-w}\psi\qty(w)+\textnormal{regular}\\
+    \oint\limits_C\frac{\dd{z}}{2\pi\im}j_\psi\qty(z)\psi\qty(w)&=-\oint\limits_C\frac{\dd{z}}{2\pi\im}\frac{\alpha}{z-w}\psi\qty(w)+\oint\limits_C\frac{\dd{z}}{2\pi\im}\textnormal{regular}
+\end{align*}
+
+Where $C$ is any contour that encloses $w$, again, the regular terms have no poles at $z=w$,
+
+\begin{align*}
+    \comm{j_0}{\psi\qty(w)}&=\oint\limits_C\frac{\dd{z}}{2\pi\im}j_\psi\qty(z)\psi\qty(w)=-\oint\limits_C\frac{\dd{z}}{2\pi\im}\frac{\alpha}{z-w}\psi\qty(w)\\
+    \comm{j_0}{\psi\qty(w)}&=-\oint\limits_C\frac{\dd{z}}{2\pi\im}\frac{\alpha}{z-w}\psi\qty(w)=-\alpha\psi\qty(w)\\
+    \frac{1}{\im}\dv{}{t}\qty[\exp\qty(\im t)\psi\qty(w)]\eval_{t=0}&=-\alpha\psi\qty(w)\Rightarrow \alpha=-1
+\end{align*}
+
+In other words, $\alpha$ is specified once we set the transformation of $\psi$, in this case setting the charge of it to be $1$ is enough. So,
+
+\begin{align*}
+    j_\psi\qty(z)&=-\cnord{\tilde\psi\psi}\qty(z)
+\end{align*}
+
+And finally, we compute the $Tj_\psi$ OPE,
+
+\begin{align*}
+    \cnord{T\qty(z)j_\psi\qty(w)}&=T\qty(z)j_\psi\qty(w)+\cnord{\wick[offset=1.2em]{(\tilde\psi\partial\psi)\qty(z)(\tilde\psi\psi)\qty(w)}}-\frac12\cnord{\wick[offset=1.2em]{(\partial\tilde\psi\psi)\qty(z)(\tilde\psi\psi)\qty(w)}}
+\end{align*}
+
 \probitem{}
 \probitem{}
