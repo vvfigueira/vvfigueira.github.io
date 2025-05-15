@@ -27,6 +27,7 @@
 \usepackage{bbm}
 \usepackage{simpler-wick}
 \usepackage[compact,explicit]{titlesec}
+\usepackage{stackengine}
 
 
 \newtheoremstyle{dotless}% name
@@ -82,8 +83,25 @@
 \newcommand{\sign}[1]{\textnormal{sign} #1}
 \newcommand{\sidev}{{\raisebox{-0.5ex}{$'$}}}
 \newcommand{\cnord}[1]{:#1:}
-\newcommand{\anord}[1]{:\mathrel{\mkern2mu #1 \mkern2mu}:}
-\newcommand{\snord}{\mbox{\tiny ${\circ\atop\star}$}}
+\newcommand{\snord}[1]{%
+  \mathbin{%
+    \vcenter{%
+      \offinterlineskip
+      \halign{##\cr
+        \raisebox{.3ex}{\scalebox{0.6}{$\ast$}}\cr
+        \raisebox{-0.6ex}{\scalebox{0.6}{$\ast$}}\cr
+      }%
+    }%
+  }\ #1\ \mathbin{%
+    \vcenter{%
+      \offinterlineskip
+      \halign{##\cr
+        \raisebox{.3ex}{\scalebox{0.6}{$\ast$}}\cr
+        \raisebox{-0.6ex}{\scalebox{0.6}{$\ast$}}\cr
+      }%
+    }%
+  }%
+}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 

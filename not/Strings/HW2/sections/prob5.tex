@@ -1,3 +1,121 @@
 \problem{}
 \probitem{}
+
+Until now we have been using a notion of normal ordering, $\cnord{A}$ which is heavily dependent on knowing the equation of motion 
+of the operators to construct the normal ordered form, but, of course, any ordering scheme which gives a finite operator is equally good, and 
+as all of them give finite operators they differ only by finite parts. Another possible notion of ordering, different from what we have been 
+using, is a definition which makes no reference of the equation of motion, and relies solely in removing the divergence from the operator,
+
+\begin{align*}
+    \snord{\mathcal O_1\mathcal O_2}\qty(z)&=\oint\frac{\dd{w}}{2\pi\im}\frac{\mathcal O_1\qty(w)\mathcal O_2\qty(z)}{w-z}
+\end{align*}
+
+It's clear that the contour integral picks up just the finite part of $\mathcal O_1\qty(w)\mathcal O_2\qty(z)$ evaluated at $z=w$. But, it has 
+two drawbacks, it can only define the normal ordering at equal points, while our other definition can do it at different points, and it requires 
+the knowledge of another OPE $\mathcal O_1\qty(w)\mathcal O_2\qty(z)$ to be computed, which has to be calculated from other arguments. But still 
+it provides a classy way of writing the normal ordering. Now focusing in the problem at hand, we have already constructed the current for 
+general $SO\qty(N)$ groups, \ref{jabcurrent}, which we recall here,
+
+\begin{align*}
+    j^{\qty[ab]}\qty(z)&=\frac1 2\tensor{T}{^{\qty[ab]}_k_l}\cnord{\psi^k\psi^l}\qty(z)
+\end{align*}
+
+For the $N=3$, $SO\qty(3)$ case we have only three currents,
+
+\begin{align*}
+    j^{12}=j^{\qty[12]}\qty(z)&=\frac1 2\tensor{T}{^{\qty[12]}_k_l}\cnord{\psi^k\psi^l}\qty(z)\\
+    j^{23}=j^{\qty[23]}\qty(z)&=\frac1 2\tensor{T}{^{\qty[23]}_k_l}\cnord{\psi^k\psi^l}\qty(z)\\
+    j^{31}=j^{\qty[31]}\qty(z)&=\frac1 2\tensor{T}{^{\qty[31]}_k_l}\cnord{\psi^k\psi^l}\qty(z)
+\end{align*}
+
+The generators in the fundamental representation are easily written in terms of the Levi-Civita, $\epsilon_{123}=1$,
+
+\begin{align*}
+    \tensor{T}{^{\qty[ab]}_k_l}&=\im\tensor{\epsilon}{^a^b^c}\tensor{\epsilon}{_c_k_l}\Rightarrow\begin{cases}
+        \tensor{T}{^{\qty[12]}_k_l}&=\im\epsilon_{3kl}\\
+        \tensor{T}{^{\qty[23]}_k_l}&=\im\epsilon_{1kl}\\
+        \tensor{T}{^{\qty[31]}_k_l}&=\im\epsilon_{2kl}
+    \end{cases}
+\end{align*}
+
+So that,
+
+\begin{align*}
+    j^{12}&=\im\frac1 2\epsilon_{3kl}\cnord{\psi^k\psi^l}\qty(z)=\im\cnord{\psi^1\psi^2}\qty(z)\\
+    j^{23}&=\im\frac1 2\epsilon_{1kl}\cnord{\psi^k\psi^l}\qty(z)=\im\cnord{\psi^2\psi^3}\qty(z)\\
+    j^{31}&=\im\frac1 2\epsilon_{2kl}\cnord{\psi^k\psi^l}\qty(z)=\im\cnord{\psi^3\psi^1}\qty(z)
+\end{align*}
+
+One might worry about these currents being defined through the \textit{old} normal ordering $\cnord{}$, but actually, the expression 
+for the currents need not ordering prescription, as they're totally finite without normal ordering due to the OPE of two different fermions 
+not having poles, as they do not mix kinetic terms, so there is no problem here in mixing the two kinds of orderings.
+
 \probitem{}
+
+With the remarks being made, we make use of the full OPE,
+
+\begin{align*}
+    \psi^i\qty(z)\psi^j\qty(w)=\frac{\delta^{ij}}{z-w}+\cnord{\psi^i\qty(z)\psi^j\qty(w)}
+\end{align*}
+
+And star by computing just $\snord{j^{12}j^{23}}\qty(z)$,
+
+\begin{align*}
+    \snord{j^{12}j^{23}}\qty(z)&=\oint\frac{\dd{w}}{2\pi\im}\frac{j^{12}\qty(w)j^{23}\qty(z)}{w-z}\\
+    \snord{j^{12}j^{23}}\qty(z)&=-\oint\frac{\dd{w}}{2\pi\im}\frac{\psi^1\qty(w)\psi^2\qty(w)\psi^2\qty(z)\psi^3\qty(z)}{w-z}\\
+    \snord{j^{12}j^{23}}\qty(z)&=-\oint\frac{\dd{w}}{2\pi\im}\frac{\psi^1\qty(w)\psi^3\qty(z)\psi^2\qty(w)\psi^2\qty(z)}{w-z}
+\end{align*}
+
+Where we used that for $i\neq j,\ \acomm{\psi^i\qty(z)}{\psi^j\qty(w)}=0$. Now we expand in Taylor the regular term $\psi^1\qty(w)\psi^3\qty(z)$, 
+
+\begin{align*}
+    \snord{j^{12}j^{23}}\qty(z)&=-\oint\frac{\dd{w}}{2\pi\im}\frac{\psi^1\qty(z)\psi^3\qty(z)+\qty(w-z)\partial\psi^1\qty(z)\psi^3\qty(z)+\mathcal O\qty(\qty(w-z)^2)}{w-z}\psi^2\qty(w)\psi^2\qty(z)
+\end{align*}
+
+As the $\psi^2\qty(w)\psi^2\qty(z)$ OPE has at most a single pole, the contour integral of the $\mathcal O\qty(\qty(w-z)^2)$ contribution 
+gives identically zero, as we have,
+
+\begin{align*}
+    \oint\frac{\dd{w}}{2\pi\im}\frac{\mathcal O\qty(\qty(w-z) ^2)}{\qty(w-z)^2}&=\oint\frac{\dd{w}}{2\pi\im}\mathcal O\qty(1)=0
+\end{align*}
+
+As it has no pole, so, we can in fact neglect it, rewriting the integral without this term and already opening the OPE,
+
+\begin{align*}
+    \snord{j^{12}j^{23}}\qty(z)&=-\oint\frac{\dd{w}}{2\pi\im}\frac{\psi^1\qty(z)\psi^3\qty(z)+\qty(w-z)\partial\psi^1\qty(z)\psi^3\qty(z)}{w-z}\qty(\frac{1}{w-z}+\cnord{\psi^2\qty(w)\psi^2\qty(z)})\\
+    \snord{j^{12}j^{23}}\qty(z)&=-\oint\frac{\dd{w}}{2\pi\im}\qty{\frac{\psi^1\qty(z)\psi^3\qty(z)}{\qty(w-z)^2}+\frac{\partial\psi^1\qty(z)\psi^3\qty(z)}{w-z}+\frac{\psi^1\qty(z)\psi^3\qty(z)\cnord{\psi^2\qty(w)\psi^2\qty(z)}}{w-z}}\\
+    &\quad\quad\quad-\oint\frac{\dd{w}}{2\pi\im}\partial\psi^1\qty(z)\psi^3\qty(z)\cnord{\psi^2\qty(w)\psi^2\qty(z)}
+\end{align*}
+
+The first term in the right-hand side has only a double pole, so, the integral vanishes, as the integral captures just single poles, so do the 
+last term in the right-hand side, as it's regular at $w=z$, the second term has a single pole, which contributes as $1$, and for the third term we have to expand it in Taylor,
+
+\begin{align*}
+    \snord{j^{12}j^{23}}\qty(z)&=-\partial\psi^1\qty(z)\psi^3\qty(z)-\psi^1\qty(z)\psi^3\qty(z)\oint\frac{\dd{w}}{2\pi\im}\frac{\cnord{\psi^2\qty(z)\psi^2\qty(z)}+\qty(w-z)\cnord{\partial\psi^2\qty(z)\psi^2\qty(z)}}{w-z}
+\end{align*}
+
+The first term of the integral is zero by statistics, $\cnord{\psi^2\qty(z)\psi^2\qty(z)}=0$, and the second one is zero due to being regular,
+
+\begin{align*}
+    \snord{j^{12}j^{23}}\qty(z)&=-\partial\psi^1\qty(z)\psi^3\qty(z)
+\end{align*}
+
+Now for the other component,
+
+\begin{align*}
+    \snord{j^{23}j^{12}}\qty(z)&=\oint\frac{\dd{w}}{2\pi\im}\frac{j^{23}\qty(w)j^{12}\qty(z)}{w-z}\\
+    \snord{j^{23}j^{12}}\qty(z)&=-\oint\frac{\dd{w}}{2\pi\im}\frac{\psi^2\qty(w)\psi^3\qty(w)\psi^1\qty(z)\psi^2\qty(z)}{w-z}\\
+    \snord{j^{23}j^{12}}\qty(z)&=-\oint\frac{\dd{w}}{2\pi\im}\frac{\psi^3\qty(w)\psi^1\qty(z)}{w-z}\psi^2\qty(w)\psi^2\qty(z)\\
+    \snord{j^{23}j^{12}}\qty(z)&=-\oint\frac{\dd{w}}{2\pi\im}\frac{\psi^3\qty(z)\psi^1\qty(z)+\qty(w-z)\partial\psi^3\qty(z)\psi^1\qty(z)}{w-z}\qty(\frac{1}{w-z}+\cnord{\psi^2\qty(w)\psi^2\qty(z)})\\
+    \snord{j^{23}j^{12}}\qty(z)&=-\oint\frac{\dd{w}}{2\pi\im}\partial\psi^3\qty(z)\psi^1\qty(z)\qty(\frac{1}{w-z}+\cnord{\psi^2\qty(w)\psi^2\qty(z)})\\
+    \snord{j^{23}j^{12}}\qty(z)&=-\partial\psi^3\qty(z)\psi^1\qty(z)
+\end{align*}
+
+Where we used the same arguments of before, keeping only the single poles, and the terms which does not vanishes by statistics. Hence,
+
+\begin{align*}
+    \snord{j^{12}j^{23}}\qty(z)-\snord{j^{23}j^{12}}\qty(z)&=-\partial\psi^1\qty(z)\psi^3\qty(z)+\partial\psi^3\qty(z)\psi^1\qty(z)\\
+    \snord{j^{12}j^{23}}\qty(z)-\snord{j^{23}j^{12}}\qty(z)&=\psi^3\qty(z)\partial\psi^1\qty(z)+\partial\psi^3\qty(z)\psi^1\qty(z)\\
+    \snord{j^{12}j^{23}}\qty(z)-\snord{j^{23}j^{12}}\qty(z)&=\partial\qty[\psi^3\qty(z)\psi^1\qty(z)]\\
+    \snord{j^{12}j^{23}}\qty(z)-\snord{j^{23}j^{12}}\qty(z)&=-\im\partial j^{31}\qty(z)
+\end{align*}
