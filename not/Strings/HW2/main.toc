@@ -16,14 +16,14 @@
 \contentsline {subsection}{4.A)}{30}{subsection.4.1}%
 \contentsline {subsection}{4.B)}{30}{subsection.4.2}%
 \contentsline {subsection}{4.C)}{32}{subsection.4.3}%
-\contentsline {subsection}{4.D)}{34}{subsection.4.4}%
-\contentsline {subsection}{4.E)}{34}{subsection.4.5}%
-\contentsline {section}{Problem 5}{35}{section.5}%
-\contentsline {subsection}{5.A)}{35}{subsection.5.1}%
-\contentsline {subsection}{5.B)}{35}{subsection.5.2}%
-\contentsline {section}{Problem 6}{36}{section.6}%
-\contentsline {subsection}{6.A)}{36}{subsection.6.1}%
-\contentsline {subsection}{6.B)}{36}{subsection.6.2}%
-\contentsline {subsection}{6.C)}{36}{subsection.6.3}%
-\contentsline {subsection}{6.D)}{36}{subsection.6.4}%
-\contentsline {section}{\numberline {A}Bosonic CFT}{37}{appendix.A}%
+\contentsline {subsection}{4.D)}{37}{subsection.4.4}%
+\contentsline {subsection}{4.E)}{39}{subsection.4.5}%
+\contentsline {section}{Problem 5}{40}{section.5}%
+\contentsline {subsection}{5.A)}{40}{subsection.5.1}%
+\contentsline {subsection}{5.B)}{40}{subsection.5.2}%
+\contentsline {section}{Problem 6}{41}{section.6}%
+\contentsline {subsection}{6.A)}{41}{subsection.6.1}%
+\contentsline {subsection}{6.B)}{41}{subsection.6.2}%
+\contentsline {subsection}{6.C)}{41}{subsection.6.3}%
+\contentsline {subsection}{6.D)}{41}{subsection.6.4}%
+\contentsline {section}{\numberline {A}Bosonic CFT}{42}{appendix.A}%
