@@ -1,5 +1,81 @@
 \problem{}
 \probitem{}
+
+We have already done this for general $N$ real fermions in problem \ref{3d}. Let us just cite here the 
+results,
+
+\begin{align*}
+    j^{\qty[ab]}\qty(z)&=\frac1 2\tensor{T}{^{\qty[ab]}_k_l}\cnord{\psi^k\psi^l}\qty(z)\\
+    j^A\qty(z)&=\frac1 2\tensor{T}{^A_k_l}\cnord{\psi^k\psi^l}\qty(z)\\
+    j^A\qty(z_1)j ^B\qty(z_2)&=\frac{\im\tensor{f}{^A^B_C}}{\qty(z_1-z_2)}j^C\qty(z_2)+\frac{\Tr\qty[T^A T^B]}{2\qty(z_1-z_2)^2}+\textnormal{regular}
+\end{align*}
+
+Where in this case $\tensor{T}{^{\qty[ab]}_k_l}=\tensor{T}{^A_k_l}$ are the generators of $SO\qty(4)$, and $\tensor{f}{^A^B_C}$ are the structure constants such 
+that $a,b,k,l=1,2,3,4$ and $A,B,C=1,2,3,4,5,6$.
+
 \probitem{}
+
+To keep the conventions already established in problems \ref{3c},\ref{4c}, we're going to choose the following 
+for grouping the four fermions into a pair of complex ones,
+
+\begin{align*}
+    {\Psi}^1=\frac{1}{\sqrt{2}}\psi^1-\frac{\im}{\sqrt2}\psi^2\\
+    {\tilde\Psi}^1=\frac{1}{\sqrt{2}}\psi^1+\frac{\im}{\sqrt2}\psi^2\\
+    {\Psi}^2=\frac{1}{\sqrt{2}}\psi^3-\frac{\im}{\sqrt2}\psi^4\\
+    {\tilde\Psi}^2=\frac{1}{\sqrt{2}}\psi^3+\frac{\im}{\sqrt2}\psi^4
+\end{align*}
+
+This choice makes the following,
+
+
+\begin{align*}
+    -\cnord{{\tilde\Psi}^1\Psi^1}&=-\frac12\cnord{\psi^1\psi^1+\im\psi^2\psi^1-\psi^1\im\psi^2+\psi^2\psi^2}\\
+    -\cnord{{\tilde\Psi}^1\Psi^1}&=\im\cnord{\psi^1\psi^2}
+\end{align*}
+
+As outcome of problems \ref{3c},\ref{4c} this should be seen as a good relation to hold. To bosonize each pair ${\tilde\Psi}^{\dot a}\Psi^{\dot a}$ --- We'll use $\dot a,\dot b=1,2$ for the complex fermions we 
+leave $j,k,l=1,2,3,4$ for the real ones ---, 
+we follow the ideas of problem \ref{4}, to each pair of complex fermions we attribute a chiral boson $X^{\dot a}\qty(z)$, then 
+we should have, as was already argued in problem \ref{4d}, the following correspondence,
+
+\begin{subequations}\label{teste1}
+\begin{align}
+    \cnord{\exp\qty(\im X^{\dot a})}&=\im \Psi^{\dot a}\\
+    \cnord{\exp\qty(-\im X^{\dot a})}&=\im {\tilde\Psi}^{\dot a}
+\end{align}
+\end{subequations}
+
+We choose a particular way of bosonizing, a more generic choice could be $\cnord{\exp\qty(\im X^{\dot a})}=\alpha \Psi^{\dot a},\cnord{\exp\qty(-\im X^{\dot a})}=-\alpha^{-1} {\tilde\Psi}^{\dot a}$. 
+But what matters is that now we have a description of the fermionic theory by a bosonic one, consisting of two compactified chiral bosons $X^{\dot a}\qty(z)=X^{\dot a}\qty(z)+2\pi$. 
+
 \probitem{}
-\probitem{}
+
+The symmetry of the bosonic theory is,
+
+\begin{align*}
+    X^{\dot a}\qty(z)\rightarrow X^{\dot a}\qty(z)+t^{\dot a}\ \qty(\textnormal{mod }2\pi)
+\end{align*}
+
+What from \ref{teste1} can be seen as a realization of a $U\qty(1)$ symmetry for each index $\dot a$, as there is 
+two of them, and the symmetries are disconnected, this is a $U\qty(1)\times U\qty(1)$,
+
+\begin{align*}
+    \im\Psi^{\dot a}=\cnord{\exp\qty(\im X^{\dot a})}&\rightarrow\cnord{\exp\qty(\im X^{\dot a}+\im t^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    \im\Psi^{\dot a}&\rightarrow\exp\qty(\im t^{\dot a})\cnord{\exp\qty(\im X^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    \im\Psi^{\dot a}&\rightarrow\exp\qty(\im t^{\dot a})\im\Psi^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    \Psi^{\dot a}&\rightarrow\exp\qty(\im t^{\dot a})\Psi^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)
+\end{align*}
+
+From the last line is clear that we have a $U\qty(1)$ symmetry for each index, specially due to the chiral boson being 
+compactified. Of course, this transformation above implies the transformation of the complex one also,
+
+\begin{align*}
+    \im{\tilde\Psi}^{\dot a}=\cnord{\exp\qty(-\im X^{\dot a})}&\rightarrow\cnord{\exp\qty(-\im X^{\dot a}+\im t^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    \im{\tilde\Psi}^{\dot a}&\rightarrow\exp\qty(-\im t^{\dot a})\cnord{\exp\qty(-\im X^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    \im{\tilde\Psi}^{\dot a}&\rightarrow\exp\qty(-\im t^{\dot a})\im{\tilde\Psi}^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    {\tilde\Psi}^{\dot a}&\rightarrow\exp\qty(-\im t^{\dot a}){\tilde\Psi}^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)
+\end{align*}
+
+So now it's clear that ${\tilde\Psi}^{\dot a}$ have charge $-1$ with the respective $U\qty(1)$'s, and $\Psi^{\dot a}$ have charge $+1$ with the 
+respective $U\qty(1)$'s. What we have shown is that $U\qty(1)\times U\qty(1)\subset SO\qty(4)$, so it's possible for us to work out the action of each of these $U\qty(1)$'s over the vector representation, 
+let's name $U\qty(1)\times U\qty(1)$ by $U\qty(1)_{\dot 1}\times U\qty(1)_{\dot 2}$, the nomenclature should be self evident.
