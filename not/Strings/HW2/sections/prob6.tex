@@ -11,7 +11,10 @@ results,
 \end{align*}
 
 Where in this case $\tensor{T}{^{\qty[ab]}_k_l}=\tensor{T}{^A_k_l}$ are the generators of $SO\qty(4)$, and $\tensor{f}{^A^B_C}$ are the structure constants such 
-that $a,b,k,l=1,2,3,4$ and $A,B,C=1,2,3,4,5,6$.
+that $a,b,k,l=1,2,3,4$ and $A,B,C=1,2,3,4,5,6$. That $\psi^k$ transforms in the fundamental representation is a 
+trivial fact, due to they consisting of a real --- the Grassmannian nature of them do not interfere --- vector of four components, exactly the 
+representation on which the $4x4$ orthogonal, determinant one matrices act. If it form a $SO\qty(4)$ Kac-Moody algebra can 
+be already seem from our derivation of a generic $SO\qty(N)$ Kac-Moody algebra, which we cited above.
 
 \probitem{}
 
@@ -19,18 +22,18 @@ To keep the conventions already established in problems \ref{3c},\ref{4c}, we're
 for grouping the four fermions into a pair of complex ones,
 
 \begin{align*}
-    {\Psi}^1=\frac{1}{\sqrt{2}}\psi^1-\frac{\im}{\sqrt2}\psi^2\\
-    {\tilde\Psi}^1=\frac{1}{\sqrt{2}}\psi^1+\frac{\im}{\sqrt2}\psi^2\\
-    {\Psi}^2=\frac{1}{\sqrt{2}}\psi^3-\frac{\im}{\sqrt2}\psi^4\\
-    {\tilde\Psi}^2=\frac{1}{\sqrt{2}}\psi^3+\frac{\im}{\sqrt2}\psi^4
+    {\Psi}^{\dot 1}=\frac{1}{\sqrt{2}}\psi^1-\frac{\im}{\sqrt2}\psi^2\\
+    {\tilde\Psi}^{\dot 1}=\frac{1}{\sqrt{2}}\psi^1+\frac{\im}{\sqrt2}\psi^2\\
+    {\Psi}^{\dot 2}=\frac{1}{\sqrt{2}}\psi^3-\frac{\im}{\sqrt2}\psi^4\\
+    {\tilde\Psi}^{\dot 2}=\frac{1}{\sqrt{2}}\psi^3+\frac{\im}{\sqrt2}\psi^4
 \end{align*}
 
 This choice makes the following,
 
 
 \begin{align*}
-    -\cnord{{\tilde\Psi}^1\Psi^1}&=-\frac12\cnord{\psi^1\psi^1+\im\psi^2\psi^1-\psi^1\im\psi^2+\psi^2\psi^2}\\
-    -\cnord{{\tilde\Psi}^1\Psi^1}&=\im\cnord{\psi^1\psi^2}
+    -\cnord{{\tilde\Psi}^{\dot 1}\Psi^{\dot 1}}&=-\frac12\cnord{\psi^1\psi^1+\im\psi^2\psi^1-\psi^1\im\psi^2+\psi^2\psi^2}\\
+    -\cnord{{\tilde\Psi}^{\dot 1}\Psi^{\dot 1}}&=\im\cnord{\psi^1\psi^2}
 \end{align*}
 
 As outcome of problems \ref{3c},\ref{4c} this should be seen as a good relation to hold. To bosonize each pair ${\tilde\Psi}^{\dot a}\Psi^{\dot a}$ --- We'll use $\dot a,\dot b=1,2$ for the complex fermions we 
@@ -40,12 +43,12 @@ we should have, as was already argued in problem \ref{4d}, the following corresp
 
 \begin{subequations}\label{teste1}
 \begin{align}
-    \cnord{\exp\qty(\im X^{\dot a})}&=\im \Psi^{\dot a}\\
-    \cnord{\exp\qty(-\im X^{\dot a})}&=\im {\tilde\Psi}^{\dot a}
+    \cnord{\exp\qty(\im X^{\dot a})}&= \Psi^{\dot a}\\
+    \cnord{\exp\qty(-\im X^{\dot a})}&= {\tilde\Psi}^{\dot a}
 \end{align}
 \end{subequations}
 
-We choose a particular way of bosonizing, a more generic choice could be $\cnord{\exp\qty(\im X^{\dot a})}=\alpha \Psi^{\dot a},\cnord{\exp\qty(-\im X^{\dot a})}=-\alpha^{-1} {\tilde\Psi}^{\dot a}$. 
+We choose a particular way of bosonizing, a more generic choice could be $\cnord{\exp\qty(\im X^{\dot a})}=\alpha \Psi^{\dot a},\cnord{\exp\qty(-\im X^{\dot a})}=\alpha^{-1} {\tilde\Psi}^{\dot a}$. 
 But what matters is that now we have a description of the fermionic theory by a bosonic one, consisting of two compactified chiral bosons $X^{\dot a}\qty(z)=X^{\dot a}\qty(z)+2\pi$. 
 
 \probitem{}
@@ -57,12 +60,11 @@ The symmetry of the bosonic theory is,
 \end{align*}
 
 What from \ref{teste1} can be seen as a realization of a $U\qty(1)$ symmetry for each index $\dot a$, as there is 
-two of them, and the symmetries are disconnected, this is a $U\qty(1)\times U\qty(1)$,
+two of them, and the symmetries are disconnected, this means a $U\qty(1)\times U\qty(1)$ symmetry,
 
 \begin{align*}
-    \im\Psi^{\dot a}=\cnord{\exp\qty(\im X^{\dot a})}&\rightarrow\cnord{\exp\qty(\im X^{\dot a}+\im t^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
-    \im\Psi^{\dot a}&\rightarrow\exp\qty(\im t^{\dot a})\cnord{\exp\qty(\im X^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
-    \im\Psi^{\dot a}&\rightarrow\exp\qty(\im t^{\dot a})\im\Psi^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    \Psi^{\dot a}=\cnord{\exp\qty(\im X^{\dot a})}&\rightarrow\cnord{\exp\qty(\im X^{\dot a}+\im t^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    \Psi^{\dot a}&\rightarrow\exp\qty(\im t^{\dot a})\cnord{\exp\qty(\im X^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
     \Psi^{\dot a}&\rightarrow\exp\qty(\im t^{\dot a})\Psi^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)
 \end{align*}
 
@@ -70,12 +72,82 @@ From the last line is clear that we have a $U\qty(1)$ symmetry for each index, s
 compactified. Of course, this transformation above implies the transformation of the complex one also,
 
 \begin{align*}
-    \im{\tilde\Psi}^{\dot a}=\cnord{\exp\qty(-\im X^{\dot a})}&\rightarrow\cnord{\exp\qty(-\im X^{\dot a}+\im t^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
-    \im{\tilde\Psi}^{\dot a}&\rightarrow\exp\qty(-\im t^{\dot a})\cnord{\exp\qty(-\im X^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
-    \im{\tilde\Psi}^{\dot a}&\rightarrow\exp\qty(-\im t^{\dot a})\im{\tilde\Psi}^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    {\tilde\Psi}^{\dot a}=\cnord{\exp\qty(-\im X^{\dot a})}&\rightarrow\cnord{\exp\qty(-\im X^{\dot a}-\im t^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    {\tilde\Psi}^{\dot a}&\rightarrow\exp\qty(-\im t^{\dot a})\cnord{\exp\qty(-\im X^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
     {\tilde\Psi}^{\dot a}&\rightarrow\exp\qty(-\im t^{\dot a}){\tilde\Psi}^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)
 \end{align*}
 
 So now it's clear that ${\tilde\Psi}^{\dot a}$ have charge $-1$ with the respective $U\qty(1)$'s, and $\Psi^{\dot a}$ have charge $+1$ with the 
 respective $U\qty(1)$'s. What we have shown is that $U\qty(1)\times U\qty(1)\subset SO\qty(4)$, so it's possible for us to work out the action of each of these $U\qty(1)$'s over the vector representation, 
-let's name $U\qty(1)\times U\qty(1)$ by $U\qty(1)_{\dot 1}\times U\qty(1)_{\dot 2}$, the nomenclature should be self evident.
+let's name $U\qty(1)\times U\qty(1)$ by $U\qty(1)_{\dot 1}\times U\qty(1)_{\dot 2}$, the nomenclature should be self evident. With a little 
+help from group theory, it's known that \textbf{locally} $SO\qty(4)$ is isomorphic to $SU\qty(2)\times SU\qty(2)$, that is not true globally, as the 
+two groups have different topologies. But nevertheless, under a quantization, any global classical symmetry has to under go a double cover, here is no 
+different, our symmetry group $SO\qty(4)$ has to under go to a double cover, which is by definition the group $Spin\qty(4)$, which luckily is 
+globally isomorphic to $SU\qty(2)\times SU\qty(2)$. Just recalling everything, our classical theory of four fermions 
+enjoyed a $SO\qty(4)$ symmetry, that is, generically if we stayed at classical analysis, we would be interested in 
+operators which transform under representations of $SO\qty(4)$, but, as ultimately we're interested in the quantum theory, 
+this enlargers the symmetry group, and we actually have to search for operators which transform in representations of the double cover of $SO\qty(4)$, 
+that is $Spin\qty(2)\simeq SU\qty(2)\times SU\qty(2)$, while $SO\qty(4)$ just allows for integer charges/spins, it's double cover 
+allows for half-integers charges/spins, this is a well known fact, as $SU\qty(2)$ possesses representations which have a half integer 
+quadratic Casimir operator, the fundamental representation as example. But, we just found an explicit representation of a subgroup of $SO\qty(4)$ by the 
+bosonization of the fermionic theory, $U\qty(1)_{\dot 1}\times U\qty(1)_{\dot 2}\subset SO\qty(4)\Rightarrow U\qty(1)_{\dot 1}\times U\qty(1)_{\dot 2}\subset SU\qty(2)\times SU\qty(2)$, 
+let us just stress some facts here, we have found \textbf{two abelian }$\vb{U\qty(1)}$ \textbf{subgroups of }$\vb{SU\qty(2)\times SU\qty(2)}$, of course $U\qty(1)$ 
+by itself is an abelian group, but, they're abelian \textbf{among themselves}, this is what the $\times$ is saying, and this can be seen both from the bosonization 
+as well from the fermionic representation, the transformations for $X^{\dot a}\rightarrow X^{\dot a}+t^{\dot a}\ \qty(\textnormal{mod }2\pi)$ are totally independent 
+for each index, as well as,
+\begin{align*}
+    \begin{cases}
+        \Psi^{\dot a}&\rightarrow\exp\qty(\im t^{\dot a})\Psi^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)\\
+        {\tilde\Psi}^{\dot a}&\rightarrow\exp\qty(-\im t^{\dot a}){\tilde\Psi}^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)
+    \end{cases}
+\end{align*}
+are independent for each index. This raises an eyebrow, as certainly $SO\qty(4)$ is not abelian, an neither is $SU\qty(2)\times SU\qty(2)$, but, 
+the double cover has naturally an $\times$ in the definition, this means it's composed of two copies of $SU\qty(2)$ which are abelian among themselves! 
+It's clear that $SU\qty(2)$ itself is not abelian, and also is clear that $U\qty(1)\subset SU\qty(2)$, thus, the only possible way we could extract two abelian 
+copies of $U\qty(1)$ from $SU\qty(2)\times SU\qty(2)$ is if we extracted one copy of each, this means we have a bigger identification of the symmetry $U\qty(1)_{\dot1}\times U\qty(1)_{\dot 2}$ as being,
+
+\begin{align*}
+    U\qty(1)_{\dot 1}\times U\qty(2)_{\dot 2}\subset SU\qty(2)_{\dot 1}\times SU\qty(2)_{\dot 2}
+\end{align*}
+
+We just identified which $U\qty(1)$ came from which $SU\qty(1)$, this particular $U\qty(1)_{\dot a}\subset SU\qty(2)_{\dot a}$ we picked up 
+can be seen to be represented in a diagonal form in $\Psi^{\dot a},{\tilde\Psi}^{\dot a}$, as at in each $\mathfrak{su}\qty(2)_{\dot a}$ we 
+can diagonalize at maximum one generator and the single Casimir --- which will have positive half-integer eigenvalues for the Casimir $j$, 
+and $m=-j,-j+1,\cdots,j$ for the chosen generator ---, it's clear that 
+\begin{align*}
+    \begin{cases}
+        \Psi^{\dot a}&\rightarrow\exp\qty(\im j t^{\dot a})\Psi^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi),\ \ \ j=1\\
+        {\tilde\Psi}^{\dot a}&\rightarrow\exp\qty(-\im j t^{\dot a}){\tilde\Psi}^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi),\ \ \ j=1
+    \end{cases}
+\end{align*}
+implies they transform in the spin $1$ representation of each particular $SU\qty(2)$. After all these remarks, 
+we finally know how to ask what we want, we want operators that transform under the spin $\frac12$ representation 
+of the double cover of $SO\qty(4)$, but now we know what this means, this means we want operators that transform as,
+\begin{align*}
+    \begin{cases}
+        \Phi^{\dot a}&\rightarrow\exp\qty(\im j t^{\dot a})\Phi^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)\\
+        {\tilde\Phi}^{\dot a}&\rightarrow\exp\qty(-\im j t^{\dot a}){\tilde\Phi}^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)
+    \end{cases}
+\end{align*}
+for $j=\frac12$. As for each index this is a spin $\frac12$ representation of $SU\qty(2)_{\dot a}$. But we have a natural way of 
+analyzing the transformations being done by the diagonal generator of $SU\qty(2)_{\dot a}$, the symmetry in the bosonic theory! 
+$X^{\dot a}\rightarrow X^{\dot a}+t^{\dot a}\ \qty(\textnormal{mod }2\pi)$ correspond to a transformation generated by the diagonal 
+generator of each $SU\qty(2)_{\dot a}$, thus, is easy to get the desired result, consider,
+\begin{align*}
+    \Phi^{\dot a}=\cnord{\exp\qty(\frac\im2 X^{\dot a})}&\rightarrow\cnord{\exp\qty(\frac\im2 X^{\dot a}+\frac\im2 t^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    \Phi^{\dot a}&\rightarrow\exp\qty(\frac\im2 t^{\dot a})\cnord{\exp\qty(\frac12\im X^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    \Phi^{\dot a}&\rightarrow\exp\qty(\frac\im2 t^{\dot a})\Phi^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)
+\end{align*}
+This is exactly the desired transformation with $j=\frac12$, what means $\Phi^{\dot a}$ transform as the spin $\frac12$ representation 
+of the double cover of $SO\qty(4)$, the same can be done for,
+\begin{align*}
+    {\tilde\Phi}^{\dot a}=\cnord{\exp\qty(-\frac\im2 X^{\dot a})}&\rightarrow\cnord{\exp\qty(-\frac\im2 X^{\dot a}-\frac\im2 t^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    {\tilde\Phi}^{\dot a}&\rightarrow\exp\qty(-\frac\im2 t^{\dot a})\cnord{\exp\qty(-\frac\im2 X^{\dot a})},\ \ \ t^{\dot a}\in[0,2\pi)\\
+    {\tilde\Phi}^{\dot a}&\rightarrow\exp\qty(-\frac\im2 t^{\dot a}){\tilde\Phi}^{\dot a},\ \ \ t^{\dot a}\in[0,2\pi)
+\end{align*}
+
+These have not a polinomial definition on the fermionic theory, but, the bosonic theory provides a good representation of these spin $\frac12$ operators,
+
+\begin{align*}
+    \cnord{\exp\qty(\frac\im2 X^{\dot a})},\ \ \ \cnord{\exp\qty(-\frac\im2 X^{\dot a})}
+\end{align*}

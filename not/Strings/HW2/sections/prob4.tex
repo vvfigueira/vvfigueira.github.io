@@ -288,37 +288,55 @@ So that the OPE is of the canonical form,
 Let's compute the OPE $V_1V_{-1}$,
 
 \begin{align*}
-    \cnord{\exp\qty(\im X)\qty(z)\exp\qty(-\im X)\qty(w)}&=\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}+\cnord{\wick[offset=1.2em]{\textnormal{exp}(\im \c1{X})\qty(z)\exp(-\im \c1{X})\qty(w)}}
+    \cnord{\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}}&=\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}+\cnord{\wick[offset=1.2em]{\textnormal{exp}(\im \c1{X})\qty(z)\exp(-\im \c1{X})\qty(w)}}
 \end{align*}
 
-This contraction is a little bit more complicated, thus, we'll have to use a definition somewhat more robust,
+This contraction is a lot more complicated, thus, we'll have to use a definition of normal ordering somewhat more robust, it 
+still is the same procedure we have doing until now, but, it's far more general in it's use, one difference is that it reverses 
+the order we have been using for computing, instead of computing the normal ordered product through the contractions, in 
+this form we'll be computing the OPE from the normal ordered product,
 
 \begin{align*}
-    &\cnord{\wick[offset=1.2em]{\textnormal{exp}(\im \c1{X})\qty(z)\exp(-\im \c1{X})\qty(w)}}=\\
-    &\quad\quad\quad=\cnord{\exp\qty(-\int\dd[2]{z_1}\dd[2]{z_2}\ln\qty(z_1-z_2)\fdv{}{Y\qty(z_1)}\fdv{}{Z\qty(z_2)})\exp\qty(\im Y)\qty(z)\exp\qty(-\im Z)\qty(w)}\eval_{Y=Z=X}\\
-    &\cnord{\wick[offset=1.2em]{\textnormal{exp}(\im \c1{X})\qty(z)\exp(-\im \c1{X})\qty(w)}}=\\
-    &\quad\quad\quad=\cnord{\exp\qty(\im Y)\qty(z)\exp\qty(-\int\dd[2]{z_1}\dd[2]{z_2}\ln\qty(z_1-z_2)\im\delta^{\qty(2)}\qty(z-z_1)\fdv{}{Z\qty(z_2)})\exp\qty(-\im Z)\qty(w)}\eval_{Y=Z=X}\\
-    &\cnord{\wick[offset=1.2em]{\textnormal{exp}(\im \c1{X})\qty(z)\exp(-\im \c1{X})\qty(w)}}=\\
-    &\quad\quad\quad=\cnord{\exp\qty(\im Y)\qty(z)\exp\qty(-\im Z)\qty(w)\exp\qty(-\im\int\dd[2]{z_2}\ln\qty(z-z_2)\qty(-\im)\delta^{\qty(2)}\qty(w-z_2))}\eval_{Y=Z=X}\\
-    &\cnord{\wick[offset=1.2em]{\textnormal{exp}(\im \c1{X})\qty(z)\exp(-\im \c1{X})\qty(w)}}=\\
-    &\quad\quad\quad=\cnord{\exp\qty(\im X)\qty(z)\exp\qty(-\im X)\qty(w)\exp\qty(-\ln\qty(z-w))}\\
-    &\cnord{\wick[offset=1.2em]{\textnormal{exp}(\im \c1{X})\qty(z)\exp(-\im \c1{X})\qty(w)}}=\frac{1}{z-w}\cnord{\exp\qty(\im X)\qty(z)\exp\qty(-\im X)\qty(w)}\\
-    &\cnord{\wick[offset=1.2em]{\textnormal{exp}(\im \c1{X})\qty(z)\exp(-\im \c1{X})\qty(w)}}=\frac{1}{z-w}\cnord{\exp\qty(\im X)\qty(w)\exp\qty(-\im X)\qty(w)}+\textnormal{regular}\\
-    &\cnord{\wick[offset=1.2em]{\textnormal{exp}(\im \c1{X})\qty(z)\exp(-\im \c1{X})\qty(w)}}=\frac{1}{z-w}+\textnormal{regular}
+    &\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}=\\
+    &\quad\quad\quad=\cnord{\exp\qty(-\int\dd[2]{z_1}\dd[2]{z_2}\ln\qty(z_1-z_2)\fdv{}{Y\qty(z_1)}\fdv{}{Z\qty(z_2)})\cnord{\exp\qty(\im Y)\qty(z)}\cnord{\exp\qty(-\im Z)\qty(w)}}\eval_{Y=Z=X}\\
+    &\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}=\\
+    &\quad\quad\quad=\cnord{\cnord{\exp\qty(\im Y)}\qty(z)\exp\qty(-\int\dd[2]{z_1}\dd[2]{z_2}\ln\qty(z_1-z_2)\im\delta^{\qty(2)}\qty(z-z_1)\fdv{}{Z\qty(z_2)})\cnord{\exp\qty(-\im Z)\qty(w)}}\eval_{Y=Z=X}\\
+    &\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}=\\
+    &\quad\quad\quad=\cnord{\cnord{\exp\qty(\im Y)\qty(z)}\cnord{\exp\qty(-\im Z)\qty(w)}\exp\qty(-\im\int\dd[2]{z_2}\ln\qty(z-z_2)\qty(-\im)\delta^{\qty(2)}\qty(w-z_2))}\eval_{Y=Z=X}\\
+    &\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}=\\
+    &\quad\quad\quad=\cnord{\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}\exp\qty(-\ln\qty(z-w))}\\
+    &\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}=\frac{1}{z-w}\cnord{\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}}\\
+    &\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}=\frac{1}{z-w}\cnord{\cnord{\exp\qty(\im X)\qty(w)}\cnord{\exp\qty(-\im X)\qty(w)}}+\textnormal{regular}\\
+    &\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}=\frac{1}{z-w}+\textnormal{regular}\\
+    &\quad\quad\quad V_1\qty(z)V_{-1}\qty(w)=\frac{1}{z-w}+\textnormal{regular}\numberthis\label{Vcomm}
 \end{align*}
 
-So that,
+That is, $V_1,V_{-1}$ seems to have a fermionic statistic, thats due the OPE being an odd power, this is clearer 
+if we compute,
 
 \begin{align*}
-    \cnord{\exp\qty(\im X)\qty(z)\exp\qty(-\im X)\qty(w)}&=\cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}+\frac{1}{z-w}+\textnormal{regular}\\
-    \cnord{\exp\qty(\im X)\qty(z)}\cnord{\exp\qty(-\im X)\qty(w)}&=-\frac{1}{z-w}+\textnormal{regular}\\
-    V_1\qty(z)V_{-1}\qty(w)&=-\frac{1}{z-w}+\textnormal{regular}\numberthis\label{Vcomm}
+    &\cnord{\exp\qty(-\im X)\qty(z)}\cnord{\exp\qty(\im X)\qty(w)}=\\
+    &\quad\quad\quad=\cnord{\exp\qty(-\int\dd[2]{z_1}\dd[2]{z_2}\ln\qty(z_1-z_2)\fdv{}{Y\qty(z_1)}\fdv{}{Z\qty(z_2)})\cnord{\exp\qty(-\im Y)\qty(z)}\cnord{\exp\qty(\im Z)\qty(w)}}\eval_{Y=Z=X}\\
+    &\cnord{\exp\qty(-\im X)\qty(z)}\cnord{\exp\qty(\im X)\qty(w)}=\\
+    &\quad\quad\quad=\cnord{\cnord{\exp\qty(-\im Y)}\qty(z)\exp\qty(-\int\dd[2]{z_1}\dd[2]{z_2}\ln\qty(z_1-z_2)\qty(-\im)\delta^{\qty(2)}\qty(z-z_1)\fdv{}{Z\qty(z_2)})\cnord{\exp\qty(\im Z)\qty(w)}}\eval_{Y=Z=X}\\
+    &\cnord{\exp\qty(-\im X)\qty(z)}\cnord{\exp\qty(\im X)\qty(w)}=\\
+    &\quad\quad\quad=\cnord{\cnord{\exp\qty(-\im Y)\qty(z)}\cnord{\exp\qty(\im Z)\qty(w)}\exp\qty(\im\int\dd[2]{z_2}\ln\qty(z-z_2)\im\delta^{\qty(2)}\qty(w-z_2))}\eval_{Y=Z=X}\\
+    &\cnord{\exp\qty(-\im X)\qty(z)}\cnord{\exp\qty(\im X)\qty(w)}=\\
+    &\quad\quad\quad=\cnord{\cnord{\exp\qty(-\im X)\qty(z)}\cnord{\exp\qty(\im X)\qty(w)}\exp\qty(-\ln\qty(z-w))}\\
+    &\cnord{\exp\qty(-\im X)\qty(z)}\cnord{\exp\qty(\im X)\qty(w)}=\frac{1}{z-w}\cnord{\cnord{\exp\qty(-\im X)\qty(z)}\cnord{\exp\qty(\im X)\qty(w)}}\\
+    &\cnord{\exp\qty(-\im X)\qty(z)}\cnord{\exp\qty(\im X)\qty(w)}=\frac{1}{z-w}\cnord{\cnord{\exp\qty(-\im X)\qty(w)}\cnord{\exp\qty(\im X)\qty(w)}}+\textnormal{regular}\\
+    &\cnord{\exp\qty(-\im X)\qty(z)}\cnord{\exp\qty(\im X)\qty(w)}=\frac{1}{z-w}+\textnormal{regular}\\
+    &\quad\quad\quad V_{-1}\qty(z)V_{1}\qty(w)=\frac{1}{z-w}+\textnormal{regular}\numberthis\label{Vcomm}
 \end{align*}
 
-That is, $V_1,V_{-1}$ seems to have a fermionic statistic, thats due the OPE being an odd power, so,
+What means,
 
 \begin{align*}
-    V_{-1}\qty(w)V_{1}\qty(z)&=-\frac{1}{w-z}+\textnormal{regular}=\frac{1}{z-w}+\textnormal{regular}=-V_1\qty(z)V_{-1}\qty(w)
+    V_{-1}\qty(z)V_{1}\qty(w)&=\frac{1}{z-w}+\textnormal{regular}\\
+    V_{-1}\qty(z)V_{1}\qty(w)&=\frac{1}{z-w}\cnord{\cnord{\exp\qty(-\im X)\qty(z)}\cnord{\exp\qty(\im X)\qty(w)}}\\
+    V_{-1}\qty(z)V_{1}\qty(w)&=\frac{1}{z-w}\cnord{\cnord{\exp\qty(\im X)\qty(w)}\cnord{\exp\qty(-\im X)\qty(z)}}\\
+    V_{-1}\qty(z)V_{1}\qty(w)&=-\frac{1}{w-z}\cnord{\cnord{\exp\qty(\im X)\qty(w)}\cnord{\exp\qty(-\im X)\qty(z)}}\\
+    V_{-1}\qty(z)V_{1}\qty(w)&=-V_1\qty(w)V_{-1}\qty(z)
 \end{align*}
 
 This can be traced down back to $X$ being chiral, in other words, the $XX$ OPE is,
@@ -336,25 +354,25 @@ Instead of,
 What gives rise to,
 
 \begin{align*}
-    V_1\qty(z)V_{-1}\qty(w)&=-\frac{1}{z-w}+\textnormal{regular}
+    V_1\qty(z)V_{-1}\qty(w)&=\frac{1}{z-w}+\textnormal{regular}
 \end{align*}
 
 Instead of,
 
 \begin{align*}
-    V_1\qty(z,\bar z)V_{-1}\qty(w,\bar w)&=-\frac{1}{\abs{z-w}}+\textnormal{regular}
+    V_1\qty(z,\bar z)V_{-1}\qty(w,\bar w)&=\frac{1}{\abs{z-w}}+\textnormal{regular}
 \end{align*}
 
-Besides the OPE \ref{Vcomm} being very similar to the $\tilde\psi\psi$ OPE, with just a sign change, as well as 
+Besides the OPE \ref{Vcomm} being very similar to the $\tilde\psi\psi$ OPE, as well as 
 both $V_1,\psi$ and $V_{-1},\psi$ having charge the same charge, by \ref{jVcom2}, and all of them having the same conformal weight, 
 by \ref{TVope}. This suggest the following identification,
 
 \begin{align*}
     V_1\qty(z)&\rightarrow\alpha\psi\qty(z)\\
-    V_{-1}\qty(z)&\rightarrow-\alpha^{-1}\tilde\psi\qty(z)
+    V_{-1}\qty(z)&\rightarrow\alpha^{-1}\tilde\psi\qty(z)
 \end{align*}
 
-With $\alpha$ any nonzero number, needed just for the OPE get the right sign.
+With $\alpha$ any nonzero number.
 
 \probitem{}
 
