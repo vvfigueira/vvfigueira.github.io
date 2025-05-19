@@ -1,7 +1,7 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{Problem 1}{1}{section.1}%
 \contentsline {subsection}{1.A)}{1}{subsection.1.1}%
-\contentsline {subsection}{1.B)}{8}{subsection.1.2}%
+\contentsline {subsection}{1.B)}{7}{subsection.1.2}%
 \contentsline {section}{Problem 2}{13}{section.2}%
 \contentsline {subsection}{2.A)}{13}{subsection.2.1}%
 \contentsline {subsection}{2.B)}{13}{subsection.2.2}%
@@ -25,4 +25,3 @@
 \contentsline {subsection}{6.A)}{45}{subsection.6.1}%
 \contentsline {subsection}{6.B)}{45}{subsection.6.2}%
 \contentsline {subsection}{6.C)}{46}{subsection.6.3}%
-\contentsline {section}{\numberline {A}Bosonic CFT}{49}{appendix.A}%
