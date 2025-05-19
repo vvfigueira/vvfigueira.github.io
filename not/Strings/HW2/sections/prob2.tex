@@ -1,297 +1,87 @@
 \problem{}
 \probitem{}
 
-First, let us go back a little to the Polyakov Action,
-
+Let's our hypothesis, first the mode expansion,
 \begin{align*}
-    S_{\textnormal P}&=\frac{1}{4\pi\alpha'}\int\dd[2]{\sigma}\sqrt{\abs{\Det\qty[h]}}h^{ab}g_{\mu\nu}\partial^a X^\mu\partial^b X^\nu\numberthis\label{polyac}
+    \partial X\qty(z)&=\sum\limits_{m\in\mathbb Z}\frac{\alpha_m}{z^{m+1}}
 \end{align*}
-
-We wrote in the Euclidean signature, as this is the one we're interested. At this point we already know by heart 
-that we have Diff$\times$Weyl gauge redundancy, and also that we can extract two equations of motion,
-
-\begin{align*}
-    \fdv{S_{\textnormal P}}{X_\mu}&=0\Rightarrow \partial_a\qty[\sqrt{h}\partial^a X^\mu]=0\numberthis\label{eomx}\\
-    \fdv{S_{\textnormal P}}{h^{ab}}&=0\Rightarrow T^{ab}=-\frac{4\pi}{\sqrt{h}}\fdv{S_{\textnormal P}}{h^{ab}}=0\Rightarrow T_{ab}=-\frac{1}{\alpha'}\qty(\partial_aX^\mu\partial_bX_\mu-\frac12h_{ab}\partial_cX^\mu\partial^cX_\mu)=0\numberthis\label{eomt}
-\end{align*}
-
-There are two main ways we could procede, one option is to \textbf{fully fix} the gauge redundancy by making some specific choice of 
-coordinates and/or metric, as is done in the light-cone gauge, in this case \ref{eomt} hold trivially as consequence of the choice 
-of gauge, and need not to be imposed as an equation of motion, this is consistent in a sense that after the \textbf{full fixing} of the 
-gauge redundancy, there should not be any metric in the Action, and hence no equation of motion for it. In other words, to solve the equation of 
-motion for the metric is sort of equivalent to fully fixing the gauge. This is the first option, fully fixing the gauge so that is not 
-necessary to impose an equation of motion for the metric. Now the second option, we don't fully fix the gauge a priori, and actually try 
-to solve for both \ref{eomx}, \ref{eomt}.
-
-Of course the light-cone gauge is all fun and games, but, the real deal is in the conformal gauge, let's rewrite the Polyakov Action in 
-the conformal gauge,
-
-\begin{align*}
-    S_{\textnormal {Pc}}&=\frac{1}{2\pi\alpha'}\int\dd[2]{\sigma}g_{\mu\nu}\partial X^\mu\bar\partial X^\nu\numberthis\label{polyacconf}
-\end{align*}
-
-There is no metric in sight here, so we just have one equation of motion,
-
-\begin{align*}
-    \bar\partial\partial X^\mu&=0\numberthis\label{eomxconf}
-\end{align*}
-
-Until now there is no problem, it's ok to have just one equation of motion --- as in the case in the light-cone gauge ---, but, as long 
-as the gauge fully fixes the Diff$\times$Weyl, so that equation \ref{eomt} holds trivially, is this the case in the conformal gauge? No. 
-There are for sure \textit{some} of the Weyl transformations which can be undone by Diffeomorphisms, but if the gauge was really fully fixed 
-there should be none of available Weyl and Diffeomorphisms for us to use, but there are. This is not really a problem, the thing is, as 
-there is no metric in sight in \ref{polyacconf} we can naively believe that we only have to solve for \ref{eomxconf}, but, as the original 
-equation is \ref{polyac}, if we don't fully fix the gauge we have to also solve \ref{eomt}, which in the conformal gauge is,
-
-\begin{align*}
-    T_{ab}=-\frac{1}{\alpha'}\qty(\partial_aX^\mu\partial_bX_\mu-\qty(1-\delta_{ab})\partial X^\mu\bar \partial X_\mu)=0
-\end{align*}
-
-Which gives two linearly independent equations,
-
-\begin{subequations}\label{tconstraint}
-\begin{align}
-    T_{zz}&=-\frac{1}{\alpha'}\partial X^\mu\partial X_\mu=0\\
-    T_{\bar z\bar z}&=-\frac{1}{\alpha'}\bar\partial X^\mu\bar\partial X_\mu=0
-\end{align}
-\end{subequations}
-
-Ok. All we did this for is: No matter what kind of gauge choice is done, we have to guarantee that $T_{ab}=0$, if the gauge 
-is fully fixed this is trivial to hold, if not this condition ensures that we're not doing something wrong.
-
-Now let's go to the quantum theory, to solve for \ref{eomxconf} is trivial, the problem is to solve for \ref{tconstraint}, which in the quantum 
-theory read,
-
-\begin{subequations}\label{tqconstraint}
-\begin{align}
-    T\qty(z)&=-\frac{1}{\alpha'}\cnord{\partial X^\mu\partial X_\mu}\qty(z)=0\\
-    \bar T\qty(\bar z)&=-\frac{1}{\alpha'}\cnord{\bar\partial X^\mu\bar\partial X_\mu}\qty(z)=0
-\end{align}
-\end{subequations}
-
-To this to hold as an operator equation over the whole Hilbert space is actually not possible, to see this expand in modes $T$, 
-\begin{align*}
-    T\qty(z)&=\sum\limits_{m\in\mathbb Z}\frac{L_m}{z^{m+2}}
-\end{align*}
-where $L_m$ are the Virasoro generators, satisfying 
-\begin{align*}
-    \comm{L_m}{L_n}&=\qty(m-n)L_{n+m}+\frac{c}{12}m\qty(m^2-1)\delta_{m,-n}
-\end{align*}
-
-It's clear that if $T\qty(z)=0$ is to hold as an operator equation, then, given any state $\Psi$ in our Hilbert space $\mathscr H$, we would need,
-\begin{align*}
-    T\qty(z)\Psi=0\Rightarrow L_m\Psi=0,\ \ \ \forall m\in\mathbb Z
-\end{align*}
-
-To see this is not consistent act with $L_n$,
-\begin{align*}
-    0&=L_m\Psi\\
-    0&=L_nL_m\Psi=\comm{L_n}{L_m}\Psi\\
-    0&=(\qty(n-m)L_{n+m}+\frac{c}{12}n\qty(n^2-1)\delta_{n,-m})\Psi\\
-    0&=\qty(n-m)L_{n+m}\Psi+\frac{c}{12}n\qty(n^2-1)\delta_{n,-m}\Psi\\
-    0&=\frac{c}{12}n\qty(n^2-1)\delta_{n,-m}\Psi\\
-\end{align*}
-
-The right-hand side is not zero for arbitrary values of $n,m,c$ and arbitrary $\Psi$, hence, we cannot look forward to 
-satisfy the equation of motion \ref{tqconstraint} as an operator equation through the whole Hilbert space $\mathscr H$, 
-what we do is to select a few states to compose a subspace of it, and call it the Physical Hilbert space $\mathscr H_{\textnormal{phys}}$, such that,
-
-\begin{align*}
-    \qty(L_n-A\delta_{n,0})\Psi&=0,\ \ \ \Psi\in\mathscr H_{\textnormal{phys}},\ n\geq0
-\end{align*}
-
-
-
-
-
-we have to 
-use some general facts about $T,\bar T$, first, it satisfies the following OPE,
-
-\begin{align*}
-    T\qty(z_1)T\qty(z_2)&=\frac{c}{2\qty(z_1-z_2)^4}+\frac{2}{\qty(z_1-z_2)^2}T\qty(z_2)+\frac{1}{\qty(z_2-z_2)}\partial T\qty(z_2)
-\end{align*}
-
-And for any primary operator $\mathcal O\qty(z)$ with conformal weight $h_{\mathcal O}$, which allows for an expansion 
-in modes as, 
-
-\begin{align*}
-    \mathcal O\qty(z)=\sum\limits_{m\in\mathbb Z}\frac{\mathcal O_m}{z^{m+h_{\mathcal O}}}
-\end{align*}
-
-We have the OPE,
-
-\begin{align*}
-    T\qty(z_1)\mathcal O\qty(z_2)&=\frac{h_{\mathcal O}}{\qty(z_1-z_2)^2}\mathcal O\qty(z_2)+\frac{1}{\qty(z_2-z_2)}\partial \mathcal O\qty(z_2)
-\end{align*}
-
-Where $h=\sqrt{\abs{\Det[h]}}$. We usually fix the Diff$\times$Weyl gauge redundancy by going to the conformal gauge, 
-which is equivalent to the choice of complex coordinates, $\sigma^z=z=\sigma^1+\im\sigma^2,\sigma^{\bar z}=\bar z=\sigma^1-\im\sigma^2\rightarrow h_{zz}=h_{\bar z\bar z}=0, h_{z\bar z}=h_{\bar zz}=\frac12$, 
-so that the equations of motion take the form,
-
-\begin{align*}
-    \fdv{S_{\textnormal P}}{X_\mu}&=0\Rightarrow \bar\partial\partial X^\mu=0\\
-    \fdv{S_{\textnormal P}}{h^{ab}}&=0\Rightarrow \partial_aX^\mu\partial_bX_\mu-\qty(1-\delta_{ab})\partial X^\mu\bar\partial X_\mu=0
-\end{align*}
-
-About the first equation, the equation of motion of $X$, it's easy to solve it, it's just saying that $X\qty(z,\bar z)=X_L\qty(z)+X_R\qty(\bar z)$. 
-But what about the second equation? For $a\neq b$ it's identically zero, but, for $a=b$ we have two linear independent equations,
-
-\begin{align*}
-    \partial X^\mu\partial X^\mu=0=\bar\partial X^\mu\bar\partial X_\mu
-\end{align*}
-
-Classically the only solution to this is $X\qty(z\bar z)=\textnormal{cte}$. Ok, what about the quantum theory? What happens is, after 
-the gauge fixing, we work with the Action,
-
-\begin{align*}
-    S_{\textnormal P}&=\frac{1}{2\pi\alpha'}\int\dd[2]{z}g_{\mu\nu}\partial X^\mu\bar\partial X^\nu
-\end{align*}
-
-Which gives just \textbf{one} equation of motion,
-
-\begin{align*}
-    \bar\partial\partial X^\mu&=0
-\end{align*}
-
-Which again, as an operator equation has a trivial solution, $X\qty(z,\bar z)=X_L\qty(z)+X_R\qty(\bar z)$, of course, we have 
-the fuzz about the equation of motion not being valid when there are insertions of other operators, but let's just forget this 
-now. The great question here is, where did the other equation of motion went? Of course as we first fixed the gauge, to after 
-obtain the equations of motion, there's no metric around for us to vary with respect to in order to obtain other equation of motion, and, in 
-the canonical procedure it's actually hard to see what is going wrong, but, all lays down to the conformal gauge not being a full gauge fix. It's a 
-lot easier to understand why is a equation of motion missing if the gauge is not fully fixed in the path integral formalism, after gauge fixing the 
-metric $h_{ab}$ to a fixed metric ${\hat h}_{ab}$, the path integral is,
-
-\begin{align*}
-    \mathcal Z&=\int\mathcal D{X}\mathcal D{b}\mathcal D{c}\exp\qty[-\frac{1}{4\pi\alpha'}\int\dd[2]{\sigma}\hat h{\hat h}^{ab}\partial^aX^\mu \partial^bX_\mu-\frac{1}{2\pi}\int\dd[2]{\sigma}\hat hb^{ab}{\hat \nabla}_ac_b]
-\end{align*}
-
-what we'll do is to obtain the equations of motion first, then after fix the gauge\footnote{This isn't exactly the right thing to do, what should be done is 
-gauge fixing in the path integral formalism and after the introduction of the Faddeev-Popov determinant/ghosts variating with respect to the gauge 
-fixed metric, which will give an additional equation of motion $T^m_{ab}+T^g_{ab}=0$, what we'll do here is just }, just a quick reminder, by definition,
-
-\begin{align*}
-    T^{ab}&\coloneq-4\pi\frac{1}{\sqrt{h}}\fdv{S_{\textnormal{P}}}{h_{ab}}=-\frac{1}{\alpha'}\qty(\partial^aX^\mu\partial^b X_\mu-\frac12h^{ab}\partial_cX^\mu\partial ^cX_\mu)
-\end{align*}
-
-First, let's state a few remarks, we have at our disposal the following algebras,
-
+and the algebras,
 \begin{align*}
     \comm{L_m}{L_n}&=\qty(m-n)L_{n+m}+\frac{c}{12}m\qty(m^2-1)\delta_{m,-n}\\
-    \comm{\alpha^\mu_m}{\alpha^\nu_n}&=mg^{\mu\nu}\delta_{m,-n}\\
-    \comm{L_m}{\alpha^\nu_n}&=-n\alpha^\nu_{n+m}
+    \comm{\alpha_m}{\alpha_n}&=m\delta_{m,-n}\\
+    \comm{L_m}{\alpha_n}&=-n\alpha_{n+m}
 \end{align*}
-
-Which should be interpreted only as elements of a Lie Algebra. But, we seek representations of this algebra as linear 
-maps in our physical Hilbert space, as any Hilbert space, it'll contain a notion of inner product, to which can be defined 
-adjoint of linear maps. Let's formally manipulate the adjoints of the algebra,
-
+that have the followings adjoints,
 \begin{align*}
-    &\begin{cases}
-        \comm{L_m}{L_n}^\dagger&=\qty(m-n)L^\dagger_{n+m}+\frac{c}{12}m\qty(m^2-1)\delta_{m,-n}\\
-        \comm{\alpha^\mu_m}{\alpha^\nu_n}^\dagger&=mg^{\mu\nu}\delta_{m,-n}\\
-        \comm{L_m}{\alpha^\nu_n}^\dagger&=-n\qty(\alpha^\nu_{n+m})^\dagger
-    \end{cases}\\
-    &\begin{cases}
-        \comm{L^\dagger_n}{L^\dagger_m}&=\qty(-n-\qty(-m))L^\dagger_{n+m}+\frac{c}{12}\qty(-n)\qty(\qty(-n)^2-1)\delta_{-n,-\qty(-m)}\\
-        \comm{\qty(\alpha^\nu_n)^\dagger}{\qty(\alpha^\mu_m)^\dagger}&=-ng^{\mu\nu}\delta_{-n,-\qty(-m)}\\
-        \comm{\qty(\alpha^\nu_n)^\dagger}{L^\dagger_m}=-\comm{L^\dagger_m}{\qty(\alpha^\nu_n)^\dagger}&=-n\qty(\alpha^\nu_{n+m})^\dagger
-    \end{cases}
+    L^\dagger_n&=L_{-n}\\
+    \alpha^{\dagger}_n&=\alpha_{-n}
 \end{align*}
-
-In this format it's clear to see that the algebra span by $L^\dagger_n,\qty(\alpha_m^\mu)^\dagger$ is isomorphic to the algebra span by $L_n,\alpha_m^\mu$, 
-in particular, the isomorphism is given by, $L^\dagger_n\rightarrow L_{-n},\qty(\alpha^\mu_m)\rightarrow\alpha^\mu_{-m}$, as can be seen directly from 
-the algebra by making the substitutions,
-
+with this we define the vacuum state $\Psi_0$ as the unique one which satisfy,
 \begin{align*}
-    \comm{L_{-n}}{L_{-m}}&=\qty(-n-\qty(-m))L_{-n-m}+\frac{c}{12}\qty(-n)\qty(\qty(-n)^2-1)\delta_{-n,-\qty(-m)}\\
-    \comm{\alpha^\nu_{-n}}{\alpha^\mu_{-m}}&=-ng^{\mu\nu}\delta_{-n,-\qty(-m)}\\
-    \comm{L_{-m}}{\alpha^\nu_{-n}}&=n\alpha^\nu_{-n-m}
+    L_n\Psi_0=0,\ \ \ n\geq-1
 \end{align*}
 
-Which is exactly the right algebra. We'll suppose that in our representation we have exactly $L^\dagger_n=L_{-n},\qty(\alpha^\mu_n)^\dagger=\alpha^\mu_{-n}$ as hinted 
-above. A few comments on the inner product of our Hilbert space, it is non degenerate and non negative. About the non 
-negative part, as we have a Lorentzian metric in the target space, at least one of the components of $X$ --- the time-like one --- has a wrong sign in the kinetic term in the 
-action, that is, some of the modes will inevitably `\textit{create}' negative norm states, but, these cannot be physical, and therefore must/can 
-be removed. One way of doing such is fixing the gauge a priori, which isn't the case, the other way is restricting the polarization vectors 
-to which the modes, of $\partial X$ can couple to. That is, as example, if $\alpha^\mu_n$ when acting in the vacuum creates a negative norm state, 
-this by itself is not enough to guarantee that it annihilate the vacuum, we have to show that no matter what choice of $\xi_\mu$ is done, $\xi_\mu \alpha^\mu_n$ 
-always is a negative norm state, then we can conclude $\alpha^\mu_n$ annihilate the vacuum. Closing these initial remarks, we start by defining the vacuum state, $\Psi_0$, as the one for which,
-
+Let's analyze the action of $L_0$,
 \begin{align*}
-    L_m\Psi_0=0,\ \ \ m\geq -1
+    0=L_0\Psi_0&=\qty(\frac12\alpha_0\alpha_0+\sum\limits_{n=1}^\infty\alpha_{-n}\alpha_n)\Psi_0\\
+    0=\qty(\Psi_0,L_0\Psi_0)&=\frac12\qty(\Psi_0,\alpha_0\alpha_0\Psi_0)+\sum\limits_{n=1}^\infty\qty(\Psi_0,\alpha_{-n}\alpha_n\Psi_0)\\
+    0&=\frac12\qty(\alpha_0\Psi_0,\alpha_0\Psi_0)+\sum\limits_{n=1}^\infty\qty(\alpha_{n}\Psi_0,\alpha_n\Psi_0)\\
+    0&=\frac12\norm{\alpha_0\Psi_0}^2+\sum\limits_{n=1}^\infty\norm{\alpha_n\Psi_0}^2
 \end{align*}
 
-Let's analyze the action of $\xi_\mu\alpha^\mu_n$ in it,
-
+It's clear, in the right-hand side we have the sum o various norms, which are by definition positive, and in the left-hand side we have zero, 
+the only way a sum of non-negative numbers can be zero is if each one is zero, that is,
 \begin{align*}
-    L_m\xi_\mu\alpha_n^\mu\Psi_0&=\xi_\mu\qty(L_m\alpha_n^\mu-\alpha^\mu_n L_m)\Psi_0,\ \ \ m\geq -1\\
-    L_m\xi_\mu\alpha_n^\mu\Psi_0&=\xi_\mu\comm{L_m}{\alpha_n^\mu}\Psi_0,\ \ \ m\geq -1\\
-    L_m\xi_\mu\alpha_n^\mu\Psi_0&=-n\xi_\mu\alpha_{n+m}^\mu\Psi_0,\ \ \ m\geq -1\numberthis\label{2prim}
+    \norm{\alpha_n\Psi_0}^2=0,\ \ \ \forall n\geq 0
 \end{align*}
-
-The first step was add $0=\xi_\mu\alpha^\mu_nL_m\Psi_0$, as $L_m,\ m\geq -1$ annihilate the vacuum. In the special case of $n=0$, we have,
-
+but, as long as the inner product is non degenerate, a zero norm state is the null/zero state, that means,
 \begin{align*}
-    L_m\xi_\mu\alpha_0^\mu\Psi_0&=0,\ \ \ m\geq -1
+    \alpha_n\Psi_0=0,\ \ \ \forall n\geq 0
 \end{align*}
-
-That implies $\xi_\mu\alpha_0^\mu\Psi_0$ has exactly all the symmetries of the vacuum, hence, it must be proportional to it, $\xi_\mu\alpha_0^\mu\Psi_0=\xi\Psi_0$ for some constant $\xi$, now we have to 
-evoke that we do have an inner product $\qty(\cdot,\cdot)$, so that the special case of $n=-m$ in \ref{2prim} is,
-
-\begin{align*}
-    L_m\xi_\mu\alpha_{-m}^\mu\Psi_0&=m\xi_\mu\alpha_{0}^\mu\Psi_0,\ \ \ m\geq -1\\
-    L_m\xi_\mu\alpha_{-m}^\mu\Psi_0&=m\xi\Psi_0,\ \ \ m\geq -1\\
-    \qty(\Psi_0,L_m\xi_\mu\alpha_{-m}^\mu\Psi_0)&=\qty(\Psi_0,m\xi\Psi_0),\ \ \ m\geq -1\\
-    \qty(L_m^\dagger\Psi_0,\xi_\mu\alpha_{-m}^\mu\Psi_0)&=m\xi\qty(\Psi_0,\Psi_0),\ \ \ m\geq -1\\
-    \qty(L_{-m}\Psi_0,\xi_\mu\alpha_{-m}^\mu\Psi_0)&=m\xi\qty(\Psi_0,\Psi_0),\ \ \ m\geq -1
-\end{align*}
-
-For $m=\pm 1$,
-
-\begin{align*}
-    \qty(L_{\mp1}\Psi_0,\xi_\mu\alpha_{\mp1}^\mu\Psi_0)&=\pm \xi\qty(\Psi_0,\Psi_0)\\
-    \qty(0,\xi_\mu\alpha_{\mp1}^\mu\Psi_0)&=\pm \xi\qty(\Psi_0,\Psi_0)\\
-    0&=\pm \xi\qty(\Psi_0,\Psi_0)
-\end{align*}
-
-Of course $\qty(\Psi_0,\Psi_0)\neq 0$ otherwise it would be the null state, hence, $\xi=0\Rightarrow \xi_\mu\alpha_0^\mu\Psi_0=\xi\Psi_0=0$. As this 
-is valid for any choice of $\xi_\mu$, we just proved that $\alpha^\mu_0\Psi_0=0$.
-
-% Let $\ket 0$ be the vacuum, we act with $\partial X^\mu\qty(z)$ in it, and analyze the following,
-
-% \begin{align*}
-%     L_m\partial X^\mu\qty(z)\ket 0&=\oint\limits_{C_z}\frac{\dd{z_1}}{2\pi \im}z_1^{m+1}T\qty(z_1)\partial X^\mu\qty(z)\ket 0
-% \end{align*}
-
-% In principle $C_z$ could be any contour encircling the origin, but, as we want to use the $T\partial X$ OPE, we'll choose a contour such that 
-% $\norm{z_1}>\norm{z}$, so now,
-
-% \begin{align*}
-%     L_m\partial X^\mu\qty(z)\ket 0&=\oint\limits_{C_z}\frac{\dd{z_1}}{2\pi \im}z_1^{m+1}\qty(\frac{\partial X^\mu\qty(z)}{\qty(z_1-z)^2}+\frac{\partial^2 X^\mu\qty(z)}{\qty(z_1-z)}+\textnormal{regular})\ket 0
-% \end{align*}
-
-% The integrand clearly has only poles at $z_1=0,z$, so, we just have to compute these two residi and this will be the result of the integral. Working with $m\geq-1$ makes the integral of the 
-% regular terms vanish, and also removes all the $z_1=0$ poles,
-
-% \begin{align*}
-%     L_m\partial X^\mu\qty(z)\ket 0&=\oint\limits_{C_z}\frac{\dd{z_1}}{2\pi \im}z_1^{m+1}\qty(\frac{\partial X^\mu\qty(z)}{\qty(z_1-z)^2}+\frac{\partial^2 X^\mu\qty(z)}{\qty(z_1-z)})\ket 0,\ \ \ m\geq -1\\
-%     L_m\partial X^\mu\qty(z)\ket 0&=\textnormal{Res}_{z_1=z}\frac{z_1^{m+1}}{\qty(z_1-z)^2}\partial X^\mu\qty(z)\ket 0+\textnormal{Res}_{z_1=z}\frac{z_1^{m+1}}{\qty(z_1-z)}\partial^2 X^\mu\qty(z)\ket 0,\ \ \ m\geq -1\\
-%     L_m\partial X^\mu\qty(z)\ket 0&=\pdv{}{z_1}\qty(\frac{z_1^{m+1}\qty(z_1-z)^2}{\qty(z_1-z)^2})\eval_{z_1=z}\partial X^\mu\qty(z)\ket 0+\frac{z_1^{m+1}\qty(z_1-z)}{\qty(z_1-z)}\eval_{z_1=z}\partial^2 X^\mu\qty(z)\ket 0,\ \ \ m\geq -1\\
-%     L_m\partial X^\mu\qty(z)\ket 0&=\qty(m+1)z^m\partial X^\mu\qty(z)\ket 0+z^{m+1}\partial^2 X^\mu\qty(z)\ket 0,\ \ \ m\geq -1
-% \end{align*}
-
-% Writing all of this with the mode expansion $\partial X^\mu\qty(z)=-\im\sqrt{\frac{\alpha'}{2}}\sum\limits_{n\in\mathbb Z}\alpha^\mu_nz^{-n-1}$,
-
-% \begin{align*}
-%     \sum\limits_{n\in\mathbb Z}z^{-n-1}L_m \alpha_n^\mu\ket 0&=\sum\limits_{n\in\mathbb Z}z^{-n-1}\qty(m+1)z^m\alpha_n^\mu\ket 0+\sum\limits_{n\in\mathbb Z}\qty(-n-1)z^{-n-2}z^{m+1}\alpha_n^\mu\ket 0,\ \ \ m\geq -1\\
-%     \sum\limits_{n\in\mathbb Z}z^{-n-1}L_m \alpha_n^\mu\ket 0&=\sum\limits_{n\in\mathbb Z}z^{m-n-1}\qty(m+1)\alpha_n^\mu\ket 0+\sum\limits_{n\in\mathbb Z}\qty(-n-1)z^{m-n-1}\alpha_n^\mu\ket 0,\ \ \ m\geq -1
-% \end{align*}
-
-% Relabeling the $n$ index in the right-hand side,
-
-% \begin{align*}
-%     \sum\limits_{n\in\mathbb Z}z^{-n-1}L_m \alpha_n^\mu\ket 0&=\sum\limits_{n\in\mathbb Z}z^{-n-1}\qty(m+1)\alpha_{n+m}^\mu\ket 0+\sum\limits_{n\in\mathbb Z}\qty(-n-m-1)z^{-n-1}\alpha_{n+m}^\mu\ket 0,\ \ \ m\geq -1\\
-%     L_m \alpha_n^\mu\ket 0&=\qty(m+1)\alpha_{n+m}^\mu\ket 0+\qty(-n-m-1)\alpha_{n+m}^\mu\ket 0,\ \ \ m\geq -1
-% \end{align*}
+what is the desired result. Nothing more can be said of $\alpha_n\Psi_0$ for $n<0$ than that at least $\alpha_{-1}\Phi_0$ is non zero for a non trivial theory.
 
 \probitem{}
+
+Start by,
+\begin{align*}
+    \partial X\qty(z)\partial X\qty(w)&=\textnormal{singular}+\textnormal{regular},\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\partial X\qty(z)\partial X\qty(w)\Psi_0)&=\qty(\Psi_0,\textnormal{singular}\Psi_0)+\qty(\Psi_0,\textnormal{regular}\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\partial X\qty(z)\partial X\qty(w)\Psi_0)&=\qty(\Psi_0,\textnormal{singular}\Psi_0),\ \ \ \abs{z}>\abs{w}
+\end{align*}
+due to the regular part being a normal ordered term. Now, substituting the definition of the normal modes,
+\begin{align*}
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\qty(\Psi_0,\partial X\qty(z)\partial X\qty(w)\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\sum\limits_{n,m\in\mathbb Z}\frac{1}{z^{n+1}w^{m+1}}\qty(\Psi_0,\alpha_n\alpha_m\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\sum\limits_{n,m\in\mathbb Z}\frac{1}{z^{n+1}w^{m+1}}\delta\qty(m<0)\qty(\alpha_{-n}\Psi_0,\alpha_m\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\sum\limits_{n\in\mathbb Z}\sum\limits_{m<0}\frac{1}{z^{n+1}w^{m+1}}\delta\qty(-n<0)\qty(\alpha_{-n}\Psi_0,\alpha_m\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\sum\limits_{n\in\mathbb Z}\sum\limits_{m<0}\frac{1}{z^{n+1}w^{m+1}}\delta\qty(n>0)\qty(\alpha_{-n}\Psi_0,\alpha_m\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\sum\limits_{n>0}\sum\limits_{m<0}\frac{1}{z^{n+1}w^{m+1}}\qty(\alpha_{-n}\Psi_0,\alpha_m\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\sum\limits_{m,n<0}\frac{1}{z^{n+1}w^{m+1}}\qty(\alpha_{n}\Psi_0,\alpha_m\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\sum\limits_{m,n<0}\frac{1}{z^{n+1}w^{m+1}}\qty(\Psi_0,\alpha_{-n}\alpha_m\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\sum\limits_{m,n<0}\frac{1}{z^{n+1}w^{m+1}}\qty(\Psi_0,\qty(\alpha_{-n}\alpha_m-\alpha_m\alpha_{-n}+\alpha_m\alpha_{-n})\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\sum\limits_{m,n<0}\frac{1}{z^{n+1}w^{m+1}}\qty(\Psi_0,\qty(\comm{\alpha_{-n}}{\alpha_m}+\alpha_m\alpha_{-n})\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\sum\limits_{m,n<0}\frac{1}{z^{n+1}w^{m+1}}\qty(\Psi_0,\qty(-n\delta_{m,n}+\delta\qty(-n<0)\alpha_m\alpha_{-n})\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\sum\limits_{m,n<0}\frac{1}{z^{n+1}w^{m+1}}\qty(-n)\delta_{m,n}\qty(\Psi_0,\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\sum\limits_{n<0}\frac{1}{z^{n+1}w^{n+1}}\qty(-n)\qty(\Psi_0,\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=-\sum\limits_{n<0}nz^{-n-1}w^{-n-1}\qty(\Psi_0,\Psi_0),\ \ \ \abs{z}>\abs{w}\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\frac{1}{zw}\sum\limits_{n>0}n\qty(zw)^{n}\qty(\Psi_0,\Psi_0),\ \ \ \abs{z}>\abs{w}
+\end{align*}
+
+This power series has a nice representation,
+\begin{align*}
+    \sum\limits_{n>0}nx^n&=\frac{x}{\qty(x-1)^2},\ \ \ \abs{x}<1
+\end{align*}
+so,
+\begin{align*}
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\frac{1}{zw}\qty(\Psi_0,\Psi_0)\frac{zw}{\qty(zw-1)^2},\ \ \ \abs{z}>\abs{w},\ \abs{zw}<1\\
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\qty(\Psi_0,\Psi_0)\frac{1}{\qty(zw-1)^2},\ \ \ \abs{z}>\abs{w},\ \abs{zw}<1
+\end{align*}
+but, $\qty(\Psi_0,\Psi_0)=1$,
+\begin{align*}
+    \qty(\Psi_0,\textnormal{singular}\Psi_0)&=\frac{1}{\qty(zw-1)^2},\ \ \ \abs{z}>\abs{w},\ \abs{zw}<1
+\end{align*}
+
+The OPE is then,
+\begin{align*}
+    \partial X\qty(z)\partial X\qty(w)&=\frac{1}{\qty(zw-1)^2}+\textnormal{regular},\ \ \ \abs{z}>\abs{w},\ \abs{zw}<1
+\end{align*}
