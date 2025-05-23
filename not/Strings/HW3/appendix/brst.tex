@@ -1,0 +1,66 @@
+\section{BRST}
+\subsection{Faddeev-Popov Gauge Fixing}
+
+We'll start with a discussion of the Faddeev-Popov procedure of gauge fixing, first, our action is,
+\begin{align*}
+    S_{X}&=\frac{1}{4\pi\alpha'}\int\dd[2]{\sigma}\sqrt{\abs{\Det\qty[h_{ab}]}}h^{ab}\partial_a X^\mu\partial_b X_\mu
+\end{align*}
+we would like to define the quantum theory by means of the path integral, that is, we expect that,
+\begin{align*}
+    Z&\stackrel{?}{=}\int\Dd{X}\Dd{h}\exp\qty(-S_X\qty[X,h])
+\end{align*}
+should give a well defined theory, but, the integral should be only over physical and inequivalent configurations of 
+$X,h$, and as we know, we have Diff$\times$Weyl gauge redundancies in this theory, this means in the integral measure we're 
+over-counting physical configurations, this means instead of the integral $\int\Dd{h}$ being over the whole space of all possible 
+metrics, it should be in the space of equivalence classes under Diff$\times$Weyl of all possible metrics. Let $\hat h$ denote a generic 
+member of the space of metrics inequivalent up to Diff$\times$Weyl, then, for any possible metric $h$, it's always possible to find $\hat h$ 
+such that $h$ is,
+\begin{align*}
+    h_{ab}\qty(\sigma)=\exp\qty(2\omega\qty(\hat\sigma))\pdv{\hat \sigma^c}{\sigma^a}\pdv{\hat \sigma^d}{\sigma^b}\hat h_{cd}\qty(\hat \sigma)
+\end{align*}
+that is, a composition of a Diff and Weyl transformation. We'll denote a given composition of a Diff followed by a Weyl by just $\zeta$, so that 
+\begin{align*}
+    h=\zeta\circ \hat h
+\end{align*}
+in this way is possible to separate the integral over all metrics $\int\Dd{h}$ into an integration over all inequivalent metrics $\int\Dd{\hat h}$ 
+and an integration over all possible Diff$\times$Weyl transformations $\int\Dd{\zeta}$, so that the partition function can be rewrote as,
+\begin{align*}
+    Z&\stackrel{?}{=}\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\exp\qty(-S_X\qty[X,\zeta\circ h])
+\end{align*}
+this still has the same problem of before, we're over-integrating the physical configurations, that is, $\hat h$ are the physical configurations, 
+but we're integrating also over the whole Diff$\times$Weyl group in $\Dd{\zeta}$. One way of circumventing this problem is introducing by 
+hand a Dirac delta to force $\zeta=0$, what also forces we to integrate only over one copy of the physical configurations,
+\begin{align*}
+    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\delta\qty(\zeta)\exp\qty(-S_X\qty[X,\zeta\circ h])
+\end{align*}
+but this is not the most general way, we could set $\zeta=f\qty(\sigma)$, for a arbitrary function, and this would still give the same theory,
+\begin{align*}
+    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\delta\qty(\zeta-f)\exp\qty(-S_X\qty[X,\zeta\circ h])
+\end{align*}
+we can go even further and give a function $G\qty(\zeta)$ such that the solution to $G\qty(\zeta)=0$ is only $\zeta=f$, so that we can use the relations between 
+Dirac deltas to obtain,
+\begin{align*}
+    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\delta\qty(\zeta-f)\exp\qty(-S_X\qty[X,\zeta\circ h])\\
+    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\abs{\Det\qty[\fdv{G}{\zeta}]\eval_{\zeta=f}}\delta\qty(G\qty(\zeta))\exp\qty(-S_X\qty[X,\zeta\circ \hat h])\\
+    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\abs{\Det\qty[\fdv{G}{\zeta}]\eval_{\zeta=f}}\delta\qty(G\qty(\zeta))\exp\qty(-S_X\qty[X,\zeta\circ \hat h])
+\end{align*}
+
+There are some details here, as $\zeta$ is to represent both a Weyl and a Diff, it has to represent both a function $\omega$ and a vector field $\xi$ such 
+that,
+\begin{align*}
+    \zeta \circ h&=h+2\omega h+\pounds_\xi h+\mathcal O\qty(\omega^2,\xi^2,\omega\xi)\\
+    \qty[\zeta \circ h]_{\mu\nu}&=h_{\mu\nu}+2\omega h_{\mu\nu}+2\nabla_{(\mu}\xi_{\nu)}+\mathcal O\qty(\omega^2,\xi^2,\omega\xi)
+\end{align*}
+this means both $\zeta=f$ and $G\qty(\zeta)=0$ are in fact a collection of various equations. In particular, we'll choose
+\begin{align*}
+    G_{ab}\qty(\zeta)&=\qty[\tilde h]_{ab}-\qty[\zeta\circ \hat h]_{ab}
+\end{align*}
+for a particular metric $\tilde h$. As $G_{ab}\qty(\zeta)$ is in fact a function of $h=\zeta\circ \hat h$ alone,
+\begin{align*}
+    G_{ab}\qty(\zeta)&=\qty[\tilde h]_{ab}-\qty[\zeta\circ \hat h]_{ab}=\qty[\tilde h]_{ab}-\qty[h]_{ab}=G_{ab}\qty(h)
+\end{align*}
+we can rewrite as,
+\begin{align*}
+    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\abs{\Det\qty[\fdv{G_{ab}}{\zeta}]\eval_{\zeta=f}}\delta\qty(G_{ab}\qty(\zeta))\exp\qty(-S_X\qty[X,\zeta\circ \hat h])\\
+    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\abs{\Det\qty[\fdv{G_{ab}}{\zeta}]\eval_{G_{ab}\qty(h)=0}}\delta\qty(G_{ab}\qty(h))\exp\qty(-S_X\qty[X,h])
+\end{align*}
