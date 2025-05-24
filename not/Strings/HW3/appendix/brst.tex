@@ -3,25 +3,54 @@
 
 We'll start with a discussion of the Faddeev-Popov procedure of gauge fixing, first, our action is,
 \begin{align*}
-    S_{X}&=\frac{1}{4\pi\alpha'}\int\dd[2]{\sigma}\sqrt{\abs{\Det\qty[h_{ab}]}}h^{ab}\partial_a X^\mu\partial_b X_\mu
+    S_{X}+\lambda\chi&=\frac{1}{4\pi\alpha'}\int\limits_M\dd[2]{\sigma}\sqrt{h}h^{ab}\partial_a X^\mu\partial_b X_\mu+\frac\lambda{4\pi}\int\limits_M\dd[2]{\sigma}\sqrt{h}R+\frac\lambda{2\pi}\int\limits_{\partial M}\dd{s}K
 \end{align*}
 we would like to define the quantum theory by means of the path integral, that is, we expect that,
 \begin{align*}
-    Z&\stackrel{?}{=}\int\Dd{X}\Dd{h}\exp\qty(-S_X\qty[X,h])
+    Z&\stackrel{?}{=}\int\Dd{X}\Dd{h}\exp\qty(-S_X\qty[X,h]-\lambda\chi)
 \end{align*}
 should give a well defined theory, but, the integral should be only over physical and inequivalent configurations of 
 $X,h$, and as we know, we have Diff$\times$Weyl gauge redundancies in this theory, this means in the integral measure we're 
-over-counting physical configurations, this means instead of the integral $\int\Dd{h}$ being over the whole space of all possible 
-metrics, it should be in the space of equivalence classes under Diff$\times$Weyl of all possible metrics. Let $\hat h$ denote a generic 
-member of the space of metrics inequivalent up to Diff$\times$Weyl, then, for any possible metric $h$, it's always possible to find $\hat h$ 
-such that $h$ is,
+over-counting physical configurations, that is, instead of the integral $\int\Dd{h}$ being over the whole space of all possible 
+metrics, it should be in the space of equivalence classes under Diff$\times$Weyl of all possible metrics. Before correcting this over-counting, 
+we can brake down the sum over all metrics by the value of the Euler Characteristic $\chi$, 
 \begin{align*}
-    h_{ab}\qty(\sigma)=\exp\qty(2\omega\qty(\hat\sigma))\pdv{\hat \sigma^c}{\sigma^a}\pdv{\hat \sigma^d}{\sigma^b}\hat h_{cd}\qty(\hat \sigma)
+    Z&\stackrel{?}{=}\int\Dd{h}\int\Dd{X}\exp\qty(-S_X\qty[X,h]-\lambda\chi)\\
+    Z&\stackrel{?}{=}\sum\limits_{M_g}\int\limits_{\textnormal{Met}\qty(M_g)}\Dd{h}\int\Dd{X}\exp\qty(-S_X\qty[X,h]-\lambda\chi)\\
+    Z&\stackrel{?}{=}\sum\limits_{M_g}\exp\qty(-\lambda g)\int\limits_{\textnormal{Met}\qty(M_g)}\Dd{h}\int\Dd{X}\exp\qty(-S_X\qty[X,h])
 \end{align*}
-that is, a composition of a Diff and Weyl transformation. We'll denote a given composition of a Diff followed by a Weyl by just $\zeta$, so that 
+Where $M_g$ is to be understood as a compact, not necessarily connected, two dimensional Riemannian manifold/surface with Euler Characteristic $\chi=g$, and 
+$\textnormal{Met}\qty(M_g)$ is the space of all metrics which can be assigned to $M_g$. While for $M_g\cong\mathbb R^2\cong \mathbb C$ it's true 
+that all possible metrics are Diff$\times$Weyl equivalent to each other, for non-trivial topologies this is not true, what do happens is 
+the \textit{moduli space}, or, the set of equivalence classes,
 \begin{align*}
-    h=\zeta\circ \hat h
+    \mathscr{M}_g=\textnormal{Met}\qty(M_g)/\textnormal{Diff}\times\textnormal{Weyl}
 \end{align*}
+possesses more than one element. The equivalence class is to be understood as,
+\begin{align*}
+    h'_{ab}\sim h_{ab}\Leftrightarrow h'_{ab}\qty(\sigma'\qty(\sigma))=\exp\qty(2\omega\qty(\sigma))\pdv{ \sigma^c}{\sigma'^a}\pdv{ \sigma^d}{\sigma'^b} h_{cd}\qty( \sigma)
+\end{align*}
+that is, two metrics are the same representative of an element of $\mathscr M_g$ iff they differ by a composition of a Diff and Weyl transformation. We'll denote a given composition of a Diff followed by a Weyl by just $\zeta$, so that 
+\begin{align*}
+    h'=\zeta\circ h
+\end{align*}
+
+Thus, it's possible for us to set up a well defined version of the path integral, just replace Met$\qty(M_g)$ by $\mathscr M_g$,
+\begin{align*}
+    Z&=\sum\limits_{M_g}\exp\qty(-\lambda g)\int\limits_{\mathscr M_g}\Dd{h}\int\Dd{X}\exp\qty(-S_X\qty[X,h])
+\end{align*}
+where the integration is to be understood as by choosing for each equivalence class in $\mathscr M_g$ a representative element in Met$\qty(M_g)$. 
+While this is a satisfactory definition for the path integral, it feels a little clunky, we rather have an path integral over all the possible metrics, 
+well, this is achievable. First, for each equivalence class of $\mathscr M_g$ elect one representative element of Met$\qty(M_g)$, we'll denote these elements 
+as $\hat h\qty(t^I)$ --- here $t^I$ is a parametrization of the elements in $\mathscr M_g$ ---, by construction, these representatives are 
+inequivalent under Diff$\times$Weyl, hence,
+\begin{align*}
+    \zeta_1\circ \hat h\qty(t^I)=\zeta_2\circ\hat h\qty(t^K)\Leftrightarrow t^I=t^K\textnormal{ and }\zeta_1=\zeta_2
+\end{align*}
+so that every element in Met$\qty(M_g)$ can be written as a unique\footnote{The} composition of a given $\zeta$ into a given $\hat h\qty(t^I)$ 
+
+
+
 in this way is possible to separate the integral over all metrics $\int\Dd{h}$ into an integration over all inequivalent metrics $\int\Dd{\hat h}$ 
 and an integration over all possible Diff$\times$Weyl transformations $\int\Dd{\zeta}$, so that the partition function can be rewrote as,
 \begin{align*}
@@ -38,7 +67,11 @@ but this is not the most general way, we could set $\zeta=f\qty(\sigma)$, for a 
     Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\delta\qty(\zeta-f)\exp\qty(-S_X\qty[X,\zeta\circ h])
 \end{align*}
 we can go even further and give a function $G\qty(\zeta)$ such that the solution to $G\qty(\zeta)=0$ is only $\zeta=f$, so that we can use the relations between 
-Dirac deltas to obtain,
+Dirac deltas,
+\begin{align*}
+    \delta\qty(G\qty(\zeta))=\abs{\Det\qty[\fdv{G}{\zeta}]\eval_{\zeta=f}}^{-1}\delta\qty(\zeta-f)
+\end{align*}
+to obtain,
 \begin{align*}
     Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\delta\qty(\zeta-f)\exp\qty(-S_X\qty[X,\zeta\circ h])\\
     Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\abs{\Det\qty[\fdv{G}{\zeta}]\eval_{\zeta=f}}\delta\qty(G\qty(\zeta))\exp\qty(-S_X\qty[X,\zeta\circ \hat h])\\
@@ -48,8 +81,8 @@ Dirac deltas to obtain,
 There are some details here, as $\zeta$ is to represent both a Weyl and a Diff, it has to represent both a function $\omega$ and a vector field $\xi$ such 
 that,
 \begin{align*}
-    \zeta \circ h&=h+2\omega h+\pounds_\xi h+\mathcal O\qty(\omega^2,\xi^2,\omega\xi)\\
-    \qty[\zeta \circ h]_{\mu\nu}&=h_{\mu\nu}+2\omega h_{\mu\nu}+2\nabla_{(\mu}\xi_{\nu)}+\mathcal O\qty(\omega^2,\xi^2,\omega\xi)
+    \zeta \circ \hat h&=\hat h+2\omega \hat h+\pounds_\xi \hat h+\mathcal O\qty(\omega^2,\xi^2,\omega\xi)\\
+    \qty[\zeta \circ\hat  h]_{ab}&=\hat h_{ab}+2\omega \hat h_{ab}+2\nabla_{(a}\xi_{b)}+\mathcal O\qty(\omega^2,\xi^2,\omega\xi)
 \end{align*}
 this means both $\zeta=f$ and $G\qty(\zeta)=0$ are in fact a collection of various equations. In particular, we'll choose
 \begin{align*}
@@ -63,4 +96,32 @@ we can rewrite as,
 \begin{align*}
     Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\abs{\Det\qty[\fdv{G_{ab}}{\zeta}]\eval_{\zeta=f}}\delta\qty(G_{ab}\qty(\zeta))\exp\qty(-S_X\qty[X,\zeta\circ \hat h])\\
     Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\abs{\Det\qty[\fdv{G_{ab}}{\zeta}]\eval_{G_{ab}\qty(h)=0}}\delta\qty(G_{ab}\qty(h))\exp\qty(-S_X\qty[X,h])
+\end{align*}
+
+Notice that every term in the integrand depends on $\zeta$ only through $h=\zeta\circ \hat h$, this is what we do want, so that we can 
+recombine the integration measure $\int\Dd{\hat h}\Dd{\zeta}=\int\Dd{h}$, the only problem in this procedure is the term,
+\begin{align*}
+    \Det\qty[\fdv{G_{ab}}{\zeta}]\eval_{G_{ab}\qty(h)=0}
+\end{align*}
+which is manifestly dependent on $\zeta$, or at least looks like it is. We'll prove it only depends on $\zeta$ through 
+$h = \zeta\circ \hat h$. The point is, if
+\begin{align*}
+    G_{ab}\qty(h)={\tilde h}_{ab}-h_{ab}={\tilde h}_{ab}-\qty[\zeta\circ \hat h]_{ab}=0
+\end{align*}
+is needed to have a solution, then exists the transformation $\tilde\zeta$, such that,
+\begin{align*}
+    \tilde\zeta\circ \hat h=\tilde h
+\end{align*}
+as this transformation is also an element of the gauge \textbf{group}, it certainly has an inverse, $\tilde\zeta^{-1}\circ \tilde \zeta \circ \hat h=\hat h$, thus, 
+\begin{align*}
+    G_{ab}\qty(h)&=\tilde h-\zeta\circ \hat h\\
+    G_{ab}\qty(h)&=\tilde h-\zeta\circ \tilde\zeta^{-1}\circ \tilde \zeta\circ\hat h\\
+    G_{ab}\qty(h)&=\tilde h-\zeta\circ \tilde\zeta^{-1}\circ \tilde h\\
+    G_{ab}\qty(h)&=\tilde h-\zeta'\circ \tilde h
+\end{align*}
+where we defined the new gauge transformation $\zeta'=\zeta\circ \tilde \zeta^{-1}$, notice that,
+\begin{align*}
+    h&=\zeta\circ \hat h\\
+    h&=\zeta\circ \tilde\zeta^{-1}\circ \tilde \zeta \circ\hat h\\
+    h&=\zeta'\circ \tilde h
 \end{align*}
