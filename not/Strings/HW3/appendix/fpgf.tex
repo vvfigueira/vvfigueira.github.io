@@ -1,0 +1,164 @@
+\section{Faddeev-Popov Gauge Fixing}
+
+Our Action functional is,
+\begin{align*}
+    S_{X}+\lambda\chi&=\frac{1}{4\pi\alpha'}\int\limits_M\dd[2]{\sigma}\sqrt{h}h^{ab}\partial_a X^\mu\partial_b X_\mu+\frac\lambda{4\pi}\int\limits_M\dd[2]{\sigma}\sqrt{h}R+\frac\lambda{2\pi}\int\limits_{\partial M}\dd{s}K\numberthis\label{bosonicaction}
+\end{align*}
+we would like to define the quantum theory by means of the path integral, that is, we expect that,
+\begin{align*}
+    Z&\stackrel{?}{=}\int\Dd{X}\Dd{h}\exp\qty(-S_X\qty[X,h]-\lambda\chi)\numberthis\label{try1}
+\end{align*}
+should give a well defined theory, but, already from \ref{try1} there're several problems that arise, one of them is: \textit{What should be interpreted from the path integral itself? We haven't 
+defined any manifold to our metric $h$ and scalar fields $X$ to live in, also, even if we had defined such, the path integral relies on explicit coordinate points, $\Dd{h}=\prod\limits_{\sigma}\dd{h_{ab}\qty(\sigma)}$, 
+which are highly dependent on charts.}
+
+This is a valid claim, our way to avoid it is to \textit{define} $\Dd{h}$ to mean: \textit{Sum over all \textbf{allowed} two dimensional Riemannian manifolds, and all 
+possible metric structures in these.} Here, \textit{\textbf{allowed}} requires a prescription, which manifolds are or aren't allowed impacts the obtained string theory. Happily, 
+every two dimensional manifold has a definite value for the Euler Characteristic $\chi$, hence, we can sort them out by it,
+\begin{align*}
+    Z&\stackrel{?}{=}\sum\limits_{\qty{M}}\int\limits_{\textnormal{Met}\qty(M)}\Dd{h}\int\Dd{X}\exp\qty(-S_X\qty[X,h]-\lambda\chi)\\
+    Z&\stackrel{?}{=}\sum\limits_{\qty{\chi}}\exp\qty(-\lambda \chi)\sum\limits_{\qty{M_\chi}}\int\limits_{\textnormal{Met}\qty(M_\chi)}\Dd{h}\int\Dd{X}\exp\qty(-S_X\qty[X,h])\numberthis\label{try2}
+\end{align*}
+Where $M$ is to be understood as a two dimensional Riemannian manifold and $M_\chi$ is one with Euler Characteristic $\chi$, 
+$\textnormal{Met}\qty(M_\chi)$ is the space of all metrics which can be assigned to $M_\chi$, we have written $\sum\limits_{\qty{M_\chi}}$ in the 
+special case of there being more than one manifold with same Euler Characteristic\footnote{As we're interested only in Differentiable Manifolds, more than manifold should read: More than one equivalence class of Differentiable Manifolds.}, also, the functional integral over $X$ should be read as integrating over all 
+maps from $M_\chi$ to $\mathbb R^{1,D-1}$. While this is better defined than before, i.e. not coordinate dependent, we still have a few problems, first, 
+it's know that \ref{bosonicaction} has a Gauge Group of Diff$\qty(M)\times$Weyl$\qty(M)$, but, in our second try of a definition of the path integral, we're integrating the metrics over Met$\qty(M_\chi)$, 
+it's clear that may happen of two elements of Met$\qty(M_\chi)$ be equivalent under a Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$ transformation, to put in more 
+clear terms, we're worried if exists $h',h\in\textnormal{Met}\qty(M_\chi)$ such,
+\begin{align*}
+    h'_{ab}\qty(\sigma'\qty(\sigma))=\exp\qty(2\omega\qty(\sigma))\pdv{ \sigma^c}{\sigma'^a}\pdv{ \sigma^d}{\sigma'^b} h_{cd}\qty( \sigma)
+\end{align*}
+the existence of those kinds of elements is troublesome, as Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$ is a infinite dimensional group of redundancies, 
+this means we're over-counting physical configurations by a infinite amount. The solution is to look for an equivalence class of metrics under this Gauge Group 
+action,
+\begin{align*}
+    \mathscr{M}_\chi=\textnormal{Met}\qty(M_\chi)/\textnormal{Diff}\qty(M_\chi)\times\textnormal{Weyl}\qty(M_\chi)
+\end{align*}
+the equivalence class is to be understood as\footnote{In all charts.},
+\begin{align*}
+    h'\sim h\Leftrightarrow h'_{ab}\qty(\sigma'\qty(\sigma))=\exp\qty(2\omega\qty(\sigma))\pdv{ \sigma^c}{\sigma'^a}\pdv{ \sigma^d}{\sigma'^b} h_{cd}\qty( \sigma)
+\end{align*}
+that is, two metrics are the same representative of an element of $\mathscr M_\chi$ iff they differ by a composition of a Diffeomorphism and Weyl transformation. We'll denote a given composition of a Diffeomorphism followed by a Weyl transformation by $\zeta$,
+\begin{align*}
+    h'=\zeta\circ h
+\end{align*}
+
+Notice that the set of equivalence class of metrics, or, the set of inequivalent Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$ metrics $\mathscr M_\chi$ is highly 
+dependent on the topology of $M_\chi$, for example, for $M_\chi\cong\mathbb R^2\cong\mathbb C$, it's trivial, there is just one point in the set $\mathscr M_\chi$, in other words, 
+every metric is equivalent, which isn't true for more complex topologies.
+
+Thus, it's possible for us to set up a well defined version of the path integral, just replace Met$\qty(M_\chi)$ by $\mathscr M_\chi$,
+\begin{align*}
+    Z&=\sum\limits_{\qty{\chi}}\exp\qty(-\lambda \chi)\sum\limits_{\qty{M_\chi}}\int\limits_{\mathscr M_\chi}\Dd{h}\int\Dd{X}\exp\qty(-S_X\qty[X,h])\numberthis\label{try3}
+\end{align*}
+where the integration is to be understood as by choosing for each equivalence class in $\mathscr M_\chi$ a representative element in Met$\qty(M_g)$. 
+While this is a satisfactory definition for the path integral, it feels a little clunky, we rather have an path integral over all the possible metrics --- in the sense defined before ---, 
+well, this is achievable. First, for each equivalence class of $\mathscr M_\chi$ elect one representative element of Met$\qty(M_\chi)$, we'll denote these elements 
+as $\hat h\qty(\vb t)$ --- here $\vb t$ is a parametrization of the correspondent equivalence class in $\mathscr M_\chi$, we haven't proved here, and won't, but $\mathscr M_\chi$ is a finite $N$ dimensional manifold, hence, $\vb t$ is a $N$-tuple of real numbers ---, by construction, these representatives are 
+inequivalent under Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$, hence,
+\begin{align*}
+    \zeta_1\circ \hat h\qty(\vb t_1)=\zeta_2\circ\hat h\qty(\vb t_2)\Leftrightarrow \vb t_1=\vb t_2\textnormal{ and }\zeta_1=\zeta_2
+\end{align*}
+so that every element in Met$\qty(M_g)$ can be written as a unique\footnote{The uniqueness or not depends on a few factors, here we'll always, unless specified otherwise, interpret Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$ as the group \textit{generated by} all possible 
+compositions of Diffeomorphisms and Weyl transformations, but a element of it, $\zeta$, is not to be interpreted as a unique composition of Diffeomorphism and Weyl factors, as there might be some Diffeomorphism which are equivalent to Weyl transformations, what is indeed true is that 
+every element $\zeta$ of the Gauge Group is a unique combination of an element of Diff$\qty(M_\chi)/$Weyl$\qty(M_\chi)$ and an element of Weyl$\qty(M_\chi)$.} composition of a given $\zeta$ into a given $\hat h\qty(\vb t)$. Now, we rewrite 
+the pictorial integral over $\mathscr M_\chi$ is a more formal way, using the parametrization we just described,
+\begin{align*}
+    Z&=\sum\limits_{\qty{\chi}}\exp\qty(-\lambda \chi)\sum\limits_{\qty{M_\chi}}\int\limits_{\mathscr M_\chi}\dd[N]{\vb t}\int\Dd{X}\exp\qty(-S_X\qty[X,\hat h\qty(\vb t)])\\
+    Z&=\sum\limits_{\qty{\chi}}\exp\qty(-\lambda \chi)\sum\limits_{\qty{M_\chi}}\int\limits_{\mathscr M_\chi}\dd[N]{\vb t}\int\limits_{\textnormal{Diff}\qty(M_\chi)\times\textnormal{Weyl}\qty(M_\chi)}\Dd{\zeta}\delta\qty(\zeta)\int\Dd{X}\exp\qty(-S_X\qty[X,\hat h\qty(\vb t)])
+\end{align*}
+in the last line we introduced a one by integrating\footnote{Again, following the same remarks made before, the integral over Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$ should not be interpreted as integrating over the whole of Diff$\qty(M_\chi)$ and after integrating over the whole 
+Weyl$\qty(M_\chi)$, this would for sure be an over-counting, but rather should be interpreted as integrating over the whole group \textit{generated by} compositions of Diff$\qty(M_\chi)$ and Weyl$\qty(M_\chi)$, which is equivalent of integrating over the whole Diff$\qty(M_\chi)/$Weyl$\qty(M_\chi)$, and after 
+integrating over the whole Weyl$\qty(M_\chi)$.} over the delta functional, as this integral picks only $\zeta=0$, what should be understood as $\zeta=\textnormal{id}$ in the group, 
+we can deform a little the integration to,
+\begin{align*}
+    Z&=\sum\limits_{\qty{\chi}}\exp\qty(-\lambda \chi)\sum\limits_{\qty{M_\chi}}\int\limits_{\mathscr M_\chi}\dd[N]{\vb t}\int\limits_{\textnormal{Diff}\qty(M_\chi)\times\textnormal{Weyl}\qty(M_\chi)}\Dd{\zeta}\delta\qty(\zeta)\int\Dd{X}\exp\qty(-S_X\qty[X, \zeta\circ\hat h\qty(\vb t)])\numberthis\label{try4}
+\end{align*}
+
+This is almost in the form that we would like, notice that we're integrating over the set of representative of the inequivalent metrics, $\dd[N]{\vb t}$, and also over the whole group Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$, $\Dd{\zeta}$, 
+by construction, \textbf{every} metric in Met$\qty(M_\chi)$ can be written uniquely\footnote{With the remarks made before.} as,
+\begin{align*}
+    h=\zeta_{\vb t}\circ \hat h\qty(\vb t)
+\end{align*}
+in other words, to integrate over $\dd[N]{\vb t}\Dd{\zeta}$ is to integrate over all metrics of the form $\zeta\circ \hat h\qty(\vb t)$, which is to integrate over 
+all metrics $h=\zeta\circ \hat h\qty(\vb t)$ in Met$\qty(M_\chi)$! We cannot yet make this change, due to the presence of an explicit dependence in $\zeta$ at the functional delta. 
+We'll eliminate it by means of a change of variable of the functional delta, notice that,
+\begin{align*}
+    \delta\qty(\hat h\qty(\vb t)-\zeta\circ \hat h\qty(\vb t))
+\end{align*}
+picks up just the contribution of $\zeta=0$, so it's a good candidate for a change of variables,
+\begin{align*}
+    \delta\qty(\hat h\qty(\vb t)-\zeta\circ \hat h\qty(\vb t))=\delta\qty(\zeta)\abs{\Det\qty[\fdv{}{\zeta}\qty(\hat h\qty(\vb t)-\zeta\circ\hat h\qty(\vb t))\eval_{\zeta=0}]}^{-1}
+\end{align*}
+let's compute step by step the right-hand side of this equation, as we're only interested in the solution of $\zeta=0$, what matters is just the connected component to the identity 
+of the Gauge Group, this is parametrized by a function $\omega$ related to the Weyl transformation, and a vector field $\xi$ related to the connected component to the identity of the Diffeomorphisms --- 
+there is an additional requirement of $\xi$ not generating any transformation which can be undone by a Weyl transformation ---, also, for ease of our manipulation, we'll write the expression inside the 
+delta with respect to $h$ instead of $\hat h\qty(\vb t)$\footnote{We would have to carry out the $\vb t$ dependence in $h$ also, but, soon it will 
+disappear as matter of uniting the integrals $\dd[N]{\vb t}\Dd{\zeta}$ so we won't keep track of it anymore.}, that is,
+\begin{align*}
+    \delta\qty(\hat h\qty(\vb t)-\zeta\circ \hat h\qty(\vb t))=\delta\qty( \zeta^{-1}\circ h-h)=\delta\qty(\zeta^{-1})\abs{\Det\qty[\fdv{}{\zeta^{-1}}\qty(\zeta^{-1}\circ h-h)\eval_{\zeta^{-1}=0}]}^{-1}
+\end{align*}
+one might worry about the $\zeta^{-1}$ instead of the $\zeta$, but, the integration measure $\Dd{\zeta}$ is formally a Haar measure in the Group, that means 
+it's a group invariant measure, in other words, $\Dd{\zeta^{-1}}=\Dd{\zeta}$, so that we can forget about the inverse, now,
+\begin{align*}
+    \qty[\zeta\circ h]_{ab}&=\qty[h]_{ab}+2\omega\qty[h]_{ab}+\qty[\pounds_{\xi}h]_{ab}+\mathcal O\qty(\omega^2,\xi^2,\omega\xi)\\
+    \qty[\zeta\circ h]_{ab}&=\qty[h]_{ab}+2\omega\qty[h]_{ab}+2\nabla_{(a}\xi_{b)}+\mathcal O\qty(\omega^2,\xi^2,\omega\xi)
+\end{align*}
+of course $\nabla$ here is with respect to the $h$ metric,
+\begin{align*}
+    \qty[\zeta\circ h]_{ab}-\qty[h]_{ab}&=2\omega\qty[h]_{ab}+2\nabla_{(a}\xi_{b)}+\mathcal O\qty(\omega^2,\xi^2,\omega\xi)\\
+    \fdv{}{\zeta}\qty(\qty[\zeta\circ h]_{ab}-\qty[h]_{ab})&=????
+\end{align*}
+
+The $\zeta$ derivative actually has two parts, the derivative with respect to $\omega$ and the other with respect to $\xi$, let's do one by one,
+\begin{align*}
+    \fdv{}{\omega\qty(\sigma')}\qty(\qty[\zeta\circ h]_{ab}-\qty[h]_{ab})\qty(\sigma)\eval_{\zeta=0}&=2\delta^{\qty(2)}\qty(\sigma-\sigma')h_{ab}\qty(\sigma)
+\end{align*}
+and for the $\xi$,
+\begin{align*}
+    \fdv{}{\xi^c\qty(\sigma')}\qty(\qty[\zeta\circ h]_{ab}-\qty[h]_{ab})\qty(\sigma)\eval_{\zeta=0}&=2h_{c(b}\nabla_{a)}\delta^{\qty(2)}\qty(\sigma-\sigma')
+\end{align*}
+
+Thus,
+\begin{align*}
+    \fdv{}{\zeta}\qty(\qty[\zeta\circ h]_{ab}-\qty[h]_{ab})\eval_{\zeta=0}&=2\delta^{\qty(2)}\qty(\sigma-\sigma')h_{ab}\qty(\sigma)+2h_{c(b}\nabla_{a)}\delta^{\qty(2)}\qty(\sigma-\sigma')\\
+    \Det\qty[\fdv{}{\zeta}\qty(\qty[\zeta\circ h]_{ab}-\qty[h]_{ab})\eval_{\zeta=0}]&=\Det\qty[2\delta^{\qty(2)}\qty(\sigma-\sigma')h_{ab}\qty(\sigma)+2h_{c(b}\nabla_{a)}\delta^{\qty(2)}\qty(\sigma-\sigma')]
+\end{align*}
+the determinant can be computed by means of path integral of Grassmannian variables,
+\begin{align*}
+    &\Det\qty[2\delta^{\qty(2)}\qty(\sigma-\sigma')h_{ab}+2h_{c(b}\nabla_{a)}\delta^{\qty(2)}\qty(\sigma-\sigma')]=\int\Dd{b}\Dd{c}\Dd{d}\exp\qty(-\frac{1}{2\pi}\int\dd[2]{\sigma}\sqrt{h}b^{ab}\qty[h_{ab}d+h_{c(b}\nabla_{a)}c^c])\\
+% \end{align*}
+% the second term inside the integral forces $b^{ab}$ to be symmetric, and the first term, which is just the integral of the trace, gives a delta function,
+% \begin{align*}
+%     \Det\qty[\fdv{}{\zeta}\qty(\qty[\zeta\circ h]_{ab}-\qty[h]_{ab})\eval_{\zeta=0}]&=\int\Dd{b}\Dd{c}\delta\qty(b^{ab}h_{ab})\exp\qty(-\frac{1}{2\pi}\int\dd[2]{\sigma}\sqrt{h}b^{ab}\nabla_ac_b)
+% \end{align*}
+% this forces $b^{ab}$ to be symmetric and traceless,
+% \begin{align*}
+    &\Det\qty[\fdv{}{\zeta}\qty(\qty[\zeta\circ h]_{ab}-\qty[h]_{ab})\eval_{\zeta=0}]=\int\Dd{b}\Dd{c}\Dd{d}\exp\qty(-S_{\textnormal{gh}}\qty[b,c,d,h])
+\end{align*}
+Substituting all of this back into our path integral,
+\begin{align*}
+    Z&=\sum\limits_{\qty{\chi}}\exp\qty(-\lambda \chi)\sum\limits_{\qty{M_\chi}}\int\limits_{\mathscr M_\chi}\dd[N]{\vb t}\int\limits_{\textnormal{Diff}\qty(M_\chi)\times\textnormal{Weyl}\qty(M_\chi)}\Dd{\zeta}\delta\qty(\zeta)\int\Dd{X}\exp\qty(-S_X\qty[X, \zeta\circ\hat h\qty(\vb t)])\\
+    Z&=\sum\limits_{\qty{\chi}}\exp\qty(-\lambda \chi)\sum\limits_{\qty{M_\chi}}\int\limits_{\mathscr M_\chi}\dd[N]{\vb t}\int\limits_{\textnormal{Diff}\qty(M_\chi)\times\textnormal{Weyl}\qty(M_\chi)}\Dd{\zeta}\delta\qty(\zeta^{-1}\circ h-h)\int\Dd{X}\Dd{b}\Dd{c}\Dd{d}\exp\qty(-S_X-S_{\textnormal{gh}})\\
+    Z&=\sum\limits_{\qty{\chi}}\exp\qty(-\lambda \chi)\sum\limits_{\qty{M_\chi}}\int\limits_{\textnormal{Met}\qty(M_\chi)}\Dd{h}\delta\qty(\hat h-h)\int\Dd{X}\Dd{b}\Dd{c}\Dd{d}\exp\qty(-S_X\qty[X, h]-S_{\textnormal{gh}}\qty[b,c,d,h])\\
+    Z&=\int\Dd{h}\Dd{X}\Dd{b}\Dd{c}\Dd{d}\delta\qty(\hat h-h)\exp\qty(-S_X\qty[X, h]-S_{\textnormal{gh}}\qty[b,c,d,h]-\lambda\chi)
+\end{align*}
+where $\hat h$ is a family of choices of representatives of the equivalence classes of the Gauge equivalent metrics, of course this choice is 
+dependent on the equivalence class $h$ lies in, so, in a certain sense we have $\hat h=\hat h\qty[h]$,
+\begin{align*}
+    Z&=\int\Dd{h}\Dd{X}\Dd{b}\Dd{c}\Dd{d}\delta\qty(\hat h\qty[h]-h)\exp\qty(-S_X\qty[X, h]-S_{\textnormal{gh}}\qty[b,c,d,h]-\lambda\chi)
+\end{align*}
+we express the delta functional in terms of a path integral,
+\begin{align*}
+    Z&=\int\Dd{h}\Dd{X}\Dd{b}\Dd{c}\Dd{d}\Dd{B}\exp\qty(\frac\im{4\pi}\int\dd[2]{\sigma}\sqrt{h}B^{ab}\qty(\hat h_{ab}\qty[h]-h_{ab}))\exp\qty(-S_X\qty[X, h]-S_{\textnormal{gh}}\qty[b,c,d,h]-\lambda\chi)\\
+    Z&=\int\Dd{h}\Dd{X}\Dd{b}\Dd{c}\Dd{d}\Dd{B}\exp\qty(-S_X\qty[X, h]-S_{\textnormal{gh}}\qty[b,c,d,h]-S_{\textnormal{gf}}\qty[B,h]-\lambda\chi)
+\end{align*}
+where we lastly defined the Gauge Fixing Action. This is the final expression for our path integral with the identifications,
+\begin{subequations}\label{actions}
+\begin{align}
+    S_X\qty[X, h]+\lambda\chi&=\frac{1}{4\pi\alpha'}\int\limits_M\dd[2]{\sigma}\sqrt{h}h^{ab}\partial_a X^\mu\partial_b X_\mu+\frac\lambda{4\pi}\int\limits_M\dd[2]{\sigma}\sqrt{h}R+\frac\lambda{2\pi}\int\limits_{\partial M}\dd{s}K\\
+    S_{\textnormal{gh}}\qty[b,c,d,h]&=\frac{1}{2\pi}\int\dd[2]{\sigma}\sqrt{h}b^{ab}\qty[h_{ab}d+\nabla_{a}c_b]\\
+    S_{\textnormal{gf}}\qty[B,h]&=-\frac\im{4\pi}\int\dd[2]{\sigma}\sqrt{h}B^{ab}\qty(\hat h_{ab}\qty[h]-h_{ab})
+\end{align}
+\end{subequations}

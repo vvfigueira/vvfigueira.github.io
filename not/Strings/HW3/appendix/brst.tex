@@ -1,167 +1,86 @@
-\section{BRST}
-\subsection{Faddeev-Popov Gauge Fixing}
+\section{BRST Quantization}
 
-Our Action functional is,
+Following the action principle derived from the Faddeev-Popov Gauge Fixing \ref{actions}, we can describe it's BRST symmetry by 
+the transformations of the \textit{matter fields} under Gauge, we know the following,
 \begin{align*}
-    S_{X}+\lambda\chi&=\frac{1}{4\pi\alpha'}\int\limits_M\dd[2]{\sigma}\sqrt{h}h^{ab}\partial_a X^\mu\partial_b X_\mu+\frac\lambda{4\pi}\int\limits_M\dd[2]{\sigma}\sqrt{h}R+\frac\lambda{2\pi}\int\limits_{\partial M}\dd{s}K\numberthis\label{bosonicaction}
+    X^\mu\qty(\sigma)&\rightarrow X'^\mu\qty(\sigma'\qty(\sigma))=X^\mu\qty(\sigma)\\
+    h_{ab}\qty(\sigma)&\rightarrow h'_{ab}\qty(\sigma'\qty(\sigma))=\exp\qty(2\omega\qty(\sigma))\pdv{\sigma^c}{\sigma'^a}\pdv{\sigma^d}{\sigma'^b}h_{cd}\qty(\sigma)
 \end{align*}
-we would like to define the quantum theory by means of the path integral, that is, we expect that,
+which have an \textit{infinitesimal} form,
 \begin{align*}
-    Z&\stackrel{?}{=}\int\Dd{X}\Dd{h}\exp\qty(-S_X\qty[X,h]-\lambda\chi)\numberthis\label{try1}
+    \delta X^\mu&=\xi^a\partial_a X^\mu\\
+    \delta h_{ab}&=2\omega h_{ab}+\nabla_a\xi_b+\nabla_b\xi_a
 \end{align*}
-should give a well defined theory, but, already from \ref{try1} there're several problems that arise, one of them is: \textit{What should be interpreted from the path integral itself? We haven't 
-defined any manifold to our metric $h$ and scalar fields $X$ to live in, also, even if we had defined such, the path integral relies on explicit coordinate points, $\Dd{h}=\prod\limits_{\sigma}\dd{h_{ab}\qty(\sigma)}$, 
-which are highly dependent on charts.}
-
-This is a valid claim, our way to avoid it is to \textit{define} $\Dd{h}$ to mean: \textit{Sum over all \textbf{allowed} two dimensional Riemannian manifolds, and all 
-possible metric structures in these.} Here, \textit{\textbf{allowed}} requires a prescription, which manifolds are or aren't allowed impacts the obtained string theory. Happily, 
-every two dimensional manifold has a definite value for the Euler Characteristic $\chi$, hence, we can sort them out by it,
+the BRST transformation can be obtained from these by the substitution inferred from the Faddeev-Popov gauge fix, that is, $\xi_a\rightarrow \im\epsilon c_a$ and 
+$\omega\rightarrow \im \epsilon d$, where $\epsilon$ is a Grassmannian parametrization of the BRST transformation,
 \begin{align*}
-    Z&\stackrel{?}{=}\sum\limits_{\qty{M}}\int\limits_{\textnormal{Met}\qty(M)}\Dd{h}\int\Dd{X}\exp\qty(-S_X\qty[X,h]-\lambda\chi)\\
-    Z&\stackrel{?}{=}\sum\limits_{\qty{\chi}}\exp\qty(-\lambda \chi)\sum\limits_{\qty{M_\chi}}\int\limits_{\textnormal{Met}\qty(M_\chi)}\Dd{h}\int\Dd{X}\exp\qty(-S_X\qty[X,h])\numberthis\label{try2}
-\end{align*}
-Where $M$ is to be understood as a two dimensional Riemannian manifold and $M_\chi$ is one with Euler Characteristic $\chi$, 
-$\textnormal{Met}\qty(M_\chi)$ is the space of all metrics which can be assigned to $M_\chi$, we have written $\sum\limits_{\qty{M_\chi}}$ in the 
-special case of there being more than one manifold with same Euler Characteristic\footnote{As we're interested only in Differentiable Manifolds, more than manifold should read: More than one equivalence class of Differentiable Manifolds.}, also, the functional integral over $X$ should be read as integrating over all 
-maps from $M_\chi$ to $\mathbb R^{1,D-1}$. While this is better defined than before, i.e. not coordinate dependent, we still have a few problems, first, 
-it's know that \ref{bosonicaction} has a Gauge Group of Diff$\qty(M)\times$Weyl$\qty(M)$, but, in our second try of a definition of the path integral, we're integrating the metrics over Met$\qty(M_\chi)$, 
-it's clear that may happen of two elements of Met$\qty(M_\chi)$ be equivalent under a Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$ transformation, to put in more 
-clear terms, we're worried if exists $h',h\in\textnormal{Met}\qty(M_\chi)$ such,
-\begin{align*}
-    h'_{ab}\qty(\sigma'\qty(\sigma))=\exp\qty(2\omega\qty(\sigma))\pdv{ \sigma^c}{\sigma'^a}\pdv{ \sigma^d}{\sigma'^b} h_{cd}\qty( \sigma)
-\end{align*}
-the existence of those kinds of elements is troublesome, as Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$ is a infinite dimensional group of redundancies, 
-this means we're over-counting physical configurations by a infinite amount. The solution is to look for an equivalence class of metrics under this Gauge Group 
-action,
-\begin{align*}
-    \mathscr{M}_\chi=\textnormal{Met}\qty(M_\chi)/\textnormal{Diff}\qty(M_\chi)\times\textnormal{Weyl}\qty(M_\chi)
-\end{align*}
-the equivalence class is to be understood as\footnote{In all charts.},
-\begin{align*}
-    h'\sim h\Leftrightarrow h'_{ab}\qty(\sigma'\qty(\sigma))=\exp\qty(2\omega\qty(\sigma))\pdv{ \sigma^c}{\sigma'^a}\pdv{ \sigma^d}{\sigma'^b} h_{cd}\qty( \sigma)
-\end{align*}
-that is, two metrics are the same representative of an element of $\mathscr M_\chi$ iff they differ by a composition of a Diffeomorphism and Weyl transformation. We'll denote a given composition of a Diffeomorphism followed by a Weyl transformation by $\zeta$,
-\begin{align*}
-    h'=\zeta\circ h
+    \delta_{\textnormal{BRST}} X^\mu&=\im\epsilon c^a\partial_a X^\mu\\
+    \delta_{\textnormal{BRST}} h_{ab}&=2\im\epsilon d h_{ab}+2\im\epsilon\nabla_{(a} c_{b)}
 \end{align*}
 
-Notice that the set of equivalence class of metrics, or, the set of inequivalent Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$ metrics $\mathscr M_\chi$ is highly 
-dependent on the topology of $M_\chi$, for example, for $M_\chi\cong\mathbb R^2\cong\mathbb C$, it's trivial, there is just one point in the set $\mathscr M_\chi$, in other words, 
-every metric is equivalent, which isn't true for more complex topologies.
-
-Thus, it's possible for us to set up a well defined version of the path integral, just replace Met$\qty(M_\chi)$ by $\mathscr M_\chi$\footnote{By making this procedure, we 
-eliminate the redundancies of Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$ with except of a measure zero subset of transformations, known as \textit{conformal killing group} --- CKG ---, so we're still over-counting 
-the physical contributions, but, this time by a finite number, this doesn't spoil the well-definiteness of the path integral, but do spoil the normalization. There is ways of correcting this, but we'll no dwell upon.},
+This can be checked to be the right transformation by looking at how $S_X$ transforms under it,
 \begin{align*}
-    Z&=\sum\limits_{\qty{\chi}}\exp\qty(-\lambda g)\sum\limits_{\qty{M_\chi}}\int\limits_{\mathscr M_\chi}\Dd{h}\int\Dd{X}\exp\qty(-S_X\qty[X,h])\numberthis\label{try3}
+    \delta_{\textnormal{BRST}}S_X&=\frac{1}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}h^{ab}\partial_aX^\mu\partial_b \delta_{\textnormal{BRST}}X_\mu+\frac{1}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\delta_{\textnormal{BRST}}\qty(\sqrt{h}h^{ab})\partial_aX^\mu\partial_b X_\mu
 \end{align*}
-where the integration is to be understood as by choosing for each equivalence class in $\mathscr M_\chi$ a representative element in Met$\qty(M_g)$. 
-While this is a satisfactory definition for the path integral, it feels a little clunky, we rather have an path integral over all the possible metrics --- in the sense defined before ---, 
-well, this is achievable. First, for each equivalence class of $\mathscr M_\chi$ elect one representative element of Met$\qty(M_\chi)$, we'll denote these elements 
-as $\hat h\qty(\vb t)$ --- here $\vb t$ is a parametrization of the correspondent equivalence class in $\mathscr M_\chi$, we haven't proved here, and won't, but $\mathscr M_\chi$ is a finite $N$ dimensional manifold, hence, $\vb t$ is a $N$-tuple of real numbers ---, by construction, these representatives are 
-inequivalent under Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$, hence,
+first, let's understood each variation part by part,
 \begin{align*}
-    \zeta_1\circ \hat h\qty(\vb t_1)=\zeta_2\circ\hat h\qty(\vb t_2)\Leftrightarrow \vb t_1=\vb t_2\textnormal{ and }\zeta_1=\zeta_2
+    0&=\delta_{\textnormal{BRST}}\tensor{\delta}{_a^c}\\
+    0&=\delta_{\textnormal{BRST}}\qty(h_{ab}h^{bc})\\
+    0&=h_{ab}\delta_{\textnormal{BRST}}h^{bc}+h^{bc}\delta_{\textnormal{BRST}}h_{ab}\\
+    h_{ab}\delta_{\textnormal{BRST}}h^{bc}&=-2\im\epsilon h^{bc}\qty(d h_{ab}+\nabla_{(a} c_{b)})\\
+    h^{da}h_{ab}\delta_{\textnormal{BRST}}h^{bc}&=-2\im\epsilon h^{da}h^{bc}\qty(d h_{ab}+\nabla_{(a} c_{b)})\\
+    \tensor{\delta}{^d_b}\delta_{\textnormal{BRST}}h^{bc}&=-2\im\epsilon \qty(d \tensor{h}{^d^c}+\nabla^{(d} c^{c)})\\
+    \delta_{\textnormal{BRST}}h^{dc}&=-2\im\epsilon \qty(d \tensor{h}{^d^c}+\nabla^{(d} c^{c)})
 \end{align*}
-so that every element in Met$\qty(M_g)$ can be written as a unique\footnote{Apart from the measure zero CKG.\label{CKG}} composition of a given $\zeta$ into a given $\hat h\qty(\vb t)$. Now, we rewrite 
-the pictorial integral over $\mathscr M_\chi$ is a more formal way, using the parametrization we just described,
+and,
 \begin{align*}
-    Z&=\sum\limits_{\qty{\chi}}\exp\qty(-\lambda g)\sum\limits_{\qty{M_\chi}}\int\limits_{\mathscr M_\chi}\dd[N]{\vb t}\int\Dd{X}\exp\qty(-S_X\qty[X,\hat h\qty(\vb t)])\\
-    Z&=\sum\limits_{\qty{\chi}}\exp\qty(-\lambda g)\sum\limits_{\qty{M_\chi}}\int\limits_{\mathscr M_\chi}\dd[N]{\vb t}\int\limits_{\textnormal{Diff}\qty(M_\chi)\times\textnormal{Weyl}\qty(M_\chi)}\Dd{\zeta}\delta\qty(\zeta)\int\Dd{X}\exp\qty(-S_X\qty[X,\hat h\qty(\vb t)])
+    \delta_{\textnormal{BRST}}\sqrt{h}&=\frac12\frac{1}{\sqrt{h}}\delta_{\textnormal{BRST}}\qty(\Det\qty[h_{ab}])\\
+    \delta_{\textnormal{BRST}}\sqrt{h}&=\frac12\frac{1}{\sqrt{h}}\delta_{\textnormal{BRST}}\qty(\exp\qty(\ln\qty(\Det\qty[h_{ab}])))\\
+    \delta_{\textnormal{BRST}}\sqrt{h}&=\frac12\frac{1}{\sqrt{h}}\delta_{\textnormal{BRST}}\qty(\exp\qty(\Tr\qty[\ln\qty(h_{ab})]))\\
+    \delta_{\textnormal{BRST}}\sqrt{h}&=\frac12\frac{1}{\sqrt{h}}\qty(\exp\qty(\Tr\qty[\ln\qty(h_{ab})]))\delta_{\textnormal{BRST}}\qty(\Tr\qty[\ln\qty(h_{ab})])\\
+    \delta_{\textnormal{BRST}}\sqrt{h}&=\frac12\frac{1}{\sqrt{h}}h\Tr\qty[\delta_{\textnormal{BRST}}\qty(\ln\qty(h_{ab}))]\\
+    \delta_{\textnormal{BRST}}\sqrt{h}&=\frac12\sqrt{h}\Tr\qty[h^{ca}\delta_{\textnormal{BRST}}h_{ab}]\\
+    \delta_{\textnormal{BRST}}\sqrt{h}&=\frac12\sqrt{h}h^{ba}\delta_{\textnormal{BRST}}h_{ab}\\
+    \delta_{\textnormal{BRST}}\sqrt{h}&=\im\epsilon\sqrt{h}h^{ba}\qty(d h_{ab}+\nabla_{(a}c_{b)})\\
+    \delta_{\textnormal{BRST}}\sqrt{h}&=\im\epsilon\sqrt{h}\qty(2d+\nabla_ac^a)
 \end{align*}
-in the last line we introduced a one by integrating over the delta functional, as this integral picks only $\zeta=0$, what should be understood as $\zeta=\textnormal{id}$ in the group, 
-we can deform a little the integration to,
+so that,
 \begin{align*}
-    Z&=\sum\limits_{\qty{\chi}}\exp\qty(-\lambda g)\sum\limits_{\qty{M_\chi}}\int\limits_{\mathscr M_\chi}\dd[N]{\vb t}\int\limits_{\textnormal{Diff}\qty(M_\chi)\times\textnormal{Weyl}\qty(M_\chi)}\Dd{\zeta}\delta\qty(\zeta)\int\Dd{X}\exp\qty(-S_X\qty[X, \zeta\circ\hat h\qty(\vb t)])\numberthis\label{try4}
-\end{align*}
-
-This is almost in the form that we would like, notice that we're integrating over the set of representative of the inequivalent metrics, $\dd[N]{\vb t}$, and also over the whole group Diff$\qty(M_\chi)\times$Weyl$\qty(M_\chi)$, $\Dd{\zeta}$, 
-by construction, \textbf{every} metric in Met$\qty(M_\chi)$ can be written uniquely\footnote{\ref{CKG}.} as,
-\begin{align*}
-    h=\zeta_{\vb t}\circ \hat h\qty(\vb t)
-\end{align*}
-in other words, to integrate over $\dd[N]{\vb t}\Dd{\zeta}$ is to integrate over all metrics of the form $\zeta\circ \hat h\qty(\vb t)$, which is to integrate over 
-all metrics $h=\zeta\circ \hat h\qty(\vb t)$ in Met$\qty(M_\chi)$! We cannot yet make this change, due to the presence of an explicit dependence in $\zeta$ at the functional delta. 
-We'll eliminate it by means of a change of variable of the functional delta, notice that,
-\begin{align*}
-    \delta\qty(\hat h\qty(\vb t)-\zeta\circ \hat h\qty(\vb t))
-\end{align*}
-picks up just the contribution of $\zeta=0$, so it's a good candidate for a change of variables,
-\begin{align*}
-    \delta\qty(\hat h\qty(\vb t)-\zeta\circ \hat h\qty(\vb t))=\delta\qty(\zeta)\abs{\Det\qty[\fdv{}{\zeta}\qty(\hat h\qty(\vb t)-\zeta\circ\hat h\qty(\vb t))\eval_{\zeta=0}]}^{-1}
+    \delta_{\textnormal{BRST}}\qty(\sqrt{h}h^{ab})&=\delta_{\textnormal{BRST}}\qty(\sqrt h)h^{ab}+ \sqrt{h}\delta_{\textnormal{BRST}}\qty(h^{ab})\\
+    \delta_{\textnormal{BRST}}\qty(\sqrt{h}h^{ab})&=\im\epsilon\sqrt{h}\qty(2d+\nabla_cc^c)h^{ab}-2\im\epsilon \sqrt{h}\qty(d \tensor{h}{^a^b}+\nabla^{(a} c^{b)})\\
+    \delta_{\textnormal{BRST}}\qty(\sqrt{h}h^{ab})&=2\im\epsilon\sqrt{h}\qty(\frac12h^{ab}\nabla_cc^c-\nabla^{(a} c^{b)})
 \end{align*}
 
-in this way is possible to separate the integral over all metrics $\int\Dd{h}$ into an integration over all inequivalent metrics $\int\Dd{\hat h}$ 
-and an integration over all possible Diff$\times$Weyl transformations $\int\Dd{\zeta}$, so that the partition function can be rewrote as,
+Putting everything together now,
 \begin{align*}
-    Z&\stackrel{?}{=}\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\exp\qty(-S_X\qty[X,\zeta\circ h])
+    \delta_{\textnormal{BRST}}S_X&=\frac{1}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}h^{ab}\partial_aX^\mu\partial_b \delta_{\textnormal{BRST}}X_\mu+\frac{1}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\delta_{\textnormal{BRST}}\qty(\sqrt{h}h^{ab})\partial_aX^\mu\partial_b X_\mu\\
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im\epsilon}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}h^{ab}\partial_aX^\mu\partial_b \qty[c^c\partial_cX_\mu]+\frac{\im\epsilon}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}\qty(\frac12h^{ab}\nabla_cc^c-\nabla^{(a} c^{b)})\partial_aX^\mu\partial_b X_\mu\\
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im\epsilon}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}h^{ab}\partial_aX^\mu\qty(\qty(\nabla_bc^c)\partial_cX_\mu+c^c\nabla_b\nabla_cX_\mu)\\
+    &\quad\quad\quad+\frac{\im\epsilon}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}\qty(\frac12h^{ab}\nabla_cc^c-\nabla^a c^b)\partial_aX^\mu\partial_b X_\mu\\
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im\epsilon}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}\partial_aX^\mu\partial_bX_\mu\nabla^ac^b+\frac{\im\epsilon}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}h^{ab}c^c\partial_aX^\mu \nabla_c\nabla_bX_\mu\\
+    &\quad\quad\quad+\frac{\im\epsilon}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}\qty(\frac12h^{ab}\nabla_cc^c-\nabla^a c^b)\partial_aX^\mu\partial_b X_\mu\\
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im\epsilon}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}h^{ab}c^c\partial_aX^\mu \nabla_c\partial_bX_\mu+\frac{\im\epsilon}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}h^{ab}\nabla_cc^c\partial_aX^\mu\partial_b X_\mu\\
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im\epsilon}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}c^c\nabla_c\qty(h^{ab}\partial_aX^\mu \partial_bX_\mu)+\frac{\im\epsilon}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}h^{ab}\nabla_cc^c\partial_aX^\mu\partial_b X_\mu\\
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im\epsilon}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}\nabla_c\qty(c^c h^{ab}\partial_aX^\mu \partial_bX_\mu)\\
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im\epsilon}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\partial_c\qty(\sqrt{h}c^c h^{ab}\partial_aX^\mu \partial_bX_\mu)
 \end{align*}
-this still has the same problem of before, we're over-integrating the physical configurations, that is, $\hat h$ are the physical configurations, 
-but we're integrating also over the whole Diff$\times$Weyl group in $\Dd{\zeta}$. One way of circumventing this problem is introducing by 
-hand a Dirac delta to force $\zeta=0$, what also forces we to integrate only over one copy of the physical configurations,
+which is a total derivative that should be zero for the theory to be BRST invariant. What should also hold is $S_{\textnormal{gh}}+S_{\textnormal{gf}}$ 
+to be BRST exact, for ensuring this we need to know the BRST transformations of the ghosts and auxiliary fields,
 \begin{align*}
-    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\delta\qty(\zeta)\exp\qty(-S_X\qty[X,\zeta\circ h])
+    \delta_{\textnormal{BRST}} B_{ab}&=0\\
+    \delta_{\textnormal{BRST}} b_{ab}&=-\epsilon B_{ab}\\
+    \delta_{\textnormal{BRST}} d&=0\\
+    \delta_{\textnormal{BRST}} c^a&=-\frac\im 2\epsilon \tensor{f}{^a_b_c}c^bc^c
 \end{align*}
-but this is not the most general way, we could set $\zeta=f\qty(\sigma)$, for a arbitrary function, and this would still give the same theory,
+To prove BRST exactness of $S_{\textnormal{gh}}+S_{\textnormal{gf}}$ we have to prove $S_{\textnormal{gh}}+S_{\textnormal{gf}}=\delta_{\textnormal{BRST}}\mathcal O$ 
+for some combination of fields $\mathcal O$, luckily, the BRST procedure already has a candidate for this,
 \begin{align*}
-    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\delta\qty(\zeta-f)\exp\qty(-S_X\qty[X,\zeta\circ h])
-\end{align*}
-we can go even further and give a function $G\qty(\zeta)$ such that the solution to $G\qty(\zeta)=0$ is only $\zeta=f$, so that we can use the relations between 
-Dirac deltas,
-\begin{align*}
-    \delta\qty(G\qty(\zeta))=\abs{\Det\qty[\fdv{G}{\zeta}]\eval_{\zeta=f}}^{-1}\delta\qty(\zeta-f)
-\end{align*}
-to obtain,
-\begin{align*}
-    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\delta\qty(\zeta-f)\exp\qty(-S_X\qty[X,\zeta\circ h])\\
-    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\abs{\Det\qty[\fdv{G}{\zeta}]\eval_{\zeta=f}}\delta\qty(G\qty(\zeta))\exp\qty(-S_X\qty[X,\zeta\circ \hat h])\\
-    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\abs{\Det\qty[\fdv{G}{\zeta}]\eval_{\zeta=f}}\delta\qty(G\qty(\zeta))\exp\qty(-S_X\qty[X,\zeta\circ \hat h])
-\end{align*}
-
-There are some details here, as $\zeta$ is to represent both a Weyl and a Diff, it has to represent both a function $\omega$ and a vector field $\xi$ such 
-that,
-\begin{align*}
-    \zeta \circ \hat h&=\hat h+2\omega \hat h+\pounds_\xi \hat h+\mathcal O\qty(\omega^2,\xi^2,\omega\xi)\\
-    \qty[\zeta \circ\hat  h]_{ab}&=\hat h_{ab}+2\omega \hat h_{ab}+2\nabla_{(a}\xi_{b)}+\mathcal O\qty(\omega^2,\xi^2,\omega\xi)
-\end{align*}
-this means both $\zeta=f$ and $G\qty(\zeta)=0$ are in fact a collection of various equations. In particular, we'll choose
-\begin{align*}
-    G_{ab}\qty(\zeta)&=\qty[\tilde h]_{ab}-\qty[\zeta\circ \hat h]_{ab}
-\end{align*}
-for a particular metric $\tilde h$. As $G_{ab}\qty(\zeta)$ is in fact a function of $h=\zeta\circ \hat h$ alone,
-\begin{align*}
-    G_{ab}\qty(\zeta)&=\qty[\tilde h]_{ab}-\qty[\zeta\circ \hat h]_{ab}=\qty[\tilde h]_{ab}-\qty[h]_{ab}=G_{ab}\qty(h)
-\end{align*}
-we can rewrite as,
-\begin{align*}
-    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\abs{\Det\qty[\fdv{G_{ab}}{\zeta}]\eval_{\zeta=f}}\delta\qty(G_{ab}\qty(\zeta))\exp\qty(-S_X\qty[X,\zeta\circ \hat h])\\
-    Z&=\int\Dd{X}\Dd{\hat h}\Dd{\zeta}\abs{\Det\qty[\fdv{G_{ab}}{\zeta}]\eval_{G_{ab}\qty(h)=0}}\delta\qty(G_{ab}\qty(h))\exp\qty(-S_X\qty[X,h])
-\end{align*}
-
-Notice that every term in the integrand depends on $\zeta$ only through $h=\zeta\circ \hat h$, this is what we do want, so that we can 
-recombine the integration measure $\int\Dd{\hat h}\Dd{\zeta}=\int\Dd{h}$, the only problem in this procedure is the term,
-\begin{align*}
-    \Det\qty[\fdv{G_{ab}}{\zeta}]\eval_{G_{ab}\qty(h)=0}
-\end{align*}
-which is manifestly dependent on $\zeta$, or at least looks like it is. We'll prove it only depends on $\zeta$ through 
-$h = \zeta\circ \hat h$. The point is, if
-\begin{align*}
-    G_{ab}\qty(h)={\tilde h}_{ab}-h_{ab}={\tilde h}_{ab}-\qty[\zeta\circ \hat h]_{ab}=0
-\end{align*}
-is needed to have a solution, then exists the transformation $\tilde\zeta$, such that,
-\begin{align*}
-    \tilde\zeta\circ \hat h=\tilde h
-\end{align*}
-as this transformation is also an element of the gauge \textbf{group}, it certainly has an inverse, $\tilde\zeta^{-1}\circ \tilde \zeta \circ \hat h=\hat h$, thus, 
-\begin{align*}
-    G_{ab}\qty(h)&=\tilde h-\zeta\circ \hat h\\
-    G_{ab}\qty(h)&=\tilde h-\zeta\circ \tilde\zeta^{-1}\circ \tilde \zeta\circ\hat h\\
-    G_{ab}\qty(h)&=\tilde h-\zeta\circ \tilde\zeta^{-1}\circ \tilde h\\
-    G_{ab}\qty(h)&=\tilde h-\zeta'\circ \tilde h
-\end{align*}
-where we defined the new gauge transformation $\zeta'=\zeta\circ \tilde \zeta^{-1}$, notice that,
-\begin{align*}
-    h&=\zeta\circ \hat h\\
-    h&=\zeta\circ \tilde\zeta^{-1}\circ \tilde \zeta \circ\hat h\\
-    h&=\zeta'\circ \tilde h
+    \delta_{\textnormal{BRST}}\qty(\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty(\hat h^{ab}-h^{ab}))&=\im\epsilon\int\dd[2]{\sigma}\sqrt{h}\qty(2d+\nabla_c c^c)b_{ab}\qty(\hat h^{ab}-h^{ab})\\
+    &\quad\quad\quad+\int\dd[2]{\sigma}\sqrt{h}\delta_{\textnormal{BRST}}\qty(b_{ab})\qty(\hat h^{ab}-h^{ab})\\
+    &\quad\quad\quad-\int\dd[2]{\sigma}\sqrt{h}b_{ab}\delta_{\textnormal{BRST}}\hat h^{ab}\\
+    &\quad\quad\quad+2\im\epsilon\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty(dh^{ab}+\nabla^{a}c^{b})\\
+    \delta_{\textnormal{BRST}}\qty(\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty(\hat h^{ab}-h^{ab}))&=-\im\epsilon\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty(\hat h^{ab}-h^{ab})\qty(2d+\nabla_c c^c)\\
+    &\quad\quad\quad+\int\dd[2]{\sigma}\sqrt{h}\delta_{\textnormal{BRST}}\qty(b_{ab})\qty(\hat h^{ab}-h^{ab})\\
+    &\quad\quad\quad-\int\dd[2]{\sigma}\sqrt{h}b_{ab}\delta_{\textnormal{BRST}}\hat h^{ab}\\
+    &\quad\quad\quad+4\pi\im\epsilon S_{\textnormal{gh}}
 \end{align*}
