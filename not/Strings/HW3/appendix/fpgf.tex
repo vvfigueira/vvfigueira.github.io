@@ -151,14 +151,14 @@ dependent on the equivalence class $h$ lies in, so, in a certain sense we have $
 \end{align*}
 we express the delta functional in terms of a path integral,
 \begin{align*}
-    Z&=\int\Dd{h}\Dd{X}\Dd{b}\Dd{c}\Dd{d}\Dd{B}\exp\qty(\frac\im{4\pi}\int\dd[2]{\sigma}\sqrt{h}B^{ab}\qty(\hat h_{ab}\qty[h]-h_{ab}))\exp\qty(-S_X\qty[X, h]-S_{\textnormal{gh}}\qty[b,c,d,h]-\lambda\chi)\\
+    Z&=\int\Dd{h}\Dd{X}\Dd{b}\Dd{c}\Dd{d}\Dd{B}\exp\qty(\frac\im{4\pi}\int\dd[2]{\sigma}\sqrt{h}B^{ab}\qty(\hat h_{ab}\qty[h]-h_{ab}))\exp\qty(-S_X-S_{\textnormal{gh}}-\lambda\chi)\\
     Z&=\int\Dd{h}\Dd{X}\Dd{b}\Dd{c}\Dd{d}\Dd{B}\exp\qty(-S_X\qty[X, h]-S_{\textnormal{gh}}\qty[b,c,d,h]-S_{\textnormal{gf}}\qty[B,h]-\lambda\chi)
 \end{align*}
 where we lastly defined the Gauge Fixing Action. This is the final expression for our path integral with the identifications,
 \begin{subequations}\label{actions}
 \begin{align}
     S_X\qty[X, h]+\lambda\chi&=\frac{1}{4\pi\alpha'}\int\limits_M\dd[2]{\sigma}\sqrt{h}h^{ab}\partial_a X^\mu\partial_b X_\mu+\frac\lambda{4\pi}\int\limits_M\dd[2]{\sigma}\sqrt{h}R+\frac\lambda{2\pi}\int\limits_{\partial M}\dd{s}K\\
-    S_{\textnormal{gh}}\qty[b,c,d,h]&=\frac{1}{2\pi}\int\dd[2]{\sigma}\sqrt{h}b^{ab}\qty[h_{ab}d+\nabla_{a}c_b]\\
-    S_{\textnormal{gf}}\qty[B,h]&=-\frac\im{4\pi}\int\dd[2]{\sigma}\sqrt{h}B^{ab}\qty(\hat h_{ab}\qty[h]-h_{ab})
+    S_{\textnormal{gh}}\qty[b,c,d,h]&=\frac{1}{2\pi}\int\limits_M\dd[2]{\sigma}\sqrt{h}b^{ab}\qty[h_{ab}d+\nabla_{a}c_b]\\
+    S_{\textnormal{gf}}\qty[B,h]&=-\frac\im{4\pi}\int\limits_M\dd[2]{\sigma}\sqrt{h}B^{ab}\qty(\hat h_{ab}\qty[h]-h_{ab})
 \end{align}
 \end{subequations}
