@@ -1,5 +1,31 @@
 \problem{}
 \probitem{}
+
+For an operator $\mathcal O$ to be BRST closed, it means $\comm{Q_{\textnormal{BRST}}}{\mathcal O}=0$, just remembering the usual BRST transformations\footnote{We're using a graded commutator notation, that is, it's to be interpreted as 
+either a commutator or an anti-commutator depending on the statistic of what is inside.},
+\begin{align*}
+    \comm{Q_{\textnormal{BRST}}}{X^\mu}&=\qty(c\partial+\tilde c\bar\partial)X^\mu\\
+    \comm{Q_{\textnormal{BRST}}}{b}&=T^X+T^g\\
+    \comm{Q_{\textnormal{BRST}}}{c}&=c\partial c
+\end{align*}
+with,
+\begin{align*}
+    T^X&=\frac{1}{\alpha'}\cnord{\partial X^\mu\partial X_\mu},\ \ \ T^g=\cnord{c\partial b}-2\cnord{b\partial c}
+\end{align*}
+so,
+\begin{align*}
+    \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu\comm{Q_{\textnormal{BRST}}}{c\partial X^\mu\exp\qty(\im k\cdot X)}\\
+    \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu\comm{Q_{\textnormal{BRST}}}{c}\partial X^\mu\exp\qty(\im k\cdot X)-\lambda^a\epsilon_\mu c\comm{Q_{\textnormal{BRST}}}{\partial X^\mu\exp\qty(\im k\cdot X)}\\
+    \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu c\partial c\partial X^\mu\exp\qty(\im k\cdot X)\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu c\partial X^\mu\comm{Q_{\textnormal{BRST}}}{\exp\qty(\im k\cdot X)}-\lambda^a\epsilon_\mu c\comm{Q_{\textnormal{BRST}}}{\partial X^\mu}\exp\qty(\im k\cdot X)\\
+    \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu c\partial c\partial X^\mu\exp\qty(\im k\cdot X)\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu c\partial X^\mu\comm{Q_{\textnormal{BRST}}}{\exp\qty(\im k\cdot X)}-\lambda^a\epsilon_\mu c\partial\comm{Q_{\textnormal{BRST}}}{ X^\mu}\exp\qty(\im k\cdot X)\\
+    \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu c\partial c\partial X^\mu\exp\qty(\im k\cdot X)\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu c\partial X^\mu\comm{Q_{\textnormal{BRST}}}{\exp\qty(\im k\cdot X)}-\lambda^a\epsilon_\mu c\partial\qty(c\partial+\tilde c\bar\partial)X^\mu\exp\qty(\im k\cdot X)\\
+    \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu c\partial c\partial X^\mu\exp\qty(\im k\cdot X)\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu c\partial X^\mu\comm{Q_{\textnormal{BRST}}}{\exp\qty(\im k\cdot X)}-\lambda^a\epsilon_\mu c\partial\qty(c\partial+\tilde c\bar\partial)X^\mu\exp\qty(\im k\cdot X)\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu cc\partial-\lambda^a\epsilon_\mu c\partial\qty(\tilde c\bar\partial)X^\mu\exp\qty(\im k\cdot X)
+\end{align*}
 \probitem{}
 \probitem{}
 \probitem{}

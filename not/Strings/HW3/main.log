@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.23)  28 MAY 2025 10:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.23)  1 JUN 2025 12:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -964,18 +964,19 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 \openout6 = `main.toc'.
 
 
-(./sections/prob1.tex)
+(./sections/prob1.tex
 
 [1
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./sections/prob2.tex)
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 
-[2] (./sections/prob3.tex)
+[2] (./sections/prob2.tex)
 
-[3] (./appendix/fpgf.tex
+[3] (./sections/prob3.tex)
 
-[4]
+[4] (./appendix/fpgf.tex
+
+[5]
 Overfull \hbox (19.82611pt too wide) in paragraph at lines 47--50
 []\OT1/cmr/m/n/12 Notice that the set of equiv-a-lence class of met-rics, or, t
 he set of in-equiv-a-lent Diff$[]\OMS/cmsy/m/n/12 ^^B$\OT1/cmr/m/n/12 Weyl$[]$
@@ -983,9 +984,9 @@ he set of in-equiv-a-lent Diff$[]\OMS/cmsy/m/n/12 ^^B$\OT1/cmr/m/n/12 Weyl$[]$
 
 
 
-[5]
-
 [6]
+
+[7]
 Overfull \hbox (35.89258pt too wide) detected at line 139
 []
  []
@@ -997,9 +998,9 @@ Overfull \hbox (14.74951pt too wide) detected at line 146
 
 
 
-[7])
+[8])
 
-[8] (./appendix/brst.tex
+[9] (./appendix/brst.tex
 Overfull \hbox (4.1893pt too wide) in paragraph at lines 13--16
 \OT1/cmr/m/n/12 Faddeev-Popov gauge fix, that is, $\OML/cmm/m/it/12 ^^X[] \OMS/
 cmsy/m/n/12 ! []\OML/cmm/m/it/12 ^^Oc[]$ \OT1/cmr/m/n/12 and $\OML/cmm/m/it/12 
@@ -1009,18 +1010,20 @@ m/it/12 ^^O$ \OT1/cmr/m/n/12 is a Grass-man-nian parametriza-
 
 
 
-[9]
+[10]
 Overfull \hbox (6.79837pt too wide) detected at line 66
 []
  []
 
 
 
-[10]
+[11]
 
-[11])
+[12]
 
-[12] (./main.aux)
+[13])
+
+[14] (./main.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
@@ -1029,13 +1032,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: ED1DD1133FA7DF85B34843678D7C99BE;1715.
  ) 
 Here is how much of TeX's memory you used:
- 30478 strings out of 473362
- 598894 string characters out of 5725050
- 1032059 words of memory out of 5000000
+ 30481 strings out of 473362
+ 598919 string characters out of 5725050
+ 1043059 words of memory out of 5000000
  53006 multiletter control sequences out of 15000+600000
  572937 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,18n,107p,581b,516s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,18n,107p,581b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dis
@@ -1056,10 +1059,10 @@ texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/20
 dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/font
 s/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/ty
 pe1/public/rsfs/rsfs10.pfb>
-Output written on main.pdf (12 pages, 266817 bytes).
+Output written on main.pdf (14 pages, 277677 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 245 compressed objects within 3 object streams
- 48 named destinations out of 1000 (max. 500000)
+ 318 PDF objects out of 1000 (max. 8388607)
+ 255 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

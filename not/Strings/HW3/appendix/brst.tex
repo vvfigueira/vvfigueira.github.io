@@ -70,8 +70,8 @@ normalization of $\delta\qty(f\qty(\sigma))\propto\int\Dd{B}\exp\qty(\im\int\dd[
 \begin{align*}
     \delta_{\textnormal{BRST}}\qty(\sqrt{h}B_{ab})&=0\\
     \delta_{\textnormal{BRST}}\qty(\sqrt{h}b_{ab})&=\epsilon\sqrt{h} B_{ab}\\
-    \delta_{\textnormal{BRST}} d&=-\im\epsilon c^a\partial_a d\\
-    \delta_{\textnormal{BRST}} c^a&=-\im\epsilon c^b\partial_b c^a
+    \delta_{\textnormal{BRST}} d&=\im\epsilon c^a\partial_a d\\
+    \delta_{\textnormal{BRST}} c^a&=-\im\epsilon c^b\nabla_b c^a
 \end{align*}
 
 These might look a little bit \textit{ad hoc}, and in fact are! They come from general procedures of BRST quantization. To prove BRST exactness of $S_{\textnormal{gh}}+S_{\textnormal{gf}}$ we have to prove $S_{\textnormal{gh}}+S_{\textnormal{gf}}=\delta_{\textnormal{BRST}}\mathcal O$ 
@@ -102,4 +102,85 @@ and,
 \begin{align*}
     \delta_{\textnormal{BRST}}S_{\textnormal{gf}}&=\frac{\im}{4\pi}\int\dd[2]{\sigma}\sqrt{h}B_{ab}\delta_{\textnormal{BRST}}h^{ab}\\
     \delta_{\textnormal{BRST}}S_{\textnormal{gf}}&=\frac{\epsilon}{2\pi}\int\dd[2]{\sigma}\sqrt{h}B_{ab}\qty(h^{ab}d+\nabla^ac ^b)
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Useful result,
+
+\begin{align*}
+    \delta_2\Gamma^d_{be}&=\delta_2\qty{\frac12h^{df}\qty(\partial_bh_{ef}+\partial_eh_{bf}-\partial_fh_{be})}\\
+    \delta_2\Gamma^d_{be}&=-\im\epsilon_2\qty(dh^{df}+\nabla^{(d}c^{f)})\qty(\partial_bh_{ef}+\partial_eh_{bf}-\partial_fh_{be})\\
+    &\quad\quad\quad+\im\epsilon_2h^{df}\qty(\partial_b\qty[dh_{ef}+\nabla_{(e}c_{f)}]+\partial_e\qty[dh_{bf}+\nabla_{(b}c_{f)}]-\partial_f\qty[dh_{be}+\nabla_{(b}c_{e)}])\\
+    \delta_2\Gamma^d_{be}&=-\im\epsilon_2\nabla^{(d}c^{f)}\qty(\partial_bh_{ef}+\partial_eh_{bf}-\partial_fh_{be})\\
+    &\quad\quad\quad+\im\epsilon_2h^{df}\qty(h_{ef}\partial_bd+\partial_b\nabla_{(e}c_{f)}+h_{bf}\partial_ed+\partial_e\nabla_{(b}c_{f)}-h_{be}\partial_fd-\partial_f\nabla_{(b}c_{e)})\\
+    h_{da}\delta_2\Gamma^d_{be}&=-\im\epsilon_2h_{da}\nabla^{(d}c^{f)}\qty(\partial_bh_{ef}+\partial_eh_{bf}-\partial_fh_{be})\\
+    &\quad\quad\quad+\im\epsilon_2h_{da}h^{df}\qty(h_{ef}\partial_bd+\partial_b\nabla_{(e}c_{f)}+h_{bf}\partial_ed+\partial_e\nabla_{(b}c_{f)}-h_{be}\partial_fd-\partial_f\nabla_{(b}c_{e)})\\
+    h_{da}\delta_2\Gamma^d_{be}&=-\im\epsilon_2h_{da}\nabla^{(d}c^{f)}\qty(\partial_bh_{ef}+\partial_eh_{bf}-\partial_fh_{be})\\
+    &\quad\quad\quad+\im\epsilon_2\qty(h_{ea}\partial_bd+\partial_b\nabla_{(a}c_{e)}+h_{ba}\partial_ed+\partial_e\nabla_{(b}c_{a)}-h_{eb}\partial_ad-\partial_a\nabla_{(b}c_{e)})\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=-\im\epsilon_2h_{d(a}\nabla^{(d}c^{f)}\qty(\partial_{b)}h_{ef}+\partial_eh_{b)f}-\partial_fh_{b)e})\\
+    &\quad\quad\quad+\im\epsilon_2\qty(h_{ba}\partial_ed+\partial_e\nabla_{(b}c_{a)})\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=-\im\epsilon_2\nabla_{(c}c_{(a)}h^{fc}\qty(\partial_{b)}h_{ef}+\partial_eh_{b)f}-\partial_fh_{b)e})\\
+    &\quad\quad\quad+\im\epsilon_2\qty(h_{ba}\partial_ed+\partial_e\nabla_{(b}c_{a)})\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=-2\im\epsilon_2\nabla_{(c}c_{(a)}\Gamma^c_{b)e}+\im\epsilon_2\qty(h_{ba}\partial_ed+\partial_e\nabla_{(b}c_{a)})\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=-\im\epsilon_2\qty[\nabla_{c}c_{(a}+\nabla_{(a}c_{c}]\Gamma^c_{b)e}+\im\epsilon_2\qty(h_{ba}\partial_ed+\partial_e\nabla_{(b}c_{a)})\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=-\frac12\im\epsilon_2\qty[\nabla_{c}c_{a}+\nabla_{a}c_{c}]\Gamma^c_{be}-\frac12\im\epsilon_2\qty[\nabla_{c}c_{b}+\nabla_{b}c_{c}]\Gamma^c_{ae}+\frac12\im\epsilon_2\partial_e\nabla_{b}c_{a}+\frac12\im\epsilon_2\partial_e\nabla_{a}c_{b}\\
+    &\quad\quad\quad+\im\epsilon_2h_{ba}\partial_ed\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=\frac12\im\epsilon_2\qty[\partial_e\nabla_{a}c_{b}-\Gamma^c_{be}\nabla_{a}c_{c}-\Gamma^c_{ae}\nabla_{c}c_{b}]+\frac12\im\epsilon_2\qty[\partial_e\nabla_{b}c_{a}-\Gamma^c_{be}\nabla_{c}c_{a}-\Gamma^c_{ae}\nabla_{b}c_{c}]\\
+    &\quad\quad\quad+\im\epsilon_2h_{ba}\partial_ed\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=\frac12\im\epsilon_2\nabla_e\nabla_{a}c_{b}+\frac12\im\epsilon_2\nabla_e\nabla_{b}c_{a}+\im\epsilon_2h_{ba}\partial_ed\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=\im\epsilon_2\nabla_e\nabla_{(a}c_{b)}+\im\epsilon_2h_{ba}\partial_ed
+\end{align*}
+
+Nilpotency of BRST,
+
+\begin{align*}
+    \delta_1X^\mu&=\im\epsilon_1c^a\partial_a X^\mu\\
+    \delta_2\delta_1X^\mu&=-\im\epsilon_1\delta_2\qty(c^a)\partial_a X^\mu+\im\epsilon_1c^a\partial_a\qty( \delta_2\qty(X^\mu))\\
+    \delta_2\delta_1X^\mu&=-\im\epsilon_1\qty(-\im\epsilon_2)c^c\nabla_c\qty(c^a)\partial_a X^\mu+\im\epsilon_1c^a\partial_a \qty(\qty(\im\epsilon_2c^b\partial_b)X^\mu)\\
+    \delta_2\delta_1X^\mu&=-\epsilon_1\epsilon_2c^c\nabla_c\qty(c^a)\partial_a X^\mu+\epsilon_1\epsilon_2c^a\partial_a \qty(c^b\partial_b X^\mu)\\
+    \delta_2\delta_1X^\mu&=-\epsilon_1\epsilon_2c^c\nabla_c\qty(c^a)\nabla_a X^\mu+\epsilon_1\epsilon_2c^a\nabla_a \qty(c^b\nabla_b X^\mu)\\
+    \delta_2\delta_1X^\mu&=-\epsilon_1\epsilon_2c^c\nabla_c\qty(c^a)\nabla_a X^\mu+\epsilon_1\epsilon_2c^a\nabla_a \qty(c^b)\nabla_b X^\mu+\epsilon_1\epsilon_2c^ac^b\nabla_a\nabla_b X^\mu\\
+    \delta_2\delta_1X^\mu&=\epsilon_1\epsilon_2c^ac^b\nabla_a\nabla_b X^\mu, \ \ \ \textnormal{using the ghost statistics}\\
+    \delta_2\delta_1X^\mu&=\epsilon_1\epsilon_2c^ac^b\nabla_{[a}\nabla_{b]} X^\mu,\ \ \ \textnormal{as $X^\mu$ is a world-sheet scalar: }\nabla_a\nabla_b X^\mu=\nabla_b\nabla_a X^\mu\\
+    \delta_2\delta_1X^\mu&=0
+\end{align*}
+
+\begin{align*}
+    \delta_1h_{ab}&=2\im\epsilon_1\qty[h_{ab}d+h_{d(a}\nabla_{b)}c^d]\\
+    \delta_2\delta_1h_{ab}&=2\im\epsilon_1\qty[-\delta_2\qty(h_{ab})d-h_{ab}\delta_2d-\delta_2\qty(h_{d(a})\nabla_{b)}c^d-h_{d(a}\nabla_{b)}\delta_2 c^d-h_{d(a}\delta_2\qty(\Gamma^d_{b)e})c^e]\\
+    \delta_2\delta_1h_{ab}&=2\im\epsilon_1\left[-2\im\epsilon_2\qty[h_{ab}d+h_{e(a}\nabla_{b)}c^e]d-\im\epsilon_2h_{ab}c^c\partial_cd-2\im\epsilon_2\qty[h_{d(a}d+h_{e(d}\nabla_{(a)}c^e]\nabla_{b)}c^d\right.\\
+    &\quad\quad\quad\left.+\im\epsilon_2h_{d(a}\nabla_{b)}\qty(c^e\nabla_ec^d)-h_{d(a}\delta_2\qty(\Gamma^d_{b)e})c^e\right]\\
+    \delta_2\delta_1h_{ab}&=-2\epsilon_1\epsilon_2\left[-2h_{e(a}\nabla_{b)}c^ed-h_{ab}c^c\partial_cd-2h_{d(a}d\nabla_{b)}c^d+h_{e(d}\nabla_{(a)}\qty(c^e)\nabla_{b)}c^d\right.\\
+    &\quad\quad\quad\left.+h_{d(a}\nabla_{b)}\qty(c^e\nabla_ec^d)\right]-2\im\epsilon_1h_{d(a}\delta_2\qty(\Gamma^d_{b)e})c^e\\
+    \delta_2\delta_1h_{ab}&=-2\epsilon_1\epsilon_2\left[-2h_{e(a}\nabla_{b)}c^ed-h_{ab}c^c\partial_cd+2h_{d(a}\nabla_{b)}c^dd+h_{e(d}\nabla_{(a)}\qty(c^e)\nabla_{b)}c^d\right.\\
+    &\quad\quad\quad\left.+h_{d(a}\nabla_{b)}\qty(c^e\nabla_ec^d)\right]-2\im\epsilon_1h_{d(a}\delta_2\qty(\Gamma^d_{b)e})c^e\\
+    \delta_2\delta_1h_{ab}&=-2\epsilon_1\epsilon_2\left[-h_{ab}c^c\partial_cd+h_{e(d}\nabla_{(a)}\qty(c^e)\nabla_{b)}c^d+h_{d(a}\nabla_{b)}\qty(c^e\nabla_ec^d)\right]-2\im\epsilon_1h_{d(a}\delta_2\qty(\Gamma^d_{b)e})c^e\\
+    \delta_2\delta_1h_{ab}&=-2\epsilon_1\epsilon_2\left[-h_{ab}c^c\partial_cd+h_{e(d}\nabla_{(a)}\qty(c^e)\nabla_{b)}c^d+h_{d(a}\nabla_{b)}\qty(c^e\nabla_ec^d)\right]\\
+    \quad\quad\quad&-2\im\epsilon_1\im\epsilon_2\qty(\nabla_e\nabla_{(a}c_{b)}+h_{ba}\partial_ed)c^e\\
+    \delta_2\delta_1h_{ab}&=-2\epsilon_1\epsilon_2\left[-h_{ab}c^c\partial_cd+h_{e(d}\nabla_{(a)}\qty(c^e)\nabla_{b)}c^d+h_{d(a}\nabla_{b)}\qty(c^e\nabla_ec^d)\right]\\
+    \quad\quad\quad&-2\epsilon_1\epsilon_2c^e\qty(\nabla_e\nabla_{(a}c_{b)}+h_{ba}\partial_ed)\\
+    \delta_2\delta_1h_{ab}&=-2\epsilon_1\epsilon_2\left[h_{e(d}\nabla_{(a)}\qty(c^e)\nabla_{b)}c^d+h_{d(a}\nabla_{b)}\qty(c^e\nabla_ec^d)+c^e\nabla_e\nabla_{(a}c_{b)}\right]\\
+    \delta_2\delta_1h_{ab}&=-2\epsilon_1\epsilon_2\left[\nabla_{(a}\qty(c_{d)})\nabla_{b)}c^d+\nabla_{(b|}\qty(c^e)\nabla_ec_{|a)}+c^e\nabla_{(b|}\nabla_ec_{|a)}+c^e\nabla_e\nabla_{(a}c_{b)}\right]\\
+    \delta_2\delta_1h_{ab}&=-2\epsilon_1\epsilon_2\left[-\nabla_{(b}c^e\nabla_{(a)}c_{e)}+\nabla_{(b|}c^e\nabla_ec_{|a)}+2c^e\nabla_{(b}\nabla_{e)}c_{a)}\right]\\
+    \delta_2\delta_1h_{ab}&=-2\epsilon_1\epsilon_2\left[-\frac12\nabla_{(b}c^e\nabla_{a)}c_{e}-\frac12\nabla_{(b|}c^e\nabla_{e}c_{|a)}+\nabla_{(b|}c^e\nabla_ec_{|a)}+2c^e\nabla_{(b}\nabla_{e)}c_{a)}\right]\\
+    \delta_2\delta_1h_{ab}&=-2\epsilon_1\epsilon_2\left[\frac12\nabla_{(b|}c^e\nabla_ec_{|a)}+2c^e\nabla_{(b}\nabla_{e)}c_{a)}\right]\\
 \end{align*}
