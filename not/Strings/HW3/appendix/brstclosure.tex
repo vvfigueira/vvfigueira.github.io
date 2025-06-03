@@ -1,0 +1,82 @@
+\section{Closure of BRST transformations}\label{brstclosure}
+
+Nilpotency of BRST,
+
+\begin{align*}
+    \delta_1X^\mu&=\im\epsilon_1c^a\partial_a X^\mu\\
+    \delta_2\delta_1X^\mu&=\im\epsilon_1\delta_2\qty(c^a)\partial_a X^\mu+\im\epsilon_1c^a\partial_a\qty( \delta_2\qty(X^\mu))\\
+    \delta_2\delta_1X^\mu&=\im\epsilon_1\qty(\im\epsilon_2)c^c\nabla_c\qty(c^a)\partial_a X^\mu+\im\epsilon_1c^a\partial_a \qty(\qty(\im\epsilon_2c^b\partial_b)X^\mu)\\
+    \delta_2\delta_1X^\mu&=-\epsilon_1\epsilon_2c^c\nabla_c\qty(c^a)\partial_a X^\mu+\epsilon_1\epsilon_2c^a\partial_a \qty(c^b\partial_b X^\mu)\\
+    \delta_2\delta_1X^\mu&=-\epsilon_1\epsilon_2c^c\nabla_c\qty(c^a)\nabla_a X^\mu+\epsilon_1\epsilon_2c^a\nabla_a \qty(c^b\nabla_b X^\mu)\\
+    \delta_2\delta_1X^\mu&=-\epsilon_1\epsilon_2c^c\nabla_c\qty(c^a)\nabla_a X^\mu+\epsilon_1\epsilon_2c^a\nabla_a \qty(c^b)\nabla_b X^\mu+\epsilon_1\epsilon_2c^ac^b\nabla_a\nabla_b X^\mu\\
+    \delta_2\delta_1X^\mu&=\epsilon_1\epsilon_2c^ac^b\nabla_a\nabla_b X^\mu, \ \ \ \textnormal{using the ghost statistics}\\
+    \delta_2\delta_1X^\mu&=\epsilon_1\epsilon_2c^ac^b\nabla_{[a}\nabla_{b]} X^\mu,\ \ \ \textnormal{as $X^\mu$ is a world-sheet scalar: }\nabla_a\nabla_b X^\mu=\nabla_b\nabla_a X^\mu\\
+    \delta_2\delta_1X^\mu&=0
+\end{align*}
+
+\begin{align*}
+    \delta_1 h_{ab}&=2\im\epsilon_1 d h_{ab}+\im\epsilon_1\qty(c^c\partial_ch_{ab}+h_{ac}\partial_bc^c+h_{bc}\partial_ac^c)\\
+    \delta_2\delta_1 h_{ab}&=2\im\epsilon_1 \delta_2\qty(d) h_{ab}+2\im\epsilon_1 d \delta_2\qty(h_{ab})\\
+    &\quad\quad\quad+\im\epsilon_1\qty(\delta_2\qty(c^c)\partial_ch_{ab}+c^c\partial_c\delta_2\qty(h_{ab}))\\
+    &\quad\quad\quad+\im\epsilon_1\qty(\delta_2\qty(h_{ac})\partial_bc^c+h_{ac}\partial_b\delta_2\qty(c^c))\\
+    &\quad\quad\quad+\im\epsilon_1\qty(\delta_2\qty(h_{bc})\partial_ac^c+h_{bc}\partial_a\delta_2\qty(c^c))\\
+    \delta_2\delta_1 h_{ab}&=2\im\epsilon_1\im\epsilon_2 h_{ab}c^c\partial_c d+2\im\epsilon_1 d2\im\epsilon_2\qty(dh_{ab}+\nabla_{(a}c_{b)})\\
+    &\quad\quad\quad+\im\epsilon_1\qty(\im\epsilon_2c^d\partial_dc^c\partial_ch_{ab}+c^c\partial_c\qty(2\im\epsilon_2\qty(dh_{ab}+\nabla_{(a}c_{b)})))\\
+    &\quad\quad\quad+\im\epsilon_1\qty(2\im\epsilon_2\qty(dh_{ac}+\nabla_{(a}c_{c)})\partial_bc^c+h_{ac}\partial_b\qty(\im\epsilon_2c^d\partial_dc^c))\\
+    &\quad\quad\quad+\im\epsilon_1\qty(2\im\epsilon_2\qty(dh_{bc}+\nabla_{(b}c_{c)})\partial_ac^c+h_{bc}\partial_a\qty(\im\epsilon_2c^d\partial_dc^c))\\
+    \delta_2\delta_1 h_{ab}&=-2\epsilon_1\epsilon_2 h_{ab}c^c\partial_c d+4\epsilon_1 \epsilon_2d\nabla_{(a}c_{b)}\\
+    &\quad\quad\quad-\epsilon_1\epsilon_2c^d\partial_dc^c\partial_ch_{ab}+2\epsilon_1\epsilon_2c^c\partial_c\qty(dh_{ab}+\nabla_{(a}c_{b)})\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\qty(dh_{ac}+\nabla_{(a}c_{c)})\partial_bc^c-\epsilon_1\epsilon_2h_{ac}\partial_b\qty(c^d\partial_dc^c)\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\qty(dh_{bc}+\nabla_{(b}c_{c)})\partial_ac^c-\epsilon_1\epsilon_2h_{bc}\partial_a\qty(c^d\partial_dc^c)\\
+    \delta_2\delta_1 h_{ab}&=4\epsilon_1 \epsilon_2d\nabla_{(a}c_{b)}-\epsilon_1\epsilon_2c^d\partial_dc^c\partial_ch_{ab}+2\epsilon_1\epsilon_2c^c\qty(d\partial_ch_{ab}+\partial_c\nabla_{(a}c_{b)})\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\qty(dh_{ac}+\nabla_{(a}c_{c)})\partial_bc^c-\epsilon_1\epsilon_2h_{ac}\partial_b\qty(c^d\partial_dc^c)\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\qty(dh_{bc}+\nabla_{(b}c_{c)})\partial_ac^c-\epsilon_1\epsilon_2h_{bc}\partial_a\qty(c^d\partial_dc^c)\\
+    \delta_2\delta_1 h_{ab}&=4\epsilon_1 \epsilon_2d\nabla_{(a}c_{b)}-2\epsilon_1\epsilon_2dc^c\partial_ch_{ab}-2\epsilon_1\epsilon_2dh_{ac}\partial_bc^c-2\epsilon_1\epsilon_2dh_{bc}\partial_ac^c\\
+    &\quad\quad\quad-\epsilon_1\epsilon_2c^d\partial_dc^c\partial_ch_{ab}-\epsilon_1\epsilon_2h_{bc}\partial_a\qty(c^d\partial_dc^c)-\epsilon_1\epsilon_2h_{ac}\partial_b\qty(c^d\partial_dc^c)\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\partial_c\nabla_{(a}c_{b)}c^c-2\epsilon_1\epsilon_2\nabla_{(a}c_{c)}\partial_bc^c-2\epsilon_1\epsilon_2\nabla_{(b}c_{c)}\partial_ac^c\\
+    \delta_2\delta_1 h_{ab}&=4\epsilon_1 \epsilon_2d\nabla_{(a}c_{b)}-2\epsilon_1\epsilon_2d\qty[c^c\partial_ch_{ab}+h_{ac}\partial_bc^c+h_{bc}\partial_ac^c]\\
+    &\quad\quad\quad-\epsilon_1\epsilon_2\qty[c^d\partial_dc^c\partial_ch_{ab}+h_{bc}\partial_a\qty(c^d\partial_dc^c)+h_{ac}\partial_b\qty(c^d\partial_dc^c)]\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\qty[\partial_c\nabla_{(a}c_{b)}c^c+\nabla_{(a}c_{c)}\partial_bc^c+\nabla_{(b}c_{c)}\partial_ac^c]\\
+    \delta_2\delta_1 h_{ab}&=4\epsilon_1 \epsilon_2d\nabla_{(a}c_{b)}-4\epsilon_1\epsilon_2d\nabla_{(a}c_{b)}\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\nabla_{(a|}\qty(c^c\nabla_cc_{|b)})\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\qty[\nabla_c\nabla_{(a}c_{b)}c^c+\nabla_{(a}c_{c)}\nabla_bc^c+\nabla_{(b}c_{c)}\nabla_ac^c]\\
+    \delta_2\delta_1 h_{ab}&=-2\epsilon_1\epsilon_2\qty[\nabla_{(a|}\qty(c^c\nabla_cc_{|b)})+\nabla_c\nabla_{(a}c_{b)}c^c+\nabla_{(a}c_{c)}\nabla_bc^c+\nabla_{(b}c_{c)}\nabla_ac^c]\\
+    \delta_2\delta_1 h_{ab}&=-\epsilon_1\epsilon_2\left[\nabla_{a}\qty(c^c\nabla_cc_{b})+\nabla_{b}\qty(c^c\nabla_cc_{a})+\nabla_c\nabla_{a}c_{b}c^c+\nabla_c\nabla_{b}c_{a}c^c\right.\\
+    &\quad\quad\quad\left.+\nabla_{a}c_{c}\nabla_bc^c+\nabla_{b}c_{c}\nabla_ac^c+\nabla_{c}c_{a}\nabla_bc^c+\nabla_{c}c_{b}\nabla_ac^c\right]\\
+    \delta_2\delta_1 h_{ab}&=-\epsilon_1\epsilon_2\left[c^c\nabla_{a}\nabla_cc_{b}+c^c\nabla_{b}\nabla_cc_{a}+\nabla_c\nabla_{a}c_{b}c^c+\nabla_c\nabla_{b}c_{a}c^c\right.\\
+    &\quad\quad\quad\left.+\nabla_{a}c^c\nabla_cc_{b}+\nabla_{b}c^c\nabla_cc_{a}+\nabla_{a}c_{c}\nabla_bc^c+\nabla_{b}c_{c}\nabla_ac^c+\nabla_{c}c_{a}\nabla_bc^c+\nabla_{c}c_{b}\nabla_ac^c\right]\\
+    \delta_2\delta_1 h_{ab}&=-\epsilon_1\epsilon_2\left[c^c\nabla_{a}\nabla_cc_{b}+c^c\nabla_{b}\nabla_cc_{a}-c^c\nabla_c\nabla_{a}c_{b}-c^c\nabla_c\nabla_{b}c_{a}\right.\\
+    &\quad\quad\quad\left.+\nabla_{a}c^c\nabla_cc_{b}+\nabla_{b}c^c\nabla_cc_{a}-\nabla_bc^c\nabla_{c}c_{a}-\nabla_ac^c\nabla_{c}c_{b}\right]\\
+    \delta_2\delta_1 h_{ab}&=-\epsilon_1\epsilon_2\left[c^c\nabla_{a}\nabla_cc_{b}+c^c\nabla_{b}\nabla_cc_{a}-c^c\nabla_c\nabla_{a}c_{b}-c^c\nabla_c\nabla_{b}c_{a}\right.\\
+    &\quad\quad\quad\left.+\nabla_{a}c^c\nabla_cc_{b}+\nabla_{b}c^c\nabla_cc_{a}-\nabla_bc^c\nabla_{c}c_{a}-\nabla_ac^c\nabla_{c}c_{b}\right]\\
+    \delta_2\delta_1 h_{ab}&=-\epsilon_1\epsilon_2c^c\left[\tensor{R}{^d_b_a_c}c_{d}+\tensor{R}{^d_a_b_c}c_{d}\right]\\
+    \delta_2\delta_1 h_{ab}&=-\epsilon_1\epsilon_2c^cc^d\left[\tensor{R}{_d_b_a_c}+\tensor{R}{_d_a_b_c}\right]\\
+    \delta_2\delta_1 h_{ab}&=-\frac12\epsilon_1\epsilon_2c^cc^d\left[\tensor{R}{_d_b_a_c}-\tensor{R}{_c_b_a_d}+\tensor{R}{_d_a_b_c}-\tensor{R}{_c_a_b_d}\right]\\
+    \delta_2\delta_1 h_{ab}&=-\frac12\epsilon_1\epsilon_2c^cc^d\left[\tensor{R}{_d_b_a_c}-\tensor{R}{_c_b_a_d}+\tensor{R}{_b_c_d_a}-\tensor{R}{_b_d_c_a}\right]\\
+    \delta_2\delta_1 h_{ab}&=-\frac12\epsilon_1\epsilon_2c^cc^d\left[\tensor{R}{_d_b_a_c}-\tensor{R}{_c_b_a_d}+\tensor{R}{_c_b_a_d}-\tensor{R}{_d_b_a_c}\right]\\
+    \delta_2\delta_1 h_{ab}&=0
+\end{align*}
+
+\begin{align*}
+    \delta_2\Gamma^d_{be}&=\delta_2\qty{\frac12h^{df}\qty(\partial_bh_{ef}+\partial_eh_{bf}-\partial_fh_{be})}\\
+    \delta_2\Gamma^d_{be}&=-\im\epsilon_2\qty(dh^{df}+\nabla^{(d}c^{f)})\qty(\partial_bh_{ef}+\partial_eh_{bf}-\partial_fh_{be})\\
+    &\quad\quad\quad+\im\epsilon_2h^{df}\qty(\partial_b\qty[dh_{ef}+\nabla_{(e}c_{f)}]+\partial_e\qty[dh_{bf}+\nabla_{(b}c_{f)}]-\partial_f\qty[dh_{be}+\nabla_{(b}c_{e)}])\\
+    \delta_2\Gamma^d_{be}&=-\im\epsilon_2\nabla^{(d}c^{f)}\qty(\partial_bh_{ef}+\partial_eh_{bf}-\partial_fh_{be})\\
+    &\quad\quad\quad+\im\epsilon_2h^{df}\qty(h_{ef}\partial_bd+\partial_b\nabla_{(e}c_{f)}+h_{bf}\partial_ed+\partial_e\nabla_{(b}c_{f)}-h_{be}\partial_fd-\partial_f\nabla_{(b}c_{e)})\\
+    h_{da}\delta_2\Gamma^d_{be}&=-\im\epsilon_2h_{da}\nabla^{(d}c^{f)}\qty(\partial_bh_{ef}+\partial_eh_{bf}-\partial_fh_{be})\\
+    &\quad\quad\quad+\im\epsilon_2h_{da}h^{df}\qty(h_{ef}\partial_bd+\partial_b\nabla_{(e}c_{f)}+h_{bf}\partial_ed+\partial_e\nabla_{(b}c_{f)}-h_{be}\partial_fd-\partial_f\nabla_{(b}c_{e)})\\
+    h_{da}\delta_2\Gamma^d_{be}&=-\im\epsilon_2h_{da}\nabla^{(d}c^{f)}\qty(\partial_bh_{ef}+\partial_eh_{bf}-\partial_fh_{be})\\
+    &\quad\quad\quad+\im\epsilon_2\qty(h_{ea}\partial_bd+\partial_b\nabla_{(a}c_{e)}+h_{ba}\partial_ed+\partial_e\nabla_{(b}c_{a)}-h_{eb}\partial_ad-\partial_a\nabla_{(b}c_{e)})\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=-\im\epsilon_2h_{d(a}\nabla^{(d}c^{f)}\qty(\partial_{b)}h_{ef}+\partial_eh_{b)f}-\partial_fh_{b)e})\\
+    &\quad\quad\quad+\im\epsilon_2\qty(h_{ba}\partial_ed+\partial_e\nabla_{(b}c_{a)})\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=-\im\epsilon_2\nabla_{(c}c_{(a)}h^{fc}\qty(\partial_{b)}h_{ef}+\partial_eh_{b)f}-\partial_fh_{b)e})\\
+    &\quad\quad\quad+\im\epsilon_2\qty(h_{ba}\partial_ed+\partial_e\nabla_{(b}c_{a)})\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=-2\im\epsilon_2\nabla_{(c}c_{(a)}\Gamma^c_{b)e}+\im\epsilon_2\qty(h_{ba}\partial_ed+\partial_e\nabla_{(b}c_{a)})\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=-\im\epsilon_2\qty[\nabla_{c}c_{(a}+\nabla_{(a}c_{c}]\Gamma^c_{b)e}+\im\epsilon_2\qty(h_{ba}\partial_ed+\partial_e\nabla_{(b}c_{a)})\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=-\frac12\im\epsilon_2\qty[\nabla_{c}c_{a}+\nabla_{a}c_{c}]\Gamma^c_{be}-\frac12\im\epsilon_2\qty[\nabla_{c}c_{b}+\nabla_{b}c_{c}]\Gamma^c_{ae}+\frac12\im\epsilon_2\partial_e\nabla_{b}c_{a}+\frac12\im\epsilon_2\partial_e\nabla_{a}c_{b}\\
+    &\quad\quad\quad+\im\epsilon_2h_{ba}\partial_ed\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=\frac12\im\epsilon_2\qty[\partial_e\nabla_{a}c_{b}-\Gamma^c_{be}\nabla_{a}c_{c}-\Gamma^c_{ae}\nabla_{c}c_{b}]+\frac12\im\epsilon_2\qty[\partial_e\nabla_{b}c_{a}-\Gamma^c_{be}\nabla_{c}c_{a}-\Gamma^c_{ae}\nabla_{b}c_{c}]\\
+    &\quad\quad\quad+\im\epsilon_2h_{ba}\partial_ed\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=\frac12\im\epsilon_2\nabla_e\nabla_{a}c_{b}+\frac12\im\epsilon_2\nabla_e\nabla_{b}c_{a}+\im\epsilon_2h_{ba}\partial_ed\\
+    h_{d(a}\delta_2\Gamma^d_{b)e}&=\im\epsilon_2\nabla_e\nabla_{(a}c_{b)}+\im\epsilon_2h_{ba}\partial_ed
+\end{align*}

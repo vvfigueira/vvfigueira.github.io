@@ -18,3 +18,4 @@
 \contentsline {subsection}{3.F)}{4}{subsection.3.6}%
 \contentsline {section}{\numberline {A}Faddeev-Popov Gauge Fixing}{5}{appendix.A}%
 \contentsline {section}{\numberline {B}BRST Quantization}{10}{appendix.B}%
+\contentsline {section}{\numberline {C}Closure of BRST transformations}{15}{appendix.C}%
