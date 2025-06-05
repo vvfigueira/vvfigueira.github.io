@@ -18,4 +18,6 @@
 \contentsline {subsection}{3.F)}{4}{subsection.3.6}%
 \contentsline {section}{\numberline {A}Faddeev-Popov Gauge Fixing}{5}{appendix.A}%
 \contentsline {section}{\numberline {B}BRST Quantization}{10}{appendix.B}%
-\contentsline {section}{\numberline {C}Closure of BRST transformations}{15}{appendix.C}%
+\contentsline {subsection}{\numberline {B.1}The BRST transformations}{10}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}The BRST Charge}{14}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.3}The BRST Nilpotency}{16}{subsection.B.3}%

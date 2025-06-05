@@ -1,4 +1,5 @@
 \section{BRST Quantization}
+\subsection{The BRST transformations}
 
 Following the action principle derived from the Faddeev-Popov Gauge Fixing \ref{actions}, we can describe it's BRST symmetry by 
 the transformations of the \textit{matter fields} under Gauge, we know the following,
@@ -80,7 +81,7 @@ So now we can proceed to compute the two conditions, we'll start by the second o
     \delta_{\textnormal{BRST}}\qty(-\frac{1}{4\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty(\hat h^{ab}-h^{ab}))&=\im\epsilon S_{\textnormal{gf}}+\im\epsilon S_{\textnormal{gh}}\\
     \delta_{\textnormal{BRST}}\qty(-\frac{1}{4\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty(\hat h^{ab}-h^{ab}))&=\im\epsilon \qty(S_{\textnormal{gf}}+S_{\textnormal{gh}})
 \end{align*}
-so what remains to be \textit{checked} is the first condition, actually we have to \textit{impose} it, let's do it part by part, starting with, 
+so what remains to be \textit{checked} is the first condition, let's do it part by part, starting with, 
 \begin{align*}
     \delta_{\textnormal{BRST}}S_X&=\frac{1}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}h^{ab}\partial_aX^\mu\partial_b \delta_{\textnormal{BRST}}X_\mu+\frac{1}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\delta_{\textnormal{BRST}}\qty(\sqrt{h}h^{ab})\partial_aX^\mu\partial_b X_\mu\\
     \delta_{\textnormal{BRST}}S_X&=\frac{\im\epsilon}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}h^{ab}\partial_aX^\mu\partial_b \qty[c^c\partial_cX_\mu]+\frac{\im\epsilon}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}\qty(\frac12h^{ab}\nabla_cc^c-\nabla^{(a} c^{b)})\partial_aX^\mu\partial_b X_\mu\\
@@ -134,4 +135,133 @@ now,
     \delta_{\textnormal{BRST}}\qty(S_{\textnormal{gh}}+S_{\textnormal{gf}})&=-\frac{\im\epsilon}{4\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}c^cc^{d}\qty[\tensor{R}{_c^a^b_d}-\tensor{R}{_d^a^b_c}+\tensor{R}{_d^a^b_c}-\tensor{R}{_c^a^b_d}]\\
     \delta_{\textnormal{BRST}}\qty(S_{\textnormal{gh}}+S_{\textnormal{gf}})&=0
 \end{align*}
-so that the imposition $\delta_{\textnormal{BRST}}\qty(S_X+S_{\textnormal{gh}}+S_{\textnormal{gf}})=0$, is equivalent to,
+so that the condition $\delta_{\textnormal{BRST}}\qty(S_X+S_{\textnormal{gh}}+S_{\textnormal{gf}})=0$, is equivalent to,
+\begin{align*}
+    \delta_{\textnormal{BRST}}\qty(S_X+S_{\textnormal{gh}}+S_{\textnormal{gf}})&=\frac{\im\epsilon}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\partial_c\qty(\sqrt{h}c^c h^{ab}\partial_aX^\mu \partial_bX_\mu)\\
+    \delta_{\textnormal{BRST}}\qty(S_X+S_{\textnormal{gh}}+S_{\textnormal{gf}})&=\frac{\im\epsilon}{4\pi\alpha'}\int\limits_{\partial M}\dd{s}n_c\sqrt{h}c^c h^{ab}\partial_aX^\mu \partial_bX_\mu=0
+\end{align*}
+where $n_c$ is a inwards unitary normal vector to boundary $\partial M$. Of course, if we're dealing with the closed string $\partial M=\varnothing$ and the right-hand side is 
+identically zero, the problem only shows up in the open string, as $\partial M\neq \varnothing$, but, in this case we have more then just a boundary, as the boundary exists we have to 
+specify the boundary conditions for our fields, this is telling us what might be a good boundary condition to impose\footnote{Any other choice here is too strong, the boundary condition 
+must in some way depend on $n_a$, other wise it'll be just a world-sheet scalar and will be zero everywhere, as is the case if we try to set $h^{ab}\partial_aX^\mu \partial_bX_\mu\eval_{\partial M}=0$, 
+other possible choices are $c^c\eval_{\partial M}=0$, which again, is too restrictive to give any dynamics to our theory.}, $$n_cc^c\eval_{\partial M}=0$$which is what we're going to choose\footnote{Contrary to 
+beliefs, this condition cannot be inferred solely from the equations of motion, what can be done is to infer $n^ab_{ab}\eval_{\partial M}=0$ from the EoM and then try to mimic a condition for $c$. But, 
+here we're seeing a way which the boundary condition on $c$ is heavily suggested.}, so,
+\begin{align*}
+    \delta_{\textnormal{BRST}}\qty(S_X+S_{\textnormal{gh}}+S_{\textnormal{gf}})&=0
+\end{align*}
+our theory is BRST invariant!
+\subsection{The BRST Charge}
+
+Have proven our theory is BRST invariant, we'll now comute the BRST Charge associated with this symmetry, this is an easy computation, is just necessary to follow the 
+steps needed to derive \ref{brstsx}, but now with $\epsilon$ being world-sheet dependent,
+\begin{align*}
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}h^{ab}\partial_aX^\mu\partial_b \qty[\epsilon c^c\partial_cX_\mu]+\frac{\im}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\epsilon\sqrt{h}\qty(\frac12h^{ab}\nabla_cc^c-\nabla^{(a} c^{b)})\partial_aX^\mu\partial_b X_\mu\\
+\end{align*}
+notice, in the first term, the $\partial_b$ when acting on $c^c\partial_c X_\mu$ will sum-up with the second term to give rise just to \ref{brstsx}, but now with $\epsilon$ non-constant, so we have,
+\begin{align*}
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\partial_b \qty(\epsilon)\sqrt{h}h^{ab}\partial_aX^\mu c^c\partial_cX_\mu+\frac{\im}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\epsilon\partial_c\qty(\sqrt{h}c^c h^{ab}\partial_aX^\mu \partial_bX_\mu)\\
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\partial_b \qty[\epsilon\sqrt{h}h^{ab}\partial_aX^\mu c^c\partial_cX_\mu]\\
+    &\quad\quad\quad-\frac{\im}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\epsilon\partial_b \qty[\sqrt{h}h^{ab}\partial_aX^\mu c^c\partial_cX_\mu]+\frac{\im}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\epsilon\partial_c\qty(\sqrt{h}c^c h^{ab}\partial_aX^\mu \partial_bX_\mu)\\
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im}{2\pi\alpha'}\int\limits_{\partial M}\dd{s} \epsilon\sqrt{h}n^a\partial_aX^\mu c^c\partial_cX_\mu\\
+    &\quad\quad\quad-\frac{\im}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\epsilon\partial_c \qty[\sqrt{h}h^{ca}\partial_aX^\mu c^b\partial_bX_\mu]+\frac{\im}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\epsilon\partial_c\qty(\sqrt{h}c^c h^{ab}\partial_aX^\mu \partial_bX_\mu)
+\end{align*}
+the first integral is zero, either in the closed string, $\partial M=\varnothing$, or in the open string, $n^a\partial_a X\eval_{\partial M}=0$,
+\begin{align*}
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\partial_b \qty(\epsilon)\sqrt{h}h^{ab}\partial_aX^\mu c^c\partial_cX_\mu+\frac{\im}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\epsilon\partial_c\qty(\sqrt{h}c^c h^{ab}\partial_aX^\mu \partial_bX_\mu)\\
+    \delta_{\textnormal{BRST}}S_X&=\frac{\im}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\partial_b \qty[\epsilon\sqrt{h}h^{ab}\partial_aX^\mu c^c\partial_cX_\mu]\\
+    &\quad\quad\quad-\frac{\im}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\epsilon\partial_b \qty[\sqrt{h}h^{ab}\partial_aX^\mu c^c\partial_cX_\mu]+\frac{\im}{4\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\epsilon\partial_c\qty(\sqrt{h}c^c h^{ab}\partial_aX^\mu \partial_bX_\mu)\\
+    \delta_{\textnormal{BRST}}S_X&=-\frac{\im}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\epsilon\partial_c \qty[\sqrt{h}h^{ca}\partial_aX^\mu c^b\partial_bX_\mu-\frac12\sqrt{h}c^c h^{ab}\partial_aX^\mu \partial_bX_\mu]\\
+    \delta_{\textnormal{BRST}}S_X&=-\frac{\im}{2\pi\alpha'}\int\limits_{M}\dd[2]{\sigma}\sqrt{h}\epsilon\nabla_c \qty[h^{ca}\partial_aX^\mu c^b\partial_bX_\mu-\frac12c^c h^{ab}\partial_aX^\mu \partial_bX_\mu]
+\end{align*}
+as we go back now to $\epsilon$ being a constant, we know the left-hand side is zero, this forces,
+\begin{align*}
+    -\frac{1}{\alpha'}\nabla_c \qty[h^{ca}\partial_aX^\mu c^b\partial_bX_\mu-\frac12c^c h^{ab}\partial_aX^\mu \partial_bX_\mu]&=0\\
+    \nabla_c \qty[c_bT^{cb}]&=0\numberthis\label{brstchargex}
+\end{align*}
+as we're not starters, we wrote the last line in a suggestive manner, this is just one piece of the puzzle, remains to vary the other two terms of the total action, this is 
+not as difficult as it seems, as the total standard BRST variation is identically zero, any term that does not have a derivative of $\epsilon$ will eventually sum-up to zero,
+\begin{align*}
+    \delta_{\textnormal{BRST}}S_{\textnormal{gh}}&=\delta_{\textnormal{BRST}}\qty(\frac{1}{2\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty[h^{ab}d+\nabla^{a}c^{b}])\\
+    \delta_{\textnormal{BRST}}S_{\textnormal{gh}}&=\delta_{\textnormal{BRST}}\qty(\frac{1}{2\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty[h^{ab}d+\frac12\qty(-c^c\partial_ch^{ab}+h^{ac}\partial_cc^b+h^{bc}\partial_cc^a)])\\
+    \delta_{\textnormal{BRST}}S_{\textnormal{gh}}&=\frac{1}{2\pi}\int\dd[2]{\sigma}\delta_{\textnormal{BRST}}\qty(\sqrt{h}b_{ab})\qty[h^{ab}d+\nabla^ac^b]\\
+    &\quad\quad\quad+\frac{1}{2\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty[\delta_{\textnormal{BRST}}\qty(h^{ab})d+h^{ab}\delta_{\textnormal{BRST}}\qty(d)]\\
+    &\quad\quad\quad-\frac{1}{4\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty[\delta_{\textnormal{BRST}}\qty(c^c)\partial_ch^{ab}+c^c\partial_c\delta_{\textnormal{BRST}}\qty(h^{ab})]\\
+    &\quad\quad\quad+\frac{1}{4\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty[\delta_{\textnormal{BRST}}\qty(h^{ac})\partial_cc^b+h^{ac}\partial_c\delta_{\textnormal{BRST}}\qty(c^b)]\\
+    &\quad\quad\quad+\frac{1}{4\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty[\delta_{\textnormal{BRST}}\qty(h^{bc})\partial_cc^a+h^{bc}\partial_c\delta_{\textnormal{BRST}}\qty(c^a)]\\
+    \delta_{\textnormal{BRST}}S_{\textnormal{gh}}&=-\frac{1}{2\pi}\int\dd[2]{\sigma}\epsilon\sqrt{h}B_{ab}\qty[h^{ab}d+\nabla^ac^b]\\
+    &\quad\quad\quad+\frac{1}{2\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty[-2\im\epsilon\qty(dh^{ab}+\nabla^{(a}c^{b)})d+h^{ab}\im\epsilon c ^d\partial_d d]\\
+    &\quad\quad\quad-\frac{1}{4\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty[\im\epsilon c^d\partial_dc^c\partial_ch^{ab}-2\im c^c\partial_c\qty(\epsilon dh^{ab}+\epsilon\nabla^{(a}c^{b)})]\\
+    &\quad\quad\quad+\frac{1}{4\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty[-2\im\epsilon\qty(dh^{ac}+\nabla^{(a}c^{c)})\partial_cc^b+\im h^{ac}\partial_c\qty(\epsilon c^d\partial_dc^b)]\\
+    &\quad\quad\quad+\frac{1}{4\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\qty[-2\im\epsilon\qty(dh^{bc}+\nabla^{(b}c^{c)})\partial_cc^a+\im h^{bc}\partial_c\qty(\epsilon c^d\partial_d c^a)]\\
+    \delta_{\textnormal{BRST}}S_{\textnormal{gh}}&=-\delta_{\textnormal{BRST}}S_{\textnormal{gf}}\\
+    &\quad\quad\quad+\frac{1}{4\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}2\im c^c\partial_c\qty(\epsilon) \qty[dh^{ab}+\nabla^{(a}c^{b)}]\\
+    &\quad\quad\quad+\frac{1}{4\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\im h^{ac}\partial_c\qty(\epsilon) c^d\partial_dc^b\\
+    &\quad\quad\quad+\frac{1}{4\pi}\int\dd[2]{\sigma}\sqrt{h}b_{ab}\im h^{bc}\partial_c\qty(\epsilon) c^d\partial_d c^a\\
+    \delta_{\textnormal{BRST}}\qty(S_{\textnormal{gh}}+S_{\textnormal{gf}})&=\frac{\im}{2\pi}\int\dd[2]{\sigma}\partial_c\qty(\epsilon) \sqrt{h}b_{ab}c^c\qty[dh^{ab}+\nabla^{(a}c^{b)}]\\
+    &\quad\quad\quad-\frac{\im}{4\pi}\int\dd[2]{\sigma}\partial_c\qty(\epsilon)\sqrt{h}b_{ab}\qty( h^{ac} c^d\partial_dc^b + h^{bc} c^d\partial_d c^a)
+\end{align*}
+using the boundary conditions $n^ab_{ab}\eval_{\partial M}=n_ac^a\eval_{\partial M}=0$,
+\begin{align*}
+    \delta_{\textnormal{BRST}}\qty(S_{\textnormal{gh}}+S_{\textnormal{gf}})&=\frac{\im}{2\pi}\int\dd[2]{\sigma}\epsilon\sqrt{h}\nabla_c\qty[b_{ab}c^c\qty(dh^{ab}+\nabla^{(a}c^{b)})]\\
+    &\quad\quad\quad-\frac{\im}{2\pi}\int\dd[2]{\sigma}\epsilon\sqrt{h}\nabla_c\qty[b_{ab} h^{ac} c^d\partial_dc^b]\\
+    \delta_{\textnormal{BRST}}\qty(S_{\textnormal{gh}}+S_{\textnormal{gf}})&=\frac{\im}{2\pi}\int\dd[2]{\sigma}\epsilon\sqrt{h}\nabla_c\qty[b_{ab}\qty(c^cdh^{ab}+c^c\nabla^{(a}c^{b)}-h^{ac} c^d\partial_dc^b)]
+\end{align*}
+\subsection{The BRST Nilpotency}
+
+Nilpotency of BRST,
+
+\begin{align*}
+    \delta_1X^\mu&=\im\epsilon_1c^a\partial_a X^\mu\\
+    \delta_2\delta_1X^\mu&=\im\epsilon_1\delta_2\qty(c^a)\partial_a X^\mu+\im\epsilon_1c^a\partial_a\qty( \delta_2\qty(X^\mu))\\
+    \delta_2\delta_1X^\mu&=\im\epsilon_1\qty(\im\epsilon_2)c^c\nabla_c\qty(c^a)\partial_a X^\mu+\im\epsilon_1c^a\partial_a \qty(\qty(\im\epsilon_2c^b\partial_b)X^\mu)\\
+    \delta_2\delta_1X^\mu&=-\epsilon_1\epsilon_2c^c\nabla_c\qty(c^a)\partial_a X^\mu+\epsilon_1\epsilon_2c^a\partial_a \qty(c^b\partial_b X^\mu)\\
+    \delta_2\delta_1X^\mu&=-\epsilon_1\epsilon_2c^c\nabla_c\qty(c^a)\nabla_a X^\mu+\epsilon_1\epsilon_2c^a\nabla_a \qty(c^b\nabla_b X^\mu)\\
+    \delta_2\delta_1X^\mu&=-\epsilon_1\epsilon_2c^c\nabla_c\qty(c^a)\nabla_a X^\mu+\epsilon_1\epsilon_2c^a\nabla_a \qty(c^b)\nabla_b X^\mu+\epsilon_1\epsilon_2c^ac^b\nabla_a\nabla_b X^\mu\\
+    \delta_2\delta_1X^\mu&=\epsilon_1\epsilon_2c^ac^b\nabla_a\nabla_b X^\mu, \ \ \ \textnormal{using the ghost statistics}\\
+    \delta_2\delta_1X^\mu&=\epsilon_1\epsilon_2c^ac^b\nabla_{[a}\nabla_{b]} X^\mu,\ \ \ \textnormal{as $X^\mu$ is a world-sheet scalar: }\nabla_a\nabla_b X^\mu=\nabla_b\nabla_a X^\mu\\
+    \delta_2\delta_1X^\mu&=0
+\end{align*}
+
+\begin{align*}
+    \delta_1 h_{ab}&=2\im\epsilon_1 d h_{ab}+\im\epsilon_1\qty(c^c\partial_ch_{ab}+h_{ac}\partial_bc^c+h_{bc}\partial_ac^c)\\
+    \delta_2\delta_1 h_{ab}&=2\im\epsilon_1 \delta_2\qty(d) h_{ab}+2\im\epsilon_1 d \delta_2\qty(h_{ab})\\
+    &\quad\quad\quad+\im\epsilon_1\qty(\delta_2\qty(c^c)\partial_ch_{ab}+c^c\partial_c\delta_2\qty(h_{ab}))\\
+    &\quad\quad\quad+\im\epsilon_1\qty(\delta_2\qty(h_{ac})\partial_bc^c+h_{ac}\partial_b\delta_2\qty(c^c))\\
+    &\quad\quad\quad+\im\epsilon_1\qty(\delta_2\qty(h_{bc})\partial_ac^c+h_{bc}\partial_a\delta_2\qty(c^c))\\
+    \delta_2\delta_1 h_{ab}&=2\im\epsilon_1\im\epsilon_2 h_{ab}c^c\partial_c d+2\im\epsilon_1 d2\im\epsilon_2\qty(dh_{ab}+\nabla_{(a}c_{b)})\\
+    &\quad\quad\quad+\im\epsilon_1\qty(\im\epsilon_2c^d\partial_dc^c\partial_ch_{ab}+c^c\partial_c\qty(2\im\epsilon_2\qty(dh_{ab}+\nabla_{(a}c_{b)})))\\
+    &\quad\quad\quad+\im\epsilon_1\qty(2\im\epsilon_2\qty(dh_{ac}+\nabla_{(a}c_{c)})\partial_bc^c+h_{ac}\partial_b\qty(\im\epsilon_2c^d\partial_dc^c))\\
+    &\quad\quad\quad+\im\epsilon_1\qty(2\im\epsilon_2\qty(dh_{bc}+\nabla_{(b}c_{c)})\partial_ac^c+h_{bc}\partial_a\qty(\im\epsilon_2c^d\partial_dc^c))\\
+    \delta_2\delta_1 h_{ab}&=-2\epsilon_1\epsilon_2 h_{ab}c^c\partial_c d+4\epsilon_1 \epsilon_2d\nabla_{(a}c_{b)}\\
+    &\quad\quad\quad-\epsilon_1\epsilon_2c^d\partial_dc^c\partial_ch_{ab}+2\epsilon_1\epsilon_2c^c\partial_c\qty(dh_{ab}+\nabla_{(a}c_{b)})\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\qty(dh_{ac}+\nabla_{(a}c_{c)})\partial_bc^c-\epsilon_1\epsilon_2h_{ac}\partial_b\qty(c^d\partial_dc^c)\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\qty(dh_{bc}+\nabla_{(b}c_{c)})\partial_ac^c-\epsilon_1\epsilon_2h_{bc}\partial_a\qty(c^d\partial_dc^c)\\
+    \delta_2\delta_1 h_{ab}&=4\epsilon_1 \epsilon_2d\nabla_{(a}c_{b)}-\epsilon_1\epsilon_2c^d\partial_dc^c\partial_ch_{ab}+2\epsilon_1\epsilon_2c^c\qty(d\partial_ch_{ab}+\partial_c\nabla_{(a}c_{b)})\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\qty(dh_{ac}+\nabla_{(a}c_{c)})\partial_bc^c-\epsilon_1\epsilon_2h_{ac}\partial_b\qty(c^d\partial_dc^c)\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\qty(dh_{bc}+\nabla_{(b}c_{c)})\partial_ac^c-\epsilon_1\epsilon_2h_{bc}\partial_a\qty(c^d\partial_dc^c)\\
+    \delta_2\delta_1 h_{ab}&=4\epsilon_1 \epsilon_2d\nabla_{(a}c_{b)}-2\epsilon_1\epsilon_2dc^c\partial_ch_{ab}-2\epsilon_1\epsilon_2dh_{ac}\partial_bc^c-2\epsilon_1\epsilon_2dh_{bc}\partial_ac^c\\
+    &\quad\quad\quad-\epsilon_1\epsilon_2c^d\partial_dc^c\partial_ch_{ab}-\epsilon_1\epsilon_2h_{bc}\partial_a\qty(c^d\partial_dc^c)-\epsilon_1\epsilon_2h_{ac}\partial_b\qty(c^d\partial_dc^c)\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\partial_c\nabla_{(a}c_{b)}c^c-2\epsilon_1\epsilon_2\nabla_{(a}c_{c)}\partial_bc^c-2\epsilon_1\epsilon_2\nabla_{(b}c_{c)}\partial_ac^c\\
+    \delta_2\delta_1 h_{ab}&=4\epsilon_1 \epsilon_2d\nabla_{(a}c_{b)}-2\epsilon_1\epsilon_2d\qty[c^c\partial_ch_{ab}+h_{ac}\partial_bc^c+h_{bc}\partial_ac^c]\\
+    &\quad\quad\quad-\epsilon_1\epsilon_2\qty[c^d\partial_dc^c\partial_ch_{ab}+h_{bc}\partial_a\qty(c^d\partial_dc^c)+h_{ac}\partial_b\qty(c^d\partial_dc^c)]\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\qty[\partial_c\nabla_{(a}c_{b)}c^c+\nabla_{(a}c_{c)}\partial_bc^c+\nabla_{(b}c_{c)}\partial_ac^c]\\
+    \delta_2\delta_1 h_{ab}&=4\epsilon_1 \epsilon_2d\nabla_{(a}c_{b)}-4\epsilon_1\epsilon_2d\nabla_{(a}c_{b)}\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\nabla_{(a|}\qty(c^c\nabla_cc_{|b)})\\
+    &\quad\quad\quad-2\epsilon_1\epsilon_2\qty[\nabla_c\nabla_{(a}c_{b)}c^c+\nabla_{(a}c_{c)}\nabla_bc^c+\nabla_{(b}c_{c)}\nabla_ac^c]\\
+    \delta_2\delta_1 h_{ab}&=-2\epsilon_1\epsilon_2\qty[\nabla_{(a|}\qty(c^c\nabla_cc_{|b)})+\nabla_c\nabla_{(a}c_{b)}c^c+\nabla_{(a}c_{c)}\nabla_bc^c+\nabla_{(b}c_{c)}\nabla_ac^c]\\
+    \delta_2\delta_1 h_{ab}&=-\epsilon_1\epsilon_2\left[\nabla_{a}\qty(c^c\nabla_cc_{b})+\nabla_{b}\qty(c^c\nabla_cc_{a})+\nabla_c\nabla_{a}c_{b}c^c+\nabla_c\nabla_{b}c_{a}c^c\right.\\
+    &\quad\quad\quad\left.+\nabla_{a}c_{c}\nabla_bc^c+\nabla_{b}c_{c}\nabla_ac^c+\nabla_{c}c_{a}\nabla_bc^c+\nabla_{c}c_{b}\nabla_ac^c\right]\\
+    \delta_2\delta_1 h_{ab}&=-\epsilon_1\epsilon_2\left[c^c\nabla_{a}\nabla_cc_{b}+c^c\nabla_{b}\nabla_cc_{a}+\nabla_c\nabla_{a}c_{b}c^c+\nabla_c\nabla_{b}c_{a}c^c\right.\\
+    &\quad\quad\quad\left.+\nabla_{a}c^c\nabla_cc_{b}+\nabla_{b}c^c\nabla_cc_{a}+\nabla_{a}c_{c}\nabla_bc^c+\nabla_{b}c_{c}\nabla_ac^c+\nabla_{c}c_{a}\nabla_bc^c+\nabla_{c}c_{b}\nabla_ac^c\right]\\
+    \delta_2\delta_1 h_{ab}&=-\epsilon_1\epsilon_2\left[c^c\nabla_{a}\nabla_cc_{b}+c^c\nabla_{b}\nabla_cc_{a}-c^c\nabla_c\nabla_{a}c_{b}-c^c\nabla_c\nabla_{b}c_{a}\right.\\
+    &\quad\quad\quad\left.+\nabla_{a}c^c\nabla_cc_{b}+\nabla_{b}c^c\nabla_cc_{a}-\nabla_bc^c\nabla_{c}c_{a}-\nabla_ac^c\nabla_{c}c_{b}\right]\\
+    \delta_2\delta_1 h_{ab}&=-\epsilon_1\epsilon_2\left[c^c\nabla_{a}\nabla_cc_{b}+c^c\nabla_{b}\nabla_cc_{a}-c^c\nabla_c\nabla_{a}c_{b}-c^c\nabla_c\nabla_{b}c_{a}\right.\\
+    &\quad\quad\quad\left.+\nabla_{a}c^c\nabla_cc_{b}+\nabla_{b}c^c\nabla_cc_{a}-\nabla_bc^c\nabla_{c}c_{a}-\nabla_ac^c\nabla_{c}c_{b}\right]\\
+    \delta_2\delta_1 h_{ab}&=-\epsilon_1\epsilon_2c^c\left[\tensor{R}{^d_b_a_c}c_{d}+\tensor{R}{^d_a_b_c}c_{d}\right]\\
+    \delta_2\delta_1 h_{ab}&=-\epsilon_1\epsilon_2c^cc^d\left[\tensor{R}{_d_b_a_c}+\tensor{R}{_d_a_b_c}\right]\\
+    \delta_2\delta_1 h_{ab}&=-\frac12\epsilon_1\epsilon_2c^cc^d\left[\tensor{R}{_d_b_a_c}-\tensor{R}{_c_b_a_d}+\tensor{R}{_d_a_b_c}-\tensor{R}{_c_a_b_d}\right]\\
+    \delta_2\delta_1 h_{ab}&=-\frac12\epsilon_1\epsilon_2c^cc^d\left[\tensor{R}{_d_b_a_c}-\tensor{R}{_c_b_a_d}+\tensor{R}{_b_c_d_a}-\tensor{R}{_b_d_c_a}\right]\\
+    \delta_2\delta_1 h_{ab}&=-\frac12\epsilon_1\epsilon_2c^cc^d\left[\tensor{R}{_d_b_a_c}-\tensor{R}{_c_b_a_d}+\tensor{R}{_c_b_a_d}-\tensor{R}{_d_b_a_c}\right]\\
+    \delta_2\delta_1 h_{ab}&=0
+\end{align*}

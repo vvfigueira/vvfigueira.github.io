@@ -102,6 +102,25 @@
     }%
   }%
 }
+\newcommand{\qnord}[1]{%
+  \mathbin{%
+    \vcenter{%
+      \offinterlineskip
+      \halign{##\cr
+        \raisebox{.5ex}{\scalebox{0.3}{$\blacksquare$}}\cr
+        \raisebox{-0.6ex}{\scalebox{0.3}{$\blacksquare$}}\cr
+      }%
+    }%
+  }\ #1\ \mathbin{%
+    \vcenter{%
+      \offinterlineskip
+      \halign{##\cr
+        \raisebox{.3ex}{\scalebox{0.6}{$\ast$}}\cr
+        \raisebox{-0.6ex}{\scalebox{0.6}{$\ast$}}\cr
+      }%
+    }%
+  }%
+}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
@@ -183,9 +202,5 @@
 \newpage
 
 \input{appendix/brst}
-
-\newpage
-
-\input{appendix/brstclosure}
 
 \end{document}
