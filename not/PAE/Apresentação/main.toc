@@ -1,0 +1,5 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Introdução}{2}{0}{1}
+\beamer@sectionintoc {2}{Fundamentos Teóricos}{3}{0}{2}
+\beamer@sectionintoc {3}{Modelagem Científica como Campo Conceitual}{5}{0}{3}
+\beamer@sectionintoc {4}{Implicações para o Ensino de de Física}{6}{0}{4}
