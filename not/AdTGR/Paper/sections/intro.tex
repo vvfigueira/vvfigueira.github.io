@@ -3,7 +3,7 @@
 Einstein-Hilbert action:
 
 \begin{align*}
-    S_{\textnormal{EH}}&=\frac{1}{\kappa^2}\int\limits_M\dd[4]{x}\sqrt{\abs{g}}g^{ab}\tensor{R}{^c_a_c_b}
+    S_{\textnormal{EH}}&=\frac{1}{\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}g^{ab}\tensor{R}{_c_b^c_a}
 \end{align*}
 
 The Vierbein/Tetrad formalism:
@@ -18,9 +18,12 @@ A connection is defined with respect to a vector basis:
 
 \begin{align*}
     \nabla_{\vb X}\qty(\vb e_\nu)&=\tensor{{\boldsymbol\omega(\vb X)}}{^\mu_\nu}\vb e_\mu\\
-    \nabla_a\tensor{e}{_\nu^b}&=\tensor{\omega}{_a^\mu_\nu}\tensor{e}{_\mu^b}\\
-    \tensor{e}{_\alpha^c}g_{cb}\nabla_a\tensor{e}{_\nu^b}&=\tensor{e}{_\alpha^c}g_{cb}\tensor{\omega}{_a^\mu_\nu}\tensor{e}{_\mu^b}\\
-    \tensor{e}{_\alpha^c}g_{cb}\nabla_a\tensor{e}{_\nu^b}+\tensor{e}{_\alpha^c}\tensor{e}{_\nu^b}\nabla_ag_{cb}&=\tensor{\omega}{_a_\alpha_\nu}\\
+    \nabla_{\vb X}\qty(\vb e_\nu)&=X^a\tensor{\omega}{_a^\mu_\nu}\vb e_\mu\\
+    \vb g\qty(\vb e_\alpha,\nabla_{\vb X}\qty(\vb e_\nu))&=X^a\tensor{\omega}{_a^\mu_\nu}\vb g\qty(\vb e_\alpha,\vb e_\mu)\\
+    \vb g\qty(\vb e_\alpha,\nabla_{\vb X}\qty(\vb e_\nu))+\vb g\qty(\vb e_\nu,\nabla_{\vb X}\qty(\vb e_\alpha))&=X^a\tensor{\omega}{_a^\mu_\nu}\vb g\qty(\vb e_\alpha,\vb e_\mu)+X^a\tensor{\omega}{_a^\mu_\alpha}\vb g\qty(\vb e_\nu,\vb e_\mu)\\
+    \vb g\qty(\vb e_\alpha,\nabla_{\vb X}\qty(\vb e_\nu))+\vb g\qty(\nabla_{\vb X}\qty(\vb e_\alpha),\vb e_\nu)&=X^a\tensor{\omega}{_a_\alpha_\nu}+X^a\tensor{\omega}{_a_\nu_\alpha}\\
+    \tensor{e}{_\alpha^c}g_{cb}\nabla_a\vb e_\nu&=\tensor{e}{_\alpha^c}g_{cb}\tensor{\omega}{_a^\mu_\nu}\vb e_\mu\\
+    \tensor{e}{_\alpha^c}g_{cb}\nabla_a\vb e_\nu+\tensor{e}{_\alpha^c}\vb e_\nu\nabla_ag_{cb}&=\tensor{\omega}{_a_\alpha_\nu}\\
     \tensor{e}{_\alpha^c}\nabla_a\qty(g_{cb}\tensor{e}{_\nu^b})&=\tensor{\omega}{_a_\alpha_\nu}\\
     \nabla_a\qty(\tensor{e}{_\alpha^c}g_{cb}\tensor{e}{_\nu^b})-g_{cb}\tensor{e}{_\nu^b}\nabla_a\tensor{e}{_\alpha^c}&=\tensor{\omega}{_a_\alpha_\nu}\\
     \nabla_a\qty(\eta_{\alpha\nu})-g_{cb}\tensor{e}{_\nu^b}\nabla_a\tensor{e}{_\alpha^c}&=\tensor{\omega}{_a_\alpha_\nu}\\
@@ -39,13 +42,34 @@ Riemann curvature tensor, $\textbf{Riem}\qty(\vb X,\vb Y):\mathfrak X\rightarrow
     \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=\left(X^aY^b\nabla_{a}\qty(\tensor{\omega}{_b^\nu_\mu}\vb e_\nu)-X^aY^b\nabla_{b}\qty(\tensor{\omega}{_a^\nu_\mu}\vb e_\nu)\right.\\
     &\quad\quad\quad\left.+\qty(\nabla_{\vb X}\qty(Y^b)-\nabla_{\vb Y}\qty(X^b))\tensor{\omega}{_b^\nu_\mu}\vb e_\nu-\comm{\vb X}{\vb Y}^b\tensor{\omega}{_b^\nu_\mu}\vb e_\nu\right)\\
     \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=\left(X^aY^b\nabla_{a}\qty(\tensor{\omega}{_b^\nu_\mu})\vb e_\nu+X^aY^b\tensor{\omega}{_b^\nu_\mu}\tensor{\omega}{_a^\alpha_\nu}\vb e_\alpha-X^aY^b\nabla_{b}\qty(\tensor{\omega}{_a^\nu_\mu})\vb e_\nu-X^aY^b\tensor{\omega}{_a^\nu_\mu}\tensor{\omega}{_b^\alpha_\nu}\vb e_\alpha)\right.\\
-    &\quad\quad\quad\left.+\comm{\vb X}{\vb Y}^b\tensor{\omega}{_b^\nu_\mu}\vb e_\nu-\comm{\vb X}{\vb Y}^b\tensor{\omega}{_b^\nu_\mu}\vb e_\nu\right)\\
-    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=X^aY^b\left(\nabla_{a}\qty(\tensor{\omega}{_b^\nu_\mu})+\tensor{\omega}{_b^\alpha_\mu}\tensor{\omega}{_a^\nu_\alpha}-\nabla_{b}\qty(\tensor{\omega}{_a^\nu_\mu})-\tensor{\omega}{_a^\alpha_\mu}\tensor{\omega}{_b^\nu_\alpha}\right)\vb e_\nu\\
-    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=X^aY^b\tensor{R}{_a_b^\nu_\mu}\vb e_\nu
+    &\quad\quad\quad\left.+\qty(X^a\partial_a Y^b+X^a\tensor{\Gamma}{_a^b_c}Y^c-Y^a\partial_aX^b-Y^a\tensor{\Gamma}{_a^b_c}X^c)\tensor{\omega}{_b^\nu_\mu}\vb e_\nu-\qty(X^a\partial_aY^b-Y^a\partial_a X^b)\tensor{\omega}{_b^\nu_\mu}\vb e_\nu\right)\\
+    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=X^aY^b\left(\nabla_{a}\qty(\tensor{\omega}{_b^\nu_\mu})+\tensor{\omega}{_b^\alpha_\mu}\tensor{\omega}{_a^\nu_\alpha}-\nabla_{b}\qty(\tensor{\omega}{_a^\nu_\mu})-\tensor{\omega}{_a^\alpha_\mu}\tensor{\omega}{_b^\nu_\alpha}+\tensor{\Gamma}{_a^c_b}\tensor{\omega}{_c^\nu_\mu}-\tensor{\Gamma}{_b^c_a}\tensor{\omega}{_c^\nu_\mu}\right)\vb e_\nu\\
+    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=X^aY^b\left(\partial_{a}\tensor{\omega}{_b^\nu_\mu}-\partial_{b}\tensor{\omega}{_a^\nu_\mu}+\tensor{\omega}{_a^\nu_\alpha}\tensor{\omega}{_b^\alpha_\mu}-\tensor{\omega}{_b^\nu_\alpha}\tensor{\omega}{_a^\alpha_\mu}\right)\vb e_\nu\\
+    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=X^aY^b\tensor{\left(\dd{\boldsymbol\omega}+\boldsymbol\omega\wedge\boldsymbol\omega\right)}{_a_b^\nu_\mu}\vb e_\nu\\
+    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=X^aY^b\tensor{R}{_a_b^\nu_\mu}\vb e_\nu\\
+    \textbf{Riem}\qty(\vb X,\vb Y)\qty(\tensor{e}{_\mu^e}\boldsymbol\partial_e)&=X^aY^b\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\nu^c}\boldsymbol\partial_c\\
+    \tensor{e}{_\mu^e}\textbf{Riem}\qty(\vb X,\vb Y)\boldsymbol\partial_e&=X^aY^b\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\nu^c}\boldsymbol\partial_c\\
+    \tensor{e}{_\mu^e}X^aY^b\tensor{R}{_a_b^c_e}\boldsymbol\partial_c&=X^aY^b\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\nu^c}\boldsymbol\partial_c\\
+    \tensor{e}{^\mu_d}\tensor{e}{_\mu^e}\tensor{R}{_a_b^c_e}&=\tensor{e}{^\mu_d}\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\nu^c}\\
+    \tensor{R}{_a_b^c_d}&=\tensor{e}{^\mu_d}\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\nu^c}
 \end{align*}
 
+In the EH action,
 
-
+\begin{align*}
+    S_{\textnormal{EH}}&=\frac{1}{\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}g^{ab}\tensor{R}{_c_b^c_a}\\
+    S_{\textnormal{EH}}&=\frac{1}{\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}g^{ab}\tensor{e}{^\mu_a}\tensor{R}{_c_b^\nu_\mu}\tensor{e}{_\nu^c}\\
+    S_{\textnormal{EH}}&=\frac{1}{\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}g^{ab}g^{cd}\tensor{e}{^\mu_a}\tensor{R}{_c_b_\nu_\mu}\tensor{e}{^\nu_d}\\
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}\qty(g^{ab}g^{dc}-g^{ac}g^{db})\tensor{e}{^\mu_a}\tensor{R}{_c_b_\nu_\mu}\tensor{e}{^\nu_d}\\
+    S_{\textnormal{EH}}&=\frac{1}{2\qty(D-2)!\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}\epsilon^{a_1\cdots a_{D-2}ad}\tensor{\epsilon}{_{a_1\cdots a_{D-2}}^b^c}\tensor{e}{^\mu_a}\tensor{R}{_c_b_\nu_\mu}\tensor{e}{^\nu_d}\\
+    S_{\textnormal{EH}}&=-\frac{1}{2\qty(D-2)!\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}\epsilon^{ada_1\cdots a_{D-2}}\tensor{\epsilon}{^b^c_{a_1\cdots a_{D-2}}}\tensor{e}{^\nu_a}\tensor{R}{_b_c_\nu_\mu}\tensor{e}{^\mu_d}\\
+    S_{\textnormal{EH}}&=-\frac{1}{2\kappa^2}\int\limits_M\dd[D]{x}\epsilon^{ada_1\cdots a_{D-2}}\tensor{e}{^\nu_a}\tensor{{\star R}}{_{a_1\cdots a_{D-2}}_\nu_\mu}\tensor{e}{^\mu_d}\\
+    S_{\textnormal{EH}}&=-\frac{1}{2\kappa^2}\int\limits_M\frac{1}{D!}\epsilon_{b_1\cdots b_D}\dd{x^{b_1}}\wedge\cdots\wedge\dd{x^{b_D}}\epsilon^{ada_1\cdots a_{D-2}}\tensor{e}{^\nu_a}\tensor{{\star R}}{_{a_1\cdots a_{D-2}}_\nu_\mu}\tensor{e}{^\mu_d}\\
+    S_{\textnormal{EH}}&=-\frac{1}{2\kappa^2}\int\limits_M\dd{x^{b_1}}\wedge\cdots\wedge\dd{x^{b_D}}\tensor{g}{_{b_1}^{[a}}\tensor{g}{_{b_2}^{d}}\tensor{g}{_{b_3}^{a_1}}\cdots\tensor{g}{_{b_D}^{a_{D-2}]}}\tensor{e}{^\nu_a}\tensor{{\star R}}{_{a_1\cdots a_{D-2}}_\nu_\mu}\tensor{e}{^\mu_d}\\
+    S_{\textnormal{EH}}&=-\frac{1}{2\kappa^2}\int\limits_M\dd{x^{a}}\wedge\dd{x^{d}}\wedge\dd{x^{a_1}}\wedge\cdots\wedge\dd{x^{a_{D-2}}}\tensor{e}{^\nu_a}\tensor{e}{^\mu_d}\tensor{{\star R}}{_{a_1\cdots a_{D-2}}_\nu_\mu}\\
+    S_{\textnormal{EH}}&=-\frac{1}{2\kappa^2}\int\limits_M\tensor{e}{^\nu_a}\dd{x^{a}}\wedge\tensor{e}{^\mu_d}\dd{x^{d}}\wedge\dd{x^{a_1}}\wedge\cdots\wedge\dd{x^{a_{D-2}}}\tensor{{\star R}}{_{a_1\cdots a_{D-2}}_\nu_\mu}\\
+    S_{\textnormal{EH}}&=-\frac{1}{2\kappa^2}\int\limits_M{\tilde{\vb e}^\nu}\wedge{\tilde{\vb e}^\mu}\wedge\tensor{{\star \textbf{R}}}{_\nu_\mu}
+\end{align*}
 
 
 
