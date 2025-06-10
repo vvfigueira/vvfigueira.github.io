@@ -1,1 +1,95 @@
 \section{Introduction}
+
+Einstein-Hilbert action:
+
+\begin{align*}
+    S_{\textnormal{EH}}&=\frac{1}{\kappa^2}\int\limits_M\dd[4]{x}\sqrt{\abs{g}}g^{ab}\tensor{R}{^c_a_c_b}
+\end{align*}
+
+The Vierbein/Tetrad formalism:
+
+\begin{align*}
+    \eta_{\mu\nu}&=\vb g\qty(\vb e_\mu,\vb e_\nu)\\
+    g_{ab}&=\tensor{e}{^\mu_a} \tensor{e}{^\nu_b}\eta_{\mu\nu}\\
+    \eta_{\mu\nu}&=\tensor{e}{_\mu^a}\tensor{e}{_\nu^b}g_{ab}
+\end{align*}
+
+A connection is defined with respect to a vector basis:
+
+\begin{align*}
+    \nabla_{\vb X}\qty(\vb e_\nu)&=\tensor{{\boldsymbol\omega(\vb X)}}{^\mu_\nu}\vb e_\mu\\
+    \nabla_a\tensor{e}{_\nu^b}&=\tensor{\omega}{_a^\mu_\nu}\tensor{e}{_\mu^b}\\
+    \tensor{e}{_\alpha^c}g_{cb}\nabla_a\tensor{e}{_\nu^b}&=\tensor{e}{_\alpha^c}g_{cb}\tensor{\omega}{_a^\mu_\nu}\tensor{e}{_\mu^b}\\
+    \tensor{e}{_\alpha^c}g_{cb}\nabla_a\tensor{e}{_\nu^b}+\tensor{e}{_\alpha^c}\tensor{e}{_\nu^b}\nabla_ag_{cb}&=\tensor{\omega}{_a_\alpha_\nu}\\
+    \tensor{e}{_\alpha^c}\nabla_a\qty(g_{cb}\tensor{e}{_\nu^b})&=\tensor{\omega}{_a_\alpha_\nu}\\
+    \nabla_a\qty(\tensor{e}{_\alpha^c}g_{cb}\tensor{e}{_\nu^b})-g_{cb}\tensor{e}{_\nu^b}\nabla_a\tensor{e}{_\alpha^c}&=\tensor{\omega}{_a_\alpha_\nu}\\
+    \nabla_a\qty(\eta_{\alpha\nu})-g_{cb}\tensor{e}{_\nu^b}\nabla_a\tensor{e}{_\alpha^c}&=\tensor{\omega}{_a_\alpha_\nu}\\
+    -g_{cb}\tensor{e}{_\nu^b}\nabla_a\tensor{e}{_\alpha^c}&=\tensor{\omega}{_a_\alpha_\nu}\\
+    -\tensor{\omega}{_a_\nu_\alpha}&=\tensor{\omega}{_a_\alpha_\nu},\ \ \ \textnormal{Metric compatibility}\numberthis
+\end{align*}
+
+Riemann curvature tensor, $\textbf{Riem}\qty(\vb X,\vb Y):\mathfrak X\rightarrow\mathfrak X$:
+
+\begin{align*}
+    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=\qty(\nabla_{\vb X}\nabla_{\vb Y}-\nabla_{\vb Y}\nabla_{\vb X}-\nabla_{\comm{\vb X}{\vb Y}})\vb e_\mu\\
+    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=\qty(\nabla_{\vb X}\qty(Y^b\tensor{\omega}{_b^\nu_\mu}\vb e_\nu)-\nabla_{\vb Y}\qty(X^a\tensor{\omega}{_a^\nu_\mu}\vb e_\nu)-\comm{\vb X}{\vb Y}^b\tensor{\omega}{_b^\nu_\mu}\vb e_\nu)\\
+    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=\qty(\nabla_{\vb X}\qty(Y^b\tensor{\omega}{_b^\nu_\mu}\vb e_\nu)-\nabla_{\vb Y}\qty(X^a\tensor{\omega}{_a^\nu_\mu}\vb e_\nu)-\comm{\vb X}{\vb Y}^b\tensor{\omega}{_b^\nu_\mu}\vb e_\nu)\\
+    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=\left(Y^b\nabla_{\vb X}\qty(\tensor{\omega}{_b^\nu_\mu}\vb e_\nu)-X^a\nabla_{\vb Y}\qty(\tensor{\omega}{_a^\nu_\mu}\vb e_\nu)\right.\\
+    &\quad\quad\quad\left.+\nabla_{\vb X}\qty(Y^b)\tensor{\omega}{_b^\nu_\mu}\vb e_\nu-\nabla_{\vb Y}\qty(X^b)\tensor{\omega}{_b^\nu_\mu}\vb e_\nu-\comm{\vb X}{\vb Y}^b\tensor{\omega}{_b^\nu_\mu}\vb e_\nu\right)\\
+    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=\left(X^aY^b\nabla_{a}\qty(\tensor{\omega}{_b^\nu_\mu}\vb e_\nu)-X^aY^b\nabla_{b}\qty(\tensor{\omega}{_a^\nu_\mu}\vb e_\nu)\right.\\
+    &\quad\quad\quad\left.+\qty(\nabla_{\vb X}\qty(Y^b)-\nabla_{\vb Y}\qty(X^b))\tensor{\omega}{_b^\nu_\mu}\vb e_\nu-\comm{\vb X}{\vb Y}^b\tensor{\omega}{_b^\nu_\mu}\vb e_\nu\right)\\
+    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=\left(X^aY^b\nabla_{a}\qty(\tensor{\omega}{_b^\nu_\mu})\vb e_\nu+X^aY^b\tensor{\omega}{_b^\nu_\mu}\tensor{\omega}{_a^\alpha_\nu}\vb e_\alpha-X^aY^b\nabla_{b}\qty(\tensor{\omega}{_a^\nu_\mu})\vb e_\nu-X^aY^b\tensor{\omega}{_a^\nu_\mu}\tensor{\omega}{_b^\alpha_\nu}\vb e_\alpha)\right.\\
+    &\quad\quad\quad\left.+\comm{\vb X}{\vb Y}^b\tensor{\omega}{_b^\nu_\mu}\vb e_\nu-\comm{\vb X}{\vb Y}^b\tensor{\omega}{_b^\nu_\mu}\vb e_\nu\right)\\
+    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=X^aY^b\left(\nabla_{a}\qty(\tensor{\omega}{_b^\nu_\mu})+\tensor{\omega}{_b^\alpha_\mu}\tensor{\omega}{_a^\nu_\alpha}-\nabla_{b}\qty(\tensor{\omega}{_a^\nu_\mu})-\tensor{\omega}{_a^\alpha_\mu}\tensor{\omega}{_b^\nu_\alpha}\right)\vb e_\nu\\
+    \textbf{Riem}\qty(\vb X,\vb Y)\vb e_\mu&=X^aY^b\tensor{R}{_a_b^\nu_\mu}\vb e_\nu
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% Metric:
+
+% \begin{align*}
+%     \dd{s}^2&=-A\qty(r)\dd{t}^2+\frac{1}{A\qty(r)}\dd{r}^2+r^2\dd{\Omega}^2\\
+%     A\qty(r)&=-B\qty(2-3b_1B)\frac1r+\qty(1-3b_1B)+b_1r+b_2r^2
+% \end{align*}
+
+% Ricci:
+
+% \begin{align*}
+%     R&=6b_1\qty(B-r)\frac{1}{r^2}-12b_2\\
+%     R'&=-12\frac{b_1}{r^3}\qty(B-\frac12r)
+% \end{align*}
+
+% Equation:
+
+% \begin{align*}
+%     6\beta\square R&=\gamma R+4\gamma\Lambda\\
+%     \dv{}{r}\qty(A\qty(r)r^2R')&=\frac{\gamma}{6\beta}\qty( R+4\Lambda)r^2\\
+%     -12b_1\dv{}{r}\qty(A\qty(r)\frac1r\qty(B-\frac12 r))&=\frac{\gamma}{6\beta}\qty( 6b_1\qty(B-r)\frac{1}{r^2}-12b_2+4\Lambda)r^2\\
+%     -12b_1\dv{}{r}\qty(\qty(-B\qty(2-3b_1B)\frac1r+\qty(1-3b_1B)+b_1r+b_2r^2)\qty(\frac Br-\frac12))&=\frac{\gamma}{6\beta}\qty( 6b_1\qty(B-r)\frac{1}{r^2}-12b_2+4\Lambda)r^2\\
+%     -12b_1\qty(B\qty(2-3b_1B)\frac{1}{r^2}+b_1+2b_2r)\qty(\frac Br-\frac12)+12b_1\qty(-B\qty(2-3b_1B)\frac{1}{r}+\qty(1-3b_1B)+b_1r+b_2r^2)\frac{B}{r^2}&=\frac{\gamma}{6\beta}\qty( 6b_1\qty(B-r)\frac{1}{r^2}-12b_2+4\Lambda)r^2\\
+%     -r^{-3}24b_1B\qty(2-3b_1B)+r^{-2}12b_1B\qty(3-6b_1B)+6b_1^2-12b_1b_2B+r12b_1b_2&=\frac{\gamma}{6\beta}\qty( 6b_1B-6b_1r-4r^2\qty(3b_2-\Lambda))
+% \end{align*}
+
+% Thus:
+% \begin{align*}
+%     B\qty(2-3b_1B)&=0\\
+%     6b_1-12b_2B&=\frac\gamma\beta B\\
+%     12b_2&=-\frac\gamma\beta \\
+%     3b_2&=\Lambda
+% \end{align*}
