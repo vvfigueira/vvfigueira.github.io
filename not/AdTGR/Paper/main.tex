@@ -16,6 +16,11 @@
 \usepackage[lmargin=0.5cm,rmargin=0.5cm, tmargin =1cm,bmargin =1cm]{geometry}
 \usepackage{tensor}
 \usepackage[english]{cleveref}
+\usepackage{stackengine}
+
+% Custom command to put a wedge over the comma
+\newcommand{\wedgecomma}{\stackon[1pt]{,}{\smash{\scriptsize$\wedge$}}}
+\newcommand{\wedgecomm}[2]{\qty[ #1\ \wedgecomma\ #2 ]}
 
 \AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
 \AtBeginDocument{\newcommand{\e}{\textnormal{e}}}

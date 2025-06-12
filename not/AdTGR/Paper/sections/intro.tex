@@ -130,24 +130,50 @@ And,
     0&=\frac{1}{2}\epsilon_{\mu\alpha\beta}\int\limits_M\dd{\vb e^\mu}\wedge\delta\boldsymbol\omega^{\alpha\beta}-\frac{1}{2}\epsilon_{\mu\alpha\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\gamma^\beta}\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\gamma}+\frac{1}{2}\epsilon_{\mu\alpha\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\alpha_\gamma}\wedge\tensor{\delta\boldsymbol\omega}{^\gamma^\beta}\\
     0&=\frac{1}{2}\epsilon_{\mu\alpha\beta}\int\limits_M\dd{\vb e^\mu}\wedge\delta\boldsymbol\omega^{\alpha\beta}-\frac{1}{2}\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\beta}+\frac{1}{2}\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\beta}\\
     0&=\frac{1}{2}\int\limits_M\qty(\epsilon_{\mu\alpha\beta}\dd{\vb e^\mu}-\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha})\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\beta}\\
-    0&=\epsilon_{\mu\alpha\beta}\dd{\vb e^\mu}-\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
-    0&=\epsilon^{\alpha\beta\nu}\epsilon_{\mu\alpha\beta}\dd{\vb e^\mu}-\epsilon^{\alpha\beta\nu}\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\epsilon^{\alpha\beta\nu}\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
-    0&=2\dd{\vb e^\nu}-2\tensor{\eta}{_\gamma^{[\beta}}\tensor{\eta}{_\mu^{\nu]}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+2\tensor{\eta}{_\mu^{[\nu}}\tensor{\eta}{_\gamma^{\alpha]}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
-    0&=2\dd{\vb e^\nu}-\qty(\tensor{\eta}{_\gamma^{\beta}}\tensor{\eta}{_\mu^{\nu}}-\tensor{\eta}{_\gamma^{\nu}}\tensor{\eta}{_\mu^{\beta}})\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\qty(\tensor{\eta}{_\mu^{\nu}}\tensor{\eta}{_\gamma^{\alpha}}-\tensor{\eta}{_\mu^{\alpha}}\tensor{\eta}{_\gamma^{\nu}})\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
-    0&=2\dd{\vb e^\nu}+\tensor{\eta}{_\gamma^{\nu}}\tensor{\eta}{_\mu^{\beta}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}-\tensor{\eta}{_\mu^{\alpha}}\tensor{\eta}{_\gamma^{\nu}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
-    0&=2\dd{\vb e^\nu}+\vb e^\beta\wedge\tensor{\boldsymbol\omega}{_\beta^\nu}-\vb e^\alpha\wedge\tensor{\boldsymbol\omega}{^\nu_\alpha}\\
+    0&=\frac{1}{2}\epsilon_{\mu\alpha\beta}\dd{\vb e^\mu}-\frac{1}{2}\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\frac{1}{2}\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
+    0&=\frac{1}{2}\epsilon^{\alpha\beta\nu}\epsilon_{\mu\alpha\beta}\dd{\vb e^\mu}-\frac{1}{2}\epsilon^{\alpha\beta\nu}\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\frac{1}{2}\epsilon^{\alpha\beta\nu}\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
+    0&=\dd{\vb e^\nu}-\tensor{\eta}{_\gamma^{[\beta}}\tensor{\eta}{_\mu^{\nu]}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\tensor{\eta}{_\mu^{[\nu}}\tensor{\eta}{_\gamma^{\alpha]}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
+    0&=\dd{\vb e^\nu}-\frac{1}{2}\qty(\tensor{\eta}{_\gamma^{\beta}}\tensor{\eta}{_\mu^{\nu}}-\tensor{\eta}{_\gamma^{\nu}}\tensor{\eta}{_\mu^{\beta}})\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\frac{1}{2}\qty(\tensor{\eta}{_\mu^{\nu}}\tensor{\eta}{_\gamma^{\alpha}}-\tensor{\eta}{_\mu^{\alpha}}\tensor{\eta}{_\gamma^{\nu}})\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
+    0&=\dd{\vb e^\nu}+\frac{1}{2}\tensor{\eta}{_\gamma^{\nu}}\tensor{\eta}{_\mu^{\beta}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}-\frac{1}{2}\tensor{\eta}{_\mu^{\alpha}}\tensor{\eta}{_\gamma^{\nu}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
+    0&=\dd{\vb e^\nu}+\frac{1}{2}\vb e^\beta\wedge\tensor{\boldsymbol\omega}{_\beta^\nu}-\frac{1}{2}\vb e^\alpha\wedge\tensor{\boldsymbol\omega}{^\nu_\alpha}\\
     0&=\dd{\vb e^\nu}+\tensor{\boldsymbol\omega}{^\nu_\alpha}\wedge\vb e^\alpha
 \end{align*}
 
+It's not really feasible to give this a gauge theory approach, only if we're in 2+1, in this case there is an isomorphism, $\vb e^\mu\rightarrow \vb e_{\alpha\beta}=\epsilon_{\mu\alpha\beta}\vb e^\mu$, so that,
 
+\begin{align*}
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\vb e^\mu\wedge \vb R^{\alpha\beta}\\
+    S_{\textnormal{EH}}&=-\frac{1}{2\kappa}\int\limits_M\vb e_{\beta\alpha}\wedge \vb R^{\alpha\beta}\\
+    S_{\textnormal{EH}}&=-\frac{1}{2\kappa}\int\limits_M\Tr\qty[\vb e\wedge \vb R]\\
+    S_{\textnormal{EH}}&=-\frac{1}{2\kappa}\int\limits_M\Tr\qty[\vb e\wedge\qty(\dd{\boldsymbol\omega}+\frac12\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})]
+\end{align*}
 
+This is a lot similar to Chern-Simons theory,
 
+\begin{align*}
+    S_{\textnormal{CS}}\qty[\vb A]&=k\int\limits_M\Tr\qty[\vb A\wedge\dd{\vb A}+\frac13\vb A\wedge\wedgecomm{\vb A}{\vb A}]
+\end{align*}
 
+Let's try, $\vb A^x=\boldsymbol\omega+x\vb e$,
 
+\begin{align*}
+    S_{\textnormal{CS}}\qty[\vb A^x]&=k\int\limits_M\Tr\qty[\qty(\boldsymbol\omega+x\vb e)\wedge\dd{\qty(\boldsymbol\omega+x\vb e)}+\frac13\qty(\boldsymbol\omega+x\vb e)\wedge\wedgecomm{\boldsymbol\omega+x\vb e}{\boldsymbol\omega+x\vb e}]\\
+    S_{\textnormal{CS}}\qty[\vb A^x]&=k\int\limits_M\Tr\left[\boldsymbol\omega\wedge\dd{\boldsymbol\omega}+x\boldsymbol\omega\wedge\dd{\vb e}+x\vb e\wedge\dd{\boldsymbol\omega}+x^2\vb e\wedge\dd{\vb e}\right.\\
+    &\quad\quad\quad\left.+\frac23\qty(\boldsymbol\omega+x\vb e)\wedge\qty(\boldsymbol\omega+x\vb e)\wedge\qty(\boldsymbol\omega+x\vb e)\right]\\
+    S_{\textnormal{CS}}\qty[\vb A^x]&=k\int\limits_M\Tr\left[\boldsymbol\omega\wedge\dd{\boldsymbol\omega}+x\boldsymbol\omega\wedge\dd{\vb e}+x\vb e\wedge\dd{\boldsymbol\omega}+x^2\vb e\wedge\dd{\vb e}\right.\\
+    &\quad\quad\quad\left.+\frac23\boldsymbol\omega\wedge\boldsymbol\omega\wedge\boldsymbol\omega+2x\boldsymbol\omega\wedge\boldsymbol\omega\wedge\vb e+2x^2\vb e\wedge\vb e\wedge \boldsymbol\omega+\frac23x^3\vb e\wedge\vb e\wedge\vb e\right]\\
+    S_{\textnormal{CS}}\qty[\vb A^x]&=k\int\limits_M\Tr\left[\boldsymbol\omega\wedge\vb R+x\boldsymbol\omega\wedge\dd{\vb e}+x\vb e\wedge\vb R+x^2\vb e\wedge\qty(\dd{\vb e}+\boldsymbol\omega\wedge\vb e)\right.\\
+    &\quad\quad\quad\left.-\frac13\boldsymbol\omega\wedge\boldsymbol\omega\wedge\boldsymbol\omega+x\vb e\wedge\boldsymbol\omega\wedge\boldsymbol\omega+x^2\vb e\wedge \boldsymbol\omega\wedge\vb e+\frac23x^3\vb e\wedge\vb e\wedge\vb e\right]\\
+    S_{\textnormal{CS}}\qty[\vb A^x]&=k\int\limits_M\Tr\left[\boldsymbol\omega\wedge\vb R+x\boldsymbol\omega\wedge\qty(\dd{\vb e}+\boldsymbol\omega\wedge\vb e)+x\vb e\wedge\vb R+x^2\vb e\wedge\qty(\dd{\vb e}+\boldsymbol\omega\wedge\vb e)\right.\\
+    &\quad\quad\quad\left.-\frac13\boldsymbol\omega\wedge\boldsymbol\omega\wedge\boldsymbol\omega+x^2\vb e\wedge \boldsymbol\omega\wedge\vb e+\frac23x^3\vb e\wedge\vb e\wedge\vb e\right]
+\end{align*}
 
+We can simplify if we sum two contributions,
 
-
-
+\begin{align*}
+    S_{\textnormal{CS}}\qty[\vb A^x]-S_{\textnormal{CS}}\qty[\vb A^{-x}]&=k\int\limits_M\Tr\qty[x\boldsymbol\omega\wedge\qty(\dd{\vb e}+\boldsymbol\omega\wedge\vb e)+x\vb e\wedge\vb R+\frac23x^3\vb e\wedge\vb e\wedge\vb e]\\
+    S_{\textnormal{CS}}\qty[\vb A^x]-S_{\textnormal{CS}}\qty[\vb A^{-x}]&=-2\kappa k x S_{\textnormal{EH}}+kx\int\limits_M\Tr\qty[\boldsymbol\omega\wedge\qty(\dd{\vb e}+\boldsymbol\omega\wedge\vb e)+\frac23x^2\vb e\wedge\vb e\wedge\vb e]
+\end{align*}
 
 % Metric:
 
