@@ -3,7 +3,7 @@
 Einstein-Hilbert action:
 
 \begin{align*}
-    S_{\textnormal{EH}}&=\frac{1}{\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}g^{ab}\tensor{R}{_c_b^c_a}
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}g^{ab}\tensor{R}{_c_b^c_a}
 \end{align*}
 
 The Vierbein/Tetrad formalism:
@@ -22,12 +22,8 @@ A connection is defined with respect to a vector basis:
     \vb g\qty(\vb e_\alpha,\nabla_{\vb X}\qty(\vb e_\nu))&=X^a\tensor{\omega}{_a^\mu_\nu}\vb g\qty(\vb e_\alpha,\vb e_\mu)\\
     \vb g\qty(\vb e_\alpha,\nabla_{\vb X}\qty(\vb e_\nu))+\vb g\qty(\vb e_\nu,\nabla_{\vb X}\qty(\vb e_\alpha))&=X^a\tensor{\omega}{_a^\mu_\nu}\vb g\qty(\vb e_\alpha,\vb e_\mu)+X^a\tensor{\omega}{_a^\mu_\alpha}\vb g\qty(\vb e_\nu,\vb e_\mu)\\
     \vb g\qty(\vb e_\alpha,\nabla_{\vb X}\qty(\vb e_\nu))+\vb g\qty(\nabla_{\vb X}\qty(\vb e_\alpha),\vb e_\nu)&=X^a\tensor{\omega}{_a_\alpha_\nu}+X^a\tensor{\omega}{_a_\nu_\alpha}\\
-    \tensor{e}{_\alpha^c}g_{cb}\nabla_a\vb e_\nu&=\tensor{e}{_\alpha^c}g_{cb}\tensor{\omega}{_a^\mu_\nu}\vb e_\mu\\
-    \tensor{e}{_\alpha^c}g_{cb}\nabla_a\vb e_\nu+\tensor{e}{_\alpha^c}\vb e_\nu\nabla_ag_{cb}&=\tensor{\omega}{_a_\alpha_\nu}\\
-    \tensor{e}{_\alpha^c}\nabla_a\qty(g_{cb}\tensor{e}{_\nu^b})&=\tensor{\omega}{_a_\alpha_\nu}\\
-    \nabla_a\qty(\tensor{e}{_\alpha^c}g_{cb}\tensor{e}{_\nu^b})-g_{cb}\tensor{e}{_\nu^b}\nabla_a\tensor{e}{_\alpha^c}&=\tensor{\omega}{_a_\alpha_\nu}\\
-    \nabla_a\qty(\eta_{\alpha\nu})-g_{cb}\tensor{e}{_\nu^b}\nabla_a\tensor{e}{_\alpha^c}&=\tensor{\omega}{_a_\alpha_\nu}\\
-    -g_{cb}\tensor{e}{_\nu^b}\nabla_a\tensor{e}{_\alpha^c}&=\tensor{\omega}{_a_\alpha_\nu}\\
+    \nabla_{\vb X}\qty(\vb g\qty(\vb e_\alpha,\vb e_\nu))-\nabla_{\vb X}\qty(\vb g)\qty(\vb e_\alpha,\vb e_\nu)&=X^a\tensor{\omega}{_a_\alpha_\nu}+X^a\tensor{\omega}{_a_\nu_\alpha}\\
+    -\nabla_{\vb X}\qty(\vb g)\qty(\vb e_\alpha,\vb e_\nu)&=X^a\tensor{\omega}{_a_\alpha_\nu}+X^a\tensor{\omega}{_a_\nu_\alpha}\\
     -\tensor{\omega}{_a_\nu_\alpha}&=\tensor{\omega}{_a_\alpha_\nu},\ \ \ \textnormal{Metric compatibility}\numberthis
 \end{align*}
 
@@ -54,26 +50,94 @@ Riemann curvature tensor, $\textbf{Riem}\qty(\vb X,\vb Y):\mathfrak X\rightarrow
     \tensor{R}{_a_b^c_d}&=\tensor{e}{^\mu_d}\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\nu^c}
 \end{align*}
 
-In the EH action,
+We would like to write the Einstein-Hilbert action as only a function of the Vierbein and the spin connection, for this, let us explicit write the Riemann tensor as a End$\qty(\textnormal TM)$-valued 2-form,
 
 \begin{align*}
-    S_{\textnormal{EH}}&=\frac{1}{\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}g^{ab}\tensor{R}{_c_b^c_a}\\
-    S_{\textnormal{EH}}&=\frac{1}{\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}g^{ab}\tensor{e}{^\mu_a}\tensor{R}{_c_b^\nu_\mu}\tensor{e}{_\nu^c}\\
-    S_{\textnormal{EH}}&=\frac{1}{\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}g^{ab}g^{cd}\tensor{e}{^\mu_a}\tensor{R}{_c_b_\nu_\mu}\tensor{e}{^\nu_d}\\
-    S_{\textnormal{EH}}&=\frac{1}{2\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}\qty(g^{ab}g^{dc}-g^{ac}g^{db})\tensor{e}{^\mu_a}\tensor{R}{_c_b_\nu_\mu}\tensor{e}{^\nu_d}\\
-    S_{\textnormal{EH}}&=\frac{1}{2\qty(D-2)!\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}\epsilon^{a_1\cdots a_{D-2}ad}\tensor{\epsilon}{_{a_1\cdots a_{D-2}}^b^c}\tensor{e}{^\mu_a}\tensor{R}{_c_b_\nu_\mu}\tensor{e}{^\nu_d}\\
-    S_{\textnormal{EH}}&=-\frac{1}{2\qty(D-2)!\kappa^2}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}\epsilon^{ada_1\cdots a_{D-2}}\tensor{\epsilon}{^b^c_{a_1\cdots a_{D-2}}}\tensor{e}{^\nu_a}\tensor{R}{_b_c_\nu_\mu}\tensor{e}{^\mu_d}\\
-    S_{\textnormal{EH}}&=-\frac{1}{2\kappa^2}\int\limits_M\dd[D]{x}\epsilon^{ada_1\cdots a_{D-2}}\tensor{e}{^\nu_a}\tensor{{\star R}}{_{a_1\cdots a_{D-2}}_\nu_\mu}\tensor{e}{^\mu_d}\\
-    S_{\textnormal{EH}}&=-\frac{1}{2\kappa^2}\int\limits_M\frac{1}{D!}\epsilon_{b_1\cdots b_D}\dd{x^{b_1}}\wedge\cdots\wedge\dd{x^{b_D}}\epsilon^{ada_1\cdots a_{D-2}}\tensor{e}{^\nu_a}\tensor{{\star R}}{_{a_1\cdots a_{D-2}}_\nu_\mu}\tensor{e}{^\mu_d}\\
-    S_{\textnormal{EH}}&=-\frac{1}{2\kappa^2}\int\limits_M\dd{x^{b_1}}\wedge\cdots\wedge\dd{x^{b_D}}\tensor{g}{_{b_1}^{[a}}\tensor{g}{_{b_2}^{d}}\tensor{g}{_{b_3}^{a_1}}\cdots\tensor{g}{_{b_D}^{a_{D-2}]}}\tensor{e}{^\nu_a}\tensor{{\star R}}{_{a_1\cdots a_{D-2}}_\nu_\mu}\tensor{e}{^\mu_d}\\
-    S_{\textnormal{EH}}&=-\frac{1}{2\kappa^2}\int\limits_M\dd{x^{a}}\wedge\dd{x^{d}}\wedge\dd{x^{a_1}}\wedge\cdots\wedge\dd{x^{a_{D-2}}}\tensor{e}{^\nu_a}\tensor{e}{^\mu_d}\tensor{{\star R}}{_{a_1\cdots a_{D-2}}_\nu_\mu}\\
-    S_{\textnormal{EH}}&=-\frac{1}{2\kappa^2}\int\limits_M\tensor{e}{^\nu_a}\dd{x^{a}}\wedge\tensor{e}{^\mu_d}\dd{x^{d}}\wedge\dd{x^{a_1}}\wedge\cdots\wedge\dd{x^{a_{D-2}}}\tensor{{\star R}}{_{a_1\cdots a_{D-2}}_\nu_\mu}\\
-    S_{\textnormal{EH}}&=-\frac{1}{2\kappa^2}\int\limits_M{\tilde{\vb e}^\nu}\wedge{\tilde{\vb e}^\mu}\wedge\tensor{{\star \textbf{R}}}{_\nu_\mu}
+    \tensor{{\vb R}}{^\nu_\mu}&=\frac12\tensor{R}{_a_b^\nu_\mu}\dd{x^a}\wedge\dd{x^b}\\
+    \tensor{{\vb R}}{^\nu_\mu}&=\frac12\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\alpha^a}\tensor{e}{^\alpha_c}\tensor{e}{_\beta^b}\tensor{e}{^\beta_d}\dd{x^c}\wedge\dd{x^d}\\
+    \tensor{{\vb R}}{^\nu_\mu}&=\frac12\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\alpha^a}\tensor{e}{_\beta^b}{\tilde{\vb e}^\alpha}\wedge{\tilde{\vb e}^\beta}
 \end{align*}
 
+Let us start by writing the volume form in terms of the Vierbein,
 
+\begin{align*}
+    \dd[D]{x}\sqrt{\abs{g}}&=\sqrt{\abs{\Det\qty[g_{ab}]}}\dd{x^0}\wedge\cdots\wedge\dd{x^{D-1}}\\
+    \dd[D]{x}\sqrt{\abs{g}}&=\sqrt{\abs{\Det\qty[\tensor{e}{^\mu_a}\eta_{\mu\nu}\tensor{e}{^\nu_b}]}}\dd{x^0}\wedge\cdots\wedge\dd{x^{D-1}}\\
+    \dd[D]{x}\sqrt{\abs{g}}&=\sqrt{\abs{\Det\qty[\tensor{e}{^\mu_a}]\Det\qty[\eta_{\mu\nu}]\Det\qty[\tensor{e}{^\nu_b}]}}\dd{x^0}\wedge\cdots\wedge\dd{x^{D-1}}\\
+    \dd[D]{x}\sqrt{\abs{g}}&=\sqrt{\qty(\Det\qty[\tensor{e}{^\mu_a}])^2}\dd{x^0}\wedge\cdots\wedge\dd{x^{D-1}}\\
+    \dd[D]{x}\sqrt{\abs{g}}&=\Det\qty[\tensor{e}{^\mu_a}]\dd{x^0}\wedge\cdots\wedge\dd{x^{D-1}}\\
+    \dd[D]{x}\sqrt{\abs{g}}&=\epsilon_{\mu_0\cdots\mu_{D-1}}\tensor{e}{^{\mu_0}_0}\cdots\tensor{e}{^{\mu_{D-1}}_{D-1}}\dd{x^0}\wedge\cdots\wedge\dd{x^{D-1}}\\
+    \dd[D]{x}\sqrt{\abs{g}}&=\epsilon_{\mu_0\cdots\mu_{D-1}}\tensor{e}{^{\mu_0}_0}\dd{x^0}\wedge\cdots\wedge\tensor{e}{^{\mu_{D-1}}_{D-1}}\dd{x^{D-1}}\\
+    \dd[D]{x}\sqrt{\abs{g}}&=\frac{1}{D!}\epsilon_{\mu_0\cdots\mu_{D-1}}\tensor{e}{^{\mu_0}_{a_0}}\dd{x^{a_0}}\wedge\cdots\wedge\tensor{e}{^{\mu_{D-1}}_{a_{D-1}}}\dd{x^{a_{D-1}}}\\
+    \dd[D]{x}\sqrt{\abs{g}}&=\frac{1}{D!}\epsilon_{\mu_0\cdots\mu_{D-1}}\vb e^{\mu_0}\wedge\cdots\wedge\vb e^{\mu_{D-1}}
+\end{align*}
 
+And now we express the Ricci scalar,
 
+\begin{align*}
+    R&=g^{ab}\tensor{R}{_c_b^c_a}\\
+    R&=\tensor{e}{_\rho^a}\tensor{e}{^\rho^b}\tensor{R}{_c_b_d_a}\tensor{e}{_\alpha^c}\tensor{e}{^\alpha^d}\\
+    R&=\eta^{\rho\sigma}\eta^{\alpha\beta}\tensor{e}{_\rho^a}\tensor{e}{_\sigma^b}\tensor{R}{_c_b_d_a}\tensor{e}{_\alpha^c}\tensor{e}{_\beta^d}\\
+    R&=\eta^{\rho\sigma}\eta^{\alpha\beta}\tensor{R}{_\alpha_\sigma_\beta_\rho}\\
+    R&=\frac12\qty(\eta^{\rho\sigma}\eta^{\alpha\beta}-\eta^{\rho\alpha}\eta^{\sigma\beta})\tensor{R}{_\alpha_\sigma_\beta_\rho}\\
+    R&=\frac{1}{2\qty(D-2)!}\tensor{\epsilon}{^{\nu_0}^\cdots^{\nu_{D-3}}^\beta^\rho}\tensor{\epsilon}{_{\nu_0}_\cdots_{\nu_{D-3}}^\alpha^\sigma}\tensor{R}{_\alpha_\sigma_\beta_\rho}
+\end{align*}
+
+Putting everything together,
+
+\begin{align*}
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}R\\
+    S_{\textnormal{EH}}&=\frac{1}{4D!\qty(D-2)!\kappa}\int\limits_M\vb e^{\mu_0}\wedge\cdots\wedge\vb e^{\mu_{D-1}}\epsilon_{\mu_0\cdots\mu_{D-1}}\tensor{\epsilon}{^{\nu_0}^\cdots^{\nu_{D-3}}^\beta^\rho}\tensor{\epsilon}{_{\nu_0}_\cdots_{\nu_{D-3}}^\alpha^\sigma}\tensor{R}{_\alpha_\sigma_\beta_\rho}\\
+    S_{\textnormal{EH}}&=\frac{1}{4\qty(D-2)!\kappa}\int\limits_M\vb e^{\mu_0}\wedge\cdots\wedge\vb e^{\mu_{D-1}}\tensor{\eta}{_{\mu_0}^{[\nu_0}}\cdots\tensor{\eta}{_{\mu_{D-3}}^{\nu_{D-3}}}\tensor{\eta}{_{\mu_{D-2}}^{\beta}}\tensor{\eta}{_{\mu_{D-1}}^{\rho]}}\tensor{\epsilon}{_{\nu_0}_\cdots_{\nu_{D-3}}^\alpha^\sigma}\tensor{R}{_\alpha_\sigma_\beta_\rho}\\
+    S_{\textnormal{EH}}&=\frac{1}{4\qty(D-2)!\kappa}\int\limits_M\vb e^{\nu_0}\wedge\cdots\wedge\vb e^{\nu_{D-3}}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\tensor{\epsilon}{_{\nu_0}_\cdots_{\nu_{D-3}}^\alpha^\sigma}\tensor{R}{_\alpha_\sigma_\beta_\rho}\\
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\frac{1}{2\qty(D-2)!}R_{\alpha\sigma\beta\rho}\tensor{\epsilon}{^\alpha^\sigma_{\nu_0}_\cdots_{\nu_{D-3}}}\vb e^{\nu_0}\wedge\cdots\wedge\vb e^{\nu_{D-3}}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\\
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\star\vb R_{\beta\rho}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\\
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\vb R_{\beta\rho}\wedge\star\qty(\vb e^{\beta}\wedge\vb e^{\rho})\\
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\frac{1}{\qty(D-2)!}\tensor{\epsilon}{^\beta^\rho_{\alpha_0}_\cdots_{\alpha_{D-3}}}\vb R_{\beta\rho}\wedge\vb e^{\alpha_0}\wedge\cdots\wedge\vb e^{\alpha_{D-3}}\\
+    S_{\textnormal{EH}}&=\frac{1}{2\qty(D-2)!\kappa}\int\limits_M\tensor{\epsilon}{_{\alpha_0}_\cdots_{\alpha_{D-1}}}\vb e^{\alpha_0}\wedge\cdots\wedge\vb e^{\alpha_{D-3}}\wedge\vb R^{\alpha_{D-2}\alpha_{D-1}}
+\end{align*}
+
+The most interesting case here is $D=3$,
+
+\begin{align*}
+    S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega]&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\vb e^{\mu}\wedge\vb R^{\alpha\beta}
+\end{align*}
+
+Equations of motion are,
+
+\begin{align*}
+    S_{\textnormal{EH}}\qty[\vb e+\delta\vb e,\boldsymbol\omega]-S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega]&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\delta\vb e^{\mu}\wedge\vb R^{\alpha\beta}=0\\
+    0&=-\frac12\epsilon_{\mu\alpha\beta}\vb R^{\alpha\beta}\\
+    0&=-\frac12\epsilon_{\mu\alpha\beta}\frac12\tensor{R}{_\rho_\sigma^\alpha^\beta}\vb e^\rho\wedge\vb e^\sigma\\
+    0&=-\frac14\epsilon_{\mu\alpha\beta}\tensor{R}{_\rho_\sigma^\alpha^\beta}\star\qty(\vb e^\rho\wedge\vb e^\sigma)\\
+    0&=-\frac14\epsilon_{\mu\alpha\beta}\tensor{R}{_\rho_\sigma^\alpha^\beta}\tensor{\epsilon}{^\rho^\sigma_\kappa}\vb e^\kappa\\
+    0&=-\frac14\epsilon_{\mu\alpha\beta}\tensor{\epsilon}{^\rho^\sigma^\kappa}\tensor{R}{_\rho_\sigma^\alpha^\beta}\vb e_\kappa\\
+    0&=-\frac14\tensor{\eta}{_\mu^{[\rho}}\tensor{\eta}{_\alpha^{\sigma}}\tensor{\eta}{_\beta^{\kappa]}}\tensor{R}{_\rho_\sigma^\alpha^\beta}\vb e_\kappa\\
+    0&=-\frac14\tensor{R}{_\rho_\sigma^{[\sigma}^\kappa}\tensor{\eta}{_\mu^{\rho]}}\vb e_\kappa\\
+    0&=-\frac14\qty(\tensor{R}{_\rho_\sigma^{\sigma}^\kappa}\tensor{\eta}{_\mu^{\rho}}+\tensor{R}{_\rho_\sigma^\kappa^\rho}\tensor{\eta}{_\mu^{\sigma}}+\tensor{R}{_\rho_\sigma^\rho^\sigma}\tensor{\eta}{_\mu^\kappa}-\tensor{R}{_\rho_\sigma^{\rho}^\kappa}\tensor{\eta}{_\mu^{\sigma}}-\tensor{R}{_\rho_\sigma^\kappa^\sigma}\tensor{\eta}{_\mu^{\rho}}-\tensor{R}{_\rho_\sigma^\sigma^\rho}\tensor{\eta}{_\mu^\kappa})\vb e_\kappa\\
+    0&=-\frac14\qty(-\tensor{R}{_\mu^\kappa}-\tensor{R}{_\mu^\kappa}+R\tensor{\eta}{_\mu^\kappa}-\tensor{R}{_\mu^\kappa}-\tensor{R}{_\mu^\kappa}+R\tensor{\eta}{_\mu^\kappa})\vb e_\kappa\\
+    0&=-\frac14(-4\tensor{R}{_\mu^\kappa}+2R\tensor{\eta}{_\mu^\kappa})\vb e_\kappa\\
+    0&=\qty(\tensor{R}{_\mu_\kappa}-\frac12R\tensor{\eta}{_\mu_\kappa})\vb e^\kappa
+\end{align*}
+
+And,
+
+\begin{align*}
+    S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega+\delta\boldsymbol\omega]-S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega]&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\vb e^{\mu}\wedge\qty(\dd{\delta\boldsymbol\omega}+\delta\boldsymbol\omega\wedge\boldsymbol\omega+\boldsymbol\omega\wedge\delta\boldsymbol\omega)^{\alpha\beta}=0\\
+    0&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\qty(-\dd{\qty(\vb e^\mu\wedge\delta\boldsymbol\omega^{\alpha\beta})}+\dd{\vb e^\mu}\wedge\delta\boldsymbol\omega^{\alpha\beta}+\vb e^\mu\wedge\qty(\delta\boldsymbol\omega\wedge\boldsymbol\omega)^{\alpha\beta}+\vb e^\mu\wedge\qty(\boldsymbol\omega\wedge\delta\boldsymbol\omega)^{\alpha\beta})\\
+    0&=\frac{1}{2}\epsilon_{\mu\alpha\beta}\int\limits_M\qty(\dd{\vb e^\mu}\wedge\delta\boldsymbol\omega^{\alpha\beta}+\vb e^\mu\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\gamma}\wedge\tensor{\boldsymbol\omega}{_\gamma^\beta}+\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\alpha^\gamma}\wedge\tensor{\delta\boldsymbol\omega}{_\gamma^\beta})\\
+    0&=\frac{1}{2}\epsilon_{\mu\alpha\beta}\int\limits_M\qty(\dd{\vb e^\mu}\wedge\delta\boldsymbol\omega^{\alpha\beta}-\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\gamma^\beta}\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\gamma}+\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\alpha_\gamma}\wedge\tensor{\delta\boldsymbol\omega}{^\gamma^\beta})\\
+    0&=\frac{1}{2}\epsilon_{\mu\alpha\beta}\int\limits_M\dd{\vb e^\mu}\wedge\delta\boldsymbol\omega^{\alpha\beta}-\frac{1}{2}\epsilon_{\mu\alpha\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\gamma^\beta}\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\gamma}+\frac{1}{2}\epsilon_{\mu\alpha\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\alpha_\gamma}\wedge\tensor{\delta\boldsymbol\omega}{^\gamma^\beta}\\
+    0&=\frac{1}{2}\epsilon_{\mu\alpha\beta}\int\limits_M\dd{\vb e^\mu}\wedge\delta\boldsymbol\omega^{\alpha\beta}-\frac{1}{2}\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\beta}+\frac{1}{2}\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\beta}\\
+    0&=\frac{1}{2}\int\limits_M\qty(\epsilon_{\mu\alpha\beta}\dd{\vb e^\mu}-\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha})\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\beta}\\
+    0&=\epsilon_{\mu\alpha\beta}\dd{\vb e^\mu}-\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
+    0&=\epsilon^{\alpha\beta\nu}\epsilon_{\mu\alpha\beta}\dd{\vb e^\mu}-\epsilon^{\alpha\beta\nu}\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\epsilon^{\alpha\beta\nu}\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
+    0&=2\dd{\vb e^\nu}-2\tensor{\eta}{_\gamma^{[\beta}}\tensor{\eta}{_\mu^{\nu]}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+2\tensor{\eta}{_\mu^{[\nu}}\tensor{\eta}{_\gamma^{\alpha]}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
+    0&=2\dd{\vb e^\nu}-\qty(\tensor{\eta}{_\gamma^{\beta}}\tensor{\eta}{_\mu^{\nu}}-\tensor{\eta}{_\gamma^{\nu}}\tensor{\eta}{_\mu^{\beta}})\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\qty(\tensor{\eta}{_\mu^{\nu}}\tensor{\eta}{_\gamma^{\alpha}}-\tensor{\eta}{_\mu^{\alpha}}\tensor{\eta}{_\gamma^{\nu}})\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
+    0&=2\dd{\vb e^\nu}+\tensor{\eta}{_\gamma^{\nu}}\tensor{\eta}{_\mu^{\beta}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}-\tensor{\eta}{_\mu^{\alpha}}\tensor{\eta}{_\gamma^{\nu}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
+    0&=2\dd{\vb e^\nu}+\vb e^\beta\wedge\tensor{\boldsymbol\omega}{_\beta^\nu}-\vb e^\alpha\wedge\tensor{\boldsymbol\omega}{^\nu_\alpha}\\
+    0&=\dd{\vb e^\nu}+\tensor{\boldsymbol\omega}{^\nu_\alpha}\wedge\vb e^\alpha
+\end{align*}
 
 
 
