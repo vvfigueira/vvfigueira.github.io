@@ -172,8 +172,14 @@ Let's try, $\vb A^x=\boldsymbol\omega+x\vb e$,
 We can simplify if we sum two contributions,
 
 \begin{align*}
-    S_{\textnormal{CS}}\qty[\vb A^x]-S_{\textnormal{CS}}\qty[\vb A^{-x}]&=k\int\limits_M\Tr\qty[x\boldsymbol\omega\wedge\qty(\dd{\vb e}+\boldsymbol\omega\wedge\vb e)+x\vb e\wedge\vb R+\frac23x^3\vb e\wedge\vb e\wedge\vb e]\\
-    S_{\textnormal{CS}}\qty[\vb A^x]-S_{\textnormal{CS}}\qty[\vb A^{-x}]&=-2\kappa k x S_{\textnormal{EH}}+kx\int\limits_M\Tr\qty[\boldsymbol\omega\wedge\qty(\dd{\vb e}+\boldsymbol\omega\wedge\vb e)+\frac23x^2\vb e\wedge\vb e\wedge\vb e]
+    S_{\textnormal{CS}}\qty[\vb A^x]-S_{\textnormal{CS}}\qty[\vb A^{-x}]&=-8xk\kappa S_{\textnormal{EH}}+2kx\int\limits_{\partial M}\Tr\qty[\vb e\wedge\boldsymbol\omega]+\frac43x^3k\int\limits_M\Tr\qty[\vb e\wedge\vb e\wedge\vb e]\\
+    \frac{1}{8xk\kappa}\qty(S_{\textnormal{CS}}\qty[\vb A^{-x}]-S_{\textnormal{CS}}\qty[\vb A^x])&=S_{\textnormal{EH}}-\frac{1}{4\kappa}\int\limits_{\partial M}\Tr\qty[\vb e\wedge\boldsymbol\omega]-\frac{x^2}{3!\kappa}\int\limits_M\Tr\qty[\vb e\wedge\vb e\wedge\vb e]
+\end{align*}
+
+And also the not so usual action,
+
+\begin{align*}
+    S_{\textnormal{CS}}\qty[\vb A^x]+S_{\textnormal{CS}}\qty[\vb A^{-x}]&=2S_{\textnormal{CS}}\qty[\boldsymbol\omega]+4x^2k\int\limits_M\Tr\qty[\vb e\wedge\boldsymbol\omega\wedge\vb e]
 \end{align*}
 
 % Metric:
