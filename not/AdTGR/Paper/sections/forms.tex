@@ -1,18 +1,45 @@
 \section{The Einstein-Hilbert Action in the Form Language}
 
-The Vierbein/Tetrad formalism:
-
+We'll begin with a quick recap of the vielbein/spin connection formalism, for now we'll keep the discussion general in $D$ dimensions, and 
+only later on we'll go to the special case of $D=2+1$. The whole point of introducing the Vielbein is switch the degrees of freedom from the 
+metric to the inertial frame basis, that is, the vielbein are a collection of $D$ vector fields, such that at each point these collection of 
+vectors constitute a basis of the tangent vector space, we'll use the Wald conventions, that is, the ``\textit{true}'' indices which indexes 
+which vector field we're talking about $\mu$, and the coordinate basis index $a$,
 \begin{align*}
-    \eta_{\mu\nu}&=\vb g\qty(\vb e_\mu,\vb e_\nu)\\
-    g_{ab}&=\tensor{e}{^\mu_a} \tensor{e}{^\nu_b}\eta_{\mu\nu}\\
-    \eta_{\mu\nu}&=\tensor{e}{_\mu^a}\tensor{e}{_\nu^b}g_{ab}
+    \textnormal{diag}\mqty(-1& 1&\cdots&1)=\eta_{\mu\nu}&=\vb g\qty(\vb e_\mu,\vb e_\nu)=g_{ab}\dd{x^a}\qty(\vb e_\mu)\otimes\dd{x^b}\qty(\vb e_\nu)\\
+    \eta_{\mu\nu}&=g_{ab}\tensor{e}{_\mu^c}\tensor{e}{_\nu^d}\dd{x^a}\qty(\boldsymbol\partial_c)\otimes\dd{x^b}\qty(\boldsymbol\partial_d)\\
+    \eta_{\mu\nu}&=g_{ab}\tensor{e}{_\mu^a}\tensor{e}{_\nu^b}
 \end{align*}
 
-A connection is defined with respect to a vector basis:
+From the condition that $\vb g$ must be non-degenerate we get that the matrix of components $\tensor{e}{_\mu^a}$ must be invertible, this ensures 
+the existence of $\tensor{e}{^\mu_a}$ from which we can construct the dual vector field $\tilde{\vb e}^\mu=\tensor{e}{^\mu_a}\dd{x^a}$ this ensures 
+we have a basis of the whole tensor space, so it's possible to decompose any tensor in it,
+\begin{align*}
+    \eta_{\mu\nu}\tilde{\vb e}^\mu\otimes\tilde{\vb e}^\nu&=\vb g\qty(\vb e_\mu,\vb e_\nu)\tilde{\vb e}^\mu\otimes\tilde{\vb e}^\nu=\vb g
+\end{align*}
 
+Only having a metric, or in this case, only having a vielbein, isn't sufficient to construct a theory, we also need a affine connection/covariant 
+derivative. A useful way to define it is to define in a vector field basis, as we already have the vielbein as a vector field basis it's more 
+convenient to define in respect to it,
 \begin{align*}
     \nabla_{\vb X}\qty(\vb e_\nu)&=\tensor{{\boldsymbol\omega(\vb X)}}{^\mu_\nu}\vb e_\mu\\
-    \nabla_{\vb X}\qty(\vb e_\nu)&=X^a\tensor{\omega}{_a^\mu_\nu}\vb e_\mu\\
+    \nabla_{\vb X}\qty(\vb e_\nu)&=X^a\tensor{\omega}{_a^\mu_\nu}\vb e_\mu
+\end{align*}
+
+Where $\tensor{{\boldsymbol\omega}}{^\mu_\nu}=\tensor{\omega}{_a^\mu_\nu}\dd{x^a}$ is the spin connection, it can be seen as a $\mathfrak{gl}\qty(1,D-1;\mathbb R)$-valued $(0,1)$ tensor, 
+or, as we'll adopt here, a $\mathfrak{gl}\qty(1,D-1;\mathbb R)$-valued $1$-form. The ease of working with the vielbein is that the Lorentz index $\mu$ 
+does not change upon coordinate/chart/diffeomorphism transformations, and it acts as if it was an internal symmetry, notice that we have a 
+redundancy of how to choose the vielbein basis, due to $\tensor{\Lambda}{^\mu_\nu}\vb e_\mu$, $\tensor{\Lambda}{^\mu_\nu}:M\rightarrow\mathbb R$, being an equally good basis,
+\begin{align*}
+    \vb g\qty(\tensor{\Lambda}{^\alpha_\mu}\vb e_\alpha,\tensor{\Lambda}{^\beta_\nu}\vb e_\beta)&=\tensor{\Lambda}{^\alpha_\mu}\tensor{\Lambda}{^\beta_\nu}\vb g\qty(\vb e_\alpha,\vb e_\beta)\\
+    \vb g\qty(\tensor{\Lambda}{^\alpha_\mu}\vb e_\alpha,\tensor{\Lambda}{^\beta_\nu}\vb e_\beta)&=\tensor{\Lambda}{^\alpha_\mu}\tensor{\Lambda}{^\beta_\nu}\eta_{\alpha\beta}\\
+    \vb g\qty(\tensor{\Lambda}{^\alpha_\mu}\vb e_\alpha,\tensor{\Lambda}{^\beta_\nu}\vb e_\beta)&=\eta_{\mu\nu}
+\end{align*}
+as long as $\tensor{\Lambda}{^\alpha_\mu}\tensor{\Lambda}{^\beta_\nu}\eta_{\alpha\beta}=\eta_{\mu\nu}$, that is, as we enlarge the number of components going from the metric to 
+the vielbein, we also enlarge the redundancies, now, additionally to Diff$\qty(M)$ we have local $SO\qty(1,D-1)$ transformations as redundancies, this is as 
+we was gauging the whole Poincaré group, with Diff$\qty(M)$ being the gauging of the translations.
+
+\begin{align*}
     \vb g\qty(\vb e_\alpha,\nabla_{\vb X}\qty(\vb e_\nu))&=X^a\tensor{\omega}{_a^\mu_\nu}\vb g\qty(\vb e_\alpha,\vb e_\mu)\\
     \vb g\qty(\vb e_\alpha,\nabla_{\vb X}\qty(\vb e_\nu))+\vb g\qty(\vb e_\nu,\nabla_{\vb X}\qty(\vb e_\alpha))&=X^a\tensor{\omega}{_a^\mu_\nu}\vb g\qty(\vb e_\alpha,\vb e_\mu)+X^a\tensor{\omega}{_a^\mu_\alpha}\vb g\qty(\vb e_\nu,\vb e_\mu)\\
     \vb g\qty(\vb e_\alpha,\nabla_{\vb X}\qty(\vb e_\nu))+\vb g\qty(\nabla_{\vb X}\qty(\vb e_\alpha),\vb e_\nu)&=X^a\tensor{\omega}{_a_\alpha_\nu}+X^a\tensor{\omega}{_a_\nu_\alpha}\\
@@ -156,7 +183,7 @@ Let's try, $\vb A^x=\boldsymbol\omega+x\vb e$,
     &\quad\quad\quad\left.+\frac23\qty(\boldsymbol\omega+x\vb e)\wedge\qty(\boldsymbol\omega+x\vb e)\wedge\qty(\boldsymbol\omega+x\vb e)\right]\\
     S_{\textnormal{CS}}\qty[\vb A^x]&=k\int\limits_M\Tr\biggl[\boldsymbol\omega\wedge\dd{\boldsymbol\omega}+x\dd{\vb e}\wedge\boldsymbol\omega+x\vb e\wedge\dd{\boldsymbol\omega}-\frac12x^2\dd{\qty(\vb e\wedge\vb e)}\\
     &\quad\quad\quad\left.+\frac23\boldsymbol\omega\wedge\boldsymbol\omega\wedge\boldsymbol\omega+2x\boldsymbol\omega\wedge\boldsymbol\omega\wedge\vb e+2x^2\vb e\wedge\vb e\wedge \boldsymbol\omega+\frac23x^3\vb e\wedge\vb e\wedge\vb e\right]\\
-    S_{\textnormal{CS}}\qty[\vb A^x]&=k\int\limits_M\Tr\left[\boldsymbol\omega\wedge\qty(\dd{\boldsymbol\omega}+\frac23\boldsymbol\omega\wedge\boldsymbol\omega\wedge\boldsymbol\omega)+x\dd{\qty(\vb e\wedge\boldsymbol\omega)}+x\vb e\wedge\dd{\boldsymbol\omega}+x\vb e\wedge\qty(\dd{\boldsymbol\omega}+2\boldsymbol\omega\wedge\boldsymbol\omega)+2x^2\vb e\wedge\boldsymbol\omega\wedge\vb e\right.\\
+    S_{\textnormal{CS}}\qty[\vb A^x]&=k\int\limits_M\Tr\left[\boldsymbol\omega\wedge\qty(\dd{\boldsymbol\omega}+\frac23\boldsymbol\omega\wedge\boldsymbol\omega)+x\dd{\qty(\vb e\wedge\boldsymbol\omega)}+x\vb e\wedge\dd{\boldsymbol\omega}+x\vb e\wedge\qty(\dd{\boldsymbol\omega}+2\boldsymbol\omega\wedge\boldsymbol\omega)+2x^2\vb e\wedge\boldsymbol\omega\wedge\vb e\right.\\
     &\quad\quad\quad\left.+\frac23x^3\vb e\wedge\vb e\wedge\vb e\right]\\
     S_{\textnormal{CS}}\qty[\vb A^x]&=S_{\textnormal{CS}}\qty[\boldsymbol\omega]+k\int\limits_M\Tr\qty[x\dd{\qty(\vb e\wedge\boldsymbol\omega)}+2x\vb e\wedge\qty(\dd{\boldsymbol\omega}+\boldsymbol\omega\wedge\boldsymbol\omega)+2x^2\vb e\wedge\boldsymbol\omega\wedge\vb e+\frac23x^3\vb e\wedge\vb e\wedge\vb e]\\
     S_{\textnormal{CS}}\qty[\vb A^x]&=S_{\textnormal{CS}}\qty[\boldsymbol\omega]+k\int\limits_M\Tr\qty[x\dd{\qty(\vb e\wedge\boldsymbol\omega)}+2x\vb e\wedge\vb R+2x^2\vb e\wedge\boldsymbol\omega\wedge\vb e+\frac23x^3\vb e\wedge\vb e\wedge\vb e]\\
@@ -174,4 +201,13 @@ And also the not so usual action,
 
 \begin{align*}
     S_{\textnormal{CS}}\qty[\vb A^x]+S_{\textnormal{CS}}\qty[\vb A^{-x}]&=2S_{\textnormal{CS}}\qty[\boldsymbol\omega]+4x^2k\int\limits_M\Tr\qty[\vb e\wedge\boldsymbol\omega\wedge\vb e]
+\end{align*}
+
+Chern-Simons Equation of Motion,
+
+\begin{align*}
+    S_{\textnormal{CS}}\qty[\vb A+\delta\vb A]-S_{\textnormal{CS}}\qty[\vb A]&=k\int\limits_M\Tr\qty[\delta\vb A\wedge\dd{\vb A}+\vb A\wedge\dd{\delta\vb A}+\frac23\delta\vb A\wedge\vb A\wedge\vb A+\frac23\vb A\wedge\delta\vb A\wedge\vb A+\frac23\vb A\wedge\vb A\wedge\delta\vb A]\\
+    S_{\textnormal{CS}}\qty[\vb A+\delta\vb A]-S_{\textnormal{CS}}\qty[\vb A]&=k\int\limits_M\Tr\qty[\dd{\vb A}\wedge\delta\vb A-\dd{\qty(\vb A\wedge\delta\vb A)}+\dd{\vb A}\wedge\delta \vb A+2\vb A\wedge\vb A\wedge\delta\vb A]\\
+    S_{\textnormal{CS}}\qty[\vb A+\delta\vb A]-S_{\textnormal{CS}}\qty[\vb A]&=2k\int\limits_M\Tr\qty[\qty(\dd{\vb A}+\vb A\wedge\vb A)\wedge\delta\vb A]-k\int\limits_M\Tr\qty[\dd{\qty(\vb A\wedge\delta\vb A)}]\\
+    S_{\textnormal{CS}}\qty[\vb A+\delta\vb A]-S_{\textnormal{CS}}\qty[\vb A]&=2k\int\limits_M\Tr\qty[\vb F\wedge\delta\vb A]-k\int\limits_{\partial M}\Tr\qty[\vb A\wedge\delta\vb A]
 \end{align*}
