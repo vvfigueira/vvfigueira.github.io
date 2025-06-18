@@ -108,14 +108,16 @@ theories, $\vb F=\vb d\vb A+\vb A\wedge \vb A$, it's also is easily related to t
     \tensor{e}{^\mu_d}\tensor{e}{_\mu^e}\tensor{R}{_a_b^c_e}&=\tensor{e}{^\mu_d}\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\nu^c}\\
     \tensor{R}{_a_b^c_d}&=\tensor{e}{^\mu_d}\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\nu^c}
 \end{align*}
-notice that the anti-symmetry of the first two indices of the Riemann tensor is defining property of it, doesn't depending on the type of connection 
-chosen, but, the anti-symmetry in the last two indices is up to the metricity condition and the symmetry between pairs is up to torsionless condition, 
-up to now we'll assume only the metricity one. With all of this being said, we can construct our Riemann/Curvature 2-form,
+which we'll use when rewriting the Einstein-Hilbert Action, it's of no hurt to stress that we are only assuming metricity, and not torsionless --- which will come about naturally later ---, 
+lastly, we define our Riemann Curvature 2-form,
 \begin{align*}
-    \tensor{{\vb R}}{^\nu_\mu}&=\frac12\tensor{R}{_a_b^\nu_\mu}\dd{x^a}\wedge\dd{x^b}=\tensor{\dd{\boldsymbol\omega}}{^\nu_\mu}+\tensor{{\boldsymbol\omega}}{^\nu_\alpha}\wedge\tensor{{\boldsymbol\omega}}{^\alpha_\mu}%\tensor{{\vb R}}{^\nu_\mu}&=\frac12\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\alpha^a}\tensor{e}{^\alpha_c}\tensor{e}{_\beta^b}\tensor{e}{^\beta_d}\dd{x^c}\wedge\dd{x^d}\\%\tensor{{\vb R}}{^\nu_\mu}&=\frac12\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\alpha^a}\tensor{e}{_\beta^b}{\tilde{\vb e}^\alpha}\wedge{\tilde{\vb e}^\beta}
+    \tensor{{\vb R}}{^\nu_\mu}&=\frac12\tensor{R}{_a_b^\nu_\mu}\vb d{x^a}\wedge\vb d{x^b}=\tensor{\vb d{\boldsymbol\omega}}{^\nu_\mu}+\tensor{{\boldsymbol\omega}}{^\nu_\alpha}\wedge\tensor{{\boldsymbol\omega}}{^\alpha_\mu}%\tensor{{\vb R}}{^\nu_\mu}&=\frac12\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\alpha^a}\tensor{e}{^\alpha_c}\tensor{e}{_\beta^b}\tensor{e}{^\beta_d}\dd{x^c}\wedge\dd{x^d}\\%\tensor{{\vb R}}{^\nu_\mu}&=\frac12\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\alpha^a}\tensor{e}{_\beta^b}{\tilde{\vb e}^\alpha}\wedge{\tilde{\vb e}^\beta}
 \end{align*}
-this is of the general form of $\vb F=\dd{\vb A}+\vb A\wedge\vb A$ as for a gauge theory, we'll talk more about the absence of $\tilde{\vb e} ^\mu$ later, from now we'll start writing the 
-Einstein-Hilbert Action in terms of these variables introduced, starting with the volume form,
+we'll talk more about the absence of $\vb e^\mu$ later --- which signifies this is the gauge force field of only the inhomogeneous part of the Poincaré group ---.
+
+No we start the real deal of rewriting the 
+Einstein-Hilbert Action in terms of the curvature 2--form, and the vielbein 1--form, starting with the volume form\footnote{While it's widely known the Levi-Civita symbol, $\epsilon_{a_1\cdots a_D}$, in a coordinate basis isn't a tensor, 
+for a non-coordinate basis, $\epsilon_{\mu_1\cdots\mu_D}$, it does not need additional factors of the metric determinant, one more usefulness of the vielbein basis.},
 \begin{align*}
     \dd[D]{x}\sqrt{\abs{g}}&=\sqrt{\abs{\Det\qty[g_{ab}]}}\dd{x^0}\wedge\cdots\wedge\dd{x^{D-1}}\\
     \dd[D]{x}\sqrt{\abs{g}}&=\sqrt{\abs{\Det\qty[\tensor{e}{^\mu_a}\eta_{\mu\nu}\tensor{e}{^\nu_b}]}}\dd{x^0}\wedge\cdots\wedge\dd{x^{D-1}}\\
@@ -125,27 +127,55 @@ Einstein-Hilbert Action in terms of these variables introduced, starting with th
     \dd[D]{x}\sqrt{\abs{g}}&=\epsilon_{\mu_1\cdots\mu_{D}}\tensor{e}{^{\mu_0}_0}\cdots\tensor{e}{^{\mu_{D}}_{D-1}}\dd{x^0}\wedge\cdots\wedge\dd{x^{D-1}}\\
     \dd[D]{x}\sqrt{\abs{g}}&=\epsilon_{\mu_1\cdots\mu_{D}}\tensor{e}{^{\mu_0}_0}\dd{x^0}\wedge\cdots\wedge\tensor{e}{^{\mu_{D}}_{D-1}}\dd{x^{D-1}}\\
     \dd[D]{x}\sqrt{\abs{g}}&=\frac{1}{D!}\epsilon_{\mu_1\cdots\mu_{D}}\tensor{e}{^{\mu_1}_{a_1}}\dd{x^{a_1}}\wedge\cdots\wedge\tensor{e}{^{\mu_{D}}_{a_{D}}}\dd{x^{a_{D}}}\\
-    \dd[D]{x}\sqrt{\abs{g}}&=\frac{1}{D!}\epsilon_{\mu_1\cdots\mu_{D}}\tilde{\vb e}^{\mu_1}\wedge\cdots\wedge\tilde{\vb e}^{\mu_{D}}
+    \dd[D]{x}\sqrt{\abs{g}}&=\frac{1}{D!}\epsilon_{\mu_1\cdots\mu_{D}}\vb e^{\mu_1}\wedge\cdots\wedge\vb e^{\mu_{D}}
 \end{align*}
 
 And now we express the Ricci scalar,
 \begin{align*}
     R&=g^{ab}\tensor{R}{_c_b^c_a}\\
-    R&=\tensor{e}{_\rho^a}\tensor{e}{^\rho^b}\tensor{R}{_c_b_d_a}\tensor{e}{_\alpha^c}\tensor{e}{^\alpha^d}\\
+    R&=\tensor{e}{_\rho^a}\tensor{e}{^\rho^b}\tensor{R}{_c_b_d_a}\tensor{e}{_\alpha^c}\tensor{e}{^\alpha^d},\ \ \ \textnormal{vielbein definition}\\
     R&=\eta^{\rho\sigma}\eta^{\alpha\beta}\tensor{e}{_\rho^a}\tensor{e}{_\sigma^b}\tensor{R}{_c_b_d_a}\tensor{e}{_\alpha^c}\tensor{e}{_\beta^d}\\
-    R&=\eta^{\rho\sigma}\eta^{\alpha\beta}\tensor{R}{_\alpha_\sigma_\beta_\rho}\\
-    R&=\frac12\qty(\eta^{\rho\sigma}\eta^{\alpha\beta}-\eta^{\rho\alpha}\eta^{\sigma\beta})\tensor{R}{_\alpha_\sigma_\beta_\rho}\\
-    R&=\frac{-1}{2\qty(D-2)!}\tensor{\epsilon}{^{\nu_1}^\cdots^{\nu_{D-2}}^\beta^\rho}\tensor{\epsilon}{_{\nu_1}_\cdots_{\nu_{D-2}}^\alpha^\sigma}\tensor{R}{_\alpha_\sigma_\beta_\rho}
+    R&=\eta^{\rho\sigma}\eta^{\alpha\beta}\tensor{R}{_c_b_\beta_\rho}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b},\ \ \ \textnormal{anti-symmetry in the first two index}\\
+    R&=\frac12\qty(\eta^{\rho\sigma}\eta^{\alpha\beta}-\eta^{\rho\alpha}\eta^{\sigma\beta})\tensor{R}{_c_b_\beta_\rho}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b}\\
+    R&=\frac{-1}{2\qty(D-2)!}\tensor{\epsilon}{^{\nu_1}^\cdots^{\nu_{D-2}}^\beta^\rho}\tensor{\epsilon}{_{\nu_1}_\cdots_{\nu_{D-2}}^\alpha^\sigma}\tensor{R}{_c_b_\beta_\rho}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b}
 \end{align*}
 
 Putting everything together,
 \begin{align*}
     S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}R\\
-    S_{\textnormal{EH}}&=\frac{-1}{4D!\qty(D-2)!\kappa}\int\limits_M\vb e^{\mu_1}\wedge\cdots\wedge\vb e^{\mu_{D}}\epsilon_{\mu_1\cdots\mu_{D}}\tensor{\epsilon}{^{\nu_1}^\cdots^{\nu_{D-2}}^\beta^\rho}\tensor{\epsilon}{_{\nu_1}_\cdots_{\nu_{D-2}}^\alpha^\sigma}\tensor{R}{_\alpha_\sigma_\beta_\rho}\\
-    S_{\textnormal{EH}}&=\frac{1}{4\qty(D-2)!\kappa}\int\limits_M\vb e^{\mu_1}\wedge\cdots\wedge\vb e^{\mu_{D}}\tensor{\eta}{_{\mu_1}^{[\nu_1}}\cdots\tensor{\eta}{_{\mu_{D-2}}^{\nu_{D-2}}}\tensor{\eta}{_{\mu_{D-1}}^{\beta}}\tensor{\eta}{_{\mu_{D}}^{\rho]}}\tensor{\epsilon}{_{\nu_1}_\cdots_{\nu_{D-2}}^\alpha^\sigma}\tensor{R}{_\alpha_\sigma_\beta_\rho}\\
-    S_{\textnormal{EH}}&=\frac{1}{4\qty(D-2)!\kappa}\int\limits_M\vb e^{\nu_1}\wedge\cdots\wedge\vb e^{\nu_{D-2}}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\tensor{\epsilon}{_{\nu_1}_\cdots_{\nu_{D-2}}^\alpha^\sigma}\tensor{R}{_\alpha_\sigma_\beta_\rho}\\
-    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\frac{1}{2\qty(D-2)!}R_{\alpha\sigma\beta\rho}\tensor{\epsilon}{^\alpha^\sigma_{\nu_1}_\cdots_{\nu_{D-2}}}\vb e^{\nu_1}\wedge\cdots\wedge\vb e^{\nu_{D-2}}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\\
-    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\star\vb R_{\beta\rho}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\\
+    S_{\textnormal{EH}}&=\frac{-1}{4D!\qty(D-2)!\kappa}\int\limits_M\vb e^{\mu_1}\wedge\cdots\wedge\vb e^{\mu_{D}}\epsilon_{\mu_1\cdots\mu_{D}}\tensor{\epsilon}{^{\nu_1}^\cdots^{\nu_{D-2}}^\beta^\rho}\tensor{\epsilon}{_{\nu_1}_\cdots_{\nu_{D-2}}^\alpha^\sigma}\tensor{R}{_c_b_\beta_\rho}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b}\\
+    S_{\textnormal{EH}}&=\frac{1}{4\qty(D-2)!\kappa}\int\limits_M\vb e^{\mu_1}\wedge\cdots\wedge\vb e^{\mu_{D}}\tensor{\eta}{_{\mu_1}^{[\nu_1}}\cdots\tensor{\eta}{_{\mu_{D-2}}^{\nu_{D-2}}}\tensor{\eta}{_{\mu_{D-1}}^{\beta}}\tensor{\eta}{_{\mu_{D}}^{\rho]}}\tensor{\epsilon}{_{\nu_1}_\cdots_{\nu_{D-2}}^\alpha^\sigma}\tensor{R}{_c_b_\beta_\rho}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b}\\
+    S_{\textnormal{EH}}&=\frac{1}{4\qty(D-2)!\kappa}\int\limits_M\vb e^{\nu_1}\wedge\cdots\wedge\vb e^{\nu_{D-2}}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\tensor{\epsilon}{_{\nu_1}_\cdots_{\nu_{D-2}}^\alpha^\sigma}\tensor{R}{_c_b_\beta_\rho}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b}\\
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\frac{1}{2\qty(D-2)!}\tensor{R}{_c_b_\beta_\rho}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b}\tensor{\epsilon}{^\alpha^\sigma_{\nu_1}_\cdots_{\nu_{D-2}}}\vb e^{\nu_1}\wedge\cdots\wedge\vb e^{\nu_{D-2}}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\\
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\frac{1}{2\qty(D-2)!}\tensor{R}{_c_b_\beta_\rho}\tensor{\epsilon}{^\alpha^\sigma_{\nu_1}_\cdots_{\nu_{D-2}}}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b}\tensor{e}{^{\nu_1}_{a_1}}\cdots\tensor{e}{^{\nu_{D-2}}_{a_{D-2}}}\vb dx^{a_1}\wedge\cdots\wedge\vb dx^{a_{D-2}}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\\
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\frac{1}{2\qty(D-2)!}\tensor{R}{_c_b_\beta_\rho}\Det\qty[\tensor{e}{^\nu_a}]\tensor{\epsilon}{^c^b_{a_1}_\cdots_{a_{D-2}}}\vb dx^{a_1}\wedge\cdots\wedge\vb dx^{a_{D-2}}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\\
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\frac{1}{2}\tensor{R}{_c_b_\beta_\rho}\star\qty(\vb dx^{c}\wedge\vb dx^{b})\wedge\vb e^{\beta}\wedge\vb e^{\rho}\\
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\star\vb R_{\beta\rho}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\numberthis\label{action}
+\end{align*}
+
+Let's take a step backwards to breath, this last expression was our goal to reach, it shows the Einstein-Hilbert Action\footnote{Actually it's the Einstein-Cartan Action, as we have not imposed the torsionless condition, but, we'll not bother distinguishing this.} 
+written exactly in term of the vielbein and the spin connection 1--forms, in particular, the spin connection as being the connection form of the gauged Lorentz transformations shows up only inside the curvature 2--form, as 
+it should happen to a gauge theory, this guarantees the manifestly local Lorentz invariance, to see this, we defined the local Lorentz redundancy as being $\tilde{\vb e}_\mu\rightarrow \tensor{\Lambda}{^\nu_\mu}\tilde{\vb e}_\nu$, with the corresponding 
+transformation on $\boldsymbol\omega$ derived before, but, the vector vielbein transformation actually induces a transformation in the covector vielbein by, $\vb e^\mu\qty(\tilde{\vb e}_\nu)=\tensor{\delta}{^\mu_\nu}\Rightarrow \vb e^\mu\rightarrow \tensor{\Lambda}{^{-1}^\mu_\nu}\vb e^\nu$, so that the 
+relevant expressions for us now are\footnote{For convenience we'll make the change $\Lambda\leftrightarrow\Lambda^{-1}$ everywhere.},
+\begin{align*}
+    \begin{cases}
+        \vb e^\mu&\rightarrow\tensor{\Lambda}{^\mu_\nu}\vb e^\nu\\
+        \tensor{\boldsymbol\omega}{^\alpha_\beta}&\rightarrow\tensor{\Lambda}{^\alpha_\rho}\tensor{\boldsymbol\omega}{^\rho_\sigma}\tensor{\Lambda}{^{-1}^\sigma_\beta}+\tensor{\Lambda}{^\alpha_\sigma}\vb d\tensor{\Lambda}{^{-1}^\sigma_\beta}
+    \end{cases}\Leftrightarrow\begin{cases}
+        \vb e&\rightarrow\Lambda\vb e\\
+        \boldsymbol\omega&\rightarrow\Lambda\boldsymbol\omega\Lambda^{-1}+\Lambda\vb d\Lambda^{-1}
+    \end{cases} 
+\end{align*}
+where we also included the matrix form of these transformations, to see the invariance of the action with respect to these is only needed to work out the transformation law of the curvature 2--form,
+\begin{align*}
+    \vb R&=\vb d\boldsymbol\omega+\boldsymbol\omega\wedge\boldsymbol\omega\rightarrow \vb d\qty(\Lambda\boldsymbol\omega\Lambda^{-1}+\Lambda\vb d\Lambda^{-1})+\qty(\Lambda\boldsymbol\omega\Lambda^{-1}+\Lambda\vb d\Lambda^{-1})\wedge\qty(\Lambda\boldsymbol\omega\Lambda^{-1}+\Lambda\vb d\Lambda^{-1})\\
+    \vb R&\rightarrow \vb d\Lambda\wedge\boldsymbol\omega\Lambda^{-1}+\Lambda\vb d\boldsymbol\omega\Lambda^{-1}-\Lambda\boldsymbol\omega\wedge\vb d\Lambda^{-1}+\vb d\Lambda\wedge\vb d\Lambda^{-1}+\Lambda\boldsymbol\omega\wedge\boldsymbol\omega\Lambda^{-1}+\Lambda\boldsymbol\omega\wedge\vb d\Lambda^{-1}-\vb d\Lambda\wedge\boldsymbol\omega\Lambda^{-1}-\vb d\Lambda\wedge\vb d\Lambda^{-1}\\
+    \vb R&\rightarrow \Lambda\qty(\vb d\boldsymbol\omega+\boldsymbol\omega\wedge\boldsymbol\omega)\Lambda^{-1}=\Lambda\vb R\Lambda^{-1}
+\end{align*}
+and lastly, but not less important, we have to understand whether or not the Hodge star operator should change or not with respect to this transformation, the answer is no, despite it depending explicitly on the 
+metric to be defined, it's dependence is only through $\sqrt{\abs{\Det\qty[g_{ab}]}}$, which is invariant under a local Lorentz transformation, as $g_{ab}=\eta_{\mu\nu}\tensor{e}{^\mu_a}\tensor{e}{^\nu_b}$.
+\begin{align*}
     S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\vb R_{\beta\rho}\wedge\star\qty(\vb e^{\beta}\wedge\vb e^{\rho})\\
     S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\frac{1}{\qty(D-2)!}\tensor{\epsilon}{^\beta^\rho_{\alpha_1}_\cdots_{\alpha_{D-2}}}\vb R_{\beta\rho}\wedge\vb e^{\alpha_1}\wedge\cdots\wedge\vb e^{\alpha_{D-2}}\\
     S_{\textnormal{EH}}&=\frac{1}{2\qty(D-2)!\kappa}\int\limits_M\tensor{\epsilon}{_{\alpha_1}_\cdots_{\alpha_{D}}}\vb e^{\alpha_1}\wedge\cdots\wedge\vb e^{\alpha_{D-2}}\wedge\vb R^{\alpha_{D-1}\alpha_{D}}
