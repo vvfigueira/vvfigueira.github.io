@@ -1,7 +1,7 @@
 \section{Gravity as a Gauge Theory}
 
 Let's take a step backwards to breath, this last expression was our goal to reach, it shows the Einstein-Hilbert Action\footnote{Actually it's the Einstein-Cartan Action, as we have not imposed the torsionless condition, but, we'll not bother distinguishing this.} 
-written exactly in term of the vielbein and the spin connection 1--forms, in particular, the spin connection as being the connection form of the gauged Lorentz transformations shows up only inside the curvature 2--form, as 
+written exactly in terms of the vielbein and the spin connection 1--forms, in particular, the spin connection as being the connection form of the gauged Lorentz transformations shows up only inside the curvature 2--form, as 
 it should happen to a gauge theory, this guarantees the manifestly local Lorentz invariance, to see this, we defined the local Lorentz redundancy as being $\tilde{\vb e}_\mu\rightarrow \tensor{\Lambda}{^\nu_\mu}\tilde{\vb e}_\nu$, with the corresponding 
 transformation on $\boldsymbol\omega$ derived before, but, the vector vielbein transformation actually induces a transformation in the covector vielbein by, $\vb e^\mu\qty(\tilde{\vb e}_\nu)=\tensor{\delta}{^\mu_\nu}\Rightarrow \vb e^\mu\rightarrow \tensor{\Lambda}{^{-1}^\mu_\nu}\vb e^\nu$, so that the 
 relevant expressions for us now are\footnote{For convenience we'll make the change $\Lambda\leftrightarrow\Lambda^{-1}$ everywhere.},
@@ -12,142 +12,78 @@ relevant expressions for us now are\footnote{For convenience we'll make the chan
     \end{cases}\Leftrightarrow\begin{cases}
         \vb e&\rightarrow\Lambda\vb e\\
         \boldsymbol\omega&\rightarrow\Lambda\boldsymbol\omega\Lambda^{-1}+\Lambda\vb d\Lambda^{-1}
-    \end{cases} 
+    \end{cases}\numberthis\label{GaugeTransformationsVS}
 \end{align*}
 where we also included the matrix form of these transformations, to see the invariance of the action with respect to these is only needed to work out the transformation law of the curvature 2--form,
 \begin{align*}
     \vb R&=\vb d\boldsymbol\omega+\boldsymbol\omega\wedge\boldsymbol\omega\rightarrow \vb d\qty(\Lambda\boldsymbol\omega\Lambda^{-1}+\Lambda\vb d\Lambda^{-1})+\qty(\Lambda\boldsymbol\omega\Lambda^{-1}+\Lambda\vb d\Lambda^{-1})\wedge\qty(\Lambda\boldsymbol\omega\Lambda^{-1}+\Lambda\vb d\Lambda^{-1})\\
     \vb R&\rightarrow \vb d\Lambda\wedge\boldsymbol\omega\Lambda^{-1}+\Lambda\vb d\boldsymbol\omega\Lambda^{-1}-\Lambda\boldsymbol\omega\wedge\vb d\Lambda^{-1}+\vb d\Lambda\wedge\vb d\Lambda^{-1}+\Lambda\boldsymbol\omega\wedge\boldsymbol\omega\Lambda^{-1}+\Lambda\boldsymbol\omega\wedge\vb d\Lambda^{-1}-\vb d\Lambda\wedge\boldsymbol\omega\Lambda^{-1}-\vb d\Lambda\wedge\vb d\Lambda^{-1}\\
-    \vb R&\rightarrow \Lambda\qty(\vb d\boldsymbol\omega+\boldsymbol\omega\wedge\boldsymbol\omega)\Lambda^{-1}=\Lambda\vb R\Lambda^{-1}
+    \vb R&\rightarrow \Lambda\qty(\vb d\boldsymbol\omega+\boldsymbol\omega\wedge\boldsymbol\omega)\Lambda^{-1}=\Lambda\vb R\Lambda^{-1}\numberthis\label{GaugeTransformationsC}
 \end{align*}
 and lastly, but not less important, we have to understand whether or not the Hodge star operator should change or not with respect to this transformation, the answer is no\footnote{As long as we work with orientation preserving transformation, otherwise it'll adquire an extra sign.}, despite it depending explicitly on the 
 metric to be defined, it's dependence is only through $\sqrt{\abs{\Det\qty[g_{ab}]}}$, which is invariant under a local Lorentz transformation, as $g_{ab}=\eta_{\mu\nu}\tensor{e}{^\mu_a}\tensor{e}{^\nu_b}$, thus, $\star\vb R\rightarrow \Lambda\qty(\star\vb R)\Lambda^{-1}$, and the action is manifestly invariant,
 \begin{align*}
     S_{\textnormal{EH}}'=\frac{1}{2\kappa}\int\limits_M\tensor{\Lambda}{_\beta^\tau}\star\vb R_{\tau\sigma}\tensor{\Lambda}{^{-1}^\sigma_\rho}\wedge\tensor{\Lambda}{^\beta_\alpha}\vb e^\alpha\wedge\tensor{\Lambda}{^\rho_\mu}\vb e^\mu=\frac{1}{2\kappa}\int\limits_M\star\vb R_{\beta\rho}\wedge\vb e^{\beta}\wedge\vb e^{\rho}=S_{\textnormal{EH}}
 \end{align*}
-
-
-
-
-
+thus, the natural question arises, and what about the diffeomorphisms transformations? Well, it continues being a redundancy, the problem is, it does not act in the same fashion as gauge transformation should, 
+it's action is $\vb e^\mu=\tensor{e}{^\mu_a}\vb dx^a\rightarrow \phi_\ast\vb e^\mu=\tensor{e}{^\mu_b}\tensor{\Omega}{^b_a}\vb dx^a$, with $\tensor{\Omega}{^b_a}:M\rightarrow\mathbb R$ totally defined by 
+$\phi\in\textnormal{Diff}\qty(M)$, this differs a lot from what we would expect, naively $\vb e^\mu$ would be thought to be the gauge field for translations --- which when made local are the diffeomorphisms ---, 
+and as such, under a diffeomorphisms gauge transformation should transform as $\vb e^\mu\rightarrow\vb e^\mu+\vb dg^\mu$, this clearly isn't the case here, and that poses a obstacle for us to be able to interpret 
+gravity as being the gauge theory, in usual sense, of the group $ISO\qty(D-1,1)$, nevertheless, the action still is invariant, as long as we add the transformation law $\tensor{{\boldsymbol\omega}}{^\alpha_\beta}\rightarrow\phi_\ast\tensor{{\boldsymbol\omega}}{^\alpha_\beta}$, 
+remember that the Hodge star should also change, as it also depends on $\vb e^\mu$, $\star\rightarrow\phi_\ast\star$, and of course use the naturalness of the exterior derivative and the wedge product, 
+thus, 
 \begin{align*}
-    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\vb R_{\beta\rho}\wedge\star\qty(\vb e^{\beta}\wedge\vb e^{\rho})\\
-    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\frac{1}{\qty(D-2)!}\tensor{\epsilon}{^\beta^\rho_{\alpha_1}_\cdots_{\alpha_{D-2}}}\vb R_{\beta\rho}\wedge\vb e^{\alpha_1}\wedge\cdots\wedge\vb e^{\alpha_{D-2}}\\
-    S_{\textnormal{EH}}&=\frac{1}{2\qty(D-2)!\kappa}\int\limits_M\tensor{\epsilon}{_{\alpha_1}_\cdots_{\alpha_{D}}}\vb e^{\alpha_1}\wedge\cdots\wedge\vb e^{\alpha_{D-2}}\wedge\vb R^{\alpha_{D-1}\alpha_{D}}
+    \vb R\rightarrow\vb d\phi_\ast\boldsymbol\omega+\phi_\ast\boldsymbol\omega\wedge\phi_\ast\boldsymbol\omega=\phi_\ast\qty(\vb d\boldsymbol\omega+\boldsymbol\omega\wedge\boldsymbol\omega)=\phi_\ast\vb R\Rightarrow\star\vb R\rightarrow\qty(\phi_\ast\star)\phi_\ast\vb R=\phi_\ast\qty(\star\vb R)
+\end{align*}
+this means the action is manifestly invariant,
+\begin{align*}
+    S_{\textnormal{EH}}'=\frac{1}{2\kappa}\int\limits_M\phi_\ast\qty(\star\vb R_{\beta\rho})\wedge\phi_\ast\vb e^\beta\wedge\phi_\ast\vb e^\rho=\frac{1}{2\kappa}\int\limits_M\phi_\ast\qty(\star\vb R_{\beta\rho}\wedge\vb e^\beta\wedge\vb e^\rho)=S_{\textnormal{EH}}
+\end{align*}
+the last equality is consequence of $\phi$ being a diffeomorphism\footnote{An orientation preserving one.}. Despite this, we still didn't managed to obtain a proper gauge interpretation of the diffeomorphisms, 
+one possible way of thinking is that $\vb e^\mu$ isn't in the proper representation for a gauge field, as they must be in the adjoint representation, and by the transformation law $\tensor{e}{^\mu_a}\rightarrow\tensor{e}{^\mu_b}\tensor{\Omega}{^b_a}$ 
+it seems to be in the fundamental one, we can try to change this by evoking the generators of the $\mathfrak{iso}\qty(D-1,1)$ algebra,
+\begin{align*}
+    \comm{J^{\alpha\beta}}{J^{\mu\nu}}=4\eta^{[\alpha|[\mu}J^{\nu]|\beta]},\ \ \ \comm{J^{\alpha\beta}}{P^\mu}&=2P^{[\alpha}\eta^{\beta]\mu}, \ \ \ \comm{P^\mu}{P^\nu}=0\numberthis\label{ISOAlgebra}
+\end{align*}
+which naturally promote the ought to be gauge fields to any representation, $\vb e^\mu\rightarrow \vb e^\mu P_\mu,\tensor{{\boldsymbol\omega}}{_\alpha_\beta}\rightarrow\frac12\tensor{{\boldsymbol\omega}}{_\alpha_\beta}J^{\alpha\beta}$, so that the only option 
+left is the EH Action being in the following form\footnote{Here we kind of used intuition to guess that under a change of representation $\boldsymbol\omega_{\alpha\beta}\rightarrow\frac12\boldsymbol\omega_{\alpha\beta}J^{\alpha\beta}$ the right thing to do is to change accordingly $\vb R_{\alpha\beta}\rightarrow\frac12\vb R_{\alpha\beta}J^{\alpha\beta}$, we'll show this is true in the next section.},
+\begin{align*}
+    S_{\textnormal{EH}}&\stackrel{?}{=}\frac{1}{\kappa}\int\limits_M\Tr\qty[\frac12\star\vb R_{\alpha\beta} J^{\alpha\beta}\wedge\vb e^\mu P_\mu\wedge\vb e^\nu P_\nu]=\frac{1}{2\kappa}\Tr\qty[J^{\alpha\beta}P_\mu P_\nu]\int\limits_M\star\vb R_{\alpha\beta} \wedge\vb e^\mu \wedge\vb e^\nu=\frac{1}{4\kappa}\Tr\qty[J^{\alpha\beta}\comm{P_\mu}{ P_\nu}]\int\limits_M\star\vb R_{\alpha\beta} \wedge\vb e^\mu \wedge\vb e^\nu\stackrel{!}{=}0
+\end{align*}
+the order of the generators inside the trace\footnote{We're being sloppy here, what is usually wanted is to write non-abelian gauge theories action as an integral over a trace, which is a fitting thing to do for the adjoint representation, for semi-simple algebras --- not our case ---, the Killing bilinear invariant form --- which can be written as a trace over the adjoint representation --- is also non-degenerate, what makes 
+possible for it to be usable in the definition of the action, when every term in the action is also in the adjoint representation of a semi-simple lie algebra this possibilites the extrapolation of the Killing form from being a bilinear to it being a multilinear --- the usual trace ---. But, as we said, 
+the $\mathfrak{iso}\qty(D-1,1)$ algebra is not semi-simple, hence, there is no guarantee that a non-degenerate symmetric invariant bilinear form, let down the existence of a full multilinear non-degenerate trace.}. This is sufficient to let down the expectations of obtaining gravity as a usual sense gauge theory, however, there is a small caveat in this argument, we have overlooked the presence 
+of the Hodge star, which naturally is dependent on the metric, and hence, the vielbein, there might be hope that when treated correctly it gives rise to a non-zero action, happily, the following is true from 
+differential geometry: Given two k--forms $\boldsymbol\alpha,\boldsymbol\beta$, it holds $\boldsymbol\alpha\wedge\star\boldsymbol\beta=\boldsymbol\beta\wedge\star\boldsymbol\alpha$, thus,
+\begin{align*}
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\star\qty(\vb e^{\beta}\wedge\vb e^{\rho})\wedge\vb R_{\beta\rho}=\frac{1}{2\kappa}\int\limits_M\frac{1}{\qty(D-2)!}\tensor{\epsilon}{^\beta^\rho_{\alpha_3}_\cdots_{\alpha_{D}}}\vb e^{\alpha_3}\wedge\cdots\wedge\vb e^{\alpha_{D}}\wedge\vb R_{\beta\rho}\\
+    S_{\textnormal{EH}}&=\frac{1}{2\qty(D-2)!\kappa}\int\limits_M\tensor{\epsilon}{_{\alpha_1}_\cdots_{\alpha_{D}}}\vb e^{\alpha_3}\wedge\cdots\wedge\vb e^{\alpha_{D}}\wedge\vb R^{\alpha_{1}\alpha_{2}}\numberthis\label{EHAction3}
 \end{align*}
 
-For $D=4$ this gives,
+Again, if we want to understand $\vb e^\mu$ as the gauge field for translations, $\epsilon_{\alpha_1\cdots\alpha_D}$ has to be the result from a bilinear on the Lie Algebra $\mathfrak{iso}\qty(D-1,1)$, 
+that is, our expectation is,
 \begin{align*}
-    S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega]&=\frac{1}{4\kappa}\epsilon_{\mu\nu\alpha\beta}\int\limits_M\vb e^{\mu}\wedge\vb e^\nu\wedge\vb R^{\alpha\beta}
+    S_{\textnormal{EH}}&\stackrel{?}{=}\frac{1}{2\qty(D-2)!\kappa}\Tr\qty[J_{\alpha_1\alpha_2}P_{\alpha_3}\cdots P_{\alpha_D}]\int\limits_M\vb e^{\alpha_3}\wedge\cdots\wedge\vb e^{\alpha_{D}}\wedge\vb R^{\alpha_{1}\alpha_{2}}=\frac{1}{2\kappa}\Tr\qty[J_{\alpha_1\alpha_2}P_{[\alpha_3}\cdots P_{\alpha_D]}]\int\limits_M\vb e^{\alpha_3}\wedge\cdots\wedge\vb e^{\alpha_{D}}\wedge\vb R^{\alpha_{1}\alpha_{2}}\stackrel{!}{=}0
 \end{align*}
-
-It's not clear how this should be interpreted as a gauge theory, due to we wanting to interpret $\boldsymbol\omega$ as the gauge 1-form of Lorentz transformations and $\tilde{\vb e}$ as the gauge 1-form of 
-translations, the Einstein Hilbert Action should then be something of the form,
+which again is hopeless, due to the anti-symmetry of the wedge product, as long as $D\geq4$, there will be a commutator inside the bilinear that will make the whole expression zero, but here it lies the magic! 
+For $D=2+1$ we actually have inside the bilinear just a single instance of the translation generator, thus, it might be possible to define a proper theory in this way! Notice,
 \begin{align*}
-    \int\limits_M\Tr\qty[\vb A\wedge\vb A\wedge\vb F]
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\vb e^\mu\wedge\vb R^{\alpha\beta}\stackrel{?}{=}\frac{1}{2\kappa}\int\limits_M\Tr\qty[J_{\alpha\beta}P_\mu]\vb e^\mu\wedge\vb R^{\alpha\beta}\numberthis\label{BilinearAnsatz}
 \end{align*}
-for a combined gauge field $\vb A$, where both $\boldsymbol\omega$ and $\vb e$ contribute in some way, sadly, there is no such gauge theory in this form, 
-first, due to the trace being of three lie algebra valued forms, this vanishes, secondly, this is not invariant under a gauge transformation $\vb A\rightarrow g^{-1}\vb Ag+g^{-1}\dd{g}$. So, 
-if it's to $3+1$ gravity to be a gauge theory in this sense, it certainly is realized in a different way, but, an interesting case happens to $D=2+1$,
-\begin{align*}
-    S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega]&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\vb e^{\mu}\wedge\vb R^{\alpha\beta}
-\end{align*}
-
-This already seems a lot like a proper gauge theory of the Chern-Simons type,
-Equations of motion are,
-\begin{align*}
-    S_{\textnormal{EH}}\qty[\vb e+\delta\vb e,\boldsymbol\omega]-S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega]&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\delta\vb e^{\mu}\wedge\vb R^{\alpha\beta}=0\\
-    0&=-\frac12\epsilon_{\mu\alpha\beta}\vb R^{\alpha\beta}\\
-    0&=-\frac12\epsilon_{\mu\alpha\beta}\frac12\tensor{R}{_\rho_\sigma^\alpha^\beta}\vb e^\rho\wedge\vb e^\sigma\\
-    0&=-\frac14\epsilon_{\mu\alpha\beta}\tensor{R}{_\rho_\sigma^\alpha^\beta}\star\qty(\vb e^\rho\wedge\vb e^\sigma)\\
-    0&=-\frac14\epsilon_{\mu\alpha\beta}\tensor{R}{_\rho_\sigma^\alpha^\beta}\tensor{\epsilon}{^\rho^\sigma_\kappa}\vb e^\kappa\\
-    0&=-\frac14\epsilon_{\mu\alpha\beta}\tensor{\epsilon}{^\rho^\sigma^\kappa}\tensor{R}{_\rho_\sigma^\alpha^\beta}\vb e_\kappa\\
-    0&=-\frac{3!}{4}\tensor{\eta}{_\mu^{[\rho}}\tensor{\eta}{_\alpha^{\sigma}}\tensor{\eta}{_\beta^{\kappa]}}\tensor{R}{_\rho_\sigma^\alpha^\beta}\vb e_\kappa\\
-    0&=-\frac{3!}{4}\tensor{R}{_\rho_\sigma^{[\sigma}^\kappa}\tensor{\eta}{_\mu^{\rho]}}\vb e_\kappa\\
-    0&=-\frac14\qty(\tensor{R}{_\rho_\sigma^{\sigma}^\kappa}\tensor{\eta}{_\mu^{\rho}}+\tensor{R}{_\rho_\sigma^\kappa^\rho}\tensor{\eta}{_\mu^{\sigma}}+\tensor{R}{_\rho_\sigma^\rho^\sigma}\tensor{\eta}{_\mu^\kappa}-\tensor{R}{_\rho_\sigma^{\rho}^\kappa}\tensor{\eta}{_\mu^{\sigma}}-\tensor{R}{_\rho_\sigma^\kappa^\sigma}\tensor{\eta}{_\mu^{\rho}}-\tensor{R}{_\rho_\sigma^\sigma^\rho}\tensor{\eta}{_\mu^\kappa})\vb e_\kappa\\
-    0&=-\frac14\qty(-\tensor{R}{_\mu^\kappa}-\tensor{R}{_\mu^\kappa}+R\tensor{\eta}{_\mu^\kappa}-\tensor{R}{_\mu^\kappa}-\tensor{R}{_\mu^\kappa}+R\tensor{\eta}{_\mu^\kappa})\vb e_\kappa\\
-    0&=-\frac14(-4\tensor{R}{_\mu^\kappa}+2R\tensor{\eta}{_\mu^\kappa})\vb e_\kappa\\
-    0&=\qty(\tensor{R}{_\mu_\kappa}-\frac12R\tensor{\eta}{_\mu_\kappa})\vb e^\kappa
-\end{align*}
-
-And,
-\begin{align*}
-    S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega+\delta\boldsymbol\omega]-S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega]&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\vb e^{\mu}\wedge\qty(\dd{\delta\boldsymbol\omega}+\delta\boldsymbol\omega\wedge\boldsymbol\omega+\boldsymbol\omega\wedge\delta\boldsymbol\omega)^{\alpha\beta}=0\\
-    0&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\qty(-\dd{\qty(\vb e^\mu\wedge\delta\boldsymbol\omega^{\alpha\beta})}+\dd{\vb e^\mu}\wedge\delta\boldsymbol\omega^{\alpha\beta}+\vb e^\mu\wedge\qty(\delta\boldsymbol\omega\wedge\boldsymbol\omega)^{\alpha\beta}+\vb e^\mu\wedge\qty(\boldsymbol\omega\wedge\delta\boldsymbol\omega)^{\alpha\beta})\\
-    0&=\frac{1}{2}\epsilon_{\mu\alpha\beta}\int\limits_M\qty(\dd{\vb e^\mu}\wedge\delta\boldsymbol\omega^{\alpha\beta}+\vb e^\mu\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\gamma}\wedge\tensor{\boldsymbol\omega}{_\gamma^\beta}+\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\alpha^\gamma}\wedge\tensor{\delta\boldsymbol\omega}{_\gamma^\beta})\\
-    0&=\frac{1}{2}\epsilon_{\mu\alpha\beta}\int\limits_M\qty(\dd{\vb e^\mu}\wedge\delta\boldsymbol\omega^{\alpha\beta}-\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\gamma^\beta}\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\gamma}+\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\alpha_\gamma}\wedge\tensor{\delta\boldsymbol\omega}{^\gamma^\beta})\\
-    0&=\frac{1}{2}\epsilon_{\mu\alpha\beta}\int\limits_M\dd{\vb e^\mu}\wedge\delta\boldsymbol\omega^{\alpha\beta}-\frac{1}{2}\epsilon_{\mu\alpha\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\gamma^\beta}\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\gamma}+\frac{1}{2}\epsilon_{\mu\alpha\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\alpha_\gamma}\wedge\tensor{\delta\boldsymbol\omega}{^\gamma^\beta}\\
-    0&=\frac{1}{2}\epsilon_{\mu\alpha\beta}\int\limits_M\dd{\vb e^\mu}\wedge\delta\boldsymbol\omega^{\alpha\beta}-\frac{1}{2}\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\beta}+\frac{1}{2}\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\beta}\\
-    0&=\frac{1}{2}\int\limits_M\qty(\epsilon_{\mu\alpha\beta}\dd{\vb e^\mu}-\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha})\wedge\tensor{\delta\boldsymbol\omega}{^\alpha^\beta}\\
-    0&=\frac{1}{2}\epsilon_{\mu\alpha\beta}\dd{\vb e^\mu}-\frac{1}{2}\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\frac{1}{2}\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
-    0&=\frac{1}{2}\epsilon^{\alpha\beta\nu}\epsilon_{\mu\alpha\beta}\dd{\vb e^\mu}-\frac{1}{2}\epsilon^{\alpha\beta\nu}\epsilon_{\mu\alpha\gamma}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\frac{1}{2}\epsilon^{\alpha\beta\nu}\epsilon_{\mu\gamma\beta}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
-    0&=\dd{\vb e^\nu}-\tensor{\eta}{_\gamma^{[\beta}}\tensor{\eta}{_\mu^{\nu]}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\tensor{\eta}{_\mu^{[\nu}}\tensor{\eta}{_\gamma^{\alpha]}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
-    0&=\dd{\vb e^\nu}-\frac{1}{2}\qty(\tensor{\eta}{_\gamma^{\beta}}\tensor{\eta}{_\mu^{\nu}}-\tensor{\eta}{_\gamma^{\nu}}\tensor{\eta}{_\mu^{\beta}})\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}+\frac{1}{2}\qty(\tensor{\eta}{_\mu^{\nu}}\tensor{\eta}{_\gamma^{\alpha}}-\tensor{\eta}{_\mu^{\alpha}}\tensor{\eta}{_\gamma^{\nu}})\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
-    0&=\dd{\vb e^\nu}+\frac{1}{2}\tensor{\eta}{_\gamma^{\nu}}\tensor{\eta}{_\mu^{\beta}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{_\beta^\gamma}-\frac{1}{2}\tensor{\eta}{_\mu^{\alpha}}\tensor{\eta}{_\gamma^{\nu}}\vb e^\mu\wedge\tensor{\boldsymbol\omega}{^\gamma_\alpha}\\
-    0&=\dd{\vb e^\nu}+\frac{1}{2}\vb e^\beta\wedge\tensor{\boldsymbol\omega}{_\beta^\nu}-\frac{1}{2}\vb e^\alpha\wedge\tensor{\boldsymbol\omega}{^\nu_\alpha}\\
-    0&=\dd{\vb e^\nu}+\tensor{\boldsymbol\omega}{^\nu_\alpha}\wedge\vb e^\alpha
-\end{align*}
-
-It's not really feasible to give this a gauge theory approach, only if we're in 2+1, in this case there is an isomorphism, $\vb e^\mu\rightarrow \vb e_{\alpha\beta}=\epsilon_{\mu\alpha\beta}\vb e^\mu$, so that,
-\begin{align*}
-    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\vb e^\mu\wedge \vb R^{\alpha\beta}\\
-    S_{\textnormal{EH}}&=-\frac{1}{2\kappa}\int\limits_M\vb e_{\beta\alpha}\wedge \vb R^{\alpha\beta}\\
-    S_{\textnormal{EH}}&=-\frac{1}{2\kappa}\int\limits_M\Tr\qty[\vb e\wedge \vb R]\\
-    S_{\textnormal{EH}}&=-\frac{1}{2\kappa}\int\limits_M\Tr\qty[\vb e\wedge\qty(\dd{\boldsymbol\omega}+\frac12\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})]
-\end{align*}
-
-This is a lot similar to Chern-Simons theory,
-
-\begin{align*}
-    S_{\textnormal{CS}}\qty[\vb A]&=k\int\limits_M\Tr\qty[\vb A\wedge\dd{\vb A}+\frac13\vb A\wedge\wedgecomm{\vb A}{\vb A}]
-\end{align*}
-
-Let's try, $\vb A^x=\boldsymbol\omega+x\vb e$,
-
-\begin{align*}
-    S_{\textnormal{CS}}\qty[\vb A^x]&=k\int\limits_M\Tr\qty[\qty(\boldsymbol\omega+x\vb e)\wedge\dd{\qty(\boldsymbol\omega+x\vb e)}+\frac13\qty(\boldsymbol\omega+x\vb e)\wedge\wedgecomm{\boldsymbol\omega+x\vb e}{\boldsymbol\omega+x\vb e}]\\
-    S_{\textnormal{CS}}\qty[\vb A^x]&=k\int\limits_M\Tr\biggl[\boldsymbol\omega\wedge\dd{\boldsymbol\omega}+x\boldsymbol\omega\wedge\dd{\vb e}+x\vb e\wedge\dd{\boldsymbol\omega}+x^2\vb e\wedge\dd{\vb e}\\
-    &\quad\quad\quad\left.+\frac23\qty(\boldsymbol\omega+x\vb e)\wedge\qty(\boldsymbol\omega+x\vb e)\wedge\qty(\boldsymbol\omega+x\vb e)\right]\\
-    S_{\textnormal{CS}}\qty[\vb A^x]&=k\int\limits_M\Tr\biggl[\boldsymbol\omega\wedge\dd{\boldsymbol\omega}+x\dd{\vb e}\wedge\boldsymbol\omega+x\vb e\wedge\dd{\boldsymbol\omega}-\frac12x^2\dd{\qty(\vb e\wedge\vb e)}\\
-    &\quad\quad\quad\left.+\frac23\boldsymbol\omega\wedge\boldsymbol\omega\wedge\boldsymbol\omega+2x\boldsymbol\omega\wedge\boldsymbol\omega\wedge\vb e+2x^2\vb e\wedge\vb e\wedge \boldsymbol\omega+\frac23x^3\vb e\wedge\vb e\wedge\vb e\right]\\
-    S_{\textnormal{CS}}\qty[\vb A^x]&=k\int\limits_M\Tr\left[\boldsymbol\omega\wedge\qty(\dd{\boldsymbol\omega}+\frac23\boldsymbol\omega\wedge\boldsymbol\omega)+x\dd{\qty(\vb e\wedge\boldsymbol\omega)}+x\vb e\wedge\dd{\boldsymbol\omega}+x\vb e\wedge\qty(\dd{\boldsymbol\omega}+2\boldsymbol\omega\wedge\boldsymbol\omega)+2x^2\vb e\wedge\boldsymbol\omega\wedge\vb e\right.\\
-    &\quad\quad\quad\left.+\frac23x^3\vb e\wedge\vb e\wedge\vb e\right]\\
-    S_{\textnormal{CS}}\qty[\vb A^x]&=S_{\textnormal{CS}}\qty[\boldsymbol\omega]+k\int\limits_M\Tr\qty[x\dd{\qty(\vb e\wedge\boldsymbol\omega)}+2x\vb e\wedge\qty(\dd{\boldsymbol\omega}+\boldsymbol\omega\wedge\boldsymbol\omega)+2x^2\vb e\wedge\boldsymbol\omega\wedge\vb e+\frac23x^3\vb e\wedge\vb e\wedge\vb e]\\
-    S_{\textnormal{CS}}\qty[\vb A^x]&=S_{\textnormal{CS}}\qty[\boldsymbol\omega]+k\int\limits_M\Tr\qty[x\dd{\qty(\vb e\wedge\boldsymbol\omega)}+2x\vb e\wedge\vb R+2x^2\vb e\wedge\boldsymbol\omega\wedge\vb e+\frac23x^3\vb e\wedge\vb e\wedge\vb e]\\
-    S_{\textnormal{CS}}\qty[\vb A^x]&=S_{\textnormal{CS}}\qty[\boldsymbol\omega]-4xk\kappa S_{\textnormal{EH}}+k\int\limits_M\Tr\qty[x\dd{\qty(\vb e\wedge\boldsymbol\omega)}+2x^2\vb e\wedge\boldsymbol\omega\wedge\vb e+\frac23x^3\vb e\wedge\vb e\wedge\vb e]
-\end{align*}
-
-We can simplify if we sum two contributions,
-
-\begin{align*}
-    S_{\textnormal{CS}}\qty[\vb A^x]-S_{\textnormal{CS}}\qty[\vb A^{-x}]&=-8xk\kappa S_{\textnormal{EH}}+2kx\int\limits_{\partial M}\Tr\qty[\vb e\wedge\boldsymbol\omega]+\frac43x^3k\int\limits_M\Tr\qty[\vb e\wedge\vb e\wedge\vb e]\\
-    \frac{1}{8xk\kappa}\qty(S_{\textnormal{CS}}\qty[\vb A^{-x}]-S_{\textnormal{CS}}\qty[\vb A^x])&=S_{\textnormal{EH}}-\frac{1}{4\kappa}\int\limits_{\partial M}\Tr\qty[\vb e\wedge\boldsymbol\omega]-\frac{x^2}{3!\kappa}\int\limits_M\Tr\qty[\vb e\wedge\vb e\wedge\vb e]
-\end{align*}
-
-And also the not so usual action,
-
-\begin{align*}
-    S_{\textnormal{CS}}\qty[\vb A^x]+S_{\textnormal{CS}}\qty[\vb A^{-x}]&=2S_{\textnormal{CS}}\qty[\boldsymbol\omega]+4x^2k\int\limits_M\Tr\qty[\vb e\wedge\boldsymbol\omega\wedge\vb e]
-\end{align*}
-
-Chern-Simons Equation of Motion,
-
-\begin{align*}
-    S_{\textnormal{CS}}\qty[\vb A+\delta\vb A]-S_{\textnormal{CS}}\qty[\vb A]&=k\int\limits_M\Tr\qty[\delta\vb A\wedge\dd{\vb A}+\vb A\wedge\dd{\delta\vb A}+\frac23\delta\vb A\wedge\vb A\wedge\vb A+\frac23\vb A\wedge\delta\vb A\wedge\vb A+\frac23\vb A\wedge\vb A\wedge\delta\vb A]\\
-    S_{\textnormal{CS}}\qty[\vb A+\delta\vb A]-S_{\textnormal{CS}}\qty[\vb A]&=k\int\limits_M\Tr\qty[\dd{\vb A}\wedge\delta\vb A-\dd{\qty(\vb A\wedge\delta\vb A)}+\dd{\vb A}\wedge\delta \vb A+2\vb A\wedge\vb A\wedge\delta\vb A]\\
-    S_{\textnormal{CS}}\qty[\vb A+\delta\vb A]-S_{\textnormal{CS}}\qty[\vb A]&=2k\int\limits_M\Tr\qty[\qty(\dd{\vb A}+\vb A\wedge\vb A)\wedge\delta\vb A]-k\int\limits_M\Tr\qty[\dd{\qty(\vb A\wedge\delta\vb A)}]\\
-    S_{\textnormal{CS}}\qty[\vb A+\delta\vb A]-S_{\textnormal{CS}}\qty[\vb A]&=2k\int\limits_M\Tr\qty[\vb F\wedge\delta\vb A]-k\int\limits_{\partial M}\Tr\qty[\vb A\wedge\delta\vb A]
-\end{align*}
-
-Chern-Simons Gauge Invariance,
-
-\begin{align*}
-    S_{\textnormal{CS}}\qty[g\vb Ag^{-1}+g\dd{g^{-1}}]&=k\int\limits_M\Tr\qty[\qty(g\vb Ag^{-1}+g\dd{g^{-1}})\wedge g \vb Fg^{-1}-\frac13\qty(g\vb Ag^{-1}+g\dd{g^{-1}})\wedge\qty(g\vb Ag^{-1}+g\dd{g^{-1}})\wedge\qty(g\vb Ag^{-1}+g\dd{g^{-1}})]\\
-    S_{\textnormal{CS}}\qty[g\vb Ag^{-1}+g\dd{g^{-1}}]&=k\int\limits_M\Tr\left[\vb A\wedge\vb F+\dd{g^{-1}}g\wedge \vb F-\frac13\vb A\wedge\vb A\wedge\vb A-\frac13g\dd{g^{-1}}\wedge g\dd{g^{-1}}\wedge g\dd{g^{-1}}\right.\\
-    &\quad\quad\quad\left.-g\vb Ag^{-1}\wedge g\vb Ag^{-1}\wedge g\dd{g^{-1}}-g\vb A g^{-1}\wedge g\dd{g^{-1}}\wedge g\dd{g^{-1}}\right]\\
-    S_{\textnormal{CS}}\qty[g\vb Ag^{-1}+g\dd{g^{-1}}]&=S_{\textnormal{CS}}\qty[\vb A]+k\int\limits_M\Tr\left[\dd{g^{-1}}g\wedge \vb F-\frac13\dd{g^{-1}}g\wedge \dd{g^{-1}}g\wedge \dd{g^{-1}}g\right.\\
-    &\quad\quad\quad\left.-\dd{g^{-1}}g\wedge\vb A\wedge \vb A-\vb A \wedge \dd{g^{-1}}g\wedge \dd{g^{-1}}g\right]\\
-    S_{\textnormal{CS}}\qty[g\vb Ag^{-1}+g\dd{g^{-1}}]&=S_{\textnormal{CS}}\qty[\vb A]+k\int\limits_M\Tr\left[\dd{g^{-1}}g\wedge \dd{\vb A}-\frac13\dd{g^{-1}}g\wedge \dd{g^{-1}}g\wedge \dd{g^{-1}}g+\dd{g^{-1}}g\wedge g^{-1}\dd{g}\wedge\vb A \right]\\
-    S_{\textnormal{CS}}\qty[g\vb Ag^{-1}+g\dd{g^{-1}}]&=S_{\textnormal{CS}}\qty[\vb A]+k\int\limits_M\Tr\left[\dd{g^{-1}}g\wedge \dd{\vb A}-\frac13\dd{g^{-1}}g\wedge \dd{g^{-1}}g\wedge \dd{g^{-1}}g-\dd{\qty(\dd{g^{-1}}g\wedge\vb A )}-\dd{g^{-1}}g\wedge\dd{\vb A}\right]\\
-    S_{\textnormal{CS}}\qty[g\vb Ag^{-1}+g\dd{g^{-1}}]&=S_{\textnormal{CS}}\qty[\vb A]-k\int\limits_M\Tr\left[\frac13\dd{g^{-1}}g\wedge \dd{g^{-1}}g\wedge \dd{g^{-1}}g+\dd{\qty(\dd{g^{-1}}g\wedge\vb A )}\right]
-\end{align*}
+as long as we set up the bilinear such that $\Tr\qty[J_{\alpha\beta}P_\mu]=\epsilon_{\alpha\beta\mu}$, this is perfectly fine! Up to now, it seems that might be only possible to atribute the status of usual sense 
+gauge theory to $D=2+1$ gravity, at least as a gauging of the group $ISO\qty(D-1,1)$, we'll see later on how might be possible to overcome this, but for now we'll follow up specializing in this lower dimensional scenario.
+% For $D=4$ this gives,
+% \begin{align*}
+%     S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega]&=\frac{1}{4\kappa}\epsilon_{\mu\nu\alpha\beta}\int\limits_M\vb e^{\mu}\wedge\vb e^\nu\wedge\vb R^{\alpha\beta}
+% \end{align*}
+% It's not clear how this should be interpreted as a gauge theory, due to we wanting to interpret $\boldsymbol\omega$ as the gauge 1-form of Lorentz transformations and $\tilde{\vb e}$ as the gauge 1-form of 
+% translations, the Einstein Hilbert Action should then be something of the form,
+% \begin{align*}
+%     \int\limits_M\Tr\qty[\vb A\wedge\vb A\wedge\vb F]
+% \end{align*}
+% for a combined gauge field $\vb A$, where both $\boldsymbol\omega$ and $\vb e$ contribute in some way, sadly, there is no such gauge theory in this form, 
+% first, due to the trace being of three lie algebra valued forms, this vanishes, secondly, this is not invariant under a gauge transformation $\vb A\rightarrow g^{-1}\vb Ag+g^{-1}\dd{g}$. So, 
+% if it's to $3+1$ gravity to be a gauge theory in this sense, it certainly is realized in a different way, but, an interesting case happens to $D=2+1$,
+% \begin{align*}
+%     S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega]&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\vb e^{\mu}\wedge\vb R^{\alpha\beta}
+% \end{align*}

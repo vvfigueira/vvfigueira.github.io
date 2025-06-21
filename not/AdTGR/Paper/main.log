@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.15)  18 JUN 2025 18:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.15)  21 JUN 2025 17:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -870,35 +870,56 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 [3]) (./sections/gauge1.tex
 
-[4]
+[4]) (./sections/gauge2.tex
 
 [5]
+Overfull \hbox (12.88196pt too wide) in paragraph at lines 54--57
+\OT1/cmr/m/n/10 the Lie Al-ge-bra in-vari-ance[][][] of the bi-lin-ear can be e
+x-pressed as $[] = []$, which for-tu-nately im-plies $[] =
+ []
 
-[6]) (./sections/gauge2.tex)
+
+
+[6]
+
+LaTeX Warning: Reference `cseheq1' on page 7 undefined on input line 78.
+
+) (./sections/gauge3.tex
 
 [7]
 
-[8] (./main.aux
+[8]) (./sections/beyond.tex) (./sections/conclusion.tex)
+
+[9]
+
+[10] (./main.aux
 Package cleveref Info: loaded `english' language definitions on input line 13.
 )
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-05-26>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E521B4C550517FA86B79FE8753D3D5D7;732.
+(rerunfilecheck)             Checksum: 0601697D6E6B6E052201A4CCE5677FA3;1480.
+
+Package biblatex Warning: Please rerun LaTeX.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23451 strings out of 467886
- 408322 string characters out of 5438218
- 1108140 words of memory out of 5000000
- 51548 multiletter control sequences out of 15000+600000
+ 23559 strings out of 467886
+ 410237 string characters out of 5438218
+ 1110143 words of memory out of 5000000
+ 51614 multiletter control sequences out of 15000+600000
  638577 words of font info for 84 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 71i,20n,79p,1866b,2069s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 71i,21n,79p,1866b,2070s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><c:/texlive/2025/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2025/texmf-dist
@@ -924,10 +945,10 @@ mti10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texli
 ve/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/202
 5/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (8 pages, 332477 bytes).
+Output written on main.pdf (10 pages, 370697 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 315 PDF objects out of 1000 (max. 8388607)
+ 244 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,58 @@
+\section{Inclusion of a Cosmological Constant}
+
+Having we successfully rewritten the EH Action in terms of a gauge theory, the next natural desire is to incorporate a cosmological 
+constant, as it's of relevance for our universe. First, we must work out what is the appearance of this term in the form language, let's 
+recall the action with the cosmological constant,
+\begin{align*}
+    S_{\textnormal{EH}}\rightarrow\frac{1}{2\kappa}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}\qty(R-2\Lambda)\numberthis\label{EHActionWithCosmologicalConstant}
+\end{align*}
+so all we need is to rewrite the volume form, which we have already done in \ref{VolumeForm}, just substituting it back \ref{VolumeForm} and \ref{BilinearAnsatz},
+\begin{align*}
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_{M}\epsilon_{\mu\alpha\beta}\vb e^\mu\wedge\vb{R}^{\alpha\beta}-\frac{\Lambda}{\kappa3!}\int\limits_M\epsilon_{\mu\alpha\beta}\vb e^\mu\wedge\vb e^\alpha\wedge\vb e^\beta
+\end{align*}
+in the same line as we have been doing, we want the action to be writable in terms of the variables $\vb e=\vb e^\mu P_\mu$, the first term we already showed how can this be done, 
+for the second one is where some subtleties start to appear. First, the striking difference between these two terms is that the second one has three instances of a gauge field, to be able to insert inside our 
+bilinear three instances of the gauge field is only possible through using the anti-symmetry of the wedge product to produce a commutator, that is, we expect,
+\begin{align*}
+    -\frac{\Lambda}{\kappa 3!}\int\limits_M\epsilon_{\mu\alpha\beta}\vb e^\mu\wedge\vb e^\alpha\wedge\vb e^\beta\stackrel{?}{=}-\frac{\Lambda}{\kappa 3!}\int\limits_M\expval{P_\mu,\comm{P_\alpha}{P_\beta}}\vb e^\mu\wedge\vb e^\alpha\wedge\vb e^\beta=-\frac{\Lambda}{\kappa 3!}\int\limits_M\expval{\vb e\ \wedgecomma\ \wedgecomm{\vb e}{\vb e}}\stackrel{!}{=}0
+\end{align*}
+
+This is the only possible way of inserting three terms inside a bilinear, yet, it's flawed, the reason is obvious, $\comm{P_\alpha}{P_\beta}=0$. This means that it's inconsistent to add a cosmological constant 
+and still requires the gauge group to be $ISO\qty(2,1)$. Is this correct? Yes! When introduced the cosmological constant, the solutions will of course be related to the (A)dS space-times, and in particular to the 
+vacuum (A)dS space-times, the isometry group isn't $ISO(D-1,1)$ but actually is $SO(D-1,2)$ for AdS --- $\Lambda<0$ --- and $SO(D,1)$ for dS --- $\Lambda>0$ ---. Thus, alike to the $\Lambda=0$ case we worked out, 
+we concluded that we should gauge $ISO(D-1,1)$, the isometry group of Minkowski space-time, analogously, with $\Lambda\neq 0$ we can only suppose then that we must gauge the respective 
+isometry groups of the (A)dS space-times. Does this allows the inclusion of a cosmological constant? First, we have to look what is to be taken as translations from the groups $SO(3,1)$ and $SO(2,2)$, 
+we'll not dwell on details here, but, all of the $6$ generators from these two groups can be rearranged in a similar form of the algebra of $ISO\qty(2,1)$ --- which can be seen as 
+a non-central extension of the Poincaré group/algebra, this is consistent with the interpretation of Poincaré group being a Inönü-Wigner contraction of (A)dS ---,
+\begin{align*}
+    \comm{J^{\alpha\beta}}{J^{\mu\nu}}=4\eta^{[\alpha|[\mu}J^{\nu]|\beta]},\ \ \ \comm{J^{\alpha\beta}}{P^\mu}&=2P^{[\alpha}\eta^{\beta]\mu}, \ \ \ \comm{P^\mu}{P^\nu}=\pm\frac{1}{L^2}J^{\mu\nu}\ \ \begin{cases}+\rightarrow AdS\\-\rightarrow dS\end{cases}\numberthis\label{SOAlgebra}
+\end{align*}
+in which $L$ is the radius of the (A)dS space-time, it's related to the cosmological constant by, $\abs{\Lambda}=L^{-2}$, this perfectly matches with our guess to the form of this term,
+\begin{align*}
+    -\frac{\Lambda}{\kappa 3!}\int\limits_M\epsilon_{\mu\alpha\beta}\vb e^\mu\wedge\vb e^\alpha\wedge\vb e^\beta=-\frac{\Lambda}{\kappa 3!}\int\limits_M\expval{P_\mu,J_{\alpha\beta}}\vb e^\mu\wedge\vb e^\alpha\wedge\vb e^\beta\stackrel{!}{=}\frac{1}{\kappa 3!}\int\limits_M\expval{P_\mu,\comm{P_\alpha}{P_\beta}}\vb e^\mu\wedge\vb e^\alpha\wedge\vb e^\beta=\frac{1}{\kappa 3!}\int\limits_M\expval{\vb e\ \wedgecomma\ \wedgecomm{\vb e}{\vb e}}
+\end{align*}
+well, as long as the invariant symmetric non-degenerate bilinear still exists for these groups, a fact that would have to be checked, 
+in fact there do exists such a bilinear, which is sadly not as pretty as our former,
+\begin{align*}
+    \expval{J_{\alpha\beta},P_\mu}=\epsilon_{\alpha\beta\mu},\ \ \ \expval{J_{\alpha\beta},J_{\mu\nu}}=\tensor{\epsilon}{^\rho_\alpha_\beta}\tensor{\epsilon}{_\rho_\mu_\nu},\ \ \ \expval{P_\mu,P_\nu}=\pm\frac{1}{L^2}\eta_{\mu\nu}\numberthis\label{BilinearSO}
+\end{align*}
+the existence of this bilinear is almost a miracle happening only in $D=2+1$, for $D\neq 3$ the algebras of the isometry groups of (A)dS 
+allows only one bilinear, the Killing form, which if used here in $D=2+1$ would not give the desired result, as we'll comment later on. 
+Now we can rework the form of the Chern-Simons Action, but, as the bilinear isn't that simple it's not really possible to get rid of the majority of the unwanted terms, so, we'll have to play a little with definitions and set the connection $\vb A^\pm=\boldsymbol\omega\pm\vb e$,
+\begin{align*}
+    S_{\textnormal{CS}}\qty[\vb A^\pm]&=\frac{k}{4\pi}\int\limits_M\expval{\qty(\boldsymbol\omega\pm\vb e)\ \wedgecomma\ \qty(\vb d{\qty(\boldsymbol\omega\pm\vb e)}+\frac13\wedgecomm{\boldsymbol\omega\pm\vb e}{\boldsymbol\omega\pm\vb e})}\\
+    S_{\textnormal{CS}}\qty[\vb A^\pm]&=\frac{k}{4\pi}\int\limits_M\expval{\boldsymbol\omega\ \wedgecomma\ \qty(\vb d\boldsymbol\omega+\frac13\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})}\pm\frac{k}{4\pi}\int\limits_M\biggl\{\expval{\boldsymbol\omega\ \wedgecomma\ \vb d{\vb e}}+\expval{\vb e\ \wedgecomma\ \vb d{\boldsymbol\omega}}\mp\expval{\vb e\ \wedgecomma\ \vb d{\vb e}}\\
+    &\quad\quad\quad\left.+\frac13\expval{\boldsymbol\omega\ \wedgecomma\ \qty(\wedgecomm{\boldsymbol\omega}{\vb e}+\wedgecomm{\vb e}{\boldsymbol\omega}\mp\wedgecomm{\vb e}{\vb e})}+\frac13\expval{\vb e\ \wedgecomma\ \qty(\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}\mp\wedgecomm{\boldsymbol\omega}{\vb e}\mp\wedgecomm{\vb e}{\boldsymbol\omega}+\wedgecomm{\vb e}{\vb e})}\right\}
+\end{align*}
+here lies the reason for us to considering the connection with a generic sign $\pm$, if we sum $S_{\textnormal{CS}}\qty[\vb A^+]-S_{\textnormal{CS}}\qty[\vb A^-]$ all the unwanted terms will vanish due them being even powers of $\vb e$,
+\begin{align*}
+    S_{\textnormal{CS}}\qty[\vb A^+]-S_{\textnormal{CS}}\qty[\vb A^-]&=2\frac{k}{4\pi}\int\limits_M\qty{\expval{\boldsymbol\omega\ \wedgecomma\ \vb d{\vb e}}+\expval{\vb e\ \wedgecomma\ \vb d{\boldsymbol\omega}}+\frac13\expval{\boldsymbol\omega\ \wedgecomma\ \qty(\wedgecomm{\boldsymbol\omega}{\vb e}+\wedgecomm{\vb e}{\boldsymbol\omega})}+\frac13\expval{\vb e\ \wedgecomma\ \qty(\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}+\wedgecomm{\vb e}{\vb e})}}
+\end{align*}
+now we follow be the usual means, grouping the remaining terms, 
+integrating by parts, and using the invariance of the bilinear form,
+\begin{align*}
+    S_{\textnormal{CS}}\qty[\vb A^+]-S_{\textnormal{CS}}\qty[\vb A^-]&=\frac{k}{2\pi}\int\limits_M\left\{-\vb d\expval{\boldsymbol\omega\ \wedgecomma\ {\vb e}}+\expval{\vb d\boldsymbol\omega\ \wedgecomma\ {\vb e}}+\expval{\vb e\ \wedgecomma\ \vb d{\boldsymbol\omega}}+\frac23\expval{\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}\ \wedgecomma\ \vb e}+\frac13\expval{\vb e\ \wedgecomma\ \qty(\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}+\wedgecomm{\vb e}{\vb e})}\right\}\\
+    S_{\textnormal{CS}}\qty[\vb A^+]-S_{\textnormal{CS}}\qty[\vb A^-]&=\frac{k}{2\pi}\int\limits_M\left\{-\vb d\expval{\boldsymbol\omega\ \wedgecomma\ {\vb e}}+2\expval{\vb e\ \wedgecomma\ \qty(\vb d{\boldsymbol\omega}+\frac12\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})}+\frac13\expval{\vb e\ \wedgecomma\ \wedgecomm{\vb e}{\vb e}}\right\}\\
+    \frac{\pi}{k\kappa}\qty(S_{\textnormal{CS}}\qty[\vb A^+]-S_{\textnormal{CS}}\qty[\vb A^-])&=\frac{1}{2\kappa}\int\limits_{\partial M}\expval{{\vb e}\ \wedgecomma\ \boldsymbol\omega}+\frac1\kappa\int\limits_{M}\expval{\vb e\ \wedgecomma\ \vb R}+\frac{1}{\kappa3!}\int\limits_M\expval{\vb e\ \wedgecomma\ \wedgecomm{\vb e}{\vb e}}\numberthis\label{CSEHEquivalence2}
+\end{align*}
+exactly the result we're expecting to obtain, a relation between the EH Action with a cosmological constant term, and a --- actually two --- Chern-Simons theory! As previously discussed this process additionally gives half of the GHY boundary term.

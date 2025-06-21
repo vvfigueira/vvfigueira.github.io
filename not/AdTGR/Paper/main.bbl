@@ -44,6 +44,73 @@
     \field{year}{1995}
   \endentry
 
+  \entry{donnay}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=DL}{%
+         family={Donnay},
+         familyi={D\bibinitperiod},
+         given={Laura},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DL1}
+    \strng{fullhash}{DL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{eprint}
+    \verb 1602.09021
+    \endverb
+    \field{title}{Asymptotic dynamics of three-dimensional gravity}
+    \verb{url}
+    \verb https://arxiv.org/abs/1602.09021
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{year}{2016}
+  \endentry
+
+  \entry{gravitation}{book}{}{}
+    \name{author}{3}{}{%
+      {{hash=MC}{%
+         family={Misner},
+         familyi={M\bibinitperiod},
+         given={C.W.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=TK}{%
+         family={Thorne},
+         familyi={T\bibinitperiod},
+         given={K.S.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wheeler},
+         familyi={W\bibinitperiod},
+         given={J.A.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {W. H. Freeman}%
+    }
+    \strng{namehash}{MCTKWJ1}
+    \strng{fullhash}{MCTKWJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{isbn}{9780716703440}
+    \field{number}{pt. 3}
+    \field{series}{Gravitation}
+    \field{title}{Gravitation}
+    \verb{url}
+    \verb https://books.google.com.br/books?id=w4Gigq3tY1kC
+    \endverb
+    \field{year}{1973}
+  \endentry
+
   \entry{wald}{book}{}{}
     \name{author}{1}{}{%
       {{hash=WR}{%

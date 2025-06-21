@@ -23,9 +23,9 @@ given a set of functions $\tensor{\Lambda}{^\mu_\nu}:M\rightarrow\mathbb R$, a n
     \vb g\qty(\tensor{\Lambda}{^\alpha_\mu}\tilde{\vb e}_\alpha,\tensor{\Lambda}{^\beta_\nu}\tilde{\vb e}_\beta)&=\tensor{\Lambda}{^\alpha_\mu}\tensor{\Lambda}{^\beta_\nu}\vb g\qty(\tilde{\vb e}_\alpha,\tilde{\vb e}_\beta)\\
     \eta_{\mu\nu}&=\tensor{\Lambda}{^\alpha_\mu}\tensor{\Lambda}{^\beta_\nu}\eta_{\alpha\beta}
 \end{align*}
-in other words, $\tensor{\Lambda}{^\mu_\nu}$ must be a local $SO\qty(1,D-1)$ element\footnote{Actually the group is $O\qty(1,D-1)$, but, we'll only be interested in the orientation preserving transformations.}, with this new redundancy taken in account the degrees of freedom match, $D^2$ 
-from the vielbein, minus $D$ diffeomorphisms $\phi^\ast\tilde{\vb e}_\mu\sim\tilde{\vb e}_\mu$, $D$ Bianchi identities and $\frac12D\qty(D-1)$ local $SO\qty(1,D-1)$ transformations, giving $D^2-2D-\frac12D\qty(D-1)=\frac12D\qty(D-3)$ exactly 
-the same counting using only the metric! Notice that now the redundancies are diffeomorphisms and local $SO\qty(1,D-1)$ transformations, this already seems like we're gauging the whole Poincaré group, which will come up later.
+in other words, $\tensor{\Lambda}{^\mu_\nu}$ must be a local $SO\qty(D-1,1)$ element\footnote{Actually the group is $O\qty(D-1,1)$, but, we'll only be interested in the orientation preserving transformations.}, with this new redundancy taken in account the degrees of freedom match, $D^2$ 
+from the vielbein, minus $D$ diffeomorphisms $\phi^\ast\tilde{\vb e}_\mu\sim\tilde{\vb e}_\mu$, $D$ Bianchi identities and $\frac12D\qty(D-1)$ local $SO\qty(D-1,1)$ transformations, giving $D^2-2D-\frac12D\qty(D-1)=\frac12D\qty(D-3)$ exactly 
+the same counting using only the metric! Notice that now the redundancies are diffeomorphisms and local $SO\qty(D-1,1)$ transformations, this already seems like we're gauging the whole Poincaré group, which will come up later.
 
 From the condition that $\vb g$ must be non-degenerate we get that the matrix of components $\tensor{e}{_\mu^a}$ must be invertible, this ensures 
 the existence of $\tensor{e}{^\mu_a}$ ,from which we can construct the dual vector field $\vb e^\mu=\tensor{e}{^\mu_a}\vb d{x^a}$ this ensures 
@@ -47,8 +47,8 @@ basis,
     \nabla_{\vb X}\qty(\tilde{\vb e}_\nu)&=\tensor{{\boldsymbol\omega(\vb X)}}{^\mu_\nu}\tilde{\vb e}_\mu=X^a\tensor{\omega}{_a^\mu_\nu}\tilde{\vb e}_\mu
 \end{align*}
 
-Where $\tensor{{\boldsymbol\omega}}{^\mu_\nu}=\tensor{\omega}{_a^\mu_\nu}\vb dx^a$ is named the spin connection, it can be seen as a $\mathfrak{gl}\qty(1,D-1)$--valued $(0,1)$ tensor, 
-or, as we'll adopt here, a $\mathfrak{gl}\qty(1,D-1)$--valued $1$--form.
+Where $\tensor{{\boldsymbol\omega}}{^\mu_\nu}=\tensor{\omega}{_a^\mu_\nu}\vb dx^a$ is named the spin connection, it can be seen as a $\mathfrak{gl}\qty(D-1,1)$--valued $(0,1)$ tensor, 
+or, as we'll adopt here, a $\mathfrak{gl}\qty(D-1,1)$--valued $1$--form.
 The ease of working with the vielbein is that the Lorentz index $\mu$ 
 does not change upon coordinate/chart/diffeomorphism transformations, it acts as if was an internal symmetry, thus, 
 $\tensor{{\boldsymbol\omega}}{^\mu_\nu}$ do transform exactly as a tensor should, this is already a enormous dichotomy 
@@ -56,7 +56,7 @@ with the standard formulation where the Christoffel connection doesn't transform
 % notice that we have a 
 % redundancy of how to choose the vielbein basis, due to $\tensor{\Lambda}{^\mu_\nu}\vb e_\mu$, $\tensor{\Lambda}{^\mu_\nu}:M\rightarrow\mathbb R$, being an equally good basis,
 % as long as $\tensor{\Lambda}{^\alpha_\mu}\tensor{\Lambda}{^\beta_\nu}\eta_{\alpha\beta}=\eta_{\mu\nu}$, that is, as we enlarge the number of components going from the metric to 
-% the vielbein, we also enlarge the redundancies, now, additionally to Diff$\qty(M)$ we have local $SO\qty(1,D-1)$ transformations as redundancies, this is as 
+% the vielbein, we also enlarge the redundancies, now, additionally to Diff$\qty(M)$ we have local $SO\qty(D-1,1)$ transformations as redundancies, this is as 
 % we was gauging the whole Poincaré group, with Diff$\qty(M)$ being the gauging of the translations.
 Now we'll impose the metric compatibility of the connection, 
 this is another scenario where the vielbein formalism como to hand, as this condition imposes no additional differential/algebraical constrains among the vielbein and spin connection.
@@ -70,8 +70,8 @@ this is another scenario where the vielbein formalism como to hand, as this cond
 \end{align*}
 
 That is, the metric compatible spin connection is anti-symmetric in the non-coordinate indices, exactly the property 
-satisfied by the generators of the $SO\qty(1,D-1)$ group, thus, the spin connection can be seen as a $\mathfrak{so}\qty(1,D-1)$-valued 1-form, it has 
-everything in it's favor to be interpreted as a gauge field of the $SO\qty(1,D-1)$ group, to confirm this notice how it changes under a gauge transformation 
+satisfied by the generators of the $SO\qty(D-1,1)$ group, thus, the spin connection can be seen as a $\mathfrak{so}\qty(D-1,1)$-valued 1-form, it has 
+everything in it's favor to be interpreted as a gauge field of the $SO\qty(D-1,1)$ group, to confirm this notice how it changes under a gauge transformation 
 of the vielbein basis $\tilde{\vb e}_\nu\rightarrow\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu$,
 \begin{align*}
     \nabla_{\vb X}\qty(\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu)&=\nabla_{\vb X }\qty(\tensor{\Lambda}{^\mu_\nu})\tilde{\vb e}_\mu+\tensor{\Lambda}{^\mu_\nu}\nabla_{\vb X}\qty(\tilde{\vb e}_\mu),\ \ \ \textnormal{connection definition}\\
@@ -80,11 +80,11 @@ of the vielbein basis $\tilde{\vb e}_\nu\rightarrow\tensor{\Lambda}{^\mu_\nu}\ti
     \nabla_{\vb X}\qty(\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu)&=\qty(\tensor{{\Lambda^{-1}}}{^\beta_\mu}\vb d{\tensor{\Lambda}{^\mu_\nu}}+\tensor{{\Lambda^{-1}}}{^\beta_\alpha}\tensor{{\boldsymbol\omega}}{^\alpha_\mu}\tensor{\Lambda}{^\mu_\nu})\qty(\vb X)\tensor{\Lambda}{^\sigma_\beta}\tilde{\vb e}_\sigma
 \end{align*}
 
-That is, under a gauge transformation of $\tilde{\vb e}_\nu\rightarrow\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu$, the spin connection transforms exactly as a connection of the gague group $SO\qty(1,D-1)$, that is, 
+That is, under a gauge transformation of $\tilde{\vb e}_\nu\rightarrow\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu$, the spin connection transforms exactly as a connection of the gague group $SO\qty(D-1,1)$, that is, 
 $\boldsymbol \omega\rightarrow \Lambda^{-1}\boldsymbol\omega\Lambda+\Lambda^{-1}\vb d{\Lambda}$, which is what we're searching. Before pursuing further the gauged translations, we're going to obtain a new interpretation 
 for the Riemann tensor, using what we just learned from the spin connection, notice, the usual interpretation of the Riemann tensor is of it being a $(1,3)$ tensor, but, as naturally --- without the need for a metric compatible 
 torsionless connection --- it's anti-symmetric in the first two entries, we can switch the point of view from a $(1,3)$ tensor to a $(1,1)$ tensor valued 2--form, or, in an even better way, an End$\qty(\mathfrak X\qty(M))$--valued 2--form, 
-which, when decomposed in the non-coordinate basis, will turn out to be a $\mathfrak{so}\qty(1,D-1)$--valued 2--form, as we'll shown now. Starting from the definition\footnote{Here, care must be taken, in our conventions, the covariant derivative acts non-trivially only 
+which, when decomposed in the non-coordinate basis, will turn out to be a $\mathfrak{so}\qty(D-1,1)$--valued 2--form, as we'll shown now. Starting from the definition\footnote{Here, care must be taken, in our conventions, the covariant derivative acts non-trivially only 
 in vectors, and acts as a normal derivative in functions, that is, for $X^a$ being \textit{components} of a vector, $\nabla_{\vb Y}X^a=\vb Y\qty(X^a)=Y^b\partial_b X^a$, in contrast to $\nabla_{\vb Y}\boldsymbol\partial_a=Y^b\tensor{\Gamma}{_b^c_a}\boldsymbol\partial_c$.},
 \begin{align*}
     \textbf{Riem}\qty(\vb X,\vb Y)\tilde{\vb e}_\mu&=\qty(\nabla_{\vb X}\nabla_{\vb Y}-\nabla_{\vb Y}\nabla_{\vb X}-\nabla_{\comm{\vb X}{\vb Y}})\tilde{\vb e}_\mu\\
@@ -98,7 +98,7 @@ in vectors, and acts as a normal derivative in functions, that is, for $X^a$ bei
     X^aY^b\tensor{R}{_a_b^\nu_\mu}\tilde{\vb e}_\nu&=X^aY^b\tensor{\left(\vb d{\boldsymbol\omega}+\boldsymbol\omega\wedge\boldsymbol\omega\right)}{_a_b^\nu_\mu}\tilde{\vb e}_\nu
 \end{align*}
 
-What settle down the interpretation of the Riemann tensor being a $\mathfrak{so}\qty(1,D-1)$--valued 2--form, and also provides a striking resemblance to the usual gauge force field in non-abelian 
+What settle down the interpretation of the Riemann tensor being a $\mathfrak{so}\qty(D-1,1)$--valued 2--form, and also provides a striking resemblance to the usual gauge force field in non-abelian 
 theories, $\vb F=\vb d\vb A+\vb A\wedge \vb A$, it's also is easily related to the usual coordinate Riemann tensor,
 \begin{align*}
     \textbf{Riem}\qty(\vb X,\vb Y)\tilde{\vb e}_\mu&=X^aY^b\tensor{R}{_a_b^\nu_\mu}\tilde{\vb e}_\nu\\
@@ -127,7 +127,7 @@ for a non-coordinate basis, $\epsilon_{\mu_1\cdots\mu_D}$, it does not need addi
     \dd[D]{x}\sqrt{\abs{g}}&=\epsilon_{\mu_1\cdots\mu_{D}}\tensor{e}{^{\mu_0}_0}\cdots\tensor{e}{^{\mu_{D}}_{D-1}}\dd{x^0}\wedge\cdots\wedge\dd{x^{D-1}}\\
     \dd[D]{x}\sqrt{\abs{g}}&=\epsilon_{\mu_1\cdots\mu_{D}}\tensor{e}{^{\mu_0}_0}\dd{x^0}\wedge\cdots\wedge\tensor{e}{^{\mu_{D}}_{D-1}}\dd{x^{D-1}}\\
     \dd[D]{x}\sqrt{\abs{g}}&=\frac{1}{D!}\epsilon_{\mu_1\cdots\mu_{D}}\tensor{e}{^{\mu_1}_{a_1}}\dd{x^{a_1}}\wedge\cdots\wedge\tensor{e}{^{\mu_{D}}_{a_{D}}}\dd{x^{a_{D}}}\\
-    \dd[D]{x}\sqrt{\abs{g}}&=\frac{1}{D!}\epsilon_{\mu_1\cdots\mu_{D}}\vb e^{\mu_1}\wedge\cdots\wedge\vb e^{\mu_{D}}
+    \dd[D]{x}\sqrt{\abs{g}}&=\frac{1}{D!}\epsilon_{\mu_1\cdots\mu_{D}}\vb e^{\mu_1}\wedge\cdots\wedge\vb e^{\mu_{D}}\numberthis\label{VolumeForm}
 \end{align*}
 
 The other ingredient we need is the Ricci scalar,
@@ -137,10 +137,10 @@ The other ingredient we need is the Ricci scalar,
     R&=\eta^{\rho\sigma}\eta^{\alpha\beta}\tensor{e}{_\rho^a}\tensor{e}{_\sigma^b}\tensor{R}{_c_b_d_a}\tensor{e}{_\alpha^c}\tensor{e}{_\beta^d}\\
     R&=\eta^{\rho\sigma}\eta^{\alpha\beta}\tensor{R}{_c_b_\beta_\rho}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b},\ \ \ \textnormal{anti-symmetry in the first two index}\\
     R&=\frac12\qty(\eta^{\rho\sigma}\eta^{\alpha\beta}-\eta^{\rho\alpha}\eta^{\sigma\beta})\tensor{R}{_c_b_\beta_\rho}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b}\\
-    R&=\frac{-1}{2\qty(D-2)!}\tensor{\epsilon}{^{\nu_1}^\cdots^{\nu_{D-2}}^\beta^\rho}\tensor{\epsilon}{_{\nu_1}_\cdots_{\nu_{D-2}}^\alpha^\sigma}\tensor{R}{_c_b_\beta_\rho}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b}
+    R&=\frac{-1}{2\qty(D-2)!}\tensor{\epsilon}{^{\nu_1}^\cdots^{\nu_{D-2}}^\beta^\rho}\tensor{\epsilon}{_{\nu_1}_\cdots_{\nu_{D-2}}^\alpha^\sigma}\tensor{R}{_c_b_\beta_\rho}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b}\numberthis\label{RicciScalar}
 \end{align*}
 
-Combining these two results we can rewrite the EH Action in the forms language, that is, the expression we're expecting to obtain is an integral over a $D$--form, in the middle of the computation 
+Combining these two results, \ref{VolumeForm}, \ref{RicciScalar}, we can rewrite the EH Action in the forms language, that is, the expression we're expecting to obtain is an integral over a $D$--form, in the middle of the computation 
 we'll need to introduce also the Hodge star operator,
 \begin{align*}
     S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}R\\
@@ -151,7 +151,7 @@ we'll need to introduce also the Hodge star operator,
     S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\frac{1}{2\qty(D-2)!}\tensor{R}{_c_b_\beta_\rho}\tensor{\epsilon}{^\alpha^\sigma_{\nu_1}_\cdots_{\nu_{D-2}}}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b}\tensor{e}{^{\nu_1}_{a_1}}\cdots\tensor{e}{^{\nu_{D-2}}_{a_{D-2}}}\vb dx^{a_1}\wedge\cdots\wedge\vb dx^{a_{D-2}}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\\
     S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\frac{1}{2\qty(D-2)!}\tensor{R}{_c_b_\beta_\rho}\Det\qty[\tensor{e}{^\nu_a}]\tensor{\epsilon}{^c^b_{a_1}_\cdots_{a_{D-2}}}\vb dx^{a_1}\wedge\cdots\wedge\vb dx^{a_{D-2}}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\\
     S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\frac{1}{2}\tensor{R}{_c_b_\beta_\rho}\star\qty(\vb dx^{c}\wedge\vb dx^{b})\wedge\vb e^{\beta}\wedge\vb e^{\rho}\\
-    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\star\vb R_{\beta\rho}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\numberthis\label{action}
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\star\vb R_{\beta\rho}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\numberthis\label{EHAction2}
 \end{align*}
 
 This is our final result for the EH Action, to see that it's a consistent expression we can do the counting of the form degree, $\vb R$ is a 2--form, which makes $\star\vb R$ a $\qty(D-2)$--form, as $\vb e$ is a 
