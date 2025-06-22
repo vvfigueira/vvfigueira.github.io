@@ -1,0 +1,634 @@
+\documentclass{beamer}
+
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+
+% Tema da apresentação
+\usetheme{Madrid} % Outros temas: AnnArbor, Copenhagen, Dresden, Warsaw, etc.
+
+\newcommand{\lastframetitle}{}
+
+% Atualiza o título do último slide em cada frame
+\addtobeamertemplate{frametitle}{}{\xdef\lastframetitle{\insertframetitle}}
+
+\AtBeginSection[]{
+    \addtocounter{framenumber}{-1}
+  \begin{frame}{Sumário}
+    \tableofcontents[currentsection] % Destaca a seção atual
+  \end{frame}
+    
+}
+
+\useoutertheme{split}
+\setbeamertemplate{headline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=0.5\paperwidth,ht=2.5ex,dp=1ex,left]{section in head/foot}%
+      \hspace{1em}\insertsectionhead
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.5\paperwidth,ht=2.5ex,dp=1ex,left]{subsection in head/foot}%
+      \hspace{1em}\ifx\insertframetitle\empty
+      \lastframetitle % Mostra o último título válido
+    \else
+    \fi
+    \end{beamercolorbox}%
+  }
+  \vskip0pt%
+}
+
+% Pacotes adicionais
+\usepackage[utf8]{inputenc} % Codificação UTF-8
+\usepackage[english]{babel} % Língua portuguesa do Brasil
+\usepackage{graphicx} % Para inserir imagens
+\usepackage{amsmath,amssymb} % Para matemática avançada
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{bbm}
+\usepackage{mathtools}
+
+\usefonttheme{serif}
+
+% Informações da apresentação
+\title{Super Riemann Surfaces}
+\author{Vicente V. Figueira}
+\institute{IF-USP}
+\date{\today}
+
+\begin{document}
+
+
+
+% Slide de título
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Slide de sumário
+\begin{frame}{Contents}
+    \tableofcontents
+\end{frame}
+
+% Seção: Introdução
+\section{Motivation}
+\begin{frame}{Perspectiva Histórica}
+    \begin{itemize}
+        \item 1964 --- $SU\qty(3)$ proposto por Gell-Mann e Ne'eman
+        \item Simetria $SU\qty(6)$ aproximada no modelo não relativístico de quarks
+        \item Tentativas de extender $SU\qty(3)$ para sabores e spin
+    \end{itemize}
+    Todas as tentativas de obter análogo à $SU\qty(6)$ para $SU\qty(3)$ falham. Por quê?
+    \begin{itemize}
+        \item Interesse crescente sobre propriedades da matrix $S$
+        \item 1967 --- Coleman e Mandula catalogam todas as simetrias da matrix $S$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    Hipóteses utilizadas por Coleman e Mandula no seu Teorema:
+    \begin{enumerate}
+        \item Mecânica Quântica + Simetria de Poincaré
+        \item Geradores levam 1PS $\rightarrow$ 1PS
+        \item Ação sobre MPS como soma direta de 1PS
+        \item Para uma dada escala de energia, o número de partículas com massa menor que esta é finito
+        \item Reações 2 $\rightarrow$ 2 acontecem para quase todas energias
+        \item Amplitudes de 2 $\rightarrow$ 2 são analíticas para quase todos ângulos e energias
+    \end{enumerate}
+    Qual a Álgebra de Lie mais geral dos geradores de simetria que satisfazem as hipóteses?
+\end{frame}
+
+\begin{frame}
+    O resultado do Teorema é: A Álgebra de Lie mais geral dos geradores de simetria é,
+    \[\mathfrak {iso}^+\qty(3,1)\oplus \mathfrak g\]
+    No qual $\mathfrak g$ é uma soma direta de Álgebras de Lie compactas e semi-simples,
+    \begin{align*}
+            \comm{M^{\alpha\beta}}{M^{\mu\nu}}&=\im\qty(g^{\alpha\mu}M^{\beta\nu}-g^{\beta\mu}M^{\alpha\nu}+g^{\beta\nu}M^{\alpha\mu}-g^{\alpha\nu}M^{\beta\mu})\\
+            \comm{P^\alpha}{M^{\mu\nu}}&=\im\qty(g^{\alpha\nu}P^\mu-g^{\alpha\mu}P^{\nu})\\
+            \comm{P^\alpha}{P^\mu}&=\comm{P^\alpha}{Q^A}=\comm{M^{\alpha\beta}}{Q^A}=0\\
+            \comm{Q^A}{Q^B}&=\im \tensor{f}{^A^B_C}Q^C
+    \end{align*}
+    Simetrias internas, $Q^A$, não podem transformar por uma representação não trivial de $\mathcal L_+^\uparrow$.
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item 1971 --- Gervais e Sakita descobrem uma simetria entre Bósons e Férmions na Teoria de Cordas
+        \item 1974 --- Wess e Zumino constroem vários modelos com esta simetria em 4 dimensões,
+        \begin{align*}
+            \mathcal L&=-\partial_\mu \phi^\dagger\partial^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu\partial_\mu\psi\\
+            \delta\phi&=\sqrt{2}\epsilon\psi\\
+            \delta\psi&=-\im\sqrt 2\sigma^\mu\epsilon^\dagger\partial_\mu\phi
+        \end{align*}
+    \end{itemize}
+    Como conciliar isto com o Teorema de Coleman-Mandula?
+\end{frame}
+
+\begin{frame}
+    Isto de fato é uma brecha no Teorema, devido a teoria conter férmions,
+    \begin{align*}
+        \comm{\phi\qty(t,\vb x)}{\partial_0\phi^\dagger\qty(t,\vb y)}&=\im\delta^{\qty(3)}\qty(\vb x-\vb y)\\
+        \acomm{\psi_a\qty(t,\vb x)}{\psi^\dagger_{\dot b}\qty(t,\vb y)}&=\sigma^0_{a\dot b}\delta^{\qty(3)}\qty(\vb x-\vb y)
+    \end{align*}
+    Além de comutadores, é necessário o uso de anti-comutadores. O erro então está nas hipóteses do teorema, uma 
+    vez que Álgebras de Lie não possuem estrutura adequada para estes, é necessário o uso de \textbf{Álgebras de Lie Graduadas}.
+    \begin{itemize}
+        \item 1975 --- Haag, Lopuszanski e Sohnius estendem o Teorema de Coleman-Mandula para Álgebras de Lie Graduadas 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    Resultado do Teorema: Os únicos tipos de geradores de simetrias, não internas, que podem extender a Álgebra de Poincaré são os que pertencem 
+    as representações $\qty(\frac12,0)$ e $\qty(0,\frac12)$ de $\mathcal L^\uparrow_+$, e possuem estatística fermiônica.
+\end{frame}
+
+\section{Álgebra de Super-Poincaré}
+\begin{frame}{Álgebras de Lie Graduadas}
+    \begin{itemize}
+        \item Espaço Vetorial sobre $\mathbb R$
+        \item Cada elemento $T^A\in\mathfrak g$ possui um peso $\eta\qty(T^A)=\eta_A=0,1$
+        \item Produto de elementos tem peso,
+            \[\eta\qty(T^A\cdots T^Z)=\sum\eta_i\ \qty(\textnormal{mod }2)\]
+        \item Operação bilinear,
+            \[\comm{T^A}{T^B}=T^AT^B-\qty(-)^{\eta_A\eta_B}T^BT^A=\im\tensor{f}{^A^B_C}T^C\]
+            \item Operadores fermiônicos recebem peso 1 e operadores bosônicos recebem peso 0.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Super-Poincaré}
+    O resultado do Teorema de Haag-Lopuszanski-Sohnius é de que a Álgebra ($\mathbb Z_2$-Graduada) mais geral é a de Poincaré,
+    \begin{align*}
+        \comm{M^{\alpha\beta}}{M^{\mu\nu}}&=\im\qty(g^{\alpha\mu}M^{\beta\nu}-g^{\beta\mu}M^{\alpha\nu}+g^{\beta\nu}M^{\alpha\mu}-g^{\alpha\nu}M^{\beta\mu})\\
+        \comm{P^\alpha}{M^{\mu\nu}}&=\im\qty(g^{\alpha\nu}P^\mu-g^{\alpha\mu}P^{\nu})\\
+        \comm{P^\alpha}{P^\mu}&=0
+    \end{align*}
+    Estendida por uma quantidade arbitrária, $\mathcal N$, de geradores das representações $\qty(\frac12,0)$ e 
+    $\qty(0,\frac12)$,
+    \[Q^A_a,\ Q^B_{\dot b};\ \ \ A,B=1,\cdots, \mathcal N\]
+\end{frame}
+
+\begin{frame}
+    Covariância por Lorentz fixa,
+    \begin{align*}
+        \comm{Q^A_a}{M^{\mu\nu}}&=\tensor{{\sigma^{\mu\nu}}}{_a^b}Q^A_b\\
+        \comm{{Q^{\dagger A\dot a}}}{M^{\mu\nu}}&=\tensor{{\bar\sigma}}{^\mu^\nu^{\dot a}_{\dot b}}{Q^{\dagger A\dot b}}\\
+    \end{align*}
+    Utilizando também identidades de Jacobi, o Teorema diz que sempre podemos diagonalizar a Álgebra como,
+    \begin{align*}
+        \comm{Q^A_a}{{Q^{\dagger B}_{\dot b}}}&=-2\delta^{AB}\tensor{\sigma}{_\mu_{a}_{\dot b}}P^\mu\\
+        \comm{Q^A_a}{Q^B_b}&=Z^{AB}\epsilon_{ab}\\
+        \comm{Q_a}{P^\mu}&=0
+    \end{align*}
+    $Z^{AB}$ são cargas centrais da Álgebra.
+\end{frame}
+
+\begin{frame}{Consequências}
+    \begin{itemize}
+        \item A energia é sempre positiva
+    \end{itemize}
+    \begin{align*}
+        {\bar\sigma}^{0\dot b a}\comm{Q_a^A}{Q_{\dot b}^{\dagger A}}&=-2{\bar\sigma}^{0\dot b a}\sigma_{\mu a \dot b}P^\mu\\
+        \comm{Q^A_1}{Q^{\dagger A}_{\dot 1}}+\comm{Q^A_2}{Q^{\dagger A}_{\dot 2}}&=4P^0
+    \end{align*}
+    \begin{align*}
+        P^0&=\frac14\qty(Q^A_1Q^{\dagger A}_{\dot 1}+Q^A_2Q^{\dagger A}_{\dot 2}+Q^{\dagger A}_{\dot 1}Q^A_1+Q^{\dagger A}_{\dot 2}Q^A_2)\\
+        \qty(\Psi,P^0\Psi)&=\frac14\qty(\Psi,Q^A_1Q^{\dagger A}_{\dot 1}\Psi)+\cdots\\
+        \qty(\Psi,P^0\Psi)&=\frac14\norm{Q^{\dagger A}_{\dot 1}\Psi}^2+\cdots\geq 0
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Super-Simetria relaciona partículas de mesma massa,
+    \end{itemize}
+    \begin{align*}
+        \comm{Q_a^A}{P^\mu}=0\rightarrow\comm{Q_a^A}{P^\mu P_\mu}=0
+    \end{align*}\pause
+    \begin{itemize}
+        \item Mas de spin diferente,
+    \end{itemize}
+    \begin{align*}
+        \comm{Q_1^A}{M^{12}}=\comm{Q_1^A}{J^3}=\tensor{\sigma}{^1^2_1^b}Q_b^A&=\frac12Q_1^A,\ \ \ 
+        \comm{Q_2^A}{J^3}=-\frac12Q_2^A\\
+        \comm{Q_{\dot 1}^{\dagger A}}{J^3}&=-\frac12Q_{\dot 1}^{\dagger A},\ \ \ \comm{Q_{\dot 2}^{\dagger A}}{J^3}=\frac12Q_{\dot 2}^{\dagger A}
+    \end{align*}
+    \begin{itemize}
+        \item $Q^A_1$ e $Q^{\dagger A}_{\dot 2}$ diminuem o spin em $\frac12$, enquanto $Q^A_2$ e $Q^{\dagger A}_{\dot 1}$ 
+        aumentam o spin em $\frac12$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Representações Massivas N=1}
+    No referencial $P^\mu=\mqty(m&\vb0)$,
+    \begin{align*}
+        \comm{Q_a}{Q_{\dot b}}&=-2\sigma_{\mu a\dot b}P^\mu=2m\delta_{a\dot b}\\
+        \comm{Q_a}{Q_{\dot b}}&=0
+    \end{align*}
+    Mesma álgebra de dois osciladores harmônicos fermiônicos desacoplados! Dado um vácuo Cliffordiano $\ket\Omega$ 
+    --- é aniquilado por $Q_a$ --- de 
+    spin $j$,
+    \begin{align*}
+        \ket\Omega\rightarrow Q_{\dot 2}^{\dagger}\ket\Omega&,Q_{\dot 1}^\dagger\ket\Omega\rightarrow Q_{\dot 1}^\dagger Q_{\dot 2}^\dagger\ket\Omega\\
+        j\rightarrow\qty(j-\frac12)&\oplus\qty(j+\frac12)\rightarrow j
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Multipleto Chiral Massivo $\qty(j=0)$,
+    \end{itemize}
+    \begin{align*}
+        &\begin{rcases*}
+            \ket\Omega\\
+            Q_{\dot 1}^\dagger Q_{\dot 2}^\dagger\ket\Omega
+        \end{rcases*}\textnormal{Spin }0\rightarrow \phi,\phi^\dagger
+        &\begin{rcases*}
+            Q_{\dot 1}^\dagger \ket\Omega\\
+            Q_{\dot 2}^\dagger\ket\Omega
+        \end{rcases*}\textnormal{Spin }\frac12\rightarrow \chi_a,\chi^\dagger_{\dot b}
+    \end{align*}
+    \begin{itemize}
+        \item Multipleto Vetorial Massivo $\qty(j=\frac12)$,
+    \end{itemize}
+    \begin{align*}
+        &\begin{rcases*}
+            \ket\Omega\\
+            Q_{\dot 1}^\dagger Q_{\dot 2}^\dagger\ket\Omega
+        \end{rcases*}\textnormal{Spin }\frac12\rightarrow \chi_a,\chi^\dagger_{\dot b},\xi_a,\xi^\dagger_{\dot b}
+        &\begin{rcases*}
+            Q_{\dot 1}^\dagger \ket\Omega\\
+            Q_{\dot 2}^\dagger\ket\Omega
+        \end{rcases*}\textnormal{Spin }1,0\rightarrow A^\mu,\phi
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Representações não Massivas N=1}
+    No referencial $P^\mu=\mqty(E&0&0&E)$,
+    \begin{align*}
+        \comm{Q_a}{Q_{\dot b}}&=-2\sigma_{\mu a\dot b}P^\mu=4E\delta_{a\dot b}\delta_{a2}\\
+        \comm{Q_a}{Q_{\dot b}}&=0
+    \end{align*}
+    Álgebra de um oscilador harmônico fermiônico. Dado um vácuo Cliffordiano $\ket\Omega$ de 
+    helicidade $h$,
+    \begin{align*}
+        \ket\Omega&\rightarrow Q_{\dot 2}^{\dagger}\ket\Omega&\\
+        j&\rightarrow j-\frac12
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Multipleto Chiral $\qty(h=\frac12)$,
+    \end{itemize}
+    \begin{align*}
+        &\begin{rcases*}
+            \ket\Omega
+        \end{rcases*}\textnormal{Spin }\frac12\rightarrow \chi^\dagger_{\dot a}
+        &\begin{rcases*}
+            Q_{\dot 2}^\dagger\ket\Omega
+        \end{rcases*}\textnormal{Spin }0\rightarrow \phi
+    \end{align*}\pause
+    Não é possível construir uma teoria Unitária e Lorentz covariante. É 
+    necessário impor $\mathsf{CPT}$
+    \begin{align*}
+        \mathsf{CPT}\ket{h}\rightarrow\ket{-h}
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Multipleto Chiral $\qty(h=\frac12)$,
+    \end{itemize}
+    \begin{align*}
+        &\begin{rcases*}
+            \ket\Omega\\
+            \mathsf{CPT}\ket\Omega
+        \end{rcases*}\textnormal{Spin }\frac12\rightarrow\chi_a, \chi^\dagger_{\dot a}
+        &\begin{rcases*}
+            Q_{\dot 2}^\dagger\ket\Omega\\
+            \mathsf{CPT}Q_{\dot 2}^\dagger\ket\Omega
+        \end{rcases*}\textnormal{Spin }0\rightarrow \phi,\phi^\dagger
+    \end{align*}
+    \begin{itemize}
+        \item Multipleto Vetorial $\qty(h=1)$,
+    \end{itemize}
+    \begin{align*}
+        &\begin{rcases*}
+            \ket\Omega\\
+            \mathsf{CPT}\ket\Omega
+        \end{rcases*}\textnormal{Spin }1\rightarrow A^\mu
+        &\begin{rcases*}
+            Q_{\dot 2}^\dagger\ket\Omega\\
+            \mathsf{CPT}Q_{\dot 2}^\dagger\ket\Omega
+        \end{rcases*}\textnormal{Spin }\frac12\rightarrow \chi_a,\chi^\dagger_{\dot a}
+    \end{align*}
+    \begin{itemize}
+        \item Multipleto Gravitacional $\qty(h=2)$,
+    \end{itemize}
+    \begin{align*}
+        &\begin{rcases*}
+            \ket\Omega\\
+            \mathsf{CPT}\ket\Omega
+        \end{rcases*}\textnormal{Spin }2\rightarrow A^\mu
+        &\begin{rcases*}
+            Q_{\dot 2}^\dagger\ket\Omega\\
+            \mathsf{CPT}Q_{\dot 2}^\dagger\ket\Omega
+        \end{rcases*}\textnormal{Spin }\frac32\rightarrow \chi^\mu_a,\chi^{\dagger\mu}_{\dot a}
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Todos os multipletos possuem valores iguais de d.o.f de bósons e férmions. Coincidência? \pause Não.
+    \end{itemize}
+    \begin{align*}
+        \mathbb Q=Q_1+Q^\dagger_{\dot 2}\rightarrow \comm{\mathbb Q}{\mathbb Q^\dagger}=4H\\
+        \textnormal{se }H\neq0\Rightarrow\ket \Omega, \mathbb Q^\dagger\ket \Omega
+    \end{align*}
+    Se $H=0$, não há nada que nos previna de ter números arbitrários de estados bosônicos e fermiônicos,
+    \begin{itemize}
+        \item Índice de Witten, 
+    \end{itemize}
+    \[\Tr\qty[\qty(-1)^F]=n_{B,E=0}-n_{F,E=0}\]
+    \begin{itemize}
+        \item SSUSYB é possível $\Leftrightarrow\Tr\qty[\qty(-1)^F]=0$
+    \end{itemize}
+\end{frame}
+
+\section{Super-Campos}
+
+\begin{frame}{Super-Espaço}
+    \begin{itemize}
+        \item O espaço de Minkowski pode ser definido como,
+    \end{itemize}
+    \begin{align*}
+        \mathbb R^{3,1}&=ISO^+\qty(3,1)/SO^+\qty(3,1)\\
+        g\qty(\omega,a)&=\exp\qty(-\frac\im2\omega_{\mu\nu}M^{\mu\nu}-\im a_\mu P^\mu)
+    \end{align*}
+    \begin{itemize}\pause
+        \item Definimos o Super-Espaço como,
+    \end{itemize}    
+    \begin{align*}
+        \textnormal{Super-Espaço}&=\textnormal{Super-Poincaré}/SO^+\qty(3,1)\\
+        g\qty(\omega,a,\theta,\theta^\dagger)&=\exp\qty(-\frac\im2\omega_{\mu\nu}M^{\mu\nu}-\im a_\mu P^\mu-\im\theta Q-\im\theta^\dagger Q^\dagger)
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Um Super-Campo é uma função de $x,\theta,\theta^\dagger$ nos complexos,
+        \[\Phi\qty(x,\theta,\theta^\dagger)\]
+    \end{itemize}\pause
+    \begin{itemize}
+        \item $P^\mu$ gera translações em $x^\mu$,
+    \end{itemize}
+    \[\comm{\Phi\qty(x,\theta,\theta^\dagger)}{P^\mu}=-\im \partial^\mu\Phi\qty(x,\theta,\theta^\dagger)\]\pause
+    \begin{itemize}
+        \item $Q_a$ gera translações em $\theta_a$?
+    \end{itemize}
+    \[\comm{\Phi\qty(x,\theta,\theta^\dagger)}{Q_a}=-\im\mathcal Q_a\Phi\qty(x,\theta,\theta^\dagger);\ \ \ \mathcal Q_a\stackrel{?}{=}\pdv{}{\theta^a}\]
+\end{frame}
+
+\begin{frame}
+    A representação da Álgebra no Super-Espaço é feita por,
+    \begin{align*}
+        {\mathcal {Q}}_a&=\partial_a+\im\sigma^\mu_{a\dot b}\theta^{\dagger\dot b}\partial_\mu\\
+        {\mathcal {Q}}^\dagger_{\dot a}&=-\partial^\dagger_{\dot a}-\im\theta^b\sigma^\mu_{b\dot a}\partial_\mu\\
+        \comm{\mathcal Q_a}{\mathcal Q_b}&=0\\
+        \comm{\mathcal Q_a}{\mathcal Q^\dagger_{\dot b}}&=-2\im\sigma^\mu_{a\dot b}\partial_\mu
+    \end{align*}
+    Logo, a ação de uma transformação, infinitesimal, Super-Simétrica sobre um Super-Campo é,
+    \[\Phi\rightarrow\Phi+\epsilon\mathcal Q\Phi+\epsilon^\dagger\mathcal Q^\dagger\Phi\]
+\end{frame}
+
+\begin{frame}
+    Para obter uma Ação Super-Simétrica fazemos um análogo, dado uma combinação real de Super-Campos, $K=K^\dagger$, 
+    integramos por todo o Super-Espaço,
+    \begin{align*}
+        S=\int\dd[4]{x}\dd[2]{\theta}\dd[2]{\theta^\dagger}K\qty(x,\theta,\theta^\dagger)
+    \end{align*}
+    Esta combinação é manifestamente hermitiana, Lorentz invariante e,
+    \[\delta S=\int\dd[4]{x}\dd[2]{\theta}\dd[2]{\theta^\dagger}\delta K=\int\dd[4]{x}\dd[2]{\theta}\dd[2]{\theta^\dagger}\qty(\epsilon\mathcal Q K+\epsilon^\dagger\mathcal Q^\dagger K)=0\]
+    Invariante Super-Simetricamente!
+\end{frame}
+
+\begin{frame}{Super-Campo Geral}
+    Devido à natureza Grassmanniana de $\theta,\theta^\dagger$, o Super-Campo mais geral é,
+    \begin{align*}
+        \Phi\qty(x,\theta,\theta^\dagger)&=\phi\qty(x)+\theta\psi\qty(x)+\theta^\dagger\chi^\dagger\qty(x)
+        +\theta\theta M\qty(x)+\theta^\dagger\theta^\dagger N\qty(x)\\ &\quad\quad+\theta\sigma^\mu\theta^\dagger v_\mu\qty(x)
+        +\theta\theta\theta^\dagger\lambda^\dagger\qty(x)+\theta^\dagger\theta^\dagger\theta\xi\qty(x)+\theta\theta\theta^\dagger\theta^\dagger D\qty(x)
+    \end{align*}
+    Já apresenta todas as representações de nosso interesse! Porém até demais, como restringir?
+\end{frame}
+
+\begin{frame}{Super-Campo Chiral}
+    Utilizando de nossa virtude da visão além do alcance, introduzimos,
+    \begin{align*}
+        \mathcal D_a&=\partial_a-\im\sigma^\mu_{a\dot b}\theta^{\dagger\dot b}\partial_\mu,\ \ \ \mathcal D^\dagger_{\dot a}
+        =-\partial_{\dot a}+\im\theta^{b}\sigma^\mu_{b\dot a}\partial_\mu\\
+        \comm{\mathcal D_a}{\mathcal D_b}&=0,\ \ \ 
+        \comm{\mathcal D_a}{\mathcal D_{\dot b}}=2\im\sigma^\mu_{a\dot b}\partial_\mu\\
+        \comm{\mathcal D_a}{\mathcal Q_b}&=\comm{\mathcal D_a}{\mathcal Q^\dagger_{\dot b}}=0
+    \end{align*}
+    Podemos então impor,
+    \begin{itemize}
+        \item Chiral $\mathcal D^\dagger_{\dot a}\Phi=0$
+        \item Anti-Chiral $\mathcal D_a\Phi=0$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item $\mathcal D^\dagger_{\dot a}\Phi=0$
+    \end{itemize}
+    Pode ser facilmente resolvida nas variáveis,
+    \begin{align*}
+        y^\mu&=x^\mu-\im\theta^b\sigma^\mu_{b\dot c}\theta^{\dagger \dot c}\\
+        \mathcal D^\dagger_{\dot a}\theta_b&=0,\ \ \ \mathcal D^\dagger_{\dot a}y^\mu=0
+    \end{align*}
+    Portanto,
+    \begin{align*}
+        \Phi\qty(x,\theta,\theta^\dagger)&=\Phi\qty(y,\theta)=\phi\qty(y)+\sqrt2\theta\psi\qty(y)+\theta\theta F\qty(y)\\
+        &=\phi\qty(x)+\sqrt2\theta\psi\qty(x)+\theta\theta F\qty(x)-\im\theta\sigma^\mu\theta^\dagger\partial_\mu\phi\qty(x)\\
+        &\quad\quad-\frac{\im}{\sqrt2}\theta\theta\theta^\dagger{\bar\sigma}^\mu\partial_\mu\psi\qty(x)+\frac14\theta\theta\theta^\dagger\theta^\dagger\partial^2\phi\qty(x)
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item $\mathcal D_{ a}\Phi^\dagger=0$
+    \end{itemize}
+    De fato, é apenas o conjugado de um chiral, pois,
+    \begin{align*}
+        y^{\dagger\mu}&=x^\mu+\im\theta^b\sigma^\mu_{b\dot c}\theta^{\dagger \dot c}\\
+        \mathcal D_{ a}\theta^\dagger_b&=0,\ \ \ \mathcal D_{ a}y^{\dagger\mu}=0
+    \end{align*}
+    Portanto,
+    \begin{align*}
+        \Phi^\dagger\qty(x,\theta,\theta^\dagger)&=\phi^\dagger\qty(x)+\sqrt2\theta^\dagger\psi^\dagger\qty(x)+\theta^\dagger\theta^\dagger F^\dagger\qty(x)+\im\theta\sigma^\mu\theta^\dagger\partial_\mu\phi^\dagger\qty(x)\\
+        &\quad\quad+\frac{\im}{\sqrt2}\theta^\dagger\theta^\dagger\partial_\mu\psi^\dagger\qty(x){\bar\sigma}^\mu\theta+\frac14\theta^\dagger\theta^\dagger\theta\theta\partial^2\phi^\dagger\qty(x)
+    \end{align*}
+    Que são muito próximos ao Multipleto Chiral! 
+\end{frame}
+
+\begin{frame}{Modelo de Wess-Zumino}
+    A combinação $\Phi^\dagger\Phi$ é real. Logo, podemos definir uma teoria como,
+    \[S=\int\dd[4]{x}\dd[2]{\theta}\dd[2]{\theta^\dagger}\Phi^\dagger\Phi\]
+    A integral Grassmanniana seleciona o termo com coeficiente $\theta\theta\theta^\dagger\theta^\dagger$, um 
+    rápido cálculo retorna,
+    \begin{align*}
+        \Phi^\dagger\Phi&\supset\theta\theta\theta^\dagger\theta^\dagger\qty[F^\dagger F-\partial_\mu\phi^\dagger\partial^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu\partial_\mu\psi]\\
+        S&=\int\dd[4]{x}\qty[F^\dagger F-\partial_\mu\phi^\dagger\partial^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu\partial_\mu\psi]
+    \end{align*}
+    E interações?
+\end{frame}
+
+\begin{frame}
+    Interações do tipo Yukawa não são geradas por termos como $f\qty(\Phi^\dagger\Phi)$. Vimos que,
+    \[\Phi\qty(x,\theta,\theta^\dagger)=\Phi\qty(y,\theta)\]
+    Podemos então introduzir um termo na ação como,
+    \[S=\int\dd[4]{y}\dd[2]{\theta}\Phi\qty(y,\theta)\]
+    Este termo é manifestamente Poincaré invariante, basta confirmar que 
+    seja Super-Simetricamente invariante,
+    \begin{align*}
+        \delta S&=\int\dd[4]{y}\dd[2]{\theta}\qty(\epsilon\partial\Phi+\im\epsilon\sigma^\mu\theta^\dagger\partial_\mu\Phi
+        -\epsilon^\dagger\partial^\dagger\Phi-\im\theta\sigma^\mu\epsilon^\dagger\partial_\mu\Phi)\\
+        \delta S&=0
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    O mesmo continua valendo para qualquer função holomorfa, só precisamos garantir que seja real,
+    \begin{align*}
+        S&=\int\dd[4]{x}\dd[2]{\theta}W\qty(\Phi)+\int\dd[4]{x}\dd[2]{\theta^\dagger}W^\dagger\qty(\Phi^\dagger)\\
+        W\qty(\Phi)&=W\qty(\phi+\sqrt2\theta\psi+\theta^2F)\\
+        W\qty(\Phi)&=W\qty(\phi)+\sqrt2\pdv{W}{\phi}\theta\psi+\theta^2\qty(\pdv{W}{\phi}F-\frac12\pdv[2]{W}{\phi}\psi\psi)
+    \end{align*}
+    A integral Grassmanniana seleciona o termo com $\theta\theta$ ou $\theta^{\dagger}\theta^\dagger$. Por questões de 
+    renormalizabilidade, a função mais geral que podemos tomar é,
+    \[W\qty(\Phi)=\frac m2\Phi^2+\frac\lambda6\Phi^3\]
+\end{frame}
+
+\begin{frame}
+    \begin{align*}
+        S&=\int\dd[4]{x}\qty[\int\dd[2]{\theta}\dd[2]{\theta^\dagger}\Phi^\dagger\Phi+
+        \int\dd[2]{\theta}W\qty(\Phi)+\int\dd[2]{\theta^\dagger}W^\dagger\qty(\Phi^\dagger)]\\
+        S&=\int\dd[4]{x}\left[-\partial_\mu\phi^\dagger\partial^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu\partial_\mu\psi+F^\dagger F\right.\\
+        &\quad\quad\quad\left.+\qty(F\pdv{W}{\phi}-\frac12\pdv[2]{W}{\phi}\psi\psi+\textnormal{h.c.})\right]\\
+        S&=\int\dd[4]{x}\left[-\partial_\mu\phi^\dagger\partial^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu\partial_\mu\psi-\norm{\pdv{W}{\phi}}^2-\frac12\qty(\pdv[2]{W}{\phi}\psi\psi+\textnormal{h.c.})\right]
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Super-Campo Vetorial}
+    Outra condição que poderíamos impor é,
+    \[V=V^\dagger\]
+    Que resulta em,
+    \begin{align*}
+        V&=C\qty(x)+\theta\chi\qty(x)+\theta^\dagger\chi\qty(x)+\theta\theta M\qty(x)+\theta^\dagger\theta^\dagger M^\dagger\qty(x)\\
+        &\quad\quad+\theta\sigma^\mu\theta^\dagger v_\mu\qty(x)+\theta\theta\theta^\dagger\lambda^\dagger\qty(x)+\theta^\dagger\theta^\dagger\theta\lambda\qty(x)+\theta\theta\theta^\dagger\theta^\dagger D\qty(x)
+    \end{align*}
+    Como realizar uma transformação de Gauge? \pause Se $\Xi$ é Chiral,\[\im\qty(\Xi^\dagger-\Xi)\] É real/vetorial.
+\end{frame}
+
+\begin{frame}
+    Seja,
+    \begin{align*}
+        \Xi&=B\qty(x)+\theta\xi\qty(x)+\theta\theta G\qty(x)-\im\theta\sigma^\mu\theta^\dagger\partial_\mu B\qty(x)\\
+        &\quad\quad-\frac\im2\theta\theta\theta^\dagger{\bar\sigma}^\mu\partial_\mu\xi\qty(x)+\frac14\theta\theta\theta^\dagger\theta^\dagger\partial^2 B\qty(x)
+    \end{align*}
+    Um rápido cálculo retorna,
+    \begin{align*}
+        \im\qty(\Xi^\dagger-\Xi)&\supset-2\theta\sigma^\mu\theta^\dagger\partial_\mu\textnormal{Re}B\qty(x)
+    \end{align*}
+    E Principalmente,
+    \[V\rightarrow V+\im\qty(\Xi^\dagger-\Xi)\Rightarrow v_\mu\rightarrow v_\mu -2\partial_\mu\textnormal{Re}B\]
+    Definimos então como transformação de Gauge.
+\end{frame}
+
+\begin{frame}
+    Por uma escolha conveniente de $B\qty(x),\xi\qty(x)$ e $G\qty(x)$ é 
+    sempre possível escolher o \textbf{Gauge de Wess-Zumino},
+    \begin{align*}
+        V&=\theta\sigma^\mu\theta^\dagger v_\mu\qty(x)+\theta\theta\theta^\dagger\lambda^\dagger\qty(x)
+        +\theta^\dagger\theta^\dagger\theta\lambda\qty(x)+\frac12\theta\theta\theta^\dagger\theta^\dagger D\qty(x)
+    \end{align*}
+    \begin{itemize}
+        \item Como escrever um termo cinético?
+    \end{itemize}
+
+    \pause\[\mathcal D^\dagger_{\dot a}\mathcal D_b V\rightarrow\mathcal D^\dagger_{\dot a}\mathcal D_b\qty(V+\im\qty(\Xi^\dagger-\Xi))\stackrel{?}{=}\mathcal D^\dagger_{\dot a}\mathcal D_bV\]
+
+    \pause\[\mathcal D^\dagger_{\dot a}\mathcal D^{\dagger\dot a}\mathcal D_b V\rightarrow\mathcal D^\dagger_{\dot a}\mathcal D^{\dagger\dot a}\mathcal D_b\qty(V+\im\qty(\Xi^\dagger-\Xi))\stackrel{!}{=}\mathcal D^\dagger_{\dot a}\mathcal D^{\dagger\dot a}\mathcal D_bV\]
+\end{frame}
+
+\begin{frame}
+    Definimos o Super-Campo,
+    \[W_a=\frac14\mathcal D^\dagger_{\dot a}\mathcal D^{\dagger\dot a}\mathcal D_b V\]
+    Que é de fato Chiral!
+    \[\mathcal D^\dagger_{\dot b}W_a=0\]
+    Podemos utilizar da mesma expansão em $y,\theta$ feita anteriormente para Campos Chirais,
+    \[W_a=\lambda_a\qty(y)+\theta_a D\qty(y)-\tensor{{\sigma^{\mu\nu}}}{_a^b}\theta_bF_{\mu\nu}\qty(y)+\im\theta\theta\sigma^\mu_{a\dot b}\partial_\mu\lambda^{\dagger \dot b}\qty(y)\]
+\end{frame}
+
+\begin{frame}
+    Finalmente podemos obter uma quantidade Lorentz invariante Chiral,
+    \[W^aW_a\supset\theta\theta\qty[2\im\lambda\sigma^\mu\partial_\mu\lambda^\dagger-\frac12F^{\mu\nu}F_{\mu\nu}-\frac\im2{\star} F^{\mu\nu}F_{\mu\nu}+D^2]\]
+    Utilizando do mesmo método para obtenção de interações para Super-Campos chirais,
+    \begin{align*}
+        S&=\int\dd[4]{x}\qty[\int\dd[2]{\theta}\frac14W^aW_a+\int\dd[2]{\theta^\dagger}\frac14W^\dagger_{\dot a}W^{\dagger\dot a}]\\
+        S&=\int\dd[4]{x}\qty[-\frac14 F_{\mu\nu}F^{\mu\nu}+\im\lambda^\dagger{\bar\sigma}^\mu\partial_\mu\lambda+\frac12D^2]
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Calibrando uma Teoria Chiral}
+    Sabemos que devemos alterar o termo cinético canônico,\[\Phi^\dagger\Phi\]
+    Para ser invariante por uma transformação de calibre,
+    \begin{align*}
+        \Phi&\rightarrow\exp\qty(-2\im g\Xi)\Phi\\
+        \Phi^\dagger&\rightarrow\Phi^\dagger\exp\qty(2\im g \Xi^\dagger)\\
+        V&\rightarrow V+\im\qty(\Xi^\dagger-\Xi)
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    Como a transformação em $V$ é linear, e $\Xi$ está dentro da exponencial,
+    \[\Phi^\dagger\exp\qty(-2gV)\Phi\]
+    É uma opção para termo cinético invariante por calibre. No gauge de Wess-Zumino,
+    \begin{align*}
+        V&=\theta\sigma^\mu\theta^\dagger v_\mu\qty(x)+\theta\theta\theta^\dagger\lambda^\dagger\qty(x)
+        +\theta^\dagger\theta^\dagger\theta\lambda\qty(x)+\frac12\theta\theta\theta^\dagger\theta^\dagger D\qty(x)\\
+        V^2&=-\frac12\theta\theta\theta^\dagger\theta^\dagger v^\mu v_\mu\\
+        V^3&=0
+    \end{align*}
+    Logo,
+    \begin{align*}
+        \exp\qty(-2gV)&=1-2g\theta\sigma^\mu\theta^\dagger v_\mu-2g\theta\theta\theta^\dagger\lambda^\dagger-2g\theta^\dagger\theta^\dagger\theta\lambda\\
+        &\quad\quad-\theta\theta\theta^\dagger\theta^\dagger\qty(gD+g^2v^\mu v_\mu)
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    Como a integral Grassmanniana seleciona apenas os termos com $\theta\theta\theta^\dagger\theta^\dagger$. 
+    Com um pouco de algebra obtemos,
+    \begin{align*}
+        \Phi^\dagger\exp\qty(-2gV)\Phi\supset\theta\theta\theta^\dagger\theta^\dagger&\left[-D_\mu\phi^\dagger D^\mu\phi+\im\psi^\dagger{\bar\sigma}^\mu D_\mu\psi+F^\dagger F\right.\\
+        &\left.+\sqrt2g\psi^\dagger\lambda^\dagger\phi+\sqrt2g\phi^\dagger\lambda\psi-g\phi^\dagger\phi D\right]
+    \end{align*}
+    Aparecimento natural da derivada covariante,
+    \[D_\mu=\partial_\mu-\im gv_\mu\]
+\end{frame}
+
+\section{Possíveis continuações}
+\begin{frame}
+    \begin{itemize}
+        \item Teoremas de não-renormalização
+        \item Teorias com $\mathcal N>1$
+        \item Super-Conforme
+    \end{itemize}
+\end{frame}
+
+\begin{frame}\addtocounter{framenumber}{-1}
+    \centering{Muito Obrigado!}
+\end{frame}
+
+\addtocounter{framenumber}{2000}
+
+\end{document}
