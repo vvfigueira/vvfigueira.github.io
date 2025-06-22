@@ -1,0 +1,29 @@
+\section{Introduction}
+
+General Relativity (GR) is notoriously complex, with few known solutions outside highly symmetric cases. 
+This stems primarily from the non-linear structure of the Einstein-Hilbert action and field equations:
+\begin{align*}
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}g^{ab}\tensor{R}{_c_b^c_a},\ \ \ R_{ab}-\frac12Rg_{ab}=T_{ab}\numberthis\label{EHAction}
+\end{align*}
+
+Non-polynomial terms --- such as $\sqrt{\abs{g}}$, the inverse metric $g^{ab}$, and curvature components $\tensor{R}{_{ c b}^c_{a}}$ 
+(which introduce further inverse-metric and derivative dependencies) --- render analytical solutions in generic scenarios virtually unattainable. 
+These complexities also obstruct a conventional gauge-theoretic interpretation of GR\footnote{By \textit{gauge theory in the usual sense}, 
+we refer to theories whose fundamental field $\vb{A}$ (typically a $\mathfrak{g}$-valued 1-form in the adjoint representation) exhibits local 
+symmetry under a Lie group $G\ni g$, transforming as $\vb{A} \rightarrow g\vb{A}g^{-1} + g \vb d{g^{-1}}$.}. Consequently, standard quantization 
+methods struggle with $(3+1)$-dimensional gravity, and even classical non-vacuum solutions remain elusive.
+
+A promising approach lies in studying lower-dimensional toy models, exemplified by $(1+1)$D gravity's utility in string theory. 
+We thus investigate $(2+1)$D gravity, asking: What insights can it offer, particularly regarding its interpretation as a conventional gauge theory?
+
+Dynamical degrees of freedom (DOF) in GR scale critically with spacetime dimension. The metric $\vb{g}$ --- a symmetric, non-degenerate $(0,2)$-tensor --- defines 
+a torsionless, metric-compatible connection $\nabla$, uniquely fixing $\frac{1}{2}D(D+1)$ DOF. Diffeomorphism invariance ($\phi_{\ast} \vb{g} \sim \vb{g}$) 
+imposes $D$ redundancies, while the Bianchi identity $\nabla_a (R^{ab} - \frac{1}{2}R g^{ab}) = 0$ adds $D$ constrains. The net DOF is then:
+$$\frac12 D\qty(D+1)-2D=\frac12D\qty(D-3)$$
+
+Exactly zero for $D=3$. This aligns with the Riemann tensor's $\frac{1}{12}D^2(D^2-1)$ independent components: 6 in $D=3$ --- exactly 
+matching the Ricci tensor's DOF. In $(2+1)$D, the field equations algebraically determine the Riemann tensor from Ricci (and thus from $T_{ab}$ 
+via \eqref{EHAction}). Since gravitational dynamics require the Weyl tensor (vanishing identically here), the theory exhibits no local dynamics.
+
+This non-dynamical character suggests $(2+1)$D gravity may be "trivial" (or "exact") classically—potentially yielding a solvable quantum model. 
+We now explore whether this permits a standard gauge-theory formulation.
