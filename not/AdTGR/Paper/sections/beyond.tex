@@ -1,25 +1,25 @@
 \section{About D=3+1}
 
-With our astonishing success achieved in $D=2+1$, a natural follow up is to ask what can be said about $D=3+1$. In the 
-derivation of \ref{BilinearAnsatz}, we discarded $D\neq3$ reasoning that no non-zero action could be build, from $\vb e,\boldsymbol\omega$ with a 
+With our astonishing success achieved in $D=2+1$, a natural follow up is to ask: what can be said about $D=3+1$? In the 
+derivation of \eqref{BilinearAnsatz}, we discarded $D\neq3$ reasoning that no non-zero action could be build, from $\vb e,\boldsymbol\omega$ with a 
 multilinear trace in the algebra $\mathfrak{iso}\qty(D-1,1)$, due to the explicit appearance of $\comm{P_\mu}{P_\nu}$ inside the trace, which is naturally 
-zero for $\mathfrak{iso}\qty(D-1,1)$, nevertheless, in our pursue of the inclusion of the cosmological constant, we concluded that 
+zero for $\mathfrak{iso}\qty(D-1,1)$. Nevertheless, in our pursue to include the cosmological constant, we concluded that 
 for non-zero cosmological constant space-times, we should not be looking towards $\mathfrak{iso}\qty(D-1,1)$, but actually to $\mathfrak{so}\qty(D,1)$ and 
-$\mathfrak{so}\qty(D-1,2)$, which have a non-zero translation commutation relation, \ref{SOAlgebra}. This means we can indeed build non-zero actions using a 
-bilinear form in $D\neq 3$, as long as we stick to the non-zero cosmological constant case, to see how can this be done, we pick up from \ref{EHAction3}, with the cosmological constant term,
+$\mathfrak{so}\qty(D-1,2)$, which have a non-zero translation commutator, \eqref{SOAlgebra}. This means we can indeed build non-zero actions using a 
+bilinear form in $D\neq 3$, as long as we stick to the non-zero cosmological constant case. To see how this can be done, we pick up from \eqref{EHAction3}, with the cosmological constant term,
 \begin{align*}
     S_{\textnormal{EH}}&=\frac{1}{4\kappa}\int\limits_M\epsilon_{\alpha\beta\mu\nu}\vb e^\alpha\wedge\vb e^\beta\wedge\vb R^{\mu\nu}-\frac{\Lambda}{\kappa4!}\int\limits_M\epsilon_{\alpha\beta\mu\nu}\vb e^\alpha\wedge\vb e^\beta\wedge\vb e^\mu\wedge\vb e^\nu
 \end{align*}
-which as always, we'll try to write as a bilinear, notice that each two vielbein terms will have to couple to a commutator of the translations, due to the wedge anti-symmetry, so our guess has to be,
+which as always, we'll try to write as a bilinear. Notice that each two vielbein terms will have to couple to a commutator of the translations, due to the wedge anti-symmetry, so our guess has to be,
 \begin{align*}
     S_{\textnormal{EH}}&\stackrel{?}{=}-\frac{1}{4\Lambda\kappa}\expval{\comm{P_\alpha}{P_\beta},J_{\mu\nu}}\int\limits_M\vb e^\alpha\wedge\vb e^\beta\wedge\vb R^{\mu\nu}-\frac{1}{\Lambda\kappa4!}\expval{\comm{P_\alpha}{P_\beta},\comm{P_\mu}{P_\nu}}\int\limits_M\vb e^\alpha\wedge\vb e^\beta\wedge\vb e^\mu\wedge\vb e^\nu\\
     S_{\textnormal{EH}}&\stackrel{?}{=}-\frac{1}{2\Lambda\kappa}\int\limits_M\expval{\wedgecomm{\vb e}{\vb e}\ \wedgecomma\ \vb R}-\frac{1}{\Lambda\kappa4!}\int\limits_M\expval{\wedgecomm{\vb e}{\vb e}\ \wedgecomma\ \wedgecomm{\vb e}{\vb e}}\numberthis\label{EHActionTry1}
 \end{align*}
-this is indeed consistent, as in there exists a invariant symmetric non-degenerate bilinear form such,
+this is indeed consistent, as in there exists an invariant symmetric non-degenerate bilinear form such as,
 \begin{align*}
     \expval{J_{\alpha\beta},J_{\mu\nu}}=\tensor{\epsilon}{_\alpha_\beta_\mu_\nu},\ \ \ \expval{J_{\alpha\beta},P_\mu}=0,\ \ \ \expval{P_\mu,P_\nu}=\pm\frac{1}{L^2}\eta_{\mu\nu}
 \end{align*}
-the only problem with \ref{EHActionTry1} is the linearity in derivatives, as there is no gauge theory in $D=3+1$ with only linear derivatives terms, so it's not clear of what can be made of it. Of course, if we're interested in non-minimal 
+The only problem with \eqref{EHActionTry1} is the linearity in derivatives, as there is no gauge theory in $D=3+1$ with only linear derivatives terms, so it's not clear of what can be made of it. Of course, if we're interested in non-minimal 
 Actions, it's possible to add further terms as $\expval{\vb R\ \wedgecomma\star\vb R}$ or $\expval{\vb R\ \wedgecomma\ \vb R}$, which are much more similar to Yang-Mills theories, but this would go more in the interpretation of 
 decoupling the translations from the Poincaré group and interpreting gravity as a gauge theory of $SO\qty(D-1,1)$ coupled to a inertial frame field, which does not seem to be self consistent as for a kinetic term $\expval{\vb R\ \wedgecomma\star\vb R}$ 
 is already coupled to the vielbein through the Hodge star, and a term like $\expval{\vb R\ \wedgecomma\ \vb R}$ does not provide dynamics as is topological.

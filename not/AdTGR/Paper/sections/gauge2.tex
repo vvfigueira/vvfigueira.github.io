@@ -1,82 +1,82 @@
 \section{2+1 Gravity as a Gauge Theory}
 
-Given the found prospect of $D=2+1$ gravity being a gauge theory, we have to narrow down our options, first, we'll assume we have the right bilinear over our Lie Algebra, which from inspection we deduced 
+Given the found prospect of $D=2+1$ gravity being a gauge theory, we have to narrow down our options. First, we'll assume we have the right bilinear over our Lie Algebra, which from inspection we deduced 
 it should be --- to stress that this is not a trace, but in fact a bilinear, we'll change the notation of it ---,
 \begin{align*}
     \expval{J_{\alpha\beta},P_\mu}=\epsilon_{\alpha\beta\mu},\ \ \ \expval{J_{\alpha\beta},J_{\mu\nu}}=0,\ \ \ \expval{P_\mu,P_\nu}=0\numberthis\label{BilinearISO}
 \end{align*}
-the first one is what we have shown to seem to be the right choice, and the last two are needed by consistency with the Lie Algebra\footnote{All the requirements of this bilinear are: Being symmetric, invariant and non-degenerate. The requirement of invariance can be written as $\comm{Y}{\expval{X,Z}}=0\Rightarrow \expval{\comm{X}{Y},Z}=\expval{X,\comm{Y}{Z}},\ \forall X,Y,Z\in\mathfrak g$. This explicit choice of bilinear we cited is not unique as the algebra is not absolutely simple.}, this choice is naturally non-degenerate. As we'll 
+The first one is what we have shown to be the right choice, and the last two are needed by consistency with the Lie Algebra\footnote{All the requirements of this bilinear are: being symmetric, invariant and non-degenerate. The requirement of invariance can be written as $\comm{Y}{\expval{X,Z}}=0\Rightarrow \expval{\comm{X}{Y},Z}=\expval{X,\comm{Y}{Z}},\ \forall X,Y,Z\in\mathfrak g$. This explicit choice of bilinear we cited is not unique as the algebra is not absolutely simple.}. This choice is naturally non-degenerate. As we'll 
 write everything in terms of $\vb e=\vb e^\mu P_\mu$ and $\boldsymbol\omega=\frac12\boldsymbol\omega^{\alpha\beta}J_{\alpha\beta}$, which themselves will be inside of the bilinear and composed 
 with the wedge product, we'll ease notation condensing these operations using the following notation,
 \begin{align*}
     \expval{\boldsymbol\alpha\ \wedgecomma\ \boldsymbol\beta}\coloneq\boldsymbol\alpha_I\wedge\boldsymbol\beta_J\expval{T^I,T^J},\ \ \ \wedgecomm{\boldsymbol\alpha}{\boldsymbol\beta}\coloneq\boldsymbol\alpha_ I\wedge\boldsymbol\beta_J\comm{T^I}{T^J},\ \ \ T^I\in\mathfrak{iso}\qty(2,1)
 \end{align*}
-which can be used to rewrite the curvature 2--form,
+Which can be used to rewrite the curvature 2--form,
 \begin{align*}
     \vb R&=\frac12\vb R_{\alpha\beta}J^{\alpha\beta}=\frac12\vb d\boldsymbol\omega_{\alpha\beta}J^{\alpha\beta}+\frac12\tensor{{\boldsymbol\omega}}{_\alpha^\rho}\wedge\tensor{{\boldsymbol\omega}}{_\rho_\beta}J^{\alpha\beta}=\vb d\boldsymbol\omega+\frac12\tensor{{\boldsymbol\omega}}{_\mu_\nu}\wedge\tensor{{\boldsymbol\omega}}{_\rho_\sigma}\eta^{\rho\nu}J^{\mu\sigma}=\vb d\boldsymbol\omega+\frac18\tensor{{\boldsymbol\omega}}{_\mu_\nu}\wedge\tensor{{\boldsymbol\omega}}{_\rho_\sigma}4\eta^{[\rho|[\nu}J^{\mu]|\sigma]}\\
     \vb R&=\vb d\boldsymbol\omega+\frac18\tensor{{\boldsymbol\omega}}{_\mu_\nu}\wedge\tensor{{\boldsymbol\omega}}{_\rho_\sigma}\comm{J^{\rho\sigma}}{J^{\nu\mu}}=\vb d\boldsymbol\omega+\frac12\tensor{{\boldsymbol\omega}}{_\mu_\nu}\wedge\tensor{{\boldsymbol\omega}}{_\rho_\sigma}\comm{\frac12J^{\mu\nu}}{\frac12J^{\rho\sigma}}=\vb d\boldsymbol\omega+\frac12\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}\numberthis\label{Curvature2Form}
 \end{align*}
-this last expression permits use to rewrite the EH Action as,
+This last expression permits us to rewrite the EH Action as,
 \begin{align*}
     S_{\textnormal{EH}}&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\vb e^\mu\wedge \vb R^{\alpha\beta}=\frac{1}{2\kappa}\expval{P_\mu,J_{\alpha\beta}}\int\limits_M\vb e^\mu\wedge \vb R^{\alpha\beta}=\frac{1}{\kappa}\int\limits_M\expval{\vb e\ \wedgecomma\ \vb R}=\frac{1}{\kappa}\int\limits_M\expval{\vb e\ \wedgecomma\ \qty(\vb d{\boldsymbol\omega}+\frac12\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})}\numberthis\label{EHAction4}
 \end{align*}
-what is not quite in the usual fashion of gauge theories, as for Yang-Mills, it can be written as,
+Which is not quite in the usual fashion of gauge theories, as for Yang-Mills, it can be written as,
 \begin{align*}
     S_{\textnormal{YM}}&=\frac{1}{g^2}\int\limits_M\expval{\vb F\ \wedgecomma\star\vb F},\ \ \ \vb F=\vb d\vb A+\frac12\wedgecomm{\vb A}{\vb A}
 \end{align*}
-the key distinction is that the YM kinetic term is quadratic in derivatives, while EH is only linear in it, this is no obstacle, as, 
-there is indeed a particular gauge theory possible of being formulated with only one derivative in the kinetic term, and as surprising, this 
-construction is particular to $D=2+1$, as can be seen from the form degree, this theory is the Chern-Simons one,
+The key distinction is that, the YM kinetic term is quadratic in derivatives, while EH is only linear in it. This is no obstacle, as, 
+there is indeed a particular gauge theory possible of being formulated with only one derivative in the kinetic term. Surprising, this 
+construction is particular to $D=2+1$, as can be seen from the form degree. This theory is the Chern-Simons one,
 \begin{align*}
     S_{\textnormal{CS}}\qty[\vb A]&=\frac{k}{4\pi}\int\limits_M\expval{\vb A\ \wedgecomma\ \qty(\vb d{\vb A}+\frac13\wedgecomm{\vb A}{\vb A})}\numberthis\label{YangMillsAction}
 \end{align*}
 
-As striking as it may be the similarities of both actions, they aren't equal, as EH possesses two dynamical fields, while CS has only one, but, this isn't 
+As striking as it may be the similarities of both actions, they aren't equal. EH possesses two dynamical fields, while CS has only one. This isn't 
 a big of a problem, because, as we're trying to interpret EH as being a gauge theory of the $ISO\qty(2,1)$ group, what we should expect is that the connection of 
-this new CS-like theory has values over this algebra, that is, $\vb A=\vb A_IT^I$, where $T^I\in\mathfrak{iso}\qty(2,1)$, this resolves the question, $\vb A$ must be then a 
-linear combination of both $\vb e,\boldsymbol\omega$, hence, we'll compute what's the CS theory for a connection of the type $\vb A=\boldsymbol\omega+\vb e$,
+this new CS-like theory has values over this algebra, that is, $\vb A=\vb A_IT^I$, where $T^I\in\mathfrak{iso}\qty(2,1)$. This resolves the question: $\vb A$ must be then a 
+linear combination of both $\vb e,\boldsymbol\omega$. Hence, we'll compute what's the CS theory for a connection of the type $\vb A=\boldsymbol\omega+\vb e$,
 \begin{align*}
     S_{\textnormal{CS}}\qty[\vb A]&=\frac{k}{4\pi}\int\limits_M\expval{\qty(\boldsymbol\omega+\vb e)\ \wedgecomma\ \qty(\vb d{\qty(\boldsymbol\omega+\vb e)}+\frac13\wedgecomm{\boldsymbol\omega+\vb e}{\boldsymbol\omega+\vb e})}\\
     S_{\textnormal{CS}}\qty[\vb A]&=\frac{k}{4\pi}\int\limits_M\expval{\boldsymbol\omega\ \wedgecomma\ \qty(\vb d\boldsymbol\omega+\frac13\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})}+\frac{k}{4\pi}\int\limits_M\left\{\expval{\boldsymbol\omega\ \wedgecomma\ \vb d{\vb e}}+\expval{\vb e\ \wedgecomma\ \vb d{\boldsymbol\omega}}+\expval{\vb e\ \wedgecomma\ \vb d{\vb e}}\right.\\
     &\quad\quad\quad\left.+\frac13\expval{\boldsymbol\omega\ \wedgecomma\ \qty(\wedgecomm{\boldsymbol\omega}{\vb e}+\wedgecomm{\vb e}{\boldsymbol\omega}+\wedgecomm{\vb e}{\vb e})}+\frac13\expval{\vb e\ \wedgecomma\ \qty(\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}+\wedgecomm{\boldsymbol\omega}{\vb e}+\wedgecomm{\vb e}{\boldsymbol\omega}+\wedgecomm{\vb e}{\vb e})}\right]
 \end{align*}
 
-Now we can use the nice form of our bilinear to discard some terms, notice that it is only non-zero when one entry 
-is proportional to the Lorentz generators and the other to the translation generators, thus, terms like $\expval{\boldsymbol\omega\ \wedgecomma\ \vb d\boldsymbol\omega}$ will vanish, as they have Lorentz 
-generators on the both entries, the same is true also to $\expval{\boldsymbol\omega\ \wedgecomma\ \wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}}$, $\expval{\vb e\ \wedgecomma\ \vb d\vb e}$ and $\expval{\vb e\ \wedgecomma\ \wedgecomm{\boldsymbol\omega}{\vb e}}$, the term $\wedgecomm{\vb e}{\vb e}$ vanishes due to the $\mathfrak{iso}\qty(2,1)$ algebra. 
+Now we can use the nice form of our bilinear to discard some terms. Notice that it is only non-zero when one entry 
+is proportional to the Lorentz generators and the other to the translation generators. Thus, terms like $\expval{\boldsymbol\omega\ \wedgecomma\ \vb d\boldsymbol\omega}$ will vanish, as they have Lorentz 
+generators on the both entries. The same is true also to $\expval{\boldsymbol\omega\ \wedgecomma\ \wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}}$, $\expval{\vb e\ \wedgecomma\ \vb d\vb e}$ and $\expval{\vb e\ \wedgecomma\ \wedgecomm{\boldsymbol\omega}{\vb e}}$; the term $\wedgecomm{\vb e}{\vb e}$ vanishes due to the $\mathfrak{iso}\qty(2,1)$ algebra. 
 Collecting the remaining terms,
 \begin{align*}
     S_{\textnormal{CS}}\qty[\vb A]&=\frac{k}{4\pi}\int\limits_M\expval{\vb e\ \wedgecomma\ \qty( \vb d{\boldsymbol\omega}+\frac13 \wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})+\boldsymbol\omega\ \wedgecomma\ \vb d{\vb e}+\frac13\boldsymbol\omega\ \wedgecomma\ \qty(\wedgecomm{\boldsymbol\omega}{\vb e}+\wedgecomm{\vb e}{\boldsymbol\omega})}
 \end{align*}
-for $\boldsymbol\alpha,\boldsymbol\beta$ $p,q$--forms, $\expval{\boldsymbol\alpha\ \wedgecomma\ \boldsymbol\beta}=\boldsymbol\alpha_I\wedge\boldsymbol\beta_J\expval{T^I,T^J}=\qty(-)^{pq}\boldsymbol\beta_J\wedge\boldsymbol\alpha_I\expval{T^J,T^I}=\qty(-)^{pq}\expval{\boldsymbol\beta\ \wedgecomma\ \boldsymbol\alpha}$, thus,
+For $\boldsymbol\alpha,\boldsymbol\beta$ $p,q$--forms, $\expval{\boldsymbol\alpha\ \wedgecomma\ \boldsymbol\beta}=\boldsymbol\alpha_I\wedge\boldsymbol\beta_J\expval{T^I,T^J}=\qty(-)^{pq}\boldsymbol\beta_J\wedge\boldsymbol\alpha_I\expval{T^J,T^I}=\qty(-)^{pq}\expval{\boldsymbol\beta\ \wedgecomma\ \boldsymbol\alpha}$, thus,
 \begin{align*}
     S_{\textnormal{CS}}\qty[\vb A]&=\frac{k}{4\pi}\int\limits_M\expval{\vb e\ \wedgecomma\ \qty( \vb d{\boldsymbol\omega}+\frac13 \wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})+\boldsymbol\omega\ \wedgecomma\ \vb d{\vb e}+\frac23\boldsymbol\omega\ \wedgecomma\ \wedgecomm{\boldsymbol\omega}{\vb e}}
 \end{align*}
-the Lie Algebra invariance\footnote{Ibid.} of the bilinear can be expressed as $\expval{\comm{T^I}{T^J},{T^K}}=\expval{T^I,\comm{T^J}{T^K}}$, which fortunately implies $\expval{\boldsymbol\omega\ \wedgecomma\ \wedgecomm{\boldsymbol\omega}{\vb e}}=\expval{\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}\ \wedgecomma\ \vb e}=\expval{\vb e\ \wedgecomma\ \wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}}$, 
-hence,
+The Lie Algebra invariance\footnote{Ibid.} of the bilinear can be expressed as $\expval{\comm{T^I}{T^J},{T^K}}=\expval{T^I,\comm{T^J}{T^K}}$, which fortunately implies $\expval{\boldsymbol\omega\ \wedgecomma\ \wedgecomm{\boldsymbol\omega}{\vb e}}=\expval{\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}\ \wedgecomma\ \vb e}=\expval{\vb e\ \wedgecomma\ \wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}}$. 
+Hence,
 \begin{align*}
     S_{\textnormal{CS}}\qty[\vb A]&=\frac{k}{4\pi}\int\limits_M\expval{\vb e\ \wedgecomma\ \qty( \vb d{\boldsymbol\omega}+\frac13 \wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})+\boldsymbol\omega\ \wedgecomma\ \vb d{\vb e}+\frac23\vb e\ \wedgecomma\ \wedgecomm{\boldsymbol\omega}{\boldsymbol\omega}}=\frac{k}{4\pi}\int\limits_M\expval{\vb e\ \wedgecomma\ \qty( \vb d{\boldsymbol\omega}+ \wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})+\boldsymbol\omega\ \wedgecomma\ \vb d{\vb e}}
 \end{align*}
-at last we integrate by parts, $\expval{\boldsymbol\omega\ \wedgecomma\ \vb d\vb e}=-\vb d\expval{\boldsymbol\omega\ \wedgecomma\ \vb e}+\expval{\vb d\boldsymbol\omega\ \wedgecomma\ \vb e}$,
+Now, we integrate by parts, $\expval{\boldsymbol\omega\ \wedgecomma\ \vb d\vb e}=-\vb d\expval{\boldsymbol\omega\ \wedgecomma\ \vb e}+\expval{\vb d\boldsymbol\omega\ \wedgecomma\ \vb e}$,
 \begin{align*}
     S_{\textnormal{CS}}\qty[\vb A]&=\frac{k}{4\pi}\int\limits_M\expval{\vb e\ \wedgecomma\ \qty( \vb d{\boldsymbol\omega}+ \wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})-\vb d\qty(\boldsymbol\omega\ \wedgecomma\ \vb e)+\vb d\boldsymbol\omega\ \wedgecomma\ \vb e}=\frac{k}{2\pi}\int\limits_M\expval{\vb e\ \wedgecomma\ \qty( \vb d{\boldsymbol\omega}+\frac12 \wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})}-\frac{k}{4\pi}\int\limits_{\partial M}\expval{\boldsymbol\omega\ \wedgecomma\ \vb e}\\
     S_{\textnormal{CS}}\qty[\vb A]&=\frac{k\kappa}{2\pi}\frac1\kappa\int\limits_M\expval{\vb e\ \wedgecomma\ \vb R}-\frac{k}{4\pi}\int\limits_{\partial M}\expval{\boldsymbol\omega\ \wedgecomma\ \vb e}=\frac{k\kappa}{2\pi}\qty(S_{\textnormal{EH}}+\frac{1}{2\kappa}\int\limits_{\partial M}\expval{\vb e\ \wedgecomma\ \boldsymbol\omega})\numberthis\label{CSEHEquivalence1}
 \end{align*}
 
 This is one of the main results we wanted to reach! We successfully described $D=2+1$ gravity by means of a \textit{usual sense} gauge theory of the group $ISO\qty(2,1)$! Of course we didn't managed to describe it as an Yang-Mills type, mainly due to it being impossible, as Yang-Mills has 
-non trivial bulk dynamics, $\vb d_\nabla\star\vb F=0$, a property that $D=2+1$ gravity don't possesses as we discussed in the beginning, this is totally compatible with the Chern-Simons dynamics in the bulk, $\vb F=0\Rightarrow\vb A=g^{-1}\vb d g$, trivial. Despite this seeming at least disappointing, 
-as we have switched from a trivial theory to another trivial theory, the beauty of Chern-Simons don't really lies in the bulk dynamics, but do in the boundary of the manifold, as it's used in 
-Condensed Matter theory to describe topological insulators --- in which the non-trivial part of the system lies in the boundary ---, this rises hopes of finding non-trivial dynamics in the boundary for $D=2+1$ gravity, despite of 
+non trivial bulk dynamics, $\vb d_\nabla\star\vb F=0$, a property that $D=2+1$ gravity don't possesses. As we discussed in the beginning, this is totally compatible with the Chern-Simons dynamics in the bulk, $\vb F=0\Rightarrow\vb A=g^{-1}\vb d g$, trivial. Despite this seeming at least disappointing, 
+as we have switched from a trivial theory to another trivial theory, the beauty of Chern-Simons don't really lies in the bulk dynamics, but in the boundary of the manifold, as it's used in 
+Condensed Matter theory to describe topological insulators --- in which the non-trivial part of the system lies in the boundary ---. This rises hopes of finding non-trivial dynamics in the boundary for $D=2+1$ gravity, despite of 
 already being found non trivial solutions to the bulk of $D=2+1$ gravity, the BTZ Black Hole, which is consistent with the Chern-Simons interpretation, as it's bulk dynamics can be made less trivial with the inclusion of more complex topologies 
-of the space-time\footnote{In $D=2+1$ dimensions the existence of a Black Hole makes the first Homotopy Class of the spatial slices non-trivial, what can be understood as a non-trivial topology.}, notwithstanding, the fact that classical $D=2+1$ gravity has trivial bulk dynamics --- with possible non-trivial boundary dynamics --- does not say much about how a possible quantization of it should be done, 
-it's clear that quantization with respect to the metric is highly intricate due to the --- apparent --- non-polinomial character of the EH Action, in contrast with it's cousin, the $D=1+1$ gravity, which despite also being trivial, has an 
-way clearer process of quantization, as the Action is a topological term --- proportional to the genus ---, the quantization procedure is only to sum over all possible topologies taken into account possible moduli spaces. Therefore, the relationship of 
-$D=2+1$ gravity with Chern-Simons open doors to a possible more straightforward way of quantizing it, as the quantization of Chern-Simons Theory is well known, secondly, this toy model derived here shows that the claim 
+of the space-time\footnote{In $D=2+1$ dimensions the existence of a Black Hole makes the first Homotopy Class of the spatial slices non-trivial, what can be understood as a non-trivial topology.}. The fact that classical $D=2+1$ gravity has trivial bulk dynamics --- with possible non-trivial boundary dynamics --- does not say much about how a possible quantization of it should be done. 
+It's clear that quantization with respect to the metric is highly intricate due to the --- apparent --- non-polinomial character of the EH Action, in contrast with it's cousin, the $D=1+1$ gravity, which despite also being trivial, has an 
+way clearer process of quantization. As the Action is a topological term --- proportional to the genus ---, the quantization procedure is only to sum over all possible topologies taken into account possible moduli spaces. Therefore, the relationship of 
+$D=2+1$ gravity with Chern-Simons open doors to a possible more straightforward way of quantizing it. As the quantization of Chern-Simons Theory is well known, this toy model derived here shows that the claim 
 of gravity being non-polinomial might not be the end of the story, at least for $D=2+1$.
 
 As we mentioned before, the whole application of the CS theory is to non-trivial boundaries, or at least, to non-trivial 
-topologies, as otherwise there is no non-trivial solutions, this at least rises an eyebrow when looking at \ref{CSEHEquivalence1}, where we see a 
-contribution of a boundary term, which has a funny looking structure, to see what role is it playing here let's try to obtain the equations of motion 
+topologies, as otherwise there is no non-trivial solutions. At least this rises an eyebrow when looking at \eqref{CSEHEquivalence1}, where we see a 
+contribution of a boundary term, which has a funny looking structure. To see what role is it playing here, let's try to obtain the equations of motion 
 of $\boldsymbol\omega$ of the EH Action,
 \begin{align*}
     0&=S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega+\delta\boldsymbol\omega]-S_{\textnormal{EH}}\qty[\vb e,\boldsymbol\omega]=\frac1\kappa\int\limits_M\expval{\vb e\ \wedgecomma\ \qty(\vb d\delta\boldsymbol\omega+\frac12\wedgecomm{\delta\boldsymbol\omega}{\boldsymbol\omega}+\frac12\wedgecomm{\boldsymbol\omega}{\delta\boldsymbol\omega})}\\
@@ -85,13 +85,13 @@ of $\boldsymbol\omega$ of the EH Action,
 \end{align*}
 
 The boundary equation of motion is $\vb d\vb e+\wedgecomm{\boldsymbol\omega}{\vb e}=0$, which is our familiar torsionless condition! In addition to our nice equation of motion, 
-we must also guarantee with the right boundary conditions that this boundary term in the variation of the Action is zero, of course the condition $\vb e\eval_{\partial M}=0$ is not desirable, and we can't impose 
-$\delta\boldsymbol\omega\eval_{\partial M}=0$ otherwise the system would be overconstrained --- due to the hyperbolic nature of the equations of motion ---, the only acceptable boundary condition is $\delta\vb e\eval_{\partial M}=0$, 
-which forces us to add a boundary term in the EH Action to cancel this variation and to obtain an well defined initial value problem, the form of this term is straightforward to see from the equations of motion we got,
+we must also guarantee with the right boundary conditions that this boundary term in the variation of the Action is zero. Of course the condition $\vb e\eval_{\partial M}=0$ is not desirable, and we can't impose 
+$\delta\boldsymbol\omega\eval_{\partial M}=0$ otherwise the system would be overconstrained --- due to the hyperbolic nature of the equations of motion ---. The only acceptable boundary condition is $\delta\vb e\eval_{\partial M}=0$, 
+which forces us to add a boundary term in the EH Action to cancel this variation and to obtain an well defined initial value problem. The form of this term is straightforward to see. From the equations of motion, we got,
 \begin{align*}
     S_{\textnormal{EH}}=\frac1\kappa\int\limits_M\expval{\vb e\ \wedgecomma\ \vb R}\rightarrow \frac1\kappa\int\limits_M\expval{\vb e\ \wedgecomma\ \vb R}+\frac1\kappa\int\limits_{\partial M}\expval{\vb e\ \wedgecomma\ \boldsymbol\omega}\numberthis\label{GHYTerm}
 \end{align*}
-contribution which is called the Gibbons-Hawking-York term. Notice that our Chern-Simons Action naturally incorporates this term, but, with an additional half in from of it, this 
-undermines the purpose of it --- to make the initial value problem well defined ---, however, this is no surprise, as it's well known that the initial value problem of the Chern-Simons Action 
-for manifolds with boundary is not well defined, it's not even gauge invariant, nevertheless, all of this is fixable by the introduction of Wess-Zumino-Witen model in the boundary, we'll not discuss this, and 
-as long as we're in a boundaryless manifold everything holds tightly.
+contribution which is called the Gibbons-Hawking-York term. Notice that our Chern-Simons Action naturally incorporates this term, but, with an additional half in from of it. This 
+undermines the purpose of it: to make the initial value problem well defined. However, this is no surprise, as it's well known that the initial value problem of the Chern-Simons Action 
+for manifolds with boundary is not well defined; it's not even gauge invariant. Nevertheless, all of this is resolved by the introduction of Wess-Zumino-Witen model in the boundary. We'll not discuss this, and 
+as long as we're in a boundaryless manifold, everything holds tight.

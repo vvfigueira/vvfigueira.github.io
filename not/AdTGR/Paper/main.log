@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.15)  22 JUN 2025 11:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.15)  22 JUN 2025 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -863,11 +863,11 @@ LaTeX Font Info:    Trying to load font information for U+euf on input line 12.
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ))
 (./sections/forms.tex
+Overfull \vbox (2.20433pt too high) has occurred while \output is active []
+
+
 
 [1{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \vbox (1.00662pt too high) has occurred while \output is active []
-
-
 
 [2]
 
@@ -876,8 +876,8 @@ Overfull \vbox (1.00662pt too high) has occurred while \output is active []
 [4]) (./sections/gauge2.tex
 
 [5]
-Overfull \hbox (12.88196pt too wide) in paragraph at lines 54--57
-\OT1/cmr/m/n/10 the Lie Al-ge-bra in-vari-ance[][][] of the bi-lin-ear can be e
+Overfull \hbox (16.21529pt too wide) in paragraph at lines 54--57
+\OT1/cmr/m/n/10 The Lie Al-ge-bra in-vari-ance[][][] of the bi-lin-ear can be e
 x-pressed as $[] = []$, which for-tu-nately im-plies $[] =
  []
 
@@ -892,7 +892,7 @@ x-pressed as $[] = []$, which for-tu-nately im-plies $[] =
 [9]
 
 [10] (./main.aux
-Package cleveref Info: loaded `english' language definitions on input line 13.
+Package cleveref Info: loaded `english' language definitions on input line 25.
 )
  ***********
 LaTeX2e <2025-06-01> patch level 1
@@ -905,10 +905,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23574 strings out of 467886
- 410821 string characters out of 5438218
- 1110287 words of memory out of 5000000
- 51625 multiletter control sequences out of 15000+600000
+ 23575 strings out of 467886
+ 410783 string characters out of 5438218
+ 1110490 words of memory out of 5000000
+ 51626 multiletter control sequences out of 15000+600000
  638577 words of font info for 84 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  71i,21n,79p,1866b,2069s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -937,10 +937,10 @@ mti10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texli
 ve/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/202
 5/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (10 pages, 374781 bytes).
+Output written on main.pdf (10 pages, 376043 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 260 compressed objects within 3 object streams
+ 337 PDF objects out of 1000 (max. 8388607)
+ 266 compressed objects within 3 object streams
  63 named destinations out of 1000 (max. 500000)
  65 words of extra memory for PDF output out of 10000 (max. 10000000)
 

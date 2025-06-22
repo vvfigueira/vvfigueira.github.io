@@ -1,10 +1,10 @@
 \section{The Einstein-Hilbert Action in the Form Language}
 
-We'll begin with a quick recap of the vielbein/spin connection formalism, for now we'll keep the discussion general in $D$ dimensions, and 
-only later on we'll go to the special case of $D=2+1$. The vielbein\footnote{We'll denote the \textit{vector} --- (1,0) tensor --- vielbein with a tilde, only to be distinguishable from the 
-associated \textit{covetor} --- (0,1) tensor --- vielbein, which we'll denote without the tilde due to being way more important to us.} $\tilde{\vb e}_\mu$ are a basis of the vector field space $\mathfrak X\qty(M)$, notice, 
-the index $\mu$ is only indexing which vector from the $D$ present in the basis are we talking about, it isn't a coordinate index --- one that is 
-related to a specific component decomposition in a specific chart ---, as this is not a coordinate basis --- i.e. $\boldsymbol\partial_a$ ---, we can 
+We'll begin with a quick recap of the vielbein/spin connection formalism \cite{wald,carlip,gravitation,donnay}. For now we'll keep the discussion general in $D$ dimensions, and, 
+only later on, we'll go to the special case of $D=2+1$. The vielbein\footnote{We'll denote the \textit{vector} --- (1,0) tensor --- vielbein with a tilde, only to be distinguishable from the 
+associated \textit{covetor} --- (0,1) tensor --- vielbein, which we'll denote without the tilde due to being way more important to us.}, $\tilde{\vb e}_\mu$, are a basis of the vector field space $\mathfrak X\qty(M)$. Notice, 
+the index $\mu$ is only indexing which vector from the ones present in the basis we are talking about. It isn't a coordinate index --- one that is 
+related to a specific component decomposition in a specific chart ---, as this is not a coordinate basis --- i.e. $\boldsymbol\partial_a$ ---. We can 
 in fact do miracles with it, as diagonalize the metric,
 \begin{align*}
     \textnormal{diag}\mqty(-1& 1&\cdots&1)=\eta_{\mu\nu}&=\vb g\qty(\tilde{\vb e}_\mu,\tilde{\vb e}_\nu)=g_{ab}\vb d{x^a}\qty(\tilde{\vb e}_\mu)\otimes\vb d{x^b}\qty(\tilde{\vb e}_\nu)\\
@@ -14,52 +14,43 @@ in fact do miracles with it, as diagonalize the metric,
 
 The whole point of introducing the vielbein is switch the degrees of freedom from the 
 metric to the inertial frame basis, which can be seen as a downgrade, due to this process enlarging the number of degrees of freedom from $\frac12D\qty(D+1)$ 
-to $D^2$, but, of course, this is only the naive counting, without considering the redundancies, as the number of physical degrees of freedom must be the same. 
-For this to be true, is only possible if we enlarge also the redundancies, to kill the extra degrees of freedom we introduced, as mentioned, this could be seen as 
-not desirable, but, for us this turn out to be essencial. What are these new redundancies? They're the choice of labeling $\mu$ in $\tilde{\vb e}_\mu$, as long as the 
-new relabel also respect the defining property of the vielbein it's a redundant transformation, notice that these transformations are exactly local Lorentz ones, that is, 
+to $D^2$. This is only the naive counting, without considering the redundancies, as the number of physical degrees of freedom must be the same. 
+For this to be true, is only possible if we enlarge also the redundancies, to kill the extra degrees of freedom we introduced. As mentioned, this could be seen as 
+not desirable, but, for us this turn out to be essencial. What are these new redundancies? They're the choice of labeling $\mu$ in $\tilde{\vb e}_\mu$. As long as the 
+new relabel also respect the defining property of the vielbein, it's a redundant transformation. Notice that these transformations are exactly local Lorentz ones, that is, 
 given a set of functions $\tensor{\Lambda}{^\mu_\nu}:M\rightarrow\mathbb R$, a new set of vector fields $\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu$ is a vielbein iff, 
 \begin{align*}
     \vb g\qty(\tensor{\Lambda}{^\alpha_\mu}\tilde{\vb e}_\alpha,\tensor{\Lambda}{^\beta_\nu}\tilde{\vb e}_\beta)&=\tensor{\Lambda}{^\alpha_\mu}\tensor{\Lambda}{^\beta_\nu}\vb g\qty(\tilde{\vb e}_\alpha,\tilde{\vb e}_\beta)\\
     \eta_{\mu\nu}&=\tensor{\Lambda}{^\alpha_\mu}\tensor{\Lambda}{^\beta_\nu}\eta_{\alpha\beta}
 \end{align*}
-in other words, $\tensor{\Lambda}{^\mu_\nu}$ must be a local $SO\qty(D-1,1)$ element\footnote{Actually the group is $O\qty(D-1,1)$, but, we'll only be interested in the orientation preserving transformations.}, with this new redundancy taken in account the degrees of freedom match, $D^2$ 
-from the vielbein, minus $D$ diffeomorphisms $\phi^\ast\tilde{\vb e}_\mu\sim\tilde{\vb e}_\mu$, $D$ Bianchi identities and $\frac12D\qty(D-1)$ local $SO\qty(D-1,1)$ transformations, giving $D^2-2D-\frac12D\qty(D-1)=\frac12D\qty(D-3)$ exactly 
-the same counting using only the metric! Notice that now the redundancies are diffeomorphisms and local $SO\qty(D-1,1)$ transformations, this already seems like we're gauging the whole Poincaré group, which will come up later.
+In other words, $\tensor{\Lambda}{^\mu_\nu}$ must be a local $SO\qty(D-1,1)$ element\footnote{Actually, the group is $O\qty(D-1,1)$, but, we'll only be interested in the orientation preserving transformations.}. With this new redundancy taken into account, the degrees of freedom match, $D^2$ 
+from the vielbein, minus $D$ diffeomorphisms $\phi^\ast\tilde{\vb e}_\mu\sim\tilde{\vb e}_\mu$, $D$ Bianchi identities and $\frac12D\qty(D-1)$ local $SO\qty(D-1,1)$ transformations, giving $D^2-2D-\frac12D\qty(D-1)=\frac12D\qty(D-3)$, exactly 
+the same counting using only the metric! Notice that now the redundancies are diffeomorphisms and local $SO\qty(D-1,1)$ transformations. This already seems like we're gauging the whole Poincaré group, which will come up later.
 
-From the condition that $\vb g$ must be non-degenerate we get that the matrix of components $\tensor{e}{_\mu^a}$ must be invertible, this ensures 
-the existence of $\tensor{e}{^\mu_a}$ ,from which we can construct the dual vector field $\vb e^\mu=\tensor{e}{^\mu_a}\vb d{x^a}$ this ensures 
+From the condition that $\vb g$ must be non-degenerate, we get that the matrix of components $\tensor{e}{_\mu^a}$ must be invertible. This ensures 
+the existence of $\tensor{e}{^\mu_a}$ ,from which we can construct the dual vector field $\vb e^\mu=\tensor{e}{^\mu_a}\vb d{x^a}$. This certify that 
 we have a basis of the whole tensor space, so it's possible to decompose any tensor in it,
 \begin{align*}
     \eta_{\mu\nu}\vb e^\mu\otimes\vb e^\nu&=\vb g\qty(\tilde{\vb e}_\mu,\tilde{\vb e}_\nu)\vb e^\mu\otimes\vb e^\nu=\vb g
 \end{align*}
 
-Up to now we have been considering a metric compatible torsionless affine connection, but, this turn out to not be the optimal choice, as for this kind of connection 
-there is an differential/algebraical restraint between the connection and the metric, at least that what we should expect in a coordinate basis. What we would like is 
+Up to now we have been considering a metric compatible torsionless affine connection, but, this turns out to not be the optimal choice, as for this kind of connection 
+there is an differential/algebraical restraint between the connection and the metric. At least that's what we should expect in a coordinate basis. What we would like is 
 to have a connection linearly independent of the metric/vielbein, but without sacrificing the metricity condition, this is completely hopeless in a 
-coordinate basis, but, in a non-coordinate basis this is achievable! We just have to remind that an affine connection can be defined in any basis of $\mathfrak X\qty(M)$, what 
-is usually done is, $\nabla_{\vb X}\boldsymbol\partial_b=X^a\tensor{\Gamma}{_a^c_b}\boldsymbol\partial_c$, but it's much more interesting to define it with respect to the vielbein 
+coordinate basis. In a non-coordinate basis this is achievable! We just have to remind that, an affine connection can be defined in any basis of $\mathfrak X\qty(M)$. What 
+is usually done is $\nabla_{\vb X}\boldsymbol\partial_b=X^a\tensor{\Gamma}{_a^c_b}\boldsymbol\partial_c$, but it's much more interesting to define it with respect to the vielbein 
 basis,
-% Only having a metric, or in this case, only having a vielbein, isn't sufficient to construct a theory, we also need a affine connection/covariant 
-% derivative. A useful way to define it is to define in a vector field basis, as we already have the vielbein as a vector field basis it's more 
-% convenient to define in respect to it,
 \begin{align*}
     \nabla_{\vb X}\qty(\tilde{\vb e}_\nu)&=\tensor{{\boldsymbol\omega(\vb X)}}{^\mu_\nu}\tilde{\vb e}_\mu=X^a\tensor{\omega}{_a^\mu_\nu}\tilde{\vb e}_\mu
 \end{align*}
-
-Where $\tensor{{\boldsymbol\omega}}{^\mu_\nu}=\tensor{\omega}{_a^\mu_\nu}\vb dx^a$ is named the spin connection, it can be seen as a $\mathfrak{gl}\qty(D-1,1)$--valued $(0,1)$ tensor, 
+Here $\tensor{{\boldsymbol\omega}}{^\mu_\nu}=\tensor{\omega}{_a^\mu_\nu}\vb dx^a$ is named the spin connection. It can be seen as a $\mathfrak{gl}\qty(D-1,1)$--valued $(0,1)$ tensor, 
 or, as we'll adopt here, a $\mathfrak{gl}\qty(D-1,1)$--valued $1$--form.
-The ease of working with the vielbein is that the Lorentz index $\mu$ 
-does not change upon coordinate/chart/diffeomorphism transformations, it acts as if was an internal symmetry, thus, 
-$\tensor{{\boldsymbol\omega}}{^\mu_\nu}$ do transform exactly as a tensor should, this is already a enormous dichotomy 
-with the standard formulation where the Christoffel connection doesn't transform in a good manner.
-% notice that we have a 
-% redundancy of how to choose the vielbein basis, due to $\tensor{\Lambda}{^\mu_\nu}\vb e_\mu$, $\tensor{\Lambda}{^\mu_\nu}:M\rightarrow\mathbb R$, being an equally good basis,
-% as long as $\tensor{\Lambda}{^\alpha_\mu}\tensor{\Lambda}{^\beta_\nu}\eta_{\alpha\beta}=\eta_{\mu\nu}$, that is, as we enlarge the number of components going from the metric to 
-% the vielbein, we also enlarge the redundancies, now, additionally to Diff$\qty(M)$ we have local $SO\qty(D-1,1)$ transformations as redundancies, this is as 
-% we was gauging the whole Poincaré group, with Diff$\qty(M)$ being the gauging of the translations.
-Now we'll impose the metric compatibility of the connection, 
-this is another scenario where the vielbein formalism como to hand, as this condition imposes no additional differential/algebraical constrains among the vielbein and spin connection.
+The advantage of working with the vielbein is that the Lorentz index $\mu$ 
+does not change upon coordinate/chart/diffeomorphism transformations, it acts as if was an internal symmetry. Thus, 
+$\tensor{{\boldsymbol\omega}}{^\mu_\nu}$ do transform exactly as a tensor should. This is already a enormous dichotomy 
+with the standard formulation, where the Christoffel connection doesn't transform in a good manner. 
+Now we'll impose the metric compatibility of the connection. 
+This is another scenario where the vielbein formalism come to hand, as this condition imposes no additional differential/algebraical constrains among the vielbein and spin connection.
 \begin{align*}
     \vb g\qty(\tilde{\vb e}_\alpha,\nabla_{\vb X}\qty(\tilde{\vb e}_\nu))&=X^a\tensor{\omega}{_a^\mu_\nu}\vb g\qty(\tilde{\vb e}_\alpha,\tilde{\vb e}_\mu),\ \ \ \textnormal{symmetrize }\alpha\leftrightarrow\nu\\
     \vb g\qty(\tilde{\vb e}_\alpha,\nabla_{\vb X}\qty(\tilde{\vb e}_\nu))+\vb g\qty(\tilde{\vb e}_\nu,\nabla_{\vb X}\qty(\tilde{\vb e}_\alpha))&=X^a\tensor{\omega}{_a^\mu_\nu}\vb g\qty(\tilde{\vb e}_\alpha,\tilde{\vb e}_\mu)+X^a\tensor{\omega}{_a^\mu_\alpha}\vb g\qty(\tilde{\vb e}_\nu,\tilde{\vb e}_\mu),\ \ \ \textnormal{metric symmetry}\\
@@ -70,9 +61,9 @@ this is another scenario where the vielbein formalism como to hand, as this cond
 \end{align*}
 
 That is, the metric compatible spin connection is anti-symmetric in the non-coordinate indices, exactly the property 
-satisfied by the generators of the $SO\qty(D-1,1)$ group, thus, the spin connection can be seen as a $\mathfrak{so}\qty(D-1,1)$-valued 1-form, it has 
-everything in it's favor to be interpreted as a gauge field of the $SO\qty(D-1,1)$ group, to confirm this notice how it changes under a gauge transformation 
-of the vielbein basis $\tilde{\vb e}_\nu\rightarrow\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu$,
+satisfied by the generators of the $SO\qty(D-1,1)$ group. Thus, the spin connection can be seen as a $\mathfrak{so}\qty(D-1,1)$-valued 1-form. It has 
+everything in its favor to be interpreted as a gauge field of the $SO\qty(D-1,1)$ group. To confirm this, notice how it changes under a gauge transformation 
+of the vielbein basis $\tilde{\vb e}_\nu\rightarrow\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu$:
 \begin{align*}
     \nabla_{\vb X}\qty(\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu)&=\nabla_{\vb X }\qty(\tensor{\Lambda}{^\mu_\nu})\tilde{\vb e}_\mu+\tensor{\Lambda}{^\mu_\nu}\nabla_{\vb X}\qty(\tilde{\vb e}_\mu),\ \ \ \textnormal{connection definition}\\
     \nabla_{\vb X}\qty(\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu)&=\vb X\qty(\tensor{\Lambda}{^\mu_\nu})\tilde{\vb e}_\mu+\tensor{\Lambda}{^\mu_\nu}\tensor{{\boldsymbol\omega\qty(\vb X)}}{^\alpha_\mu}\tilde{\vb e}_\alpha,\ \ \ \tensor{{\Lambda^{-1}}}{^\beta_\alpha}\tensor{\Lambda}{^\sigma_\beta}=\tensor{\delta}{^\sigma_\alpha}\\
@@ -80,12 +71,12 @@ of the vielbein basis $\tilde{\vb e}_\nu\rightarrow\tensor{\Lambda}{^\mu_\nu}\ti
     \nabla_{\vb X}\qty(\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu)&=\qty(\tensor{{\Lambda^{-1}}}{^\beta_\mu}\vb d{\tensor{\Lambda}{^\mu_\nu}}+\tensor{{\Lambda^{-1}}}{^\beta_\alpha}\tensor{{\boldsymbol\omega}}{^\alpha_\mu}\tensor{\Lambda}{^\mu_\nu})\qty(\vb X)\tensor{\Lambda}{^\sigma_\beta}\tilde{\vb e}_\sigma
 \end{align*}
 
-That is, under a gauge transformation of $\tilde{\vb e}_\nu\rightarrow\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu$, the spin connection transforms exactly as a connection of the gague group $SO\qty(D-1,1)$, that is, 
-$\boldsymbol \omega\rightarrow \Lambda^{-1}\boldsymbol\omega\Lambda+\Lambda^{-1}\vb d{\Lambda}$, which is what we're searching. Before pursuing further the gauged translations, we're going to obtain a new interpretation 
-for the Riemann tensor, using what we just learned from the spin connection, notice, the usual interpretation of the Riemann tensor is of it being a $(1,3)$ tensor, but, as naturally --- without the need for a metric compatible 
+Hence, under a gauge transformation of $\tilde{\vb e}_\nu\rightarrow\tensor{\Lambda}{^\mu_\nu}\tilde{\vb e}_\mu$, the spin connection transforms exactly as a connection of the gauge group $SO\qty(D-1,1)$, 
+$\boldsymbol \omega\rightarrow \Lambda^{-1}\boldsymbol\omega\Lambda+\Lambda^{-1}\vb d{\Lambda}$, which is what we're looking for. Before pursuing further the gauged translations, we're going to obtain a new interpretation 
+for the Riemann tensor, using what we just learned from the spin connection. Notice, the usual interpretation of the Riemann tensor, is of it being a $(1,3)$ tensor, but, as naturally --- without the need for a metric compatible 
 torsionless connection --- it's anti-symmetric in the first two entries, we can switch the point of view from a $(1,3)$ tensor to a $(1,1)$ tensor valued 2--form, or, in an even better way, an End$\qty(\mathfrak X\qty(M))$--valued 2--form, 
-which, when decomposed in the non-coordinate basis, will turn out to be a $\mathfrak{so}\qty(D-1,1)$--valued 2--form, as we'll shown now. Starting from the definition\footnote{Here, care must be taken, in our conventions, the covariant derivative acts non-trivially only 
-in vectors, and acts as a normal derivative in functions, that is, for $X^a$ being \textit{components} of a vector, $\nabla_{\vb Y}X^a=\vb Y\qty(X^a)=Y^b\partial_b X^a$, in contrast to $\nabla_{\vb Y}\boldsymbol\partial_a=Y^b\tensor{\Gamma}{_b^c_a}\boldsymbol\partial_c$.},
+which, when decomposed in the non-coordinate basis, will turn out to be a $\mathfrak{so}\qty(D-1,1)$--valued 2--form, as we'll shown now. Starting from the definition\footnote{Here, care must be taken. In our conventions, the covariant derivative acts non-trivially only 
+in vectors, and acts as a normal derivative in functions. That is, for $X^a$ being \textit{components} of a vector, $\nabla_{\vb Y}X^a=\vb Y\qty(X^a)=Y^b\partial_b X^a$, in contrast to $\nabla_{\vb Y}\boldsymbol\partial_a=Y^b\tensor{\Gamma}{_b^c_a}\boldsymbol\partial_c$.},
 \begin{align*}
     \textbf{Riem}\qty(\vb X,\vb Y)\tilde{\vb e}_\mu&=\qty(\nabla_{\vb X}\nabla_{\vb Y}-\nabla_{\vb Y}\nabla_{\vb X}-\nabla_{\comm{\vb X}{\vb Y}})\tilde{\vb e}_\mu\\
     \textbf{Riem}\qty(\vb X,\vb Y)\tilde{\vb e}_\mu&=\nabla_{\vb X}\qty(Y^b\tensor{\omega}{_b^\nu_\mu}\tilde{\vb e}_\nu)-\nabla_{\vb Y}\qty(X^a\tensor{\omega}{_a^\nu_\mu}\tilde{\vb e}_\nu)-\comm{\vb X}{\vb Y}^b\tensor{\omega}{_b^\nu_\mu}\tilde{\vb e}_\nu\\
@@ -98,8 +89,8 @@ in vectors, and acts as a normal derivative in functions, that is, for $X^a$ bei
     X^aY^b\tensor{R}{_a_b^\nu_\mu}\tilde{\vb e}_\nu&=X^aY^b\tensor{\left(\vb d{\boldsymbol\omega}+\boldsymbol\omega\wedge\boldsymbol\omega\right)}{_a_b^\nu_\mu}\tilde{\vb e}_\nu
 \end{align*}
 
-What settle down the interpretation of the Riemann tensor being a $\mathfrak{so}\qty(D-1,1)$--valued 2--form, and also provides a striking resemblance to the usual gauge force field in non-abelian 
-theories, $\vb F=\vb d\vb A+\vb A\wedge \vb A$, it's also is easily related to the usual coordinate Riemann tensor,
+This settles down the interpretation of the Riemann tensor being a $\mathfrak{so}\qty(D-1,1)$--valued 2--form, and also provides a striking resemblance to the usual gauge force field in non-abelian 
+theories, $\vb F=\vb d\vb A+\vb A\wedge \vb A$. It's also easily related to the usual coordinate Riemann tensor,
 \begin{align*}
     \textbf{Riem}\qty(\vb X,\vb Y)\tilde{\vb e}_\mu&=X^aY^b\tensor{R}{_a_b^\nu_\mu}\tilde{\vb e}_\nu\\
     \textbf{Riem}\qty(\vb X,\vb Y)\qty(\tensor{e}{_\mu^e}\boldsymbol\partial_e)&=X^aY^b\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\nu^c}\boldsymbol\partial_c\\
@@ -108,16 +99,16 @@ theories, $\vb F=\vb d\vb A+\vb A\wedge \vb A$, it's also is easily related to t
     \tensor{e}{^\mu_d}\tensor{e}{_\mu^e}\tensor{R}{_a_b^c_e}&=\tensor{e}{^\mu_d}\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\nu^c}\\
     \tensor{R}{_a_b^c_d}&=\tensor{e}{^\mu_d}\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\nu^c}
 \end{align*}
-which we'll use when rewriting the Einstein-Hilbert Action, it's of no hurt to stress that we are only assuming metricity, and not torsionless --- which will come about naturally later ---, 
-lastly, we define our Riemann Curvature 2-form,
+which we'll use when rewriting the Einstein-Hilbert Action. It doesn't hurt to stress that we are only assuming metricity, and not torsionless --- which will come about naturally later ---. 
+Lastly, we define our Riemann Curvature 2-form,
 \begin{align*}
     \tensor{{\vb R}}{^\nu_\mu}&=\frac12\tensor{R}{_a_b^\nu_\mu}\vb d{x^a}\wedge\vb d{x^b}=\tensor{\vb d{\boldsymbol\omega}}{^\nu_\mu}+\tensor{{\boldsymbol\omega}}{^\nu_\alpha}\wedge\tensor{{\boldsymbol\omega}}{^\alpha_\mu}%\tensor{{\vb R}}{^\nu_\mu}&=\frac12\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\alpha^a}\tensor{e}{^\alpha_c}\tensor{e}{_\beta^b}\tensor{e}{^\beta_d}\dd{x^c}\wedge\dd{x^d}\\%\tensor{{\vb R}}{^\nu_\mu}&=\frac12\tensor{R}{_a_b^\nu_\mu}\tensor{e}{_\alpha^a}\tensor{e}{_\beta^b}{\tilde{\vb e}^\alpha}\wedge{\tilde{\vb e}^\beta}
 \end{align*}
-we'll talk more about the absence of $\vb e^\mu$ later --- which signifies this is the gauge force field of only the inhomogeneous part of the Poincaré group ---.
+We'll talk more about the absence of $\vb e^\mu$ later --- which signifies this is the gauge force field of only the inhomogeneous part of the Poincaré group ---.
 
 Now we start the real deal of rewriting the 
-Einstein-Hilbert Action in terms of the curvature 2--form, and the vielbein 1--form, starting with the volume form\footnote{While it's widely known the Levi-Civita symbol, $\epsilon_{a_1\cdots a_D}$, in a coordinate basis isn't a tensor, 
-for a non-coordinate basis, $\epsilon_{\mu_1\cdots\mu_D}$, it does not need additional factors of the metric determinant, one more usefulness of the vielbein basis.},
+Einstein-Hilbert Action in terms of the curvature 2--form, and the vielbein 1--form. Starting with the volume form\footnote{While it's widely known, the Levi-Civita symbol, $\epsilon_{a_1\cdots a_D}$, in a coordinate basis isn't a tensor. 
+For a non-coordinate basis, $\epsilon_{\mu_1\cdots\mu_D}$, it does not need additional factors of the metric determinant, one more usefulness of the vielbein basis.},
 \begin{align*}
     \dd[D]{x}\sqrt{\abs{g}}&=\sqrt{\abs{\Det\qty[g_{ab}]}}\dd{x^0}\wedge\cdots\wedge\dd{x^{D-1}}\\
     \dd[D]{x}\sqrt{\abs{g}}&=\sqrt{\abs{\Det\qty[\tensor{e}{^\mu_a}\eta_{\mu\nu}\tensor{e}{^\nu_b}]}}\dd{x^0}\wedge\cdots\wedge\dd{x^{D-1}}\\
@@ -130,7 +121,7 @@ for a non-coordinate basis, $\epsilon_{\mu_1\cdots\mu_D}$, it does not need addi
     \dd[D]{x}\sqrt{\abs{g}}&=\frac{1}{D!}\epsilon_{\mu_1\cdots\mu_{D}}\vb e^{\mu_1}\wedge\cdots\wedge\vb e^{\mu_{D}}\numberthis\label{VolumeForm}
 \end{align*}
 
-The other ingredient we need is the Ricci scalar,
+The other ingredient we need, is the Ricci scalar,
 \begin{align*}
     R&=g^{ab}\tensor{R}{_c_b^c_a}\\
     R&=\tensor{e}{_\rho^a}\tensor{e}{^\rho^b}\tensor{R}{_c_b_d_a}\tensor{e}{_\alpha^c}\tensor{e}{^\alpha^d},\ \ \ \textnormal{vielbein definition}\\
@@ -140,7 +131,7 @@ The other ingredient we need is the Ricci scalar,
     R&=\frac{-1}{2\qty(D-2)!}\tensor{\epsilon}{^{\nu_1}^\cdots^{\nu_{D-2}}^\beta^\rho}\tensor{\epsilon}{_{\nu_1}_\cdots_{\nu_{D-2}}^\alpha^\sigma}\tensor{R}{_c_b_\beta_\rho}\tensor{e}{_\alpha^c}\tensor{e}{_\sigma^b}\numberthis\label{RicciScalar}
 \end{align*}
 
-Combining these two results, \ref{VolumeForm}, \ref{RicciScalar}, we can rewrite the EH Action in the forms language, that is, the expression we're expecting to obtain is an integral over a $D$--form, in the middle of the computation 
+Combining these two results, \eqref{VolumeForm}, \eqref{RicciScalar}, we can rewrite the EH Action in the forms language. That is, the expression we're expecting to obtain is an integral over a $D$--form. In the middle of the computation, 
 we'll need to introduce also the Hodge star operator,
 \begin{align*}
     S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\dd[D]{x}\sqrt{\abs{g}}R\\
@@ -154,5 +145,5 @@ we'll need to introduce also the Hodge star operator,
     S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\star\vb R_{\beta\rho}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\numberthis\label{EHAction2}
 \end{align*}
 
-This is our final result for the EH Action, to see that it's a consistent expression we can do the counting of the form degree, $\vb R$ is a 2--form, which makes $\star\vb R$ a $\qty(D-2)$--form, as $\vb e$ is a 
-1--form, the final expression is a $D-2+2=D$--form. To check the redundancies and equations of motion of the Action is the matter of the next sections.
+This is our final result for the EH Action. To see that it's a consistent expression, we can do the counting of the form degree. $\vb R$ is a 2--form, which makes $\star\vb R$ a $\qty(D-2)$--form. As $\vb e$ is a 
+1--form, the final expression is a $D-2+2=D$--form. The next sections are dedicated to check the redundancies and equations of motion of the Action.
