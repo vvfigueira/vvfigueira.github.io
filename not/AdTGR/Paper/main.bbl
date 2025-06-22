@@ -44,6 +44,92 @@
     \field{year}{1995}
   \endentry
 
+  \entry{deser1984}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=DS}{%
+         family={Deser},
+         familyi={D\bibinitperiod},
+         given={S},
+         giveni={S},
+      }}%
+      {{hash=JR}{%
+         family={Jackiw},
+         familyi={J\bibinitperiod},
+         given={R},
+         giveni={R},
+      }}%
+    }
+    \strng{namehash}{DSJR1}
+    \strng{fullhash}{DSJR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    In three space-time dimensions, Einstein's equations with cosmological
+  constant Λ imply that the curvature is constant outside sources. When
+  particles are present, they alter the global properties of the exterior
+  geometry. In the De Sitter case, space is a two-sphere and static many-body
+  solutions are quite different from their Λ = 0 counterparts; in particular
+  particles lie at antipodal points, with the great-circle wedge between them
+  excised. These configurations are analyzed in terms of the general static
+  solution to the exterior field equations.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/0003-4916(84)90025-3
+    \endverb
+    \field{issn}{0003-4916}
+    \field{number}{2}
+    \field{pages}{405\bibrangedash 416}
+    \field{title}{Three-dimensional cosmological gravity: Dynamics of constant
+  curvature}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/0003491684900253
+    \endverb
+    \field{volume}{153}
+    \field{journaltitle}{Annals of Physics}
+    \field{year}{1984}
+  \endentry
+
+  \entry{deser1983}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=DS}{%
+         family={Deser},
+         familyi={D\bibinitperiod},
+         given={Stanley},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=JR}{%
+         family={Jackiw},
+         familyi={J\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=tHG}{%
+         prefix={'t},
+         prefixi={t\bibinitperiod},
+         family={Hooft},
+         familyi={H\bibinitperiod},
+         given={Gerard},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DSJRHGt1}
+    \strng{fullhash}{DSJRHGt1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.1016/0003-4916(84)90085-X
+    \endverb
+    \field{pages}{220}
+    \field{title}{{Three-Dimensional Einstein Gravity: Dynamics of Flat Space}}
+    \field{volume}{152}
+    \field{journaltitle}{Annals Phys.}
+    \field{year}{1984}
+  \endentry
+
   \entry{donnay}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=DL}{%
@@ -69,6 +155,39 @@
     \field{eprinttype}{arXiv}
     \field{eprintclass}{hep-th}
     \field{year}{2016}
+  \endentry
+
+  \entry{PhysRevD.30.1198}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=ME}{%
+         family={Martinec},
+         familyi={M\bibinitperiod},
+         given={Emil},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{ME1}
+    \strng{fullhash}{ME1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{doi}
+    \verb 10.1103/PhysRevD.30.1198
+    \endverb
+    \field{issue}{6}
+    \field{pages}{1198\bibrangedash 1204}
+    \field{title}{Soluble systems in quantum gravity}
+    \verb{url}
+    \verb https://link.aps.org/doi/10.1103/PhysRevD.30.1198
+    \endverb
+    \field{volume}{30}
+    \field{journaltitle}{Phys. Rev. D}
+    \field{month}{09}
+    \field{year}{1984}
   \endentry
 
   \entry{gravitation}{book}{}{}
