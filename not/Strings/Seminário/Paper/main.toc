@@ -1,0 +1,5 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction/Motivation}{1}{section.1}%
+\contentsline {section}{\numberline {2}Formulation of SRS}{1}{section.2}%
+\contentsline {section}{\numberline {3}Punctures in SRS}{1}{section.3}%
+\contentsline {section}{\numberline {A}Mathematical Toolkit}{1}{appendix.A}%
