@@ -1,0 +1,238 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global/global}
+  \entry{witten:vol1}{book}{}{}
+    \name{author}{3}{}{%
+      {{hash=GMB}{%
+         family={Green},
+         familyi={G\bibinitperiod},
+         given={Michael\bibnamedelima B.},
+         giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=SJH}{%
+         family={Schwarz},
+         familyi={S\bibinitperiod},
+         given={John\bibnamedelima H.},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=WE}{%
+         family={Witten},
+         familyi={W\bibinitperiod},
+         given={Edward},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{GMBSJHWE1}
+    \strng{fullhash}{GMBSJHWE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \verb{doi}
+    \verb 10.1017/CBO9781139248563
+    \endverb
+    \field{isbn}{978-1-139-53477-2, 978-1-107-02911-8}
+    \field{series}{Cambridge Monographs on Mathematical Physics}
+    \field{title}{{Superstring Theory Vol. 1}: {25th Anniversary Edition}}
+    \field{month}{11}
+    \field{year}{2012}
+  \endentry
+
+  \entry{witten:vol2}{book}{}{}
+    \name{author}{3}{}{%
+      {{hash=GMB}{%
+         family={Green},
+         familyi={G\bibinitperiod},
+         given={Michael\bibnamedelima B.},
+         giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=SJH}{%
+         family={Schwarz},
+         familyi={S\bibinitperiod},
+         given={John\bibnamedelima H.},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=WE}{%
+         family={Witten},
+         familyi={W\bibinitperiod},
+         given={Edward},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{GMBSJHWE1}
+    \strng{fullhash}{GMBSJHWE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \verb{doi}
+    \verb 10.1017/CBO9781139248570
+    \endverb
+    \field{isbn}{978-1-139-53478-9, 978-1-107-02913-2}
+    \field{series}{Cambridge Monographs on Mathematical Physics}
+    \field{title}{{Superstring Theory Vol. 2}: {25th Anniversary Edition}}
+    \field{month}{11}
+    \field{year}{2012}
+  \endentry
+
+  \entry{polchinski:vol1}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=PJ}{%
+         family={Polchinski},
+         familyi={P\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{PJ1}
+    \strng{fullhash}{PJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \verb{doi}
+    \verb 10.1017/CBO9780511816079
+    \endverb
+    \field{isbn}{978-0-511-25227-3, 978-0-521-67227-6, 978-0-521-63303-1}
+    \field{series}{Cambridge Monographs on Mathematical Physics}
+    \field{title}{{String theory. Vol. 1: An introduction to the bosonic
+  string}}
+    \field{month}{12}
+    \field{year}{2007}
+  \endentry
+
+  \entry{polchinski:vol2}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=PJ}{%
+         family={Polchinski},
+         familyi={P\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{PJ1}
+    \strng{fullhash}{PJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \verb{doi}
+    \verb 10.1017/CBO9780511618123
+    \endverb
+    \field{isbn}{978-0-511-25228-0, 978-0-521-63304-8, 978-0-521-67228-3}
+    \field{series}{Cambridge Monographs on Mathematical Physics}
+    \field{title}{{String theory. Vol. 2: Superstring theory and beyond}}
+    \field{month}{12}
+    \field{year}{2007}
+  \endentry
+
+  \entry{witten:moduli}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=WE}{%
+         family={Witten},
+         familyi={W\bibinitperiod},
+         given={Edward},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WE1}
+    \strng{fullhash}{WE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{eprint}
+    \verb 1209.2459
+    \endverb
+    \field{title}{Notes On Super Riemann Surfaces And Their Moduli}
+    \verb{url}
+    \verb https://arxiv.org/abs/1209.2459
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{year}{2017}
+  \endentry
+
+  \entry{witten:integration}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=WE}{%
+         family={Witten},
+         familyi={W\bibinitperiod},
+         given={Edward},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WE1}
+    \strng{fullhash}{WE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{eprint}
+    \verb 1209.2199
+    \endverb
+    \field{title}{Notes On Supermanifolds and Integration}
+    \verb{url}
+    \verb https://arxiv.org/abs/1209.2199
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{year}{2016}
+  \endentry
+
+  \entry{witten:revisited}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=WE}{%
+         family={Witten},
+         familyi={W\bibinitperiod},
+         given={Edward},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WE1}
+    \strng{fullhash}{WE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{eprint}
+    \verb 1209.5461
+    \endverb
+    \field{title}{Superstring Perturbation Theory Revisited}
+    \verb{url}
+    \verb https://arxiv.org/abs/1209.5461
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{year}{2023}
+  \endentry
+\enddatalist
+\endinput

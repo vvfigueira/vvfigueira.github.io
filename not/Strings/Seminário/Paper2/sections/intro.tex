@@ -25,7 +25,7 @@ any room to accommodate the particle zoo present at our world, principally, ther
 introducing fermions in the target space theory, this, among other reasons, is the motif of pursuing other 
 types of theories. A natural guess to overcome the fermion problem is to introduce world-sheet fermions $\psi^\mu$\cite{polchinski:vol2,witten:vol1}, 
 \begin{align}
-    S=\frac{1}{4\pi}\int\limits_M\dd[2]{z}\qty(\partial X^\mu\bar\partial X_\mu+\psi^\mu\bar\partial\psi_{\mu}+{\tilde\psi}^\mu\partial{\tilde\psi}_{\mu})\label{action:sst1}
+    S=-\frac{1}{2\pi}\int\limits_M\dd[2]{\sigma}\qty(\partial_aX^\mu\partial^aX_\mu-\im\bar\psi^\mu\rho^a\partial_a\psi_{\mu})\label{action:sst1}
 \end{align}
 which under quantization gives an analogous problem with the one present in BST\footnote{We're using the graded commutator notation.},
 \begin{align*}
@@ -39,8 +39,8 @@ bosonic wrong sign states, and we would still had the fermionic wrong sign state
 is to find an other gauge redundancy of this theory, such that we can use it to eliminate the non-physical states. 
 Luckily, this new action provides a possible candidate of gauge redundancy, as it has a $\mathcal N=1$ global supersymmetry (SUSY),\begin{subequations}
 \begin{align}
-    \delta_\epsilon X^\mu&=-\epsilon\psi^\mu-\epsilon^\ast{\tilde\psi^\mu}\\
-    \delta_\epsilon\psi^\mu&=\epsilon\partial X^\mu,\ \ \ \delta_\epsilon{\tilde\psi}^\mu=\epsilon^\ast\bar\partial X^\mu
+    \delta_\epsilon X^\mu&=\bar\epsilon\psi^\mu\\
+    \delta_\epsilon\psi^\mu&=-\im\rho^a\epsilon\partial_aX^\mu
 \end{align}\label{susy:pol1}\end{subequations}
 Sadly enough, this supersymmetry algebra only closes on-shell and is global instead of local, despite this, 
 one by one these issues can be unveiled. The uplift from a global symmetry to a local redundancy can be 

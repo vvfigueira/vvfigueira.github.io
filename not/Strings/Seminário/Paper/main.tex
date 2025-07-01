@@ -20,6 +20,22 @@
 \usepackage[english]{cleveref}
 \usepackage{stackengine}
 
+\newtheorem{definition}{Definition}[section]
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\Det}[1]{\textup{Det} #1}
+\newcommand{\sgn}[1]{\mbox{sgn}\qty(#1)}
+\newcommand{\cqd}{\hfill$\blacksquare$}
+\newcommand{\dbar}{\mbox{\dj}}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
 \title{Super Riemann Surfaces}
 
 \author{Vicente Viater Figueira}
