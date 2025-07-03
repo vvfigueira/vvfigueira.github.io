@@ -1,75 +1,75 @@
 \section{Formulation of SRS}
 \label{sec:form}
 
-\subsection{Intuitive Description of SRS}
+% \subsection{Intuitive Description of SRS}
 
-As mentioned in the last section, for the action\footnote{We're going to forget about the 
-world-sheet gravitino.} \eqref{action:sst1} to be on-shell invariant under \eqref{susy:pol1}, 
-it's needed to add an auxiliary field in it. We'll try to understand why, and at the same time introduce the 
-superspace formalism. We know that the supersymmetry algebra contains a commutation relation such,
-$$\comm{Q}{Q}\propto P$$
-so that they have to be interpreted as a space-time --- in this case world-sheet --- symmetry (redundancy), 
-instead of a internal symmetry. This is interesting, because we can understand the world-sheet as being 
-the quotient group, $$\mathbb R^2\cong\mathbb C\cong ISO\qty(1,1)/SO(1,1)$$ what implies that we 
-can also understand our space-time (world-sheet) with SUSY --- Super-Space ---, as being the quotient group of the 
-Super Poincaré group with respect to the Lorentz group, 
-$$\textnormal{Super-Space}\cong\mathbb C^{1|1}\cong ISO\qty(1,1|1)/SO(1,1)$$
+% As mentioned in the last section, for the action\footnote{We're going to forget about the 
+% world-sheet gravitino.} \eqref{action:sst1} to be on-shell invariant under \eqref{susy:pol1}, 
+% it's needed to add an auxiliary field in it. We'll try to understand why, and at the same time introduce the 
+% superspace formalism. We know that the supersymmetry algebra contains a commutation relation such,
+% $$\comm{Q}{Q}\propto P$$
+% so that they have to be interpreted as a space-time --- in this case world-sheet --- symmetry (redundancy), 
+% instead of a internal symmetry. This is interesting, because we can understand the world-sheet as being 
+% the quotient group, $$\mathbb R^2\cong\mathbb C\cong ISO\qty(1,1)/SO(1,1)$$ what implies that we 
+% can also understand our space-time (world-sheet) with SUSY --- Super-Space ---, as being the quotient group of the 
+% Super Poincaré group with respect to the Lorentz group, 
+% $$\textnormal{Super-Space}\cong\mathbb C^{1|1}\cong ISO\qty(1,1|1)/SO(1,1)$$
 
-Why does this is of relevance? Due to we being able to write a generic element of the group $ISO(1,1|1)$ as,
-$$ISO(1,1|1)\ni g(\sigma,\theta,\omega)=\exp\qty(-\im \sigma_aP^a-\im \theta_A Q^A+\frac\im2\omega_{ab}J^{ab})$$
-if we factor out the Lorentz group, we obtain an expression for the elements of the Super-Space, they're 
-parametrized by two bosonic coordinates $\sigma^a$, and two fermionic coordinates $\theta^A$ --- 
-the fermionic nature is guarantee by the fermionic nature of the SUSY generators $Q^A$ ---. As 
-we're ultimately interested in the complex structure, we switch to $z,\bar z,\theta,\bar\theta$ by 
-the usual substitutions, $z=\sigma^1-\sigma^0$ and similarly for $\theta$. These coordinates we introduced 
-are useful because they allow for a differential representation of the SUSY algebra, which is analogous 
-to the differential representation of the translations which we're accustomed $P\sim L_{-1}\sim \partial_z$. 
-Inspection shows that the right choice is $Q_\theta=\partial_\theta-\theta\partial_z$, with the analogous 
-anti-holomorphic one, $$\comm{Q_\theta}{Q_\theta}=2\partial_\theta\partial_\theta-2\theta\partial_z\partial_\theta-2\partial_\theta\qty(\theta\partial_z)+2\theta\partial_z\qty(\theta\partial_z)=-2\partial_z$$
-what neatly satisfy the correct algebra. The good thing about this kind of differential representation is that 
-possesses a natural action on functions of the Super-Space --- which we'll shown in a bit ---, instead of the mysterious action in \eqref{susy:pol1}. 
-Together with this differential representation of the SUSY generator, it's useful to introduce a 
-\textit{covariant derivative} $D_\theta$, in the sense that it preserves the supersymmetry transformation 
-of the object it's acting on, $$D_\theta=\partial_\theta+\theta\partial_z,\ \ \ \comm{D_\theta}{Q_\theta}=0,\ \ \ \comm{D_\theta}{D_\theta}=2\partial_z$$
-while we'll only be able to show that this is the right choice in the next subsection, there are a few 
-motifs behind this definition. Remember, our main goal here is to obtain a geometric visualization of this 
-supersymmetry, in other words, a geometric visualization of the Super Conformal group. As we know, a conformal 
-transformation can be defined as being a coordinate change such that $\partial_z$ is changed to a 
-multiple of itself, as we already argued here, in the Super Conformal group, we have not only $z$, 
-but also $\theta$, so we need a differential operator such: (i) It commutes with the SUSY generator. 
-(ii) A Super Conformal transformation can be defined as a coordinate change $z,\theta\rightarrow z'(z,\bar z,\theta,\bar\theta),\theta'(z,\bar z,\theta,\bar\theta)$ 
-that preserves this differential operator. Notice that $\partial_z$ is consistent with condition (i), but, 
-if we try to impose condition (ii) we gain only the usual bosonic conformal transformations. Our claim is, 
-the most general differential operator that satisfy both conditions is a multiple of $D_\theta$. We'll 
-not prove here, but under such a super conformal transformation this differential operator transforms as 
-$D_\theta=\qty(D_\theta\theta')D_{\theta'}$. 
+% Why does this is of relevance? Due to we being able to write a generic element of the group $ISO(1,1|1)$ as,
+% $$ISO(1,1|1)\ni g(\sigma,\theta,\omega)=\exp\qty(-\im \sigma_aP^a-\im \theta_A Q^A+\frac\im2\omega_{ab}J^{ab})$$
+% if we factor out the Lorentz group, we obtain an expression for the elements of the Super-Space, they're 
+% parametrized by two bosonic coordinates $\sigma^a$, and two fermionic coordinates $\theta^A$ --- 
+% the fermionic nature is guarantee by the fermionic nature of the SUSY generators $Q^A$ ---. As 
+% we're ultimately interested in the complex structure, we switch to $z,\bar z,\theta,\bar\theta$ by 
+% the usual substitutions, $z=\sigma^1-\sigma^0$ and similarly for $\theta$. These coordinates we introduced 
+% are useful because they allow for a differential representation of the SUSY algebra, which is analogous 
+% to the differential representation of the translations which we're accustomed $P\sim L_{-1}\sim \partial_z$. 
+% Inspection shows that the right choice is $Q_\theta=\partial_\theta-\theta\partial_z$, with the analogous 
+% anti-holomorphic one, $$\comm{Q_\theta}{Q_\theta}=2\partial_\theta\partial_\theta-2\theta\partial_z\partial_\theta-2\partial_\theta\qty(\theta\partial_z)+2\theta\partial_z\qty(\theta\partial_z)=-2\partial_z$$
+% what neatly satisfy the correct algebra. The good thing about this kind of differential representation is that 
+% possesses a natural action on functions of the Super-Space --- which we'll shown in a bit ---, instead of the mysterious action in \eqref{susy:pol1}. 
+% Together with this differential representation of the SUSY generator, it's useful to introduce a 
+% \textit{covariant derivative} $D_\theta$, in the sense that it preserves the supersymmetry transformation 
+% of the object it's acting on, $$D_\theta=\partial_\theta+\theta\partial_z,\ \ \ \comm{D_\theta}{Q_\theta}=0,\ \ \ \comm{D_\theta}{D_\theta}=2\partial_z$$
+% while we'll only be able to show that this is the right choice in the next subsection, there are a few 
+% motifs behind this definition. Remember, our main goal here is to obtain a geometric visualization of this 
+% supersymmetry, in other words, a geometric visualization of the Super Conformal group. As we know, a conformal 
+% transformation can be defined as being a coordinate change such that $\partial_z$ is changed to a 
+% multiple of itself, as we already argued here, in the Super Conformal group, we have not only $z$, 
+% but also $\theta$, so we need a differential operator such: (i) It commutes with the SUSY generator. 
+% (ii) A Super Conformal transformation can be defined as a coordinate change $z,\theta\rightarrow z'(z,\bar z,\theta,\bar\theta),\theta'(z,\bar z,\theta,\bar\theta)$ 
+% that preserves this differential operator. Notice that $\partial_z$ is consistent with condition (i), but, 
+% if we try to impose condition (ii) we gain only the usual bosonic conformal transformations. Our claim is, 
+% the most general differential operator that satisfy both conditions is a multiple of $D_\theta$. We'll 
+% not prove here, but under such a super conformal transformation this differential operator transforms as 
+% $D_\theta=\qty(D_\theta\theta')D_{\theta'}$. 
 
-The analogy proposes us to define Super Fields. 
-A Super Field is a function of the Super-Space $\mathbb A\qty(z,\bar z,\theta,\bar\theta)$, it's said to 
-have weights $(h,\tilde h)$ if it changes as, $$\qty(D_\theta\theta')^{2h}\qty(D_{\bar\theta}{\bar\theta}')^{2\tilde h}\mathbb A'\qty(z',\bar z',\theta',\bar\theta')=\mathbb A\qty(z,\bar z,\theta,\bar\theta)$$
-a super field turns out to be a useful construction due to the natural action of a SUSY transformation,
-$$\comm{\mathbb A\qty(z,\theta)}{Q}=-\im Q_\theta\mathbb A\qty(z,\theta)$$
-and the natural transformation of the measure,
-$$\dd[2]{z'}\dd[2]{\theta'}=\dd[2]{z}\dd[2]{\theta}D_\theta\theta'D_{\bar\theta}{\bar\theta}'$$
-which allows for a easy construction of an action, as the measure transforms as a weight $(-\frac12,-\frac12)$ 
-super field, we just need to integrate a $(\frac12,\frac12)$ super field, and as each covariant 
-derivative transforms as $(\frac12,0)$, a natural candidate is the derivative of a $(0,0)$ super field $\mathbb X^\mu$. 
-Due to the fermionic nature of the $\theta$, this can be expanded as, using a little of foresight,
-$$\mathbb X^\mu\qty(z,\bar z,\theta,\bar\theta)=X^\mu\qty(z,\bar z)+\im\theta\psi^\mu\qty(z)+\im\bar\theta{\tilde\psi}^\mu\qty(\bar z)+\bar\theta\theta F^\mu\qty(z,\bar z)$$
-here we see already our familiar fields $X^\mu,\psi^\mu$, and the presence of an additional field $F^\mu$, 
-which transforms as $(\frac12,\frac12)$, and also non trivially under the SUSY, as hinted by $Q_\theta\mathbb X^\mu$, 
-this field is necessary to ensure the off-shell SUSY invariance, and it modifies the \eqref{susy:pol1}. 
-As we mentioned before, a super conformal invariant action can be build as,
-\begin{align}
-    S&=\frac{1}{4\pi}\int\limits_\Sigma\dd[2]{z}\dd[2]{\theta}D_{\bar\theta}\mathbb X^\mu D_\theta\mathbb X_\mu\label{action:sst2}
-\end{align}
-where the fermionic integration will of course only extract the term proportional to $\bar\theta\theta$, this 
-computation is straightforward, giving,
-\begin{align*}
-    S&=\frac{1}{4\pi}\int\limits_\Sigma\dd[2]{z}\qty(\partial_zX^\mu\partial_{\bar z}X^\mu+\psi^\mu\partial_{\bar z}\psi_\mu+{\tilde\psi}^\mu\partial_z{\tilde\psi}_\mu+F^\mu F_\mu)
-\end{align*}
-exactly our starting action! With of course the auxiliary field $F^\mu$, which has the trivial equation of motion $F^\mu=0$. 
-This implies that the action \eqref{action:sst1} is just \eqref{action:sst2} with the auxiliary field integrated out.
+% The analogy proposes us to define Super Fields. 
+% A Super Field is a function of the Super-Space $\mathbb A\qty(z,\bar z,\theta,\bar\theta)$, it's said to 
+% have weights $(h,\tilde h)$ if it changes as, $$\qty(D_\theta\theta')^{2h}\qty(D_{\bar\theta}{\bar\theta}')^{2\tilde h}\mathbb A'\qty(z',\bar z',\theta',\bar\theta')=\mathbb A\qty(z,\bar z,\theta,\bar\theta)$$
+% a super field turns out to be a useful construction due to the natural action of a SUSY transformation,
+% $$\comm{\mathbb A\qty(z,\theta)}{Q}=-\im Q_\theta\mathbb A\qty(z,\theta)$$
+% and the natural transformation of the measure,
+% $$\dd[2]{z'}\dd[2]{\theta'}=\dd[2]{z}\dd[2]{\theta}D_\theta\theta'D_{\bar\theta}{\bar\theta}'$$
+% which allows for a easy construction of an action, as the measure transforms as a weight $(-\frac12,-\frac12)$ 
+% super field, we just need to integrate a $(\frac12,\frac12)$ super field, and as each covariant 
+% derivative transforms as $(\frac12,0)$, a natural candidate is the derivative of a $(0,0)$ super field $\mathbb X^\mu$. 
+% Due to the fermionic nature of the $\theta$, this can be expanded as, using a little of foresight,
+% $$\mathbb X^\mu\qty(z,\bar z,\theta,\bar\theta)=X^\mu\qty(z,\bar z)+\im\theta\psi^\mu\qty(z)+\im\bar\theta{\tilde\psi}^\mu\qty(\bar z)+\bar\theta\theta F^\mu\qty(z,\bar z)$$
+% here we see already our familiar fields $X^\mu,\psi^\mu$, and the presence of an additional field $F^\mu$, 
+% which transforms as $(\frac12,\frac12)$, and also non trivially under the SUSY, as hinted by $Q_\theta\mathbb X^\mu$, 
+% this field is necessary to ensure the off-shell SUSY invariance, and it modifies the \eqref{susy:pol1}. 
+% As we mentioned before, a super conformal invariant action can be build as,
+% \begin{align}
+%     S&=\frac{1}{4\pi}\int\limits_\Sigma\dd[2]{z}\dd[2]{\theta}D_{\bar\theta}\mathbb X^\mu D_\theta\mathbb X_\mu\label{action:sst2}
+% \end{align}
+% where the fermionic integration will of course only extract the term proportional to $\bar\theta\theta$, this 
+% computation is straightforward, giving,
+% \begin{align*}
+%     S&=\frac{1}{4\pi}\int\limits_\Sigma\dd[2]{z}\qty(\partial_zX^\mu\partial_{\bar z}X^\mu+\psi^\mu\partial_{\bar z}\psi_\mu+{\tilde\psi}^\mu\partial_z{\tilde\psi}_\mu+F^\mu F_\mu)
+% \end{align*}
+% exactly our starting action! With of course the auxiliary field $F^\mu$, which has the trivial equation of motion $F^\mu=0$. 
+% This implies that the action \eqref{action:sst1} is just \eqref{action:sst2} with the auxiliary field integrated out.
 
 \subsection{Formal Definition of SRS}
 

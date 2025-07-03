@@ -23,16 +23,17 @@ Riemann Surface is a two dimensional (real) manifold, but the converse is not tr
 Despite being a astonishing success in some points, BST still fails, at least perturbatively, to give 
 any room to accommodate the particle zoo present at our world, principally, there are no means of 
 introducing fermions in the target space theory, this, among other reasons, is the motif of pursuing other 
-types of theories. A natural guess to overcome the fermion problem is to introduce world-sheet fermions $\psi^\mu$\cite{polchinski:vol2,witten:vol1}, 
+types of theories. A natural guess to overcome the fermion problem is to introduce world-sheet fermions $\psi^\mu$\cite{polchinski:vol2,witten:vol1}\footnote{We'll ignore multiplicative 
+factors and set $\alpha'=2$ which can be restored by dimensional analysis.}, 
 \begin{align}
-    S=\frac{1}{4\pi}\int\limits_M\dd[2]{z}\qty(\partial X^\mu\bar\partial X_\mu+\psi^\mu\bar\partial\psi_{\mu}+{\tilde\psi}^\mu\partial{\tilde\psi}_{\mu})\label{action:sst1}
+    S\sim\int\limits_M\dd[2]{z}\qty(\partial X^\mu\bar\partial X_\mu+\psi^\mu\bar\partial\psi_{\mu}+{\tilde\psi}^\mu\partial{\tilde\psi}_{\mu}+\textnormal{ghosts})\label{action:sst1}
 \end{align}
 which under quantization gives an analogous problem with the one present in BST\footnote{We're using the graded commutator notation.},
 \begin{align*}
     \comm{X^\mu\qty(\tau,\sigma)}{\dot X^\nu\qty(\tau,\sigma')}&=\im\pi\eta^{\mu\nu}\delta\qty(\sigma-\sigma')\\
-    \comm{\psi^\mu_A\qty(\tau,\sigma)}{\psi^\nu_B\qty(\tau,\sigma')}&=\pi\eta^{\mu\nu}\delta_{AB}\delta\qty(\sigma-\sigma')
+    \comm{\psi^\mu\qty(\tau,\sigma)}{\psi^\nu\qty(\tau,\sigma')}&=\comm{{\tilde\psi}^\mu\qty(\tau,\sigma)}{{\tilde\psi}^\nu\qty(\tau,\sigma')}=\pi\eta^{\mu\nu}\delta\qty(\sigma-\sigma')
 \end{align*}
-that is, time-like fields $X^0,\psi^0$ have wrong sign commutator, which implies they will create ghost states in 
+that is, time-like fields $X^0,\psi^0,{\tilde\psi}^0$ have wrong sign commutator, which implies they will create ghost states in 
 the theory, the resolution in BST is to use the gauge group --- a.k.a. the Virasoro constrains ---, to remove 
 these non-physical states, but here, the best we could do is to use again the Virasoro constrains to get rid of the 
 bosonic wrong sign states, and we would still had the fermionic wrong sign states. Here the only possible resolution 
@@ -46,11 +47,11 @@ Sadly enough, this supersymmetry algebra only closes on-shell and is global inst
 one by one these issues can be unveiled. The uplift from a global symmetry to a local redundancy can be 
 done by means of introducing a new field in the action, the world-sheet gravitino, and the promotion of the 
 algebra closing off-shell can also be addressed by the inclusion of an auxiliary field in the action. Both 
-these constructions are essential to Superstring Theory, and the resulting theory enjoys a superconformal gauge 
+these constructions are essential to Superstring Theory (SST), and the resulting theory enjoys a superconformal gauge 
 group, which is given by our familiar algebra\footnote{With the inclusion of ghosts.},
 \begin{align*}
-    T\qty(z)T\qty(w)&\sim\frac{2T\qty(w)}{\qty(z-w)^2}+\frac{\partial T\qty(w)}{z-w}\\
-    T\qty(z)G\qty(w)&\sim\frac32\frac{G\qty(w)}{\qty(z-w)^2}+\frac{\partial G\qty(w)}{z-w}\\
+    T\qty(z)T\qty(w)&\sim\frac{2T\qty(w)}{\qty(z-w)^2}+\frac{\partial T\qty(w)}{z-w},\ \ \ T\qty(z)\sim\partial X\partial X+\cdots\\
+    T\qty(z)G\qty(w)&\sim\frac32\frac{G\qty(w)}{\qty(z-w)^2}+\frac{\partial G\qty(w)}{z-w},\ \ \ G\qty(z)\sim\psi\partial X+\cdots\\
     G\qty(z)G\qty(w)&\sim\frac{2T\qty(w)}{\qty(z-w)^2}
 \end{align*}
 The downside here is: in going from a conformal theory --- which we could benefit from developments in RS ---, 
