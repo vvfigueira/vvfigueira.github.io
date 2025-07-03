@@ -48,11 +48,20 @@ one by one these issues can be unveiled. The uplift from a global symmetry to a 
 done by means of introducing a new field in the action, the world-sheet gravitino, and the promotion of the 
 algebra closing off-shell can also be addressed by the inclusion of an auxiliary field in the action. Both 
 these constructions are essential to Superstring Theory (SST), and the resulting theory enjoys a superconformal gauge 
-group, which is given by our familiar algebra\footnote{With the inclusion of ghosts.},
+group, which is given by our familiar super Virasoro algebra\footnote{With the inclusion of ghosts.},
 \begin{align*}
-    T\qty(z)T\qty(w)&\sim\frac{2T\qty(w)}{\qty(z-w)^2}+\frac{\partial T\qty(w)}{z-w},\ \ \ T\qty(z)\sim\partial X\partial X+\cdots\\
-    T\qty(z)G\qty(w)&\sim\frac32\frac{G\qty(w)}{\qty(z-w)^2}+\frac{\partial G\qty(w)}{z-w},\ \ \ G\qty(z)\sim\psi\partial X+\cdots\\
-    G\qty(z)G\qty(w)&\sim\frac{2T\qty(w)}{\qty(z-w)^2}
+    \begin{cases}
+        T\qty(z)&\sim\partial X\partial X+\cdots\\
+        G\qty(z)&\sim\psi\partial X+\cdots
+    \end{cases}\Rightarrow
+    \begin{cases}
+    T\qty(z)T\qty(w)&\sim\frac{2T\qty(w)}{\qty(z-w)^2}+\frac{\partial T\qty(w)}{z-w}\\
+    T\qty(z)G\qty(w)&\sim\frac32\frac{G\qty(w)}{\qty(z-w)^2}+\frac{\partial G\qty(w)}{z-w}\\
+    G\qty(z)G\qty(w)&\sim\frac{2T\qty(w)}{\qty(z-w)^2}\end{cases}\Rightarrow\begin{cases}
+        \comm{L_m}{L_n}&=\qty(m-n)L_{m+n}\\
+        \comm{G_r}{G_s}&=2L_{r+s}\\
+        \comm{L_m}{G_r}&=\qty(\frac m2-r)G_{m+r}
+    \end{cases}
 \end{align*}
 The downside here is: in going from a conformal theory --- which we could benefit from developments in RS ---, 
 to a superconformal theory, there seems to be a loss of geometrical visualization --- as due to $G\qty(z)$ 

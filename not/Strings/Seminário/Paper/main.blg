@@ -1,38 +1,38 @@
-This is BibTeX, Version 0.99d (TeX Live 2025)
+This is BibTeX, Version 0.99d (TeX Live 2026/dev/Arch Linux)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: JHEP.bst
 Database file #1: main.bib
-You've used 3 entries,
+You've used 6 entries,
             2195 wiz_defined-function locations,
-            523 strings with 3776 characters,
-and the built_in function-call counts, 570 in all, are:
-= -- 64
-> -- 19
+            536 strings with 4003 characters,
+and the built_in function-call counts, 951 in all, are:
+= -- 94
+> -- 31
 < -- 0
-+ -- 8
-- -- 5
-* -- 29
-:= -- 89
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 0
++ -- 14
+- -- 8
+* -- 41
+:= -- 140
+add.period$ -- 12
+call.type$ -- 6
+change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 33
-empty$ -- 64
-format.name$ -- 5
-if$ -- 145
+cite$ -- 6
+duplicate$ -- 48
+empty$ -- 124
+format.name$ -- 8
+if$ -- 244
 int.to.chr$ -- 0
-int.to.str$ -- 3
+int.to.str$ -- 6
 missing$ -- 6
-newline$ -- 15
-num.names$ -- 3
-pop$ -- 18
+newline$ -- 24
+num.names$ -- 6
+pop$ -- 42
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 6
+skip$ -- 18
 stack$ -- 0
 substring$ -- 0
 swap$ -- 3
@@ -41,6 +41,6 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 3
-width$ -- 4
-write$ -- 32
+while$ -- 6
+width$ -- 7
+write$ -- 53
