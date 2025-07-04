@@ -3,5 +3,5 @@
 \contentsline {section}{\numberline {2}Super Riemann Surfaces and Consequences}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Definition of SRS}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Superconformality in SRS}{5}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Punctures in SRS}{7}{section.3}%
-\contentsline {section}{\numberline {A}Mathematical Toolkit}{7}{appendix.A}%
+\contentsline {section}{\numberline {3}Punctures in SRS}{8}{section.3}%
+\contentsline {section}{\numberline {A}Mathematical Toolkit}{8}{appendix.A}%

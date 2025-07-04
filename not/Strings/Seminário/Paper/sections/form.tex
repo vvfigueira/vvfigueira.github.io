@@ -235,3 +235,38 @@ condition gives,
 which give to us the second and last linear independent solution, a family of even vector fields that generate 
 superconformal transformations $L_g=g\qty(z)\partial_z+\frac12g'\qty(z)\theta\partial_\theta$.
 \end{proof}
+It's no coincidence the naming we utilized in \cref{nsgenerators}, as those two are the generators of the 
+superconformal transformations, they should also be related to the SST super Virasoro generators $L_n,G_r$, 
+and actually this is true, they indeed furnish a differential representation of the super Virasoro,
+\begin{lemma}
+    The vector field basis, \cref{nsgenerators}, of superconformal transformations for $f\qty(z)=z^{r+\frac12},g\qty(z)=-z^{n+1}$, 
+    \[L_n=-z^{n+1}\partial_z-\frac{n+1}{2}z^n\theta\partial_\theta,\ \ \ G_r=z^{r+\frac12}\qty(\partial_\theta-\theta\partial_z),\ \ \ n\in\mathbb Z,\ r\in\mathbb Z+\frac12\]
+    furnishes a representation of the super Virasoro algebra for the NS sector,
+    \begin{align*}
+        \comm{L_m}{L_n}&=\qty(m-n)L_{m+n}\\
+        \comm{G_r}{G_s}&=2L_{r+s}\\
+        \comm{L_m}{G_r}&=\qty(\frac m2-r)G_{m+r}
+    \end{align*}
+\end{lemma}
+\begin{proof}
+    The computation is very straightforward, we start with $L-L$,
+    \begin{align*}
+        \comm{L_m}{L_n}&=\comm{z^{m+1}\partial_z+\frac{m+1}{2}z^m\theta\partial_\theta}{z^{n+1}\partial_z+\frac{n+1}{2}z^n\theta\partial_\theta}\\
+        \comm{L_m}{L_n}&=\comm{z^{m+1}\partial_z}{z^{n+1}\partial_z}+\comm{z^{m+1}\partial_z}{\frac{n+1}{2}z^n\theta\partial_\theta}+\comm{\frac{m+1}{2}z^m\theta\partial_\theta}{z^{n+1}\partial_z}\\
+        \comm{L_m}{L_n}&=z^{m+1}\partial_zz^{n+1}\partial_z-z^{n+1}\partial_zz^{m+1}\partial_z+\frac{n+1}{2}z^{m+1}\theta\partial_zz^n\partial_\theta-\frac{m+1}{2}z^{n+1}\theta\partial_zz^m\partial_\theta\\
+        \comm{L_m}{L_n}&=\qty(n+1)z^{m+n+1}\partial_z-\qty(m+1)z^{n+m+1}\partial_z+\frac{\qty(n+1)n}{2}z^{m+n}\theta\partial_\theta-\frac{\qty(m+1)m}{2}z^{n+m}\theta\partial_\theta\\
+        \comm{L_m}{L_n}&=-\qty(m-n)z^{m+n+1}\partial_z+\qty(n^2+n-m^2-m)\frac{z^{n+m}}{2}\theta\partial_\theta\\
+        \comm{L_m}{L_n}&=-\qty(m-n)z^{m+n+1}\partial_z-\qty(m-n)\qty(n+m+1)\frac{z^{n+m}}{2}\theta\partial_\theta=\qty(m-n)L_{m+n}
+    \end{align*}
+    now $G-G$,
+    \begin{align*}
+        \comm{G_r}{G_s}&=\comm{z^{r+\frac12}\qty(\partial_\theta-\theta\partial_z)}{z^{s+\frac12}\qty(\partial_\theta-\theta\partial_z)}\\
+        \comm{G_r}{G_s}&=-\qty(z^{r+\frac12}\theta\partial_z z^{s+\frac12}+z^{s+\frac12}\theta\partial_z z^{r+\frac12})\qty(\partial_\theta-\theta\partial_z)+z^{r+s+1}\comm{\qty(\partial_\theta-\theta\partial_z)}{\qty(\partial_\theta-\theta\partial_z)}\\
+        \comm{G_r}{G_s}&=-\qty(s+\frac12+r+\frac12)z^{r+s}\theta\partial_\theta-2z^{r+s+1}\partial_z=2\qty(-z^{r+s+1}\partial_z-\frac{r+s+1}{2}z^{r+s}\theta\partial_\theta)\\
+        \comm{G_r}{G_s}&=2L_{r+s}
+    \end{align*}
+    and lastly $L-G$,
+    \begin{align*}
+        \comm{L_m}{G_r}&=
+    \end{align*}
+\end{proof}
