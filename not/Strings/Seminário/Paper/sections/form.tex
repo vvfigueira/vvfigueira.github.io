@@ -189,7 +189,7 @@ hence,
 \end{definition}
 As good as having a formal definition may be, our true interest here is to obtain these transformations in a given basis, 
 in particular, a superconformal basis,
-\begin{lemma}
+\begin{lemma}\label{lemma:basissuperconformal}
     The set of all vector fields that generate superconformal transformation can be decomposed in a basis, 
     with a superconformal coordinate system, of one even and one odd vector fields such, 
     \[G_f=f\qty(z)\qty(\partial_\theta-\theta\partial_z),\ \ \ L_g=g(z)\partial_z+\frac12 g'\qty(z)\theta\partial_\theta\numberthis\label{nsgenerators}\]
@@ -238,15 +238,15 @@ superconformal transformations $L_g=g\qty(z)\partial_z+\frac12g'\qty(z)\theta\pa
 It's no coincidence the naming we utilized in \cref{nsgenerators}, as those two are the generators of the 
 superconformal transformations, they should also be related to the SST super Virasoro generators $L_n,G_r$, 
 and actually this is true, they indeed furnish a differential representation of the super Virasoro,
-\begin{lemma}
+\begin{lemma}\label{lemma:nsgenerators}
     The vector field basis, \cref{nsgenerators}, of superconformal transformations for $f\qty(z)=z^{r+\frac12},g\qty(z)=-z^{n+1}$, 
-    \[L_n=-z^{n+1}\partial_z-\frac{n+1}{2}z^n\theta\partial_\theta,\ \ \ G_r=z^{r+\frac12}\qty(\partial_\theta-\theta\partial_z),\ \ \ n\in\mathbb Z,\ r\in\mathbb Z+\frac12\]
+    \[L_n=-z^{n+1}\partial_z-\frac{n+1}{2}z^n\theta\partial_\theta,\ \ \ G_r=z^{r+\frac12}\qty(\partial_\theta-\theta\partial_z),\ \ \ n\in\mathbb Z,\ r\in\mathbb Z+\frac12\numberthis\label{generators:ns2}\]
     furnishes a representation of the super Virasoro algebra for the NS sector,
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \comm{L_m}{L_n}&=\qty(m-n)L_{m+n}\\
         \comm{G_r}{G_s}&=2L_{r+s}\\
         \comm{L_m}{G_r}&=\qty(\frac m2-r)G_{m+r}
-    \end{align*}
+    \end{align}\label{supervirasoro:ns}\end{subequations}
 \end{lemma}
 \begin{proof}
     The computation is very straightforward, we start with $L-L$,
@@ -267,6 +267,81 @@ and actually this is true, they indeed furnish a differential representation of 
     \end{align*}
     and lastly $L-G$,
     \begin{align*}
-        \comm{L_m}{G_r}&=
+        \comm{L_m}{G_r}&=\comm{-z^{m+1}\partial_z-\frac{m+1}{2}z^m\theta\partial_\theta}{z^{r+\frac12}\qty(\partial_\theta-\theta\partial_z)}\\
+        \comm{L_m}{G_r}&=-z^{m+1}\partial_z z^{r+\frac12}\partial_\theta+\frac{m+1}{2}z^{m+r+\frac12}\partial_\theta+z^{m+1}\partial_z z^{r+\frac12}\theta\partial_z-z^{r+\frac12}\theta\partial_zz^{m+1}\partial_z\\
+        &\quad\quad\quad+\frac{m+1}{2}z^{m+r+\frac12}\theta\partial_z\\
+        \comm{L_m}{G_r}&=\qty(\frac m2+\frac12 -r-\frac12)z^{m+r+\frac12}\partial_\theta+\qty(r+\frac12-\frac m2 -\frac12)z^{m+r+\frac12}\theta\partial_z\\
+        \comm{L_m}{G_r}&=\qty(\frac m2-r)z^{m+r+\frac12}\qty(\partial_\theta-\theta\partial_z)=\qty(\frac m2-r)G_{m+r}
     \end{align*}
 \end{proof}
+As we have mentioned before, this last result is one of the main reasons why SRS are useful, they make the superconformal algebra 
+on-shell, it's instructive to see explicitly from \cref{supervirasoro:ns} the realization of SUSY, $\comm{G_{-\frac12}}{G_{-\frac12}}=2L_{-1}=-2\partial_z$. Nevertheless, there are still many points left to explanation, as stated in \cref{lemma:nsgenerators}, the 
+resulting super Virasoro algebra from SRS are in the NS sector, that is, they only work for states with NS boundary conditions. 
+As a reminder, NS boundary conditions are imposed in the world-sheet fermions \eqref{action:sst1} as $\psi^\mu\qty(w+2\pi\im)=-\psi^\mu\qty(w)$, 
+with $w=\ln z$ the cylinder coordinate. We will not prove here, but, it's impossible to reconstruct the super Virasoro 
+algebra in the R sector --- $\psi^\mu\qty(w+2\pi\im)=\psi^\mu\qty(w)\Rightarrow G_r,\ r\in\mathbb Z$ --- with \eqref{nsgenerators}. 
+While this may seem a big problem, there is an interesting interpretation of why this is the case, and in fact this is no obstruction 
+to the introduction of R sector fermions, for now we just cite what is the form of the super 
+Virasoro generators for the R sector, and later on there will be a explanation on why this should be true,
+\begin{lemma}
+    The following vector fields, \[L_n=-z^{n+1}\partial_z-\frac n2z^n\theta\partial_\theta,\ \ \ G_r=z^r\qty(\partial_\theta-\theta z\partial_z),\ \ \ n,r\in\mathbb Z\numberthis\label{rgenerators}\] 
+    furnishes a differential representation of the super Virasoro algebra for the R sector,
+    \begin{subequations}\begin{align}
+        \comm{L_m}{L_n}&=\qty(m-n)L_{m+n}\\
+        \comm{G_r}{G_s}&=2L_{r+s}\\
+        \comm{L_m}{G_r}&=\qty(\frac m2-r)G_{m+r}
+    \end{align}\label{supervirasoro:r}\end{subequations}
+\end{lemma}
+\begin{proof}
+    Again, the calculation is very straightforward, we start with $L-L$,
+    \begin{align*}
+        \comm{L_m}{L_n}&=\comm{z^{m+1}\partial_z+\frac{m}{2}z^m\theta\partial_\theta}{z^{n+1}\partial_z+\frac{n}{2}z^n\theta\partial_\theta}\\
+        \comm{L_m}{L_n}&=\comm{z^{m+1}\partial_z}{z^{n+1}\partial_z}+\comm{z^{m+1}\partial_z}{\frac{n}{2}z^n\theta\partial_\theta}+\comm{\frac{m}{2}z^m\theta\partial_\theta}{z^{n+1}\partial_z}\\
+        \comm{L_m}{L_n}&=z^{m+1}\partial_zz^{n+1}\partial_z-z^{n+1}\partial_zz^{m+1}\partial_z+\frac{n}{2}z^{m+1}\theta\partial_zz^n\partial_\theta-\frac{m}{2}z^{n+1}\theta\partial_zz^m\partial_\theta\\
+        \comm{L_m}{L_n}&=\qty(n+1)z^{m+n+1}\partial_z-\qty(m+1)z^{n+m+1}\partial_z+\frac{n^2}{2}z^{m+n}\theta\partial_\theta-\frac{m^2}{2}z^{n+m}\theta\partial_\theta\\
+        \comm{L_m}{L_n}&=-\qty(m-n)z^{m+n+1}\partial_z+\qty(n^2-m^2)\frac{z^{n+m}}{2}\theta\partial_\theta\\
+        \comm{L_m}{L_n}&=-\qty(m-n)z^{m+n+1}\partial_z-\qty(m-n)\qty(n+m)\frac{z^{n+m}}{2}\theta\partial_\theta=\qty(m-n)L_{m+n}
+    \end{align*}
+    now $G-G$,
+    \begin{align*}
+        \comm{G_r}{G_s}&=\comm{z^{r}\qty(\partial_\theta-\theta z\partial_z)}{z^{s}\qty(\partial_\theta-\theta z\partial_z)}\\
+        \comm{G_r}{G_s}&=-\qty(z^{r+1}\theta\partial_z z^{s}+z^{s+1}\theta\partial_z z^{r})\qty(\partial_\theta-\theta z\partial_z)+z^{r+s}\comm{\qty(\partial_\theta-\theta z\partial_z)}{\qty(\partial_\theta-\theta z\partial_z)}\\
+        \comm{G_r}{G_s}&=-\qty(s+r)z^{r+s}\theta\partial_\theta-2z^{r+s}z\partial_z=2\qty(-z^{r+s+1}\partial_z-\frac{r+s}{2}z^{r+s}\theta\partial_\theta)\\
+        \comm{G_r}{G_s}&=2L_{r+s}
+    \end{align*}
+    and lastly $L-G$,
+    \begin{align*}
+        \comm{L_m}{G_r}&=\comm{-z^{m+1}\partial_z-\frac{m}{2}z^m\theta\partial_\theta}{z^{r}\qty(\partial_\theta-\theta z\partial_z)}\\
+        \comm{L_m}{G_r}&=-z^{m+1}\partial_z z^{r}\partial_\theta+\frac{m}{2}z^{m+r}\partial_\theta+z^{m+1}\partial_z z^{r+1}\theta\partial_z-z^{r+1}\theta\partial_zz^{m+1}\partial_z\\
+        &\quad\quad\quad+\frac{m}{2}z^{m+r+1}\theta\partial_z\\
+        \comm{L_m}{G_r}&=\qty(\frac m2-r)z^{m+r}\partial_\theta+\qty(r+1-\frac m2 -1)z^{m+r+1}\theta\partial_z\\
+        \comm{L_m}{G_r}&=\qty(\frac m2-r)z^{m+r}\qty(\partial_\theta-\theta z\partial_z)=\qty(\frac m2-r)G_{m+r}
+    \end{align*}
+\end{proof}
+While might seem taken out of a hat, this shows two main points: (i) that is possible to somewhat \textit{embed} the R sector in SRS, but, (ii) the fact that \eqref{rgenerators} cannot be written 
+as \eqref{nsgenerators}, together with \cref{lemma:basissuperconformal}, shows that the super Virasoro R sector cannot possibly 
+preserve our distinct subspace $\mathcal D$. There is a small flaw in this argument that may shed some hope in the interpretation of 
+R fermions, which we are going to postpone. For now we follow working with just the NS sector.
+
+\subsection{Super fields and weights}
+
+Having now constructed SRS, and also shown that they do satisfy an on-shell super Virasoro algebra, the next step is to 
+do a matching of how a theory formulated in SRS can give the action in \cref{action:sst1}. 
+The main ideia here is to follow analogous to BST, first to describe objects that transform covariantly 
+under superconformal transformations, and later use them to construct a superconformal invariant action. It's instructive 
+to first understand how $\theta$ behaves under dilations, which for now is the closest we have to a conformal weight. 
+As we know, dilations are the integral curves of, \cref{generators:ns2}, $L_0=-z\partial_z-\frac12\theta\partial_\theta$, 
+which are trivially $z|\theta\rightarrow \lambda z|\lambda^{\frac12}\theta$. This kind of is a reminiscent of $z$ having 
+conformal weight $-1$ and $\theta$ having conformal weight $-\frac12$, this is not really true, as we used global transformations, 
+to get a real definition of what may be superconformal weights we have to look at general transformations. By now we are fully 
+aware that superconformal transformations preserve $\mathcal D$, other way to pose it is, superconformal transformations of 
+a superconformal coordinate system $z|\theta$ to another superconformal coordinate system $\hat z|\hat\theta$ changes $D_\theta$ to 
+$F\qty(z,\theta)D_{\hat\theta}$, hence, it should be true that,
+\begin{align*}
+    D_\theta=F\qty(z,\theta)D_{\hat\theta}\Rightarrow D_\theta\hat\theta&=F\qty(z,\theta)D_{\hat\theta}\hat\theta\\
+    D_\theta\hat\theta&=F\qty(z,\theta)\Rightarrow D_\theta=D_\theta\hat\theta D_{\hat\theta}\numberthis\label{superconformal:definition}
+\end{align*}
+which is the definition we will be taking of a superconformal transformation. Plenty other consistency conditions can be 
+obtained from \cref{superconformal:definition} by applying it to $z,\hat z,\theta$. Those are specially useful if one want to 
+show what is the most general form of a superconformal transformation explicitly, but, there isn't so much of insight coming 
+from this, and thus we won't attempt it here.
