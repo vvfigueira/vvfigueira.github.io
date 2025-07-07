@@ -1,76 +1,6 @@
 \section{Super Riemann Surfaces and Consequences}
 \label{sec:form}
 
-% \subsection{Intuitive Description of SRS}
-
-% As mentioned in the last section, for the action\footnote{We're going to forget about the 
-% world-sheet gravitino.} \eqref{action:sst1} to be on-shell invariant under \eqref{susy:pol1}, 
-% it's needed to add an auxiliary field in it. We'll try to understand why, and at the same time introduce the 
-% superspace formalism. We know that the supersymmetry algebra contains a commutation relation such,
-% $$\comm{Q}{Q}\propto P$$
-% so that they have to be interpreted as a space-time --- in this case world-sheet --- symmetry (redundancy), 
-% instead of a internal symmetry. This is interesting, because we can understand the world-sheet as being 
-% the quotient group, $$\mathbb R^2\cong\mathbb C\cong ISO\qty(1,1)/SO(1,1)$$ what implies that we 
-% can also understand our space-time (world-sheet) with SUSY --- Super-Space ---, as being the quotient group of the 
-% Super Poincaré group with respect to the Lorentz group, 
-% $$\textnormal{Super-Space}\cong\mathbb C^{1|1}\cong ISO\qty(1,1|1)/SO(1,1)$$
-
-% Why does this is of relevance? Due to we being able to write a generic element of the group $ISO(1,1|1)$ as,
-% $$ISO(1,1|1)\ni g(\sigma,\theta,\omega)=\exp\qty(-\im \sigma_aP^a-\im \theta_A Q^A+\frac\im2\omega_{ab}J^{ab})$$
-% if we factor out the Lorentz group, we obtain an expression for the elements of the Super-Space, they're 
-% parametrized by two bosonic coordinates $\sigma^a$, and two fermionic coordinates $\theta^A$ --- 
-% the fermionic nature is guarantee by the fermionic nature of the SUSY generators $Q^A$ ---. As 
-% we're ultimately interested in the complex structure, we switch to $z,\bar z,\theta,\bar\theta$ by 
-% the usual substitutions, $z=\sigma^1-\sigma^0$ and similarly for $\theta$. These coordinates we introduced 
-% are useful because they allow for a differential representation of the SUSY algebra, which is analogous 
-% to the differential representation of the translations which we're accustomed $P\sim L_{-1}\sim \partial_z$. 
-% Inspection shows that the right choice is $Q_\theta=\partial_\theta-\theta\partial_z$, with the analogous 
-% anti-holomorphic one, $$\comm{Q_\theta}{Q_\theta}=2\partial_\theta\partial_\theta-2\theta\partial_z\partial_\theta-2\partial_\theta\qty(\theta\partial_z)+2\theta\partial_z\qty(\theta\partial_z)=-2\partial_z$$
-% what neatly satisfy the correct algebra. The good thing about this kind of differential representation is that 
-% possesses a natural action on functions of the Super-Space --- which we'll shown in a bit ---, instead of the mysterious action in \eqref{susy:pol1}. 
-% Together with this differential representation of the SUSY generator, it's useful to introduce a 
-% \textit{covariant derivative} $D_\theta$, in the sense that it preserves the supersymmetry transformation 
-% of the object it's acting on, $$D_\theta=\partial_\theta+\theta\partial_z,\ \ \ \comm{D_\theta}{Q_\theta}=0,\ \ \ \comm{D_\theta}{D_\theta}=2\partial_z$$
-% while we'll only be able to show that this is the right choice in the next subsection, there are a few 
-% motifs behind this definition. Remember, our main goal here is to obtain a geometric visualization of this 
-% supersymmetry, in other words, a geometric visualization of the Super Conformal group. As we know, a conformal 
-% transformation can be defined as being a coordinate change such that $\partial_z$ is changed to a 
-% multiple of itself, as we already argued here, in the Super Conformal group, we have not only $z$, 
-% but also $\theta$, so we need a differential operator such: (i) It commutes with the SUSY generator. 
-% (ii) A Super Conformal transformation can be defined as a coordinate change $z,\theta\rightarrow z'(z,\bar z,\theta,\bar\theta),\theta'(z,\bar z,\theta,\bar\theta)$ 
-% that preserves this differential operator. Notice that $\partial_z$ is consistent with condition (i), but, 
-% if we try to impose condition (ii) we gain only the usual bosonic conformal transformations. Our claim is, 
-% the most general differential operator that satisfy both conditions is a multiple of $D_\theta$. We'll 
-% not prove here, but under such a super conformal transformation this differential operator transforms as 
-% $D_\theta=\qty(D_\theta\theta')D_{\theta'}$. 
-
-% The analogy proposes us to define Super Fields. 
-% A Super Field is a function of the Super-Space $\mathbb A\qty(z,\bar z,\theta,\bar\theta)$, it's said to 
-% have weights $(h,\tilde h)$ if it changes as, $$\qty(D_\theta\theta')^{2h}\qty(D_{\bar\theta}{\bar\theta}')^{2\tilde h}\mathbb A'\qty(z',\bar z',\theta',\bar\theta')=\mathbb A\qty(z,\bar z,\theta,\bar\theta)$$
-% a super field turns out to be a useful construction due to the natural action of a SUSY transformation,
-% $$\comm{\mathbb A\qty(z,\theta)}{Q}=-\im Q_\theta\mathbb A\qty(z,\theta)$$
-% and the natural transformation of the measure,
-% $$\dd[2]{z'}\dd[2]{\theta'}=\dd[2]{z}\dd[2]{\theta}D_\theta\theta'D_{\bar\theta}{\bar\theta}'$$
-% which allows for a easy construction of an action, as the measure transforms as a weight $(-\frac12,-\frac12)$ 
-% super field, we just need to integrate a $(\frac12,\frac12)$ super field, and as each covariant 
-% derivative transforms as $(\frac12,0)$, a natural candidate is the derivative of a $(0,0)$ super field $\mathbb X^\mu$. 
-% Due to the fermionic nature of the $\theta$, this can be expanded as, using a little of foresight,
-% $$\mathbb X^\mu\qty(z,\bar z,\theta,\bar\theta)=X^\mu\qty(z,\bar z)+\im\theta\psi^\mu\qty(z)+\im\bar\theta{\tilde\psi}^\mu\qty(\bar z)+\bar\theta\theta F^\mu\qty(z,\bar z)$$
-% here we see already our familiar fields $X^\mu,\psi^\mu$, and the presence of an additional field $F^\mu$, 
-% which transforms as $(\frac12,\frac12)$, and also non trivially under the SUSY, as hinted by $Q_\theta\mathbb X^\mu$, 
-% this field is necessary to ensure the off-shell SUSY invariance, and it modifies the \eqref{susy:pol1}. 
-% As we mentioned before, a super conformal invariant action can be build as,
-% \begin{align}
-%     S&=\frac{1}{4\pi}\int\limits_\Sigma\dd[2]{z}\dd[2]{\theta}D_{\bar\theta}\mathbb X^\mu D_\theta\mathbb X_\mu\label{action:sst2}
-% \end{align}
-% where the fermionic integration will of course only extract the term proportional to $\bar\theta\theta$, this 
-% computation is straightforward, giving,
-% \begin{align*}
-%     S&=\frac{1}{4\pi}\int\limits_\Sigma\dd[2]{z}\qty(\partial_zX^\mu\partial_{\bar z}X^\mu+\psi^\mu\partial_{\bar z}\psi_\mu+{\tilde\psi}^\mu\partial_z{\tilde\psi}_\mu+F^\mu F_\mu)
-% \end{align*}
-% exactly our starting action! With of course the auxiliary field $F^\mu$, which has the trivial equation of motion $F^\mu=0$. 
-% This implies that the action \eqref{action:sst1} is just \eqref{action:sst2} with the auxiliary field integrated out.
-
 \subsection{Definition of SRS}
 
 As we foretold, to obtain a geometrical description of the superconformal structure we need a geometrical 
@@ -140,7 +70,7 @@ a even vector field. Here the hypothesis of $D$ being non-zero is crucial, other
 zero and so, despite being even, could still belong to $\mathcal D$. Hence, the completely non-integrability 
 condition provides a notion of \textit{coupling} both coordinates without having to evoke new structure in 
 our manifold. It's instructive to see what kind of elements belongs to this subbundle,
-\begin{lemma}
+\begin{lemma}\label{lemma:formd}
     Given a SRS with distinct subbundle $\mathcal D$, it's always possible to construct a 
     coordinate system $z|\theta$, such that locally, any element $D\in\mathcal D$ is of the 
     form, \[D_\theta\coloneq D_{U_{z|\theta}}=\partial_\theta+\theta\partial_z,\ \ \ D_\theta^2\coloneq\frac12\comm{D_\theta}{D_\theta}=\partial_z\numberthis\label{covariantderivative}\] we call 
@@ -242,11 +172,11 @@ and actually this is true, they indeed furnish a differential representation of 
     The vector field basis, \cref{nsgenerators}, of superconformal transformations for $f\qty(z)=z^{r+\frac12},g\qty(z)=-z^{n+1}$, 
     \[L_n=-z^{n+1}\partial_z-\frac{n+1}{2}z^n\theta\partial_\theta,\ \ \ G_r=z^{r+\frac12}\qty(\partial_\theta-\theta\partial_z),\ \ \ n\in\mathbb Z,\ r\in\mathbb Z+\frac12\numberthis\label{generators:ns2}\]
     furnishes a representation of the super Virasoro algebra for the NS sector,
-    \begin{subequations}\begin{align}
+    \begin{subequations}\label{supervirasoro:ns}\begin{align}
         \comm{L_m}{L_n}&=\qty(m-n)L_{m+n}\\
         \comm{G_r}{G_s}&=2L_{r+s}\\
         \comm{L_m}{G_r}&=\qty(\frac m2-r)G_{m+r}
-    \end{align}\label{supervirasoro:ns}\end{subequations}
+    \end{align}\end{subequations}
 \end{lemma}
 \begin{proof}
     The computation is very straightforward, we start with $L-L$,
@@ -346,7 +276,101 @@ obtained from \cref{superconformal:definition} by applying it to $z,\hat z,\thet
 show what is the most general form of a superconformal transformation explicitly, but, there isn't so much of insight coming 
 from this, and thus we won't attempt it here. What indeed is of interest to us is how \cref{superconformal:definition} is 
 similar to the conformal transformation of the BST counterpart, $\partial_z=\partial_z z'\partial_{z'}$, which is used to define the conformal weights scaling,
-\[\qty(\partial_z z')^{h}\qty(\partial_{\bar z}{\bar z}')^{\tilde h}{\tilde\phi}'\qty(z',{\bar z}')=\phi\qty(z,\bar z)\]
+\[\qty(\partial_z z')^{h}\qty(\partial_{\bar z}{\bar z}')^{\tilde h}{\phi}'\qty(z',{\bar z}')=\phi\qty(z,\bar z)\]
 but, as $D^2_\theta=\partial_z$, this suggest that we should consider the following as a definition of the superconformal scaling 
-weights, \[\qty(D_\theta z')^{2h}\phi\qty(z',\theta')=\phi\qty(z,\theta)\] notice the $2h$ instead of $h$. But, still, there 
-is something off with this definition, the lack of conjugated variables $\bar z,\bar\theta$, there is a reason for this.
+weights, \[\qty(D_\theta \theta')^{2h}\phi'\qty(z',\theta')=\phi\qty(z,\theta)\] notice the $2h$ instead of $h$. But, still, there 
+is something off with this definition, the lack of conjugated variables $\bar z,\bar\theta$, there is a reason for this. 
+In the presence of both complex even and odd variables, $z,\theta$, it's in fact impossible to define a notion of 
+complex conjugation $z|\theta\rightarrow\bar z|\bar \theta$, hence, we cannot talk about $z,\bar z|\theta,\bar\theta$ 
+in a single SRS. This is no problem, as we can always set the full world-sheet $\Sigma$ as being a product of two SRS, 
+$\Sigma_L,\Sigma_R$, one with local holomorphic coordinates $z|\theta$, and the other with local anti-holomorphic 
+coordinates $\bar z|\bar \theta$. Notice, here not necessarily $\bar z=z^\ast$. Now, in the full world-sheet $\Sigma\cong\Sigma_L\times \Sigma_R$, 
+it's possible to define superconformal weights as, \[\qty(D_\theta \theta')^{2h}\qty(D_{\bar\theta} {\bar\theta}')^{2h}\phi'\qty(z',{\bar z}',\theta',{\bar\theta}')=\phi\qty(z,{\bar z},\theta,{\bar\theta})\] 
+One last matter that we haven't touched yet is the integration measure. In possess of superconformal fields, we have to 
+decide over what we should integrate them to obtain a superconformally invariant action. The answer is kind of 
+trivial, we should integrate over top forms! Sadly, there are lots of subtleties involving forms and integration in 
+supermanifolds which we won't deal with here. We're just to cite a result that we will need.
+\begin{lemma}\label{berezinian}
+    In a SRS $\Sigma_L$ there is a natural way to define a 2--form with dimensions $1|1$ called the Berezinian, Ber$\qty(\Sigma_L)$, which in 
+    a coordinate system $z|\theta$ is denoted as $\qty[\dd{z}|\dd{\theta}]$. It provides a natural way of defining line 
+    integrals in $\Sigma_L$,
+    \[\int\limits_{\gamma\subset\Sigma_L}\qty[\dd{z}|\dd{\theta}]\qty(f_0\qty(z)+\theta f_1\qty(z))=\int\limits_{\gamma\cap\mathbb C^{1|0}\subset\Sigma_L\cap\mathbb C^{1|0}}\dd{z}f_1\qty(z)\]
+    It also transform covariantly under superconformal transformations, \[\qty[z'|\theta']=\qty[z|\theta]D_\theta\theta'\numberthis\label{measuretransformation}\]
+\end{lemma}
+\begin{proof} See \cite{witten:integration}.\end{proof}
+Might seem that that the Berezinian has a downside, it only sets up a procedure for doing line integrals, not volume ones --- 
+the ones we're interested in ---. This is not really of a problem, as we mentioned before, it's impossible to set up $\bar z,\bar\theta$ 
+with just a single holomorphic SRS, this is also a reason that we cannot construct a volume form in a holomorphic SRS, hence, 
+the resolution of this problem is what we already done, it is to work with $\Sigma=\Sigma_L\times\Sigma_R$, and thus set up 
+the Berezinian as Ber$\qty(\Sigma)=\textnormal{Ber}\qty(\Sigma_L)\otimes\textnormal{Ber}\qty(\Sigma_R)$. Now, Ber$\qty(\Sigma)$ 
+in local coordinates $z,\bar z|\theta,\bar\theta$ is $\qty[\dd{z},\dd{\bar z}|\dd{\theta},\dd{\bar\theta}]=\qty[\dd{z}|\dd{\theta}]\otimes\qty[\dd{\bar z}|\dd{\bar\theta}]$ So 
+that now we can pose our action as being an integral such, \[S=\int\limits_\Sigma\qty[\dd{z},\dd{\bar z}|\dd{\theta},\dd{\bar\theta}]\phi\qty(z,\bar z,\theta,\bar\theta)\] 
+By the transformation properties, \cref{measuretransformation}, we need $\phi$ to be a $\qty(\frac12,\frac12)$ weight superfield in order to 
+the action to be invariant. Notice, if we want a non-trivial theory, we better have derivatives, and the only covariant ones at our disposal are 
+$D_\theta,D_{\bar\theta}$, which by \cref{superconformal:definition} rises the weights by $\qty(\frac12,0)$ and $\qty(0,\frac12)$. 
+Hence, the easiest way to set up an action is from a complex $\qty(0,0)$ superfield $\mathbb X^\mu\qty(z,\bar z,\theta,\bar\theta)$ 
+using the derivatives $D_\theta,D_{\bar\theta}$, \[S=-\int\limits_\Sigma\qty[\dd{z},\dd{\bar z}|\dd{\theta},\dd{\bar\theta}]D_\theta \mathbb X^\mu D_{\bar\theta}\mathbb X_\mu\numberthis\label{action:srssst1}\] 
+This is manifestly superconformally invariant, and, by now doesn't seem a lot similar to \cref{action:sst1}, but, we have a trick up in our sleave, 
+due to the oddness of $\theta,\bar\theta$ we can expand $\mathbb X^\mu$ in powers of them,
+\[\mathbb X^\mu\qty(z,\bar z,\theta,\bar\theta)=X^\mu\qty(z,\bar z)+\im\theta\psi^\mu\qty(z,\bar z)+\im\bar\theta{\tilde\psi}^\mu\qty(z,\bar z)+\bar\theta\theta F^\mu\qty(z,\bar z)\numberthis\label{xdecomposition}\]
+Here we used our virtue of foresight to name each component of the superfield as the ones in \cref{action:sst1}, this is possible because as 
+we saw, $\theta,\bar\theta$ kind of transforms --- under global transformations --- as would a field of conformal weights $\qty(-\frac12,0),\qty(0,-\frac12)$. 
+This forces $\psi^\mu,{\tilde\psi}^\mu$ to transforms as $\qty(\frac12,0),\qty(0,\frac12)$ --- as they do naturally in SST --- to keep every term in the expansion a scalar. 
+The $F^\mu$ field doesn't have a counterpart in SST because it is a auxiliary field. We shown that SRS makes the superconformal/super Virasoro 
+algebra/redundancy off-shell, this is partially the role of the $F^\mu$, despite having a trivial equation of motion --- which we'll show --- 
+it has a non-trivial transformation under the superconformal transformations. Hence, when integrated out, we get exactly the SST action, but at 
+the price of losing one of the fields, turning the superconformal redundancy valid only on-shell. Let us obtain the SST action from our 
+try \eqref{action:srssst1},
+\begin{lemma}
+    With the identification \eqref{xdecomposition},
+    \[S=-\int\limits_\Sigma\qty[\dd{z},\dd{\bar z}|\dd{\theta},\dd{\bar\theta}]D_\theta \mathbb X^\mu D_{\bar\theta}\mathbb X_\mu=\int\limits_{\Sigma_{\textnormal{red}}}\dd{z}\dd{\bar z}\qty(\partial X^\mu\bar\partial X_\mu+\psi^\mu\bar\partial\psi_\mu+{\tilde\psi}^\mu\partial{\tilde\psi}_\mu+F^\mu F_\mu)\numberthis\label{action:sst3}\]
+\end{lemma}
+\begin{proof}
+    The idea here is simple, as stated in \cref{berezinian}, the integration measure will pick up just terms proportional to $\bar\theta\theta$, 
+    hence, we just need to worry about them, we start computing what is $D_\theta\mathbb X^\mu$,
+    \begin{align*}
+        D_\theta \mathbb X^\mu&=\qty(\partial_\theta+\theta\partial_z)\qty(X^\mu+\im\theta\psi^\mu+\im\bar\theta{\tilde\psi}^\mu+\bar\theta\theta F^\mu)\\
+        D_\theta \mathbb X^\mu&=\im\psi^\mu-\bar\theta F^\mu+\theta\partial\qty(X^\mu+\im\bar\theta{\tilde\psi}^\mu)
+    \end{align*}
+    analogously,
+    \begin{align*}
+        D_{\bar\theta} \mathbb X^\mu&=\qty(\partial_{\bar\theta}+\bar\theta\partial_{\bar z})\qty(X^\mu+\im\theta\psi^\mu+\im\bar\theta{\tilde\psi}^\mu+\bar\theta\theta F^\mu)\\
+        D_{\bar\theta} \mathbb X^\mu&=\im{\tilde\psi}^\mu+\theta F^\mu+\bar\theta\bar\partial\qty(X^\mu+\im\theta{\psi}^\mu)
+    \end{align*}
+    so that,
+    \begin{align*}
+        D_\theta \mathbb X^\mu D_{\bar\theta} \mathbb X_\mu&=\qty(\im\psi_\mu-\bar\theta F_\mu+\theta\partial X_\mu+\im\theta\bar\theta\partial{\tilde\psi}_\mu)\qty(\im{\tilde\psi}_\mu+\theta F_\mu+\bar\theta\bar\partial X_\mu+\im\bar\theta\theta\bar\partial{\psi}_\mu)\\
+        D_\theta \mathbb X^\mu D_{\bar\theta} \mathbb X_\mu&=-\bar\theta\theta\psi^\mu\bar\partial\psi_\mu-\bar\theta\theta F^\mu F_\mu-\bar\theta\theta\partial X^\mu\bar\partial X_\mu-\bar\theta\theta{\tilde\psi}^\mu\partial{\tilde\psi}_\mu+\textnormal{non }\bar\theta\theta\textnormal{ proportional terms}
+    \end{align*}
+    from which we can readily integrate keeping only the $\bar\theta\theta$ terms,
+    \begin{align*}
+        S=-\int\limits_\Sigma\qty[\dd{z},\dd{\bar z}|\dd{\theta},\dd{\bar\theta}]D_\theta \mathbb X^\mu D_{\bar\theta}\mathbb X_\mu=\int\limits_{\Sigma_{\textnormal{red}}}\dd{z}\dd{\bar z}\qty(\partial X^\mu\bar\partial X_\mu+\psi^\mu\bar\partial\psi_\mu+{\tilde\psi}^\mu\partial{\tilde\psi}_\mu+F^\mu F_\mu)
+    \end{align*}
+\end{proof}
+
+This last result makes the connection between theories formulated in SRS, and SST natural. It's clear from \cref{action:sst3} that the 
+equation of motion for $F^\mu$ is just $F^\mu=0$, hence it can be trivially integrated out, giving exactly \cref{action:sst1}. One might 
+worry about the ghosts, but, these can be also naturally incorporated in the superfield formalism, we won't do this here. What is interesting to 
+see is what are the SUSY transformations, \cref{susy:pol1}, in this superfield formalism. For this is necessary to remember that 
+the SUSY generator is $G_{-\frac12}$ --- at least for the NS sector ---, which has an action as,
+\begin{align*}
+    \delta_\epsilon\mathbb X^\mu&=\qty(\epsilon G_{-\frac12}+\epsilon^\ast \bar G_{-\frac12})\mathbb X^\mu=\qty(\epsilon\qty(\partial_\theta-\theta\partial_z)+\epsilon^\ast\qty(\partial_{\bar\theta}-\bar\theta\partial_{\bar z}))\qty(X^\mu+\im\theta\psi^\mu+\im\bar\theta{\tilde\psi}^\mu+\bar\theta\theta F^\mu)\\
+    \delta_\epsilon\mathbb X^\mu&=\epsilon\qty(\im\psi^\mu-\bar\theta F^\mu)-\epsilon\theta\partial\qty(X^\mu+\im\bar\theta{\tilde\psi}^\mu)+\epsilon^\ast\qty(\im{\tilde\psi}^\mu+\theta F^\mu)-\epsilon^\ast\bar\theta\bar\partial\qty(X^\mu+\im\theta{\psi}^\mu)
+\end{align*}
+If we set up $\delta_\epsilon\mathbb X^\mu=\delta_\epsilon X^\mu+\im\theta\delta_\epsilon\psi^\mu+\im\bar\theta\delta_\epsilon{\tilde\psi}^\mu+\bar\theta\theta\delta_\epsilon F^\mu$, then we can do the matching of the last expression to 
+give the following transformation laws,
+\begin{align*}\begin{cases}
+    \delta_\epsilon X^\mu&=\im\epsilon\psi^\mu+\im\epsilon^\ast{\tilde\psi}^\mu\\
+    \delta_\epsilon \psi^\mu&=-\im\epsilon\partial X^\mu+\im\epsilon^\ast F^\mu\\
+    \delta_\epsilon {\tilde\psi}^\mu&=-\im\epsilon^\ast\bar\partial X^\mu-\im\epsilon F^\mu\\
+    \delta_\epsilon F^\mu&=-\im\epsilon^\ast\bar\partial\psi^\mu+\im\epsilon\partial{\tilde\psi}^\mu\end{cases}\Rightarrow \textnormal{on-shell }F^\mu=0\Rightarrow\begin{cases}
+    \delta_\epsilon X^\mu&=\im\epsilon\psi^\mu+\im\epsilon^\ast{\tilde\psi}^\mu\\
+    \delta_\epsilon \psi^\mu&=-\im\epsilon\partial X^\mu\\
+    \delta_\epsilon {\tilde\psi}^\mu&=-\im\epsilon^\ast\bar\partial X^\mu\end{cases}
+\end{align*}
+Which is exactly \cref{susy:pol1}, with just extra factors of $-\im$ due to conventions. 
+
+We tried 
+in this section to show that SRS can provide a natural environment for superconformal theories, there are a 
+lot of ways we could continue our discussion, we choose here to close with a few remarks about 
+vertex operators, insertions and punctures.

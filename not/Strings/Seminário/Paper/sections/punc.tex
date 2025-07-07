@@ -1,2 +1,118 @@
 \section{Punctures in SRS}
 \label{sec:punc}
+
+We will dwell with insertions of vertex operators in this last section, mainly because 
+they're the arguments of a correlation function related to scattering, and also due to 
+there being a slight sparkle of insight about why the R sector super Virasoro algebra 
+don't preserve the structure $\mathcal D$ of the SRS. First, let us recall what we 
+know of vertex operators insertions in BST, naively, given a vertex operator $V\qty(z)$ 
+we \textit{insert} it at a point $z=z_0$, this is also called a puncture 
+because is as if the chosen point $z=z_0$ was removed from the manifold --- weather we 
+should just \textit{insert} $V$ at a chosen point $z=z_0$, or we integrate $V$ over 
+the whole manifold is a matter of moduli space, we will not linger much about the 
+moduli space of SRS, but still is a needed issue to deal with perturbative SST ---, but 
+remember, the vertex operator cannot be anything, it has to be physical, that is, it has to 
+satisfy the physical condition \[Q_{\textnormal{BRST}}V\qty(z_0)=0\] this imposes 
+various constrains --- in particular with respect to the ghost number ---, the 
+one we are particularly interested in is, \[L_n V\qty(z_0)=0,\ \ \ n\geq0\numberthis\label{brstconstraintbst}\] which 
+comes from $Q_{\textnormal{BRST}}\sim\sum\limits_n c_{-n}L_n+\cdots$, despite the constrains imposed in the form of the 
+vertex operator, there is a kind of overlooked constraint imposed into the insertion point $z_0$. The constraint is: 
+the point $z_0$ has to be preserved by the BRST transformations, in particular, by \cref{brstconstraintbst}, the point 
+$z_0$ has to be preserved by the actions of $L_n$. For the BST this is a trivial constraint, as the differential 
+form of $L_n$ expanded at $z=z_0$ is $L_n=-\qty(z-z_0)^{n+1}\partial_z$, which trivially preserve the point $z=z_0$ 
+for $n\geq0$.
+
+If we would try to naively extend this definition to SRS, we get that we should insert a 
+vertex operator $V\qty(z|\theta)$ at a chosen point $z_0|\theta_0$, we shouldn't forget that the vertex operator is 
+subjected to the physicality conditions, \[Q_{\textnormal{BRST}} V\qty(z_0|\theta_0)=0\numberthis\label{BRSTcondition}\] here already we have to 
+make some assumptions. To open the BRST operator in terms of the modes we have to say weather we're in the 
+NS sector, or in the R sector. Let's start with our more familiar NS sector:
+
+\subsection{NS sector}
+
+The physicality condition, \cref{BRSTcondition}, open in the NS sector gives the following constraint, neglecting the ghost ones,
+\begin{align*}
+    L_n V\qty(z_0|\theta_0)&=0,\ \ \ n\geq 0\\
+    G_r V\qty(z_0|\theta_0)&=0,\ \ \ r\geq \frac12
+\end{align*}
+again, those non-trivially restricts the form of the vertex operator, but, also, 
+they impose conditions on the insertion point, as was shown in the BST case. To 
+better understand what those conditions on the insertion point are let's go to the 
+differential form of those operators, \cref{generators:ns2}, which we rewrite here not 
+expanded around $z=0,\theta=0$, but around $z_0,\theta_0$,
+\begin{align*}
+    L_n&=-\qty(z-z_0)^{n+1}\partial_z-\frac{\qty(n+1)}{2}\qty(z-z_0)^n\qty(\theta-\theta_0)\partial_\theta\\
+    G_r&=\qty(z-z_0)^{r+\frac12}\qty(\partial_\theta-\qty(\theta-\theta_0)\partial_z)
+\end{align*}
+It is clear that both these operators, for $n\geq0,r\geq\frac12$, when evaluated at the point $z_0,\theta_0$ are 
+identically zero, hence, they preserve the insertion point. In other words, for the NS sector it actually 
+makes sense to \textit{insert} a vertex operator at a point of the SRS. Another point about the NS sector 
+that is elucidative is the boundary conditions phrased in the superfield formalism. The usual 
+way they are imposed is in the complex cylinder, by $\psi^\mu\qty(w+2\pi)=-\psi^\mu\qty(w)$, but notice, 
+from \cref{xdecomposition} there is a nice description of the NS boundary condition as, 
+\[\mathbb X^\mu\qty(z\e^{2\pi\im},\bar z\e^{-2\pi\im},-\theta,-\bar\theta)=\mathbb X^\mu\qty(z,\bar z,\theta,\bar\theta)\] 
+This is kind of suggestive for us to go on with our identification $z\sim z\e^{2\pi\im}$, and also identify $\theta\sim-\theta$. 
+Actually, this seems to be the case, as for the case of zero genus the SRS is $\mathbb{CP}^{1|1}$.
+
+\subsection{R sector}
+
+We know by our previous experience that something will go wrong with R fermions, let's start by supposing a 
+vertex operator is inserted at a fixed point $z_0|\theta_0$ and analyzing the physicality 
+condition, \cref{BRSTcondition},
+\begin{align*}
+    L_n V\qty(z_0|\theta_0)&=0,\ \ \ n\geq 0\\
+    G_r V\qty(z_0|\theta_0)&=0,\ \ \ r\geq 0
+\end{align*}
+as we saw before, the super Virasoro generators in the R sector are different from the NS sector. Let's rewrite them here, \cref{rgenerators}, but expanded around 
+the point $z_0|\theta_0$,
+\begin{align*}
+    L_n&=-\qty(z-z_0)^{n+1}\partial_z-\frac{n}{2}\qty(z-z_0)^n\qty(\theta-\theta_0)\partial_\theta\\
+    G_r&=\qty(z-z_0)^{r}\qty(\partial_\theta-\qty(\theta-\theta_0)\qty(z-z_0)\partial_z)
+\end{align*} 
+for $L_n,G_r n\geq0,r\geq 1$ acting on the point $z_0|\theta_0$ there is no problem, they're identically zero, hence they preserve 
+the insertion point. The only problematically generator is $G_0$, which when evaluated at the insertion point gives,
+\[G_0\eval_{z_0|\theta_0}=\partial_\theta\]
+This is not zero, neither preserves the insertion point, it generate a translation in the odd variable, 
+$z_0|\theta_0\rightarrow z_0|\theta_0+\eta$. Hence, it is not possible for an insertion of a R fermion to be 
+associated with a given marked point $z_0|\theta_0$ on the SRS. In fact, by this argument we get that an insertion 
+of a R sector vertex operator has to be associated with a divisor, that is, a whole $0|1$ dimensional submanifold 
+defined by the choice of a bosonic coordinate $z=z_0$. That is equivalent, in some sense, to say that a puncture of 
+a R fermion in the SRS is associated with a singularity of the manifold at that point. This is not the correct statement. 
+We can use our discoveries about the particularities of the R fermions to give a more precise meaning of what we mean 
+by a singularity in the manifold. We've seen before that the generators of the super Virasoro algebra in the R sector, 
+\cref{rgenerators}, cannot possibly preserve the structure the structure $\mathcal D$, \cref{lemma:basissuperconformal,lemma:nsgenerators}, 
+but also, during the proof of \cref{lemma:formd}, in particular at \cref{temp:eq1}, we saw that the only way to have 
+$\comm{\mathcal D}{\mathcal D}\notin\mathcal D$ is to have $\comm{\mathcal D}{\mathcal D}=0$ at some point. This also can be interpreted, 
+in some sense, as being a singularity of the complex structure $\mathcal D$. All the hints points that the singularity 
+happening in the degeneracy of the $0|1$ dimensional submanifold when a vertex operator is inserted, is the same 
+happening when $\comm{\mathcal D}{\mathcal D}=0$. We will now try to reconcile these two aspects.
+
+By the proof of \cref{lemma:formd}, in particular with \cref{temp:eq1}, we get that if at some point $z=z_0$ we have 
+$\comm{D_{U_{z_0}}}{D_{U_{z_0}}}=0$, then $b_1\propto z-z_0$, and also exists a coordinate basis $z|\theta$ such that,
+\[D^\ast_\theta\eqcolon D_{U_{z_0}}=\partial_\theta+\theta\qty(z-z_0)\partial_z\]
+Notice, if we sit at an open set located away from $z=z_0$, it's always possible to make the coordinate change $\hat z=\ln\qty(z-z_0)$, 
+this coordinate change induces the following,
+\begin{align*}
+    D^\ast_\theta&=\partial_\theta+\theta\qty(z-z_0)\partial_z\\
+    D^\ast_\theta&=\partial_\theta+\theta\qty(z-z_0)\partial_z\hat z\partial_{\hat z}=\partial_\theta+\theta\partial_{\hat z}=D_\theta
+\end{align*}
+Hence, away from the degeneracy point $z=z_0$, the \cref{lemma:basissuperconformal} still holds for the complex structure 
+$D^\ast_\theta=\partial_\theta+\theta\qty(z-z_0)\partial_z$, that is, the superconformal symmetries induced by $D^\ast_\theta$ 
+away from $z=z_0$ are exactly the ones given by the NS sector super Virasoro algebra. The question is, what happens at $z=z_0$? 
+\begin{lemma}
+    Given a degenerated conformal structure $D^\ast_\theta=\partial_\theta+\theta\qty(z-z_0)\partial_z$, the set of all 
+    vector fields $W$ that generate superconformal transformations $\comm{W}{D^\ast_\theta}\in\mathcal D$, 
+    can be decomposed in a basis of even and odd vector fields such,
+\end{lemma}
+\begin{proof}
+    We'll proceed similar to \cref{lemma:basissuperconformal}, $W=a\partial_\theta+b\partial_z$,
+    \begin{align*}
+    \comm{W}{D^\ast_\theta}&=\comm{a\partial_\theta+b\partial_z}{D^\ast_\theta}=a\comm{\partial_\theta}{D^\ast_\theta}\mp D^\ast_\theta a\partial_\theta+b\comm{\partial_z}{D^\ast_\theta}\mp D^\ast_\theta b\partial_z\\
+    \comm{W}{D^\ast_\theta}&=a\qty(z-z_0)\partial_z\mp D^\ast_\theta a\partial_\theta+b\theta\partial_z\mp D^\ast_\theta b\partial_z\\
+    \comm{W}{D^\ast_\theta}&=\mp D^\ast_\theta a\partial_\theta\mp\qty(D^\ast_\theta b\mp b\theta\mp a\qty(z-z_0))\partial_z
+\end{align*}
+    Here the condition $\comm{W}{D^\ast_\theta}\propto D^\ast_\theta$ is,
+    \begin{align*}
+        D^\ast_\theta b\mp b\theta\mp a \qty(z-z_0)&=D^\ast_\theta a\theta\qty(z-z_0)
+    \end{align*}
+\end{proof}
