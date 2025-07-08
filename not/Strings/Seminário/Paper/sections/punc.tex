@@ -50,7 +50,7 @@ makes sense to \textit{insert} a vertex operator at a point of the SRS. Another 
 that is elucidative is the boundary conditions phrased in the superfield formalism. The usual 
 way they are imposed is in the complex cylinder, by $\psi^\mu\qty(w+2\pi)=-\psi^\mu\qty(w)$, but notice, 
 from \cref{xdecomposition} there is a nice description of the NS boundary condition as, 
-\[\mathbb X^\mu\qty(z\e^{2\pi\im},\bar z\e^{-2\pi\im},-\theta,-\bar\theta)=\mathbb X^\mu\qty(z,\bar z,\theta,\bar\theta)\] 
+\[\mathbb X^\mu\qty(z\e^{2\pi\im},\bar z\e^{-2\pi\im},-\theta,-\bar\theta)=\mathbb X^\mu\qty(z,\bar z,\theta,\bar\theta)\numberthis\label{supernsboundary}\] 
 This is kind of suggestive for us to go on with our identification $z\sim z\e^{2\pi\im}$, and also identify $\theta\sim-\theta$. 
 Actually, this seems to be the case, as for the case of zero genus the SRS is $\mathbb{CP}^{1|1}$.
 
@@ -69,7 +69,7 @@ the point $z_0|\theta_0$,
     L_n&=-\qty(z-z_0)^{n+1}\partial_z-\frac{n}{2}\qty(z-z_0)^n\qty(\theta-\theta_0)\partial_\theta\\
     G_r&=\qty(z-z_0)^{r}\qty(\partial_\theta-\qty(\theta-\theta_0)\qty(z-z_0)\partial_z)
 \end{align*} 
-for $L_n,G_r n\geq0,r\geq 1$ acting on the point $z_0|\theta_0$ there is no problem, they're identically zero, hence they preserve 
+for $L_n,G_r, n\geq0,r\geq 1$ acting on the point $z_0|\theta_0$ there is no problem, they're identically zero, hence they preserve 
 the insertion point. The only problematically generator is $G_0$, which when evaluated at the insertion point gives,
 \[G_0\eval_{z_0|\theta_0}=\partial_\theta\]
 This is not zero, neither preserves the insertion point, it generate a translation in the odd variable, 
@@ -103,6 +103,10 @@ away from $z=z_0$ are exactly the ones given by the NS sector super Virasoro alg
     Given a degenerated conformal structure $D^\ast_\theta=\partial_\theta+\theta\qty(z-z_0)\partial_z$, the set of all 
     vector fields $W$ that generate superconformal transformations $\comm{W}{D^\ast_\theta}\in\mathcal D$, 
     can be decomposed in a basis of even and odd vector fields such,
+    \begin{align*}
+        G_r&=\qty(z-z_0)^r\qty(\partial_\theta-\theta\qty(z-z_0)\partial_z),\ \ \ r\in\mathbb Z\\
+        L_n&=-\qty(z-z_0)^{n+1}\partial_z-\frac n2 \qty(z-z_0)^n\theta\partial_\theta,\ \ \ n\in\mathbb Z
+    \end{align*}
 \end{lemma}
 \begin{proof}
     We'll proceed similar to \cref{lemma:basissuperconformal}, $W=a\partial_\theta+b\partial_z$,
@@ -111,8 +115,41 @@ away from $z=z_0$ are exactly the ones given by the NS sector super Virasoro alg
     \comm{W}{D^\ast_\theta}&=a\qty(z-z_0)\partial_z\mp D^\ast_\theta a\partial_\theta+b\theta\partial_z\mp D^\ast_\theta b\partial_z\\
     \comm{W}{D^\ast_\theta}&=\mp D^\ast_\theta a\partial_\theta\mp\qty(D^\ast_\theta b\mp b\theta\mp a\qty(z-z_0))\partial_z
 \end{align*}
-    Here the condition $\comm{W}{D^\ast_\theta}\propto D^\ast_\theta$ is,
+    Where the top sign is to $W$ even, and the bottom sign to $W$ odd. Here the condition $\comm{W}{D^\ast_\theta}\propto D^\ast_\theta$ is,
     \begin{align*}
         D^\ast_\theta b\mp b\theta\mp a \qty(z-z_0)&=D^\ast_\theta a\theta\qty(z-z_0)
     \end{align*}
+    we kind of know what solutions we're searching, so, we'll try an ansatz as $b=-a\qty(z)\theta\qty(z-z_0)$,
+    \begin{align*}
+        D^\ast_\theta b\mp b\theta\mp a \qty(z-z_0)&=D^\ast_\theta a\theta\qty(z-z_0)\\
+        \pm a\qty(z-z_0)\partial_\theta \theta\mp a \qty(z-z_0)&=0
+    \end{align*}
+    Hence one of the solutions is just $G_f=f\qty(z)\qty(\partial_\theta-\theta\qty(z-z_0)\partial_z)\Rightarrow G_r=\qty(z-z_0)^r\qty(\partial_\theta-\theta\qty(z-z_0)\partial_z)$. For the other solution 
+    we try an ansatz as $b=-z^{n+1}\Rightarrow a\propto \theta\Rightarrow a=\partial_\theta a\theta$,
+    \begin{align*}
+        D^\ast_\theta b- b\theta+ a \qty(z-z_0)&=D^\ast_\theta a\theta\qty(z-z_0)\\
+        -\theta\qty(z-z_0)\partial_z\qty(z-z_0)^{n+1}+ \qty(z-z_0)^{n+1}\theta- a\qty(z-z_0)&=\partial_\theta a\theta\qty(z-z_0)\\
+        -\theta n\qty(z-z_0)^{n}&=2a\Rightarrow a=-\frac n2\theta\qty(z-z_0)^n
+    \end{align*}
+    Thus, unsurprisingly, the other linear independent solution is $L_n=-\qty(z-z_0)^{n+1}\partial_z-\frac n2 \qty(z-z_0)^n\theta\partial_\theta$.
 \end{proof}
+This last result is the missing piece of the puzzle, if we have a degenerated complex structure $D^\ast_\theta=\partial_\theta+\theta f\qty(z)\partial_z$, away from the solutions 
+$f\qty(z_i)=0$, the superconformal transformations/super Virasoro algebra can be represented by both the NS sector and the R sectors, because, 
+as we showed, there exists a transformation of coordinates that takes $D^\ast_\theta\rightarrow D_\theta$. Isn't this in conflict with former 
+results? No. The coordinate change that switch NS to R, or vice-versa, is singular --- not defined --- exactly at $f\qty(z_i)=0$, due to 
+this, \textit{globally} is not possible to transform NS super Virasoro algebra into the R one, but, \textit{locally}, away from $f\qty(z_i)=0$ 
+is possible to do so. From this we can get exactly what we wanted, an interpretation to the R punctures. While a NS puncture/insertion is done 
+by selecting a point by fixing it's coordinates $z_0|\theta_0$, the R puncture/insertion has to be made at a singularity/degeneracy of 
+the complex structure $\mathcal D$. There is no problem in having such, as we saw, complex structures with those degeneracies 
+alow exactly for the super Virasoro algebra in the R sector. To get a greater understanding to \textit{why} this should be 
+the case is only possible with a deeper knowledge of cutting and gluing SRS, the degeneracy in the complex structure 
+happens as a limit procedure of decoupling the asymptotic R state SRS cylinder from the bulk interaction, $\mathbb {CP}^{1|1}$  for 
+genus $0$. We won't comment how this is done, but Witten has a nice description of it. What we can do 
+is to look at the boundary conditions in the superfield formalism, the usual ones are given by $\psi^\mu\qty(w+2\pi)=\psi^\mu\qty(w)$, 
+so it's natural to obtain a similar condition for the superfield, \cref{xdecomposition},
+\[\mathbb X^\mu\qty(z\e^{2\pi\im},\bar z\e^{-2\pi\im},\theta,\bar\theta)=\mathbb X^\mu\qty(z,\bar z,\theta,\bar\theta)\numberthis\label{superrboundary}\]
+Remember \cref{supernsboundary}, it implied a nice prescription of how to interpret the NS boundary conditions, 
+just to identify $\theta\sim-\theta$, which should give a kind of super projective space, that actually is the 
+case for genus $0$ --- $\mathbb{CP}^{1|1}$ ---. To the contrary, the R boundary condition, \cref{superrboundary}, 
+does not work with the identification $\theta\sim-\theta$. Another motif to way it should be related to a 
+degeneracy of some structure in the manifold.
