@@ -218,4 +218,44 @@ At last, substituting in \cref{tempeq2},
 Exactly what we wanted to show.
 
 \probitem{}
+
+Let's first state what is our approach here, it's well known that a three point correlation function in a CFT of 
+fields with definite conformal weights has a closed form,
+\[\expval{\phi_i\qty(z_i)\phi_j\qty(z_j)\phi_k\qty(z_k)}=C_{ijk}\abs{z_{ij}}^{h_k-h_i-h_j}\abs{z_{jk}}^{h_i-h_k-h_j}\abs{z_{ki}}^{h_j-h_i-h_k}\numberthis\label{threepointcft}\]
+We can use this to our advantage as $V^a$, for the open string, which are inserted at $\bar w=w$, behaves as they were holomorphic fields, 
+we just need to know the conformal weights of them, to get this we compute the OPE with $T=-\frac{1}{\alpha'}\cnord{\partial X^\alpha\partial X_\alpha}-\cnord{\partial b c}-2\cnord{b\partial c}$, 
+\begin{align*}
+    \cnord{T\qty(z) V^a\qty(w)}&=T\qty(z) V^a\qty(w)-\lambda^a\epsilon_\mu\frac{2}{\alpha'}\cnord{\wick{(\partial\c1 X^\alpha\partial X_\alpha)(z)(c\partial\c1 X^\mu\exp(\im k\cdot X))(w)}}\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu\frac{2}{\alpha'}\cnord{\wick{(\partial\c1 X^\alpha\partial X_\alpha)(z)(c\partial X^\mu\exp(\im k\cdot \c1X))(w)}}\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu\frac{2}{\alpha'}\cnord{\wick{(\partial\c1 X^\alpha\partial\c2 X_\alpha)(z)(c\partial\c2 X^\mu\exp(\im k\cdot \c1X))(w)}}\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu\frac{1}{\alpha'}\cnord{\wick{(\partial\c1 X^\alpha\partial\c2 X_\alpha)(z)(c\partial X^\mu\exp(\im k\cdot \c1X\mkern-4mu \c2 {\mathclap{\phantom{X}}}))(w)}}\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu\cnord{\wick{(\partial \c1 bc)(z)(\c1c\partial X^\mu\exp(\im k\cdot X))(w)}}\\
+    &\quad\quad\quad-2\lambda^a\epsilon_\mu\cnord{\wick{(  \c1b\partial c)(z)(\c1c\partial X^\mu\exp(\im k\cdot X))(w)}}\\
+    \cnord{T\qty(z) V^a\qty(w)}&=T\qty(z) V^a\qty(w)-\lambda^a\epsilon_\mu\eta^{\mu\alpha}\partial_z\partial_w\ln\abs{z-w}^2\cnord{{\partial X_\alpha(z)(c\exp(\im k\cdot X))(w)}}\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu\im k^\alpha\partial_z\ln\abs{z-w}^2\cnord{{\partial X_\alpha(z)(c\partial X^\mu\exp(\im k\cdot X))(w)}}\\
+    &\quad\quad\quad+\lambda^a\epsilon_\mu\frac{\alpha'}{2}\im k_\alpha\eta^{\alpha\mu}\partial_z\ln\abs{z-w}^2\partial_z\partial_w\ln\abs{z-w}^2\cnord{c\exp(\im k\cdot X)}(w)\\
+    &\quad\quad\quad+\lambda^a\epsilon_\mu\frac{\alpha'}{4}\im^2 k^2\qty(\partial_z\ln\abs{z-w}^2)^2\cnord{c\partial X^\mu\exp(\im k\cdot X)}(w)\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu\partial_z\qty(\frac{1}{z-w})\cnord{c(z)(\partial X^\mu\exp(\im k\cdot X))(w)}\\
+    &\quad\quad\quad-2\lambda^a\epsilon_\mu\frac{1}{z-w}\cnord{\partial c(z)(\partial X^\mu\exp(\im k\cdot X))(w)}
+\end{align*}
+Setting now $k^2=k\cdot \epsilon=0$ and expanding in Taylor,
+\begin{align*}
+    T\qty(z) V^a\qty(w)&=\lambda^a\epsilon_\mu\frac{1}{\qty(z-w)^2}\cnord{{\partial X^\mu c\exp(\im k\cdot X)}}(w)\\
+    &\quad\quad\quad+\lambda^a\epsilon_\mu\frac{1}{z-w}\cnord{{\partial^2 X^\mu c\exp(\im k\cdot X)}}(w)\\
+    &\quad\quad\quad+\frac{\lambda^a\epsilon_\mu\im k^\alpha}{z-w}\cnord{{\partial X_\alpha c\partial X^\mu\exp(\im k\cdot X)}}(w)\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu\frac{1}{\qty(z-w)^2}\cnord{c\partial X^\mu\exp(\im k\cdot X)}(w)\\
+    &\quad\quad\quad-\lambda^a\epsilon_\mu\frac{1}{z-w}\cnord{\partial c\partial X^\mu\exp(\im k\cdot X)}(w)\\
+    &\quad\quad\quad+2\lambda^a\epsilon_\mu\frac{1}{z-w}\cnord{\partial c\partial X^\mu\exp(\im k\cdot X)}(w)\\
+    &\quad\quad\quad+\textnormal{ regular}\\
+    T\qty(z) V^a\qty(w)&=+\lambda^a\epsilon_\mu\frac{1}{z-w}\cnord{{c\partial^2 X^\mu \exp(\im k\cdot X)}}(w)\\
+    &\quad\quad\quad+\frac{\lambda^a\epsilon_\mu\im k^\alpha}{z-w}\cnord{{c\partial X_\alpha \partial X^\mu\exp(\im k\cdot X)}}(w)\\
+    &\quad\quad\quad+\lambda^a\epsilon_\mu\frac{1}{z-w}\cnord{\partial c\partial X^\mu\exp(\im k\cdot X)}(w)\\
+    &\quad\quad\quad+\textnormal{ regular}\\
+    T\qty(z) V^a\qty(w)&=\frac{1}{z-w}\partial V^a\qty(w)+\textnormal{ regular}
+\end{align*}
+An astonishing result of $h=0$ for $V^a$. Using this result in \cref{threepointcft},
+\begin{align*}
+    \expval{V^{a_1}\qty(w_1;\epsilon_1,k_1)V^{a_2}\qty(w_2;\epsilon_2,k_2)V^{a_3}\qty(w_3;\epsilon_3,k_3)}&=\lambda^{a_1}\lambda^{a_2}\lambda^{a_3}C_{123}\qty(\epsilon_1,k_1;\epsilon_2,k_2;\epsilon_3,k_3)
+\end{align*}
+
 \probitem{}
