@@ -1,31 +1,221 @@
 \problem{}
 \probitem{}
 
-For an operator $\mathcal O$ to be BRST closed, it means $\comm{Q_{\textnormal{BRST}}}{\mathcal O}=0$, just remembering the usual BRST transformations\footnote{We're using a graded commutator notation, that is, it's to be interpreted as 
-either a commutator or an anti-commutator depending on the statistic of what is inside.},
+For an operator $\mathcal O$ to be BRST closed, it means $\comm{Q_{\textnormal{BRST}}}{\mathcal O}=0$, and by 
+now we're very familiar with a commutator being written as a contour integral, that is,
 \begin{align*}
-    \comm{Q_{\textnormal{BRST}}}{X^\mu}&=\qty(c\partial+\tilde c\bar\partial)X^\mu\\
-    \comm{Q_{\textnormal{BRST}}}{b}&=T^X+T^g\\
-    \comm{Q_{\textnormal{BRST}}}{c}&=c\partial c
+    \comm{Q_{\textnormal{BRST}}}{\mathcal O\qty(w,\bar w)}&=\frac{1}{2\pi\im}\oint\limits_{C_w}\qty(\dd{z}j_{\textnormal{BRST}}\qty(z)-\dd{\bar z}\tilde  j_{\textnormal{BRST}}\qty(\bar z))\mathcal O\qty(w,\bar w)\numberthis\label{commutator:closed}
 \end{align*}
-with,
+Where the BRST current is given by, \[j_{\textnormal{BRST}}\qty(z)=-\frac{1}{\alpha'}\cnord{c\partial X^\mu\partial X_\mu}\qty(z)+\cnord{bc\partial c}\qty(z)+\frac32\cnord{\partial^2 c}\qty(z)\numberthis\label{brstcurrent}\] 
+And also $C_w$ is any closed contour encircling counterclockwise the point $w$. Actually, this definition is only good for 
+closed strings --- in which operators can be inserted at any point ---, but, for the open string --- our case here ---, 
+operators have to be inserted at the boundary Im$\qty(w)=0$. Hence, as we have to our disposal only half of the complex plane, 
+it's impossible to have a closed curve $C_w$ that encloses a point at Im$\qty(w)=0$ --- unless the point itself 
+belongs to the curve, under which the Cauchy residue theorem stops holding ---. Thus, the definition of the commutator 
+for the open string is different,
 \begin{align*}
-    T^X&=\frac{1}{\alpha'}\qnord{\partial X^\mu\partial X_\mu},\ \ \ T^g=\cnord{c\partial b}-2\cnord{b\partial c}
+    \comm{Q_{\textnormal{BRST}}}{\mathcal O\qty(w,\bar w)}&=\frac{1}{2\pi\im}\int\limits_{C_w'}\qty(\dd{z}j_{\textnormal{BRST}}\qty(z)-\dd{\bar z}\tilde  j_{\textnormal{BRST}}\qty(\bar z))\mathcal O\qty(w,\bar w)\numberthis\label{commutator:open}
 \end{align*}
-so,
+Where $C'_w$ is any counterclockwise oriented open curve starting and ending at Im$(z)=0$, such that the point $w$, Im$(w)=0$, lies in the interior of $C'_w$. 
+To get a simpler expression, we can do the so called \textit{doubling trick}. The open string boundary conditions forces us to 
+have at Im$(z)=0$ the following, \[\bar\partial X^\mu = \partial X^\mu,\ \ \ \tilde b=b,\ \ \ \tilde c=c,\ \ \ \textnormal{Im}\qty(z)=0\] 
+Among other things, this also imply that at Im$(z)=0$ we have $\tilde j_{\textnormal{BRST}}=j_{\textnormal{BRST}}$. The doubling trick 
+consists of we assigning $j_{\textnormal{BRST}}$ as being a operator over the whole $\mathbb C$. In the upper half it's already 
+well defined, but in the lower half we define it as,
+\[j_{\textnormal{BRST}}\qty(z)=\tilde j_{\textnormal{BRST}}\qty(z^\ast),\ \ \ \textnormal{Im}\qty(z)<0\]
+Due to the open string boundary conditions this definition is continuous at Im$(z)=0$. We can use this to simplify \cref{commutator:open},
 \begin{align*}
-    \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu\comm{Q_{\textnormal{BRST}}}{c\partial X^\mu\exp\qty(\im k\cdot X)}\\
-    \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu\comm{Q_{\textnormal{BRST}}}{c}\partial X^\mu\exp\qty(\im k\cdot X)-\lambda^a\epsilon_\mu c\comm{Q_{\textnormal{BRST}}}{\partial X^\mu\exp\qty(\im k\cdot X)}\\
-    \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu c\partial c\partial X^\mu\exp\qty(\im k\cdot X)\\
-    &\quad\quad\quad-\lambda^a\epsilon_\mu c\partial X^\mu\comm{Q_{\textnormal{BRST}}}{\exp\qty(\im k\cdot X)}-\lambda^a\epsilon_\mu c\comm{Q_{\textnormal{BRST}}}{\partial X^\mu}\exp\qty(\im k\cdot X)\\
-    \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu c\partial c\partial X^\mu\exp\qty(\im k\cdot X)\\
-    &\quad\quad\quad-\lambda^a\epsilon_\mu c\partial X^\mu\comm{Q_{\textnormal{BRST}}}{\exp\qty(\im k\cdot X)}-\lambda^a\epsilon_\mu c\partial\comm{Q_{\textnormal{BRST}}}{ X^\mu}\exp\qty(\im k\cdot X)\\
-    \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu c\partial c\partial X^\mu\exp\qty(\im k\cdot X)\\
-    &\quad\quad\quad-\lambda^a\epsilon_\mu c\partial X^\mu\comm{Q_{\textnormal{BRST}}}{\exp\qty(\im k\cdot X)}-\lambda^a\epsilon_\mu c\partial\qty(c\partial+\tilde c\bar\partial)X^\mu\exp\qty(\im k\cdot X)\\
-    \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu c\partial c\partial X^\mu\exp\qty(\im k\cdot X)\\
-    &\quad\quad\quad-\lambda^a\epsilon_\mu c\partial X^\mu\comm{Q_{\textnormal{BRST}}}{\exp\qty(\im k\cdot X)}-\lambda^a\epsilon_\mu c\partial\qty(c\partial+\tilde c\bar\partial)X^\mu\exp\qty(\im k\cdot X)\\
-    &\quad\quad\quad-\lambda^a\epsilon_\mu cc\partial-\lambda^a\epsilon_\mu c\partial\qty(\tilde c\bar\partial)X^\mu\exp\qty(\im k\cdot X)
+    \comm{Q_{\textnormal{BRST}}}{\mathcal O\qty(w,\bar w)}&=\frac{1}{2\pi\im}\int\limits_{C_w'}\dd{z}j_{\textnormal{BRST}}\qty(z)\mathcal O\qty(w,\bar w)-\frac{1}{2\pi\im}\int\limits_{C_w'}\dd{\bar z}\tilde  j_{\textnormal{BRST}}\qty(\bar z)O\qty(w,\bar w)\\
+    \comm{Q_{\textnormal{BRST}}}{\mathcal O\qty(w,\bar w)}&=\frac{1}{2\pi\im}\int\limits_{C_w'}\dd{z}j_{\textnormal{BRST}}\qty(z)\mathcal O\qty(w,\bar w)-\frac{1}{2\pi\im}\int\limits_{{\bar C}_w'}\dd{ z}j_{\textnormal{BRST}}\qty( z)O\qty(w,\bar w)\\
+    \comm{Q_{\textnormal{BRST}}}{\mathcal O\qty(w,\bar w)}&=\frac{1}{2\pi\im}\int\limits_{C_w'}\dd{z}j_{\textnormal{BRST}}\qty(z)\mathcal O\qty(w,\bar w)+\frac{1}{2\pi\im}\int\limits_{{{\bar C}_w}^{'-1}}\dd{ z}j_{\textnormal{BRST}}\qty( z)O\qty(w,\bar w)\\
+    \comm{Q_{\textnormal{BRST}}}{\mathcal O\qty(w,\bar w)}&=\frac{1}{2\pi\im}\int\limits_{C_w'\cup {{\bar C}_w}^{'-1}}\dd{z}j_{\textnormal{BRST}}\qty(z)\mathcal O\qty(w,\bar w)\\
+    \comm{Q_{\textnormal{BRST}}}{\mathcal O\qty(w,\bar w)}&=\frac{1}{2\pi\im}\oint\limits_{C_w}\dd{z}j_{\textnormal{BRST}}\qty(z)\mathcal O\qty(w,\bar w)\numberthis\label{commutator:open2}
 \end{align*}
+Here $\bar C_w'$ is the complex conjugated curve to $C_w'$, and ${{\bar C}_w}^{'-1}$ is the reverse orientation version of the curve $\bar C_w'$. 
+Lastly, $C_w'\cup {{\bar C}_w}^{'-1}$ is the closed curve got by gluing the end of $C_w'$ with the start of $ {{\bar C}_w}^{'-1}$, which is 
+not hard to see that is a counterclockwise oriented closed curve around $w$. The last expression, \cref{commutator:open2}, ease the 
+calculation of the commutator in comparison to \cref{commutator:open}, because now we can use the Cauchy residue theorem.
+
+Our main interest here is when $\mathcal O$ is a open string vertex operator, specially, \[V^a\qty(w,\bar w;\epsilon, k)=\lambda^a\epsilon_\mu\cnord{c\partial X^\mu \exp\qty(\im k\cdot X)}\qty(w,\bar w)\numberthis\label{vertexoperator1a}\]
+It's clear that $V^a$ is not just a holomorphic, or just an anti-holomorphic, operator. What spoils it is the $\exp\qty(\im k\cdot X)$ part. Hence, 
+the dependence on $\bar w$ is mandatory, also, as this is a open string vertex operator, it must be inserted at Im$(w)=0\Rightarrow w=\bar w$. 
+Thus, $V^a$ actually is not dependent on $\bar w$, and we will omit such dependence here\footnote{If we where to 
+be completely rigorous, we would need to change our normal ordering prescription.}. 
+
+By \cref{commutator:open2}, we only need the knowledge of the first order pole of the OPE between the BRST current and the vertex operator in 
+order to know the commutator. Hence, we'll start computing the OPE between those, it is in the same manner we did in the second 
+homework set. First compute the normal ordering of the expression you want to know the OPE, this will involve among 
+the OPE, other normal ordered terms, after gathering the divergent contributions we can set up the 
+normal ordered terms as non-singular and obtain the OPE. As the full expression of the BRST 
+current is quite big, and has a lot of terms, we'll compute each three contributions separately,
+\begin{align*}
+    -\cnord{\frac{1}{\alpha'}\cnord{c\partial X^\mu\partial X_\mu}\qty(z)V^a\qty(w;\epsilon,k)}&=-\frac{1}{\alpha'}\cnord{c\partial X^\mu\partial X_\mu}\qty(z)V^a\qty(w;\epsilon,k)\\
+    &\quad\quad\quad-2\frac{\lambda^a\epsilon_\mu}{\alpha'}\cnord{\wick{(c\partial \c1X^\alpha\partial X_\alpha)\qty(z)(c\partial\c1 X^\mu\exp\qty(\im k\cdot X))\qty(w)}}\\
+    &\quad\quad\quad-2\frac{\lambda^a\epsilon_\mu}{\alpha'}\cnord{\wick{(c\partial \c1X^\alpha\partial \c2X_\alpha)\qty(z)(c\partial\c1 X^\mu\exp(\im k\cdot\c2 X))\qty(w)}}\\
+    &\quad\quad\quad-2\frac{\lambda^a\epsilon_\mu}{\alpha'}\cnord{\wick{(c\partial X^\alpha\partial \c2X_\alpha)\qty(z)(c\partial X^\mu\exp(\im k\cdot\c2 X))\qty(w)}}\\
+    &\quad\quad\quad-\frac{\lambda^a\epsilon_\mu}{\alpha'}\cnord{\wick{(c\partial \c1X^\alpha\partial \c2X_\alpha)\qty(z)(c\partial X^\mu\exp(\im k\cdot\c1 X\mkern-4mu \c2 {\mathclap{\phantom{X}}}))\qty(w)}}\\
+    -\cnord{\frac{1}{\alpha'}\cnord{c\partial X^\mu\partial X_\mu}\qty(z)V^a\qty(w;\epsilon,k)}&=-\frac{1}{\alpha'}\cnord{c\partial X^\mu\partial X_\mu}\qty(z)V^a\qty(w;\epsilon,k)\\
+    &\quad\quad\quad-2\frac{\lambda^a\epsilon_\mu}{2}\eta^{\alpha\mu}\partial_z\partial_w\ln\abs{z-w}^2\cnord{(c\partial X_\alpha)\qty(z)(c\exp\qty(\im k\cdot X))\qty(w)}\\
+    &+2\frac{\alpha'\lambda^a\epsilon_\mu}{4}\eta^{\alpha\mu}\im k_\alpha\partial_z\partial_w\ln\abs{z-w}^2\partial_z\ln\abs{z-w}^2\cnord{c\qty(z)(c\exp(\im k\cdot X))\qty(w)}\\
+    &\quad\quad\quad-2\frac{\lambda^a\epsilon_\mu}{2}\im k_\alpha\partial_z\ln\abs{z-w}^2\cnord{(c\partial X^\alpha)\qty(z)(c\partial X^\mu\exp(\im k\cdot X))\qty(w)}\\
+    &\quad\quad\quad+\frac{\alpha'\lambda^a\epsilon_\mu}{4}\im k_\alpha \im k^\alpha\qty(\partial_z\ln\abs{z-w}^2)^2\cnord{c\qty(z)(c\partial X^\mu\exp(\im k\cdot X))\qty(w)}\\
+    -\cnord{\frac{1}{\alpha'}\cnord{c\partial X^\mu\partial X_\mu}\qty(z)V^a\qty(w;\epsilon,k)}&=-\frac{1}{\alpha'}\cnord{c\partial X^\mu\partial X_\mu}\qty(z)V^a\qty(w;\epsilon,k)\\
+    &\quad\quad\quad-\frac{\lambda^a\epsilon_\mu}{\qty(z-w)^2}\cnord{(c\partial X^\mu)\qty(z)(c\exp\qty(\im k\cdot X))\qty(w)}\\
+    &\quad\quad\quad+\frac{\im\alpha'\lambda^ak\cdot\epsilon}{2\qty(z-w)^3}\cnord{c\qty(z)(c\exp(\im k\cdot X))\qty(w)}\\
+    &\quad\quad\quad-\frac{\im k_\alpha\lambda^a\epsilon_\mu}{z-w}\cnord{(c\partial X^\alpha)\qty(z)(c\partial X^\mu\exp(\im k\cdot X))\qty(w)}\\
+    &\quad\quad\quad-\frac{k^2\alpha'\lambda^a\epsilon_\mu}{4\qty(z-w)^2}\cnord{c\qty(z)(c\partial X^\mu\exp(\im k\cdot X))\qty(w)}
+\end{align*}
+now we expand each function of $z$ in Taylor series around $z=w$, keeping only the terms which have a single simple pole,
+\begin{align*}
+    -\frac{1}{\alpha'}\cnord{c\partial X^\mu\partial X_\mu}\qty(z)V^a\qty(w;\epsilon,k)&=\frac{\lambda^a\epsilon_\mu}{z-w}\cnord{\partial cc\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad-\frac{\im\alpha'\lambda^ak\cdot\epsilon}{4\qty(z-w)}\cnord{\partial^2 cc\exp(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad+\frac{k^2\alpha'\lambda^a\epsilon_\mu}{4\qty(z-w)}\cnord{\partial cc\partial X^\mu\exp(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad+ \textnormal{ no single simple pole}\\
+    -\frac{1}{\alpha'}\cnord{c\partial X^\mu\partial X_\mu}\qty(z)V^a\qty(w;\epsilon,k)&=\frac{\lambda^a\epsilon_\mu}{z-w}\qty(1+\frac{k^2\alpha'}{4})\cnord{\partial cc\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad-\frac{\im\alpha'\lambda^ak\cdot\epsilon}{4\qty(z-w)}\cnord{\partial^2 cc\exp(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad + \textnormal{ no single simple pole}\numberthis\label{first1a}
+\end{align*}
+The second term of the BRST current OPE gives,
+\begin{align*}
+    \cnord{\cnord{bc\partial c}\qty(z) V^a\qty(w;\epsilon,k)}&=\cnord{bc\partial c}\qty(z) V^a\qty(w;\epsilon,k)\\
+    &\quad\quad\quad+\lambda^a\epsilon_\mu\cnord{\wick{(\c1 bc\partial c)\qty(z) (\c1c\partial X^\mu\exp\qty(\im k\cdot X))\qty(w)}}\\
+    \cnord{\cnord{bc\partial c}\qty(z) V^a\qty(w;\epsilon,k)}&=\cnord{bc\partial c}\qty(z) V^a\qty(w;\epsilon,k)\\
+    &\quad\quad\quad-\frac{\lambda^a\epsilon_\mu}{z-w}\cnord{(c\partial c)\qty(z) (\partial X^\mu\exp\qty(\im k\cdot X))\qty(w)}\\
+    \cnord{bc\partial c}\qty(z) V^a\qty(w;\epsilon,k)&=\frac{\lambda^a\epsilon_\mu}{z-w}\cnord{(c\partial c)\qty(z) (\partial X^\mu\exp\qty(\im k\cdot X))\qty(w)}+\textnormal{ regular}\\
+    \cnord{bc\partial c}\qty(z) V^a\qty(w;\epsilon,k)&=-\frac{\lambda^a\epsilon_\mu}{z-w}\cnord{\partial cc \partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad+ \textnormal{ no single simple pole}\numberthis\label{second1a}
+\end{align*}
+The third term of the BRST current OPE is already non-singular,
+\begin{align*}
+    \cnord{\frac32\cnord{\partial ^2c}\qty(z) V^a\qty(w;\epsilon,k)}&=\frac32\partial ^2c\qty(z) V^a\qty(w;\epsilon,k)\\
+    \frac32\partial ^2c\qty(z) V^a\qty(w;\epsilon,k)&= \textnormal{ no single simple pole}\numberthis\label{third1a}
+\end{align*}
+Summing the three contributions, \cref{first1a,second1a,third1a},
+\begin{align*}
+    j_{\textnormal{BRST}}\qty(z)V^a\qty(w;\epsilon, k)&=\frac{\lambda^a\epsilon_\mu}{z-w}\qty(1+\frac{k^2\alpha'}{4})\cnord{\partial cc\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad-\frac{\im\alpha'\lambda^ak\cdot\epsilon}{4\qty(z-w)}\cnord{\partial^2 cc\exp(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad-\frac{\lambda^a\epsilon_\mu}{z-w}\cnord{\partial cc \partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad + \textnormal{ no single simple pole}\\
+    j_{\textnormal{BRST}}\qty(z)V^a\qty(w;\epsilon, k)&=\frac{\lambda^a\epsilon_\mu}{z-w}\frac{k^2\alpha'}{4}\cnord{\partial cc\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad-\frac{\im\alpha'\lambda^ak\cdot\epsilon}{4\qty(z-w)}\cnord{\partial^2 cc\exp(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad + \textnormal{ no single simple pole}\numberthis\label{brstope1a}
+\end{align*}
+Using \cref{commutator:open2},
+\begin{align*}
+    \comm{Q_{\textnormal{BRST}}}{V^a\qty(w,\epsilon,k)}&=\frac{1}{2\pi\im}\oint\limits_{C_w}\dd{z}j_{\textnormal{BRST}}\qty(z)V^a\qty(w,\bar w)\\
+    \comm{Q_{\textnormal{BRST}}}{V^a\qty(w,\epsilon,k)}&=\frac{1}{2\pi\im}\oint\limits_{C_w}\dd{z}\frac{\lambda^a\epsilon_\mu}{z-w}\frac{k^2\alpha'}{4}\cnord{\partial cc\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad-\frac{1}{2\pi\im}\oint\limits_{C_w}\dd{z}\frac{\im\alpha'\lambda^ak\cdot\epsilon}{4\qty(z-w)}\cnord{\partial^2 cc\exp(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad+\frac{1}{2\pi\im}\oint\limits_{C_w}\dd{z} \textnormal{ no single simple pole}\\
+    \comm{Q_{\textnormal{BRST}}}{V^a\qty(w,\epsilon,k)}&=\lambda^a\epsilon_\mu\frac{k^2\alpha'}{4}\cnord{\partial cc\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad-\frac{\im\alpha'\lambda^ak\cdot\epsilon}{4}\cnord{\partial^2 cc\exp(\im k\cdot X)}\qty(w)\\
+\end{align*}
+The two operators showing up here, $\cnord{\partial cc\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)$ and $\cnord{\partial^2 cc\exp(\im k\cdot X)}\qty(w)$, 
+are linear independent and also non identically zero. Hence, if we want to guarantee that $\comm{Q_{\textnormal{BRST}}}{V^a\qty(w,\epsilon,k)}=0$ 
+we must set the coefficients in front of the two operator to zero. As $\lambda^a,\alpha'$ are both non zero, and we cannot guarantee that 
+$\epsilon_\mu \cnord{\partial cc\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)$ is zero, the only option is to set to zero,
+\[k^2=k\cdot \epsilon=0\]
+Which is what we wanted to show.
+
+
+
+% We also have to obtain the same OPE but for the anti-holomorphic BRST current,
+% \[\tilde j_{\textnormal{BRST}}\qty(\bar z)=-\frac{1}{\alpha'}\cnord{\tilde c\bar\partial X^\mu\bar\partial X_\mu}\qty(\bar z)+\cnord{\tilde b\tilde c\bar\partial\tilde c}\qty(\bar z)+\frac32\cnord{{\bar\partial}^2\tilde c}\qty(\bar z)\numberthis\label{antibrstcurrent}\]
+% The last two terms of this current, when contracted with the vertex operator, doesn't give any new poles, as all OPE's are finite. 
+% The only possible poles are associated with the first term of the BRST current,
+% \begin{align*}
+%     \cnord{\tilde j_{\textnormal{BRST}}\qty(\bar z)V^a\qty(w;\epsilon, k)}&=j_{\textnormal{BRST}}\qty(z)V^a\qty(w;\epsilon, k)\\
+%     &\quad\quad\quad-2\frac{\lambda^a\epsilon_\mu}{\alpha'}\cnord{\wick{(\tilde c\bar\partial \c1X^\alpha\bar\partial X_\alpha)(\bar z)(c\partial \c1X^\mu\exp\qty(\im k\cdot X))(w)}}\\
+%     &\quad\quad\quad-2\frac{\lambda^a\epsilon_\mu}{\alpha'}\cnord{\wick{(\tilde c\bar\partial \c1X^\alpha\bar\partial X_\alpha)(\bar z)(c\partial X^\mu\exp(\im k\cdot \c1X))(w)}}\\
+%     &\quad\quad\quad-2\frac{\lambda^a\epsilon_\mu}{\alpha'}\cnord{\wick{(\tilde c\bar\partial \c1X^\alpha\bar\partial \c2X_\alpha)(\bar z)(c\partial \c1X^\mu\exp(\im k\cdot\c2 X))(w)}}\\
+%     &\quad\quad\quad-\frac{\lambda^a\epsilon_\mu}{\alpha'}\cnord{\wick{(\tilde c\bar\partial \c1X^\alpha\bar\partial\c2 X_\alpha)(\bar z)(c\partial X^\mu\exp(\im k\cdot\c1 X\mkern-4mu \c2 {\mathclap{\phantom{X}}}))(w)}}\\
+%     \cnord{\tilde j_{\textnormal{BRST}}\qty(\bar z)V^a\qty(w;\epsilon, k)}&=j_{\textnormal{BRST}}\qty(z)V^a\qty(w;\epsilon, k)\\
+%     &\quad\quad\quad-2\frac{\lambda^a\epsilon_\mu}{2}\eta^{\alpha\mu}\partial_{\bar z}\partial_w\ln\abs{z-w}^2\cnord{{(\tilde c\bar\partial X_\alpha)(\bar z)(c\exp\qty(\im k\cdot X))(w)}}\\
+%     &\quad\quad\quad-2\frac{\lambda^a\epsilon_\mu}{2}\im k^\alpha\partial_{\bar z}\ln\abs{z-w}^2\cnord{{(\tilde c\bar\partial X_\alpha)(\bar z)(c\partial X^\mu\exp(\im k\cdot X))(w)}}\\
+%     &\quad\quad\quad+2\frac{\alpha'\lambda^a\epsilon_\mu}{4}\tensor{\eta}{_\alpha^\mu}\partial_{\bar z}\partial_w\ln\abs{z-w}^2\im k^\alpha\partial_{\bar z}\ln\abs{z-w}^2\cnord{{\tilde c(\bar z)(c\exp(\im k\cdot X))(w)}}\\
+%     &\quad\quad\quad+\frac{\alpha'\lambda^a\epsilon_\mu}{4}\im k_\alpha \im k^\alpha\qty(\partial_{\bar z}\ln\abs{z-w}^2)^2\cnord{{\tilde c(\bar z)(c\partial X^\mu\exp(\im k\cdot X))(w)}}\\
+%     j_{\textnormal{BRST}}\qty(z)V^a\qty(w;\epsilon, k)&=\lambda^a\epsilon_\mu2\pi\delta^{\qty(2)}\qty(z-w)\cnord{{(\tilde c\bar\partial X^\mu)(\bar z)(c\exp\qty(\im k\cdot X))(w)}}\\
+%     &\quad\quad\quad+\frac{\lambda^a\epsilon_\mu}{\bar z-\bar w}\im k^\alpha\cnord{{(\tilde c\bar\partial X_\alpha)(\bar z)(c\partial X^\mu\exp(\im k\cdot X))(w)}}\\
+%     &\quad\quad\quad+\frac{\im\alpha'\lambda^ak\cdot\epsilon}{2\qty(\bar z-\bar w)}2\pi\delta^{\qty(2)}\qty(z-w)\cnord{{\tilde c(\bar z)(c\exp(\im k\cdot X))(w)}}\\
+%     &\quad\quad\quad+\frac{k^2\alpha'\lambda^a\epsilon_\mu}{4\qty(\bar z-\bar w)^2}\cnord{{\tilde c(\bar z)(c\partial X^\mu\exp(\im k\cdot X))(w)}}\\
+%     &\quad\quad\quad+\textnormal{ no single simple pole}
+% \end{align*}
+% Now what remains is to Taylor expand everything. The terms with a Dirac delta 
+% are zero, due to the integration contour in \cref{commutator} not passing through the point $z=w$. It's 
+% \begin{align*}
+%     j_{\textnormal{BRST}}\qty(z)V^a\qty(w;\epsilon, k)&=\frac{\lambda^a\epsilon_\mu}{\bar z-\bar w}\im k^\alpha\cnord{{(\tilde c\bar\partial X_\alpha)(\bar z)(c\partial X^\mu\exp(\im k\cdot X))(w)}}\\
+%     &\quad\quad\quad+\frac{k^2\alpha'\lambda^a\epsilon_\mu}{4\qty(\bar z-\bar w)^2}\cnord{{\tilde c(\bar z)(c\partial X^\mu\exp(\im k\cdot X))(w)}}\\
+%     &\quad\quad\quad+\textnormal{ no single simple pole}
+% \end{align*}
+
+% \begin{align*}
+%     \comm{Q_{\textnormal{BRST}}}{X^\mu}&=\qty(c\partial+\tilde c\bar\partial)X^\mu\\
+%     \comm{Q_{\textnormal{BRST}}}{b}&=T^X+T^g\\
+%     \comm{Q_{\textnormal{BRST}}}{c}&=c\partial c
+% \end{align*}
+% with,
+% \begin{align*}
+%     T^X&=\frac{1}{\alpha'}\qnord{\partial X^\mu\partial X_\mu},\ \ \ T^g=\cnord{c\partial b}-2\cnord{b\partial c}
+% \end{align*}
+% so,
+% \begin{align*}
+%     \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu\comm{Q_{\textnormal{BRST}}}{c\partial X^\mu\exp\qty(\im k\cdot X)}\\
+%     \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu\comm{Q_{\textnormal{BRST}}}{c}\partial X^\mu\exp\qty(\im k\cdot X)-\lambda^a\epsilon_\mu c\comm{Q_{\textnormal{BRST}}}{\partial X^\mu\exp\qty(\im k\cdot X)}\\
+%     \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu c\partial c\partial X^\mu\exp\qty(\im k\cdot X)\\
+%     &\quad\quad\quad-\lambda^a\epsilon_\mu c\partial X^\mu\comm{Q_{\textnormal{BRST}}}{\exp\qty(\im k\cdot X)}-\lambda^a\epsilon_\mu c\comm{Q_{\textnormal{BRST}}}{\partial X^\mu}\exp\qty(\im k\cdot X)\\
+%     \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu c\partial c\partial X^\mu\exp\qty(\im k\cdot X)\\
+%     &\quad\quad\quad-\lambda^a\epsilon_\mu c\partial X^\mu\comm{Q_{\textnormal{BRST}}}{\exp\qty(\im k\cdot X)}-\lambda^a\epsilon_\mu c\partial\comm{Q_{\textnormal{BRST}}}{ X^\mu}\exp\qty(\im k\cdot X)\\
+%     \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu c\partial c\partial X^\mu\exp\qty(\im k\cdot X)\\
+%     &\quad\quad\quad-\lambda^a\epsilon_\mu c\partial X^\mu\comm{Q_{\textnormal{BRST}}}{\exp\qty(\im k\cdot X)}-\lambda^a\epsilon_\mu c\partial\qty(c\partial+\tilde c\bar\partial)X^\mu\exp\qty(\im k\cdot X)\\
+%     \comm{Q_{\textnormal{BRST}}}{V^a}&=\lambda^a\epsilon_\mu c\partial c\partial X^\mu\exp\qty(\im k\cdot X)\\
+%     &\quad\quad\quad-\lambda^a\epsilon_\mu c\partial X^\mu\comm{Q_{\textnormal{BRST}}}{\exp\qty(\im k\cdot X)}-\lambda^a\epsilon_\mu c\partial\qty(c\partial+\tilde c\bar\partial)X^\mu\exp\qty(\im k\cdot X)\\
+%     &\quad\quad\quad-\lambda^a\epsilon_\mu cc\partial-\lambda^a\epsilon_\mu c\partial\qty(\tilde c\bar\partial)X^\mu\exp\qty(\im k\cdot X)
+% \end{align*}
 \probitem{}
+
+We need to show that $V^a\qty(w;\epsilon+ak,k)$, $a\in\mathbb R$, is just $V^a\qty(w;\epsilon,k)$ plus an BRST exact operator. What is a 
+BRST exact operator? By the same means of the definition of a BRST closed operator, a BRST exact operator is one such $\mathcal O\qty(w,\bar w )
+=\comm{Q_{\textnormal{BRST}}}{\mathcal O'\qty(w,\bar w)}$. Let's show this is the case,
+\begin{align*}
+    V^a\qty(w;\epsilon+ak,k)&=\lambda^a\epsilon_\mu\cnord{c\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)+a\lambda^ak_\mu\cnord{c\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)\\
+    V^a\qty(w;\epsilon+ak,k)&=V^a\qty(w;\epsilon,k)+a\lambda^ak_\mu\cnord{c\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)\numberthis\label{tempeq2}
+\end{align*}
+The last term in the second line is our interest, notice,
+\begin{align*}
+    \lambda^ak_\mu\cnord{c\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)&=\lambda^a\oint\frac{\dd{z}}{2\pi\im}\qty(\frac{k_\mu\cnord{c\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)}{z-w}+\textnormal{ no single simple pole})\numberthis\label{tempeq1}
+\end{align*}
+As this term has to be BRST exact, the integrand has to be an OPE of some operator with the BRST current, 
+the choice here of operator is obvious, as we have already an $c\partial X^\mu$, what seems a remainder of the 
+first term of the BRST current, we'll try,
+\begin{align*}
+    \cnord{j_{\textnormal{BRST}}\qty(z)\cnord{\exp\qty(\im k\cdot X)}\qty(w)}&=j_{\textnormal{BRST}}\qty(z)\cnord{\exp\qty(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad-\frac{2}{\alpha'}\cnord{\wick{(c\partial X^\mu\partial \c1X_\mu)(z)\exp(\im k\cdot\c1 X)(w)}}\\
+    &\quad\quad\quad-\frac{1}{\alpha'}\cnord{\wick{(c\partial \c2X^\mu\partial \c1X_\mu)(z)\exp(\im k\cdot\c1 X\mkern-4mu \c2 {\mathclap{\phantom{X}}})(w)}}\\
+    &\quad\quad\quad+\textnormal{ no single simple pole}
+\end{align*}
+Both second and third terms of the BRST current doesn't have any wick contractions with this operator, hence, do not contribute with meaningful 
+poles,
+\begin{align*}
+    \cnord{j_{\textnormal{BRST}}\qty(z)\cnord{\exp\qty(\im k\cdot X)}\qty(w)}&=j_{\textnormal{BRST}}\qty(z)\cnord{\exp\qty(\im k\cdot X)}\qty(w)\\
+    &\quad\quad\quad-\frac{2}{\alpha'}\im k^\mu\frac{\alpha'}{2}\partial_z\ln\abs{z-w}^2\cnord{{(c\partial X_\mu)(z)\exp(\im k\cdot X)(w)}}\\
+    &\quad\quad\quad+\frac{1}{\alpha'}\im^2 k^2\frac{{\alpha'}^2}{4}\qty(\partial_z\ln\abs{z-w}^2)^2\cnord{{c(z)\exp(\im k\cdot X)(w)}}\\
+    &\quad\quad\quad+\textnormal{ no single simple pole}
+\end{align*}
+Expanding on Taylor, and also using $k^2=0$,
+\begin{align*}
+    j_{\textnormal{BRST}}\qty(z)\cnord{\exp\qty(\im k\cdot X)}\qty(w)&=\frac{\im k^\mu}{z-w}\cnord{{c\partial X_\mu\exp(\im k\cdot X)}}(w)\\
+    &\quad\quad\quad+\textnormal{ no single simple pole}
+\end{align*}
+Using this result back in \cref{tempeq1},
+\begin{align*}
+    \lambda^ak_\mu\cnord{c\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)&=\lambda^a\oint\frac{\dd{z}}{2\pi\im}\qty(\frac{k_\mu\cnord{c\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)}{z-w}+\textnormal{ no single simple pole})\\
+    \lambda^ak_\mu\cnord{c\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)&=-\im\lambda^a\oint\frac{\dd{z}}{2\pi\im}j_{\textnormal{BRST}}\qty(z)\cnord{\exp\qty(\im k\cdot X)}\qty(w)\\
+    \lambda^ak_\mu\cnord{c\partial X^\mu\exp\qty(\im k\cdot X)}\qty(w)&=-\im\lambda^a\comm{Q_{\textnormal{BRST}}}{\cnord{\exp\qty(\im k\cdot X)}\qty(w)}
+\end{align*}
+At last, substituting in \cref{tempeq2},
+\begin{align*}
+    V^a\qty(w;\epsilon+ak,k)&=V^a\qty(w;\epsilon,k)-a\im\lambda^a\comm{Q_{\textnormal{BRST}}}{\cnord{\exp\qty(\im k\cdot X)}\qty(w)}
+\end{align*}
+Exactly what we wanted to show.
+
 \probitem{}
 \probitem{}
