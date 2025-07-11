@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.4.2)  9 JUL 2025 15:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.4.2)  10 JUL 2025 21:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -833,7 +833,14 @@ sep char (CT)
 \c@lemm=\count341
 \c@exem=\count342
 \c@prov=\count343
- (./main.aux)
+ (./main.aux
+
+LaTeX Warning: Label `VVVope1' multiply defined.
+
+
+LaTeX Warning: Label `VVVope1@cref' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 178.
@@ -1018,39 +1025,129 @@ Overfull \hbox (11.58788pt too wide) detected at line 213
 
 
 Package simpler-wick Warning: I have reached the end of \wick with some unclose
-d contractions on input line 240.
+d contractions on input line 244.
 
 
 Package simpler-wick Warning: I have reached the end of \wick with some unclose
-d contractions on input line 240.
+d contractions on input line 244.
 
 
 Package simpler-wick Warning: I have reached the end of \wick with some unclose
-d contractions on input line 240.
+d contractions on input line 244.
 
 
 Package simpler-wick Warning: I have reached the end of \wick with some unclose
-d contractions on input line 240.
+d contractions on input line 244.
 
 
 Package simpler-wick Warning: I have reached the end of \wick with some unclose
-d contractions on input line 240.
+d contractions on input line 244.
 
 
 Package simpler-wick Warning: I have reached the end of \wick with some unclose
-d contractions on input line 240.
+d contractions on input line 244.
 
 
 
-[6])
+[6]
 
-[7] (./sections/prob2.tex)
+[7]
 
-[8] (./sections/prob3.tex)
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 280.
 
-[9] (./appendix/fpgf.tex
 
-[10]
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 280.
+
+
+
+[8]
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 336.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 336.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 336.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 336.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 336.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 336.
+
+
+Overfull \hbox (40.40636pt too wide) detected at line 354
+[]
+ []
+
+
+
+[9]
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 366.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 366.
+
+
+Overfull \hbox (45.44917pt too wide) detected at line 366
+[]
+ []
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 381.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 381.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 381.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 381.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 381.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 381.
+
+
+Overfull \hbox (50.66653pt too wide) detected at line 381
+[]
+ []
+
+
+
+[10])
+
+[11] (./sections/prob2.tex)
+
+[12] (./sections/prob3.tex)
+
+[13] (./appendix/fpgf.tex
+
+[14]
 Overfull \hbox (19.82611pt too wide) in paragraph at lines 47--50
 []\OT1/cmr/m/n/12 Notice that the set of equiv-a-lence class of met-rics, or, t
 he set of in-equiv-a-lent Diff$[]\OMS/cmsy/m/n/12 ^^B$\OT1/cmr/m/n/12 Weyl$[]$
@@ -1058,9 +1155,9 @@ he set of in-equiv-a-lent Diff$[]\OMS/cmsy/m/n/12 ^^B$\OT1/cmr/m/n/12 Weyl$[]$
 
 
 
-[11]
+[15]
 
-[12]
+[16]
 Overfull \hbox (35.89258pt too wide) detected at line 139
 []
  []
@@ -1072,41 +1169,41 @@ Overfull \hbox (14.74951pt too wide) detected at line 146
 
 
 
-[13])
+[17])
 
-[14] (./appendix/brst.tex
+[18] (./appendix/brst.tex
 
-LaTeX Warning: Reference `brstclosure' on page 15 undefined on input line 31.
+LaTeX Warning: Reference `brstclosure' on page 19 undefined on input line 31.
 
 
 
-[15{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[19{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 Overfull \hbox (6.79837pt too wide) detected at line 96
 []
  []
 
 
 
-[16]
+[20]
 
-[17]
+[21]
 
-[18]
+[22]
 Overfull \hbox (16.28717pt too wide) detected at line 160
 []
  []
 
 
 
-[19]
+[23]
 
-[20]
+[24]
 
-[21]
+[25]
 
-[22])
+[26])
 
-[23] (./main.aux)
+[27] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1115,14 +1212,17 @@ L3 programming layer <2025-01-18>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A2B9DB896432DFE09F1A498CA7B33633;2200.
+(rerunfilecheck)             Checksum: 16EFB65CE24AB7880131C401FD31C86D;2679.
  ) 
 Here is how much of TeX's memory you used:
- 30808 strings out of 475151
- 603662 string characters out of 5766387
+ 30960 strings out of 475151
+ 606977 string characters out of 5766387
  1047970 words of memory out of 5000000
- 53187 multiletter control sequences out of 15000+600000
+ 53324 multiletter control sequences out of 15000+600000
  574042 words of font info for 94 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  98i,22n,105p,577b,748s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1145,10 +1245,10 @@ nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></us
 r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (23 pages, 329116 bytes).
+Output written on main.pdf (27 pages, 349583 bytes).
 PDF statistics:
- 425 PDF objects out of 1000 (max. 8388607)
- 350 compressed objects within 4 object streams
- 90 named destinations out of 1000 (max. 500000)
- 189 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 474 PDF objects out of 1000 (max. 8388607)
+ 395 compressed objects within 4 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
 

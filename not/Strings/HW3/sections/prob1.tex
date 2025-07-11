@@ -219,11 +219,15 @@ Exactly what we wanted to show.
 
 \probitem{}
 
-Let's first state what is our approach here, it's well known that a three point correlation function in a CFT of 
-fields with definite conformal weights has a closed form,
-\[\expval{\phi_i\qty(z_i)\phi_j\qty(z_j)\phi_k\qty(z_k)}=C_{ijk}\abs{z_{ij}}^{h_k-h_i-h_j}\abs{z_{jk}}^{h_i-h_k-h_j}\abs{z_{ki}}^{h_j-h_i-h_k}\numberthis\label{threepointcft}\]
-We can use this to our advantage as $V^a$, for the open string, which are inserted at $\bar w=w$, behaves as they were holomorphic fields, 
-we just need to know the conformal weights of them, to get this we compute the OPE with $T=-\frac{1}{\alpha'}\cnord{\partial X^\alpha\partial X_\alpha}-\cnord{\partial b c}-2\cnord{b\partial c}$, 
+This problem will be very heavy on CFT, let's state a few know results of correlation functions in CFTs,
+\begin{align*}
+    \expval{\phi_i\qty(z_i)}&=\delta_{h_i,0}C_i\numberthis\label{onepointcft}\\
+    \expval{\phi_i\qty(z_i)\phi_j\qty(z_j)}&=\delta_{h_i,h_j}C_{ij}\abs{z_{ij}}^{h_i+h_j}\numberthis\label{twopointcft}\\
+    \expval{\phi_i\qty(z_i)\phi_j\qty(z_j)\phi_k\qty(z_k)}&=C_{ijk}\abs{z_{ij}}^{h_k-h_i-h_j}\abs{z_{jk}}^{h_i-h_k-h_j}\abs{z_{ki}}^{h_j-h_i-h_k}\numberthis\label{threepointcft}
+\end{align*}
+We'll abuse these equations. The reason they're so useful is the two point one, which is zero unless the two fields have the 
+same conformal weight. For this we'll need to know the conformal weight of $V^a$ --- for the open string, which is inserted at $\bar w=w$, behaves as they were holomorphic fields ---. 
+To know the conformal weights of it is to compute the OPE with $T=-\frac{1}{\alpha'}\cnord{\partial X^\alpha\partial X_\alpha}-\cnord{\partial b c}-2\cnord{b\partial c}$, 
 \begin{align*}
     \cnord{T\qty(z) V^a\qty(w)}&=T\qty(z) V^a\qty(w)-\lambda^a\epsilon_\mu\frac{2}{\alpha'}\cnord{\wick{(\partial\c1 X^\alpha\partial X_\alpha)(z)(c\partial\c1 X^\mu\exp(\im k\cdot X))(w)}}\\
     &\quad\quad\quad-\lambda^a\epsilon_\mu\frac{2}{\alpha'}\cnord{\wick{(\partial\c1 X^\alpha\partial X_\alpha)(z)(c\partial X^\mu\exp(\im k\cdot \c1X))(w)}}\\
@@ -253,9 +257,205 @@ Setting now $k^2=k\cdot \epsilon=0$ and expanding in Taylor,
     &\quad\quad\quad+\textnormal{ regular}\\
     T\qty(z) V^a\qty(w)&=\frac{1}{z-w}\partial V^a\qty(w)+\textnormal{ regular}
 \end{align*}
-An astonishing result of $h=0$ for $V^a$. Using this result in \cref{threepointcft},
+An astonishing result of $h=0$ for $V^a$. We'll proceed as follow, first, we'll compute the OPE $VV$, 
+which is given in terms of normal ordered terms, hence, our three point correlator will be transformed into a 
+two point correlator. By \cref{twopointcft} and by the zero conformal weight of $V^a$, the only non zero contribution 
+between the OPE $VV$ and the remaining $V$ in the correlator will be of the zero conformal weight part of the $VV$ 
+OPE with $V$. At last, by \cref{onepointcft}, the only non zero contribution to the three point correlator will 
+be the zero conformal weight part of the OPE between the zero conformal weight part of the $VV$ OPE 
+with $V$. Before proceeding with this OPE computation, we'll need a lot's of other results which now we 
+develop.
+
+\subsubsection{Momentum conservation delta}
+
+In further results we'll need to use the conservation of momentum $k_1+k_2+k_3=0$, 
+which now we prove. Remember, 
+we have as a conserved current the target-space momentum, $j^\mu\qty(z)=\frac{\im}{\alpha'}\partial X^\mu\qty(z)$, let's compute the OPE of this current with $V^a$,
 \begin{align*}
-    \expval{V^{a_1}\qty(w_1;\epsilon_1,k_1)V^{a_2}\qty(w_2;\epsilon_2,k_2)V^{a_3}\qty(w_3;\epsilon_3,k_3)}&=\lambda^{a_1}\lambda^{a_2}\lambda^{a_3}C_{123}\qty(\epsilon_1,k_1;\epsilon_2,k_2;\epsilon_3,k_3)
+    \cnord{j^\mu\qty(z)V^a\qty(w)}&=j^\mu\qty(z) V^a\qty(w)+\frac{\im\lambda^a\epsilon_\nu}{\alpha'}\cnord{\wick{\partial \c1X^\mu(z)(c\partial\c1 X^\nu\exp(\im k\cdot X))(w)}}\\
+    &\quad\quad\quad+\frac{\im\lambda^a\epsilon_\nu}{\alpha'}\cnord{\wick{\partial\c1 X^\mu(z)(c\partial X^\nu\exp(\im k\cdot \c1X))(w)}}\\
+    \cnord{j^\mu\qty(z)V^a\qty(w)}&=j^\mu\qty(z) V^a\qty(w)+\frac{\im\lambda^a\epsilon_\nu}{2}\eta^{\mu\nu}\partial_z\partial_w\ln\abs{z-w}^2\cnord{{c\exp(\im k\cdot X)}}(w)\\
+    &\quad\quad\quad+\frac{\im^2\lambda^a\epsilon_\nu}{2}k^\mu\partial_z\ln\abs{z-w}^2\cnord{{c\partial X^\nu\exp(\im k\cdot X)}}(w)\\
+    j^\mu\qty(z) V^a\qty(w)&=-\frac{\im\lambda^a\epsilon^\mu}{2\qty(z-w)^2}\cnord{{c\exp(\im k\cdot X)}}(w)+\frac{k^\mu V^a\qty(w)}{2(z-w)}+\textnormal{ regular}
 \end{align*}
+The conserved charge associated with the target-space conserved momentum --- for the open string --- is, $P^\mu=\oint\frac{\dd{z}}{2\pi\im}j^\mu\qty(z)$, 
+hence,
+\begin{align*}
+    \comm{P^\mu}{V^a\qty(w)}&=\oint\limits_{C_w}\frac{\dd{z}}{2\pi\im}j^\mu\qty(z) V^a\qty(w)\\
+    \comm{P^\mu}{V^a\qty(w)}&=\oint\limits_{C_w}\frac{\dd{z}}{2\pi\im}\qty(-\frac{\im\lambda^a\epsilon^\mu}{2\qty(z-w)^2}\cnord{{c\exp(\im k\cdot X)}}(w)+\frac{k^\mu V^a\qty(w)}{2(z-w)}+\textnormal{ regular})\\
+    \comm{P^\mu}{V^a\qty(w)}&=\frac{k^\mu}{2}V^a(w)\numberthis\label{pvcomm}
+\end{align*}
+One may wonder about the usefulness of such expression. When computing $\expval{\mathcal O\qty(w,\bar w)}$, we're doing an 
+expectation value of the operator $\mathcal O\qty(w,\bar w)$ over a state, in this case the vacuum. But, the vacuum 
+itself is an eigenstate of the operator $P^\mu$, and as $P^{\dagger\mu}=P ^\mu$, the following is valid for 
+any operator, \[\qty(P^{\dagger\mu}\Psi,\mathcal O\qty(w,\bar w)\Psi)-\qty(\Psi,\mathcal O\qty(w,\bar w)P^{\mu}\Psi)=\expval{P ^\mu\mathcal O\qty(w,\bar w)}-\expval{\mathcal O\qty(w,\bar w)P ^\mu}= \expval{\comm{P ^\mu}{\mathcal O\qty(w,\bar w)}}=0\]
+In particular, this is valid to,
+\[\expval{\comm{P ^\mu}{V^{a_1}\qty(w_1;\epsilon_1,k_1)V^{a_2}\qty(w_2;\epsilon_2,k_2)V^{a_3}\qty(w_3;\epsilon_3,k_3)}}=0\numberthis\label{tempeq3}\]
+But,
+\begin{align*}
+    \comm{P ^\mu}{V^{a_1}V^{a_2}V^{a_3}}&=\comm{P ^\mu}{V^{a_1}}V^{a_2}V^{a_3}+V^{a_1}\comm{P ^\mu}{V^{a_2}}V^{a_3}+V^{a_1}V^{a_2}\comm{P ^\mu}{V^{a_3}}\\
+    \comm{P ^\mu}{V^{a_1}V^{a_2}V^{a_3}}&=\frac{k_1^\mu}{2}V^{a_1}V^{a_2}V^{a_3}+\frac{k_2^\mu}{2}V^{a_1}V^{a_2}V^{a_3}+\frac{k_3^\mu}{2}V^{a_1}V^{a_2}V^{a_3}\\
+    \comm{P ^\mu}{V^{a_1}V^{a_2}V^{a_3}}&=\frac{k_1^\mu+k_2^\mu+k_3^\mu}{2}V^{a_1}V^{a_2}V^{a_3}
+\end{align*}
+Combining this with \cref{tempeq3},
+\begin{align*}
+    0&=\expval{\comm{P ^\mu}{V^{a_1}V^{a_2}V^{a_3}}}=\frac{k_1^\mu+k_2^\mu+k_3^\mu}{2}\expval{V^{a_1}V^{a_2}V^{a_3}}
+\end{align*}
+This result is the same as saying,\[\expval{V^{a_1}V^{a_2}V^{a_3}}\propto\delta^{\qty(26)}\qty(k_1+k_2+k_3)\]
+
+\subsubsection{Trace color factors}
+
+Each vertex operator is \textit{dressed} with respect to it's color group by $\lambda^a$. 
+So that the final correlator also should be dressed with respect to some number $\lambda^{a_1a_2a_3}$. 
+We can fully determine such. $V^a$ is fermionic, hence, from the path integral point of view,
+\begin{align*}
+    \expval{V^{a_1}V^{a_3}V^{a_2}}&=\lambda^{a_1a_3a_2}\expval{\cnord{\epsilon_1\cdot \partial X\exp(\im k_1\cdot X)}\cnord{\epsilon_3\cdot \partial X\exp(\im k_3\cdot X)}\cnord{\epsilon_2\cdot \partial X\exp(\im k_2\cdot X)}}\\
+    \expval{V^{a_1}V^{a_3}V^{a_2}}&=-\lambda^{a_1a_3a_2}\expval{\cnord{\epsilon_1\cdot \partial X\exp(\im k_1\cdot X)}\cnord{\epsilon_2\cdot \partial X\exp(\im k_2\cdot X)}\cnord{\epsilon_3\cdot \partial X\exp(\im k_3\cdot X)}}\\
+    \expval{V^{a_1}V^{a_3}V^{a_2}}&=-\frac{\lambda^{a_1a_3a_2}}{\lambda^{a_1a_2a_3}}\expval{V^{a_1}V^{a_2}V^{a_3}}
+\end{align*}
+But, from the path integral point of view, $\expval{V^{a_1}V^{a_3}V^{a_2}}$ and $\expval{V^{a_1}V^{a_2}V^{a_3}}$ are equal, as long as 
+the ordering of the points stay the same, hence, the above argument proves that $-\lambda^{a_1a_3a_2}=-\lambda^{a_1a_2a_3}$. 
+And, similar arguments can be made to prove that $\lambda^{a_1a_2a_3}$ is in fact totally antisymmetric. There is a unique, 
+up to multiplicative factors, three index totally antisymmetric object that can be constructed out of generators of the group $\lambda^a$, 
+this is the structure constant $f^{a_1a_2a_3}$, which has a nice representation as $\Tr\qty[\lambda^{a_1}\comm{\lambda^{a_2}}{\lambda^{a_3}}]$. 
+This completely determines the dependence on $\lambda$s,
+\[\expval{V^{a_1}V^{a_2}V^{a_3}}\propto\Tr\qty[\lambda^{a_1}\comm{\lambda^{a_2}}{\lambda^{a_3}}]\]
+
+\subsubsection{VV OPE}
+
+Now we compute the $VV$ OPE, for now we forget about the color factors,
+\begin{align*}
+    \cnord{V_1V_2}&=V_1V_2+\epsilon_{1\mu}\epsilon_{2\nu}\cnord{\wick{(c\partial\c1 X^\mu\exp(\im k_1\cdot X))(w_1)(c\partial\c1 X^\nu\exp(\im k_2\cdot X))(w_2)}}\\
+    &\quad\quad\quad+\epsilon_{1\mu}\epsilon_{2\nu}\cnord{\wick{(c\partial\c1 X^\mu\exp(\im k_1\cdot X))(w_1)(c\partial X^\nu\exp(\im k_2\cdot\c1 X))(w_2)}}\\
+    &\quad\quad\quad-\epsilon_{1\mu}\epsilon_{2\nu}\cnord{\wick[offset=1em]{(c\partial\c1 X^\nu\exp(\im  k_2\cdot{X}))(w_2)(c\partial {X^\mu}\exp(\im k_1\cdot\c1 X))(w_1)}}\\
+    &\quad\quad\quad-\epsilon_{1\mu}\epsilon_{2\nu}\cnord{\wick[offset=1em]{(c\partial\c1 X^\nu\c2\exp(\im  k_2\cdot{X}))(w_2)(c\partial \c2{X^\mu}\exp(\im k_1\cdot\c1 X))(w_1)}}\\
+    \cnord{V_1V_2}&=V_1V_2+\frac{\alpha'}{2(w_1-w_2)^2}\epsilon_{1}\cdot\epsilon_{2}\cnord{{(c\exp(\im k_1\cdot X))(w_1)(c\exp(\im k_2\cdot X))(w_2)}}\\
+    &\quad\quad\quad+\frac{\alpha'\im}{2(w_1-w_2)}\epsilon_{1}\cdot k_2\epsilon_{2\nu}\cnord{{(c\exp(\im k_1\cdot X))(w_1)(c\partial X^\nu\exp(\im k_2\cdot X))(w_2)}}\\
+    &\quad\quad\quad+\frac{\alpha'\im}{2(w_2-w_1)}\epsilon_{1\mu}\epsilon_{2}\cdot k_1\cnord{{(c\partial X^\mu\exp(\im k_1\cdot X))(w_1)(c\exp(\im k_2\cdot X))(w_2)}}\\
+    &\quad\quad\quad-\frac{{\alpha'}^2\im^2}{4(w_2-w_1)(w_1-w_2)}\epsilon_{1}\cdot k_2\epsilon_{2}\cdot k_1\cnord{{(c\exp(\im k_1\cdot X))(w_1)(c\exp(\im k_2\cdot X))(w_2)}}
+\end{align*}
+There are no contraction between two exponential because they are regular, as we know, 
+$\cnord{\exp(\im k_1\cdot X)}\qty(z)\cnord{\exp(\im k_2\cdot X)}(w)=\abs{z-w}^{\alpha'k_1\cdot k_2}\cnord{\exp(\im k_1\cdot X)(z)\exp(\im k_2\cdot X)(w)}$, 
+but, using the on-shell conditions and the conservation of momentum, $k_1\cdot k_2=\frac12\qty(k_1+k_2)^2=\frac12k_3^2=0$, hence, the product is regular. As we mentioned before, we only need the zero conformal weight part of this OPE, to obtain this is easy, first, 
+expand the OPE in Taylor around $w_1=w_2$, then do 
+the counting by using that $c$ has $-1$, $X$ has $0$ and $\exp(\im k\cdot X)$ has $\frac{\alpha'}{4}k^2=0$. Other way is 
+to look for the $w_1-w_2$ prefactor after doing the Taylor expansion, the zero conformal weight contributions have no 
+such prefactor. Doing this,
+\begin{align*}
+    V_1V_2&=-\frac{\alpha'}{4}\epsilon_{1}\cdot\epsilon_{2}\cnord{{\partial^2 c\exp(\im k_1\cdot X)c\exp(\im k_2\cdot X)}}(w_2)\\
+    &\quad\quad\quad-\frac{\alpha'\im}{2}k_{1\mu}\epsilon_{1}\cdot\epsilon_{2}\cnord{{\partial c\partial X^\mu\exp(\im k_1\cdot X)c\exp(\im k_2\cdot X)}}(w_2)\\
+    &\quad\quad\quad-\frac{\alpha'\im}{2}\epsilon_{1}\cdot k_2\epsilon_{2\nu}\cnord{{\partial c\exp(\im k_1\cdot X)c\partial X^\nu\exp(\im k_2\cdot X)}}(w_2)\\
+    &\quad\quad\quad+\frac{\alpha'\im}{2}\epsilon_{1\mu}\epsilon_{2}\cdot k_1\cnord{{\partial c\partial X^\mu\exp(\im k_1\cdot X)c\exp(\im k_2\cdot X)}}(w_2)\\
+    &\quad\quad\quad+\frac{{\alpha'}^2}{8}\epsilon_{1}\cdot k_2\epsilon_{2}\cdot k_1\cnord{{\partial^2(c\exp(\im k_1\cdot X))c\exp(\im k_2\cdot X)}}(w_2)\\
+    &\quad\quad\quad+\textnormal{ $h=0$ terms}\\
+    V_1V_2&=-\frac{\alpha'}{4}\qty(\epsilon_{1}\cdot\epsilon_{2}-\frac{\alpha'}{2}\epsilon_{1}\cdot k_2\epsilon_{2}\cdot k_1)\cnord{{\partial^2 cc\exp(\im (k_1+k_2)\cdot X)}}(w_2)\\
+    &\quad-\frac{\alpha'\im}{2}\qty(k_{1\mu}\epsilon_{1}\cdot\epsilon_{2}+\epsilon_{1}\cdot k_2\epsilon_{2\mu}-\epsilon_{1\mu}\epsilon_{2}\cdot k_1-\frac{\alpha'}{2}k_{1\mu}\epsilon_1\cdot k_2\epsilon_2\cdot k_1)\cnord{{\partial cc\partial X^\mu\exp(\im(k_1+ k_2)\cdot X)}}(w_2)\\
+    &\quad\quad\quad+\textnormal{ $h\neq0$ terms}\numberthis\label{VVope}
+\end{align*}
+The $h\neq0$ part of the OPE do not contributes to the three point function, so we can forget about it. Now, we compute the OPE of this OPE 
+with the last $V$. We do it step by step, first with the first term of \cref{VVope}. Again, the exponential does not need to be contracted 
+with another exponential, also we only keep terms with zero conformal weight,
+\begin{align*}
+    \cnord{{\partial^2 cc\exp(\im (k_1+k_2)\cdot X)}}(w_2)V_3&=\cnord{\cnord{{\partial^2 cc\exp(\im (k_1+k_2)\cdot X)}}(w_2)V_3}\\
+    &\quad\quad+\epsilon_{3\alpha}\cnord{\wick{(c\partial \c1X^\alpha\exp(\im k_3\cdot X))(w_3)(\partial^2 cc\exp(\im (k_1+k_2)\cdot\c1 X))(w_2)}}\\
+    \cnord{{\partial^2 cc\exp(\im (k_1+k_2)\cdot X)}}(w_2)V_3&=\cnord{\cnord{{\partial^2 cc\exp(\im (k_1+k_2)\cdot X)}}(w_2)V_3}\\
+    &-\frac{\alpha'\im\epsilon_{3}\cdot\qty(k_1+k_2)}{2(w_3-w_2)}\cnord{{(\partial^2 cc\exp(\im (k_1+k_2)\cdot X))(w_2)(c\exp(\im k_3\cdot X))(w_3)}}\\
+    \cnord{{\partial^2 cc\exp(\im (k_1+k_2)\cdot X)}}(w_2)V_3&=\frac{\alpha'\im\epsilon_{3}\cdot\qty(k_1+k_2)}{2}\cnord{{\partial^2 c\partial cc\exp(\im (k_1+k_2+k_3)\cdot X)}}(w_3)\\
+    &\quad\quad\quad+\textnormal{ $h\neq0$ terms}\numberthis\label{VVVope1}\\
+    \cnord{{\partial^2 cc\exp(\im (k_1+k_2)\cdot X)}}(w_2)V_3&=\textnormal{ $h\neq0$ terms}\numberthis\label{VVVope1}
+\end{align*}
+Where we used $k_1+k_2=-k_3$. Now the second term of \cref{VVope},
+\begin{align*}
+    \cnord{{\partial cc\partial X^\mu\exp(\im(k_1+ k_2)\cdot X)}}&(w_2)V_3=-\epsilon_{3\alpha}\cnord{\wick{(\partial cc\partial\c1 X^\mu\exp(\im(k_1+ k_2)\cdot X))(w_2)(c\partial\c1 X^\alpha\exp(\im k_3\cdot X))(w_3)}}\\
+    &-\epsilon_{3\alpha}\cnord{\wick{(\partial cc\partial\c1 X^\mu\exp(\im(k_1+ k_2)\cdot X))(w_2)(c\partial X^\alpha\exp(\im k_3\cdot\c1 X))(w_3)}}\\
+    &+\epsilon_{3\alpha}\cnord{\wick{(c\partial\c1 X^\alpha\exp(\im k_3\cdot X))(w_3)(\partial cc\partial X^\mu\exp(\im (k_1+k_2)\cdot\c1 X))(w_2)}}\\
+    &+\epsilon_{3\alpha}\cnord{\wick{(c\partial\c1 X^\alpha\c2\exp(\im k_3\cdot X))(w_3)(\partial cc\partial\c2 X^\mu\exp(\im (k_1+k_2)\cdot\c1 X))(w_2)}}\\
+    &\quad\quad\quad+\textnormal{ $h\neq0$ terms}\\
+    \cnord{{\partial cc\partial X^\mu\exp(\im(k_1+ k_2)\cdot X)}}&(w_2)V_3=-\frac{\alpha'\epsilon_{3}^\mu}{2(w_2-w_3)^2}\cnord{{(\partial cc\exp(\im(k_1+ k_2)\cdot X))(w_2)(c\exp(\im k_3\cdot X))(w_3)}}\\
+    &-\frac{\alpha'\im k_3^\mu\epsilon_{3\alpha}}{2(w_2-w_3)}\cnord{{(\partial cc\exp(\im(k_1+ k_2)\cdot X))(w_2)(c\partial X^\alpha\exp(\im k_3\cdot X))(w_3)}}\\
+    &-\frac{\alpha'\im (k_1+k_2)\cdot\epsilon_{3}}{2(w_3-w_2)}\cnord{{(\partial cc\partial X^\mu\exp(\im (k_1+k_2)\cdot X))(w_2)(c\exp(\im k_3\cdot X))(w_3)}}\\
+    &+\frac{{\alpha'}^2\im^2 k_3^\mu(k_1+k_2)\cdot\epsilon_{3}}{4(w_3-w_2)(w_2-w_3)}\cnord{{(\partial cc\exp(\im (k_1+k_2)\cdot X))(w_2)(c\exp(\im k_3\cdot X))(w_3)}}\\
+    &\quad\quad\quad+\textnormal{ $h\neq0$ terms}\\
+    \cnord{{\partial cc\partial X^\mu\exp(\im(k_1+ k_2)\cdot X)}}&(w_2)V_3=-\frac{\alpha'\epsilon_{3}^\mu}{2}\cnord{{\partial^2 c\partial c c\exp(\im(k_1+k_2+ k_3)\cdot X)}}(w_3)\\
+    &\quad\quad\quad+\textnormal{ $h\neq0$ terms}\numberthis\label{VVVope2}
+\end{align*}
+Where we used $k_1+k_2=-k_3$. Putting together \cref{VVope,VVVope1,VVVope2},
+\begin{align*}
+    V_1V_2V_3&=\frac{{\alpha'}^2\im}{4}\cnord{{\partial^2 c\partial cc\exp(\im(k_1+k_2+ k_3)\cdot X)}}(w_3)\times\\
+    &\quad\quad\quad\times\left[\epsilon_3^\mu\qty(k_{1\mu}\epsilon_{1}\cdot\epsilon_{2}+\epsilon_{1}\cdot k_2\epsilon_{2\mu}-\epsilon_{1\mu}\epsilon_{2}\cdot k_1-\frac{\alpha'}{2}k_{1\mu}\epsilon_1\cdot k_2\epsilon_2\cdot k_1)\right]\\
+\end{align*}
+Using that $\epsilon_3\cdot k_1=-\epsilon_3 \cdot k_2$ and similar,
+\begin{align*}
+    V_1V_2V_3&=\frac{{\alpha'}^2\im}{8}\cnord{{\partial^2 c\partial cc\exp(\im(k_1+k_2+ k_3)\cdot X)}}(w_3)\times\\
+    &\quad\quad\quad\times\left[\epsilon_3\cdot k_{12}\epsilon_{1}\cdot\epsilon_{2}+\epsilon_{1}\cdot k_{23}\epsilon_{2}\cdot \epsilon_3+\epsilon_{2}\cdot k_{31}\epsilon_3\cdot\epsilon_{1}+\frac{\alpha'}{8}\epsilon_3\cdot k_{12}\epsilon_1\cdot k_{23}\epsilon_2\cdot k_{31}\right]\\
+\end{align*}
+In which $k_{ij}=k_i-k_j$. So the expectation value is, now dressing with color factors,
+\begin{align*}
+    \expval{V^{a_1}V^{a_2}V^{a_3}}&=\Tr\qty[\lambda^{a_1}\comm{\lambda^{a_2}}{\lambda^{a_3}}]\frac{{\alpha'}^2\im}{8}\expval{\cnord{{\partial^2 c\partial cc\exp(\im(k_1+k_2+ k_3)\cdot X)}}(w_3)}\times\\
+    &\quad\quad\quad\times\left[\epsilon_3\cdot k_{12}\epsilon_{1}\cdot\epsilon_{2}+\epsilon_{1}\cdot k_{23}\epsilon_{2}\cdot \epsilon_3+\epsilon_{2}\cdot k_{31}\epsilon_3\cdot\epsilon_{1}+\frac{\alpha'}{8}\epsilon_3\cdot k_{12}\epsilon_1\cdot k_{23}\epsilon_2\cdot k_{31}\right]\\
+\end{align*}
+The expectation value on the right hand side cannot depend on the point $w_3$, as there is just a single operator inside it, hence, 
+it is just a scalar factor. In fact it's from this term that we get the conservation of momentum delta, 
+this is easier to see from the path integral formalism, where we have $\int\Dd{X}\exp(\im \sum k\cdot X)\propto \delta^{\qty(26)}\qty(k_1+k_2+k_3)$. 
+We won't derive this is detail as we already have derived that there must be a conservation of momentum delta inside it, and as we already 
+argued that this expectation value is a scalar, and by the on-shell conditions $k_1^2=k_2^2=k_3^2=0$ and the conservation of momentum 
+no scalar can be build out of the momentums $k_i\cdot k_j=0$, hence, this expectation value is just the conservation of momentum delta 
+times a number,
+\begin{align*}
+    \expval{V^{a_1}V^{a_2}V^{a_3}}&=C\Tr\qty[\lambda^{a_1}\comm{\lambda^{a_2}}{\lambda^{a_3}}]\frac{{\alpha'}^2\im}{8}\delta^{\qty(26)}\qty(k_1+k_2+k_3)\times\\
+    &\quad\quad\quad\times\left[\epsilon_3\cdot k_{12}\epsilon_{1}\cdot\epsilon_{2}+\epsilon_{1}\cdot k_{23}\epsilon_{2}\cdot \epsilon_3+\epsilon_{2}\cdot k_{31}\epsilon_3\cdot\epsilon_{1}+\frac{\alpha'}{8}\epsilon_3\cdot k_{12}\epsilon_1\cdot k_{23}\epsilon_2\cdot k_{31}\right]\\
+\end{align*}
+The three first kinematic factors are the usual Yang-Mills three point interaction, the fourth one is the first stringy contribution, 
+as can be seen from the power counting of $\alpha'$.
+
+
+% Using this result in \cref{threepointcft},
+% \begin{align*}
+%     \expval{V^{a_1}\qty(w_1;\epsilon_1,k_1)V^{a_2}\qty(w_2;\epsilon_2,k_2)V^{a_3}\qty(w_3;\epsilon_3,k_3)}&=\lambda^{a_1a_2a_3}C\qty(\epsilon_1,k_1;\epsilon_2,k_2;\epsilon_3,k_3)\numberthis\label{threepointfirst}
+% \end{align*}
+% Where we included a \textit{dressing} factor to the correlator, $\lambda^{a_1a_2a_3}\in\mathbb C$. The only motif why is acceptable to write this expression for an open string is due to all operators being inserted 
+% in the boundary, otherwise there could be contributions like $\abs{w_1-\bar w_2}^n$. This might not seem much progress, but, notice, the left hand side is only linear on each of the polarizations, and as 
+% these are just usual vector that can go out of the expectation value, the right hand side also is only linear in the 
+% polarization vector,
+% \begin{align*}
+%     \expval{V^{a_1}\qty(w_1;\epsilon_1,k_1)V^{a_2}\qty(w_2;\epsilon_2,k_2)V^{a_3}\qty(w_3;\epsilon_3,k_3)}&=\lambda^{a_1a_2a_3}\epsilon_{1\mu_1}\epsilon_{2\mu_2}\epsilon_{3\mu_3}C^{\mu_1\mu_2\mu_3}\qty(k_1,k_2,k_3)\numberthis\label{threepointsecond}
+% \end{align*}
+% To get more information about what kind of function $C^{\mu_1\mu_2\mu_3}\qty(k_1,k_2,k_3)$ is, 
+
+
+% %RETIRADO
+
+
+% It's clear that this result is independent of both $\lambda,\epsilon$, hence, it imply that there should be 
+% a delta function inside $C$ to ensure the \textit{conservation of momentum}, that is, we should replace our 
+% definition of $C$ by,
+% \[C^{\mu_1\mu_2\mu_3}\qty(k_1,k_2,k_3)\rightarrow \delta^{\qty(26)}\qty(k_1+k_2+k_3)C^{\mu_1\mu_2\mu_3}\qty(k_1,k_2,k_3)\]
+% Up to now our expression is,
+% \[\expval{V^{a_1}V^{a_2}V^{a_3}}=\lambda^{a_1a_2a_3}\delta^{(26)}\qty(k_1+k_2+k_3)\epsilon_{1\mu_1}\epsilon_{2\mu_2}\epsilon_{3\mu_3}C^{\mu_1\mu_2\mu_3}\qty(k_1,k_2,k_3)\numberthis\label{threepointthird}\]
+
+% %RETIRADO
+
+% To obtain any information further is necessary to use the gauge invariance, in particular, as shown in the last 
+% item, $V^a\qty(w;\epsilon+k,k)=V^a\qty(w;\epsilon,k)+\comm{Q_{\textnormal{BRST}}}{\mathcal O}$. As 
+% any physical state must be BRST closed, the vacuum itself also needs, also, as $V^a$ commutes with 
+% the BRST operator,
+% \[\expval{\comm{Q_{\textnormal{BRST}}}{\mathcal O}V^{a_2}V^{a_3}}=0\]
+% Thus, the right hand side of \cref{threepointfourth} is also invariant under the gauge transformation, what 
+% is equivalent to say,
+% \[k_{1\mu_1}\epsilon_{2\mu_2}\epsilon_{3\mu_3}C^{\mu_1\mu_2\mu_3}\qty(k_1,k_2,k_3)=0\numberthis\label{orthogonalitycondition}\]
+% With the conservation of momentum imposed, of course. This last expression is our holy graal. It is saying that $\epsilon_{2\mu_2}\epsilon_{3\mu_3}C^{\mu_1\mu_2\mu_3}\qty(k_1,k_2,k_3)$ 
+% is orthogonal to $k_{1\mu_1}$, luckily, there are few combinations of vectors build out of $k_1,k_2,k_3,\epsilon_2,\epsilon_3$ that are linear in $\epsilon_2,\epsilon_3$ and are orthogonal, 
+% \begin{align*}
+%     k_1\cdot k_1&=0\\
+%     k_1\cdot k_2&=\frac12\qty(k_1+k_2)^2=\frac12 k_3^2=0\\
+%     k_1\cdot k_3&=\frac12\qty(k_1+k_3)^2=\frac12 k_2^2=0\\
+%     k_1\cdot\qty(\epsilon_2\qty(k_1\cdot \epsilon_3)-\epsilon_3\qty(k_1\cdot \epsilon_2))&=0
+% \end{align*}
+% The last one is the most non trivial one. The first one, $k_1$, can be neglected, as it would have to be contracted with $\epsilon_1$, 
+% which gives zero. We can determine $\epsilon_{2\mu_2}\epsilon_{3\mu_3}C^{\mu_1\mu_2\mu_3}\qty(k_1,k_2,k_3)$ up to proportionality 
+% functions of Lorentz scalars,
+% \begin{align*}
+%     \epsilon_{2\mu_2}\epsilon_{3\mu_3}C^{\mu_1\mu_2\mu_3}\qty(k_1,k_2,k_3)&=a_1\qty(k_1,\epsilon_2,\epsilon_3)k_2^{\mu_1}+b_1\qty(\epsilon_2,\epsilon_3)k_3^{\mu_1}+c_1\qty(\epsilon_2^{\mu_1}\qty(k_1\cdot \epsilon_3)-\epsilon_3^{\mu_1}\qty(k_1\cdot \epsilon_2))
+% \end{align*}
 
 \probitem{}
