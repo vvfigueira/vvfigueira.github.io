@@ -44,8 +44,22 @@ Hence, the OPE with the fourth terms is,
 \end{align*}
 Due to $\gamma(z)\delta\qty(\gamma)(w)\sim\mathcal O\qty(z-w)$. With the fifth term,
 \begin{align*}
-    \frac14\cnord{c\partial\beta\gamma}V^a(w)&=
+    \frac14\cnord{c\partial\beta\gamma}V^a(w)&=-\lambda^a\epsilon_\mu\frac{1}{4(z-w)^2}\cnord{(c\beta\gamma)(z)(c\delta\qty(\gamma)\psi^\mu\exp(\im k\cdot X))(w)}\\
+    \frac14\cnord{c\partial\beta\gamma}V^a(w)&=-\lambda^a\epsilon_\mu\frac{1}{4}\cnord{\partial c\beta\partial\gamma c\delta\qty(\gamma)\psi^\mu\exp(\im k\cdot X)}(w)+\textnormal{ regular}\\
+    \frac14\cnord{c\partial\beta\gamma}V^a(w)&=\textnormal{ regular}
 \end{align*}
+The sixty term,
+\begin{align*}
+    -\frac34\cnord{c\beta\partial\gamma}V^a(w)&=-\lambda^a\epsilon_\mu\frac{3}{4(z-w)}\cnord{(c\beta\partial\gamma)(z)(c\delta\qty(\gamma)\psi^\mu\exp(\im k\cdot X))(w)}\\
+    -\frac34\cnord{c\beta\partial\gamma}V^a(w)&=-\lambda^a\epsilon_\mu\frac{3}{4}\cnord{\partial c\beta\partial\gamma c\delta\qty(\gamma)\psi^\mu\exp(\im k\cdot X)}(w)+\textnormal{ regular}\\
+    -\frac34\cnord{c\beta\partial\gamma}V^a(w)&=\textnormal{ regular}
+\end{align*}
+Hence,
+\begin{align*}
+    j_{\textnormal{BRST}}(z)V^a(w)&=\frac{1}{z-w}\qty(\frac{\alpha'}{2}k^2-\frac12)\cnord{c\partial V^a}(w)+\lambda^a\sqrt{\frac{\alpha'}{2}}\frac{\epsilon\cdot k}{z-w}\cnord{\partial\gamma c\delta(\gamma)\exp(\im k\cdot X)}(w)+\textnormal{ regular}\\
+    \comm{Q_{\textnormal{BRST}}}{V^a(w)}&=\oint\limits_{C_w}\frac{\dd{z}}{2\pi\im}j_{\textnormal{BRST}}(z)V^a(w)
+\end{align*}
+So that we can read from the imposition of $\comm{Q_{\textnormal{BRST}}}{V^a}=0$, the conditions $k^2=\frac{1}{\alpha'}$ and $\epsilon\cdot k=0$.
 
 \probitem{}
 
