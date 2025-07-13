@@ -1,7 +1,173 @@
 \problem{}
 \probitem{}
+
+As the fermions have occupation number either $0$ or $1$, \[H_{\textnormal{NS}}=\sum\limits_{i=2}^9\sum\limits_{r=\frac12}^\infty rn_{r}^i-\frac16\] 
+Where $n_r^i\in\qty{0,1}$. Hence, the partition function is,
+\begin{align*}
+    \chi^{(--)}\qty(\tau)&=\Tr\qty[\exp\qty(2\pi\im\tau H_{\textnormal{NS}})]
+\end{align*}
+The trace is to sum over all different possible combinations of $n_r^i$, and setting $q=\exp(2\pi\im\tau)$,
+\begin{align*}
+    \chi^{(--)}\qty(\tau)&=q^{-\frac16}\sum\limits_{\qty{n_r^i}\in 2^{\qty{0,1}}}q^{\sum\limits_{i=2}^9\sum\limits_{r=\frac12}^\infty rn_r^i} \\
+    \chi^{(--)}\qty(\tau)&=q^{-\frac16}\sum\limits_{\qty{n_r^i}\in 2^{\qty{0,1}}}\prod\limits_{i=2}^9\prod\limits_{r=\frac12}^\infty q^{ rn_r^i} \\
+    \chi^{(--)}\qty(\tau)&=q^{-\frac16}\prod\limits_{i=2}^9\prod\limits_{r=\frac12}^\infty\qty(\sum\limits_{\qty{n_r}\in\qty{0,1}} q^{ rn_r} )\\
+    \chi^{(--)}\qty(\tau)&=q^{-\frac16}\prod\limits_{r=\frac12}^\infty\qty(1+q^r )^8\\
+    \chi^{(--)}\qty(\tau)&=q^{-\frac{4}{24}}\qty(\prod\limits_{n=1}^\infty\qty(1+q^{n-\frac12} ))^8\\
+    \chi^{(--)}\qty(\tau)&=\qty(q^{-\frac{1}{24}}\prod\limits_{n=1}^\infty\qty(1+q^{n-\frac12} )\qty(1+q^{n-\frac12} ))^4\\
+    \chi^{(--)}\qty(\tau)&=\qty(\frac{\vartheta\mqty[0\\0]\qty(0|\tau)}{\eta\qty(\tau)})^4
+\end{align*}
+
 \probitem{}
+
+Done in the last item.
+
 \probitem{}
+
+The R sector is similar,
+
+\begin{align*}
+    \chi^{(+-)}\qty(\tau)&=q^{\frac13}\sum\limits_{\qty{n_m^i}\in 2^{\qty{0,1}}}q^{\sum\limits_{i=2}^9\sum\limits_{m=1}^\infty mn_m^i} \\
+    \chi^{(+-)}\qty(\tau)&=q^{\frac13}\sum\limits_{\qty{n_m^i}\in 2^{\qty{0,1}}}\prod\limits_{i=2}^9\prod\limits_{m=1}^\infty q^{ mn_m^i} \\
+    \chi^{(+-)}\qty(\tau)&=q^{\frac13}\prod\limits_{i=2}^9\prod\limits_{m=1}^\infty\qty(\sum\limits_{\qty{n_m}\in\qty{0,1}} q^{ mn_m} )\\
+    \chi^{(+-)}\qty(\tau)&=q^{\frac13}\prod\limits_{m=1}^\infty\qty(1+q^m )^8\\
+    \chi^{(+-)}\qty(\tau)&=q^{\frac{8}{24}}\qty(\frac12\prod\limits_{m=1}^\infty\qty(1+q^m )\qty(1+q^{m-1} ))^4\\
+    \chi^{(+-)}\qty(\tau)&=\qty(q^{\frac{2}{24}}\frac12\prod\limits_{m=1}^\infty\qty(1+q^{m+\frac12-\frac12} )\qty(1+q^{m-\frac12-\frac12} ))^4\\
+    \chi^{(+-)}\qty(\tau)&=\qty(q^{\frac{12\frac14-1}{24}}\frac12\prod\limits_{m=1}^\infty\qty(1+q^{m+\frac12-\frac12} )\qty(1+q^{m-\frac12-\frac12} ))^4\\
+    \chi^{(+-)}\qty(\tau)&=\frac{1}{2^4}\qty(q^{\frac{\frac{1}{2^2}}{2}-\frac{1}{24}}\prod\limits_{m=1}^\infty\qty(1+q^{m+\frac12-\frac12} )\qty(1+q^{m-\frac12-\frac12} ))^4\\
+    \chi^{(+-)}\qty(\tau)&=\frac{1}{2^4}\qty(\frac{\vartheta\mqty[\frac12\\ 0]\qty(0|\tau)}{\eta\qty(\tau)})^4
+\end{align*}
+
 \probitem{}
+
+With the fermion number operator the calculus is similar,
+
+\begin{align*}
+    \chi^{(-+)}\qty(\tau)&=\Tr\qty[\exp\qty(2\pi\im\tau H_{\textnormal{NS}})\qty(-1)^F]\\
+    \chi^{(-+)}\qty(\tau)&=q^{-\frac16}\sum\limits_{\qty{n_r^i}\in 2^{\qty{0,1}}}q^{\sum\limits_{i=2}^9\sum\limits_{r=\frac12}^\infty rn_r^i}(-1)^{\sum\limits_{i=2}^9\sum\limits_{r=\frac12}^\infty n_r^i-1}\\
+    \chi^{(-+)}\qty(\tau)&=q^{-\frac16}\sum\limits_{\qty{n_r^i}\in 2^{\qty{0,1}}}\prod\limits_{i=2}^9\prod\limits_{r=\frac12}^\infty q^{ rn_r^i}(-)\qty(-1)^{n_r^i} \\
+    \chi^{(-+)}\qty(\tau)&=q^{-\frac16}\prod\limits_{i=2}^9\prod\limits_{r=\frac12}^\infty\qty(\sum\limits_{\qty{n_r}\in\qty{0,1}} q^{ rn_r}(-)\qty(-1)^{n_r} )\\
+    \chi^{(-+)}\qty(\tau)&=q^{-\frac16}\prod\limits_{r=\frac12}^\infty(-)^8\qty(1-q^r )^8\\
+    \chi^{(-+)}\qty(\tau)&=q^{-\frac{4}{24}}\qty(\prod\limits_{n=1}^\infty\qty(1-q^{n-\frac12} ))^8\\
+    \chi^{(-+)}\qty(\tau)&=\qty(q^{-\frac{1}{24}}\prod\limits_{n=1}^\infty\qty(1-q^{n-\frac12} )\qty(1-q^{n-\frac12} ))^4\\
+    \chi^{(-+)}\qty(\tau)&=\qty(q^{-\frac{1}{24}}\prod\limits_{n=1}^\infty\qty(1+q^{n-\frac12}\e^{2\pi\im\frac12} )\qty(1+q^{n-\frac12}\e^{-2\pi\im\frac12} ))^4\\
+    \chi^{(-+)}\qty(\tau)&=\qty(\frac{\vartheta\mqty[0\\\frac12]\qty(0|\tau)}{\eta\qty(\tau)})^4
+\end{align*}
+
+And also, forgetting about the fermionic zero modes,
+
+\begin{align*}
+    \chi^{(++)}\qty(\tau)&=\Tr\qty[\exp\qty(2\pi\im\tau H_{\textnormal{R}})\qty(-1)^F]\\
+    \chi^{(++)}\qty(\tau)&\propto q^{\frac13}\sum\limits_{\qty{n_m^i}\in 2^{\qty{0,1}}}q^{\sum\limits_{i=2}^9\sum\limits_{m=1}^\infty mn_m^i}\qty(-1)^{\sum\limits_{i=2}^9\sum\limits_{m=1}^\infty n_m^i} \\
+    \chi^{(++)}\qty(\tau)&\propto q^{\frac13}\sum\limits_{\qty{n_m^i}\in 2^{\qty{0,1}}}\prod\limits_{i=2}^9\prod\limits_{m=1}^\infty q^{ mn_m^i}\qty(-1)^{n_m^i} \\
+    \chi^{(++)}\qty(\tau)&\propto q^{\frac13}\prod\limits_{i=2}^9\prod\limits_{m=1}^\infty\qty(\sum\limits_{\qty{n_m}\in\qty{0,1}} q^{ mn_m}\qty(-1)^{n_m^i} )\\
+    \chi^{(++)}\qty(\tau)&\propto q^{\frac13}\prod\limits_{m=1}^\infty\qty(1-q^m )^8\\
+    \chi^{(++)}\qty(\tau)&\propto q^{\frac{8}{24}}\qty(\prod\limits_{m=1}^\infty\qty(1-q^m )\qty(1-q^{m-1} ))^4\\
+    \chi^{(++)}\qty(\tau)&\propto \qty(q^{\frac{2}{24}}\prod\limits_{m=1}^\infty\qty(1+q^{m+\frac12-\frac12}\e^{2\pi\im\frac12} )\qty(1+q^{m-\frac12-\frac12}\e^{-2\pi\im\frac12} ))^4\\
+    \chi^{(++)}\qty(\tau)&\propto \qty(q^{\frac{12\frac14-1}{24}}\prod\limits_{m=1}^\infty\qty(1+q^{m+\frac12-\frac12}\e^{2\pi\im\frac12} )\qty(1+q^{m-\frac12-\frac12}\e^{-2\pi\im\frac12} ))^4\\
+    \chi^{(++)}\qty(\tau)&\propto \qty(q^{\frac{\frac{1}{2^2}}{2}-\frac{1}{24}}\e^{2\pi\im\frac12\frac12}\prod\limits_{m=1}^\infty\qty(1+q^{m+\frac12-\frac12}\e^{2\pi\im\frac12} )\qty(1+q^{m-\frac12-\frac12}\e^{-2\pi\im\frac12} ))^4\\
+    \chi^{(++)}\qty(\tau)&\propto \qty(\frac{\vartheta\mqty[\frac12\\ \frac12]\qty(0|\tau)}{\eta\qty(\tau)})^4\propto 0
+\end{align*}
+
 \probitem{}
+
+To find the modular invariant holomorphic combination of $\eta,\vartheta_2,\vartheta_3,\vartheta_4$ might seem a difficult task, 
+but let's look at what we have at hands, each fermionic partition function is of the form $\chi\propto \frac{\vartheta^4}{\eta^4}$. 
+As we seek a modular invariant combination to be partition function, we may take this form as inspiration. Sadly, both the 
+transformations, $\tau\rightarrow \tau+1,-\frac1\tau$ mix the functions. Hence, the best we can do is to set the invariant 
+modular combination to be a sum of the former partition functions,
+\[a_2\frac{\vartheta^4_2}{\eta^4}+a_3\frac{\vartheta^4_3}{\eta^4}+a_4\frac{\vartheta^4_4}{\eta^4}\]
+Under $\tau\rightarrow\tau+1$,
+\begin{align*}
+    a_2\frac{\vartheta^4_2}{\eta^4}+a_3\frac{\vartheta^4_3}{\eta^4}+a_4\frac{\vartheta^4_4}{\eta^4}&\rightarrow \e^{\im\pi\frac23}a_2\frac{\vartheta^4_2}{\eta^4}+\e^{-\im\pi\frac13}a_3\frac{\vartheta^4_4}{\eta^4}+\e^{-\im\pi\frac13}a_4\frac{\vartheta^4_3}{\eta^4}\numberthis\label{tau1}
+\end{align*}
+This combination is not invariant. Nevertheless, let's look at 
+the other transformation,
+\begin{align*}
+    a_2\frac{\vartheta^4_2}{\eta^4}+a_3\frac{\vartheta^4_3}{\eta^4}+a_4\frac{\vartheta^4_4}{\eta^4}&\rightarrow a_2\frac{\vartheta^4_4}{\eta^4}+a_3\frac{\vartheta^4_3}{\eta^4}+a_4\frac{\vartheta^4_2}{\eta^4}
+\end{align*}
+This fixes without doubt $a_2=a_4=a,a_3=b$. Now we can go back to \cref{tau1}. To fix it we need a way to deal with the extra factor of $\e^{-\im\pi\frac13}$. 
+A possible way is to insert more factors of $\eta$, lets look how adding $\eta^{-8}$ change the transformation under $\tau\rightarrow \tau+1$,
+\begin{align*}
+    \frac{1}{\eta^{12}}\qty(a\vartheta^4_2+b\vartheta^4_3+a\vartheta^4_4)&\rightarrow -\frac{1}{\eta^{12}}\qty(-a\vartheta^4_2+b\vartheta^4_4+a\vartheta^4_3)
+\end{align*}
+As long as $a=-b$ the expression is invariant. But, also, this spoils the invariance with respect to the $\tau\rightarrow-\frac1\tau$ transformation. 
+Let just rewrite our expression here, setting $a=-1$
+\[\frac{1}{\eta^{12}}\qty(\vartheta^4_2-\vartheta^4_3+\vartheta^4_4)\]
+As we saw, this is invariant under $\tau\rightarrow\tau+1$, but isn't under $\tau\rightarrow-\frac1\tau$. In order 
+to transform this expression into a fully modular invariant one we need to multiply it by an expression 
+which is invariant under $\tau\rightarrow\tau+1$ and also transform correctly under $\tau\rightarrow-\frac1\tau$. As under $\tau\rightarrow-\frac1\tau$,
+\[\frac{1}{\eta^{12}}\qty(\vartheta^4_2-\vartheta^4_3+\vartheta^4_4)\rightarrow\frac{1}{\qty(-\im\tau)^4\eta^{12}}\qty(\vartheta^4_2-\vartheta^4_3+\vartheta^4_4)\]
+We need a $\tau\rightarrow\tau+1$ invariant expression which transforms as $\qty(-\im\tau)^4$ under $\tau\rightarrow-\frac1\tau$. The 
+sad part here is that the only $\tau\rightarrow\tau+1$ invariant expression which transform as powers of $\qty(-\im\tau)$ that 
+can be constructed out of $\eta,\vartheta_2,\vartheta_3,\vartheta_4$ is $\vartheta_2\vartheta_3\vartheta_4\eta^{-3}$, which 
+is invariant under $\tau\rightarrow-\frac1\tau$. Thus, in order to match the variation we have to include 
+factors of Im$(\tau)$, which is invariant under $\tau\rightarrow\tau+1$, but, transforms as 
+Im$(\tau)\rightarrow\frac{1}{\abs{\tau}^2}$Im$(\tau)$ under $\tau\rightarrow-\frac1\tau$. That is, it isn't holomorphic. 
+Even more sadly is the fact that Im$(\tau)$ cannot be split into a part which transform as $-\im\tau$ and 
+another that transforms as $\im\bar\tau$. Hence, the best we can do to 
+obtain an expression which is separately left and right modular invariant is,
+\[\frac{1}{\textnormal{Im}(\tau)^4}\frac{1}{\eta^{12}}\qty(\vartheta^4_2-\vartheta^4_3+\vartheta^4_4)\frac{1}{{\bar\eta}^{12}}\qty({\bar\vartheta}^4_2-{\bar\vartheta}^4_3+{\bar\vartheta}^4_4)\]
+Separately, the left and right modes are invariant under $\tau\rightarrow\tau+1$, but, neither of them are invariant 
+under $\tau\rightarrow-\frac1\tau$, they transform as $\qty(-\im\tau)^{-4}$ and as $\qty(\im\bar\tau)^{-4}$, which 
+together accounts for the transformation of Im$(\tau)^4$ as $\abs{\tau}^8$. If, hypothetically, would be possible for 
+us to do a splitting $\frac{1}{\textnormal{Im}(\tau)}=w(\tau)\bar w(\bar \tau)$, such that both $w,\bar w$ are 
+invariant under $\tau\rightarrow\tau+1$ and under $\tau\rightarrow-\frac1\tau$ transform as, $w,\bar w\rightarrow \qty(-\im\tau) w,\qty(\im\bar\tau)\bar w$, 
+then, the following would be holomorphic modular invariant, \[\frac{w^4}{\eta^{12}}\qty(\vartheta^4_2-\vartheta^4_3+\vartheta^4_4)\]
+
+
+% multiply the whole expression by some combination of $\eta,\vartheta_2,\vartheta_3,\vartheta_4$,
+% \begin{align*}
+%     \frac{\vartheta^\beta_2\vartheta^\mu_3\vartheta^\nu_4}{\eta^\alpha}\qty(a\frac{\vartheta^4_2}{\eta^4}+b\frac{\vartheta^4_3}{\eta^4}+a\frac{\vartheta^4_4}{\eta^4})&\rightarrow \e^{-\im\pi\frac13}\e^{-\im\pi\frac{\alpha}{12}}\e^{\im\pi\frac{\beta}{4}}\frac{\vartheta^\beta_2\vartheta^\nu_3\vartheta^\mu_4}{\eta^\alpha}\qty( -a\frac{\vartheta^4_2}{\eta^4}+b\frac{\vartheta^4_4}{\eta^4}+a\frac{\vartheta^4_3}{\eta^4})
+% \end{align*}
+% Invariance demands 
+% \begin{align*}\begin{cases}
+%     \mu=\nu\\ 
+%     a=-a\e^{-\im\pi\frac13}\e^{-\im\pi\frac{\alpha}{12}}\e^{\im\pi\frac{\beta}{4}}\\
+%     b=a\e^{-\im\pi\frac13}\e^{-\im\pi\frac{\alpha}{12}}\e^{\im\pi\frac{\beta}{4}}\\
+%     a=b\e^{-\im\pi\frac13}\e^{-\im\pi\frac{\alpha}{12}}\e^{\im\pi\frac{\beta}{4}}
+% \end{cases}\Rightarrow
+% \begin{cases}
+%     \mu=\nu\\ 
+%     -1=\e^{-\im\pi\frac13}\e^{-\im\pi\frac{\alpha}{12}}\e^{\im\pi\frac{\beta}{4}}\\
+%     b=-a
+% \end{cases}\Rightarrow
+% \begin{cases}
+%     \mu=\nu\\ 
+%     3\beta -\alpha=24 n+16,\ n\in\mathbb Z\\
+%     b=-a
+% \end{cases}\end{align*}
+% Now we go back to the $\tau\rightarrow-\frac1\tau$ which may have be spoiled due to the new factor.
+% \begin{align*}
+%     \frac{\vartheta^\beta_2\vartheta^\mu_3\vartheta^\nu_4}{\eta^\alpha}\qty(a\frac{\vartheta^4_2}{\eta^4}-a\frac{\vartheta^4_3}{\eta^4}+a\frac{\vartheta^4_4}{\eta^4})&\rightarrow \e^{-\im\pi\frac13}\e^{-\im\pi\frac{\alpha}{12}}\e^{\im\pi\frac{\beta}{4}}\frac{\vartheta^\beta_2\vartheta^\nu_3\vartheta^\mu_4}{\eta^\alpha}\qty( -a\frac{\vartheta^4_2}{\eta^4}+b\frac{\vartheta^4_4}{\eta^4}+a\frac{\vartheta^4_3}{\eta^4})
+% \end{align*}
+
 \probitem{}
+
+The identity \[\vartheta^4_2-\vartheta^4_3+\vartheta^4_4=0\] Implies the vanishing of the last found expression. 
+The interpretation is simple, this is saying that all the contributions from NS bosons cancel the 
+contribution of the R fermions. To see this more clearly we can use the results from the last itens to 
+obtain,
+\begin{align*}
+    \frac{1}{\eta^4}\qty(\vartheta^4_3-\vartheta^4_2-\vartheta_2^4)&\propto \chi^{(--)}-\chi^{(--)}-\chi^{(+-)}\\
+    0=\frac{1}{\eta^4}\qty(\vartheta^4_3-\vartheta^4_2-\vartheta_2^4)&\propto\Tr\qty[\exp\qty(2\pi\im H_{\textnormal{NS}})\qty(1-\qty(-1)^F)]-\Tr\qty[\exp\qty(2\pi\im H_{\textnormal{R}})]
+\end{align*}
+This is showing to us that this vanishing is exactly due to the supersymmetric matching between bosonic and fermionic states.
+
+To obtain a new modular invariant expression without the assumption of separately modular invariance 
+we can make use of $\abs{\eta},\abs{\vartheta_ i}$. This trivializes the $\tau\rightarrow\tau+1$ 
+on $\eta,\vartheta_2$, and forces $\vartheta_3,\vartheta_4$ to be symmetric in our expression. 
+To maintain invariance under $\tau\rightarrow-\frac1\tau$ forces our expression to be 
+symmetric in exchange of $\vartheta_2,\vartheta_4$, and also imposes that the sum of the powers 
+of $\vartheta_2,\vartheta_3,\vartheta_4$ --- which are the same --- is exactly minus 
+the power of $\eta$. 
+
+We concluded that our expression have to be of one of this three options,
+\[\qty(\frac{\abs{\vartheta_2}\abs{\vartheta_3}\abs{\vartheta_4}}{\abs{\eta}^3})^\alpha,\ \ \ \qty(\frac{\abs{\vartheta_2}^\beta+\abs{\vartheta_3}^\beta+\abs{\vartheta_4}^\beta}{\abs{\eta}^\beta})^\alpha,\ \ \ \qty(\frac{\abs{\vartheta_2}^\beta\abs{\vartheta_3}^\beta+\abs{\vartheta_2}^\beta\abs{\vartheta_4}^\beta+\abs{\vartheta_4}^\beta\abs{\vartheta_3}^\beta}{\abs{\eta}^{2\beta}})^\alpha\]
+These are the only options which are totally symmetric in $\abs{\vartheta_2},\abs{\vartheta_3},\abs{\vartheta_4}$ and also 
+have the correct powers of $\abs{\eta}$ to cancel the $\tau\rightarrow-\frac1\tau$ transformation. Luckily, due to,
+\[\abs{\vartheta_2}\abs{\vartheta_3}\abs{\vartheta_4}=2\abs{\eta}^3\] The first expression is just a constant. In order to choose between 
+the other two we need to make some assumptions, first, we would like to no have mixing terms $\abs{\vartheta_2}\abs{\vartheta_3}$, this 
+excludes the third term and also set $\alpha=0$ in the second. Next, we want each term to be proportional to a 
+left mode $\propto\vartheta_ i^4\eta^{-4}$ times a right mode $\propto{\bar\vartheta}_i^4{\bar\eta}^{-4}$. This 
+sets $\beta=8$ in the second expression,
+\[\frac{\abs{\vartheta_2}^8+\abs{\vartheta_3}^8+\abs{\vartheta_4}^8}{\abs{\eta}^8}\]

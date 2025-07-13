@@ -1,5 +1,52 @@
 \problem{}
 \probitem{}
+
+The computation follows almost the same route as the one done in the last problem, but now the BRST 
+current is,
+\[j_{\textnormal{BRST}}=\cnord{cT^m+\gamma G^m+bc\partial c+\frac34\partial c\beta\gamma+\frac14c\partial\beta\gamma-\frac34c\beta\partial\gamma-b\gamma^2}\numberthis\label{superbrstcurrent}\]
+Where $T^m$ are the matter energy momentum tensors, and $G^m$ is the 
+supersymmetric counterpart,
+\begin{align*}
+    T^m&=-\frac{1}{\alpha'}\cnord{\partial X^\mu\partial X_\mu}-\frac12\cnord{\psi^\mu\partial\psi_\mu}\\
+    G^m&=\im\sqrt{\frac{2}{\alpha'}}\cnord{\psi^\mu\partial X_\mu}
+\end{align*}
+We want to compute the OPE between the $j_{\textnormal{BRST}}$ and the vertex operator,
+\[V^a=\lambda^a\epsilon_\mu\cnord{c\delta\qty(\gamma)\psi^\mu\exp\qty(\im k\cdot X)}\]
+To compute the OPE of the first term of $j_{\textnormal{BRST}}$ we use that $\psi^\mu$ has conformal weight $\frac12$ and $\exp\qty(\im k\cdot X)$ has conformal 
+weight $\frac{\alpha'}{4}k^2$, and remembering we just care to simple poles in the whole OPE,
+\begin{align*}
+    (cT^m)\qty(z)V^a\qty(w)&=c(z)\qty(\frac{\alpha'}{4}k^2+\frac12)\frac{V^a(w)}{(z-w)^2}+\textnormal{ no single pole}\\
+    (cT^m)\qty(z)V^a\qty(w)&=\qty(\frac{\alpha'}{4}k^2+\frac12)\frac{\cnord{\partial cV^a}(w)}{z-w}+\textnormal{ no single pole}
+\end{align*}
+Now the second term,
+\begin{align*}
+    (\gamma G^m)(z)V^a(w)&=\im\lambda^a\epsilon_\mu\sqrt{\frac{2}{\alpha'}}\cnord{\wick{(\gamma\c1\psi^\nu\partial\c2 X_\nu)(z)( c\delta\qty(\gamma)\c1\psi^\mu\exp(\im k\cdot\c2 X))(w)}}+\textnormal{ no single pole}\\
+    (\gamma G^m)(z)V^a(w)&=-\im\lambda^a\epsilon_\mu\sqrt{\frac{2}{\alpha'}}\frac{\alpha'}{2(z-w)^2}\im k^\mu\cnord{{\gamma(z)( c\delta\qty(\gamma)\exp(\im k\cdot X))(w)}}+\textnormal{ no single pole}\\
+    (\gamma G^m)(z)V^a(w)&=\lambda^a\sqrt{\frac{\alpha'}{2}}\frac{\epsilon\cdot k}{z-w}\cnord{{\partial\gamma c\delta\qty(\gamma)\exp(\im k\cdot X)}}(w)+\textnormal{ no single pole}
+\end{align*}
+The third one,
+\begin{align*}
+    \cnord{bc\partial c}(z)V^a(w)&=\lambda^a\epsilon_\mu\cnord{\wick{(\c1bc\partial c)(z)(\c1c\delta\qty(\gamma)\psi^\mu\exp(\im k\cdot X))(w)}}\\
+    \cnord{bc\partial c}(z)V^a(w)&=\lambda^a\frac{\epsilon_\mu}{z-w}\cnord{{(c\partial c)(z)(\delta\qty(\gamma)\psi^\mu\exp(\im k\cdot X))(w)}}\\
+    \cnord{bc\partial c}(z)V^a(w)&=-\frac{1}{z-w}\cnord{\partial cV^a}(w)+\textnormal{ regular}
+\end{align*}
+For the fourth term we need the following contraction, $\cnord{\wick{\c1\beta(z)\delta\qty(\c1\gamma)(w)}}$. This can be done with the bosonized version 
+of the $\beta\gamma$ system, the OPE provides the wick contraction,
+\begin{align*}
+    \beta(z)\delta\qty(\gamma)(w)&=\cnord{\exp(-\phi)\partial\xi}(z)\cnord{\exp(-\phi)}(w)\\
+    \beta(z)\delta\qty(\gamma)(w)&=\abs{z-w}^{-1}\cnord{(\exp(-\phi)\partial)\xi(z)\exp(-\phi)(w)}\\
+    \beta(z)\delta\qty(\gamma)(w)&=\abs{z-w}^{-1}\cnord{\exp(-\phi)\partial\xi\exp(-\phi)}(w)+\textnormal{ regular}\\
+    \beta(z)\delta\qty(\gamma)(w)&=\abs{z-w}^{-1}\cnord{\beta\delta\qty(\gamma)}(w)+\textnormal{ regular}
+\end{align*}
+Hence, the OPE with the fourth terms is,
+\begin{align*}
+    \frac34\cnord{\partial c\beta\gamma}(z)V^a&=\frac{3}{4(z-w)}\lambda^a\epsilon_\mu\cnord{(\partial c\beta\gamma)(z)(c\delta\qty(\gamma)\psi^\mu\exp(\im k\cdot X))(w)}=\textnormal{regular}
+\end{align*}
+Due to $\gamma(z)\delta\qty(\gamma)(w)\sim\mathcal O\qty(z-w)$. With the fifth term,
+\begin{align*}
+    \frac14\cnord{c\partial\beta\gamma}V^a(w)&=
+\end{align*}
+
 \probitem{}
 
 \textbf{CANCELED}

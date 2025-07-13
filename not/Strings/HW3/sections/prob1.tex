@@ -332,7 +332,7 @@ Now we compute the $VV$ OPE, for now we forget about the color factors,
     \cnord{V_1V_2}&=V_1V_2+\frac{\alpha'}{2(w_1-w_2)^2}\epsilon_{1}\cdot\epsilon_{2}\cnord{{(c\exp(\im k_1\cdot X))(w_1)(c\exp(\im k_2\cdot X))(w_2)}}\\
     &\quad\quad\quad+\frac{\alpha'\im}{2(w_1-w_2)}\epsilon_{1}\cdot k_2\epsilon_{2\nu}\cnord{{(c\exp(\im k_1\cdot X))(w_1)(c\partial X^\nu\exp(\im k_2\cdot X))(w_2)}}\\
     &\quad\quad\quad+\frac{\alpha'\im}{2(w_2-w_1)}\epsilon_{1\mu}\epsilon_{2}\cdot k_1\cnord{{(c\partial X^\mu\exp(\im k_1\cdot X))(w_1)(c\exp(\im k_2\cdot X))(w_2)}}\\
-    &\quad\quad\quad-\frac{{\alpha'}^2\im^2}{4(w_2-w_1)(w_1-w_2)}\epsilon_{1}\cdot k_2\epsilon_{2}\cdot k_1\cnord{{(c\exp(\im k_1\cdot X))(w_1)(c\exp(\im k_2\cdot X))(w_2)}}
+    &\quad\quad\quad-\frac{{\alpha'}^2\im^2}{4(w_2-w_1)(w_1-w_2)}\epsilon_{1}\cdot k_2\epsilon_{2}\cdot k_1\cnord{{(c\exp(\im k_1\cdot X))(w_1)(c\exp(\im k_2\cdot X))(w_2)}}\numberthis\label{VVOPE1}
 \end{align*}
 There are no contraction between two exponential because they are regular, as we know, 
 $\cnord{\exp(\im k_1\cdot X)}\qty(z)\cnord{\exp(\im k_2\cdot X)}(w)=\abs{z-w}^{\alpha'k_1\cdot k_2}\cnord{\exp(\im k_1\cdot X)(z)\exp(\im k_2\cdot X)(w)}$, 
@@ -459,3 +459,30 @@ as can be seen from the power counting of $\alpha'$.
 % \end{align*}
 
 \probitem{}
+
+We just want the part of the correlator proportional to $\epsilon_1\cdot\epsilon_2\epsilon_3\cdot \epsilon_4$, 
+which can be seen from \cref{VVOPE1}, we just need to add the part corresponding to the exponential contraction,
+\begin{align*}
+    V_1V_2&\sim-\frac{\alpha'\epsilon_1\cdot\epsilon_2}{2(w_1-w_2)^{2-\alpha'k_1\cdot k_2}}\cnord{\qty(c\exp(\im k_1\cdot X))(w_1)\qty(c\exp(\im k_2\cdot X))(w_2)}\\
+    V_1V_2&\sim-\frac{\alpha'\epsilon_1\cdot\epsilon_2}{2(w_1-w_2)^{-\alpha'k_1\cdot k_2}}\cnord{\partial^2cc\exp(\im(k_1+ k_2)\cdot X)}(w_2)
+\end{align*}
+We don't need the factor of $\cnord{V_1V_2}$ because it just generates terms as $\epsilon_1\cdot\epsilon_3,\epsilon_2\cdot\epsilon_3$, 
+and others which we aren't interested on. Thus,
+\begin{align*}
+    V_1V_2V_3&\sim-\frac{\alpha'\epsilon_1\cdot\epsilon_2\epsilon_{3\mu}}{2w_{12}^{-\alpha'k_1\cdot k_2}}w_{23}^{\alpha' (k_1+k_2)\cdot k_3}\cnord{(\partial^2cc\exp(\im(k_1+ k_2)\cdot X))(w_2)\qty(c\partial^\mu X\exp(\im k_3\cdot X))(w_3)}\\
+    V_1V_2V_3&\sim-\frac{\alpha'\epsilon_1\cdot\epsilon_2\epsilon_{3\mu}}{2w_{12}^{-\alpha'k_1\cdot k_2}}w_{23}^{1-\alpha' k_4\cdot k_3}\cnord{\partial^2c\partial cc\partial^\mu X\exp(\im(k_1+k_2+ k_3)\cdot X)}(w_3)
+\end{align*}
+It is not possible to do any more contractions, because those would generate terms as $\epsilon_3\cdot k_1,\epsilon_3\cdot k_2$. 
+% For this expression, the ordering of the three points must be so $\abs{z_3}>\abs{z_1},\abs{z_2}$ or $\abs{z_3}<\abs{z_1},\abs{z_2}$.
+Now we include the $U_4$ operator,
+\begin{align*}
+    &V_1V_2V_3U_4\sim\\
+    &-\int\limits_{\textnormal{Im}(w_4)}\frac{\alpha'\epsilon_1\cdot\epsilon_2\epsilon_{3\mu}\epsilon_{4\nu}}{2w_{12}^{-\alpha'k_1\cdot k_2}}w_{23}^{1-\alpha' k_4\cdot k_3}\cnord{\wick{(\partial^2c\partial cc\partial^\mu\c1 X\exp(\im(k_1+k_2+ k_3)\cdot X))(w_3)(\partial^\nu\c1 X\exp(\im k_4\cdot X))(w_4)}}\\
+    &\int\limits_{\textnormal{Im}(w_4)}\frac{{\alpha'}^2\epsilon_1\cdot\epsilon_2\epsilon_{3}\cdot\epsilon_{4}}{4w_{12}^{-\alpha'k_1\cdot k_2}}\frac{w_{23}^{1-\alpha' k_4\cdot k_3}}{(w_3-w_4)^2}\cnord{{(\partial^2c\partial cc\exp(\im(k_1+k_2+ k_3)\cdot X))(w_3)(\exp(\im k_4\cdot X))(w_4)}}
+\end{align*}
+Where no more contractions are possible. As we have just a single normal ordered operator inside the expectation value, by \cref{onepointcft}, it has to have zero 
+conformal weight for it to be non zero, we expand in Taylor the only non zero contribution,
+\begin{align*}
+    &\expval{V_1V_2V_3U_4}\sim\\
+    &\int\limits_{\textnormal{Im}(w_4)}\frac{{\alpha'}^2\epsilon_1\cdot\epsilon_2\epsilon_{3}\cdot\epsilon_{4}}{4w_{12}^{-\alpha'k_1\cdot k_2}}\frac{w_{23}^{1-\alpha' k_4\cdot k_3}}{(w_3-w_4)^2}\expval{\cnord{{\partial^2c\partial cc\exp(\im(k_1+k_2+ k_3+k_4)\cdot X)}}(w_4)}
+\end{align*}

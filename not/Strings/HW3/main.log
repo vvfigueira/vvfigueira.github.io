@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.4.2)  11 JUL 2025 11:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.4.2)  13 JUL 2025 15:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1139,15 +1139,45 @@ Overfull \hbox (50.66653pt too wide) detected at line 381
 
 
 
-[10])
+[10]
 
-[11] (./sections/prob2.tex)
+[11]
+Overfull \hbox (20.8772pt too wide) detected at line 482
+[]
+ []
 
-[12] (./sections/prob3.tex)
+)
 
-[13] (./appendix/fpgf.tex
+[12] (./sections/prob2.tex
 
-[14]
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 26.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 26.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 33.
+
+
+
+[13])
+
+[14] (./sections/prob3.tex
+
+[15]
+
+[16]
+
+[17]
+
+[18])
+
+[19] (./appendix/fpgf.tex
+
+[20]
 Overfull \hbox (19.82611pt too wide) in paragraph at lines 47--50
 []\OT1/cmr/m/n/12 Notice that the set of equiv-a-lence class of met-rics, or, t
 he set of in-equiv-a-lent Diff$[]\OMS/cmsy/m/n/12 ^^B$\OT1/cmr/m/n/12 Weyl$[]$
@@ -1155,9 +1185,9 @@ he set of in-equiv-a-lent Diff$[]\OMS/cmsy/m/n/12 ^^B$\OT1/cmr/m/n/12 Weyl$[]$
 
 
 
-[15]
+[21]
 
-[16]
+[22]
 Overfull \hbox (35.89258pt too wide) detected at line 139
 []
  []
@@ -1169,41 +1199,41 @@ Overfull \hbox (14.74951pt too wide) detected at line 146
 
 
 
-[17])
+[23])
 
-[18] (./appendix/brst.tex
+[24] (./appendix/brst.tex
 
-LaTeX Warning: Reference `brstclosure' on page 19 undefined on input line 31.
+LaTeX Warning: Reference `brstclosure' on page 25 undefined on input line 31.
 
 
 
-[19{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[25{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 Overfull \hbox (6.79837pt too wide) detected at line 96
 []
  []
 
 
 
-[20]
+[26]
 
-[21]
+[27]
 
-[22]
+[28]
 Overfull \hbox (16.28717pt too wide) detected at line 160
 []
  []
 
 
 
-[23]
+[29]
 
-[24]
+[30]
 
-[25]
+[31]
 
-[26])
+[32])
 
-[27] (./main.aux)
+[33] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1219,10 +1249,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 16EFB65CE24AB7880131C401FD31C86D;2679.
  ) 
 Here is how much of TeX's memory you used:
- 30960 strings out of 475151
- 606977 string characters out of 5766387
+ 31019 strings out of 475151
+ 608197 string characters out of 5766387
  1047970 words of memory out of 5000000
- 53324 multiletter control sequences out of 15000+600000
+ 53374 multiletter control sequences out of 15000+600000
  574042 words of font info for 94 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  98i,22n,105p,577b,748s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1230,25 +1260,26 @@ Here is how much of TeX's memory you used:
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></us
-r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (27 pages, 349609 bytes).
+/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pf
+b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on main.pdf (33 pages, 390955 bytes).
 PDF statistics:
- 474 PDF objects out of 1000 (max. 8388607)
- 395 compressed objects within 4 object streams
- 105 named destinations out of 1000 (max. 500000)
+ 513 PDF objects out of 1000 (max. 8388607)
+ 425 compressed objects within 5 object streams
+ 114 named destinations out of 1000 (max. 500000)
  213 words of extra memory for PDF output out of 10000 (max. 10000000)
 
