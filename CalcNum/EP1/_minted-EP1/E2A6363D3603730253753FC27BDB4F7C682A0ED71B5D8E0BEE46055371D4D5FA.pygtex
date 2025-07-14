@@ -1,0 +1,71 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{math}
+\PYG{k+kn}{import} \PYG{n+nn}{tabulate}
+
+\PYG{c+c1}{\PYGZsh{}Constantes Físicas utilizadas}
+
+\PYG{n}{vV\PYGZus{}0} \PYG{o}{=} \PYG{l+m+mf}{1.38E3} \PYG{c+c1}{\PYGZsh{} eV}
+\PYG{n}{vR\PYGZus{}0} \PYG{o}{=} \PYG{l+m+mf}{3.28E\PYGZhy{}1} \PYG{c+c1}{\PYGZsh{} Angstrom}
+\PYG{n}{vK} \PYG{o}{=} \PYG{l+m+mf}{1.44E1} \PYG{c+c1}{\PYGZsh{} eV * Angstrom}
+
+\PYG{c+c1}{\PYGZsh{}Variáveis necessárias}
+
+\PYG{n}{vPrecisao} \PYG{o}{=} \PYG{l+m+mf}{1E\PYGZhy{}10}
+
+\PYG{c+c1}{\PYGZsh{}Função Potencial}
+\PYG{k}{def} \PYG{n+nf}{fPotencial}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+    \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{p}{(}\PYG{n}{vK}\PYG{o}{/}\PYG{p}{(}\PYG{n}{vV\PYGZus{}0}\PYG{o}{*}\PYG{n}{vR\PYGZus{}0}\PYG{p}{))}\PYG{o}{/}\PYG{n}{x}\PYG{o}{+}\PYG{n}{math}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}Função Força}
+\PYG{k}{def} \PYG{n+nf}{fForca}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+    \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{p}{(}\PYG{n}{vK}\PYG{o}{/}\PYG{p}{(}\PYG{n}{vV\PYGZus{}0}\PYG{o}{*}\PYG{n}{vR\PYGZus{}0}\PYG{p}{))}\PYG{o}{/}\PYG{p}{(}\PYG{n}{x}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{+}\PYG{n}{math}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}Método Secante que retorna a próxima aproximação partindo de dois pontos de aproximação}
+\PYG{k}{def} \PYG{n+nf}{fSecante}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{vFinal}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{vFinal} \PYG{o}{\PYGZhy{}} \PYG{n}{fForca}\PYG{p}{(}\PYG{n}{vFinal}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{vFinal} \PYG{o}{\PYGZhy{}} \PYG{n}{vInicial}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{n}{fForca}\PYG{p}{(}\PYG{n}{vFinal}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{fForca}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{))}
+
+\PYG{c+c1}{\PYGZsh{}Função que retorna o erro relativo do segundo ponto de aproximação com a próxima correção calculada pelo método das secantes}
+\PYG{k}{def} \PYG{n+nf}{fErro}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{vFinal}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n+nb}{abs}\PYG{p}{((}\PYG{n}{fSecante}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{vFinal}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{vFinal}\PYG{p}{)}\PYG{o}{/}\PYG{n}{vFinal}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}Método para salvar dados em tabelas}
+\PYG{k}{def} \PYG{n+nf}{fTabDados}\PYG{p}{(}\PYG{n}{vIteracao}\PYG{p}{,} \PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{vSegundo}\PYG{p}{,} \PYG{n}{fSecante}\PYG{p}{,} \PYG{n}{fForca}\PYG{p}{,} \PYG{n}{fErro}\PYG{p}{):}
+
+    \PYG{n}{tTemp} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n}{tTemp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{vIteracao}\PYG{p}{)}
+    \PYG{n}{tTemp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{)}
+    \PYG{n}{tTemp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{vSegundo}\PYG{p}{)}
+    \PYG{n}{tTemp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{fSecante}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{vSegundo}\PYG{p}{))}
+    \PYG{n}{tTemp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{fForca}\PYG{p}{(}\PYG{n}{vSegundo}\PYG{p}{))}
+    \PYG{n}{tTemp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{fForca}\PYG{p}{(}\PYG{n}{fSecante}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{vSegundo}\PYG{p}{)))}
+    \PYG{n}{tTemp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{fErro}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{vSegundo}\PYG{p}{))}
+
+    \PYG{k}{return} \PYG{n}{tTemp}
+
+\PYG{c+c1}{\PYGZsh{}Valores iniciais para os dois parâmetros de aproximação necessitados pelo método das secantes}
+\PYG{n}{vInicial} \PYG{o}{=} \PYG{l+m+mi}{6}
+\PYG{n}{vSegundo} \PYG{o}{=} \PYG{l+m+mf}{6.5}
+
+\PYG{n}{tDados} \PYG{o}{=} \PYG{p}{[[}\PYG{l+s+s2}{\PYGZdq{}n\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}x\PYGZus{}\PYGZob{}n\PYGZhy{}1\PYGZcb{}\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}x\PYGZus{}}\PYG{l+s+si}{\PYGZob{}n\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}x\PYGZus{}\PYGZob{}n+1\PYGZcb{}\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}f(x\PYGZus{}n)\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}f(x\PYGZus{}\PYGZob{}n+1\PYGZcb{})\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}Erro\PYGZdq{}}\PYG{p}{]]}
+
+\PYG{n}{vIteracao} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+\PYG{c+c1}{\PYGZsh{}Loop principal do método que roda enquanto o erro entre a próxima correção for menor que a precisão requisitada}
+\PYG{k}{while} \PYG{n}{fErro}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{vSegundo}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{vPrecisao}\PYG{p}{:}
+
+    \PYG{c+c1}{\PYGZsh{}Adiciona dados na tabela}
+    \PYG{n}{tDados}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{fTabDados}\PYG{p}{(}\PYG{n}{vIteracao}\PYG{p}{,} \PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{vSegundo}\PYG{p}{,} \PYG{n}{fSecante}\PYG{p}{,} \PYG{n}{fForca}\PYG{p}{,} \PYG{n}{fErro}\PYG{p}{))}
+
+    \PYG{n}{vIteracao} \PYG{o}{=} \PYG{n}{vIteracao} \PYG{o}{+} \PYG{l+m+mi}{1}
+
+    \PYG{c+c1}{\PYGZsh{}Algorítimo do Método das secantes}
+    \PYG{n}{vTemp} \PYG{o}{=} \PYG{n}{fSecante}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{vSegundo}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}Variável temporária que guarda o valor da próxima aproximação}
+    \PYG{n}{vInicial} \PYG{o}{=} \PYG{n}{vSegundo} \PYG{c+c1}{\PYGZsh{}Transfere o valor da segunda aproximação para a primeira}
+    \PYG{n}{vSegundo} \PYG{o}{=} \PYG{n}{vTemp} \PYG{c+c1}{\PYGZsh{}Transfere para a segunda aproximação a nova aproximação gerada pelo método}
+
+\PYG{n}{tDados}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{fTabDados}\PYG{p}{(}\PYG{n}{vIteracao}\PYG{p}{,} \PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{vSegundo}\PYG{p}{,} \PYG{n}{fSecante}\PYG{p}{,} \PYG{n}{fForca}\PYG{p}{,} \PYG{n}{fErro}\PYG{p}{))}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}O raio de equilíbrio é r\PYGZus{}eq/r\PYGZus{}0 = }\PYG{l+s+si}{\PYGZpc{}.10f}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{\PYGZpc{}}\PYG{n}{vSegundo}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}Print da aproximação final}
+\PYG{n+nb}{print}\PYG{p}{()}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{tabulate}\PYG{o}{.}\PYG{n}{tabulate}\PYG{p}{(}\PYG{n}{tDados}\PYG{p}{,} \PYG{n}{headers}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}firstrow\PYGZsq{}}\PYG{p}{,} \PYG{n}{tablefmt}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}latex\PYGZsq{}}\PYG{p}{))} \PYG{c+c1}{\PYGZsh{}Print dos dados de cada iteração como forma de Tabela para LaTex}
+\end{Verbatim}

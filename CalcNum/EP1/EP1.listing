@@ -1,0 +1,69 @@
+import math
+import tabulate
+
+#Constantes Físicas utilizadas
+
+vV_0 = 1.38E3 # eV
+vR_0 = 3.28E-1 # Angstrom
+vK = 1.44E1 # eV * Angstrom
+
+#Variáveis necessárias
+
+vPrecisao = 1E-10
+
+#Função Potencial
+def fPotencial(x):
+    return -(vK/(vV_0*vR_0))/x+math.exp(-x)
+
+#Função Força
+def fForca(x):
+    return -(vK/(vV_0*vR_0))/(x**2)+math.exp(-x)
+
+#Método Secante que retorna a próxima aproximação partindo de dois pontos de aproximação
+def fSecante(vInicial, vFinal):
+    return vFinal - fForca(vFinal)*(vFinal - vInicial)/(fForca(vFinal) - fForca(vInicial))
+
+#Função que retorna o erro relativo do segundo ponto de aproximação com a próxima correção calculada pelo método das secantes
+def fErro(vInicial, vFinal):
+    return abs((fSecante(vInicial, vFinal) - vFinal)/vFinal)
+
+#Método para salvar dados em tabelas
+def fTabDados(vIteracao, vInicial, vSegundo, fSecante, fForca, fErro):
+
+    tTemp = []
+    tTemp.append(vIteracao)
+    tTemp.append(vInicial)
+    tTemp.append(vSegundo)
+    tTemp.append(fSecante(vInicial, vSegundo))
+    tTemp.append(fForca(vSegundo))
+    tTemp.append(fForca(fSecante(vInicial, vSegundo)))
+    tTemp.append(fErro(vInicial, vSegundo))
+
+    return tTemp
+
+#Valores iniciais para os dois parâmetros de aproximação necessitados pelo método das secantes
+vInicial = 6
+vSegundo = 6.5
+
+tDados = [["n","x_{n-1}","x_{n}", "x_{n+1}","f(x_n)","f(x_{n+1})","Erro"]]
+
+vIteracao = 0
+
+#Loop principal do método que roda enquanto o erro entre a próxima correção for menor que a precisão requisitada
+while fErro(vInicial, vSegundo) > vPrecisao:
+
+    #Adiciona dados na tabela
+    tDados.append(fTabDados(vIteracao, vInicial, vSegundo, fSecante, fForca, fErro))
+
+    vIteracao = vIteracao + 1
+
+    #Algorítimo do Método das secantes
+    vTemp = fSecante(vInicial, vSegundo) #Variável temporária que guarda o valor da próxima aproximação
+    vInicial = vSegundo #Transfere o valor da segunda aproximação para a primeira
+    vSegundo = vTemp #Transfere para a segunda aproximação a nova aproximação gerada pelo método
+
+tDados.append(fTabDados(vIteracao, vInicial, vSegundo, fSecante, fForca, fErro))
+
+print("O raio de equilíbrio é r_eq/r_0 = %.10f" %vSegundo) #Print da aproximação final
+print()
+print(tabulate.tabulate(tDados, headers='firstrow', tablefmt='latex')) #Print dos dados de cada iteração como forma de Tabela para LaTex

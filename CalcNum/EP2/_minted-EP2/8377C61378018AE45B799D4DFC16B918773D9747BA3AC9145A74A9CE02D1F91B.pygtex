@@ -1,0 +1,92 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Precisão para a parada do programa}
+\PYG{n}{vPrecisao} \PYG{o}{=} \PYG{l+m+mf}{1.E\PYGZhy{}3}
+
+\PYG{k}{def} \PYG{n+nf}{fJacobi}\PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{,} \PYG{n}{tX0}\PYG{p}{,} \PYG{n}{tB}\PYG{p}{):}
+
+    \PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+    \PYG{c+c1}{\PYGZsh{} Definição de Varráveis inicias. Erro inicial}
+    \PYG{c+c1}{\PYGZsh{} é escolhido arbitrariamente}
+
+    \PYG{n}{vPasso} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{vErro} \PYG{o}{=} \PYG{l+m+mi}{10}
+    \PYG{n}{tXPasso} \PYG{o}{=} \PYG{n}{tX0}\PYG{p}{[:]}
+    \PYG{n}{vDimensao} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{tX0}\PYG{p}{)}
+
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Passo: \PYGZdq{}}\PYG{p}{,} \PYG{n}{vPasso}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Erro: \PYGZhy{}\PYGZhy{}\PYGZdq{}}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Solucao neste passo: \PYGZdq{}}\PYG{p}{,} \PYG{n}{tXPasso}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+    \PYG{c+c1}{\PYGZsh{} Loop principal}
+
+    \PYG{k}{while} \PYG{n}{vErro} \PYG{o}{\PYGZgt{}} \PYG{n}{vPrecisao}\PYG{p}{:}
+
+    \PYG{c+c1}{\PYGZsh{} Salva o passo atual para o calculo de erros}
+
+        \PYG{n}{tXProxPasso} \PYG{o}{=} \PYG{n}{tXPasso}\PYG{p}{[:]}
+
+    \PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+    \PYG{c+c1}{\PYGZsh{} Atualiza o Passo atual}
+
+        \PYG{k}{for} \PYG{n}{vLinha} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{vDimensao}\PYG{p}{):}
+
+            \PYG{n}{vSoma} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+            \PYG{k}{for} \PYG{n}{vColuna} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{vDimensao}\PYG{p}{):}
+
+    \PYG{c+c1}{\PYGZsh{} Ignora os elementos da diagonal}
+
+                \PYG{k}{if} \PYG{n}{vColuna} \PYG{o}{==} \PYG{n}{vLinha}\PYG{p}{:}
+
+                    \PYG{k}{continue}
+
+                \PYG{n}{vSoma} \PYG{o}{=} \PYG{n}{vSoma} \PYG{o}{+} \PYG{n}{tXProxPasso}\PYG{p}{[}\PYG{n}{vColuna}\PYG{p}{]} \PYG{o}{*} \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{][}\PYG{n}{vColuna}\PYG{p}{]}
+
+            \PYG{n}{vFator} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{/} \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{][}\PYG{n}{vLinha}\PYG{p}{]}
+            \PYG{n}{tXPasso}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{]} \PYG{o}{=} \PYG{n}{vFator} \PYG{o}{*} \PYG{p}{(}\PYG{n}{tB}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{vSoma}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+    \PYG{c+c1}{\PYGZsh{} Calcula o erro}
+
+        \PYG{n}{vErro} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+        \PYG{k}{for} \PYG{n}{vLinha} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{vDimensao}\PYG{p}{):}
+
+            \PYG{n}{vErroTemp} \PYG{o}{=} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{tXPasso}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{tXProxPasso}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{])}
+
+            \PYG{k}{if} \PYG{n}{vErroTemp} \PYG{o}{\PYGZgt{}} \PYG{n}{vErro}\PYG{p}{:}
+
+                \PYG{n}{vErro} \PYG{o}{=} \PYG{n}{vErroTemp}
+
+    \PYG{c+c1}{\PYGZsh{} Atualiza os contadores e printa o resultado}
+    \PYG{c+c1}{\PYGZsh{} de cada passo}
+
+        \PYG{n}{vPasso} \PYG{o}{=} \PYG{n}{vPasso} \PYG{o}{+} \PYG{l+m+mi}{1}
+
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Passo: \PYGZdq{}}\PYG{p}{,} \PYG{n}{vPasso}\PYG{p}{)}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Erro: \PYGZdq{}}\PYG{p}{,} \PYG{n}{vErro}\PYG{p}{)}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Solucao neste passo: \PYGZdq{}}\PYG{p}{,} \PYG{n}{tXPasso}\PYG{p}{)}
+
+    \PYG{k}{return}\PYG{p}{(}\PYG{n}{tXPasso}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+    \PYG{c+c1}{\PYGZsh{} Define os parametros de nosso problema}
+
+\PYG{n}{tMatrix}\PYG{o}{=} \PYG{p}{[[}\PYG{l+m+mf}{11.9}\PYG{p}{,}\PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{l+m+mf}{1.8}\PYG{p}{],[}\PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{l+m+mf}{5.3}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.8}\PYG{p}{],[}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]]}
+\PYG{n}{tB} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{15.0}\PYG{p}{,}\PYG{l+m+mf}{3.1}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{n}{tX0} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}
+
+    \PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+    \PYG{c+c1}{\PYGZsh{} Resolve o sistema}
+
+\PYG{n}{tSolucao} \PYG{o}{=} \PYG{n}{fJacobi}\PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{,} \PYG{n}{tX0}\PYG{p}{,} \PYG{n}{tB}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Solucao Final: \PYGZdq{}}\PYG{p}{,} \PYG{n}{tSolucao}\PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,82 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{fTriangulacao}\PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{):}
+
+    \PYG{n}{vDimensao} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Tamanho da matrix dada como input}
+
+    \PYG{k}{for} \PYG{n}{vColuna} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{vDimensao}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{):}
+
+        \PYG{n}{vPivot} \PYG{o}{=} \PYG{l+m+mi}{0}
+        \PYG{n}{vLinhaPivot} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+        \PYG{k}{for} \PYG{n}{vLinha} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{vColuna}\PYG{p}{,} \PYG{n}{vDimensao}\PYG{p}{):} \PYG{c+c1}{\PYGZsh{}???}
+
+            \PYG{k}{if} \PYG{n+nb}{abs}\PYG{p}{(} \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{][}\PYG{n}{vColuna}\PYG{p}{]} \PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n+nb}{abs}\PYG{p}{(} \PYG{n}{vPivot} \PYG{p}{):}
+
+                \PYG{n}{vPivot} \PYG{o}{=} \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{][}\PYG{n}{vColuna}\PYG{p}{]}
+                \PYG{n}{vLinhaPivot} \PYG{o}{=} \PYG{n}{vLinha}
+
+        \PYG{n}{vTemp1} \PYG{o}{=} \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vColuna}\PYG{p}{][:]}
+        \PYG{n}{vTemp2} \PYG{o}{=} \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinhaPivot}\PYG{p}{][:]}
+
+        \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vColuna}\PYG{p}{]} \PYG{o}{=} \PYG{n}{vTemp2}
+        \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinhaPivot}\PYG{p}{]} \PYG{o}{=} \PYG{n}{vTemp1}
+
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Pivotamento:\PYGZdq{}}\PYG{p}{)}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{)}
+
+        \PYG{k}{for} \PYG{n}{vLinha} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{vColuna} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{vDimensao}\PYG{p}{):}
+
+            \PYG{n}{vMlc} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{][}\PYG{n}{vColuna}\PYG{p}{]} \PYG{o}{/} \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vColuna}\PYG{p}{][}\PYG{n}{vColuna}\PYG{p}{]}
+
+            \PYG{k}{for} \PYG{n}{vTempCol} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{vColuna}\PYG{p}{,} \PYG{n}{vDimensao} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{):}
+
+                \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{][}\PYG{n}{vTempCol}\PYG{p}{]} \PYG{o}{=} \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vColuna}\PYG{p}{][}\PYG{n}{vTempCol}\PYG{p}{]} \PYG{o}{*} \PYG{n}{vMlc} \PYG{o}{+} \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{][}\PYG{n}{vTempCol}\PYG{p}{]}
+
+            \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Introdução de zeros abaixo do pivô:\PYGZdq{}}\PYG{p}{)}
+            \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{)}
+
+    \PYG{k}{return} \PYG{n}{tMatrix}
+
+\PYG{k}{def} \PYG{n+nf}{fSolucionar}\PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{):}
+
+    \PYG{n}{vDimensao} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{)}
+    \PYG{n}{tSolucao} \PYG{o}{=} \PYG{p}{[]}
+
+    \PYG{k}{for} \PYG{n}{vLinhaTemp} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{vDimensao}\PYG{p}{):}
+
+        \PYG{n}{tSolucao}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+
+    \PYG{k}{for} \PYG{n}{vLinha} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{vDimensao}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{):}
+
+        \PYG{n}{vFator} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{/} \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{][}\PYG{n}{vLinha}\PYG{p}{]}
+        \PYG{n}{vSoma} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+        \PYG{k}{for} \PYG{n}{vColuna} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{vLinha}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{vDimensao}\PYG{p}{):}
+
+            \PYG{n}{vSoma} \PYG{o}{=} \PYG{n}{vSoma} \PYG{o}{+} \PYG{n}{tSolucao}\PYG{p}{[}\PYG{n}{vColuna}\PYG{p}{]} \PYG{o}{*} \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{][}\PYG{n}{vColuna}\PYG{p}{]}
+
+        \PYG{n}{tSolucao}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{]} \PYG{o}{=} \PYG{n}{vFator} \PYG{o}{*} \PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{][}\PYG{n}{vDimensao}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{vSoma}\PYG{p}{)}
+
+    \PYG{k}{return} \PYG{n}{tSolucao}
+
+\PYG{n}{tMatrix} \PYG{o}{=} \PYG{p}{[[}\PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{l+m+mf}{5.3}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.8}\PYG{p}{],[}\PYG{l+m+mf}{11.9}\PYG{p}{,}\PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{l+m+mf}{1.8}\PYG{p}{],[}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]]}
+\PYG{n}{tB} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{3.1}\PYG{p}{,}\PYG{l+m+mf}{15.0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{n}{tX} \PYG{o}{=} \PYG{p}{[]}
+
+\PYG{n}{vDimensao} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{)}
+
+\PYG{k}{for} \PYG{n}{vLinha} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{vDimensao}\PYG{p}{):}
+
+    \PYG{n}{tMatrix}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{]}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{tB}\PYG{p}{[}\PYG{n}{vLinha}\PYG{p}{])}
+
+
+\PYG{n}{tMatrix} \PYG{o}{=} \PYG{n}{fTriangulacao}\PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Matrix Triangulada:\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{)}
+
+\PYG{n}{tX} \PYG{o}{=} \PYG{n}{fSolucionar}\PYG{p}{(}\PYG{n}{tMatrix}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Solução Final:\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{tX}\PYG{p}{)}
+\end{Verbatim}

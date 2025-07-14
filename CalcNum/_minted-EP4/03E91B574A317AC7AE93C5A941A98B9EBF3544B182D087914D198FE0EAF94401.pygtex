@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{fG}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{fY}\PYG{p}{,} \PYG{n}{fDerivadaY}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{fDerivadaY} \PYG{o}{+} \PYG{n}{fY} \PYG{o}{\PYGZhy{}} \PYG{n}{t}\PYG{o}{**}\PYG{l+m+mi}{3} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{3} \PYG{o}{*} \PYG{n}{t}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{l+m+mi}{7} \PYG{o}{*} \PYG{n}{t} \PYG{o}{+} \PYG{l+m+mi}{1}
+
+\PYG{k}{def} \PYG{n+nf}{fEuler}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{fY}\PYG{p}{,} \PYG{n}{fDerivadaY}\PYG{p}{,} \PYG{n}{vPasso}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{fY} \PYG{o}{+} \PYG{n}{vPasso} \PYG{o}{*} \PYG{n}{fDerivadaY}\PYG{p}{,} \PYG{n}{fDerivadaY} \PYG{o}{+} \PYG{n}{vPasso} \PYG{o}{*} \PYG{n}{fG}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{fY}\PYG{p}{,} \PYG{n}{fDerivadaY}\PYG{p}{)}
+
+\PYG{n}{fY0} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{n}{fDerivadaY0} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+
+\PYG{n}{vPasso} \PYG{o}{=} \PYG{l+m+mf}{0.01}
+
+\PYG{n}{fY} \PYG{o}{=} \PYG{n}{fY0}
+\PYG{n}{fDerivadaY} \PYG{o}{=} \PYG{n}{fDerivadaY0}
+
+\PYG{n}{t}\PYG{o}{=}\PYG{l+m+mi}{0}
+
+\PYG{k}{while} \PYG{p}{(}\PYG{n}{t}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{5}\PYG{p}{):}
+
+    \PYG{n}{fY}\PYG{p}{,} \PYG{n}{fDerivadaY} \PYG{o}{=} \PYG{n}{fEuler}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{fY}\PYG{p}{,} \PYG{n}{fDerivadaY}\PYG{p}{,} \PYG{n}{vPasso}\PYG{p}{)}
+    \PYG{n}{t} \PYG{o}{=} \PYG{n}{t} \PYG{o}{+} \PYG{n}{vPasso}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}y(5) = }\PYG{l+s+si}{\PYGZpc{}f}\PYG{l+s+s2}{, z(5) = }\PYG{l+s+si}{\PYGZpc{}f}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{fY}\PYG{p}{,} \PYG{n}{fDerivadaY}\PYG{p}{))}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}y(5) = }\PYG{l+s+si}{\PYGZpc{}f}\PYG{l+s+s2}{, z(5) = }\PYG{l+s+si}{\PYGZpc{}f}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{o}{**}\PYG{l+m+mi}{3}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3} \PYG{o}{*} \PYG{l+m+mi}{5}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{))}
+\end{Verbatim}

@@ -1,0 +1,23 @@
+def fG(t, fY, fDerivadaY):
+    return fDerivadaY + fY - t**3 - 3 * t**2 + 7 * t + 1
+
+def fEuler(t, fY, fDerivadaY, vPasso):
+    return fY + vPasso * fDerivadaY, fDerivadaY + vPasso * fG(t, fY, fDerivadaY)
+
+fY0 = 0
+fDerivadaY0 = -1
+
+vPasso = 0.01
+
+fY = fY0
+fDerivadaY = fDerivadaY0
+
+t=0
+
+while (t<=5):
+
+    fY, fDerivadaY = fEuler(t, fY, fDerivadaY, vPasso)
+    t = t + vPasso    
+
+print("y(5) = %f, z(5) = %f" %(fY, fDerivadaY))
+print("y(5) = %f, z(5) = %f" %(5**3-5,3 * 5**2 - 1))

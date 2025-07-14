@@ -1,0 +1,682 @@
+\documentclass[twoside]{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+%\usepackage[sorting=none, style=verbose-inote, backend=biber]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphics}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage[lmargin=0.5cm,rmargin=0.5cm, tmargin =1cm,bmargin =1cm]{geometry}
+\usepackage[explicit]{titlesec}
+\usepackage{tensor}
+\usepackage{cleveref}
+\usepackage{ragged2e}
+\usepackage{subcaption}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{minted,breakable,xparse,skins}
+
+\definecolor{bg}{gray}{0.95}
+\DeclareTCBListing{mintedbox}{O{}m!O{}}{%
+  breakable=true,
+  listing engine=minted,
+  listing only,
+  minted language=#2,
+  minted style=default,
+  minted options={%
+    linenos,
+    gobble=0,
+    breaklines=true,
+    breakafter=,,
+    fontsize=\small,
+    numbersep=8pt,
+    #1},
+  boxsep=0pt,
+  left skip=0pt,
+  right skip=0pt,
+  left=25pt,
+  right=0pt,
+  top=3pt,
+  bottom=3pt,
+  arc=5pt,
+  leftrule=0pt,
+  rightrule=0pt,
+  bottomrule=2pt,
+  toprule=2pt,
+  colback=bg,
+  colframe=orange!70,
+  enhanced,
+  overlay={%
+    \begin{tcbclipinterior}
+    \fill[orange!20!white] (frame.south west) rectangle ([xshift=20pt]frame.north west);
+    \end{tcbclipinterior}},
+  #3}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\trp}[1]{{#1}^{\textnormal{T}}}
+\newcommand{\Det}[1]{\textup{Det} #1}
+
+\numberwithin{equation}{section}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defi}{Definição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{hip}{Hipótese}[subsection]
+
+\pagestyle{plain}
+
+\titleformat\section[block]
+    {\bfseries\centering}
+    {\Large Programa \thesection.}
+    {\baselineskip}
+    {\underbar{#1}}
+
+\titleformat\subsection[block]
+    {\bfseries\centering}
+    {\Large \thesection.(\Alph{subsection})}
+    {\baselineskip}
+    {}
+
+%\AddToHook{cmd/section/before}{\clearpage}
+
+%\addbibresource{ref.bib}
+
+\title
+{
+    \Huge EP2
+}
+\author
+{
+    \large Vicente V. Figueira, NUSP: 11809301
+}
+%\date{\today}
+
+\begin{document}
+
+\maketitle
+
+%\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{refsection}
+
+%\setcounter{section}{1}
+
+\section{\Large Solução de Sistemas de Equações Lineares}
+
+\setcounter{subsection}{1}
+
+\subsection{}
+
+Conforme mostrado no Item \textbf{a}, nosso problema consiste de resolver o seguinte sistema linear de equações,
+
+\begin{align}
+    \mqty[0.0 & 5.3 & -1.8\\ 11.9 & 0.0 & 1.8 \\ 1 & -1 & -1]\mqty[I_1\\ I_2\\ I_3]&=\mqty[3.1\\15.0\\0]
+\end{align}
+
+Faremos isso neste item primeiro pelo método de Eliminação de Gauss utilizando Pivoteamento Parcial. Optamos por 
+representar a matrix em nosso programa como uma matrix aumentada,
+
+\begin{align}
+    \mqty[\mqty{0.0 & 5.3 & -1.8\\ 11.9 & 0.0 & 1.8 \\ 1 & -1 & -1}\mqty|\\ \\ \\|\mqty{3.1\\15.0\\0}]
+\end{align}
+
+O programa que realiza os passos do Pivoteamento pode ser visto abaixo,
+
+\begin{mintedbox}{python}
+def fTriangulacao(tMatrix):
+
+    vDimensao = len(tMatrix) # Tamanho da matrix dada como input
+
+    #########################################
+
+    # Procura pela posição do Pivô
+
+    for vColuna in range(vDimensao-1):
+
+        vPivot = 0 
+        vLinhaPivot = 0 
+
+        for vLinha in range(vColuna, vDimensao): 
+
+            if abs( tMatrix[vLinha][vColuna] ) > abs( vPivot ):
+
+                vPivot = tMatrix[vLinha][vColuna]
+                vLinhaPivot = vLinha
+
+    #########################################
+
+    # Troca linhas de lugar para realocar o Pivô
+    # e printa ao final de cada permutação de linhas
+
+        vTemp1 = tMatrix[vColuna][:]
+        vTemp2 = tMatrix[vLinhaPivot][:]
+
+        tMatrix[vColuna] = vTemp2
+        tMatrix[vLinhaPivot] = vTemp1
+
+        print("Pivoteamento:")
+        print(tMatrix)
+
+    #########################################
+
+    # Zera os espaços abaixos da posição do Pivô
+    # e printa ao final de cada passo
+
+        for vLinha in range(vColuna + 1, vDimensao):
+
+            vMlc = -tMatrix[vLinha][vColuna] / tMatrix[vColuna][vColuna]
+
+            for vTempCol in range(vColuna, vDimensao + 1):
+
+                tMatrix[vLinha][vTempCol] = tMatrix[vColuna][vTempCol] * vMlc + tMatrix[vLinha][vTempCol]
+
+            print("Introdução de zeros abaixo do pivô:")
+            print(tMatrix)
+
+    return tMatrix
+
+def fSolucionar(tMatrix):
+
+    vDimensao = len(tMatrix)
+    tSolucao = []
+
+    #########################################
+
+    # Inicia a solução como um array nulo
+
+    for vLinhaTemp in range(vDimensao):
+
+        tSolucao.append(0)
+
+    #########################################
+
+    # Realiza o método de substituição para trás
+    # para obter a solução final
+
+    for vLinha in range(vDimensao-1, -1, -1):
+
+        vFator = 1 / tMatrix[vLinha][vLinha]
+        vSoma = 0
+
+        for vColuna in range(vLinha+1, vDimensao):
+
+            vSoma = vSoma + tSolucao[vColuna] * tMatrix[vLinha][vColuna]
+
+        tSolucao[vLinha] = vFator * (tMatrix[vLinha][vDimensao] - vSoma)
+
+    return tSolucao
+
+    #########################################
+
+    # Inicia os valores corretos para a matrix e o vetor b
+
+tMatrix = [[0.0,5.3,-1.8],[11.9,0.0,1.8],[1,-1,-1]]
+tB = [3.1,15.0,0]
+tX = []
+
+    #########################################
+
+    # Transforma a Matrix em aumentada
+
+vDimensao = len(tMatrix)
+
+for vLinha in range(vDimensao):
+
+    tMatrix[vLinha].append(tB[vLinha])
+
+    #########################################
+
+    # Triangula a matrix
+
+tMatrix = fTriangulacao(tMatrix)
+
+print("Matrix Triangulada:")
+print(tMatrix)
+
+    #########################################
+
+    # Resolve o sistema
+
+tX = fSolucionar(tMatrix)
+
+print("Solução Final:")
+print(tX)
+\end{mintedbox}
+
+Este programa também printa os resulados passo a passo, que são --- Mostrando até a 4ª casa decimal --- :
+
+\begin{align}
+    &\textnormal{Pivoteamento:}\nonumber\\
+    &[[11.9, 0.0, 1.8, 15.0],\nonumber\\ &[0.0, 5.3, -1.8, 3.1],\nonumber\\ &[1, -1, -1, 0]]\nonumber\\
+    &\textnormal{Introdução de zeros abaixo do pivô}:\nonumber\\
+    &[[11.9, 0.0, 1.8, 15.0],\nonumber\\ & [0.0, 5.3, -1.8, 3.1],\nonumber\\ & [1, -1, -1, 0]]\nonumber\\
+    &\textnormal{Introdução de zeros abaixo do pivô}:\nonumber\\
+    &[[11.9, 0.0, 1.8, 15.0],\nonumber\\ & [0.0, 5.3, -1.8, 3.1],\nonumber\\ & [0.0, -1.0, -1.1513, -1.2605]]\nonumber\\
+    &\textnormal{Pivoteamento}:\nonumber\\
+    &[[11.9, 0.0, 1.8, 15.0],\nonumber\\ & [0.0, 5.3, -1.8, 3.1],\nonumber\\ & [0.0, -1.0, -1.1513, -1.2605]]\nonumber\\
+    &\textnormal{Introdução de zeros abaixo do pivô:}\nonumber\\
+    &[[11.9, 0.0, 1.8, 15.0],\nonumber\\ & [0.0, 5.3, -1.8, 3.1],\nonumber\\ & [0.0, 0.0, -1.4909, -0.6756]]\nonumber\\
+    &\textnormal{Matrix Triangulada:}\nonumber\\
+    &[[11.9, 0.0, 1.8, 15.0],\nonumber\\ & [0.0, 5.3, -1.8, 3.1],\nonumber\\ & [0.0, 0.0, -1.4909, -0.6756]]\nonumber\\
+    &\textnormal{Solução Final:}\nonumber\\
+    &[1.1920, 0.7388, 0.4532]\nonumber
+\end{align}
+
+Isso nos dá um resultado da matrix triangular final como:
+
+\begin{align}
+    \mqty[ 11.9 & 0.0 & 1.8 \\ 0.0 & 5.3 & -1.8\\0 & 0 & -1.4909]
+\end{align}
+
+E com a solução do sistema sendo:
+
+\begin{align}
+    \mqty[I_1\\I_2\\I_3]=\mqty[1.1920\\ 0.7388\\ 0.4532]
+\end{align}
+
+\subsection{}
+
+Agora iremos resolver o mesmo sistema de equações utilizando do método de Jacobi. Para isso vamos utilizar da matrix 
+já com suas duas primeiras linhas permutadas. 
+
+\begin{align}
+    \mqty[ 11.9 & 0.0 & 1.8 \\ 0.0 & 5.3 & -1.8\\1 & -1 & -1]\mqty[ I_2\\I_1\\ I_3]&=\mqty[15.0\\3.1\\0]
+\end{align}
+
+O critério de parada utilizado foi a precisão de `$\epsilon=10^{-3}$' entre passos da solução com 
+o ``chute'' para a solução inicial sendo $\qty[0,0,0]$. O programa pode ser visto 
+abaixo,
+
+\begin{mintedbox}{python}
+# Precisão para a parada do programa
+vPrecisao = 1.E-3
+
+def fJacobi(tMatrix, tX0, tB):
+    
+    #########################################
+
+    # Definição de Varráveis inicias. Erro inicial
+    # é escolhido arbitrariamente
+
+    vPasso = 0
+    vErro = 10
+    tXPasso = tX0[:]
+    vDimensao = len(tX0)
+
+    print("Passo: ", vPasso)
+    print("Erro: --")
+    print("Solução neste passo: ", tXPasso)
+
+    #########################################
+
+    # Loop principal
+
+    while vErro > vPrecisao:
+
+    # Salva o passo atual para o calculo de erros
+
+        tXProxPasso = tXPasso[:]
+
+    #########################################
+
+    # Atualiza o Passo atual
+
+        for vLinha in range(vDimensao):
+
+            vSoma = 0
+
+            for vColuna in range(vDimensao):
+
+    # Ignora os elementos da diagonal
+
+                if vColuna == vLinha:
+
+                    continue
+
+                vSoma = vSoma + tXProxPasso[vColuna] * tMatrix[vLinha][vColuna]
+
+            vFator = 1 / tMatrix[vLinha][vLinha]
+            tXPasso[vLinha] = vFator * (tB[vLinha] - vSoma)
+
+    #########################################
+
+    # Calcula o erro 
+
+        vErro = 0
+
+        for vLinha in range(vDimensao):
+
+            vErroTemp = abs(tXPasso[vLinha] - tXProxPasso[vLinha])
+
+            if vErroTemp > vErro:
+
+                vErro = vErroTemp
+
+    # Atualiza os contadores e printa o resultado 
+    # de cada passo
+
+        vPasso = vPasso + 1
+    
+        print("Passo: ", vPasso)
+        print("Erro: ", vErro)
+        print("Solução neste passo: ", tXPasso)
+
+    return(tXPasso)
+
+    #########################################
+
+    # Define os parametros de nosso problema
+
+tMatrix= [[11.9,0.0,1.8],[0.0,5.3,-1.8],[1,-1,-1]]
+tB = [15.0,3.1,0]
+tX0 = [0,0,0]
+
+    #########################################
+
+    # Resolve o sistema
+
+tSolucao = fJacobi(tMatrix, tX0, tB)
+
+print("Solução Final: ", tSolucao)
+\end{mintedbox}
+
+O retorno do programa é,
+\centering
+{
+    \begin{tabular}{rrrrrrr}
+        \hline
+           Passo  &  Erro &   $\qty[I_1,I_2,I_3]$ \\
+        \hline
+        1
+ &  1.261
+ &  [1.261, 0.585, -0.0] \\
+   2
+ &  0.671
+ &  [1.261, 0.585, 0.676] \\
+   3
+ &  0.229
+ &  [1.158, 0.814, 0.676] \\
+   4
+ &  0.332
+ &  [1.158, 0.814, 0.344]\\
+   5
+ &  0.113
+ &  [1.208, 0.702, 0.344]\\
+   6
+ &  0.163
+ &  [1.208, 0.702, 0.507]\\
+   7
+ &  0.055
+ &  [1.184, 0.757, 0.507]\\
+   8
+ &  0.080
+ &  [1.184, 0.757, 0.427]\\
+   9
+ &  0.027
+ &  [1.196, 0.730, 0.427]\\
+   10
+ &  0.039
+ &  [1.196, 0.730, 0.466]\\
+   11
+ &  0.013
+ &  [1.190, 0.743, 0.466]\\
+   12
+ &  0.019
+ &  [1.190, 0.743, 0.447]\\
+   13
+ &  0.007
+ &  [1.193, 0.737, 0.447]\\
+   14
+ &  0.009
+ &  [1.193, 0.737, 0.456]\\
+   15
+ &  0.003
+ &  [1.191, 0.740, 0.456]\\
+   16
+ &  0.005
+ &  [1.191, 0.740, 0.452]\\
+   17
+ &  0.001
+ &  [1.192, 0.738, 0.452]\\
+   18
+ &  0.002
+ &  [1.192, 0.738, 0.454]\\
+   19
+ &  0.0007
+ &  [1.192, 0.739, 0.4543]\\
+        \hline
+        \end{tabular}
+}
+
+\justifying
+
+Na tabela mostramos apenas até o 3º algarismo significativo, a solução final é,
+   
+$$\textnormal{Solução Final:   }  [1.1918465707994006, 0.7390614731107796, 0.45390322638173963]$$
+$$\textnormal{Erro Final:   }  0.0007735890376808774$$
+
+Que é compatível com o resultado obtido pelo método anterior.
+
+\subsection{}
+
+O nosso sistema é, após permutar a primeira com a segunda linha,
+
+\begin{align}
+    \mqty[ 11.9 & 0.0 & 1.8 \\ 0.0 & 5.3 & -1.8\\1 & -1 & -1]\mqty[ I_2\\I_1\\ I_3]&=\mqty[15.0\\3.1\\0]
+\end{align}
+
+Que resulta em uma matrix
+
+\begin{align}
+    \mqty[11.9 & 0.0 & 1.8 \\ 0.0 & 5.3 & -1.8\\1 & -1 & -1]
+\end{align}
+
+Assim podemos obter cada `$a_{ij}$', onde `$i$' refere a linha e $j$ a coluna. A construção da matrix `$\mathbb J$' é então,
+
+\begin{align}
+    \mqty[0 & 0 & \frac{1.8}{11.9} \\ 0 & 0 & -\frac{1.8}{5.3}\\-1 & 1 & 0 ]
+\end{align}
+
+Cujos auto-valores calculados são,
+
+\begin{align}
+    \lambda_1 &= 0\\
+    \lambda_2 &= \frac{6\sqrt{542402}}{6307}\im\\
+    \lambda_3 &=- \frac{6\sqrt{542402}}{6307}\im
+\end{align}
+
+E portanto o raio espectral é,
+
+\begin{align}
+    \rho_s &=\norm{\lambda_2}=\frac{6\sqrt{542402}}{6307}
+\end{align}
+
+We have then to solve for,
+
+\begin{align}
+    \rho_s^k&=10^{-3}\\
+    k\ln\qty(\rho_s^k)&=-3\ln\qty(10)\\
+    k&=-3\frac{\ln\qty(10)}{\ln\qty(\rho_s^k)}\\
+    k&=-3\frac{\ln\qty(10)}{\ln\qty(\frac{6\sqrt{542402}}{6307})}\\
+    k&=19.4
+\end{align}
+
+O que é extremamente compatível com o resultado obtido no item anterior, que convergiu em exatos 19 passos!
+
+\subsection{}
+
+Agora vamos utilizar do método de Gauss-Seidel, a principal diferença deste método com o método 
+de Jacobi está na linha 50. Foi utilizado também uma precisão de `$10^{-3}$' e valores inicial da 
+solução como sendo `$\qty[0,0,0]$'. O código pode ser visto abaixo,
+
+\begin{mintedbox}{python}
+# Precisão para a parada do Programa
+vPrecisao = 1.E-3
+
+def fGaussSeidel(tMatrix, tX0, tB):
+
+    #########################################
+
+    # Definição dos parâmetros do problema,
+    # a escolha do erro é arbitrária
+
+    vPasso = 0
+    vErro = 10
+    tXPasso = tX0[:]
+    vDimensao = len(tX0)
+
+    print("Passo: ", vPasso)
+    print("Erro: --")
+    print("Solução neste passo: ", tXPasso)
+
+    #########################################
+
+    # Loop principal do método
+
+    while vErro > vPrecisao:
+
+    # Salva o Valor do passo atual para 
+    # calcular o erro posteriormente
+
+        tXProxPasso = tXPasso[:]
+
+    #########################################
+
+    # Calculo do próximo passo
+
+        for vLinha in range(vDimensao):
+
+            vSoma = 0
+
+    # Ignora os elementos da diagonal
+
+            for vColuna in range(vDimensao):
+
+                if vColuna == vLinha:
+
+                    continue
+
+    # Diferença do método é utilizar nesta soma tXPasso
+    # ao invés de utilizar tXProxPasso
+
+                vSoma = vSoma + tXPasso[vColuna] * tMatrix[vLinha][vColuna]
+
+            vFator = 1 / tMatrix[vLinha][vLinha]
+            tXPasso[vLinha] = vFator * (tB[vLinha] - vSoma)
+
+    #########################################
+
+    # Cálculo do erro
+
+        vErro = 0
+
+        for i in range(vDimensao):
+
+            vErroTemp = abs(tXPasso[i] - tXProxPasso[i])
+
+            if vErroTemp > vErro:
+
+                vErro = vErroTemp
+
+    #########################################
+
+    # Aumenta o contador de passos e printa
+    
+        vPasso = vPasso + 1
+
+        print("Passo: ", vPasso)
+        print("Erro: ", vErro)
+        print("Solução neste passo: ", tXPasso)
+
+    return(tXPasso)
+
+    #########################################
+
+    # Define os valores do problema
+
+tMatrix= [[11.9,0.0,1.8],[0.0,5.3,-1.8],[1,-1,-1]]
+tB = [15.0,3.1,0]
+tX0 = [0,0,0]
+
+    #########################################
+
+    # Resolve o sistema
+
+tSolucao = fGaussSeidel(tMatrix, tX0, tB)
+
+print("Solução Final: ", tSolucao)
+\end{mintedbox}
+
+O retorno do programa é,
+
+\centering
+{
+    \begin{tabular}{rrrrrrr}
+        \hline
+           Passo  &  Erro &   $\qty[I_1,I_2,I_3]$ \\
+        \hline
+        0
+        & --
+        &  [0, 0, 0]\\
+          1
+        &  1.261
+        &  [1.261, 0.585, 0.671]\\
+          2
+        &  0.332
+        &  [1.158, 0.814, 0.344]\\
+          3
+        &  0.163
+        &  [1.208, 0.702, 0.507]\\
+          4
+        &  0.080
+        &  [1.184, 0.757, 0.427]\\
+          5
+        &  0.039
+        &  [1.196, 0.730, 0.466]\\
+          6
+        &  0.0193
+        &  [1.190, 0.743, 0.447]\\
+          7
+        &  0.009
+        &  [1.193, 0.737, 0.456]\\
+          8
+        &  0.005
+        &  [1.191, 0.740, 0.452]\\
+          9
+        &  0.002
+        &  [1.192, 0.738, 0.454]\\
+          10
+        &  0.001
+        &  [1.192, 0.739, 0.453]\\
+          11
+        &  0.0005
+        &  [1.192, 0.739, 0.453]\\
+        \hline
+        \end{tabular}
+}
+
+\justifying
+
+Novamente na tabela mostramos apenas os 3 primeiros algarismos significativos para facilitar a 
+leitura. O resultado final é,
+
+$$\textnormal{Solução Final:   }  [1.192015699509284, 0.7386817312904751, 0.453333968218809]$$
+$$\textnormal{Erro Final:   } 0.0005488705301880392$$
+
+Que é também compatível com os outros métodos, porém converge mais rapidamente.
+
+\end{document}

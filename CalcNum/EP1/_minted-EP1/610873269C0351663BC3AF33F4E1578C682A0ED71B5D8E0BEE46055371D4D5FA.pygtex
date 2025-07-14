@@ -1,0 +1,58 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{math}
+\PYG{k+kn}{import} \PYG{n+nn}{tabulate}
+
+\PYG{c+c1}{\PYGZsh{}Variáveis necessárias}
+
+\PYG{n}{vPrecisao} \PYG{o}{=} \PYG{l+m+mf}{1.E\PYGZhy{}10}
+
+\PYG{c+c1}{\PYGZsh{}Função do método de Newton que calcula a próxima aproximação da raíz}
+\PYG{k}{def} \PYG{n+nf}{fNewton}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{x}\PYG{o}{**}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{math}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{x}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{))}\PYG{o}{/}\PYG{p}{((}\PYG{l+m+mi}{3}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{x}\PYG{o}{**}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{))} \PYG{o}{+} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x}\PYG{o}{*}\PYG{n}{math}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{x}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{))}
+
+\PYG{c+c1}{\PYGZsh{}Função qual desejamos encontrar a raiz}
+\PYG{k}{def} \PYG{n+nf}{fZero}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{x}\PYG{o}{**}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{math}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{x}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}Derivada da função que desejamos encontrar a raíz}
+\PYG{k}{def} \PYG{n+nf}{fZeroD}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+    \PYG{k}{return} \PYG{p}{(}\PYG{l+m+mi}{3}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{x}\PYG{o}{**}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{))} \PYG{o}{+} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x}\PYG{o}{*}\PYG{n}{math}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{x}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}Função que calcula o erro relativo entre uma aproximação e a próxima aproximação calculada pelo método de Newton}
+\PYG{k}{def} \PYG{n+nf}{fErro}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n+nb}{abs}\PYG{p}{((}\PYG{n}{fNewton}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{)}\PYG{o}{/}\PYG{n}{x}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}Método que organiza os dados em tabela}
+\PYG{k}{def} \PYG{n+nf}{fTabDados}\PYG{p}{(}\PYG{n}{vIteracao}\PYG{p}{,} \PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{fZero}\PYG{p}{,} \PYG{n}{fErro}\PYG{p}{):}
+
+    \PYG{n}{tTemp} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n}{tTemp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{vIteracao}\PYG{p}{)}
+    \PYG{n}{tTemp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{)}
+    \PYG{n}{tTemp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{fZero}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{))}
+    \PYG{n}{tTemp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{fZeroD}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{))}
+    \PYG{n}{tTemp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{fErro}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{))}
+
+    \PYG{k}{return} \PYG{n}{tTemp}
+
+\PYG{c+c1}{\PYGZsh{}Valor inicial da aproximação da raiz}
+\PYG{n}{vInicial} \PYG{o}{=} \PYG{l+m+mf}{0.8}
+
+\PYG{c+c1}{\PYGZsh{}Tabela de dados finais}
+\PYG{n}{tDados} \PYG{o}{=} \PYG{p}{[[}\PYG{l+s+s2}{\PYGZdq{}n\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}x\PYGZus{}n\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}f(x\PYGZus{}n)\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}f\PYGZsq{}(x\PYGZus{}n)\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}Erro\PYGZdq{}}\PYG{p}{]]}
+
+\PYG{n}{vIteracao} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+\PYG{c+c1}{\PYGZsh{}Algorítimo do Método de Newton que roda enquanto o erro relativo for maior que a precisão requerida}
+\PYG{k}{while} \PYG{n}{fErro}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{vPrecisao}\PYG{p}{:}
+
+    \PYG{n}{tDados}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{fTabDados}\PYG{p}{(}\PYG{n}{vIteracao}\PYG{p}{,} \PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{fZero}\PYG{p}{,} \PYG{n}{fErro}\PYG{p}{))}
+
+    \PYG{n}{vIteracao} \PYG{o}{=} \PYG{n}{vIteracao} \PYG{o}{+} \PYG{l+m+mi}{1}
+    \PYG{n}{vInicial} \PYG{o}{=} \PYG{n}{fNewton}\PYG{p}{(}\PYG{n}{vInicial}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}Substitui a aproximação antiga pela próxima calculada pelo método de Newton}
+
+\PYG{n}{tDados}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{fTabDados}\PYG{p}{(}\PYG{n}{vIteracao}\PYG{p}{,} \PYG{n}{vInicial}\PYG{p}{,} \PYG{n}{fZero}\PYG{p}{,} \PYG{n}{fErro}\PYG{p}{))}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}A raiz da função é: }\PYG{l+s+si}{\PYGZpc{}.10f}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{\PYGZpc{}}\PYG{n}{vInicial}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}Retona a aproximação encontrada para a raiz}
+\PYG{n+nb}{print}\PYG{p}{()}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{tabulate}\PYG{o}{.}\PYG{n}{tabulate}\PYG{p}{(}\PYG{n}{tDados}\PYG{p}{,} \PYG{n}{headers}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}firstrow\PYGZsq{}}\PYG{p}{,} \PYG{n}{tablefmt}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}latex\PYGZsq{}}\PYG{p}{))} \PYG{c+c1}{\PYGZsh{}Retorna a tabela de dados em formato de LaTex}
+\end{Verbatim}
