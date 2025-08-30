@@ -1,0 +1,15 @@
+\section{Conformal Toy Model}
+
+Consider the following Lagrangian, 
+\[\mathcal L=-\frac12\Box \phi\Box\phi-\frac{g}{2}\phi^2\Box\phi-\frac{g^2}{8}\phi^4+m^2\qty(-\frac12\partial_\mu\phi\partial^\mu\phi+\frac{g}{3!}\phi^3)\]
+It possesses the Feynman rules,
+\begin{itemize}
+    \item \ \ \feynmandiagram [horizontal=a to b] {
+		a [particle=\(\phi\)] -- [scalar] b [particle=\(\phi\)],
+		}; $=\frac1\im\frac{1}{m^2p^2+p^4}$
+	\item \ \ \feynmandiagram [small,baseline = (b.base),horizontal=a to b] {
+		a [particle=\(\phi_1\)] -- [scalar] b  ,
+		b -- [scalar] c [particle=\(\phi_2\)],
+		b -- [scalar] d [particle=\(\phi_3\)],
+		}; $=\im\kappa\qty(p_1^2+p_2^2+p_3^2)=\im\kappa\qty(p_1+p_2+p_3)^2-2\im\kappa\qty(p_1\cdot p_2+p_2\cdot p_3+p_3\cdot p_1)=-\im\kappa\qty(\langle12 \rangle[12]+\langle23 \rangle[23]+\langle31 \rangle[31])$
+\end{itemize}
