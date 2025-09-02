@@ -2,6 +2,8 @@
 
 Consider the following Lagrangian, 
 \[\mathcal L=-\frac12\Box \phi\Box\phi-\frac{g}{2}\phi^2\Box\phi-\frac{g^2}{8}\phi^4+m^2\qty(-\frac12\partial_\mu\phi\partial^\mu\phi+\frac{g}{3!}\phi^3)\]
+Notice the form of the Lagrangian,
+\[\mathcal L=-\frac12\qty(\Box\phi+\frac{g}{2}\phi^2)^2+m^2\qty(-\frac12\partial_\mu\phi\partial^\mu\phi+\frac{g}{3!}\phi^3)\]
 It possesses the Feynman rules,
 \begin{itemize}
     \item \ \ \feynmandiagram [horizontal=a to b] {
@@ -11,5 +13,196 @@ It possesses the Feynman rules,
 		a [particle=\(\phi_1\)] -- [scalar] b  ,
 		b -- [scalar] c [particle=\(\phi_2\)],
 		b -- [scalar] d [particle=\(\phi_3\)],
-		}; $=\im\kappa\qty(p_1^2+p_2^2+p_3^2)=\im\kappa\qty(p_1+p_2+p_3)^2-2\im\kappa\qty(p_1\cdot p_2+p_2\cdot p_3+p_3\cdot p_1)=-\im\kappa\qty(\langle12 \rangle[12]+\langle23 \rangle[23]+\langle31 \rangle[31])$
+		}; $=\im g\qty(p_1^2+p_2^2+p_3^2+m^2)$
+	\item \ \ \feynmandiagram [small,baseline = (b.base)] {
+		a [particle=\(\phi_1\)] -- [scalar] b  ,
+		e [particle=\(\phi_1\)] -- [scalar] b  ,
+		b -- [scalar] c [particle=\(\phi_2\)],
+		b -- [scalar] d [particle=\(\phi_3\)],
+		}; $=-3\im g^2$
 \end{itemize}
+
+Let's compute the self energy,
+\begin{align}
+    \im\Pi\qty(p^2)&=\feynmandiagram [baseline = (b.base),horizontal=a to b,layered layout] {
+     a -- [scalar] b -- [ loop,scalar,min distance =2cm] b--[scalar] c,
+     }; + \feynmandiagram [baseline = (b.base),horizontal=a to b,layered layout] {
+     a -- [scalar] b -- [ half left,scalar] c --[half left,scalar] b,
+     c -- [scalar] d,
+     };+\cdots
+\end{align}
+
+\begin{align}
+    \im{\Pi^{\qty(1)}}&=-\frac32\im g^2\int\frac{\dd[D]{\ell}}{\qty(2\pi)^D}\frac{1}{\im}\frac{1}{\ell^2}\frac{1}{\ell^2+m^2}\\
+    \im{\Pi^{\qty(1)}}&=-\frac32 g^2\int\frac{\dd[D]{\ell}}{\qty(2\pi)^D}\frac{1}{\ell^2}\frac{1}{\ell^2+m^2}\\
+    \im{\Pi^{\qty(1)}}&=-\frac32 g^2\frac{\im}{\qty(4\pi)^{\frac D2}\Gamma\qty(\frac D2)}\qty(m^2)^{\frac D2-2}\frac{\Gamma\qty(2-\frac D2)\Gamma\qty(\frac D2-1)}{\Gamma\qty(1)}\\
+    \im{\Pi^{\qty(1)}}&=-\frac32\im g^2\frac{\qty(m^2)^{-\epsilon}\Gamma\qty(\epsilon)\Gamma\qty(1-\epsilon)}{\qty(4\pi)^{2-\epsilon}\Gamma\qty(2-\epsilon)}
+\end{align}
+
+\begin{align}
+    \im{\Pi^{\qty(2)}}&=\frac12\qty(\im g)^2\int\frac{\dd[D]{\ell}}{\qty(2\pi)^D}\frac{1}{\im^2}\frac{1}{\ell^2\qty(\ell+p)^2}\frac{\qty(m^2+\ell^2+p^2+\qty(\ell+p)^2)^2}{\ell^2+m^2}\frac{1}{\qty(\ell+p)^2+m^2}
+\end{align}
+For the mass renormalization we can take $p=0$,
+\begin{align}
+    \im{\Pi^{\qty(2)}}&=\frac12g^2\int\frac{\dd[D]{\ell}}{\qty(2\pi)^D}\frac{\qty(m^2+2\ell^2)^2}{\ell^4\qty(\ell^2+m^2)^2}
+\end{align}
+Let's compute the four point amplitude for this theory,
+\begin{align}
+    \feynmandiagram [small,baseline = (b.base),horizontal=b to d] {
+		a [particle=\(\phi_1\)] -- [scalar] b  ,
+		b -- [scalar] c [particle=\(\phi_2\)],
+		b -- [scalar,momentum=\(P\)] d,
+        d -- [scalar] e [particle=\(\phi_4\)],
+        d -- [scalar] f [particle=\(\phi_3\)]
+    }; &=\qty(\im g)^2\frac{\qty(p_1^2+p_2^2+\qty(p_1+p_2)^2+m^2)\qty(p_3^2+p_4^2+\qty(p_3+p_4)^2+m^2)}{\im\qty(p_1+p_2)^2\qty(\qty(p_1+p_2)^2+m^2)}
+\end{align}
+First let's consider all legs massless,
+\begin{align}
+    \feynmandiagram [small,baseline = (b.base),horizontal=b to d] {
+		a [particle=\(\phi_1\)] -- [scalar] b  ,
+		b -- [scalar] c [particle=\(\phi_2\)],
+		b -- [scalar,momentum=\(P\)] d,
+        d -- [scalar] e [particle=\(\phi_4\)],
+        d -- [scalar] f [particle=\(\phi_3\)]
+    }; &=\im g^2\frac{\qty(-s+m^2)\qty(-s+m^2)}{\qty(-s)\qty(-s+m^2)}=-\im g^2\frac{\qty(-s+m^2)}{s}
+\end{align}
+So,
+\begin{align}
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2\frac{\qty(-s+m^2)}{s}-\im g^2\frac{\qty(-t+m^2)}{t}-\im g^2\frac{\qty(-u+m^2)}{u}-3\im g^2\\
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2\frac{\qty(-s+m^2)}{s}-\im g^2\frac{\qty(-t+m^2)}{t}-\im g^2\frac{\qty(-u+m^2)}{u}-\im g^2\frac{s}{s}-\im g^2\frac{t}{t}-\im g^2\frac{u}{u}\\
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2m^2\qty(\frac1s+\frac1t+\frac1u)
+\end{align}
+Para uma perna massiva, $\phi_4$,
+\begin{align}
+    \feynmandiagram [small,baseline = (b.base),horizontal=b to d] {
+		a [particle=\(\phi_1\)] -- [scalar] b  ,
+		b -- [scalar] c [particle=\(\phi_2\)],
+		b -- [scalar,momentum=\(P\)] d,
+        d -- [scalar] e [particle=\(\phi_4\)],
+        d -- [scalar] f [particle=\(\phi_3\)]
+    }; &=\qty(\im g)^2\frac{\qty(-s+m^2)\qty(-s)}{\im\qty(-s)\qty(-s+m^2)}=\im g^2
+\end{align}
+So,
+\begin{align}
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=\im g^2+\im g^2+\im g^2-3\im g^2=0
+\end{align}
+Para duas pernas massivas, $\phi_{3,4}$,
+\begin{align}
+    \feynmandiagram [small,baseline = (b.base),horizontal=b to d] {
+		a [particle=\(\phi_1\)] -- [scalar] b  ,
+		b -- [scalar] c [particle=\(\phi_2\)],
+		b -- [scalar,momentum=\(P\)] d,
+        d -- [scalar] e [particle=\(\phi_4\)],
+        d -- [scalar] f [particle=\(\phi_3\)]
+    }; &=\qty(\im g)^2\frac{\qty(-s+m^2)\qty(-s-m^2)}{\im\qty(-s)\qty(-s+m^2)}=\im g^2\frac{s+m^2}{s}\\
+    \feynmandiagram [small,baseline = (b.base),vertical=b to d] {
+		a [particle=\(\phi_2\)] -- [scalar] b  ,
+		b -- [scalar] c [particle=\(\phi_3\)],
+		b -- [scalar,momentum=\(P\)] d,
+        d -- [scalar] e [particle=\(\phi_1\)],
+        d -- [scalar] f [particle=\(\phi_4\)]
+    }; &=\qty(\im g)^2\frac{\qty(-t)\qty(-t)}{\im\qty(-t)\qty(-t+m^2)}=-\im g^2\frac{t}{-t+m^2}\\
+    \feynmandiagram [small,baseline = (b.base),vertical=b to d] {
+		a [particle=\(\phi_2\)] -- [scalar] b  ,
+		b -- [scalar] c [particle=\(\phi_4\)],
+		b -- [scalar,momentum=\(P\)] d,
+        d -- [scalar] e [particle=\(\phi_1\)],
+        d -- [scalar] f [particle=\(\phi_3\)]
+    }; &=-\im g^2\frac{u}{-u+m^2}
+\end{align}
+So,
+\begin{align}
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=\im g^2\frac{s+m^2}{s}-\im g^2\frac{t}{-t+m^2}-\im g^2\frac{u}{-u+m^2}-3\im g^2\\
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=\im g^2\frac{s+m^2}{s}-\im g^2\frac{t}{-t+m^2}-\im g^2\frac{u}{-u+m^2}-\im g^2 \frac{s}{s}-\im g^2\frac{-t+m^2}{-t+m^2}-\im g^2\frac{-u+m^2}{-u+m^2}\\
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2 m^2\qty(-\frac{1}{s}+\frac{1}{-t+m^2}+\frac{1}{-u+m^2})
+\end{align}
+Para uma perna sem massa $\phi_1$,
+\begin{align}
+    \feynmandiagram [small,baseline = (b.base),horizontal=b to d] {
+		a [particle=\(\phi_1\)] -- [scalar] b  ,
+		b -- [scalar] c [particle=\(\phi_2\)],
+		b -- [scalar,momentum=\(P\)] d,
+        d -- [scalar] e [particle=\(\phi_4\)],
+        d -- [scalar] f [particle=\(\phi_3\)]
+    }; &=\qty(\im g)^2\frac{\qty(-s)\qty(-s-m^2)}{\im\qty(-s)\qty(-s+m^2)}=-\im g^2\frac{s+m^2}{-s+m^2}\\
+    \feynmandiagram [small,baseline = (b.base),vertical=b to d] {
+		a [particle=\(\phi_2\)] -- [scalar] b  ,
+		b -- [scalar] c [particle=\(\phi_3\)],
+		b -- [scalar,momentum=\(P\)] d,
+        d -- [scalar] e [particle=\(\phi_1\)],
+        d -- [scalar] f [particle=\(\phi_4\)]
+    }; &=\qty(\im g)^2\frac{\qty(-t)\qty(-t-m^2)}{\im\qty(-t)\qty(-t+m^2)}=-\im g^2\frac{t+m^2}{-t+m^2}\\
+    \feynmandiagram [small,baseline = (b.base),vertical=b to d] {
+		a [particle=\(\phi_2\)] -- [scalar] b  ,
+		b -- [scalar] c [particle=\(\phi_4\)],
+		b -- [scalar,momentum=\(P\)] d,
+        d -- [scalar] e [particle=\(\phi_1\)],
+        d -- [scalar] f [particle=\(\phi_3\)]
+    }; &=\qty(\im g)^2\frac{\qty(-u)\qty(-u-m^2)}{\im\qty(-u)\qty(-u+m^2)}=-\im g^2\frac{u+m^2}{-u+m^2}\\
+\end{align}
+So,
+\begin{align}
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2\frac{s+m^2}{-s+m^2}-\im g^2\frac{t+m^2}{-t+m^2}-\im g^2\frac{u+m^2}{-u+m^2}-3\im g^2\\
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2\frac{s+m^2}{-s+m^2}-\im g^2\frac{t+m^2}{-t+m^2}-\im g^2\frac{u+m^2}{-u+m^2}-\im g^2\frac{-s+m^2}{-s+m^2}-\im g^2\frac{-t+m^2}{-t+m^2}-\im g^2\frac{-u+m^2}{-u+m^2}\\
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2m^2\qty(\frac{1}{-s+m^2}+\frac{1}{-t+m^2}+\frac{1}{-u+m^2})
+\end{align}
+
+Cut comparison, only massless legs
+
+\begin{align}
+    \feynmandiagram [baseline = (b.base),horizontal=b to h, layered layout,small] {
+        a -- [scalar] b [blob],
+        f -- [scalar] b ,
+        b -- [ scalar, momentum =\(l+3+4\)] g [blob], 
+        g --[scalar,momentum =\(l+4\)] h [blob], 
+        h --[scalar, momentum=\(l\)] b,
+        g -- [scalar] d,
+        h -- [scalar] e,
+    };&=\frac{\im g^2m^2\qty(\im g m^2)^2}{\qty(\im m^2)^3}\qty(\frac{1}{\langle12\rangle[12]}-\frac{1}{\langle1l\rangle[1l]}-\frac{1}{\langle2l\rangle[2l]})
+\end{align}
+
+to solve for the cuts, $l^2=\qty(l+3+4)^2=\qty(l+4)^2=0$,
+\begin{align}
+    l^2&=0\Rightarrow l=-|l\rangle [l|\\
+    0=\qty(l+4)^2&=\langle l4\rangle[l4]=0\Rightarrow |l]=|4]\\
+    0=\qty(l+3+4)^2&=\langle lP_{34}\rangle[lP_{34}]+(3+4)^2=\langle l| 3+4|l]+\langle34\rangle[34]=\langle l| 3+4|4]+\langle34\rangle[34]\\
+    \langle43\rangle[34]&=-\langle l3\rangle[34]\Rightarrow |l\rangle = -|4\rangle+z|3\rangle\\
+    l&=-\qty(-|4\rangle+z|3\rangle)[4|
+\end{align}
+The cuts are solved by this. Hence,
+\begin{align*}
+    &=g^4\qty(\frac{1}{\langle12\rangle[12]}-\frac{1}{\langle1l\rangle[1l]}-\frac{1}{\langle2l\rangle[2l]})\\
+    &=g^4\qty(\frac{1}{\langle12\rangle[12]}-\frac{1}{\qty(-\langle14\rangle+z\langle13\rangle)[14]}-\frac{1}{\qty(-\langle24\rangle+z\langle23\rangle)[24]})
+\end{align*}
+Now for internal massive lines,
+\begin{align}
+    \feynmandiagram [baseline = (b.base),horizontal=b to h, layered layout,small] {
+        a -- [scalar] b [blob],
+        f -- [scalar] b ,
+        b -- [ scalar, momentum =\(l+3+4\)] g [blob], 
+        g --[scalar,momentum =\(l+4\)] h [blob], 
+        h --[scalar, momentum=\(l\)] b,
+        g -- [scalar] d,
+        h -- [scalar] e,
+    };&=\frac{-\im g^2m^2\qty(-\im g m^2)^2}{\qty(-\im m^2)^3}\qty(\frac{1}{\langle12\rangle[12]}-\frac{1}{\langle1l\rangle[1l]}-\frac{1}{\langle2l\rangle[2l]})
+\end{align}
+With the cuts being, $l^2=\qty(l+3+4)^2=\qty(l+4)^2=-m^2$,
+\begin{align}
+    0=(l+4)^2-l^2&=2l\cdot p_4\\
+    0=(l+4+3)^2-l^2&=2l\cdot \qty(4+3)+(4+3)^2=2l\cdot p_3+(4+3)^2
+\end{align}
+As ansatz, $l=|4\rangle [4|+\alpha|4\rangle [3|+\beta|3\rangle[4|$ satisfy both conditions above. The remaining condition is,
+\begin{align}
+    l^2&=-m^2\\
+    -\alpha\beta[43]\langle43\rangle&=-m^2\Rightarrow \alpha=\frac{m^2}{\beta\langle34\rangle[34]}
+\end{align}
+Setting now $-\beta=z$,
+\begin{align}
+    l=|4\rangle [4|-\frac{m^2}{z\langle34\rangle[34]}|4\rangle [3|-z|3\rangle[4|
+\end{align}
+The value of the diagram is,
+\begin{align*}
+    &=g^4\qty(\frac{1}{\langle12\rangle[12]}+\frac{1}{\langle1l\rangle[l1]}+\frac{1}{\langle2l\rangle[l2]})\\
+    &=g^4\qty(\frac{1}{\langle12\rangle[12]}+\frac{1}{-\langle1|l|1]}+\frac{1}{-\langle2|l|2]})\\
+    &=g^4\qty(\frac{1}{\langle12\rangle[12]}-\frac{1}{\langle14\rangle[41]-\frac{m^2}{z\langle34\rangle[34]}\langle14\rangle[31]-z\langle13\rangle[41]}-\frac{1}{\langle2|l|2]})
+\end{align*}
