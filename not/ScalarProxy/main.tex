@@ -94,6 +94,35 @@ Scalar Proxy
     \end{feynman}
   \end{tikzpicture}%
 }
+\newsavebox{\phifourloop}
+\savebox{\phifourloop}{
+\begin{tikzpicture}
+\begin{feynman}
+% external incoming momenta on left
+\vertex (p1) at (-3,1) {$p_1$};
+\vertex (p2) at (-3,-1) {$p_2$};
+% interaction vertices (drawn as filled dots)
+\vertex[blob] (v1) at (-1,0) {};
+\vertex[blob] (v2) at ( 1,0) {};
+% external outgoing momenta on right
+\vertex (p3) at ( 3,1) {$p_3$};
+\vertex (p4) at ( 3,-1) {$p_4$};
+
+
+% diagram edges: scalar lines (no arrows)
+\diagram*{
+(p1) -- [scalar] (v1),
+(p2) -- [scalar] (v1),
+(v1) -- [scalar, half left, looseness=1.2,momentum=$\ell+3+4$] (v2),
+(v2) -- [scalar, half left, looseness=1.2, momentum=$\ell$] (v1),
+(v2) -- [scalar] (p3),
+(v2) -- [scalar] (p4)
+};
+
+
+\end{feynman}
+\end{tikzpicture}
+}
 
 \begin{document}
 

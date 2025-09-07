@@ -70,7 +70,7 @@ So,
 \begin{align}
 	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2\frac{\qty(-s+m^2)}{s}-\im g^2\frac{\qty(-t+m^2)}{t}-\im g^2\frac{\qty(-u+m^2)}{u}-3\im g^2\\
 	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2\frac{\qty(-s+m^2)}{s}-\im g^2\frac{\qty(-t+m^2)}{t}-\im g^2\frac{\qty(-u+m^2)}{u}-\im g^2\frac{s}{s}-\im g^2\frac{t}{t}-\im g^2\frac{u}{u}\\
-	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2m^2\qty(\frac1s+\frac1t+\frac1u)
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2m^2\qty(\frac1s+\frac1t+\frac1u)=\im g^2 m^2\qty(\frac{1}{\langle12\rangle[12]}+\frac{1}{\langle14\rangle[14]}+\frac{1}{\langle13\rangle[13]})
 \end{align}
 Para uma perna massiva, $\phi_4$,
 \begin{align}
@@ -114,7 +114,7 @@ So,
 \begin{align}
 	\vcenter{\hbox{\usebox{\phifourpoint}}} &=\im g^2\frac{s+m^2}{s}-\im g^2\frac{t}{-t+m^2}-\im g^2\frac{u}{-u+m^2}-3\im g^2\\
 	\vcenter{\hbox{\usebox{\phifourpoint}}} &=\im g^2\frac{s+m^2}{s}-\im g^2\frac{t}{-t+m^2}-\im g^2\frac{u}{-u+m^2}-\im g^2 \frac{s}{s}-\im g^2\frac{-t+m^2}{-t+m^2}-\im g^2\frac{-u+m^2}{-u+m^2}\\
-	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2 m^2\qty(-\frac{1}{s}+\frac{1}{-t+m^2}+\frac{1}{-u+m^2})
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2 m^2\qty(-\frac{1}{s}+\frac{1}{-t+m^2}+\frac{1}{-u+m^2})=-\im g^2 m^2\qty(\frac{1}{\langle12\rangle[12]}+\frac{1}{\langle1\vb4\rangle[1\vb 4]}+\frac{1}{\langle1\vb3\rangle[1\vb3]})
 \end{align}
 Para uma perna sem massa $\phi_1$,
 \begin{align}
@@ -144,7 +144,7 @@ So,
 \begin{align}
 	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2\frac{s+m^2}{-s+m^2}-\im g^2\frac{t+m^2}{-t+m^2}-\im g^2\frac{u+m^2}{-u+m^2}-3\im g^2\\
 	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2\frac{s+m^2}{-s+m^2}-\im g^2\frac{t+m^2}{-t+m^2}-\im g^2\frac{u+m^2}{-u+m^2}-\im g^2\frac{-s+m^2}{-s+m^2}-\im g^2\frac{-t+m^2}{-t+m^2}-\im g^2\frac{-u+m^2}{-u+m^2}\\
-	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2m^2\qty(\frac{1}{-s+m^2}+\frac{1}{-t+m^2}+\frac{1}{-u+m^2})
+	\vcenter{\hbox{\usebox{\phifourpoint}}} &=-\im g^2m^2\qty(\frac{1}{-s+m^2}+\frac{1}{-t+m^2}+\frac{1}{-u+m^2})=-\im g^2 m^2\qty(\frac{1}{\langle1\vb 2\rangle[1\vb2]}+\frac{1}{\langle1\vb4\rangle[1\vb 4]}+\frac{1}{\langle1\vb3\rangle[1\vb3]})
 \end{align}
 
 Cut comparison, only massless legs
@@ -206,3 +206,21 @@ The value of the diagram is,
     &=g^4\qty(\frac{1}{\langle12\rangle[12]}+\frac{1}{-\langle1|l|1]}+\frac{1}{-\langle2|l|2]})\\
     &=g^4\qty(\frac{1}{\langle12\rangle[12]}-\frac{1}{\langle14\rangle[41]-\frac{m^2}{z\langle34\rangle[34]}\langle14\rangle[31]-z\langle13\rangle[41]}-\frac{1}{\langle2|l|2]})
 \end{align*}
+The explicit cut loop amplitude is,
+\begin{align*}
+    \feynmandiagram [baseline = (b.base),horizontal=b to g,small] {
+        a -- [scalar] b ,
+        f -- [scalar] c ,
+        b -- [ scalar, momentum =\(l+3+4\)] g , 
+        g --[scalar,momentum =\(l+4\)] h , 
+        h --[scalar, momentum=\(l\)] c,
+        c --[scalar, momentum=\(l-1\)] b,
+        g -- [scalar] e,
+        h -- [scalar] d,
+    };
+\end{align*}
+Triple cut has no improvement, what about a double cut,
+
+\begin{align}
+    \vcenter{\hbox{\usebox{\phifourloop}}}&=\frac{\qty(\im g^2m^2)^2}{\qty(\im m^2)^2}\qty(\frac{1}{\langle12\rangle[12]}-\frac{1}{\langle1\ell\rangle[1\ell]}-\frac{1}{\langle2\ell\rangle[2\ell]})\qty(\frac{1}{\langle34\rangle[34]}+\frac{1}{\langle3\ell\rangle[3\ell]}+\frac{1}{\langle4\ell\rangle[4\ell]})
+\end{align}
