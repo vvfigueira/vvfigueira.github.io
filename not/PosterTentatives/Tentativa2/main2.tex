@@ -1,0 +1,98 @@
+% LaTeX poster using tikzposter class
+% Paper size: default a0paper (we removed the explicit geometry to avoid timing issues)
+% Times-like fonts, two columns, large fonts, centered body text
+
+\documentclass[25pt,a0paper,portrait]{tikzposter}
+
+% NOTE: we removed a direct \geometry{...} call that earlier caused a calc / TP@visibletextwidth timing error.
+% If you absolutely need custom paper dimensions (100cm x 150cm), set them via your TeX engine or uncomment and
+% move geometry settings into a proper location after tikzposter initialization.
+
+% Fonts: Times-like (no amssymb to avoid \Bbbk clash)
+\usepackage{newtxtext,newtxmath}
+
+% Graphics and math
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+% Tikzposter theme
+\usetheme{Default}
+\usecolorstyle{SolarizedDark}
+\title{2+1 Gravity as a Toy Model for a Gauge Formulation of Gravity}
+\author{Vicente V. Figueira}
+\institute{}
+\date{}
+
+% Title formatting
+\makeatletter
+\renewcommand{\TP@maketitle}{{%
+  \centering
+  {\bfseries\Huge\sffamily\@title}\par\vskip1em
+  {\Large\@author}\par\vskip1em}}
+\makeatother
+
+\begin{document}
+
+\maketitle
+
+\begin{columns}
+
+\column{0.5\textwidth}
+\block{Introduction}{\centering\Large
+General Relativity in $3+1$ dimensions is highly non-linear and non-polynomial, making exact solutions and quantization difficult. In $2+1$ dimensions the metric has no local degrees of freedom; the theory becomes topological and amenable to gauge-theoretic reformulation.}
+
+\block{Motivation \& Key Observations}{\centering\Large
+\begin{itemize}[left=0pt,label={--},itemsep=6pt]
+  \item Degree-of-freedom counting: $\tfrac12D(D-3)$ → vanishes for $D=3$.
+  \item Riemann tensor determined algebraically by the Ricci tensor in $2+1$.
+  \item Expectation: classical solvability and topological quantization.
+\end{itemize}}
+
+\block{Vielbein and Spin Connection}{\centering\Large
+Vielbein $e^{\mu}$ and spin connection $\omega^{\mu}_{\;\nu}$ recast gravity in form language. The curvature 2-form:
+\[R^{\mu}_{\;\nu}=d\omega^{\mu}_{\;\nu}+\omega^{\mu}_{\;\rho}\wedge\omega^{\rho}_{\;\nu}\]
+Einstein--Hilbert (Einstein--Cartan) action:
+\[S_{EH}=\frac{1}{2\kappa}\int\star R_{\beta\rho}\wedge e^{\beta}\wedge e^{\rho}.\]}
+
+\block{Gauge Interpretation}{\centering\Large
+\begin{itemize}[left=0pt,label={--},itemsep=6pt]
+  \item $\omega$ transforms as an $\mathfrak{so}(D-1,1)$ connection.
+  \item $e$ behaves like a translation-valued 1-form but not in adjoint rep.
+  \item Direct gauge interpretation works nicely only for $D=2+1$.
+\end{itemize}}
+
+\column{0.5\textwidth}
+\block{2+1 Gravity as Chern--Simons}{\centering\Large
+In $2+1$ dimensions:
+\[S_{CS}[A]=\frac{k}{4\pi}\int\langle A\wedge dA+\tfrac23A\wedge A\wedge A\rangle, \quad A=\omega+e.\]
+This reproduces $S_{EH}$ up to a boundary term.}
+
+\block{Bulk vs Boundary Dynamics}{\centering\Large
+\begin{itemize}[left=0pt,label={--},itemsep=6pt]
+  \item Bulk equations: $F=0$ ⇒ locally pure gauge.
+  \item Physical degrees of freedom appear on boundaries / topologically non-trivial manifolds (BTZ black hole).
+  \item Provides a topological quantum field theory framework for quantization.
+\end{itemize}}
+
+\block{Including Cosmological Constant}{\centering\Large
+Requires gauging SO(3,1) (dS) or SO(2,2) (AdS). The action becomes difference of two Chern--Simons actions with $A_{\pm}=\omega\pm e$.}
+
+\block{Conclusions}{\centering\Large
+\begin{itemize}[left=0pt,label={--},itemsep=6pt]
+  \item $2+1$ gravity is an exactly solvable topological gauge theory.
+  \item Offers tractable setting to explore quantum gravity, renormalization.
+  \item Boundary dynamics encode non-trivial physics.
+\end{itemize}}
+
+\end{columns}
+
+\block{References}{\centering\Large
+[1] Carlip (1995), Lectures in (2+1)-D Gravity.\\
+[2] Deser, Jackiw (1984).\\
+[3] Witten (1988).\\
+Contact: Vicente V. Figueira}
+
+\end{document}
