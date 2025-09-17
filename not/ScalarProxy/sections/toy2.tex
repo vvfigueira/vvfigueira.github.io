@@ -467,3 +467,135 @@ So,
     &=\frac{\im g^3}{\qty(p_1+p_2)^2}\qty[\frac{\qty(\qty(p_1+p_2)^2+\qty(p_3+p_4)^2)\qty(-m^2+\qty(p_3+p_4)^2)}{\qty(p_3+p_4)^2\qty(m^2+\qty(p_3+p_4)^2)}-\frac{\qty(p_3+p_4)^2\qty(m^2+\qty(p_3+p_4)^2)}{\qty(p_3+p_4)^2\qty(m^2+\qty(p_3+p_4)^2)}]+\qty(5\leftrightarrow3,4)\\
     &=\frac{\im g^3}{\qty(p_1+p_2)^2}\qty[\frac{\qty(p_1+p_2)^2\qty(-m^2+\qty(p_3+p_4)^2)-2m^2\qty(p_3+p_4)^2}{\qty(p_3+p_4)^2\qty(m^2+\qty(p_3+p_4)^2)}]+\qty(5\leftrightarrow3,4)
 \end{align*}
+
+The other topology is,
+
+\begin{align*}
+    \feynmandiagram [small] {
+        i1 [particle = \(2\)]-- [scalar] v1,
+        i2 [particle=\(4\)]-- [scalar] v1,
+        v1 -- [scalar] v2,
+        v2 -- [scalar] i5 [particle=\(5\)],
+        v2 -- [scalar] v3,
+        v3 -- [scalar] i3 [particle=\(1\)],
+        v3 -- [scalar] i4 [particle=\(3\)]
+    }; 
+    &= \im g^3\frac{\qty(m^2+p_3^2+\qty(p_1+p_3)^2)\qty(m^2+p_5^2+\qty(p_1+p_3)^2 + \qty(p_2+p_4)^2)\qty(m^2+p_4^2+\qty(p_2+p_4)^2)}{\qty(p_1+p_3)^2\qty(m^2 + \qty(p_1+p_3)^2)\qty(p_2+p_4)^2\qty(m^2+\qty(p_2+p_4)^2)}\\
+    &= \im g^3\frac{\qty(\qty(p_1+p_3)^2 + \qty(p_2+p_4)^2)}{\qty(m^2 + \qty(p_1+p_3)^2)\qty(m^2+\qty(p_2+p_4)^2)}\\
+    \feynmandiagram [small] {
+        i1 [particle = \(5\)]-- [scalar] v1,
+        i2 [particle=\(4\)]-- [scalar] v1,
+        v1 -- [scalar] v2,
+        v2 -- [scalar] i5 [particle=\(2\)],
+        v2 -- [scalar] v3,
+        v3 -- [scalar] i3 [particle=\(1\)],
+        v3 -- [scalar] i4 [particle=\(3\)]
+    }; 
+    &= \im g^3\frac{\qty(m^2+p_3^2+\qty(p_1+p_3)^2)\qty(m^2+\qty(p_1+p_3)^2 + \qty(p_5+p_4)^2)\qty(m^2+p_5^2+p_4^2+\qty(p_5+p_4)^2)}{\qty(p_1+p_3)^2\qty(m^2 + \qty(p_1+p_3)^2)\qty(p_5+p_4)^2\qty(m^2+\qty(p_5+p_4)^2)}\\
+    &= \im g^3\frac{\qty(m^2+\qty(p_1+p_3)^2 + \qty(p_5+p_4)^2)\qty(-m^2+\qty(p_5+p_4)^2)}{\qty(m^2 + \qty(p_1+p_3)^2)\qty(p_5+p_4)^2\qty(m^2+\qty(p_5+p_4)^2)}
+\end{align*}
+
+Also,
+
+\begin{align*}
+    \feynmandiagram [small] {
+        i1 [particle = \(4\)]-- [scalar] v1,
+        i2 [particle=\(5\)]-- [scalar] v1,
+        v1 -- [scalar] i5 [particle=\(2\)],
+        v1 -- [scalar] v2,
+        v2 -- [scalar] i3 [particle=\(3\)],
+        v2 -- [scalar] i4 [particle=\(1\)]
+    }; &=-3\im g^2g\frac{\qty(m^2+p_3^2+\qty(p_3+p_1)^2)}{\qty(p_3+p_1)^2\qty(m^2+\qty(p_3+p_1)^2)}\\
+    &=-3\im g^3\frac{1}{\qty(m^2+\qty(p_3+p_1)^2)}
+\end{align*}
+
+So,
+
+\begin{align*}
+    \feynmandiagram [small] {
+        i1 [particle = \(4\)]-- [scalar] v1 [blob],
+        i2 [particle=\(5\)]-- [scalar] v1,
+        v1 -- [scalar] i5 [particle=\(2\)],
+        v1 -- [scalar] v2,
+        v2 -- [scalar] i3 [particle=\(3\)],
+        v2 -- [scalar] i4 [particle=\(1\)]
+    };
+    &=\frac{\im g^3}{m^2+\qty(p_1+p_3)^2}\qty[\frac{\qty(\qty(p_1+p_3)^2 + \qty(p_2+p_4)^2)-m^2-\qty(p_2+p_4)^2}{\qty(m^2+\qty(p_2+p_4)^2)}+\frac{\qty(\qty(p_1+p_3)^2 + \qty(p_2+p_5)^2)-m^2-\qty(p_2+p_5)^2}{\qty(m^2+\qty(p_2+p_5)^2)}]\\
+    &\quad\quad\quad+\frac{\im g^3}{m^2+\qty(p_1+p_3)^2}\qty[\frac{\qty(m^2+\qty(p_1+p_3)^2+\qty(p_4+p_5)^2)\qty(-m^2+\qty(p_4+p_5)^2)-\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}{\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}]\\
+    &=\frac{\im g^3\qty(\qty(p_1+p_3)^2-m^2)}{m^2+\qty(p_1+p_3)^2}\qty[\frac{1}{m^2+\qty(p_2+p_4)^2}+\frac{1}{m^2+\qty(p_2+p_5)^2}]\\
+    &\quad\quad\quad+\frac{\im g^3}{m^2+\qty(p_1+p_3)^2}\qty[\frac{-m^4-m^2\qty(p_1+p_3)^2+\qty(p_1+p_3)^2\qty(p_4+p_5)^2-m^2\qty(p_4+p_5)^2}{\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}]\\
+    &=\frac{\im g^3\qty(\qty(p_1+p_3)^2-m^2)}{m^2+\qty(p_1+p_3)^2}\qty[\frac{1}{m^2+\qty(p_2+p_4)^2}+\frac{1}{m^2+\qty(p_2+p_5)^2}+\frac{1}{m^2+\qty(p_4+p_5)^2}]+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)
+\end{align*}
+
+Now, with $1$ in the middle,
+
+\begin{align*}
+    \feynmandiagram [small] {
+        i1 [particle = \(4\)]-- [scalar] v1,
+        i2 [particle=\(5\)]-- [scalar] v1,
+        v1 -- [scalar] v2,
+        v2 -- [scalar] i5 [particle=\(1\)],
+        v2 -- [scalar] v3,
+        v3 -- [scalar] i3 [particle=\(3\)],
+        v3 -- [scalar] i4 [particle=\(2\)]
+    }; + \feynmandiagram [small] {
+        i1 [particle = \(5\)]-- [scalar] v1,
+        i2 [particle=\(1\)]-- [scalar] v1,
+        v1 -- [scalar] i5 [particle=\(4\)],
+        v1 -- [scalar] v2,
+        v2 -- [scalar] i3 [particle=\(2\)],
+        v2 -- [scalar] i4 [particle=\(3\)]
+    };+\textnormal{ perm}
+\end{align*}
+
+Which is,
+
+\begin{align*}
+    &=\frac{\im g^3\qty(m^2+p_3^2+\qty(p_2+p_3)^2)\qty(m^2+p_1^2+\qty(p_2+p_3)^2+\qty(p_5+p_4)^2)\qty(m^2+p_5^2+p_4^2+\qty(p_5+p_4)^2)}{\qty(p_2+p_3)^2\qty(m^2+\qty(p_2+p_3)^2)\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}-\frac{3\im g^3}{m^2+\qty(p_2+p_3)^2}-\frac{3\im g^3\qty(-m^2+\qty(p_4+p_5)^2)}{\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &=\frac{\im g^3\qty(m^2+\qty(p_2+p_3)^2+\qty(p_5+p_4)^2)\qty(-m^2+\qty(p_5+p_4)^2)}{\qty(m^2+\qty(p_2+p_3)^2)\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}-\frac{3\im g^3}{m^2+\qty(p_2+p_3)^2}-\frac{3\im g^3\qty(-m^2+\qty(p_4+p_5)^2)}{\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)
+\end{align*}
+
+Summing all the contributions we have,
+
+\begin{align*}
+    &\im g^3\frac{\qty(-m^2+\qty(p_5+p_4)^2)}{\qty(p_5+p_4)^2\qty(m^2+\qty(p_5+p_4)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{2\im g^3m^2}{\qty(p_1+p_2)^2}\frac{1}{\qty(m^2+\qty(p_5+p_4)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad+\frac{\im g^3\qty(\qty(p_1+p_3)^2-m^2)}{m^2+\qty(p_1+p_3)^2}\qty[\frac{1}{m^2+\qty(p_2+p_4)^2}+\frac{1}{m^2+\qty(p_2+p_5)^2}+\frac{1}{m^2+\qty(p_4+p_5)^2}]+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad+\frac{\im g^3\qty(m^2+\qty(p_2+p_3)^2+\qty(p_5+p_4)^2)\qty(-m^2+\qty(p_5+p_4)^2)}{\qty(m^2+\qty(p_2+p_3)^2)\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{3\im g^3}{m^2+\qty(p_2+p_3)^2}-\frac{3\im g^3\qty(-m^2+\qty(p_4+p_5)^2)}{\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &-\frac{2\im g^3m^2}{\qty(p_1+p_2)^2}\frac{1}{\qty(m^2+\qty(p_5+p_4)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad+\frac{\im g^3\qty(\qty(p_1+p_3)^2-m^2)}{m^2+\qty(p_1+p_3)^2}\qty[\frac{1}{m^2+\qty(p_2+p_4)^2}+\frac{1}{m^2+\qty(p_2+p_5)^2}+\frac{1}{m^2+\qty(p_4+p_5)^2}]+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad+\frac{\im g^3\qty(m^2+\qty(p_2+p_3)^2+\qty(p_5+p_4)^2)\qty(-m^2+\qty(p_5+p_4)^2)}{\qty(m^2+\qty(p_2+p_3)^2)\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{3\im g^3}{m^2+\qty(p_2+p_3)^2}+\frac{2\im g^3m^2}{\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}-\frac{2\im g^3}{\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &-\frac{2\im g^3m^2}{\qty(p_1+p_2)^2}\frac{1}{\qty(m^2+\qty(p_5+p_4)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{2\im g^3m^2}{m^2+\qty(p_1+p_3)^2}\qty[\frac{1}{m^2+\qty(p_2+p_4)^2}+\frac{1}{m^2+\qty(p_2+p_5)^2}+\frac{1}{m^2+\qty(p_4+p_5)^2}]+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad+\im g^3\qty[\frac{1}{m^2+\qty(p_2+p_4)^2}+\frac{1}{m^2+\qty(p_2+p_5)^2}+\frac{1}{m^2+\qty(p_4+p_5)^2}]\\
+    &\quad\quad\quad+\im g^3\qty[\frac{1}{m^2+\qty(p_2+p_3)^2}+\frac{1}{m^2+\qty(p_2+p_5)^2}+\frac{1}{m^2+\qty(p_3+p_5)^2}]\\
+    &\quad\quad\quad+\im g^3\qty[\frac{1}{m^2+\qty(p_2+p_4)^2}+\frac{1}{m^2+\qty(p_2+p_3)^2}+\frac{1}{m^2+\qty(p_4+p_3)^2}]\\
+    &\quad\quad\quad+\frac{\im g^3\qty(m^2+\qty(p_2+p_3)^2+\qty(p_5+p_4)^2)\qty(-m^2+\qty(p_5+p_4)^2)}{\qty(m^2+\qty(p_2+p_3)^2)\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{3\im g^3}{m^2+\qty(p_2+p_3)^2}+\frac{\im g^3m^2}{\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}-\frac{2\im g^3}{\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &-\frac{2\im g^3m^2}{\qty(p_1+p_2)^2}\frac{1}{\qty(m^2+\qty(p_5+p_4)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{2\im g^3m^2}{m^2+\qty(p_1+p_3)^2}\qty[\frac{1}{m^2+\qty(p_2+p_4)^2}+\frac{1}{m^2+\qty(p_2+p_5)^2}+\frac{1}{m^2+\qty(p_4+p_5)^2}]+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad+\frac{\im g^3\qty(m^2+\qty(p_2+p_3)^2+\qty(p_5+p_4)^2)\qty(-m^2+\qty(p_5+p_4)^2)}{\qty(m^2+\qty(p_2+p_3)^2)\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{\im g^3}{m^2+\qty(p_2+p_3)^2}+\frac{\im g^3m^2}{\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}-\frac{\im g^3}{\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &-\frac{2\im g^3m^2}{\qty(p_1+p_2)^2}\frac{1}{\qty(m^2+\qty(p_5+p_4)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{2\im g^3m^2}{m^2+\qty(p_1+p_3)^2}\qty[\frac{1}{m^2+\qty(p_2+p_4)^2}+\frac{1}{m^2+\qty(p_2+p_5)^2}+\frac{1}{m^2+\qty(p_4+p_5)^2}]+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad+\frac{\im g^3\qty(m^2+\qty(p_2+p_3)^2+\qty(p_5+p_4)^2)\qty(-m^2+\qty(p_5+p_4)^2)}{\qty(m^2+\qty(p_2+p_3)^2)\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad+\im g^3\frac{-\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)+m^2\qty(m^2+\qty(p_2+p_3)^2)-\qty(p_4+p_5)^2\qty(m^2+\qty(p_2+p_3)^2)}{\qty(m^2+\qty(p_2+p_3)^2)\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &-\frac{2\im g^3m^2}{\qty(p_1+p_2)^2}\frac{1}{\qty(m^2+\qty(p_5+p_4)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{2\im g^3m^2}{m^2+\qty(p_1+p_3)^2}\qty[\frac{1}{m^2+\qty(p_2+p_4)^2}+\frac{1}{m^2+\qty(p_2+p_5)^2}+\frac{1}{m^2+\qty(p_4+p_5)^2}]+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad+\im g^3\frac{-m^4 +m^2\qty(p_4+p_5)^2 -m^2\qty(p_2+p_3)^2 +\qty(p_2+p_3)^2\qty(p_4+p_5)^2-m^2\qty(p_5+p_4)^2+\qty(p_4+p_5)^4}{\qty(m^2+\qty(p_2+p_3)^2)\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad+\im g^3\frac{-\qty(p_4+p_5)^2m^2-\qty(p_4+p_5)^4+m^4+m^2\qty(p_2+p_3)^2-\qty(p_4+p_5)^2m^2-\qty(p_2+p_3)^2\qty(p_4+p_5)^2}{\qty(m^2+\qty(p_2+p_3)^2)\qty(p_4+p_5)^2\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)\\
+    &-\frac{2\im g^3m^2}{\qty(p_1+p_2)^2}\frac{1}{\qty(m^2+\qty(p_5+p_4)^2)}+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-\frac{2\im g^3m^2}{m^2+\qty(p_1+p_3)^2}\qty[\frac{1}{m^2+\qty(p_2+p_4)^2}+\frac{1}{m^2+\qty(p_2+p_5)^2}+\frac{1}{m^2+\qty(p_4+p_5)^2}]+\qty(3\leftrightarrow4,5)\\
+    &\quad\quad\quad-2\im g^3m^2\frac{1}{\qty(m^2+\qty(p_2+p_3)^2)\qty(m^2+\qty(p_4+p_5)^2)}+\qty(3\leftrightarrow4,5)
+\end{align*}
+
+Now, let's do the cuts,
+
+\begin{align*}
+    
+\end{align*}
