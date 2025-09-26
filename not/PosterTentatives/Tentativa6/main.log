@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.27)  12 SEP 2025 18:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.27)  25 SEP 2025 11:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**conference_poster_6.tex
-(./conference_poster_6.tex
+**main
+(./main.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
 (./a0poster.cls
@@ -393,9 +393,8 @@ LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 6
 
 (/opt/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-(./conference_poster_6.aux)
-\openout1 = `conference_poster_6.aux'.
+) (./main.aux)
+\openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
@@ -447,61 +446,71 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--82
 
  []
 
-<figures/logo.png, id=1, 1401.235pt x 521.95pt>
-File: figures/logo.png Graphic file (type png)
-<use figures/logo.png>
-Package pdftex.def Info: figures/logo.png  used on input line 85.
-(pdftex.def)             Requested size: 569.05511pt x 211.96999pt.
+<logohorizontalifusp.png, id=1, 864.831pt x 339.1872pt>
+File: logohorizontalifusp.png Graphic file (type png)
+<use logohorizontalifusp.png>
+Package pdftex.def Info: logohorizontalifusp.png  used on input line 85.
+(pdftex.def)             Requested size: 569.05511pt x 223.18623pt.
 
-Overfull \hbox (42.96362pt too wide) in paragraph at lines 85--86
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
-
- []
-
-
-Overfull \hbox (19.72723pt too wide) in paragraph at lines 76--87
+Overfull \hbox (19.72723pt too wide) in paragraph at lines 76--88
 [][] [] 
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 114
+LaTeX Font Info:    Trying to load font information for U+msa on input line 151
 .
 (/opt/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 114
+LaTeX Font Info:    Trying to load font information for U+msb on input line 151
 .
 
 (/opt/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (51.61647pt too wide) in paragraph at lines 153--162
+Overfull \hbox (51.61647pt too wide) in paragraph at lines 200--209
 [][] 
  []
 
 <figures/placeholder.jpg, id=3, 351.3125pt x 193.72375pt>
 File: figures/placeholder.jpg Graphic file (type jpg)
 <use figures/placeholder.jpg>
-Package pdftex.def Info: figures/placeholder.jpg  used on input line 170.
+Package pdftex.def Info: figures/placeholder.jpg  used on input line 217.
 (pdftex.def)             Requested size: 801.74945pt x 442.18245pt.
 File: figures/placeholder.jpg Graphic file (type jpg)
 <use figures/placeholder.jpg>
-Package pdftex.def Info: figures/placeholder.jpg  used on input line 194.
+Package pdftex.def Info: figures/placeholder.jpg  used on input line 241.
 (pdftex.def)             Requested size: 801.74945pt x 442.18245pt.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-07.
+54.
 (/opt/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-No file conference_poster_6.bbl.
+No file main.bbl.
 
 
 
 
 
+
+<usplogo.pdf, id=4, 803.0pt x 602.25pt>
+File: usplogo.pdf Graphic file (type pdf)
+<use usplogo.pdf>
+Package pdftex.def Info: usplogo.pdf  used on input line 292.
+(pdftex.def)             Requested size: 284.52756pt x 213.4005pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+
+ []
+
+<logohorizontalcapes.jpg, id=5, 853.1875pt x 851.18pt>
+File: logohorizontalcapes.jpg Graphic file (type jpg)
+<use logohorizontalcapes.jpg>
+Package pdftex.def Info: logohorizontalcapes.jpg  used on input line 301.
+(pdftex.def)             Requested size: 569.05511pt x 567.75497pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+
+ []
 
 
 
@@ -511,30 +520,36 @@ No file conference_poster_6.bbl.
 Non-PDF special ignored!
 <special> papersize=83.96cm,118.82cm
 {/opt/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/texlive/2
-025/texmf-dist/fonts/enc/dvips/base/8r.enc} <./figures/logo.png> <./figures/pla
-ceholder.jpg>] (./conference_poster_6.aux)
+025/texmf-dist/fonts/enc/dvips/base/8r.enc} <./logohorizontalifusp.png> <./figu
+res/placeholder.jpg> <./usplogo.pdf>]
+
+[2 <./logohorizontalcapes.jpg>] (./main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 7157 strings out of 467800
- 114478 string characters out of 5405838
- 558646 words of memory out of 5000000
- 35693 multiletter control sequences out of 15000+600000
- 653276 words of font info for 88 fonts, out of 8000000 for 9000
+ 7200 strings out of 467800
+ 115094 string characters out of 5405838
+ 584678 words of memory out of 5000000
+ 35728 multiletter control sequences out of 15000+600000
+ 658215 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,8n,77p,593b,449s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/
-texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/2025/t
-exmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/2025/texmf-dist/fonts/
-type1/urw/times/utmr8a.pfb></opt/texlive/2025/texmf-dist/fonts/type1/urw/times/
-utmri8a.pfb>
-Output written on conference_poster_6.pdf (1 page, 97320 bytes).
+ 73i,20n,77p,574b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt
+/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texliv
+e/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/texlive/2025/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/texlive/2025/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/texlive/2025/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2025/texmf-dist/fonts/type
+1/urw/courier/ucrr8a.pfb></opt/texlive/2025/texmf-dist/fonts/type1/urw/times/ut
+mb8a.pfb></opt/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/t
+exlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (2 pages, 389743 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 84 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

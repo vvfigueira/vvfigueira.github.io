@@ -73,7 +73,7 @@
 % The second is 25% wide and houses a logo for your university/organization or a photo of you
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
-\begin{minipage}[b]{0.75\linewidth}
+\begin{minipage}[b]{0.71\linewidth}
 \veryHuge \color{NavyBlue} \textbf{2+1 Dimensional Gravity as a Gauge Theory} \color{Black}\\ % Title
 \Huge\textit{An Exploration of Complexity}\\[2cm] % Subtitle
 \huge \textbf{Vicente Viater Figueira}\\[0.5cm] % Author(s)
@@ -81,8 +81,9 @@
 \Large \texttt{vfigueira@usp.br}\\
 \end{minipage}
 %
-\begin{minipage}[b]{0.25\linewidth}
-\includegraphics[width=20cm]{logo.png}\\
+\begin{minipage}[b]{0.29\linewidth}
+\includegraphics[width=20cm]{logohorizontalifusp.png}\\
+\vspace{3cm}
 \end{minipage}
 
 \vspace{1cm} % A bit of extra whitespace between the header and poster content
@@ -107,17 +108,30 @@
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 
-\color{SaddleBrown} % SaddleBrown color for the introduction
+%\color{SaddleBrown} % SaddleBrown color for the introduction
 
 \section*{Introduction}
 
-General Relativity in $3+1$ dimensions is highly non-linear and non-polynomial, making exact solutions and quantization difficult. In $2+1$ dimensions the metric has no local degrees of freedom; the theory becomes topological and amenable to gauge-theoretic reformulation.
+Gravity, at its core, is a theory of spacetime geometry --- 
+but there are strong motivations to reformulate it as a gauge theory. 
+Gauge theories describe interactions as consequences of local symmetries, 
+and this perspective has proven remarkably powerful in the Standard Model of 
+particle physics. Writing gravity as a gauge theory places it on the same 
+conceptual footing as the other fundamental forces: the metric or 
+vielbein becomes the gauge field of local translations, and the spin 
+connection gauges local Lorentz transformations. This approach 
+clarifies the role of symmetries, makes the counting of degrees 
+of freedom more transparent, and provides a natural framework for 
+coupling gravity to matter with spin. It also opens the door to 
+techniques from Yang–Mills theory --- such as BRST 
+quantization, loop variables, and color-kinematics duality --- 
+which can be crucial in the search for a quantum theory of gravity.
 
 %----------------------------------------------------------------------------------------
 %	OBJECTIVES
 %----------------------------------------------------------------------------------------
 
-\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
+%\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
 
 \section*{\LARGE Course of Steps}
 
@@ -134,7 +148,9 @@ General Relativity in $3+1$ dimensions is highly non-linear and non-polynomial, 
 
 \section*{Spin connection and vielbein}
 
-
+\begin{align}
+    \eta_{\mu\nu}&=\vb g\qty(\tilde{\vb e}_\mu,\tilde{\vb e}_\nu)\Leftrightarrow \eta_{\mu\nu}\vb e^\mu\otimes\vb e^\nu=\vb g\qty(\tilde{\vb e}_\mu,\tilde{\vb e}_\nu)\vb e^\mu\otimes\vb e^\nu=\vb g
+\end{align}
 
 %------------------------------------------------
 
@@ -145,7 +161,38 @@ General Relativity in $3+1$ dimensions is highly non-linear and non-polynomial, 
 %	RESULTS 
 %----------------------------------------------------------------------------------------
 
-\section*{Results}
+\section*{Einstein-Hilbert action in form language}
+
+\begin{align}
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\star\vb R_{\beta\rho}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\numberthis\label{EHAction2}
+\end{align}
+
+\section*{Redundancies of Gravity}
+
+Diffs + Local Lorentz:
+
+\begin{align}
+    \begin{cases}
+        \vb e^\mu&\rightarrow\tensor{\Lambda}{^\mu_\nu}\vb e^\nu\\
+        \tensor{\boldsymbol\omega}{^\alpha_\beta}&\rightarrow\tensor{\Lambda}{^\alpha_\rho}\tensor{\boldsymbol\omega}{^\rho_\sigma}\tensor{\Lambda}{^{-1}^\sigma_\beta}+\tensor{\Lambda}{^\alpha_\sigma}\vb d\tensor{\Lambda}{^{-1}^\sigma_\beta}
+    \end{cases} \textnormal{  AND  }
+    \begin{cases}
+        \vb e^\mu&\rightarrow\phi_\ast\vb e^\mu\\
+        \tensor{\boldsymbol\omega}{^\alpha_\beta}&\rightarrow\phi_\ast\tensor{\boldsymbol\omega}{^\alpha_\beta}
+    \end{cases} 
+\end{align}
+
+\section*{2+1 Gravity as a gauge theory}
+
+\begin{align}
+    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\vb e^\mu\wedge \vb R^{\alpha\beta}=\frac{1}{\kappa}\int\limits_M\expval{\vb e\ \wedgecomma\ \qty(\vb d{\boldsymbol\omega}+\frac12\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})}\numberthis\label{EHAction4}
+\end{align}
+
+Comparison with Chern-Simons theory,
+
+\begin{align}
+    S_{\textnormal{CS}}\qty[\vb A]&=\frac{k}{4\pi}\int\limits_M\expval{\vb A\ \wedgecomma\ \qty(\vb d{\vb A}+\frac13\wedgecomm{\vb A}{\vb A})}\numberthis\label{YangMillsAction}
+\end{align}
 
 Donec faucibus purus at tortor egestas eu fermentum dolor facilisis. Maecenas tempor dui eu neque fringilla rutrum. Mauris \emph{lobortis} nisl accumsan. Aenean vitae risus ante.
 %
@@ -239,4 +286,19 @@ Etiam fermentum, arcu ut gravida fringilla, dolor arcu laoreet justo, ut imperdi
 %----------------------------------------------------------------------------------------
 
 \end{multicols}
+
+
+\begin{minipage}[b]{0.3\linewidth}
+\includegraphics[width=10cm]{usplogo.pdf}\\
+\end{minipage}
+
+% \begin{minipage}[b]{0.4\linewidth}
+% \hspace{1cm}
+
+% \end{minipage}
+%
+\begin{minipage}[b]{0.7\linewidth}
+\includegraphics[width=20cm]{logohorizontalcapes.jpg}\\
+\end{minipage}
+
 \end{document}

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.27)  17 SEP 2025 10:24
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.27)  17 SEP 2025 16:12
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1408,7 +1408,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[14])
+[14]
+Overfull \hbox (52.88612pt too wide) detected at line 612
+[]
+ []
+
+)
 
 [15]
 
@@ -1438,7 +1443,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 39053 strings out of 470117
+ 39137 strings out of 470117
  195341,1977958 words of node,token memory allocated
  15793 words of node memory still in use:
    240 hlist, 2 vlist, 2 rule, 20 math, 810 glue, 4 kern, 23 glyph, 1353 attribu
@@ -1446,7 +1451,7 @@ te, 71 glue_spec, 1342 attribute_list, 2 write, 591 pdf_literal, 4 pdf_colorstac
 k nodes
    avail lists: 1:12,2:11022,3:3059,4:72,5:525,6:46,7:8746,8:185,9:4838,10:4,11:
 90
- 66513 multiletter control sequences out of 65536+600000
+ 66597 multiletter control sequences out of 65536+600000
  53 fonts using 3427847 bytes
  98i,19n,100p,688b,2067s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></op
@@ -1464,7 +1469,7 @@ fb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/t
 exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2
 025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/texlive/2025/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (15 pages, 213516 bytes).
+Output written on main.pdf (15 pages, 215954 bytes).
 
 PDF statistics: 224 PDF objects out of 1000 (max. 8388607)
  178 compressed objects within 2 object streams
