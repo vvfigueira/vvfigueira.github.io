@@ -1,0 +1,95 @@
+\section{Transformações}
+
+A transformação de calibre mais geral é,
+\[\vb F\rightarrow \textnormal U\vb F\textnormal U^{-1},\ \ \ \textnormal U=\exp\qty(-\im a_\mu P^\mu+\frac{\im}{2}\theta_{\mu\nu}J^{\mu\nu}) \]
+Que é gerada pela transformação,
+\[\boldsymbol \omega+\vb e\rightarrow \textnormal U\qty(\boldsymbol \omega+\vb e+\vb d)\textnormal U^{-1}\]
+Infinitesimalmente,
+\begin{align*}
+    \textnormal U\qty(\boldsymbol \omega+\vb e+\vb d)\textnormal U^{-1}&=\qty(\mathbbm 1-\im a_\mu P^\mu+\frac\im2 \theta_{\mu\nu}J^{\mu\nu})\qty(\boldsymbol \omega+ \vb e+ \vb d)\qty(\mathbbm 1+\im a_\mu P^\mu-\frac\im2 \theta_{\mu\nu}J^{\mu\nu})\\
+    \boldsymbol \omega'+\vb e'&=\boldsymbol \omega+\vb e -\im a_\mu \comm{P^\mu}{\boldsymbol\omega}+\frac\im 2\theta_{\mu\nu}\comm{J^{\mu\nu}}{\boldsymbol\omega}-\im a_\mu \comm{P^\mu}{\vb e}+\frac\im 2\theta_{\mu\nu}\comm{J^{\mu\nu}}{\vb e}+\im \vb da_\mu P^\mu-\frac\im 2\vb d\theta_{\mu\nu}J^{\mu\nu}\\
+    \boldsymbol \omega'+\vb e'&=\boldsymbol \omega+\vb e -\im a_\mu \frac\im 2\boldsymbol\omega_{\alpha\beta} \comm{P^\mu}{J^{\alpha\beta}}+\frac\im 2\theta_{\mu\nu}\frac\im 2\boldsymbol\omega_{\alpha\beta}\comm{J^{\mu\nu}}{J^{\alpha\beta}}-\im a_\mu \im\vb e_\alpha\comm{P^\mu}{P^\alpha}+\frac\im 2\theta_{\mu\nu}\im \vb e_\alpha\comm{J^{\mu\nu}}{P^\alpha}+\im \vb da_\mu P^\mu-\frac\im 2\vb d \theta_{\mu\nu}J^{\mu\nu}\\
+    \boldsymbol \omega'+\vb e'&=\boldsymbol \omega+\vb e -\im a_\mu \frac\im 2\boldsymbol\omega_{\alpha\beta}2\im P^{[\alpha}\eta^{\beta]\mu}-\frac\im 2\theta_{\mu\nu}\frac\im 2\boldsymbol\omega_{\alpha\beta}4\im\eta^{\mu[\alpha}J^{\beta]\nu}\pm\im a_\mu \im\vb e_\alpha\frac{\im}{L^2}J^{\mu\alpha}-\frac\im 2\theta_{\mu\nu}\im \vb e_\alpha2\im P^{[\mu}\eta^{\nu]\alpha}+\im \vb da_\alpha P^\alpha-\frac\im 2\vb d \theta_{\alpha\beta}J^{\alpha\beta}\\
+    \boldsymbol \omega'+\vb e'&=\boldsymbol \omega+\vb e + \im \boldsymbol\omega_{\alpha\beta} P^{[\alpha}a^{\beta]}+\im\tensor{\theta}{^\mu_\beta}\boldsymbol\omega_{\mu\alpha}J^{\alpha\beta}\mp\frac{\im}{L^2} a_\alpha \vb e_\beta J^{\alpha\beta}+\im\theta_{\alpha\beta}  P^{[\alpha}\vb e^{\beta]}+\im \vb da_\alpha P^\alpha-\frac\im 2\vb d \theta_{\alpha\beta}J^{\alpha\beta}\\
+    \frac\im 2\boldsymbol \omega_{\alpha\beta}'J^{\alpha\beta}+\im\vb e'_\alpha P^\alpha&=\boldsymbol \omega+\vb e + \im \boldsymbol\omega_{\alpha\beta} P^{[\alpha}a^{\beta]}+\im\tensor{\theta}{^\mu_\beta}\boldsymbol\omega_{\mu\alpha}J^{\alpha\beta}\mp\frac{\im}{L^2} a_\alpha \vb e_\beta J^{\alpha\beta}+\im\theta_{\alpha\beta}  P^{[\alpha}\vb e^{\beta]}+\im \vb da_\alpha P^\alpha-\frac\im 2\vb d \theta_{\alpha\beta}J^{\alpha\beta}
+\end{align*}
+Logo,
+\begin{align*}
+    \boldsymbol \omega_{\alpha\beta}'&=\boldsymbol \omega_{\alpha\beta}-2\boldsymbol\omega_{{[\alpha|}\mu}\tensor{\theta}{^\mu_{|\beta]}}\mp\frac{2}{L^2}a_{[\alpha}\vb e_{\beta]}-\vb d\theta_{\alpha\beta}\\
+    \vb e_\alpha'&=\vb e_\alpha+\boldsymbol\omega_{\alpha\beta}a^\beta+\theta_{\alpha\beta}\vb e^\beta+\vb d a_\alpha
+\end{align*}
+A transformação associada com $\theta$ são apenas boosts e rotações, o que realmente nos interessa são 
+as transformações parametrizadas por $a$. Essas têm de ser relacionadas aos difeomorfismos. Para isso 
+olhemos,
+\begin{align*}
+    \pounds_\xi \vb e_\alpha&=\vb d\qty(\vb e_\alpha\qty(\xi))+\qty(\vb d\vb e_\alpha)\qty(\xi)\\
+    \pounds_\xi \vb e_\alpha&=\vb d\xi_\alpha+\qty(\vb d\vb e_\alpha+\tensor{\boldsymbol\omega}{_\alpha^\beta}\wedge\vb e_\beta)\qty(\xi)-\qty(\tensor{\boldsymbol\omega}{_\alpha^\beta}\wedge\vb e_\beta)\qty(\xi)\\
+    \pounds_\xi \vb e_\alpha&=\vb d\xi_\alpha+\vb T_\alpha\qty(\xi)-\qty(\tensor{\boldsymbol\omega}{_\alpha^\beta}\wedge\vb e_\beta)\qty(\xi)\\
+    \pounds_\xi \vb e_\alpha&=\vb d\xi_\alpha+\vb T_\alpha\qty(\xi)-\tensor{\boldsymbol\omega}{_\alpha^\beta}\qty(\xi)\vb e_\beta+\tensor{\boldsymbol\omega}{_\alpha^\beta}\xi_\beta
+\end{align*}
+E também,
+\begin{align*}
+    \pounds_\xi \boldsymbol\omega_{\alpha\beta}&=\vb d\qty(\boldsymbol\omega_{\alpha\beta}\qty(\xi))+\qty(\vb d\boldsymbol\omega_{\alpha\beta})\qty(\xi)\\
+    \pounds_\xi \boldsymbol\omega_{\alpha\beta}&=-\vb d\qty(-\boldsymbol\omega_{\alpha\beta}\qty(\xi))+\qty(\vb d\boldsymbol\omega_{\alpha\beta}+\tensor{\boldsymbol\omega}{_\alpha^\mu}\wedge\tensor{\boldsymbol\omega}{_\mu_\beta})\qty(\xi)-\qty(\tensor{\boldsymbol\omega}{_\alpha^\mu}\wedge\tensor{\boldsymbol\omega}{_\mu_\beta})\qty(\xi)\\
+    \pounds_\xi \boldsymbol\omega_{\alpha\beta}&=-\vb d\qty(-\boldsymbol\omega_{\alpha\beta}\qty(\xi))+\vb R_{\alpha\beta}\qty(\xi)-\tensor{\boldsymbol\omega}{_\alpha^\mu}\qty(\xi)\tensor{\boldsymbol\omega}{_\mu_\beta}+\tensor{\boldsymbol\omega}{_\alpha^\mu}\tensor{\boldsymbol\omega}{_\mu_\beta}\qty(\xi)\\
+    \pounds_\xi \boldsymbol\omega_{\alpha\beta}&=-\vb d\qty(-\boldsymbol\omega_{\alpha\beta}\qty(\xi))+\vb R_{\alpha\beta}\qty(\xi)-2\tensor{\boldsymbol\omega}{_{[\alpha|}^\mu}(-)\tensor{\boldsymbol\omega}{_\mu_{|\beta]}}\qty(\xi)
+\end{align*}
+Isso impõe duas condições,
+\[\vb T_\alpha=0,\ \ \ \vb R_{\alpha\beta}\qty(\xi)=\mp\frac{2}{L^2}\xi_{[\alpha}\vb e_{\beta]}\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{align*}
+    \comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}&=-a_\mu\comm{J^{\alpha\beta}}{P^\mu}\\
+    \comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}&=2\im a_\mu P^{[\alpha}\eta^{\beta]\mu}=2\im P^{[\alpha}a^{\beta]}\\
+    \comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}_2&=\comm{2\im P^{[\alpha}a^{\beta]}}{\im a_\mu P^\mu}\\
+    \comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}_2&=-2 a_\mu a^{[\beta}\comm{ P^{\alpha]}}{ P^\mu}\\
+    \comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}_2&=\pm2\frac{\im}{L^2} a_\mu a^{[\beta}J^{\alpha]\mu}\\
+    \comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}_3&=\comm{\pm2\frac{\im}{L^2} a_\nu a^{[\beta}J^{\alpha]\nu}}{\im a_\mu P^\mu}\\
+    \comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}_3&=\pm\frac{\im}{L^2}a_\mu a_\nu\qty(a^\beta P^{\alpha}\eta^{\nu\mu}-a^\beta P^{\nu}\eta^{\alpha\mu}-a^\alpha P^{\beta}\eta^{\nu\mu}+a^\alpha P^{\nu}\eta^{\beta\mu})\\
+    \comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}_3&=\pm\frac{\im}{L^2}\qty(a^\beta P^{\alpha}a^2-a^\beta a_\nu P^{\nu}a^{\alpha}-a^\alpha P^{\beta}a^2+a^\alpha a_\nu P^{\nu}a^{\beta})\\
+    \comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}_3&=\pm\frac{a^2}{L^2}2\im P^{[\alpha}a^{\beta]} 
+\end{align*}
+A relação de recorrência é clara,
+\[\comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}_{2n+1}=\qty(\pm\frac{a^2}{L^2})^n2\im P^{[\alpha}a^{\beta]},\ \ \ \comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}_{2n}=\qty(\pm\frac{a^2}{L^2})^{n}2\im \frac{a_\mu}{a^2} a^{[\beta}J^{\alpha]\mu}\]
+Logo,
+\begin{align*}
+    \textnormal U\im J^{\alpha\beta}\textnormal U^{-1}&=\im J^{\alpha\beta}+\sum\limits_{n=1}^\infty \frac{\comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}_{n}}{n!}\\
+    \textnormal U\im J^{\alpha\beta}\textnormal U^{-1}&=\im J^{\alpha\beta}+\sum\limits_{n=1}^\infty \frac{\comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}_{2n}}{(2n)!}+\sum\limits_{n=0}^\infty \frac{\comm{\im J^{\alpha\beta}}{\im a_\mu P^\mu}_{2n+1}}{(2n+1)!}\\
+    \textnormal U\im J^{\alpha\beta}\textnormal U^{-1}&=\im J^{\alpha\beta}+2\im  P^{[\alpha}a^{\beta]}\sqrt{\frac{L^2}{a^2}}\sum\limits_{n=0}^\infty\qty(\pm)^n\qty(\sqrt{\frac{a^2}{L^2}})^{2n+1} \frac{1}{(2n+1)!}+2\im \frac{a_\mu}{a^2} a^{[\beta}J^{\alpha]\mu}\sum\limits_{n=1}^\infty\qty(\pm)^n\qty(\sqrt{\frac{a^2}{L^2}})^{2n} \frac{1}{(2n)!}\\
+    \textnormal U\im J^{\alpha\beta}\textnormal U^{-1}&=\im J^{\alpha\beta}+2\im  P^{[\alpha}a^{\beta]}\sqrt{\frac{L^2}{a^2}}\textnormal{sin(h)}\qty(\sqrt{\frac{a^2}{L^2}})+2\im \frac{a_\mu}{a^2} a^{[\beta}J^{\alpha]\mu}\textnormal{cos(h)}\qty(\sqrt{\frac{a^2}{L^2}})-2\im \frac{a_\mu}{a^2} a^{[\beta}J^{\alpha]\mu}
+\end{align*}
+E não menos importante,
+\begin{align*}
+    \comm{\im P^\alpha}{\im a_\mu P^\mu}&=\pm\frac{\im a_\mu}{L^2}J^{\alpha\mu}\\
+    \comm{\im P^\alpha}{\im a_\mu P^\mu}_2&=\comm{\pm\frac{\im a_\mu}{L^2}J^{\alpha\mu}}{\im a_\nu P^\nu}\\
+    \comm{\im P^\alpha}{\im a_\mu P^\mu}_2&=\mp\frac{ a_\mu a_\nu}{L^2}\comm{J^{\alpha\mu}}{  P^\nu}\\
+    \comm{\im P^\alpha}{\im a_\mu P^\mu}_2&=\pm2\im\frac{ a_\mu a_\nu}{L^2}P^{[\alpha}\eta^{\mu]\nu}\\
+    \comm{\im P^\alpha}{\im a_\mu P^\mu}_2&=\pm\im\frac{ 1}{L^2}\qty(P^{\alpha}a^2+a^\alpha a_\beta P^\beta)\\
+    \comm{\im P^\alpha}{\im a_\mu P^\mu}_3&=\comm{\pm\im\frac{ 1}{L^2}\qty(P^{\alpha}a^2+a^\alpha a_\beta P^\beta)}{\im a_\mu P^\mu}\\
+    \comm{\im P^\alpha}{\im a_\mu P^\mu}_3&=\mp\frac{ 1}{L^2}a_\mu \comm{\qty(P^{\alpha}a^2+a^\alpha a_\beta P^\beta)}{ P^\mu}\\
+    \comm{\im P^\alpha}{\im a_\mu P^\mu}_3&=\im\frac{ 1}{L^4}a_\mu \qty(J^{\alpha\mu}a^2+a^\alpha a_\beta J^{\beta\mu})=\pm\frac{ a^2}{L^2}\qty(\pm)\frac{\im a_\mu}{L^2} J^{\alpha\mu}
+\end{align*}
+A relação de recorrência é clara,
+\[\comm{\im P^\alpha}{\im a_\mu P^\mu}_{2n+1}=\qty(\pm\frac{a^2}{L^2})^n\qty(\pm)\frac{\im a_\mu}{L^2}J^{\alpha\mu},\ \ \ \comm{\im P^\alpha}{\im a_\mu P^\mu}_{2n}=\qty(\pm\frac{a^2}{L^2})^{n}\im\qty(P^{\alpha}+\frac{a^\alpha a_\beta}{a^2} P^\beta)\]
+Logo,
+\begin{align*}
+    \textnormal U\im P^\alpha\textnormal U^{-1}&=\im P^\alpha+\sum\limits_{n=1}^\infty \frac{\comm{\im P^\alpha}{\im a_\mu P^\mu}_{n}}{n!}\\
+    \textnormal U\im P^\alpha\textnormal U^{-1}&=\im P^\alpha+\sum\limits_{n=1}^\infty \frac{\comm{\im  P^\alpha}{\im a_\mu P^\mu}_{2n}}{(2n)!}+\sum\limits_{n=0}^\infty \frac{\comm{\im P^\alpha}{\im a_\mu P^\mu}_{2n+1}}{(2n+1)!}\\
+    \textnormal U\im P^\alpha\textnormal U^{-1}&=\im P^\alpha\pm\frac{\im a_\mu}{L^2}J^{\alpha\mu}\sqrt{\frac{L^2}{a^2}}\sum\limits_{n=0}^\infty\qty(\pm)^n\qty(\sqrt{\frac{a^2}{L^2}})^{2n+1} \frac{1}{(2n+1)!}+\im \qty(P^{\alpha}+\frac{a^\alpha a_\beta}{a^2} P^\beta)\sum\limits_{n=1}^\infty\qty(\pm)^n\qty(\sqrt{\frac{a^2}{L^2}})^{2n} \frac{1}{(2n)!}\\
+    \textnormal U\im P^\alpha\textnormal U^{-1}&=\im P^\alpha\pm\frac{\im a_\mu}{L^2}J^{\alpha\mu}\sqrt{\frac{L^2}{a^2}}\textnormal{sin(h)}\qty(\sqrt{\frac{a^2}{L^2}})+\im \qty(P^{\alpha}+\frac{a^\alpha a_\beta}{a^2} P^\beta)\textnormal{cos(h)}\qty(\sqrt{\frac{a^2}{L^2}})-\im \qty(P^{\alpha}+\frac{a^\alpha a_\beta}{a^2} P^\beta)
+\end{align*}
+Por último,
+\begin{align*}
+    \textnormal U\vb d\textnormal U^{-1}&=\textnormal U\im\vb d a_\mu P^\mu\textnormal U^{-1}
+\end{align*}

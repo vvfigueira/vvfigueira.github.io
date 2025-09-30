@@ -1,0 +1,99 @@
+\documentclass[twoside]{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+\usepackage[style=numeric-comp, backend=biber]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphics}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage{tensor}
+\usepackage[lmargin=0.5cm,rmargin=0.5cm, tmargin =1cm,bmargin =1cm]{geometry}
+\usepackage{tensor}
+\usepackage[english]{cleveref}
+\usepackage{stackengine}
+
+% Custom command to put a wedge over the comma
+\newcommand{\wedgecomma}{\stackon[1pt]{,}{\smash{\scriptsize$\wedge$}}}
+\newcommand{\wedgecomm}[2]{\qty[ #1\ \wedgecomma\ #2 ]}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\Det}[1]{\textup{Det} #1}
+\newcommand{\sgn}[1]{\mbox{sgn}\qty(#1)}
+\newcommand{\cqd}{\hfill$\blacksquare$}
+\newcommand{\dbar}{\mbox{\dj}}
+
+\numberwithin{equation}{section}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defi}{Definição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{hip}{Hipótese}[subsection]
+
+\pagestyle{plain}
+
+%\AddToHook{cmd/section/before}{\clearpage}
+
+\addbibresource{refs.bib}
+
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{definicao}{Definição}[section]
+\newtheorem{lema}{Lema}[section]
+\newtheorem{hipotese}{Hipótese}[section]
+\newtheorem{postulado}{Postulado}[section]
+
+\newcommand{\thistheoremname}{}
+\newtheorem*{genericthm}{\thistheoremname}
+\newenvironment{namedthm}[1]
+  {\renewcommand{\thistheoremname}{#1}
+   \begin{genericthm}}
+  {\end{genericthm}}
+
+
+  \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+  
+\title{
+Teste GQ
+}
+\author{
+  Vicente V. Figueira
+       }
+% \date{\today}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+\maketitle
+
+%\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nocite{*}
+
+\input{sections/intro}
+
+\input{sections/trans}
+
+\input{sections/path}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\printbibliography
+
+\end{document}
