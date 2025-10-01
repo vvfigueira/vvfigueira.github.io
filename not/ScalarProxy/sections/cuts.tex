@@ -1,0 +1,49 @@
+\section{Cut solutions}
+
+Of course in each amplitude we have different cut solutions. Now let us solve them,
+
+\subsection{all massless}
+
+The cut condition is,
+\[k_1^2=k_2^2=(3-k_1)^2=(3-k_1-k_2)^2=(3+4-k_1-k_2)^2=0\]
+The first and third condition enforces $k_1=-| k_1]\langle 3|$. But the fourth and fifth conditions 
+enforces $3-k_1-k_2=n$, with $n\cdot 4=0\ \&\ n^2=0$. Lastly, the second condition imposes $(3-k_1-n)^2=-23\cdot n+2k_1\cdot n=0$, that is, \[[3n]\langle n3\rangle=[k_1n]\langle n3\rangle\] which has two solutions, $|n]=|k_1]-|3]\ \&\ |n\rangle=z|4\rangle$ or $|n\rangle=|3\rangle\ \&\ |n]=z|4]$. 
+When working with scalar particles it's better to choose the first solution, as this avoids singularities in denominators such as $(k_1\cdot k_2)^{-1}$. Hence, the solution we're going to choose is,
+\begin{align*}
+    \begin{cases}
+        k_1&=-|k_1]\langle 3|\\
+        k_2&=-|3]\langle 3|+|k_1]\langle 3|+z\qty(|k_1]-|3])\langle 4|
+    \end{cases}
+\end{align*}
+
+\subsection{massive legs first topology}
+
+Our approach to massive legs is to shift the solution with massless, in order to obtain a well behaved solution in the 
+$m^2\rightarrow0$ limit. For this topology the cut constrains are,
+\[l_1^2=l_2^2=(3-l_1)^2=-m^2\ \&\ (3-l_1-l_2)^2=(3+4-l_1-l_2)^2=0\]
+The ideia here is to define, $l_i=k_i+\alpha_i q_i$ (no sum), with $q_i^2=0$ and $\alpha_i=-m^2\qty(2k_i\cdot q_i)^{-1}$ , 
+then, $q_i,k_i$ are not allowed to have any dependence on $m^2$. The first and second constrains are already satisfied. The third one gives,
+\[-23\cdot l_1=0\rightarrow 3\cdot(k_1+\alpha_1 q_1)=0\rightarrow 3\cdot q_1=0\]
+As $|q_1\rangle = |3\rangle$ is forbidden, $|q_1]=|3]$. The fourth and fifth constrains imposes,
+\begin{align*}
+    \begin{cases}
+        -n\cdot\qty(\alpha_1 q_1+\alpha_2 q_2)+\alpha_1\alpha_2 q_1\cdot q_2&=0\\
+        4\cdot \qty(\alpha_1 q_1+\alpha_2 q_2)&=0
+    \end{cases}
+\end{align*}
+This imposes actually $q_1\cdot q_2=0$, for this to be true we have to options, either $|q_2]=|3]$, or $|q_2\rangle=|q_1\rangle$. If we choose the first, we can shift $k_1$ by $3$ such to 
+make $|q_1\rangle=|4\rangle$, this imposes further $|q_2\rangle=|4\rangle$. Hence, a possible solution is,
+\begin{align*}
+    q_1=q_2=-|3]\langle 4|
+\end{align*}
+
+\subsection{massive legs second topology}
+
+The constrains now are slightly different,
+\[l_1^2=(3-l_1)^2=0\ \&\ l^2_2=(3-l_1-l_2)^2=(3+4-l_1-l_2)^2=-m^2\]
+Which has as solution $q_2=-|4]\langle3|$
+
+\subsection{massive legs third topology}
+
+Now the constrain is difficult to solve,
+\[l_2^2=0\ \&\ l^2_1=(3-l_1)^2=(3-l_1-l_2)^2=(3+4-l_1-l_2)^2=-m^2\]
