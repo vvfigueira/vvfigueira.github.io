@@ -62,4 +62,17 @@ The fifth constrain gives,
     -[43]\langle34\rangle+[4l_1]\langle 34\rangle+\alpha[43]\langle l_14\rangle+x[4l_1]\langle l_24\rangle+y[43]\langle l_24\rangle&=0\\
     [4l_1](\langle 34\rangle+x\langle l_24\rangle)+[43](y\langle l_24\rangle-\langle34\rangle+\alpha\langle l_14\rangle)&=0
 \end{align*}
-This fixes, $x\langle l_24\rangle=-\langle34\rangle=-y\langle l_24\rangle-\alpha\langle l_14\rangle$, hence, 
+This fixes, $x\langle l_24\rangle=-\langle34\rangle=-y\langle l_24\rangle-\alpha\langle l_14\rangle$, hence, $|l_2\rangle = -\frac1x|3\rangle+\mu|4\rangle,\ \&\ |l_1\rangle = \frac1\alpha\qty(1+\frac yx)|3\rangle+\nu|4\rangle$ 
+Plugging this back on the other constrain gives,
+\begin{align*}
+    (x+y)\mu\langle34\rangle&=x\alpha\qty(\frac\mu\alpha\qty(1+\frac yx)\langle34\rangle-\frac \nu x\langle43\rangle)\\
+    (x+y)\mu\langle34\rangle&=\mu\qty(x+y)\langle34\rangle-\alpha\nu \langle43\rangle
+\end{align*}
+This forces $\nu=0$, which is not a possible solution. The only way to get around this is to impose $|l_1\rangle=|l_2\rangle$. This imposes $x+y=0$ and 
+$|l_2\rangle=z|4\rangle$. But this itself is only a solution if we shift $|l_1]\rightarrow|l_1]+|3]$. That is,
+\begin{align*}
+    \begin{cases}
+        l_1&=-|3]\langle3|-|l_1]\langle3|-\frac{m^2}{[l_13]\langle 43\rangle}|3]\langle 4|\\
+        l_2&=-z(|3]-|l_1])\langle4|
+    \end{cases}
+\end{align*}
