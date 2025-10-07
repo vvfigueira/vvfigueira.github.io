@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  3 OCT 2025 17:08
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  7 OCT 2025 17:45
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1349,11 +1349,78 @@ Package hyperref Info: Link coloring OFF on input line 127.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(./sections/cuts.tex
+(./sections/intro.tex
 
-[1{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+[1{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (346.64212pt too wide) detected at line 99
+[]
+ []
 
-[2]
+
+Overfull \hbox (333.33366pt too wide) detected at line 107
+[]
+ []
+
+
+Underfull \vbox (badness 3009) has occurred while \output is active []
+
+
+
+[2]) (./sections/toy2.tex
+
+[3]
+
+[4]
+
+[5]
+
+[6]
+
+[7]
+Overfull \hbox (171.40718pt too wide) detected at line 281
+[]
+ []
+
+
+
+[8]
+Overfull \hbox (173.71236pt too wide) detected at line 318
+[]
+ []
+
+
+
+[9]
+
+[10]
+Underfull \vbox (badness 1701) has occurred while \output is active []
+
+
+
+[11]
+
+[12]
+Overfull \hbox (105.57549pt too wide) detected at line 557
+[]
+ []
+
+
+
+[13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[14]
+Overfull \hbox (52.88612pt too wide) detected at line 612
+[]
+ []
+
+) (./sections/cuts.tex
+
+[15])
+
+[16]
 
 LaTeX Warning: Empty bibliography on input line 147.
 
@@ -1369,7 +1436,7 @@ L3 programming layer <2025-05-26>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1D1FC900F16D8B4CAE8ED99AD9E3B661;1203.
+(rerunfilecheck)             Checksum: E629655A88B440B95D3FC91C487986BD;1486.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                main
@@ -1381,32 +1448,36 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 38692 strings out of 470203
- 125007,1977958 words of node,token memory allocated
- 15829 words of node memory still in use:
-   240 hlist, 2 vlist, 2 rule, 20 math, 810 glue, 4 kern, 23 glyph, 1365 attribu
-te, 71 glue_spec, 1348 attribute_list, 2 write, 591 pdf_literal, 4 pdf_colorstac
+ 39191 strings out of 470203
+ 195341,1977958 words of node,token memory allocated
+ 15865 words of node memory still in use:
+   240 hlist, 2 vlist, 2 rule, 20 math, 810 glue, 4 kern, 23 glyph, 1377 attribu
+te, 71 glue_spec, 1354 attribute_list, 2 write, 591 pdf_literal, 4 pdf_colorstac
 k nodes
-   avail lists: 1:12,2:886,3:355,4:27,5:506,6:54,7:9791,8:95,9:1237,10:6,11:287
- 66128 multiletter control sequences out of 65536+600000
- 50 fonts using 3241607 bytes
- 98i,15n,100p,688b,2067s stack positions out of 10000i,1000n,20000p,200000b,200000s
+   avail lists: 1:12,2:10986,3:3059,4:72,5:525,6:46,7:8746,8:185,9:4838,10:6,11:
+183
+ 66542 multiletter control sequences out of 65536+600000
+ 53 fonts using 3427847 bytes
+ 98i,19n,100p,688b,2067s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/te
 xlive/2025/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf><c:/tex
 live/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/
 2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2025/t
 exmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/texlive/2025/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb>
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/
-2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (2 pages, 98320 bytes).
+t/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pf
+b><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texli
+ve/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msam10.pfb>
+Output written on main.pdf (16 pages, 235329 bytes).
 
-PDF statistics: 113 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 131072)
- 69 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 253 PDF objects out of 1000 (max. 8388607)
+ 205 compressed objects within 3 object streams
+ 82 named destinations out of 1000 (max. 131072)
+ 85 words of extra memory for PDF output out of 10000 (max. 100000000)
 
