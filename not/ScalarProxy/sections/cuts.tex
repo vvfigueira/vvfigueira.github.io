@@ -91,17 +91,68 @@ Again we fix $|l_1\rangle\propto|n\rangle$. The solution then is given by,
 The expression for the amplitude is,
 
 \begin{align*}
-    =&\frac{ \im g^3m^2}{\qty(p_1+p_2)^2}\qty[ \frac{1}{\qty(l_1+l_2)^2}+\frac{1}{\qty(l_1+l_3)^2}+\frac{1}{\qty(l_3+l_2)^2}]\\
-    &\quad\quad\quad+\frac{ \im g^3m^2}{\qty(p_1+l_1)^2}\qty[ \frac{1}{\qty(p_2+l_2)^2}+\frac{1}{\qty(p_2+l_3)^2}+\frac{1}{\qty(l_3+l_2)^2}]\\
-    &\quad\quad\quad+\frac{ \im g^3m^2}{\qty(p_1+l_2)^2}\qty[ \frac{1}{\qty(l_1+p_2)^2}+\frac{1}{\qty(l_1+l_3)^2}+\frac{1}{\qty(l_3+p_2)^2}]\\
-    &\quad\quad\quad+\frac{ \im g^3m^2}{\qty(p_1+l_3)^2}\qty[ \frac{1}{\qty(l_1+l_2)^2}+\frac{1}{\qty(l_1+p_2)^2}+\frac{1}{\qty(p_2+l_2)^2}]\\
-    &\quad\quad\quad+ \frac{\im g^3m^2}{\qty(p_2+l_1)^2\qty(l_2+l_3)^2}+ \frac{\im g^3m^2}{\qty(p_2+l_2)^2\qty(l_1+l_3)^2}+ \frac{\im g^3m^2}{\qty(p_2+l_3)^2\qty(l_2+l_1)^2}\\
-    =&\frac{ \im g^3m^2}{\qty(p_1+p_2)^2}\qty[ \frac{1}{z\langle34\rangle[k_13]}+\frac{1}{\langle34\rangle(z[k_13]+[k_14])}+\frac{1}{\qty(l_3+l_2)^2}]\\
-    &\quad\quad\quad+\frac{ \im g^3m^2}{\qty(p_1+l_1)^2}\qty[ \frac{1}{\qty(p_2+l_2)^2}+\frac{1}{\qty(p_2+l_3)^2}+\frac{1}{\qty(l_3+l_2)^2}]\\
-    &\quad\quad\quad+\frac{ \im g^3m^2}{\qty(p_1+l_2)^2}\qty[ \frac{1}{\qty(l_1+p_2)^2}+\frac{1}{\qty(l_1+l_3)^2}+\frac{1}{\qty(l_3+p_2)^2}]\\
-    &\quad\quad\quad+\frac{ \im g^3m^2}{\qty(p_1+l_3)^2}\qty[ \frac{1}{\qty(l_1+l_2)^2}+\frac{1}{\qty(l_1+p_2)^2}+\frac{1}{\qty(p_2+l_2)^2}]\\
-    &\quad\quad\quad+ \frac{\im g^3m^2}{\qty(p_2+l_1)^2\qty(l_2+l_3)^2}+ \frac{\im g^3m^2}{\qty(p_2+l_2)^2\qty(l_1+l_3)^2}+ \frac{\im g^3m^2}{\qty(p_2+l_3)^2\qty(l_2+l_1)^2}
+    =&\frac{ \im g^3m^2}{2p_1\cdot p_2}\qty[ \frac{1}{2k_1\cdot k_2}+\frac{1}{2k_1\cdot k_3}+\frac{1}{2k_2\cdot k_3}]\\
+    &\quad\quad\quad+\frac{ \im g^3m^2}{2p_1\cdot k_1}\qty[ \frac{1}{2p_2\cdot k_2}+\frac{1}{2p_2\cdot k_3}+\frac{1}{2k_3\cdot k_2}]\\
+    &\quad\quad\quad+\frac{ \im g^3m^2}{2p_1\cdot k_2}\qty[ \frac{1}{2k_1\cdot p_2}+\frac{1}{2k_1\cdot k_3}+\frac{1}{2k_3\cdot p_2}]\\
+    &\quad\quad\quad+\frac{ \im g^3m^2}{2p_1\cdot k_3}\qty[ \frac{1}{2k_1\cdot k_2}+\frac{1}{2k_1\cdot p_2}+\frac{1}{2p_2\cdot k_2}]\\
+    &\quad\quad\quad+ \frac{\im g^3m^2}{2p_2\cdot k_12k_2\cdot k_3}+ \frac{\im g^3m^2}{2p_2\cdot k_22k_1\cdot k_3}+ \frac{\im g^3m^2}{2p_2\cdot k_32k_2\cdot k_1}
 \end{align*}
+    %     =&\frac{ \im g^3m^2}{\qty(p_1+p_2)^2}\qty[ \frac{-1}{z\langle34\rangle[k_13]}+\frac{-1}{\langle34\rangle(z[k_13]+[k_14])}+\frac{-1}{\langle34\rangle\qty([43]-[4k_1])}]\\
+%     &\quad\quad\quad+\frac{ -\im g^3m^2}{\langle31\rangle[1k_1]}\qty[ \frac{-1}{\qty(\langle32\rangle-\langle42\rangle)\qty([23]-[2k_1])}+\frac{1}{\qty(p_2+l_3)^2}+\frac{1}{\qty(l_3+l_2)^2}]\\
+%     &\quad\quad\quad+\frac{ \im g^3m^2}{\qty(p_1+l_2)^2}\qty[ \frac{1}{\qty(l_1+p_2)^2}+\frac{1}{\qty(l_1+l_3)^2}+\frac{1}{\qty(l_3+p_2)^2}]\\
+%     &\quad\quad\quad+\frac{ \im g^3m^2}{\qty(p_1+l_3)^2}\qty[ \frac{1}{\qty(l_1+l_2)^2}+\frac{1}{\qty(l_1+p_2)^2}+\frac{1}{\qty(p_2+l_2)^2}]\\
+%     &\quad\quad\quad+ \frac{\im g^3m^2}{\qty(p_2+l_1)^2\qty(l_2+l_3)^2}+ \frac{\im g^3m^2}{\qty(p_2+l_2)^2\qty(l_1+l_3)^2}+ \frac{\im g^3m^2}{\qty(p_2+l_3)^2\qty(l_2+l_1)^2}
+% \end{align*}
+
+\subsection{two massive}
+
+\subsubsection{$l_1$ and $l_2$ massive}
+
+\begin{align*}
+    &=-\frac{\im g^3m^2}{-2m^2+2l_1\cdot l_2}\qty[\frac{1}{2k_3\cdot p_1}+\frac{1}{2p_2\cdot p_1}+\frac{1}{2k_3\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2l_1\cdot p_1)}\qty[\frac{1}{2l_2\cdot k_3}+\frac{1}{2l_2\cdot p_2}+\frac{1}{2k_3\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2l_1\cdot p_2)}\qty[\frac{1}{2l_2\cdot p_1}+\frac{1}{2l_2\cdot k_3}+\frac{1}{2p_1\cdot k_3}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2l_1\cdot k_3)}\qty[\frac{1}{2l_2\cdot p_1}+\frac{1}{2l_2\cdot p_2}+\frac{1}{2p_1\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{2l_2\cdot k_32p_1\cdot p_2}-\frac{\im g^3m^2}{2l_2\cdot p_12k_3\cdot p_2}-\frac{\im g^3m^2}{2l_2\cdot p_22p_1\cdot k_3}\\
+    &=-\frac{\im g^3m^2}{2k_1\cdot k_2}\qty[\frac{1}{2k_3\cdot p_1}+\frac{1}{2p_2\cdot p_1}+\frac{1}{2k_3\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2l_1\cdot p_1)}\qty[\frac{1}{2k_2\cdot k_3}+\frac{1}{2l_2\cdot p_2}+\frac{1}{2k_3\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2l_1\cdot p_2)}\qty[\frac{1}{2l_2\cdot p_1}+\frac{1}{2k_2\cdot k_3}+\frac{1}{2p_1\cdot k_3}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2k_1\cdot k_3)}\qty[\frac{1}{2l_2\cdot p_1}+\frac{1}{2l_2\cdot p_2}+\frac{1}{2p_1\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{2k_2\cdot k_32p_1\cdot p_2}-\frac{\im g^3m^2}{2l_2\cdot p_12k_3\cdot p_2}-\frac{\im g^3m^2}{2l_2\cdot p_22p_1\cdot k_3}
+\end{align*}
+
+We used that $l_3=k_3, l_2\cdot k_3 = k_2\cdot k_3, l_1\cdot k_3=k_1\cdot k_3, 2l_1\cdot l_2=2k_1\cdot k_2+2m^2$.
+
+\subsubsection{$l_2$ and $l_3$ massive}
+
+\begin{align*}
+    &=-\frac{\im g^3m^2}{-2m^2+2l_3\cdot l_2}\qty[\frac{1}{2k_1\cdot p_1}+\frac{1}{2p_2\cdot p_1}+\frac{1}{2k_1\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2l_3\cdot p_1)}\qty[\frac{1}{2l_2\cdot k_1}+\frac{1}{2l_2\cdot p_2}+\frac{1}{2k_1\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2l_3\cdot p_2)}\qty[\frac{1}{2l_2\cdot p_1}+\frac{1}{2l_2\cdot k_1}+\frac{1}{2p_1\cdot k_1}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2l_3\cdot k_1)}\qty[\frac{1}{2l_2\cdot p_1}+\frac{1}{2l_2\cdot p_2}+\frac{1}{2p_1\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{2l_2\cdot k_12p_1\cdot p_2}-\frac{\im g^3m^2}{2l_2\cdot p_12k_1\cdot p_2}-\frac{\im g^3m^2}{2l_2\cdot p_22p_1\cdot k_1}\\
+    &=-\frac{\im g^3m^2}{2k_3\cdot k_2}\qty[\frac{1}{2k_1\cdot p_1}+\frac{1}{2p_2\cdot p_1}+\frac{1}{2k_1\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2k_3\cdot p_1)}\qty[\frac{1}{2k_2\cdot k_1}+\frac{1}{2l_2\cdot p_2}+\frac{1}{2k_1\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2k_3\cdot p_2)}\qty[\frac{1}{2l_2\cdot p_1}+\frac{1}{2k_2\cdot k_1}+\frac{1}{2p_1\cdot k_1}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2k_3\cdot k_1)}\qty[\frac{1}{2l_2\cdot p_1}+\frac{1}{2l_2\cdot p_2}+\frac{1}{2p_1\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{2k_2\cdot k_12p_1\cdot p_2}-\frac{\im g^3m^2}{2l_2\cdot p_12k_1\cdot p_2}-\frac{\im g^3m^2}{2l_2\cdot p_22p_1\cdot k_1}\\
+\end{align*}
+
+We used that $l_1=k_1, l_2\cdot k_1 = k_2\cdot k_1, l_3\cdot k_1=k_3\cdot k_1, 2l_2\cdot l_3=2k_2\cdot k_3+2m^2$.
+
+\subsubsection{$l_1$ and $l_3$ massive}
+
+\begin{align*}
+    &=-\frac{\im g^3m^2}{-2m^2+2l_3\cdot l_1}\qty[\frac{1}{2l_2\cdot p_1}+\frac{1}{2p_2\cdot p_1}+\frac{1}{2l_2\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2l_3\cdot p_1)}\qty[\frac{1}{2l_2\cdot l_1}+\frac{1}{2l_1\cdot p_2}+\frac{1}{2l_1\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2l_3\cdot p_2)}\qty[\frac{1}{2l_2\cdot p_1}+\frac{1}{2l_2\cdot l_1}+\frac{1}{2p_1\cdot l_1}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{\qty(2l_3\cdot l_2)}\qty[\frac{1}{2l_1\cdot p_1}+\frac{1}{2l_1\cdot p_2}+\frac{1}{2p_1\cdot p_2}]\\
+    &\quad\quad\quad-\frac{\im g^3m^2}{2l_1\cdot l_22p_1\cdot p_2}-\frac{\im g^3m^2}{2l_1\cdot p_12l_2\cdot p_2}-\frac{\im g^3m^2}{2l_1\cdot p_22p_1\cdot l_1}
+\end{align*}
+
+\subsubsection{$l_1,l_2$ and $l_3$ massive}
+
+
 
 % Expanding $|l_2]=x|l_1]+y|3]$,
 % \begin{align*}
