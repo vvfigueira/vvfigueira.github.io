@@ -1,0 +1,29 @@
+M$ModelName = "ScalarProxy";
+
+M$Information = {
+  Authors      -> {"Vladyslav Shtabovenko"},
+  Institutions -> {"FeynCalc project"},
+  Emails       -> {""},
+  Date         -> "08.08.2024"
+};
+
+M$Parameters ={
+    g == {ParameterType ->
+        Internal}, 
+    m == {ParameterType ->
+        Internal}
+};
+
+M$ClassesDescription = {
+  S[1] == {
+      ClassName     -> phi,
+      ParticleName    -> "\[Phi]",
+      PropagatorLabel -> "\[Phi]",
+      SelfConjugate -> True,
+      Indices -> {},
+      Mass -> {m, Internal}
+  }
+
+};
+
+LPhi34 = 1/2 * m^2 * del[phi, mu] * del[phi, mu] - 1/2 Mphi^2 * phi^2  + 1/(3!) g * m^2 * phi^3 -1/2 * del[del[phi,mu],mu] del[del[phi,mu],nu]+1/2 *g *phi^2 * del[del[phi,mu],mu]- 1/(8) g^2 * phi^4;
