@@ -1,0 +1,29 @@
+(* phi3_phi4_model.fr — minimal FeynRules model for a single real scalar with phi^3 and phi^4 couplings *)
+
+M$ModelName = "phi3phi4";
+M$Information = {"Authors" -> "user", "Date" -> "2025-10-07", "Version" -> "1.0", "Description" -> "Single real scalar with cubic and quartic self-interactions"};
+
+(* -------------------- Fields -------------------- *)
+M$ClassesDescription = {
+  S[1] == {ClassName -> phi, SelfConjugate -> True, Mass ->{m,External}, Indices -> {}, QuantumNumbers -> {}, Description -> "real scalar field", LaTeX -> "\\phi", PDG -> 0}
+};
+
+(* ------------------ Parameters ------------------ *)
+M$Parameters = {
+  m   == {ParameterType -> External, Value -> 1.0, Description -> "mass of phi", LaTeX -> "m"},
+  g   == {ParameterType -> External, Value -> 0.1, Description -> "cubic coupling (phi^3)", LaTeX -> "g"},
+  lam == {ParameterType -> External, Value -> 0.01, Description -> "quartic coupling (phi^4)", LaTeX -> "\\lambda"}
+};
+
+(* ------------------ Lagrangian ------------------ *)
+Lkin = 1/2 * del[phi, mu] del[phi, mu] - 1/2 * m^2 * phi^2;  (* kinetic + mass term *)
+Lint = - g/3! * phi^3 - lam/4! * phi^4;                       (* interactions: cubic and quartic *)
+Lag  = Lkin + Lint;
+
+(* ------------------ Model exports ------------------ *)
+(* You can export this model to FeynArts/MadGraph/UFO etc. after loading into Mathematica:
+   WriteFeynArtsOutput[Lag, Output -> "phi3phi4FA"];  (* FeynArts *)
+   WriteUFO[Lag, Output -> "phi3phi4_UFO"];          (* UFO for MadGraph *)
+*)
+
+(* ------------------ End of file ------------------ *)
