@@ -75,7 +75,7 @@
 
 \begin{minipage}[b]{0.71\linewidth}
 \veryHuge \color{NavyBlue} \textbf{2+1 Dimensional Gravity as a Gauge Theory} \color{Black}\\ % Title
-\Huge\textit{An Exploration of Complexity}\\[2cm] % Subtitle
+\Huge\textit{An Exploration of Simplicity}\\[2cm] % Subtitle
 \huge \textbf{Vicente Viater Figueira}\\[0.5cm] % Author(s)
 \huge IFUSP\\[0.4cm] % University/organization
 \Large \texttt{vfigueira@usp.br}\\
@@ -110,20 +110,20 @@
 
 %\color{SaddleBrown} % SaddleBrown color for the introduction
 
-\section*{Introduction}
+\section*{Introduction \& Motivation}
 
-Gravity, at its core, is a theory of spacetime geometry --- 
+General relativity (GR), at its core, is a theory of spacetime geometry --- 
 but there are strong motivations to reformulate it as a gauge theory. 
-Gauge theories describe interactions as consequences of local symmetries, 
+Gauge theories describe interactions as consequences of local redundancies, 
 and this perspective has proven remarkably powerful in the Standard Model of 
 particle physics. Writing gravity as a gauge theory places it on the same 
 conceptual footing as the other fundamental forces: the metric or 
 vielbein becomes the gauge field of local translations, and the spin 
 connection gauges local Lorentz transformations. This approach 
-clarifies the role of symmetries, makes the counting of degrees 
+clarifies the role of redundancies, makes the counting of degrees 
 of freedom more transparent, and provides a natural framework for 
 coupling gravity to matter with spin. It also opens the door to 
-techniques from Yang–Mills theory --- such as BRST 
+techniques from Yang–Mills (YM) theory --- such as BRST 
 quantization, loop variables, and color-kinematics duality --- 
 which can be crucial in the search for a quantum theory of gravity.
 
@@ -133,54 +133,133 @@ which can be crucial in the search for a quantum theory of gravity.
 
 %\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
 
-\section*{\LARGE Course of Steps}
+\section*{Modern Language of Gauge Theories}
 
-\begin{enumerate}\large
-\item Demand only metric compatibility from the connection.
-\item Rewrite the EH action in form language.
-\item Interpret vielbein and spin connection as gauge fields.
-\item Pose the EH action as being a trace in the flat spacetime isometry algebra.
-\end{enumerate}
+We have first to define what we mean by an \textit{usual sense gauge theory}. In the modern language, an 
+elegant way of defining such is: Given a finite dimensional Lie algebra $\mathfrak g$, a \textit{usual sense gauge theory} is 
+any theory in which the fundamental field is a adjoint $\mathfrak g$ valued 1-form, \[\vb A= A_{a I }\textnormal{T}^I\vb dx^a,\ \ \ \textnormal{T}^I\in\mathfrak g\] 
+which enjoys redundancy by $G$ valued 0-forms, \[\vb A\sim U\qty(\vb A+\vb d)U^{-1}.\] 
+For the usual YM theory, the action is written in terms of a trace in the Lie algebra --- which could be any symmetric, non-degenerated, bilinear form ---,
+\[ S_{\textnormal{YM}}= \frac{1}{g^2}\int\limits_M\Tr\qty[\vb F\wedge \star \vb F],\ \ \ \vb F = \vb d\vb A+\wedgecomm{\vb A}{\vb A}\]
 
-%----------------------------------------------------------------------------------------
-%	MATERIALS AND METHODS
-%----------------------------------------------------------------------------------------
+\section*{Vielbein \& Spin Connection}
 
-\section*{Spin connection and vielbein}
+The metric, $g_{ab}$, isn't the best variable to make a parallel between gravity and usual gauge theories. Among motifs is 
+the presence of non-polynomial terms in the Einstein-Hilbert (EH) action, such as $g^{ab}$ and $\sqrt{\abs{g}}$,
+\[S_{\textnormal{EH}}=\frac{1}{2\kappa}\int\limits_M \dd[D]{x}\sqrt{\abs{g}}g^{ab}\tensor{R}{_c_b^c_a},\]
+other is that the redundancy here are the diffeomorphisms, $\vb g \sim \phi_\ast\vb g$, which is not in the standard form of usual 
+gauge theories.
 
-\begin{align}
-    \eta_{\mu\nu}&=\vb g\qty(\tilde{\vb e}_\mu,\tilde{\vb e}_\nu)\Leftrightarrow \eta_{\mu\nu}\vb e^\mu\otimes\vb e^\nu=\vb g\qty(\tilde{\vb e}_\mu,\tilde{\vb e}_\nu)\vb e^\mu\otimes\vb e^\nu=\vb g
-\end{align}
+Hence, to connect gravity to gauge theory, we shift from the metric $g_{ab}$ to the \textbf{vielbein} $\tensor{e}{^\mu_a}$ and \textbf{spin connection} $\tensor{\omega}{^\alpha_\beta_a}$.
 
-%------------------------------------------------
+\begin{itemize}
+    \item \textbf{Vielbein:} Local trivialization of the metric, defines a non-coordinate frame\[\vb e^\mu=\tensor{ e}{^\mu_a}\vb dx^a,\ \eta_{\mu\nu}\vb e^\mu\otimes\vb e^\nu=\vb g,\]
+    \item \textbf{Spin Connection:} Local connection in the non-coordinate frame, \[\tensor{\boldsymbol \omega}{_\nu^\mu}=\tensor{ \omega}{_\nu^\mu_a}\vb d x^a,\ \nabla_{\vb X} \vb e^\mu=\tensor{\boldsymbol \omega\qty(\vb X)}{_\nu^\mu}\vb e^\nu\]
+\end{itemize}
+As is usual to general relativity, we do impose metricity in the connection, but, it's suboptimal to impose 
+torsionless, as this requires a differential/algebraical restraint between the vielbein and spin-connection.
 
-\section*{Form language}
+\begin{itemize}
+    \item \textbf{Metricity:} The connection is metric compatible, $\nabla_{\vb X} \vb g =0\Rightarrow \tensor{{\boldsymbol\omega}}{_\alpha_\beta}=-\tensor{{\boldsymbol\omega}}{_\beta_\alpha}$
+    \item \textbf{Torsionfull (In principle):} Torsion not necessarily is absent, $\vb T^\mu = \vb d \vb e^\mu+\tensor{{\boldsymbol\omega}}{^\mu_\nu}\wedge \vb e^\nu\neq0$
+\end{itemize}
+In this way the vielbein and the spin-connection are independent, what softens the non-polynomial character of EH action. 
+The last needed piece is how the Riemann tensor looks in this formalism, which can be derived from the definition of the 
+covariant derivative,
+\[\vb {Riem}\qty(\vb X, \vb Y)\vb e^\mu=\qty(\comm{\nabla_{\vb X}}{\nabla_{\vb Y}}-\nabla_{\comm{\vb X}{\vb Y}})\vb e^\nu\]
+Which is compactly written as a 2-form,
+\[\vb R^{\alpha\beta} = \vb d\boldsymbol\omega^{\alpha\beta}+\boldsymbol\omega^{\alpha\mu}\wedge\tensor{{\boldsymbol\omega}}{_\mu^\beta},\ \ \ \vb R^{\alpha\beta} = \frac12 \tensor{R}{_a_b^\alpha^\beta}\vb dx^a\wedge\vb d x^b\]
 
+\section*{EH Action in Form Language}
 
-%----------------------------------------------------------------------------------------
-%	RESULTS 
-%----------------------------------------------------------------------------------------
-
-\section*{Einstein-Hilbert action in form language}
-
-\begin{align}
-    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\star\vb R_{\beta\rho}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\numberthis\label{EHAction2}
-\end{align}
+Using these introduced variables, we rewrite the EH action --- which now is the Einstein-Cartan theory due to torsion being permissible ---. 
+This is a straightforward manipulation of tensor indexes,
+\[S_{\textnormal{EH}}= \frac{1}{2\kappa}\int\limits_M\star\vb R^{\alpha\beta}\wedge \vb e_\alpha\wedge \vb e_\beta\]
+What is valid for $D\geq 2$.
 
 \section*{Redundancies of Gravity}
 
-Diffs + Local Lorentz:
+We were able to rewrite the EH action in terms of two kinds of 1-forms, the vielbein and the spin-connection. What is missing 
+to fulfill the analogy with usual gauge theories is: Dynamical 1-forms being adjoint $\mathfrak g$ valued, and, correct redundancy 
+transformation.
 
-\begin{align}
+For standard GR, the redundancy is only diffeomorphisms, $\vb g\sim \phi_\ast \vb g$, but, now, as we have more dynamical fields, we gain 
+also more redundancies. From the definition of vielbein, we see that $\vb e^\mu\rightarrow \tensor{\Lambda}{^\mu_\nu}\vb e^\nu$ is a redundancy 
+whenever $\tensor{\Lambda}{^\mu_\nu}$ is a local $SO(D-1,1)$ element, due to $\vb g$ being preserved by this transformation,
+\[\vb g=\eta_{\mu\nu}\vb e^\mu\otimes\vb e^\nu\rightarrow \eta_{\mu\nu}\tensor{\Lambda}{^\mu_\alpha}\tensor{\Lambda}{^\nu_\beta}\vb e^\alpha\otimes\vb e^\beta=\vb g\]
+It's interesting to observe what is the action of this redundancy transformation on the spin-connection, which can be obtained from it's 
+definition,
+\[\tensor{{\boldsymbol\omega}}{^\mu_\nu}\rightarrow \tensor{\Lambda}{^\mu_\alpha}\qty(\tensor{{\boldsymbol\omega}}{^\alpha_\beta}+\tensor{\delta}{^\alpha_\beta}\vb d)\tensor{{\Lambda^{-1}}}{^\beta_\nu}\]
+The action is invariant under those, and, additionally, this settle down the interpretation of $\boldsymbol\omega$ being a usual gauge field 
+for the group $SO(D-1,1)$, is just necessary to dress it with the generators of the algebra $J^{\mu\nu}$.
+
+The problem arises with the diffeomorphisms, these are D redundancies d.o.f., and being seen that the spin-connection correspond to $SO(D-1,1)$, 
+it's natural to expect that the vielbein would correspond to gauged translations, this is also compatible with the index structure for the 
+vielbein, which could be dressed with the translation generators $P^\mu$. A quick comparison between the gauged translations and diffeomorphisms 
+transformations,
+\begin{align*}
     \begin{cases}
-        \vb e^\mu&\rightarrow\tensor{\Lambda}{^\mu_\nu}\vb e^\nu\\
-        \tensor{\boldsymbol\omega}{^\alpha_\beta}&\rightarrow\tensor{\Lambda}{^\alpha_\rho}\tensor{\boldsymbol\omega}{^\rho_\sigma}\tensor{\Lambda}{^{-1}^\sigma_\beta}+\tensor{\Lambda}{^\alpha_\sigma}\vb d\tensor{\Lambda}{^{-1}^\sigma_\beta}
-    \end{cases} \textnormal{  AND  }
-    \begin{cases}
-        \vb e^\mu&\rightarrow\phi_\ast\vb e^\mu\\
-        \tensor{\boldsymbol\omega}{^\alpha_\beta}&\rightarrow\phi_\ast\tensor{\boldsymbol\omega}{^\alpha_\beta}
-    \end{cases} 
-\end{align}
+        \delta\tensor{{\boldsymbol\omega}}{_\alpha_\beta}&=0\\
+        \delta\vb e^\mu&=\tensor{{\boldsymbol\omega}}{^\mu_\nu}\xi^\nu+\vb d\xi^\mu
+    \end{cases}\ \ \ \ \ \ \textnormal{vs.}\ \ \ \ \ \  \begin{cases}
+        \pounds_\xi\tensor{{\boldsymbol\omega}}{_\alpha_\beta}&=\vb R_{\alpha\beta}\qty(\xi)\\
+        \pounds_\xi\vb e^\mu&=\tensor{{\boldsymbol\omega}}{^\mu_\nu}\xi^\nu+\vb d\xi^\mu+\vb T^\mu\qty(\xi)
+    \end{cases}
+\end{align*}
+Which are the same for vacuum solutions. Thus, it may be possible to express our action as a $ISO(D-1,1)$ gauge theory.
+
+\section*{Gravity as a Gauge Theory}
+
+
+
+% \section*{\LARGE Course of Steps}
+
+% \begin{enumerate}\large
+% \item Demand only metric compatibility from the connection.
+% \item Rewrite the EH action in form language.
+% \item Interpret vielbein and spin connection as gauge fields.
+% \item Pose the EH action as being a trace in the flat spacetime isometry algebra.
+% \end{enumerate}
+
+% %----------------------------------------------------------------------------------------
+% %	MATERIALS AND METHODS
+% %----------------------------------------------------------------------------------------
+
+% \section*{Spin connection and vielbein}
+
+% \begin{align}
+%     \eta_{\mu\nu}&=\vb g\qty(\tilde{\vb e}_\mu,\tilde{\vb e}_\nu)\Leftrightarrow \eta_{\mu\nu}\vb e^\mu\otimes\vb e^\nu=\vb g\qty(\tilde{\vb e}_\mu,\tilde{\vb e}_\nu)\vb e^\mu\otimes\vb e^\nu=\vb g
+% \end{align}
+
+% %------------------------------------------------
+
+% \section*{Form language}
+
+
+% %----------------------------------------------------------------------------------------
+% %	RESULTS 
+% %----------------------------------------------------------------------------------------
+
+% \section*{Einstein-Hilbert action in form language}
+
+% \begin{align}
+%     S_{\textnormal{EH}}&=\frac{1}{2\kappa}\int\limits_M\star\vb R_{\beta\rho}\wedge\vb e^{\beta}\wedge\vb e^{\rho}\numberthis\label{EHAction2}
+% \end{align}
+
+% \section*{Redundancies of Gravity}
+
+% Diffs + Local Lorentz:
+
+% \begin{align}
+%     \begin{cases}
+%         \vb e^\mu&\rightarrow\tensor{\Lambda}{^\mu_\nu}\vb e^\nu\\
+%         \tensor{\boldsymbol\omega}{^\alpha_\beta}&\rightarrow\tensor{\Lambda}{^\alpha_\rho}\tensor{\boldsymbol\omega}{^\rho_\sigma}\tensor{\Lambda}{^{-1}^\sigma_\beta}+\tensor{\Lambda}{^\alpha_\sigma}\vb d\tensor{\Lambda}{^{-1}^\sigma_\beta}
+%     \end{cases} \textnormal{  AND  }
+%     \begin{cases}
+%         \vb e^\mu&\rightarrow\phi_\ast\vb e^\mu\\
+%         \tensor{\boldsymbol\omega}{^\alpha_\beta}&\rightarrow\phi_\ast\tensor{\boldsymbol\omega}{^\alpha_\beta}
+%     \end{cases} 
+% \end{align}
 
 \section*{2+1 Gravity as a gauge theory}
 
@@ -194,68 +273,68 @@ Comparison with Chern-Simons theory,
     S_{\textnormal{CS}}\qty[\vb A]&=\frac{k}{4\pi}\int\limits_M\expval{\vb A\ \wedgecomma\ \qty(\vb d{\vb A}+\frac13\wedgecomm{\vb A}{\vb A})}\numberthis\label{YangMillsAction}
 \end{align}
 
-Donec faucibus purus at tortor egestas eu fermentum dolor facilisis. Maecenas tempor dui eu neque fringilla rutrum. Mauris \emph{lobortis} nisl accumsan. Aenean vitae risus ante.
-%
-\begin{wraptable}{l}{12cm} % Left or right alignment is specified in the first bracket, the width of the table is in the second
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\captionof{table}{\color{Green} Table caption}
-\end{wraptable}
-%
-Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh.
+% Donec faucibus purus at tortor egestas eu fermentum dolor facilisis. Maecenas tempor dui eu neque fringilla rutrum. Mauris \emph{lobortis} nisl accumsan. Aenean vitae risus ante.
+% %
+% \begin{wraptable}{l}{12cm} % Left or right alignment is specified in the first bracket, the width of the table is in the second
+% \begin{tabular}{l l l}
+% \toprule
+% \textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+% \midrule
+% Treatment 1 & 0.0003262 & 0.562 \\
+% Treatment 2 & 0.0015681 & 0.910 \\
+% Treatment 3 & 0.0009271 & 0.296 \\
+% \bottomrule
+% \end{tabular}
+% \captionof{table}{\color{Green} Table caption}
+% \end{wraptable}
+% %
+% Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh.
 
-Nulla ut porttitor enim. Suspendisse venenatis dui eget eros gravida tempor. Mauris feugiat elit et augue placerat ultrices. Morbi accumsan enim nec tortor consectetur non commodo. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu. Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin.
+% Nulla ut porttitor enim. Suspendisse venenatis dui eget eros gravida tempor. Mauris feugiat elit et augue placerat ultrices. Morbi accumsan enim nec tortor consectetur non commodo. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu. Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin.
 
-\begin{center}\vspace{1cm}
-\includegraphics[width=0.8\linewidth]{placeholder}
-\captionof{figure}{\color{Green} Figure caption}
-\end{center}\vspace{1cm}
+% \begin{center}\vspace{1cm}
+% \includegraphics[width=0.8\linewidth]{placeholder}
+% \captionof{figure}{\color{Green} Figure caption}
+% \end{center}\vspace{1cm}
 
-In hac habitasse platea dictumst. Etiam placerat, risus ac.
+% In hac habitasse platea dictumst. Etiam placerat, risus ac.
 
-Adipiscing lectus in magna blandit:
+% Adipiscing lectus in magna blandit:
 
-\begin{center}\vspace{1cm}
-\begin{tabular}{l l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2} \\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\captionof{table}{\color{Green} Table caption}
-\end{center}\vspace{1cm}
+% \begin{center}\vspace{1cm}
+% \begin{tabular}{l l l l}
+% \toprule
+% \textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2} \\
+% \midrule
+% Treatment 1 & 0.0003262 & 0.562 \\
+% Treatment 2 & 0.0015681 & 0.910 \\
+% Treatment 3 & 0.0009271 & 0.296 \\
+% \bottomrule
+% \end{tabular}
+% \captionof{table}{\color{Green} Table caption}
+% \end{center}\vspace{1cm}
 
-Vivamus sed nibh ac metus tristique tristique a vitae ante. Sed lobortis mi ut arcu fringilla et adipiscing ligula rutrum. Aenean turpis velit, placerat eget tincidunt nec, ornare in nisl. In placerat.
+% Vivamus sed nibh ac metus tristique tristique a vitae ante. Sed lobortis mi ut arcu fringilla et adipiscing ligula rutrum. Aenean turpis velit, placerat eget tincidunt nec, ornare in nisl. In placerat.
 
-\begin{center}\vspace{1cm}
-\includegraphics[width=0.8\linewidth]{placeholder}
-\captionof{figure}{\color{Green} Figure caption}
-\end{center}\vspace{1cm}
+% \begin{center}\vspace{1cm}
+% \includegraphics[width=0.8\linewidth]{placeholder}
+% \captionof{figure}{\color{Green} Figure caption}
+% \end{center}\vspace{1cm}
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
 %----------------------------------------------------------------------------------------
 
-\color{SaddleBrown} % SaddleBrown color for the conclusions to make them stand out
+% \color{SaddleBrown} % SaddleBrown color for the conclusions to make them stand out
 
-\section*{Conclusions}
+% \section*{Conclusions}
 
-\begin{itemize}
-\item Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh. Phasellus fermentum rutrum elementum. Nam quis justo lectus.
-\item Vestibulum sem ante, hendrerit a gravida ac, blandit quis magna.
-\item Donec sem metus, facilisis at condimentum eget, vehicula ut massa. Morbi consequat, diam sed convallis tincidunt, arcu nunc.
-\item Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
-\end{itemize}
+% \begin{itemize}
+% \item Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh. Phasellus fermentum rutrum elementum. Nam quis justo lectus.
+% \item Vestibulum sem ante, hendrerit a gravida ac, blandit quis magna.
+% \item Donec sem metus, facilisis at condimentum eget, vehicula ut massa. Morbi consequat, diam sed convallis tincidunt, arcu nunc.
+% \item Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
+% \end{itemize}
 
 \color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
 
