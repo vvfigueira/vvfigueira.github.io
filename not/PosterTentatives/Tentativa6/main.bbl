@@ -1,0 +1,72 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global/global}
+  \entry{witten1988}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=WE}{%
+         family={Witten},
+         familyi={W\bibinitperiod},
+         given={Edward},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WE1}
+    \strng{fullhash}{WE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{doi}
+    \verb 10.1016/0550-3213(88)90143-5
+    \endverb
+    \field{pages}{46}
+    \field{title}{{(2+1)-Dimensional Gravity as an Exactly Soluble System}}
+    \field{volume}{311}
+    \field{journaltitle}{Nucl. Phys. B}
+    \field{year}{1988}
+  \endentry
+
+  \entry{witten2007}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=WE}{%
+         family={Witten},
+         familyi={W\bibinitperiod},
+         given={Edward},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WE1}
+    \strng{fullhash}{WE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{eprint}
+    \verb 0706.3359
+    \endverb
+    \field{title}{Three-Dimensional Gravity Revisited}
+    \verb{url}
+    \verb https://arxiv.org/abs/0706.3359
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{year}{2007}
+  \endentry
+\enddatalist
+\endinput

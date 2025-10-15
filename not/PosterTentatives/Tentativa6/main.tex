@@ -35,7 +35,7 @@
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
-
+\usepackage[style=numeric-comp, backend=bibtex]{biblatex}
 \usepackage{stackengine}
 \usepackage{tensor}
 \usepackage{slashed}
@@ -62,7 +62,11 @@
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
+\addbibresource{refs.bib}
+
 \begin{document}
+
+\nocite{*}
 
 %----------------------------------------------------------------------------------------
 %	POSTER HEADER 
@@ -138,13 +142,13 @@ which can be crucial in the search for a quantum theory of gravity.
 We have first to define what we mean by an \textit{usual sense gauge theory}. In the modern language, an 
 elegant way of defining such is: Given a finite dimensional Lie algebra $\mathfrak g$, a \textit{usual sense gauge theory} is 
 any theory in which the fundamental field is a adjoint $\mathfrak g$ valued 1-form, \[\vb A= A_{a I }\textnormal{T}^I\vb dx^a,\ \ \ \textnormal{T}^I\in\mathfrak g\] 
-which enjoys redundancy by $G$ valued 0-forms, \[\vb A\sim U\qty(\vb A+\vb d)U^{-1}.\] 
+which enjoys redundancy by $G$ valued 0-forms, \[\vb A\sim U\qty(\vb A+\vb d)U^{-1},\ \ \ U=\exp(\xi_I\textnormal{T}^I).\] 
 For the usual YM theory, the action is written in terms of a trace in the Lie algebra --- which could be any symmetric, non-degenerated, bilinear form ---,
 \[ S_{\textnormal{YM}}= \frac{1}{g^2}\int\limits_M\Tr\qty[\vb F\wedge \star \vb F],\ \ \ \vb F = \vb d\vb A+\wedgecomm{\vb A}{\vb A}\]
 
 \section*{Vielbein \& Spin Connection}
 
-The metric, $g_{ab}$, isn't the best variable to make a parallel between gravity and usual gauge theories. Among motifs is 
+The metric, $g_{ab}$, isn't the best variable to make a parallel between gravity and usual gauge theories. Among motives is 
 the presence of non-polynomial terms in the Einstein-Hilbert (EH) action, such as $g^{ab}$ and $\sqrt{\abs{g}}$,
 \[S_{\textnormal{EH}}=\frac{1}{2\kappa}\int\limits_M \dd[D]{x}\sqrt{\abs{g}}g^{ab}\tensor{R}{_c_b^c_a},\]
 other is that the redundancy here are the diffeomorphisms, $\vb g \sim \phi_\ast\vb g$, which is not in the standard form of usual 
@@ -153,7 +157,7 @@ gauge theories.
 Hence, to connect gravity to gauge theory, we shift from the metric $g_{ab}$ to the \textbf{vielbein} $\tensor{e}{^\mu_a}$ and \textbf{spin connection} $\tensor{\omega}{^\alpha_\beta_a}$.
 
 \begin{itemize}
-    \item \textbf{Vielbein:} Local trivialization of the metric, defines a non-coordinate frame\[\vb e^\mu=\tensor{ e}{^\mu_a}\vb dx^a,\ \eta_{\mu\nu}\vb e^\mu\otimes\vb e^\nu=\vb g,\]
+    \item \textbf{Vielbein:} Local trivialization of the metric, defines a non-coordinate frame,\[\vb e^\mu=\tensor{ e}{^\mu_a}\vb dx^a,\ \eta_{\mu\nu}\vb e^\mu\otimes\vb e^\nu=\vb g,\]
     \item \textbf{Spin Connection:} Local connection in the non-coordinate frame, \[\tensor{\boldsymbol \omega}{_\nu^\mu}=\tensor{ \omega}{_\nu^\mu_a}\vb d x^a,\ \nabla_{\vb X} \vb e^\mu=\tensor{\boldsymbol \omega\qty(\vb X)}{_\nu^\mu}\vb e^\nu\]
 \end{itemize}
 As is usual to general relativity, we do impose metricity in the connection, but, it's suboptimal to impose 
@@ -172,16 +176,16 @@ Which is compactly written as a 2-form,
 
 \section*{EH Action in Form Language}
 
-Using these introduced variables, we rewrite the EH action --- which now is the Einstein-Cartan theory due to torsion being permissible ---. 
+Using these introduced variables, we rewrite the EH action --- which now is the Einstein-Cartan (EC) theory due to torsion being permissible ---. 
 This is a straightforward manipulation of tensor indexes,
-\[S_{\textnormal{EH}}= \frac{1}{2\kappa}\int\limits_M\star\vb R^{\alpha\beta}\wedge \vb e_\alpha\wedge \vb e_\beta\]
-What is valid for $D\geq 2$.
+\[S_{\textnormal{EH}}= \frac{1}{2\kappa}\int\limits_M\star\vb R^{\alpha\beta}\wedge \vb e_\alpha\wedge \vb e_\beta.\]
+That is valid for $D\geq 2$.
 
 \section*{Redundancies of Gravity}
 
 We were able to rewrite the EH action in terms of two kinds of 1-forms, the vielbein and the spin-connection. What is missing 
-to fulfill the analogy with usual gauge theories is: Dynamical 1-forms being adjoint $\mathfrak g$ valued, and, correct redundancy 
-transformation.
+to fulfill the analogy with usual gauge theories is: Dynamical 1-forms being adjoint $\mathfrak g$ valued, correct redundancy 
+transformation and the existence of a bilinear, symmetric, non-degenerated form in the Lie algebra.
 
 For standard GR, the redundancy is only diffeomorphisms, $\vb g\sim \phi_\ast \vb g$, but, now, as we have more dynamical fields, we gain 
 also more redundancies. From the definition of vielbein, we see that $\vb e^\mu\rightarrow \tensor{\Lambda}{^\mu_\nu}\vb e^\nu$ is a redundancy 
@@ -193,7 +197,7 @@ definition,
 The action is invariant under those, and, additionally, this settle down the interpretation of $\boldsymbol\omega$ being a usual gauge field 
 for the group $SO(D-1,1)$, is just necessary to dress it with the generators of the algebra $J^{\mu\nu}$.
 
-The problem arises with the diffeomorphisms, these are D redundancies d.o.f., and being seen that the spin-connection correspond to $SO(D-1,1)$, 
+The problem arises with the diffeomorphisms, these are D d.o.f. of redundancies, and being seen that the spin-connection correspond to $SO(D-1,1)$, 
 it's natural to expect that the vielbein would correspond to gauged translations, this is also compatible with the index structure for the 
 vielbein, which could be dressed with the translation generators $P^\mu$. A quick comparison between the gauged translations and diffeomorphisms 
 transformations,
@@ -202,8 +206,8 @@ transformations,
         \delta\tensor{{\boldsymbol\omega}}{_\alpha_\beta}&=0\\
         \delta\vb e^\mu&=\tensor{{\boldsymbol\omega}}{^\mu_\nu}\xi^\nu+\vb d\xi^\mu
     \end{cases}\ \ \ \ \ \ \textnormal{vs.}\ \ \ \ \ \  \begin{cases}
-        \pounds_\xi\tensor{{\boldsymbol\omega}}{_\alpha_\beta}&=\vb R_{\alpha\beta}\qty(\xi)\\
-        \pounds_\xi\vb e^\mu&=\tensor{{\boldsymbol\omega}}{^\mu_\nu}\xi^\nu+\vb d\xi^\mu+\vb T^\mu\qty(\xi)
+        \pounds_\xi\tensor{{\boldsymbol\omega}}{_\alpha_\beta}&=\vb R_{\alpha\beta}\qty(\xi)+\vb d\qty(\boldsymbol\omega_{\alpha\beta}\qty(\xi))+2\tensor{{\boldsymbol\omega}}{_{[\alpha}^\mu}\tensor{{\boldsymbol\omega}}{^\mu_{\beta]}}\qty(\xi)\\
+        \pounds_\xi\vb e^\mu&=\tensor{{\boldsymbol\omega}}{^\mu_\nu}\xi^\nu+\vb d\xi^\mu+\vb T^\mu\qty(\xi)-\tensor{{\boldsymbol\omega}}{^\mu_\nu}\qty(\xi)\vb e^\nu
     \end{cases}
 \end{align*}
 Which are the same for vacuum solutions. Thus, it may be possible to express our action as a $ISO(D-1,1)$ gauge theory.
@@ -212,8 +216,12 @@ Which are the same for vacuum solutions. Thus, it may be possible to express our
 
 We were guided to interpret the vielbein and the spin-connection as gauge fields of $\mathfrak{iso}(D-1,1)$, the last piece we need 
 to construct such theory is a bilinear --- if possible multilinear ---, symmetric, non-degenerated form on the Lie algebra, which sadly does 
-not exists for $\mathfrak{iso}(D-1,1)$ apart from $D=3$.
-
+not exists for $\mathfrak{iso}(D-1,1)$, apart from $D=3$. In this case it reads,
+\[\expval{J_{\alpha\beta},P_\mu}=\frac1\kappa\epsilon_{\alpha\beta\mu},\ \ \ \expval{J_{\alpha\beta},J_{\mu\nu}}=0,\ \ \ \expval{P_\mu,P_\nu}=0.\]
+It's not possible to write a Yang-Mills alike action for $D=3$ due to a mismatch in the d.o.f.. But, a Chern-Simons (CS) theory has the correct number of d.o.f.,
+\[S_{\textnormal{CS}}\qty[\vb A]=\int\limits_M\expval{\vb A\ \wedgecomma\ \qty(\vb d{\vb A}+\frac13\wedgecomm{\vb A}{\vb A})},\]
+which, if evaluated for a gauge field of $\mathfrak {iso}(2,1)$, \[\vb A = \frac12\boldsymbol\omega_{\alpha\beta}J^{\alpha\beta}+\vb e_\mu P^\mu=\boldsymbol\omega+\vb e,\] returns exactly the EH action,
+\[S_{\textnormal{CS}}=\int\limits_M\expval{\vb e\ \wedgecomma\ \qty(\vb d{\boldsymbol\omega}+\frac12\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})}=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\vb e^\mu\wedge \vb R^{\alpha\beta}=\frac{1}{2\kappa}\int\limits_M\star\vb R^{\alpha\beta}\wedge \vb e_\alpha\wedge \vb e_\beta=S_{\textnormal{EH}}.\]
 % \section*{\LARGE Course of Steps}
 
 % \begin{enumerate}\large
@@ -265,15 +273,7 @@ not exists for $\mathfrak{iso}(D-1,1)$ apart from $D=3$.
 
 % \section*{2+1 Gravity as a gauge theory}
 
-\begin{align}
-    S_{\textnormal{EH}}&=\frac{1}{2\kappa}\epsilon_{\mu\alpha\beta}\int\limits_M\vb e^\mu\wedge \vb R^{\alpha\beta}=\frac{1}{\kappa}\int\limits_M\expval{\vb e\ \wedgecomma\ \qty(\vb d{\boldsymbol\omega}+\frac12\wedgecomm{\boldsymbol\omega}{\boldsymbol\omega})}\numberthis\label{EHAction4}
-\end{align}
 
-Comparison with Chern-Simons theory,
-
-\begin{align}
-    S_{\textnormal{CS}}\qty[\vb A]&=\frac{k}{4\pi}\int\limits_M\expval{\vb A\ \wedgecomma\ \qty(\vb d{\vb A}+\frac13\wedgecomm{\vb A}{\vb A})}\numberthis\label{YangMillsAction}
-\end{align}
 
 % Donec faucibus purus at tortor egestas eu fermentum dolor facilisis. Maecenas tempor dui eu neque fringilla rutrum. Mauris \emph{lobortis} nisl accumsan. Aenean vitae risus ante.
 % %
@@ -329,40 +329,53 @@ Comparison with Chern-Simons theory,
 
 % \color{SaddleBrown} % SaddleBrown color for the conclusions to make them stand out
 
-% \section*{Conclusions}
+\section*{Conclusions}
 
+\begin{itemize}
+    \item Gravity in $D=2+1$ is expressible in terms of an usual gauge theory, a Chern-Simons one. That is, the EH (EC) action --- specifically in $D=3$ --- possesses beyond the usual 
+    diffeomorphism redundancy, an additional local Poincaré redundancy. These are equivalent for vacuum solutions. 
+
+    \item The equivalence shown for this lower dimensional toy model shed some light on a possible quantization proceedure for $D=3$ gravity, 
+    as it can inherit the well estabilished quantization proceedure of Chern-Simons theories.
+
+    \item Despite not being a description of gravity in our world, the expectation is that this toy model can provide some insight into $D=4$ gravity.
+\end{itemize}
 % \begin{itemize}
-% \item Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh. Phasellus fermentum rutrum elementum. Nam quis justo lectus.
-% \item Vestibulum sem ante, hendrerit a gravida ac, blandit quis magna.
-% \item Donec sem metus, facilisis at condimentum eget, vehicula ut massa. Morbi consequat, diam sed convallis tincidunt, arcu nunc.
-% \item Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
+%     \item Gravity in $D=2+1$ is expressible in terms of a usual gauge theory, a Chern-Simons one.
+%     \item Vestibulum sem ante, hendrerit a gravida ac, blandit quis magna.
+%     \item Donec sem metus, facilisis at condimentum eget, vehicula ut massa. Morbi consequat, diam sed convallis tincidunt, arcu nunc.
+%     \item Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
 % \end{itemize}
 
-\color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
+% \color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
 
 %----------------------------------------------------------------------------------------
 %	FORTHCOMING RESEARCH
 %----------------------------------------------------------------------------------------
 
-\section*{Forthcoming Research}
+% \section*{Forthcoming Research}
 
-Vivamus molestie, risus tempor vehicula mattis, libero arcu volutpat purus, sed blandit sem nibh eget turpis. Maecenas rutrum dui blandit lorem vulputate gravida. Praesent venenatis mi vel lorem tempor at varius diam sagittis. Nam eu leo id turpis interdum luctus a sed augue. Nam tellus.
 
- %----------------------------------------------------------------------------------------
-%	REFERENCES
-%----------------------------------------------------------------------------------------
 
-\nocite{*} % Print all references regardless of whether they were cited in the poster or not
-\bibliographystyle{plain} % Plain referencing style
-\bibliography{sample} % Use the example bibliography file sample.bib
+%  %----------------------------------------------------------------------------------------
+% %	REFERENCES
+% %----------------------------------------------------------------------------------------
 
-%----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
-%----------------------------------------------------------------------------------------
+% \nocite{*} % Print all references regardless of whether they were cited in the poster or not
+% \bibliographystyle{plain} % Plain referencing style
+% \bibliography{sample} % Use the example bibliography file sample.bib
+
+% %----------------------------------------------------------------------------------------
+% %	ACKNOWLEDGEMENTS
+% %----------------------------------------------------------------------------------------
 
 \section*{Acknowledgements}
 
-Etiam fermentum, arcu ut gravida fringilla, dolor arcu laoreet justo, ut imperdiet urna arcu a arcu. Donec nec ante a dui tempus consectetur. Cras nisi turpis, dapibus sit amet mattis sed, laoreet.
+I would like to thank the IFUSP for providing an excellent academic environment and CAPES for financial support. Their contributions were essential to the development of this work.
+
+\printbibliography
+
+
 
 %----------------------------------------------------------------------------------------
 
@@ -381,7 +394,7 @@ Etiam fermentum, arcu ut gravida fringilla, dolor arcu laoreet justo, ut imperdi
 % \end{minipage}
 %
 \hfill
-\begin{minipage}[b]{0.7\linewidth}
+\begin{minipage}[b]{0.6\linewidth}
     \vspace{1.7cm}
 \includegraphics[width=20cm]{logohorizontalcapes2.png}\\
 \end{minipage}
