@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.27)  14 OCT 2025 17:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.27)  14 OCT 2025 17:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -489,22 +489,28 @@ No file main.bbl.
 <usplogo.pdf, id=3, 803.0pt x 602.25pt>
 File: usplogo.pdf Graphic file (type pdf)
 <use usplogo.pdf>
-Package pdftex.def Info: usplogo.pdf  used on input line 371.
+Package pdftex.def Info: usplogo.pdf  used on input line 375.
 (pdftex.def)             Requested size: 284.52756pt x 213.4005pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
 
  []
 
-<logohorizontalcapes.jpg, id=4, 853.1875pt x 851.18pt>
-File: logohorizontalcapes.jpg Graphic file (type jpg)
-<use logohorizontalcapes.jpg>
-Package pdftex.def Info: logohorizontalcapes.jpg  used on input line 380.
-(pdftex.def)             Requested size: 569.05511pt x 567.75497pt.
+<logohorizontalcapes2.png, id=4, 984.67876pt x 188.705pt>
+File: logohorizontalcapes2.png Graphic file (type png)
+<use logohorizontalcapes2.png>
+Package pdftex.def Info: logohorizontalcapes2.png  used on input line 386.
+(pdftex.def)             Requested size: 569.05511pt x 109.05737pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
 
  []
+
+
+
+
+
+
 
 
 
@@ -515,9 +521,7 @@ Non-PDF special ignored!
 <special> papersize=83.96cm,118.82cm
 {/opt/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/texlive/2
 025/texmf-dist/fonts/enc/dvips/base/8r.enc} <./logohorizontalifusp.png> <./uspl
-ogo.pdf>]
-
-[2 <./logohorizontalcapes.jpg>] (./main.aux)
+ogo.pdf> <./logohorizontalcapes2.png>] (./main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
@@ -525,8 +529,8 @@ L3 programming layer <2025-08-13>
  ) 
 Here is how much of TeX's memory you used:
  7191 strings out of 467800
- 114788 string characters out of 5405838
- 595632 words of memory out of 5000000
+ 114795 string characters out of 5405838
+ 597632 words of memory out of 5000000
  35714 multiletter control sequences out of 15000+600000
  656294 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -542,10 +546,10 @@ c/amsfonts/euler/eufm10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/urw/couri
 er/ucrr8a.pfb></opt/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></
 opt/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/texlive/2025
 /texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 391203 bytes).
+Output written on main.pdf (1 page, 396150 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 91 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
