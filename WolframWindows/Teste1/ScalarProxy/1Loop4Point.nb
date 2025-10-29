@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     51076,       1179]
-NotebookOptionsPosition[     34788,        881]
-NotebookOutlinePosition[     48381,       1144]
-CellTagsIndexPosition[     48338,       1141]
+NotebookDataLength[    200325,       4695]
+NotebookOptionsPosition[    183417,       4389]
+NotebookOutlinePosition[    197010,       4652]
+CellTagsIndexPosition[    196967,       4649]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -35,17 +35,17 @@ Cell[BoxData[
    "\"Tag \\!\\(\\*RowBox[{\\\"Commutator\\\"}]\\) in \
 \\!\\(\\*RowBox[{RowBox[{\\\"Commutator\\\", \\\"[\\\", RowBox[{\\\"a_\\\", \
 \\\",\\\", \\\"b_\\\"}], \\\"]\\\"}], \\\"=\\\", \\\"c_\\\"}]\\) is \
-Protected.\"", 2, 2, 1, 30889882891563793485, "Local"},
+Protected.\"", 2, 2, 1, 30890282332992656890, "Local"},
   "MessageTemplate",
   BaseStyle->"MSG"]], "Message",
  CellChangeTimes->{3.9705889870754986`*^9, 3.970589153335314*^9, 
   3.970589283679903*^9, 3.9705902016194363`*^9, 3.9705904011219807`*^9, 
   3.9705907253033504`*^9, 3.9705913942367096`*^9, 3.970591779540531*^9, 
   3.9705924576473656`*^9, 3.970593089112259*^9, 3.9705931805405865`*^9, 
-  3.970593248905056*^9},
+  3.970593248905056*^9, 3.9706537908598537`*^9, 3.9706542005514984`*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"be87512a-d297-e44a-90c0-29325e64c3b3"],
+In[1]:=",ExpressionUUID->"8661cc1d-1cd0-cd4a-8d03-477dfc1bdb62"],
 
 Cell[BoxData[
  TemplateBox[{
@@ -54,17 +54,17 @@ Cell[BoxData[
 \\!\\(\\*RowBox[{\\\"MakeBoxes\\\", \\\"[\\\", RowBox[{RowBox[{\\\"Commutator\
 \\\", \\\"[\\\", RowBox[{\\\"a_\\\", \\\",\\\", \\\"b_\\\"}], \\\"]\\\"}], \\\
 \",\\\", \\\"TraditionalForm\\\"}], \\\"]\\\"}]\\) is Protected.\"", 2, 2, 2, 
-   30889882891563793485, "Local"},
+   30890282332992656890, "Local"},
   "MessageTemplate",
   BaseStyle->"MSG"]], "Message",
  CellChangeTimes->{3.9705889870754986`*^9, 3.970589153335314*^9, 
   3.970589283679903*^9, 3.9705902016194363`*^9, 3.9705904011219807`*^9, 
   3.9705907253033504`*^9, 3.9705913942367096`*^9, 3.970591779540531*^9, 
   3.9705924576473656`*^9, 3.970593089112259*^9, 3.9705931805405865`*^9, 
-  3.970593248919426*^9},
+  3.970593248905056*^9, 3.9706537908598537`*^9, 3.970654200567583*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"f0e8a380-3318-2640-954b-821890b962c0"],
+In[1]:=",ExpressionUUID->"dd3a2f20-336b-2448-9937-191e79213e84"],
 
 Cell[BoxData[
  TemplateBox[{
@@ -73,17 +73,17 @@ Cell[BoxData[
 \\!\\(\\*RowBox[{\\\"Commutator\\\", \\\"[\\\", \
 RowBox[{RowBox[{\\\"RightPartialD\\\", \\\"[\\\", \\\"x_\\\", \\\"]\\\"}], \\\
 \",\\\", RowBox[{\\\"LeftPartialD\\\", \\\"[\\\", \\\"y_\\\", \\\"]\\\"}]}], \
-\\\"]\\\"}]\\) is Protected.\"", 2, 2, 3, 30889882891563793485, "Local"},
+\\\"]\\\"}]\\) is Protected.\"", 2, 2, 3, 30890282332992656890, "Local"},
   "MessageTemplate",
   BaseStyle->"MSG"]], "Message",
  CellChangeTimes->{3.9705889870754986`*^9, 3.970589153335314*^9, 
   3.970589283679903*^9, 3.9705902016194363`*^9, 3.9705904011219807`*^9, 
   3.9705907253033504`*^9, 3.9705913942367096`*^9, 3.970591779540531*^9, 
   3.9705924576473656`*^9, 3.970593089112259*^9, 3.9705931805405865`*^9, 
-  3.9705932491201496`*^9},
+  3.970593248905056*^9, 3.9706537908598537`*^9, 3.970654200793991*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"51cdd837-8560-464d-95f7-09d555881824"],
+In[1]:=",ExpressionUUID->"0fa49121-681f-014a-9262-b10a412b5fb5"],
 
 Cell[BoxData[
  TemplateBox[{
@@ -91,17 +91,17 @@ Cell[BoxData[
    "\"Tag \\!\\(\\*RowBox[{\\\"Commutator\\\"}]\\) in \
 \\!\\(\\*RowBox[{RowBox[{\\\"Commutator\\\", \\\"[\\\", RowBox[{\\\"a_\\\", \
 \\\",\\\", \\\"b_\\\"}], \\\"]\\\"}], \\\"=\\\", \\\"c_\\\"}]\\) is \
-Protected.\"", 2, 2, 4, 30889882891563793485, "Local"},
+Protected.\"", 2, 2, 4, 30890282332992656890, "Local"},
   "MessageTemplate",
   BaseStyle->"MSG"]], "Message",
  CellChangeTimes->{3.9705889870754986`*^9, 3.970589153335314*^9, 
   3.970589283679903*^9, 3.9705902016194363`*^9, 3.9705904011219807`*^9, 
   3.9705907253033504`*^9, 3.9705913942367096`*^9, 3.970591779540531*^9, 
   3.9705924576473656`*^9, 3.970593089112259*^9, 3.9705931805405865`*^9, 
-  3.9705932507680855`*^9},
+  3.970593248905056*^9, 3.9706537908598537`*^9, 3.9706542028027115`*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"29fdadf4-2626-c845-9223-4f32b8dd3d83"],
+In[1]:=",ExpressionUUID->"347add8e-f69b-854c-813f-4984d8e2f7f6"],
 
 Cell[BoxData[
  TemplateBox[{
@@ -110,17 +110,17 @@ Cell[BoxData[
 \\!\\(\\*RowBox[{\\\"MakeBoxes\\\", \\\"[\\\", RowBox[{RowBox[{\\\"Commutator\
 \\\", \\\"[\\\", RowBox[{\\\"a_\\\", \\\",\\\", \\\"b_\\\"}], \\\"]\\\"}], \\\
 \",\\\", \\\"TraditionalForm\\\"}], \\\"]\\\"}]\\) is Protected.\"", 2, 2, 5, 
-   30889882891563793485, "Local"},
+   30890282332992656890, "Local"},
   "MessageTemplate",
   BaseStyle->"MSG"]], "Message",
  CellChangeTimes->{3.9705889870754986`*^9, 3.970589153335314*^9, 
   3.970589283679903*^9, 3.9705902016194363`*^9, 3.9705904011219807`*^9, 
   3.9705907253033504`*^9, 3.9705913942367096`*^9, 3.970591779540531*^9, 
   3.9705924576473656`*^9, 3.970593089112259*^9, 3.9705931805405865`*^9, 
-  3.970593250779606*^9},
+  3.970593248905056*^9, 3.9706537908598537`*^9, 3.970654202815737*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"62c475bd-e46c-8943-a8d8-6b1ef1d7336d"],
+In[1]:=",ExpressionUUID->"dd402090-77e5-bb4a-a7fb-ae00a9ca44e7"],
 
 Cell[CellGroupData[{
 
@@ -221,10 +221,10 @@ manual/FeynCalcManual.pdf"]], "Text"]],
   3.9705892869846573`*^9, 3.970590204822029*^9, 3.970590404370598*^9, 
   3.9705907286451893`*^9, 3.9705913975870037`*^9, 3.970591782621088*^9, 
   3.970592460648041*^9, 3.9705930917993126`*^9, 3.9705931836072235`*^9, 
-  3.9705932520116024`*^9},
+  3.9705932520116024`*^9, 3.970653793387068*^9, 3.970654204162775*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"944dbf79-3d95-9a43-be49-500d5ff9abd5"],
+In[1]:=",ExpressionUUID->"869378f6-36d9-2547-bd88-755d446080f5"],
 
 Cell[BoxData[
  StyleBox["\<\"If you use FeynCalc in your research, please evaluate \
@@ -234,10 +234,10 @@ FeynCalcHowToCite[] to learn how to cite this software.\"\>", "Text",
   3.9705892869846573`*^9, 3.970590204822029*^9, 3.970590404370598*^9, 
   3.9705907286451893`*^9, 3.9705913975870037`*^9, 3.970591782621088*^9, 
   3.970592460648041*^9, 3.9705930917993126`*^9, 3.9705931836072235`*^9, 
-  3.9705932520445576`*^9},
+  3.9705932520116024`*^9, 3.970653793387068*^9, 3.970654204183857*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"6fba9ff4-dc38-3141-8eb8-4f6d03db81d4"],
+In[1]:=",ExpressionUUID->"12fec046-0770-6b4b-946c-5610d7ac0791"],
 
 Cell[BoxData[
  StyleBox["\<\"Please keep in mind that the proper academic attribution of \
@@ -249,10 +249,10 @@ our work is crucial to ensure the future development of this package!\"\>",
   3.9705892869846573`*^9, 3.970590204822029*^9, 3.970590404370598*^9, 
   3.9705907286451893`*^9, 3.9705913975870037`*^9, 3.970591782621088*^9, 
   3.970592460648041*^9, 3.9705930917993126`*^9, 3.9705931836072235`*^9, 
-  3.9705932520445576`*^9},
+  3.9705932520116024`*^9, 3.970653793387068*^9, 3.970654204183857*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"d46968e8-4254-5e47-a5ea-9507a9f43175"],
+In[1]:=",ExpressionUUID->"995f074e-0c54-be4c-9849-a9efe113e091"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -310,10 +310,10 @@ see the ", "Text"],
   3.9705892869846573`*^9, 3.970590204822029*^9, 3.970590404370598*^9, 
   3.9705907286451893`*^9, 3.9705913975870037`*^9, 3.970591782621088*^9, 
   3.970592460648041*^9, 3.9705930917993126`*^9, 3.9705931836072235`*^9, 
-  3.9705932521285095`*^9},
+  3.9705932520116024`*^9, 3.970653793387068*^9, 3.970654204306307*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"56a35b7b-dd5d-fc4d-aeac-1926a93391c6"],
+In[1]:=",ExpressionUUID->"c2f4d98c-606d-9f4f-b196-cfdba4014747"],
 
 Cell[BoxData[
  StyleBox["\<\"If you use FeynArts in your research, please cite\"\>", "Text",
@@ -322,10 +322,10 @@ Cell[BoxData[
   3.9705892869846573`*^9, 3.970590204822029*^9, 3.970590404370598*^9, 
   3.9705907286451893`*^9, 3.9705913975870037`*^9, 3.970591782621088*^9, 
   3.970592460648041*^9, 3.9705930917993126`*^9, 3.9705931836072235`*^9, 
-  3.9705932521285095`*^9},
+  3.9705932520116024`*^9, 3.970653793387068*^9, 3.970654204306307*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"f59cc8eb-77c2-e04f-8001-2e79ee820f02"],
+In[1]:=",ExpressionUUID->"714ba655-b71b-044d-bfc3-dc30183737d1"],
 
 Cell[BoxData[
  StyleBox["\<\" \[Bullet] T. Hahn, Comput. Phys. Commun., 140, 418-431, 2001, \
@@ -335,10 +335,10 @@ arXiv:hep-ph/0012260\"\>", "Text",
   3.9705892869846573`*^9, 3.970590204822029*^9, 3.970590404370598*^9, 
   3.9705907286451893`*^9, 3.9705913975870037`*^9, 3.970591782621088*^9, 
   3.970592460648041*^9, 3.9705930917993126`*^9, 3.9705931836072235`*^9, 
-  3.9705932521438866`*^9},
+  3.9705932520116024`*^9, 3.970653793387068*^9, 3.9706542043083096`*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"6eab5d25-f5bd-8b4c-aed9-6bb9538432d2"]
+In[1]:=",ExpressionUUID->"c6e77135-fc3b-104c-a0ee-614979f87a23"]
 }, Open  ]]
 }, Open  ]],
 
@@ -358,10 +358,11 @@ Cell["Successfully patched FeynArts.", "Print",
  CellChangeTimes->{3.970589156441635*^9, 3.970589287682663*^9, 
   3.9705902055055733`*^9, 3.970590405076618*^9, 3.9705907293318653`*^9, 
   3.9705913983084183`*^9, 3.97059178330122*^9, 3.970592461320652*^9, 
-  3.9705930926917896`*^9, 3.970593184267662*^9, 3.9705932527011967`*^9},
+  3.9705930926917896`*^9, 3.970593184267662*^9, 3.9705932527011967`*^9, 
+  3.9706537945388355`*^9, 3.9706542048923798`*^9},
  CellLabel->
   "During evaluation of \
-In[4]:=",ExpressionUUID->"99921463-3fb4-e347-8bff-654375e977fb"]
+In[4]:=",ExpressionUUID->"5c20023d-8e74-084c-87d2-a2da30cdc8d5"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -640,8 +641,8 @@ Cell[BoxData[
           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], ")"}]}]}], 
    ")"}]}]], "Output",
  CellChangeTimes->{3.970593093185375*^9, 3.9705931847578487`*^9, 
-  3.9705932531950626`*^9},
- CellLabel->"Out[10]=",ExpressionUUID->"c082873a-ab87-2a41-a9d6-effe3b22716c"]
+  3.9705932531950626`*^9, 3.970653795027317*^9, 3.97065420543021*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"70d51916-b5b1-714a-95d0-ea50e6cedd0e"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -669,46 +670,46 @@ Cell[BoxData[
    (-I) Global`g^2 (
     3 - (-Global`m^2 + 2 Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta3] + 
-     2 Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
+     2 Global`mp[Global`momenta3, Global`momenta3]) ((-Global`m^2 + 
+      Global`mp[Global`momenta1, Global`momenta1] + 
+      Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      Global`mp[Global`momenta3, Global`momenta3] + 
+      Global`mp[Global`momenta4, Global`momenta4])/((
+      Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
+      Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      Global`mp[Global`momenta3, Global`momenta3]))) - (-Global`m^2 + 
      Global`mp[Global`momenta1, Global`momenta1] + 
      Global`mp[Global`momenta2, Global`momenta2] + 
-     2 Global`mp[Global`momenta2, Global`momenta3] + 
-     Global`mp[Global`momenta3, Global`momenta3] + 
-     Global`mp[Global`momenta4, Global`momenta4])/((
-     Global`mp[Global`momenta2, Global`momenta2] + 
-     2 Global`mp[Global`momenta2, Global`momenta3] + 
-     Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
-     Global`mp[Global`momenta2, Global`momenta2] + 
-     2 Global`mp[Global`momenta2, Global`momenta3] + 
-     Global`mp[Global`momenta3, Global`momenta3])) - (-Global`m^2 + 
-     Global`mp[Global`momenta1, Global`momenta1] + 
-     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta4] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
-     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-     2 Global`mp[Global`momenta2, Global`momenta2] + 
-     2 Global`mp[Global`momenta2, Global`momenta4] + 
-     2 Global`mp[Global`momenta4, Global`momenta4])/((
-     Global`mp[Global`momenta2, Global`momenta2] + 
-     2 Global`mp[Global`momenta2, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-     Global`mp[Global`momenta2, Global`momenta2] + 
-     2 Global`mp[Global`momenta2, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4])) - (-Global`m^2 + 
+     Global`mp[Global`momenta4, Global`momenta4]) ((-Global`m^2 + 
+      2 Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta4])/((
+      Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+      Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      Global`mp[Global`momenta4, Global`momenta4]))) - (-Global`m^2 + 
      Global`mp[Global`momenta1, Global`momenta1] + 
      Global`mp[Global`momenta2, Global`momenta2] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-     2 Global`mp[Global`momenta3, Global`momenta3] + 
-     2 Global`mp[Global`momenta3, Global`momenta4] + 
-     2 Global`mp[Global`momenta4, Global`momenta4])/((
-     Global`mp[Global`momenta3, Global`momenta3] + 
-     2 Global`mp[Global`momenta3, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-     Global`mp[Global`momenta3, Global`momenta3] + 
-     2 Global`mp[Global`momenta3, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4]))),
+     Global`mp[Global`momenta4, Global`momenta4]) ((-Global`m^2 + 
+      2 Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta4])/((
+      Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+      Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      Global`mp[Global`momenta4, Global`momenta4])))),
    SelectWithContents->True,
    Selectable->False]}]], "Input",
  CellChangeTimes->{{3.970592668743908*^9, 3.9705926974133415`*^9}, {
@@ -823,8 +824,8 @@ Cell[BoxData[
    3.970590205756071*^9, 3.970590405379156*^9, 3.970590729712349*^9, 
    3.970591398518444*^9, 3.970591783440096*^9, 3.9705920351301384`*^9, 
    3.9705924615476265`*^9, 3.9705930933033047`*^9, 3.970593184941454*^9, 
-   3.970593253397209*^9},
- CellLabel->"Out[16]=",ExpressionUUID->"92f96ead-2da6-7f41-94a0-441bddca6e9e"]
+   3.970593253397209*^9, 3.9706537951613083`*^9, 3.9706542056680374`*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"234be6a2-5aa4-0a40-9095-a485c726b246"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -861,6 +862,3512 @@ Cell[BoxData[
  CellLabel->"In[17]:=",ExpressionUUID->"b021dc41-5747-8a47-bd5a-62eab4f33c0a"],
 
 Cell[BoxData[
+ RowBox[{
+  RowBox[{"diags3", "=", 
+   RowBox[{"InsertFields", "[", 
+    RowBox[{
+     RowBox[{"CreateTopologies", "[", 
+      RowBox[{"0", ",", 
+       RowBox[{"2", "->", "3"}]}], "]"}], ",", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"S", "[", "1", "]"}], ",", 
+        RowBox[{"S", "[", "1", "]"}]}], "}"}], "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"S", "[", "1", "]"}], ",", 
+        RowBox[{"S", "[", "1", "]"}], ",", 
+        RowBox[{"S", "[", "1", "]"}]}], "}"}]}], ",", 
+     RowBox[{"InsertionLevel", "->", 
+      RowBox[{"{", "Classes", "}"}]}], ",", 
+     RowBox[{
+     "Model", "->", \
+"\"\<C:\\\\Users\\\\vfigu\\\\OneDrive\\\\Documentos\\\\vvfigueira.github.io\\\
+\\WolframWindows\\\\Teste1\\\\ScalarProxy\\\\ScalarProxy\>\""}], ",", " ", 
+     RowBox[{
+     "GenericModel", " ", 
+      "->", "\"\<C:\\\\Users\\\\vfigu\\\\OneDrive\\\\Documentos\\\\vvfigueira.\
+github.io\\\\WolframWindows\\\\Teste1\\\\ScalarProxy\\\\ScalarProxy\>\""}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.9706536613386974`*^9, 3.970653671420723*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"e4d2c7c5-9750-9645-8a92-282e1cecec04"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"amp3", "[", "0", "]"}], "=", 
+   RowBox[{"FCFAConvert", "[", 
+    RowBox[{
+     RowBox[{"CreateFeynAmp", "[", 
+      RowBox[{"diags3", ",", " ", 
+       RowBox[{"PreFactor", "->", "1"}]}], "]"}], ",", 
+     RowBox[{"IncomingMomenta", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "momenta1"}], ",", 
+        RowBox[{"-", "momenta2"}]}], "}"}]}], ",", 
+     RowBox[{"OutgoingMomenta", "->", 
+      RowBox[{"{", 
+       RowBox[{"momenta3", ",", "momenta4", ",", "momenta5"}], "}"}]}], ",", 
+     RowBox[{"LoopMomenta", "->", 
+      RowBox[{"{", "}"}]}], ",", 
+     RowBox[{"ChangeDimension", "->", "4"}], ",", 
+     RowBox[{"List", "->", "False"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.9706536837397976`*^9, 3.970653704456665*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"cc85f204-1230-aa43-8d0c-5e4d618e0ee9"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"amp3", "[", "1", "]"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"amp3", "[", "0", "]"}], " ", "//", " ", "Contract"}], " ", "//",
+     " ", "SUNSimplify"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"amp3", "[", "2", "]"}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"amp3", "[", "1", "]"}], " ", "//", " ", 
+    "ExpandScalarProduct"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.9706537158082848`*^9, 3.97065371963978*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"4ec0a8b0-b4f8-ec47-a721-65d69c3e1b10"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tree5point", " ", "=", 
+  RowBox[{
+   RowBox[{"FeynAmpDenominatorExplicit", "[", 
+    RowBox[{"amp3", "[", "2", "]"}], "]"}], " ", "/.", 
+   RowBox[{
+    RowBox[{"Pair", "[", 
+     RowBox[{
+      RowBox[{"Momentum", "[", "a_Symbol", "]"}], ",", 
+      RowBox[{"Momentum", "[", "b_Symbol", "]"}]}], "]"}], "->", 
+    RowBox[{"mp", "[", 
+     RowBox[{"a", ",", "b"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.9706537322600727`*^9, 3.970653735144764*^9}, {
+  3.9706541067982006`*^9, 3.9706541612363777`*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"afdbb5fb-a99f-ad41-9acd-45e6d2d6e865"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"3", " ", 
+       SuperscriptBox["g", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+          SuperscriptBox["m", "2"]}], "-", 
+         RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+         RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+         RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"mp", "[", 
+             RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+            RowBox[{"2", " ", 
+             RowBox[{"mp", "[", 
+              RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+            RowBox[{"mp", "[", 
+             RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}]}]}], 
+        ")"}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"mp", "[", 
+          RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+         RowBox[{"2", " ", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+         RowBox[{"mp", "[", 
+          RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", 
+          SuperscriptBox["m", "2"]}], "+", 
+         RowBox[{"mp", "[", 
+          RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+         RowBox[{"2", " ", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+         RowBox[{"mp", "[", 
+          RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}]}], ")"}]}], 
+    ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["g", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["g", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["g", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}]}], ")"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}]}], ")"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}]}], ")"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}]}], ")"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["g", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["g", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["g", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["g", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta3"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["g", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta2", ",", "momenta2"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["g", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta4"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta1", ",", "momenta1"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta2", ",", "momenta2"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        SuperscriptBox["m", "2"]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta3"}], "]"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"mp", "[", 
+            RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+          RowBox[{"mp", "[", 
+           RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}]}], ")"}]}],
+     ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["m", "2"]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta3", ",", "momenta3"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta4"}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta3", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta4", ",", "momenta4"}], "]"}], "+", 
+       RowBox[{"2", " ", 
+        RowBox[{"mp", "[", 
+         RowBox[{"momenta4", ",", "momenta5"}], "]"}]}], "+", 
+       RowBox[{"mp", "[", 
+        RowBox[{"momenta5", ",", "momenta5"}], "]"}]}], ")"}]}], 
+    ")"}]}]}]], "Output",
+ CellChangeTimes->{{3.970654135429064*^9, 3.9706541617484818`*^9}, 
+   3.970654206118086*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"275a2abe-44be-4f40-97e9-d6ba3c71d5ee"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Tree5Point", "[", 
+   RowBox[{
+   "momenta1_", ",", "momenta2_", ",", "momenta3_", ",", "momenta4_", ",", 
+    "momenta5_"}], "]"}], ":=", 
+  InterpretationBox[
+   DynamicModuleBox[{Typeset`open = False}, 
+    TemplateBox[{"Expression", 
+      RowBox[{"Plus", "[", 
+        DynamicBox[
+         FEPrivate`FrontEndResource["FEBitmaps", "IconizeEllipsis"]], "]"}], 
+      GridBox[{{
+         RowBox[{
+           TagBox["\"Byte count: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+           TagBox["119200", "IconizedItem"]}]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+       "Column", 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+      Dynamic[Typeset`open]},
+     "IconizedObject"]],
+   -(3 Global`g^2 (I Global`g Global`m^2 - I Global`g 
+      Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+      Global`mp[Global`momenta3, Global`momenta3] - I 
+      Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+       2 Global`mp[Global`momenta2, Global`momenta3] + 
+       Global`mp[Global`momenta3, Global`momenta3]))/((
+      Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
+      Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      Global`mp[Global`momenta3, Global`momenta3]))) - 3 
+   Global`g^2 (I Global`g Global`m^2 - I Global`g 
+    Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]))/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4])) - 3 
+   Global`g^2 (I Global`g Global`m^2 - I Global`g 
+    Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]))/((
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4])) - 3 
+   Global`g^2 (I Global`g Global`m^2 - I Global`g 
+    Global`mp[Global`momenta1, Global`momenta1] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5])/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+    Global`mp[Global`momenta3, Global`momenta3] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     Global`mp[Global`momenta3, Global`momenta3])) (I Global`g Global`m^2 - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     Global`mp[Global`momenta3, Global`momenta3]) - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5])/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    Global`mp[Global`momenta3, Global`momenta3]) (
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta3, Global`momenta3] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5])/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta2, Global`momenta2] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5])/((
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4])) - 3 
+   Global`g^2 (I Global`g Global`m^2 - I Global`g 
+    Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - 3 
+   Global`g^2 (I Global`g Global`m^2 - I Global`g 
+    Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - 3 
+   Global`g^2 (I Global`g Global`m^2 - I Global`g 
+    Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+    Global`mp[Global`momenta3, Global`momenta3] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     Global`mp[Global`momenta3, Global`momenta3])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     Global`mp[Global`momenta3, Global`momenta3]) - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    Global`mp[Global`momenta3, Global`momenta3]) (
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta3, Global`momenta3] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]) - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta2, Global`momenta2] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]) - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - 3 
+   Global`g^2 (I Global`g Global`m^2 - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+    Global`mp[Global`momenta3, Global`momenta3] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     Global`mp[Global`momenta3, Global`momenta3])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     Global`mp[Global`momenta3, Global`momenta3]) - I 
+    Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta4, Global`momenta4] - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta3] + 
+    Global`mp[Global`momenta3, Global`momenta3]) (
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - 3 
+   Global`g^2 (I Global`g Global`m^2 - I Global`g 
+    Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+    Global`mp[Global`momenta3, Global`momenta3] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+    Global`mp[Global`momenta3, Global`momenta3] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+    Global`mp[Global`momenta3, Global`momenta3] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]) - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta4, Global`momenta4] - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+    Global`mp[Global`momenta3, Global`momenta3] - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta2, Global`momenta2] - I 
+    Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]) - I 
+    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta2, Global`momenta2] + 
+    2 Global`mp[Global`momenta2, Global`momenta4] + 
+    2 Global`mp[Global`momenta2, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - 3 
+   Global`g^2 (I Global`g Global`m^2 - I Global`g 
+    Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+    Global`mp[Global`momenta2, Global`momenta2] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
+    Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+    Global`mp[Global`momenta2, Global`momenta2] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    Global`mp[Global`momenta4, Global`momenta4]) (
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+    Global`mp[Global`momenta2, Global`momenta2] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta4, Global`momenta4] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]) - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+    I Global`g Global`mp[Global`momenta4, Global`momenta4] - I Global`g 
+    Global`mp[Global`momenta5, Global`momenta5] - I 
+    Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+    Global`mp[Global`momenta2, Global`momenta2] - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
+    Global`g Global`mp[Global`momenta3, Global`momenta3] - I 
+    Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]) - I 
+    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))/((
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+    Global`mp[Global`momenta3, Global`momenta3] + 
+    2 Global`mp[Global`momenta3, Global`momenta4] + 
+    2 Global`mp[Global`momenta3, Global`momenta5] + 
+    Global`mp[Global`momenta4, Global`momenta4] + 
+    2 Global`mp[Global`momenta4, Global`momenta5] + 
+    Global`mp[Global`momenta5, Global`momenta5])),
+   SelectWithContents->True,
+   Selectable->False]}]], "Input",
+ CellChangeTimes->{{3.970653752259815*^9, 3.9706537650940742`*^9}, {
+  3.9706542301370716`*^9, 3.9706542407861576`*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"4d920461-e43a-b947-a567-392a10f62269"],
+
+Cell[BoxData[
  RowBox[{"Save", "[", 
   RowBox[{
    RowBox[{"FileNameJoin", "[", 
@@ -869,15 +4376,16 @@ Cell[BoxData[
       RowBox[{"NotebookDirectory", "[", "]"}], 
       ",", "\"\<TreePointFunctions.wl\>\""}], "}"}], "]"}], ",", 
    RowBox[{"{", 
-    RowBox[{"Tree3Point", ",", "Tree4Point"}], "}"}]}], "]"}]], "Input",
+    RowBox[{"Tree3Point", ",", "Tree4Point", ",", "Tree5Point"}], "}"}]}], 
+  "]"}]], "Input",
  CellChangeTimes->{{3.970590360460926*^9, 3.970590383144888*^9}, {
   3.9705905459088383`*^9, 3.9705905802792816`*^9}, {3.9705913181652393`*^9, 
   3.9705913196161213`*^9}, {3.970591729723751*^9, 3.970591736657566*^9}, {
   3.9705920144897537`*^9, 3.970592046074007*^9}, {3.970592304502304*^9, 
   3.9705923147130985`*^9}, {3.970592431875681*^9, 3.9705924364132195`*^9}, {
   3.970592503169695*^9, 3.970592507984186*^9}, {3.9705926496068916`*^9, 
-  3.9705926583993225`*^9}},
- CellLabel->"In[18]:=",ExpressionUUID->"fb7c4ba5-d0c8-1747-9f19-c177bcb08cb5"]
+  3.9705926583993225`*^9}, {3.970653916264063*^9, 3.9706539215991707`*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"fb7c4ba5-d0c8-1747-9f19-c177bcb08cb5"]
 },
 WindowSize->{718.5, 729.75},
 WindowMargins->{{Automatic, 0}, {Automatic, 0}},
@@ -1145,42 +4653,50 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[576, 22, 293, 7, 66, "Input",ExpressionUUID->"7552bb67-ed68-af4c-aaea-c5d3b4444ea3"],
-Cell[872, 31, 785, 16, 26, "Message",ExpressionUUID->"be87512a-d297-e44a-90c0-29325e64c3b3"],
-Cell[1660, 49, 850, 17, 26, "Message",ExpressionUUID->"f0e8a380-3318-2640-954b-821890b962c0"],
-Cell[2513, 68, 855, 17, 26, "Message",ExpressionUUID->"51cdd837-8560-464d-95f7-09d555881824"],
-Cell[3371, 87, 787, 16, 26, "Message",ExpressionUUID->"29fdadf4-2626-c845-9223-4f32b8dd3d83"],
-Cell[4161, 105, 850, 17, 26, "Message",ExpressionUUID->"62c475bd-e46c-8943-a8d8-6b1ef1d7336d"],
+Cell[872, 31, 833, 16, 26, "Message",ExpressionUUID->"8661cc1d-1cd0-cd4a-8d03-477dfc1bdb62"],
+Cell[1708, 49, 896, 17, 26, "Message",ExpressionUUID->"dd3a2f20-336b-2448-9937-191e79213e84"],
+Cell[2607, 68, 899, 17, 26, "Message",ExpressionUUID->"0fa49121-681f-014a-9262-b10a412b5fb5"],
+Cell[3509, 87, 833, 16, 26, "Message",ExpressionUUID->"347add8e-f69b-854c-813f-4984d8e2f7f6"],
+Cell[4345, 105, 896, 17, 26, "Message",ExpressionUUID->"dd402090-77e5-bb4a-a7fb-ae00a9ca44e7"],
 Cell[CellGroupData[{
-Cell[5036, 126, 3891, 100, 68, "Print",ExpressionUUID->"944dbf79-3d95-9a43-be49-500d5ff9abd5"],
-Cell[8930, 228, 600, 11, 48, "Print",ExpressionUUID->"6fba9ff4-dc38-3141-8eb8-4f6d03db81d4"],
-Cell[9533, 241, 644, 13, 48, "Print",ExpressionUUID->"d46968e8-4254-5e47-a5ea-9507a9f43175"],
-Cell[10180, 256, 2198, 59, 45, "Print",ExpressionUUID->"56a35b7b-dd5d-fc4d-aeac-1926a93391c6"],
-Cell[12381, 317, 538, 10, 26, "Print",ExpressionUUID->"f59cc8eb-77c2-e04f-8001-2e79ee820f02"],
-Cell[12922, 329, 574, 11, 26, "Print",ExpressionUUID->"6eab5d25-f5bd-8b4c-aed9-6bb9538432d2"]
+Cell[5266, 126, 3935, 100, 68, "Print",ExpressionUUID->"869378f6-36d9-2547-bd88-755d446080f5"],
+Cell[9204, 228, 644, 11, 48, "Print",ExpressionUUID->"12fec046-0770-6b4b-946c-5610d7ac0791"],
+Cell[9851, 241, 688, 13, 48, "Print",ExpressionUUID->"995f074e-0c54-be4c-9849-a9efe113e091"],
+Cell[10542, 256, 2242, 59, 45, "Print",ExpressionUUID->"c2f4d98c-606d-9f4f-b196-cfdba4014747"],
+Cell[12787, 317, 582, 10, 26, "Print",ExpressionUUID->"714ba655-b71b-044d-bfc3-dc30183737d1"],
+Cell[13372, 329, 620, 11, 26, "Print",ExpressionUUID->"c6e77135-fc3b-104c-a0ee-614979f87a23"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13545, 346, 375, 8, 101, "Input",ExpressionUUID->"e65c7e00-d8a4-6647-9969-1586615bf263"],
-Cell[13923, 356, 431, 7, 22, "Print",ExpressionUUID->"99921463-3fb4-e347-8bff-654375e977fb"]
+Cell[14041, 346, 375, 8, 101, "Input",ExpressionUUID->"e65c7e00-d8a4-6647-9969-1586615bf263"],
+Cell[14419, 356, 482, 8, 22, "Print",ExpressionUUID->"5c20023d-8e74-084c-87d2-a2da30cdc8d5"]
 }, Open  ]],
-Cell[14369, 366, 1166, 30, 161, "Input",ExpressionUUID->"63db90be-f0ba-d043-a3a5-55b910b5bbe5"],
-Cell[15538, 398, 1061, 25, 80, "Input",ExpressionUUID->"4d2d98ef-e651-204e-97bd-c12b4e935338"],
-Cell[16602, 425, 528, 15, 47, "Input",ExpressionUUID->"fb78b475-3a42-874b-9916-45d16e723859"],
-Cell[17133, 442, 316, 7, 28, "Input",ExpressionUUID->"be760e92-0d84-f640-ab5f-a938eb9ef0ae"],
+Cell[14916, 367, 1166, 30, 161, "Input",ExpressionUUID->"63db90be-f0ba-d043-a3a5-55b910b5bbe5"],
+Cell[16085, 399, 1061, 25, 80, "Input",ExpressionUUID->"4d2d98ef-e651-204e-97bd-c12b4e935338"],
+Cell[17149, 426, 528, 15, 47, "Input",ExpressionUUID->"fb78b475-3a42-874b-9916-45d16e723859"],
+Cell[17680, 443, 316, 7, 28, "Input",ExpressionUUID->"be760e92-0d84-f640-ab5f-a938eb9ef0ae"],
 Cell[CellGroupData[{
-Cell[17474, 453, 1019, 20, 77, "Input",ExpressionUUID->"a3e34dce-e8d1-e241-be16-122c95f7c98f"],
-Cell[18496, 475, 6195, 168, 358, "Output",ExpressionUUID->"c082873a-ab87-2a41-a9d6-effe3b22716c"]
+Cell[18021, 454, 1019, 20, 77, "Input",ExpressionUUID->"a3e34dce-e8d1-e241-be16-122c95f7c98f"],
+Cell[19043, 476, 6238, 168, 358, "Output",ExpressionUUID->"70d51916-b5b1-714a-95d0-ea50e6cedd0e"]
 }, Open  ]],
-Cell[24706, 646, 3498, 70, 32, "Input",ExpressionUUID->"4c22979b-c8d1-3143-b928-90fbc1407604"],
-Cell[28207, 718, 1075, 27, 161, "Input",ExpressionUUID->"2c200fb9-051a-9247-b77c-05507f7b1a94"],
-Cell[29285, 747, 939, 22, 80, "Input",ExpressionUUID->"413eb83e-9435-be47-9abe-ed9e5647ef93"],
-Cell[30227, 771, 561, 15, 47, "Input",ExpressionUUID->"ceea9445-3c6f-0b44-8010-b66b04fe3220"],
+Cell[25296, 647, 3533, 70, 35, "Input",ExpressionUUID->"4c22979b-c8d1-3143-b928-90fbc1407604"],
+Cell[28832, 719, 1075, 27, 161, "Input",ExpressionUUID->"2c200fb9-051a-9247-b77c-05507f7b1a94"],
+Cell[29910, 748, 939, 22, 80, "Input",ExpressionUUID->"413eb83e-9435-be47-9abe-ed9e5647ef93"],
+Cell[30852, 772, 561, 15, 47, "Input",ExpressionUUID->"ceea9445-3c6f-0b44-8010-b66b04fe3220"],
 Cell[CellGroupData[{
-Cell[30813, 790, 877, 18, 80, "Input",ExpressionUUID->"fbf31d5b-6984-d14e-b479-ae8f36774989"],
-Cell[31693, 810, 769, 16, 34, "Output",ExpressionUUID->"92f96ead-2da6-7f41-94a0-441bddca6e9e"]
+Cell[31438, 791, 877, 18, 80, "Input",ExpressionUUID->"fbf31d5b-6984-d14e-b479-ae8f36774989"],
+Cell[32318, 811, 817, 16, 34, "Output",ExpressionUUID->"234be6a2-5aa4-0a40-9095-a485c726b246"]
 }, Open  ]],
-Cell[32477, 829, 1439, 31, 32, "Input",ExpressionUUID->"b021dc41-5747-8a47-bd5a-62eab4f33c0a"],
-Cell[33919, 862, 865, 17, 63, "Input",ExpressionUUID->"fb7c4ba5-d0c8-1747-9f19-c177bcb08cb5"]
+Cell[33150, 830, 1439, 31, 35, "Input",ExpressionUUID->"b021dc41-5747-8a47-bd5a-62eab4f33c0a"],
+Cell[34592, 863, 1185, 30, 161, "Input",ExpressionUUID->"e4d2c7c5-9750-9645-8a92-282e1cecec04"],
+Cell[35780, 895, 886, 22, 99, "Input",ExpressionUUID->"cc85f204-1230-aa43-8d0c-5e4d618e0ee9"],
+Cell[36669, 919, 558, 15, 47, "Input",ExpressionUUID->"4ec0a8b0-b4f8-ec47-a721-65d69c3e1b10"],
+Cell[CellGroupData[{
+Cell[37252, 938, 612, 14, 61, "Input",ExpressionUUID->"afdbb5fb-a99f-ad41-9acd-45e6d2d6e865"],
+Cell[37867, 954, 101663, 2649, 5573, "Output",ExpressionUUID->"275a2abe-44be-4f40-97e9-d6ba3c71d5ee"]
+}, Open  ]],
+Cell[139545, 3606, 42930, 761, 32, "Input",ExpressionUUID->"4d920461-e43a-b947-a567-392a10f62269"],
+Cell[182478, 4369, 935, 18, 63, "Input",ExpressionUUID->"fb7c4ba5-d0c8-1747-9f19-c177bcb08cb5"]
 }
 ]
 *)
