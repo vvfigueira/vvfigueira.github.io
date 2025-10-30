@@ -1,0 +1,25 @@
+\section{$DF^2$ Theory}
+
+The $(DF)^2+\textnormal{YM}$ theory is given by the following Lagrangian,
+
+\[\mathcal L = -\frac12 D_\mu F^{a\mu \nu}D_\alpha \tensor{F}{_a^\alpha_\nu}+\frac13 f_{abc}\tensor{F}{^a_\mu^\nu}\tensor{F}{^b_\nu^\alpha}\tensor{F}{^c_\alpha^\mu}-\frac12D_\mu\phi^ID^\mu\phi_I+\frac g2\tensor{C}{^I^a^b}\phi_I\tensor{F}{_a_\mu_\nu}\tensor{F}{_b^\mu^\nu}+\frac g6 d^{IJK}\phi_I\phi_J\phi_K-\frac{m^2}{2}\phi_I\phi^I-\frac{m^2}{4}\tensor{F}{_a_\mu_\nu}\tensor{F}{^a^\mu^\nu}\]
+
+Where of course,
+
+\begin{align*}
+    \tensor{F}{^a_\mu_\nu}&=\partial_\mu \tensor{A}{^a_\nu}-\partial_\nu \tensor{A}{^a_\mu}+g \tensor{f}{^a_b_c}\tensor{A}{^b_\mu}\tensor{A}{^c_\nu}\\
+    \qty(D_\alpha F^{\mu\nu})^a&=\partial_\alpha \tensor{F}{^a_\mu_\nu}+g \tensor{f}{^a_b_c}\tensor{A}{^b_\alpha}\tensor{F}{^c_\mu_\nu}\\
+    \qty(D_\alpha\phi)^I&=\partial_\alpha\phi^I-\im g \tensor{{\textnormal{T}^a_{\textnormal{R}}}}{^I_J}A_{a\alpha}\phi^J
+\end{align*}
+
+We also have to incorporate the gauge fixing part,
+
+\[\mathcal L_{\textnormal{GF}}=-\frac12\partial_\mu A^{a\mu}\qty(-\Box+m^2)\partial_\nu \tensor{A}{_a^\nu}\]
+
+Let us collect all the quadratic pieces,
+
+\begin{align*}
+    -\frac12 D_\mu F^{a\mu \nu}D_\alpha \tensor{F}{_a^\alpha_\nu}&=-\frac12\qty({\color{red}\partial_\mu \tensor{F}{^a^\mu^\nu}}+g \tensor{f}{^a_b_c}\tensor{A}{^b_\mu}\tensor{F}{^c^\mu^\nu})\qty({\color{red}\partial_\alpha \tensor{F}{_a^\alpha_\nu}}+g \tensor{f}{_a_d_e}\tensor{A}{^d_\alpha}\tensor{F}{^e^\alpha_\nu})\\
+    &=-\frac12\qty(\partial_\mu \tensor{F}{^a^\mu^\nu})\qty(\partial_\alpha \tensor{F}{_a^\alpha_\nu})\\
+    &=-\frac12\qty(\partial_\mu\qty({\color{red}\partial^\mu \tensor{A}{^a^\nu}-\partial^\nu \tensor{A}{^a^\mu}}+g \tensor{f}{^a_b_c}\tensor{A}{^b^\mu}\tensor{A}{^c^\nu}))\qty(\partial_\alpha\qty({\color{red}\partial^\alpha \tensor{A}{_a_\nu}-\partial_\nu \tensor{A}{_a^\alpha}}+g \tensor{f}{_a_d_e}\tensor{A}{^d_\alpha}\tensor{A}{^e_\nu}))
+\end{align*}
