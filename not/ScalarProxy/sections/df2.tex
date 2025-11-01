@@ -16,10 +16,52 @@ We also have to incorporate the gauge fixing part,
 
 \[\mathcal L_{\textnormal{GF}}=-\frac12\partial_\mu A^{a\mu}\qty(-\Box+m^2)\partial_\nu \tensor{A}{_a^\nu}\]
 
+\subsection{quadratic piece}
+
 Let us collect all the quadratic pieces,
 
 \begin{align*}
     -\frac12 D_\mu F^{a\mu \nu}D_\alpha \tensor{F}{_a^\alpha_\nu}&=-\frac12\qty({\color{red}\partial_\mu \tensor{F}{^a^\mu^\nu}}+g \tensor{f}{^a_b_c}\tensor{A}{^b_\mu}\tensor{F}{^c^\mu^\nu})\qty({\color{red}\partial_\alpha \tensor{F}{_a^\alpha_\nu}}+g \tensor{f}{_a_d_e}\tensor{A}{^d_\alpha}\tensor{F}{^e^\alpha_\nu})\\
     &=-\frac12\qty(\partial_\mu \tensor{F}{^a^\mu^\nu})\qty(\partial_\alpha \tensor{F}{_a^\alpha_\nu})\\
-    &=-\frac12\qty(\partial_\mu\qty({\color{red}\partial^\mu \tensor{A}{^a^\nu}-\partial^\nu \tensor{A}{^a^\mu}}+g \tensor{f}{^a_b_c}\tensor{A}{^b^\mu}\tensor{A}{^c^\nu}))\qty(\partial_\alpha\qty({\color{red}\partial^\alpha \tensor{A}{_a_\nu}-\partial_\nu \tensor{A}{_a^\alpha}}+g \tensor{f}{_a_d_e}\tensor{A}{^d_\alpha}\tensor{A}{^e_\nu}))
+    &=-\frac12\qty(\partial_\mu\qty({\color{red}\partial^\mu \tensor{A}{^a^\nu}-\partial^\nu \tensor{A}{^a^\mu}}+g \tensor{f}{^a_b_c}\tensor{A}{^b^\mu}\tensor{A}{^c^\nu}))\qty(\partial_\alpha\qty({\color{red}\partial^\alpha \tensor{A}{_a_\nu}-\partial_\nu \tensor{A}{_a^\alpha}}+g \tensor{f}{_a_d_e}\tensor{A}{^d_\alpha}\tensor{A}{^e_\nu}))\\
+    &=-\frac12\qty(\partial_\mu\qty(\partial^\mu \tensor{A}{^a^\nu}-\partial^\nu \tensor{A}{^a^\mu}))\qty(\partial_\alpha\qty(\partial^\alpha \tensor{A}{_a_\nu}-\partial_\nu \tensor{A}{_a^\alpha}))\\
+    &=-\frac12\qty(\Box\tensor{A}{^a^\nu}-\partial^\nu \partial_\mu\tensor{A}{^a^\mu})\qty(\Box \tensor{A}{_a_\nu}-\partial_\nu\partial_\alpha \tensor{A}{_a^\alpha})\\
+    &=-\frac12\Box \tensor{A}{^a^\nu}\Box \tensor{A}{_a_\nu}+\frac12\Box\tensor{A}{^a^\nu}\partial_\nu\partial_\alpha \tensor{A}{_a^\alpha}+\frac12\partial^\nu\partial_\mu\tensor{A}{^a^\mu}\Box\tensor{A}{_a_\nu}-\frac12\partial^\nu\partial_\mu\tensor{A}{^a^\mu}\partial_\nu\partial_\alpha \tensor{A}{_a^\alpha}\\
+    &=-\frac12\Box \tensor{A}{^a^\nu}\Box \tensor{A}{_a_\nu}+\Box\tensor{A}{^a^\nu}\partial_\nu\partial_\alpha \tensor{A}{_a^\alpha}-\frac12\Box\tensor{A}{^a^\mu}\partial_\mu\partial_\alpha \tensor{A}{_a^\alpha}\\
+    &=-\frac12\Box \tensor{A}{^a^\nu}\Box \tensor{A}{_a_\nu}+\frac12\Box\tensor{A}{^a^\nu}\partial_\nu\partial_\alpha \tensor{A}{_a^\alpha}\\
+    &=\frac12\tensor{A}{^a^\mu}\delta_{ab}\qty(-\eta_{\mu\nu}\Box^2+\partial_\mu\partial_\nu\Box)\tensor{A}{^b^\nu}
+\end{align*}
+
+\begin{align*}
+    -\frac12\partial_\mu A^{a\mu}\qty(-\Box+m^2)\partial_\nu \tensor{A}{_a^\nu}&=\frac12\tensor{A}{^a^\mu}\delta_{ab}\qty(-\Box+m^2)\partial_\mu\partial_\nu\tensor{A}{^b^\nu}
+\end{align*}
+
+\begin{align*}
+    -\frac{m^2}{4}\tensor{F}{_a_\mu_\nu}\tensor{F}{^a^\mu^\nu}&=-\frac{m^2}{4}\qty({\color{red}\partial_\mu \tensor{A}{_a_\nu}-\partial_\nu \tensor{A}{_a_\mu}}+g \tensor{f}{_a_b_c}\tensor{A}{^b_\mu}\tensor{A}{^c_\nu})\qty({\color{red}\partial^\mu \tensor{A}{^a ^\nu}-\partial ^\nu \tensor{A}{^a^\mu}}+g \tensor{f}{^a_d_e}\tensor{A}{^d^\mu}\tensor{A}{^e^\nu})\\
+    &=-\frac{m^2}{4}\qty(\partial_\mu \tensor{A}{_a_\nu}-\partial_\nu \tensor{A}{_a_\mu})\qty(\partial^\mu \tensor{A}{^a ^\nu}-\partial ^\nu \tensor{A}{^a^\mu})\\
+    &=\frac{1}{2}\tensor{A}{^a^\mu}\delta_{ab}\qty(\eta_{\mu\nu}m^2\Box - m^2\partial_\nu\partial_\mu )\tensor{A}{^b ^\nu}
+\end{align*}
+
+Summing all the contributions, the quadratic piece of the Lagrangian is,
+
+\begin{align*}
+    \mathcal L &\supset \frac12\tensor{A}{^a^\mu}\delta_{ab}\qty(-\eta_{\mu\nu}\Box^2+\partial_\mu\partial_\nu\Box)\tensor{A}{^b^\nu}+\frac12\tensor{A}{^a^\mu}\delta_{ab}\qty(-\Box+m^2)\partial_\mu\partial_\nu\tensor{A}{^b^\nu}+\frac{1}{2}\tensor{A}{^a^\mu}\delta_{ab}\qty(\eta_{\mu\nu}m^2\Box - m^2\partial_\nu\partial_\mu )\tensor{A}{^b ^\nu}\\
+    \mathcal L &\supset \frac12\tensor{A}{^a^\mu}\delta_{ab}\eta_{\mu\nu}\qty(-\Box^2+m^2\Box)\tensor{A}{^b ^\nu}
+\end{align*}
+
+\subsection{cubic piece}
+
+Now, the cubic piece,
+
+\begin{align*}
+    -\frac12 D_\mu F^{a\mu \nu}D_\alpha \tensor{F}{_a^\alpha_\nu}&=-\frac12\qty(\Box A^{a\nu}-\partial^\nu\partial\cdot A^{a})g\tensor{f}{_a_d_e}\partial^\alpha\qty(\tensor{A}{^d_\alpha}\tensor{A}{^e_\nu})\\
+    &\quad\quad\quad-\frac12g\tensor{f}{^a_b_c}\partial_\mu\qty(A^{b\mu}A^{c\nu})\qty(\Box A_{a\nu}-\partial_\nu\partial\cdot A_{a})\\
+    &\quad\quad\quad-\frac12\qty(\Box A^{a\nu}-\partial^\nu\partial\cdot A^{a})gf_{ade}\tensor{A}{^d_\alpha}\qty(\partial^\alpha\tensor{A}{^e_\nu}-\partial_\nu A^{e\alpha})\\
+    &\quad\quad\quad-\frac12g\tensor{f}{^a_b_c}\tensor{A}{^b_\mu}\qty(\partial^\mu A^{c\nu}-\partial^\nu A^{c\mu})\qty(\Box A_{a\nu}-\partial_\nu\partial\cdot A_{a})\\
+    &=-g\tensor{f}{^a_b_c}\partial_\mu\qty(A^{b\mu}A^{c\nu})\qty(\Box A_{a\nu}-\partial_\nu\partial\cdot A_{a})\\
+    &\quad\quad\quad-g\tensor{f}{^a_b_c}\tensor{A}{^b_\mu}\qty(\partial^\mu A^{c\nu}-\partial^\nu A^{c\mu})\qty(\Box A_{a\nu}-\partial_\nu\partial\cdot A_{a})
+\end{align*}
+
+\begin{align*}
+    \frac13f_{abc}\tensor{F}{^a_\mu^\nu}\tensor{F}{^b_\nu^\alpha}\tensor{F}{_\alpha^\mu}&=\frac13f_{abc}\qty(\partial_\mu\tensor{A}{^a^\nu}-\partial^\nu \tensor{A}{^a_\mu})\qty(\partial_\nu \tensor{A}{^b^\alpha}-\partial^\alpha\tensor{A}{^a_\nu} )\qty(\partial_\alpha \tensor{A}{^c^\mu}-\partial^\mu\tensor{A}{^c_\alpha})
 \end{align*}
