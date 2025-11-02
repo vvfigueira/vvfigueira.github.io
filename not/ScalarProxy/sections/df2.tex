@@ -63,5 +63,13 @@ Now, the cubic piece,
 \end{align*}
 
 \begin{align*}
-    \frac13f_{abc}\tensor{F}{^a_\mu^\nu}\tensor{F}{^b_\nu^\alpha}\tensor{F}{_\alpha^\mu}&=\frac13f_{abc}\qty(\partial_\mu\tensor{A}{^a^\nu}-\partial^\nu \tensor{A}{^a_\mu})\qty(\partial_\nu \tensor{A}{^b^\alpha}-\partial^\alpha\tensor{A}{^a_\nu} )\qty(\partial_\alpha \tensor{A}{^c^\mu}-\partial^\mu\tensor{A}{^c_\alpha})
+    \frac13f_{abc}\tensor{F}{^a_\mu^\nu}\tensor{F}{^b_\nu^\alpha}\tensor{F}{_\alpha^\mu}&=\frac13f_{abc}\qty(\partial_\mu\tensor{A}{^a^\nu}-\partial^\nu \tensor{A}{^a_\mu})\qty(\partial_\nu \tensor{A}{^b^\alpha}-\partial^\alpha\tensor{A}{^a_\nu} )\qty(\partial_\alpha \tensor{A}{^c^\mu}-\partial^\mu\tensor{A}{^c_\alpha})\\
+    &=\frac23f_{abc}\qty(\partial_\mu\tensor{A}{^a^\nu}-\partial^\nu \tensor{A}{^a_\mu})\qty(\partial_\nu \tensor{A}{^b^\alpha}-\partial^\alpha\tensor{A}{^a_\nu} )\partial_\alpha \tensor{A}{^c^\mu}
 \end{align*}
+
+\begin{align*}
+    -\frac{m^2}{4}\tensor{F}{_a_\mu_\nu}\tensor{F}{^a^\mu^\nu}&=-\frac{m^2}{4}\qty(\partial_\mu \tensor{A}{_a_\nu}-\partial_\nu\tensor{A}{_a_\mu})g\tensor{f}{^a_b_c}\tensor{A}{^b^\mu}\tensor{A}{^c^\nu}\\
+    &\quad\quad\quad-\frac{m^2}{4}g\tensor{f}{_a_b_c}\tensor{A}{^b_\mu}\tensor{A}{^c_\nu}\qty(\partial^\mu \tensor{A}{^a^\nu}-\partial^\nu\tensor{A}{^a^\mu})\\
+    &=-m^2g\tensor{f}{_a_b_c}\tensor{A}{^b_\mu}\tensor{A}{^c_\nu}\partial^\mu \tensor{A}{^a^\nu}
+\end{align*}
+
