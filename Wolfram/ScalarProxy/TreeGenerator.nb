@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    200325,       4695]
-NotebookOptionsPosition[    183417,       4389]
-NotebookOutlinePosition[    197010,       4652]
-CellTagsIndexPosition[    196967,       4649]
+NotebookDataLength[    201107,       4712]
+NotebookOptionsPosition[    184200,       4406]
+NotebookOutlinePosition[    197793,       4669]
+CellTagsIndexPosition[    197750,       4666]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -348,11 +348,11 @@ Cell[BoxData[
  RowBox[{"FAPatch", "[", 
   RowBox[{
    RowBox[{"PatchModelsOnly", "->", "True"}], ",", 
-   RowBox[{
-   "FAModelsDirectory", 
-    "->", "\"\<C:\\\\Users\\\\vfigu\\\\OneDrive\\\\Documentos\\\\vvfigueira.\
-github.io\\\\WolframWindows\\\\Teste1\\\\ScalarProxy\>\""}]}], "]"}]], "Input",
- CellLabel->"In[4]:=",ExpressionUUID->"e65c7e00-d8a4-6647-9969-1586615bf263"],
+   RowBox[{"FAModelsDirectory", "->", 
+    RowBox[{"NotebookDirectory", "[", "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.971161693886776*^9, 
+  3.971161697802685*^9}},ExpressionUUID->"e65c7e00-d8a4-6647-9969-\
+1586615bf263"],
 
 Cell["Successfully patched FeynArts.", "Print",
  CellChangeTimes->{3.970589156441635*^9, 3.970589287682663*^9, 
@@ -384,18 +384,23 @@ Cell[BoxData[
         RowBox[{"S", "[", "1", "]"}]}], "}"}]}], ",", 
      RowBox[{"InsertionLevel", "->", 
       RowBox[{"{", "Classes", "}"}]}], ",", 
-     RowBox[{
-     "Model", "->", \
-"\"\<C:\\\\Users\\\\vfigu\\\\OneDrive\\\\Documentos\\\\vvfigueira.github.io\\\
-\\WolframWindows\\\\Teste1\\\\ScalarProxy\\\\ScalarProxy\>\""}], ",", " ", 
-     RowBox[{
-     "GenericModel", " ", 
-      "->", "\"\<C:\\\\Users\\\\vfigu\\\\OneDrive\\\\Documentos\\\\vvfigueira.\
-github.io\\\\WolframWindows\\\\Teste1\\\\ScalarProxy\\\\ScalarProxy\>\""}]}], 
-    "]"}]}], ";"}]], "Input",
+     RowBox[{"Model", "->", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"NotebookDirectory", "[", "]"}], 
+         ",", "\"\<ScalarProxy\>\""}], "}"}], "]"}]}], ",", " ", 
+     RowBox[{"GenericModel", " ", "->", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"NotebookDirectory", "[", "]"}], 
+         ",", "\"\<ScalarProxy\>\""}], "}"}], "]"}]}]}], "]"}]}], 
+  ";"}]], "Input",
  CellChangeTimes->{{3.9705890766500072`*^9, 3.97058907671451*^9}, 
-   3.9705891161355286`*^9},
- CellLabel->"In[5]:=",ExpressionUUID->"63db90be-f0ba-d043-a3a5-55b910b5bbe5"],
+   3.9705891161355286`*^9, {3.9711616505012665`*^9, 
+   3.971161673202347*^9}},ExpressionUUID->"63db90be-f0ba-d043-a3a5-\
+55b910b5bbe5"],
 
 Cell[BoxData[
  RowBox[{
@@ -734,17 +739,23 @@ Cell[BoxData[
         RowBox[{"S", "[", "1", "]"}]}], "}"}]}], ",", 
      RowBox[{"InsertionLevel", "->", 
       RowBox[{"{", "Classes", "}"}]}], ",", 
-     RowBox[{
-     "Model", "->", \
-"\"\<C:\\\\Users\\\\vfigu\\\\OneDrive\\\\Documentos\\\\vvfigueira.github.io\\\
-\\WolframWindows\\\\Teste1\\\\ScalarProxy\\\\ScalarProxy\>\""}], ",", " ", 
-     RowBox[{
-     "GenericModel", " ", 
-      "->", "\"\<C:\\\\Users\\\\vfigu\\\\OneDrive\\\\Documentos\\\\vvfigueira.\
-github.io\\\\WolframWindows\\\\Teste1\\\\ScalarProxy\\\\ScalarProxy\>\""}]}], 
-    "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.970589726469618*^9, 3.97058973143754*^9}},
- CellLabel->"In[12]:=",ExpressionUUID->"2c200fb9-051a-9247-b77c-05507f7b1a94"],
+     RowBox[{"Model", "->", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"NotebookDirectory", "[", "]"}], 
+         ",", "\"\<ScalarProxy\>\""}], "}"}], "]"}]}], ",", " ", 
+     RowBox[{"GenericModel", " ", "->", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"NotebookDirectory", "[", "]"}], 
+         ",", "\"\<ScalarProxy\>\""}], "}"}], "]"}]}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.970589726469618*^9, 3.97058973143754*^9}, {
+  3.9711617191551895`*^9, 
+  3.9711617242221127`*^9}},ExpressionUUID->"2c200fb9-051a-9247-b77c-\
+05507f7b1a94"],
 
 Cell[BoxData[
  RowBox[{
@@ -881,17 +892,23 @@ Cell[BoxData[
         RowBox[{"S", "[", "1", "]"}]}], "}"}]}], ",", 
      RowBox[{"InsertionLevel", "->", 
       RowBox[{"{", "Classes", "}"}]}], ",", 
-     RowBox[{
-     "Model", "->", \
-"\"\<C:\\\\Users\\\\vfigu\\\\OneDrive\\\\Documentos\\\\vvfigueira.github.io\\\
-\\WolframWindows\\\\Teste1\\\\ScalarProxy\\\\ScalarProxy\>\""}], ",", " ", 
-     RowBox[{
-     "GenericModel", " ", 
-      "->", "\"\<C:\\\\Users\\\\vfigu\\\\OneDrive\\\\Documentos\\\\vvfigueira.\
-github.io\\\\WolframWindows\\\\Teste1\\\\ScalarProxy\\\\ScalarProxy\>\""}]}], 
-    "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.9706536613386974`*^9, 3.970653671420723*^9}},
- CellLabel->"In[18]:=",ExpressionUUID->"e4d2c7c5-9750-9645-8a92-282e1cecec04"],
+     RowBox[{"Model", "->", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"NotebookDirectory", "[", "]"}], 
+         ",", "\"\<ScalarProxy\>\""}], "}"}], "]"}]}], ",", " ", 
+     RowBox[{"GenericModel", " ", "->", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"NotebookDirectory", "[", "]"}], 
+         ",", "\"\<ScalarProxy\>\""}], "}"}], "]"}]}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.9706536613386974`*^9, 3.970653671420723*^9}, {
+  3.971161730866005*^9, 
+  3.971161735589136*^9}},ExpressionUUID->"e4d2c7c5-9750-9645-8a92-\
+282e1cecec04"],
 
 Cell[BoxData[
  RowBox[{
@@ -3626,63 +3643,63 @@ Cell[BoxData[
         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
       Dynamic[Typeset`open]},
      "IconizedObject"]],
-   -(3 Global`g^2 (I Global`g Global`m^2 - I Global`g 
-      Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
-      Global`mp[Global`momenta3, Global`momenta3] - I 
-      Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+   -(3 Global`g^2 ((I Global`g Global`m^2 - I Global`g 
+       Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+       Global`mp[Global`momenta3, Global`momenta3] - I 
+       Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+        2 Global`mp[Global`momenta2, Global`momenta3] + 
+        Global`mp[Global`momenta3, Global`momenta3]))/((
+       Global`mp[Global`momenta2, Global`momenta2] + 
        2 Global`mp[Global`momenta2, Global`momenta3] + 
-       Global`mp[Global`momenta3, Global`momenta3]))/((
-      Global`mp[Global`momenta2, Global`momenta2] + 
-      2 Global`mp[Global`momenta2, Global`momenta3] + 
-      Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
-      Global`mp[Global`momenta2, Global`momenta2] + 
-      2 Global`mp[Global`momenta2, Global`momenta3] + 
-      Global`mp[Global`momenta3, Global`momenta3]))) - 3 
-   Global`g^2 (I Global`g Global`m^2 - I Global`g 
-    Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
-    Global`mp[Global`momenta4, Global`momenta4] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+       Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
+       Global`mp[Global`momenta2, Global`momenta2] + 
+       2 Global`mp[Global`momenta2, Global`momenta3] + 
+       Global`mp[Global`momenta3, Global`momenta3])))) - 3 
+   Global`g^2 ((I Global`g Global`m^2 - I Global`g 
+     Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+     Global`mp[Global`momenta4, Global`momenta4] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      Global`mp[Global`momenta4, Global`momenta4]))/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4]))/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4])) - 3 
-   Global`g^2 (I Global`g Global`m^2 - I Global`g 
-    Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
-    Global`mp[Global`momenta4, Global`momenta4] - I 
-    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]))) - 3 
+   Global`g^2 ((I Global`g Global`m^2 - I Global`g 
+     Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
+     Global`mp[Global`momenta4, Global`momenta4] - I 
+     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      Global`mp[Global`momenta4, Global`momenta4]))/((
+     Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4]))/((
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4])) - 3 
-   Global`g^2 (I Global`g Global`m^2 - I Global`g 
-    Global`mp[Global`momenta1, Global`momenta1] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]))) - 3 
+   Global`g^2 ((I Global`g Global`m^2 - I Global`g 
+     Global`mp[Global`momenta1, Global`momenta1] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5])/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta3] + 
      2 Global`mp[Global`momenta2, Global`momenta4] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5])/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
     Global`mp[Global`momenta3, Global`momenta3] - I 
     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
@@ -3697,33 +3714,33 @@ Cell[BoxData[
      2 Global`mp[Global`momenta2, Global`momenta4] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4])) (I Global`g Global`m^2 - I 
-    Global`g Global`mp[Global`momenta1, Global`momenta1] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta4, Global`momenta4])) ((I Global`g Global`m^2 - 
+     I Global`g Global`mp[Global`momenta1, Global`momenta1] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5])/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     Global`mp[Global`momenta3, Global`momenta3]) (
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta3] + 
      2 Global`mp[Global`momenta2, Global`momenta4] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5])/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    Global`mp[Global`momenta3, Global`momenta3]) (
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
     Global`mp[Global`momenta4, Global`momenta4] - I 
     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
@@ -3738,33 +3755,33 @@ Cell[BoxData[
      2 Global`mp[Global`momenta2, Global`momenta4] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4])) (I Global`g Global`m^2 - I 
-    Global`g Global`mp[Global`momenta1, Global`momenta1] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta4, Global`momenta4])) ((I Global`g Global`m^2 - 
+     I Global`g Global`mp[Global`momenta1, Global`momenta1] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5])/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta3] + 
      2 Global`mp[Global`momenta2, Global`momenta4] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5])/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
     Global`mp[Global`momenta4, Global`momenta4] - I 
     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
@@ -3779,45 +3796,45 @@ Cell[BoxData[
      2 Global`mp[Global`momenta2, Global`momenta4] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4])) (I Global`g Global`m^2 - I 
-    Global`g Global`mp[Global`momenta1, Global`momenta1] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta4, Global`momenta4])) ((I Global`g Global`m^2 - 
+     I Global`g Global`mp[Global`momenta1, Global`momenta1] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5])/((
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta3] + 
      2 Global`mp[Global`momenta2, Global`momenta4] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5])/((
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4])) - 3 
-   Global`g^2 (I Global`g Global`m^2 - I Global`g 
-    Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]))) - 3 
+   Global`g^2 ((I Global`g Global`m^2 - I Global`g 
+     Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
     Global`mp[Global`momenta4, Global`momenta4] - I 
     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
@@ -3829,36 +3846,36 @@ Cell[BoxData[
      Global`mp[Global`momenta4, Global`momenta4]) - I 
     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
-    Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta5, Global`momenta5])) ((I Global`g Global`m^2 - 
+     I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - 3 
-   Global`g^2 (I Global`g Global`m^2 - I Global`g 
-    Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5] - I 
-    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - 3 
+   Global`g^2 ((I Global`g Global`m^2 - I Global`g 
+     Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5] - I 
+     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
     Global`mp[Global`momenta4, Global`momenta4] - I 
     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
@@ -3870,45 +3887,45 @@ Cell[BoxData[
      Global`mp[Global`momenta4, Global`momenta4]) - I 
     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
-    Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5] - I 
-    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     Global`mp[Global`momenta5, Global`momenta5])) ((I Global`g Global`m^2 - 
+     I Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5] - I 
+     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (
+     Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - 3 
-   Global`g^2 (I Global`g Global`m^2 - I Global`g 
-    Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
-    Global`mp[Global`momenta4, Global`momenta4] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - 3 
+   Global`g^2 ((I Global`g Global`m^2 - I Global`g 
+     Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+     Global`mp[Global`momenta4, Global`momenta4] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      2 Global`mp[Global`momenta2, Global`momenta5] + 
+      Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta3] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
     Global`mp[Global`momenta3, Global`momenta3] - I 
     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
@@ -3921,35 +3938,35 @@ Cell[BoxData[
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta5, Global`momenta5])) ((I Global`g Global`m^2 - 
+     I Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      Global`mp[Global`momenta3, Global`momenta3]) - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      2 Global`mp[Global`momenta2, Global`momenta5] + 
+      Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta3] + 
-     Global`mp[Global`momenta3, Global`momenta3]) - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     Global`mp[Global`momenta3, Global`momenta3]) (
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta3] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    Global`mp[Global`momenta3, Global`momenta3]) (
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
     Global`mp[Global`momenta5, Global`momenta5] - I 
     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
@@ -3962,35 +3979,35 @@ Cell[BoxData[
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
-    Global`g Global`mp[Global`momenta3, Global`momenta3] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta5, Global`momenta5])) ((I Global`g Global`m^2 - 
+     I Global`g Global`mp[Global`momenta3, Global`momenta3] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]) - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      2 Global`mp[Global`momenta2, Global`momenta5] + 
+      Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]) - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta3] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
     Global`mp[Global`momenta5, Global`momenta5] - I 
     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
@@ -4003,47 +4020,47 @@ Cell[BoxData[
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
-    Global`g Global`mp[Global`momenta2, Global`momenta2] - I 
-    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     Global`mp[Global`momenta5, Global`momenta5])) ((I Global`g Global`m^2 - 
+     I Global`g Global`mp[Global`momenta2, Global`momenta2] - I 
+     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]) - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta3] + 
+      2 Global`mp[Global`momenta2, Global`momenta5] + 
+      Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]) - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta3] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - 3 
-   Global`g^2 (I Global`g Global`m^2 - I Global`g 
-    Global`mp[Global`momenta4, Global`momenta4] - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5] - I 
-    Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - 3 
+   Global`g^2 ((I Global`g Global`m^2 - I Global`g 
+     Global`mp[Global`momenta4, Global`momenta4] - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5] - I 
+     Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
     Global`mp[Global`momenta3, Global`momenta3] - I 
     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
@@ -4055,45 +4072,45 @@ Cell[BoxData[
      Global`mp[Global`momenta3, Global`momenta3]) - I 
     Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
-    Global`g Global`mp[Global`momenta4, Global`momenta4] - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5] - I 
-    Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+     Global`mp[Global`momenta5, Global`momenta5])) ((I Global`g Global`m^2 - 
+     I Global`g Global`mp[Global`momenta4, Global`momenta4] - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5] - I 
+     Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta3] + 
+     Global`mp[Global`momenta3, Global`momenta3]) (
+     Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    Global`mp[Global`momenta3, Global`momenta3]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta3] + 
-    Global`mp[Global`momenta3, Global`momenta3]) (
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - 3 
-   Global`g^2 (I Global`g Global`m^2 - I Global`g 
-    Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
-    Global`mp[Global`momenta3, Global`momenta3] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - 3 
+   Global`g^2 ((I Global`g Global`m^2 - I Global`g 
+     Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+     Global`mp[Global`momenta3, Global`momenta3] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      2 Global`mp[Global`momenta2, Global`momenta5] + 
+      Global`mp[Global`momenta4, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta4] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
     Global`mp[Global`momenta4, Global`momenta4] - I 
     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
@@ -4106,35 +4123,35 @@ Cell[BoxData[
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta5, Global`momenta5])) ((I Global`g Global`m^2 - 
+     I Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      2 Global`mp[Global`momenta2, Global`momenta5] + 
+      Global`mp[Global`momenta4, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta4] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta2, Global`momenta2] - I Global`g 
     Global`mp[Global`momenta5, Global`momenta5] - I 
     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
@@ -4147,35 +4164,35 @@ Cell[BoxData[
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
-    Global`g Global`mp[Global`momenta4, Global`momenta4] - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta5, Global`momenta5])) ((I Global`g Global`m^2 - 
+     I Global`g Global`mp[Global`momenta4, Global`momenta4] - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]) - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      2 Global`mp[Global`momenta2, Global`momenta5] + 
+      Global`mp[Global`momenta4, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]) - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta4] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta4, Global`momenta4] - I Global`g 
     Global`mp[Global`momenta5, Global`momenta5] - I 
     Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
@@ -4188,56 +4205,56 @@ Cell[BoxData[
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
-    Global`g Global`mp[Global`momenta2, Global`momenta2] - I 
-    Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+     Global`mp[Global`momenta5, Global`momenta5])) ((I Global`g Global`m^2 - 
+     I Global`g Global`mp[Global`momenta2, Global`momenta2] - I 
+     Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]) - I 
+     Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+      2 Global`mp[Global`momenta2, Global`momenta4] + 
+      2 Global`mp[Global`momenta2, Global`momenta5] + 
+      Global`mp[Global`momenta4, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]) - I 
-    Global`g (Global`mp[Global`momenta2, Global`momenta2] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (
+     Global`mp[Global`momenta2, Global`momenta2] + 
      2 Global`mp[Global`momenta2, Global`momenta4] + 
      2 Global`mp[Global`momenta2, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta2, Global`momenta2] + 
-    2 Global`mp[Global`momenta2, Global`momenta4] + 
-    2 Global`mp[Global`momenta2, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - 3 
-   Global`g^2 (I Global`g Global`m^2 - I Global`g 
-    Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
-    Global`mp[Global`momenta2, Global`momenta2] - I 
-    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta2, Global`momenta2] + 
+     2 Global`mp[Global`momenta2, Global`momenta4] + 
+     2 Global`mp[Global`momenta2, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - 3 
+   Global`g^2 ((I Global`g Global`m^2 - I Global`g 
+     Global`mp[Global`momenta1, Global`momenta1] - I Global`g 
+     Global`mp[Global`momenta2, Global`momenta2] - I 
+     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      2 Global`mp[Global`momenta3, Global`momenta5] + 
+      Global`mp[Global`momenta4, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
     Global`mp[Global`momenta4, Global`momenta4] - I 
     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
@@ -4250,35 +4267,35 @@ Cell[BoxData[
      2 Global`mp[Global`momenta3, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
-    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     Global`mp[Global`momenta5, Global`momenta5])) ((I Global`g Global`m^2 - 
+     I Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
+     Global`mp[Global`momenta5, Global`momenta5] - I 
+     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      2 Global`mp[Global`momenta3, Global`momenta5] + 
+      Global`mp[Global`momenta4, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
-     Global`mp[Global`momenta4, Global`momenta4]) - I Global`g 
-    Global`mp[Global`momenta5, Global`momenta5] - I 
-    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     Global`mp[Global`momenta4, Global`momenta4]) (
+     Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (-Global`m^2 + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    Global`mp[Global`momenta4, Global`momenta4]) (
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta3, Global`momenta3] - I Global`g 
     Global`mp[Global`momenta5, Global`momenta5] - I 
     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
@@ -4291,35 +4308,35 @@ Cell[BoxData[
      2 Global`mp[Global`momenta3, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
-    Global`g Global`mp[Global`momenta4, Global`momenta4] - I 
-    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     Global`mp[Global`momenta5, Global`momenta5])) ((I Global`g Global`m^2 - 
+     I Global`g Global`mp[Global`momenta4, Global`momenta4] - I 
+     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]) - I 
+     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      2 Global`mp[Global`momenta3, Global`momenta5] + 
+      Global`mp[Global`momenta4, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]) - I 
-    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (
+     Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])) - (I Global`g Global`m^2 - 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))) - (I Global`g Global`m^2 - 
     I Global`g Global`mp[Global`momenta4, Global`momenta4] - I Global`g 
     Global`mp[Global`momenta5, Global`momenta5] - I 
     Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
@@ -4332,35 +4349,35 @@ Cell[BoxData[
      2 Global`mp[Global`momenta3, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5])) (I Global`g Global`m^2 - I 
-    Global`g Global`mp[Global`momenta3, Global`momenta3] - I 
-    Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+     Global`mp[Global`momenta5, Global`momenta5])) ((I Global`g Global`m^2 - 
+     I Global`g Global`mp[Global`momenta3, Global`momenta3] - I 
+     Global`g (Global`mp[Global`momenta4, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]) - I 
+     Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+      2 Global`mp[Global`momenta3, Global`momenta4] + 
+      2 Global`mp[Global`momenta3, Global`momenta5] + 
+      Global`mp[Global`momenta4, Global`momenta4] + 
+      2 Global`mp[Global`momenta4, Global`momenta5] + 
+      Global`mp[Global`momenta5, Global`momenta5]))/((
+     Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]) - I 
-    Global`g (Global`mp[Global`momenta3, Global`momenta3] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]) (
+     Global`mp[Global`momenta3, Global`momenta3] + 
      2 Global`mp[Global`momenta3, Global`momenta4] + 
      2 Global`mp[Global`momenta3, Global`momenta5] + 
      Global`mp[Global`momenta4, Global`momenta4] + 
      2 Global`mp[Global`momenta4, Global`momenta5] + 
-     Global`mp[Global`momenta5, Global`momenta5]))/((
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
-    Global`mp[Global`momenta3, Global`momenta3] + 
-    2 Global`mp[Global`momenta3, Global`momenta4] + 
-    2 Global`mp[Global`momenta3, Global`momenta5] + 
-    Global`mp[Global`momenta4, Global`momenta4] + 
-    2 Global`mp[Global`momenta4, Global`momenta5] + 
-    Global`mp[Global`momenta5, Global`momenta5])),
+     Global`mp[Global`momenta5, Global`momenta5]) (-Global`m^2 + 
+     Global`mp[Global`momenta3, Global`momenta3] + 
+     2 Global`mp[Global`momenta3, Global`momenta4] + 
+     2 Global`mp[Global`momenta3, Global`momenta5] + 
+     Global`mp[Global`momenta4, Global`momenta4] + 
+     2 Global`mp[Global`momenta4, Global`momenta5] + 
+     Global`mp[Global`momenta5, Global`momenta5]))),
    SelectWithContents->True,
    Selectable->False]}]], "Input",
  CellChangeTimes->{{3.970653752259815*^9, 3.9706537650940742`*^9}, {
@@ -4668,35 +4685,35 @@ Cell[13372, 329, 620, 11, 26, "Print",ExpressionUUID->"c6e77135-fc3b-104c-a0ee-6
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14041, 346, 375, 8, 101, "Input",ExpressionUUID->"e65c7e00-d8a4-6647-9969-1586615bf263"],
-Cell[14419, 356, 482, 8, 22, "Print",ExpressionUUID->"5c20023d-8e74-084c-87d2-a2da30cdc8d5"]
+Cell[14041, 346, 333, 8, 42, "Input",ExpressionUUID->"e65c7e00-d8a4-6647-9969-1586615bf263"],
+Cell[14377, 356, 482, 8, 22, "Print",ExpressionUUID->"5c20023d-8e74-084c-87d2-a2da30cdc8d5"]
 }, Open  ]],
-Cell[14916, 367, 1166, 30, 161, "Input",ExpressionUUID->"63db90be-f0ba-d043-a3a5-55b910b5bbe5"],
-Cell[16085, 399, 1061, 25, 80, "Input",ExpressionUUID->"4d2d98ef-e651-204e-97bd-c12b4e935338"],
-Cell[17149, 426, 528, 15, 47, "Input",ExpressionUUID->"fb78b475-3a42-874b-9916-45d16e723859"],
-Cell[17680, 443, 316, 7, 28, "Input",ExpressionUUID->"be760e92-0d84-f640-ab5f-a938eb9ef0ae"],
+Cell[14874, 367, 1248, 35, 115, "Input",ExpressionUUID->"63db90be-f0ba-d043-a3a5-55b910b5bbe5"],
+Cell[16125, 404, 1061, 25, 80, "Input",ExpressionUUID->"4d2d98ef-e651-204e-97bd-c12b4e935338"],
+Cell[17189, 431, 528, 15, 47, "Input",ExpressionUUID->"fb78b475-3a42-874b-9916-45d16e723859"],
+Cell[17720, 448, 316, 7, 28, "Input",ExpressionUUID->"be760e92-0d84-f640-ab5f-a938eb9ef0ae"],
 Cell[CellGroupData[{
-Cell[18021, 454, 1019, 20, 77, "Input",ExpressionUUID->"a3e34dce-e8d1-e241-be16-122c95f7c98f"],
-Cell[19043, 476, 6238, 168, 358, "Output",ExpressionUUID->"70d51916-b5b1-714a-95d0-ea50e6cedd0e"]
+Cell[18061, 459, 1019, 20, 77, "Input",ExpressionUUID->"a3e34dce-e8d1-e241-be16-122c95f7c98f"],
+Cell[19083, 481, 6238, 168, 358, "Output",ExpressionUUID->"70d51916-b5b1-714a-95d0-ea50e6cedd0e"]
 }, Open  ]],
-Cell[25296, 647, 3533, 70, 35, "Input",ExpressionUUID->"4c22979b-c8d1-3143-b928-90fbc1407604"],
-Cell[28832, 719, 1075, 27, 161, "Input",ExpressionUUID->"2c200fb9-051a-9247-b77c-05507f7b1a94"],
-Cell[29910, 748, 939, 22, 80, "Input",ExpressionUUID->"413eb83e-9435-be47-9abe-ed9e5647ef93"],
-Cell[30852, 772, 561, 15, 47, "Input",ExpressionUUID->"ceea9445-3c6f-0b44-8010-b66b04fe3220"],
+Cell[25336, 652, 3533, 70, 32, "Input",ExpressionUUID->"4c22979b-c8d1-3143-b928-90fbc1407604"],
+Cell[28872, 724, 1160, 33, 115, "Input",ExpressionUUID->"2c200fb9-051a-9247-b77c-05507f7b1a94"],
+Cell[30035, 759, 939, 22, 80, "Input",ExpressionUUID->"413eb83e-9435-be47-9abe-ed9e5647ef93"],
+Cell[30977, 783, 561, 15, 47, "Input",ExpressionUUID->"ceea9445-3c6f-0b44-8010-b66b04fe3220"],
 Cell[CellGroupData[{
-Cell[31438, 791, 877, 18, 80, "Input",ExpressionUUID->"fbf31d5b-6984-d14e-b479-ae8f36774989"],
-Cell[32318, 811, 817, 16, 34, "Output",ExpressionUUID->"234be6a2-5aa4-0a40-9095-a485c726b246"]
+Cell[31563, 802, 877, 18, 80, "Input",ExpressionUUID->"fbf31d5b-6984-d14e-b479-ae8f36774989"],
+Cell[32443, 822, 817, 16, 34, "Output",ExpressionUUID->"234be6a2-5aa4-0a40-9095-a485c726b246"]
 }, Open  ]],
-Cell[33150, 830, 1439, 31, 35, "Input",ExpressionUUID->"b021dc41-5747-8a47-bd5a-62eab4f33c0a"],
-Cell[34592, 863, 1185, 30, 161, "Input",ExpressionUUID->"e4d2c7c5-9750-9645-8a92-282e1cecec04"],
-Cell[35780, 895, 886, 22, 99, "Input",ExpressionUUID->"cc85f204-1230-aa43-8d0c-5e4d618e0ee9"],
-Cell[36669, 919, 558, 15, 47, "Input",ExpressionUUID->"4ec0a8b0-b4f8-ec47-a721-65d69c3e1b10"],
+Cell[33275, 841, 1439, 31, 32, "Input",ExpressionUUID->"b021dc41-5747-8a47-bd5a-62eab4f33c0a"],
+Cell[34717, 874, 1266, 36, 115, "Input",ExpressionUUID->"e4d2c7c5-9750-9645-8a92-282e1cecec04"],
+Cell[35986, 912, 886, 22, 99, "Input",ExpressionUUID->"cc85f204-1230-aa43-8d0c-5e4d618e0ee9"],
+Cell[36875, 936, 558, 15, 47, "Input",ExpressionUUID->"4ec0a8b0-b4f8-ec47-a721-65d69c3e1b10"],
 Cell[CellGroupData[{
-Cell[37252, 938, 612, 14, 61, "Input",ExpressionUUID->"afdbb5fb-a99f-ad41-9acd-45e6d2d6e865"],
-Cell[37867, 954, 101663, 2649, 5573, "Output",ExpressionUUID->"275a2abe-44be-4f40-97e9-d6ba3c71d5ee"]
+Cell[37458, 955, 612, 14, 61, "Input",ExpressionUUID->"afdbb5fb-a99f-ad41-9acd-45e6d2d6e865"],
+Cell[38073, 971, 101663, 2649, 5573, "Output",ExpressionUUID->"275a2abe-44be-4f40-97e9-d6ba3c71d5ee"]
 }, Open  ]],
-Cell[139545, 3606, 42930, 761, 32, "Input",ExpressionUUID->"4d920461-e43a-b947-a567-392a10f62269"],
-Cell[182478, 4369, 935, 18, 63, "Input",ExpressionUUID->"fb7c4ba5-d0c8-1747-9f19-c177bcb08cb5"]
+Cell[139751, 3623, 43507, 761, 32, "Input",ExpressionUUID->"4d920461-e43a-b947-a567-392a10f62269"],
+Cell[183261, 4386, 935, 18, 63, "Input",ExpressionUUID->"fb7c4ba5-d0c8-1747-9f19-c177bcb08cb5"]
 }
 ]
 *)
