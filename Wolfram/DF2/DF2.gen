@@ -48,10 +48,8 @@ AnalyticalPropagator[External][s1 V[j1,mom,{li2}]]==
 FAPolarizationVector[V[j1],mom,li2],
 
 AnalyticalPropagator[Internal][s1 V[j1,mom,{li1}->{li2}]]==
--I FAPropagatorDenominator[mom,Mass[V[j1]]]*
-(FAMetricTensor[li1,li2]-(1-FAGaugeXi[V[j1]])*
-FAFourVector[mom,li1] FAFourVector[mom,li2]*
-FAPropagatorDenominator[mom,Sqrt[FAGaugeXi[V[j1]]] Mass[V[j1]]]),
+I FAPropagatorDenominator[mom,0]*FAPropagatorDenominator[mom,m]*
+FAMetricTensor[li1,li2],
 
 (*general mixing scalar-vector propagator:*)
 
@@ -64,7 +62,7 @@ FAFourVector[mom,If[s1==1||s1==-2,li1,li2]],
 AnalyticalPropagator[External][s1 S[j1,mom]]==1,
 
 AnalyticalPropagator[Internal][s1 S[j1,mom]]==
-I FAPropagatorDenominator[mom,Sqrt[FAGaugeXi[S[j1]]] Mass[S[j1]]],
+-I FAPropagatorDenominator[mom,Sqrt[FAGaugeXi[S[j1]]] Mass[S[j1]]]*FAPropagatorDenominator[mom,0],
 
 (*general Fadeev-Popov ghost propagator:*)
 
