@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.27)  4 NOV 2025 15:54
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.27)  5 NOV 2025 11:06
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1431,14 +1431,8 @@ L3 programming layer <2025-08-13>
 
 LaTeX Warning: There were undefined references.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 103909025A0AD752D07E07B40C95EE3B;162
-(rerunfilecheck)             After:  3702E90CA06BF1E6A7684D0F96BBA9D9;582.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 3702E90CA06BF1E6A7684D0F96BBA9D9;582.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                main
@@ -1450,15 +1444,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 39121 strings out of 470117
+ 39124 strings out of 470117
  156265,1977958 words of node,token memory allocated
  15781 words of node memory still in use:
    240 hlist, 2 vlist, 2 rule, 20 math, 810 glue, 4 kern, 23 glyph, 1349 attribu
 te, 71 glue_spec, 1340 attribute_list, 2 write, 591 pdf_literal, 4 pdf_colorstac
 k nodes
-   avail lists: 1:12,2:10398,3:2966,4:118,5:679,6:38,7:8363,8:639,9:4576,10:4,11
+   avail lists: 1:12,2:10398,3:2966,4:118,5:681,6:38,7:8363,8:640,9:4576,10:4,11
 :50
- 66597 multiletter control sequences out of 65536+600000
+ 66600 multiletter control sequences out of 65536+600000
  53 fonts using 3427847 bytes
  98i,19n,100p,688b,2067s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></op
@@ -1476,10 +1470,10 @@ fb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/t
 exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2
 025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/texlive/2025/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (14 pages, 214642 bytes).
+Output written on main.pdf (14 pages, 214714 bytes).
 
-PDF statistics: 201 PDF objects out of 1000 (max. 8388607)
- 156 compressed objects within 2 object streams
+PDF statistics: 210 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
  59 named destinations out of 1000 (max. 131072)
- 29 words of extra memory for PDF output out of 10000 (max. 100000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 100000000)
 

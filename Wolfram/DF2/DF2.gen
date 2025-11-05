@@ -62,7 +62,7 @@ FAFourVector[mom,If[s1==1||s1==-2,li1,li2]],
 AnalyticalPropagator[External][s1 S[j1,mom]]==1,
 
 AnalyticalPropagator[Internal][s1 S[j1,mom]]==
--I FAPropagatorDenominator[mom,Sqrt[FAGaugeXi[S[j1]]] Mass[S[j1]]]*FAPropagatorDenominator[mom,0],
+-I FAPropagatorDenominator[mom, Mass[S[j1]]]*FAPropagatorDenominator[mom,0],
 
 (*general Fadeev-Popov ghost propagator:*)
 
