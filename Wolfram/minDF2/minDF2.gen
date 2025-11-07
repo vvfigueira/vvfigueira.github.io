@@ -62,7 +62,7 @@ FAFourVector[mom,If[s1==1||s1==-2,li1,li2]],
 AnalyticalPropagator[External][s1 S[j1,mom]]==1,
 
 AnalyticalPropagator[Internal][s1 S[j1,mom]]==
-I FAPropagatorDenominator[mom, Mass[S[j1]]],
+I FAPropagatorDenominator[mom,Sqrt[FAGaugeXi[S[j1]]] Mass[S[j1]]],
 
 (*general Fadeev-Popov ghost propagator:*)
 
@@ -76,40 +76,10 @@ I*FAPropagatorDenominator[mom,Sqrt[FAGaugeXi[U[j1]]] Mass[U[j1]]]
 
 M$GenericCouplings = {
 
-	 (* SSS *)
-
-AnalyticalCoupling[s1 S[j1, mom1], s2 S[j2, mom2], s3 S[j3, mom3] ] ==
-G[+1][s1 S[j1], s2 S[j2], s3 S[j3]].{1},
-
-	 (* SSV *)
-
-AnalyticalCoupling[s1 S[j1, mom1], s2 S[j2, mom2], s3 V[j3, mom3, {li3}] ] ==
-G[+1][s1 S[j1], s2 S[j2], s3 V[j3]].{FAFourVector[mom1, li3], FAFourVector[mom2, li3]},
-
-	 (* SSVV *)
-
-AnalyticalCoupling[s1 S[j1, mom1], s2 S[j2, mom2], s3 V[j3, mom3, {li3}], s4 V[j4, mom4, {li4}] ] ==
-G[+1][s1 S[j1], s2 S[j2], s3 V[j3], s4 V[j4]].{FAMetricTensor[li3 ,li4 ]},
-
-	 (* SVV *)
-
-AnalyticalCoupling[s1 S[j1, mom1], s2 V[j2, mom2, {li2}], s3 V[j3, mom3, {li3}] ] ==
-G[+1][s1 S[j1], s2 V[j2], s3 V[j3]].{FAFourVector[mom2, li3]FAFourVector[mom3, li2], FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom2,mom3]},
-
-	 (* SVVV *)
-
-AnalyticalCoupling[s1 S[j1, mom1], s2 V[j2, mom2, {li2}], s3 V[j3, mom3, {li3}], s4 V[j4, mom4, {li4}] ] ==
-G[+1][s1 S[j1], s2 V[j2], s3 V[j3], s4 V[j4]].{FAFourVector[mom2, li4]FAMetricTensor[li2 ,li3 ], FAFourVector[mom3, li4]FAMetricTensor[li2 ,li3 ], FAFourVector[mom2, li3]FAMetricTensor[li2 ,li4 ], FAFourVector[mom4, li3]FAMetricTensor[li2 ,li4 ], FAFourVector[mom3, li2]FAMetricTensor[li3 ,li4 ], FAFourVector[mom4, li2]FAMetricTensor[li3 ,li4 ]},
-
-	 (* SVVVV *)
-
-AnalyticalCoupling[s1 S[j1, mom1], s2 V[j2, mom2, {li2}], s3 V[j3, mom3, {li3}], s4 V[j4, mom4, {li4}], s5 V[j5, mom5, {li5}] ] ==
-G[+1][s1 S[j1], s2 V[j2], s3 V[j3], s4 V[j4], s5 V[j5]].{FAMetricTensor[li2 ,li5 ]FAMetricTensor[li3 ,li4 ], FAMetricTensor[li2 ,li4 ]FAMetricTensor[li3 ,li5 ], FAMetricTensor[li2 ,li3 ]FAMetricTensor[li4 ,li5 ]},
-
 	 (* VVV *)
 
 AnalyticalCoupling[s1 V[j1, mom1, {li1}], s2 V[j2, mom2, {li2}], s3 V[j3, mom3, {li3}] ] ==
-G[+1][s1 V[j1], s2 V[j2], s3 V[j3]].{FAFourVector[mom1, li1]FAFourVector[mom1, li3]FAFourVector[mom2, li2], FAFourVector[mom1, li3]FAFourVector[mom2, li1]FAFourVector[mom2, li2], FAFourVector[mom1, li1]FAFourVector[mom1, li2]FAFourVector[mom2, li3], FAFourVector[mom1, li1]FAFourVector[mom2, li2]FAFourVector[mom2, li3], FAFourVector[mom1, li2]FAFourVector[mom2, li3]FAFourVector[mom3, li1], FAFourVector[mom2, li2]FAFourVector[mom2, li3]FAFourVector[mom3, li1], FAFourVector[mom1, li1]FAFourVector[mom1, li3]FAFourVector[mom3, li2], FAFourVector[mom1, li3]FAFourVector[mom2, li1]FAFourVector[mom3, li2], FAFourVector[mom1, li1]FAFourVector[mom1, li2]FAFourVector[mom3, li3], FAFourVector[mom2, li1]FAFourVector[mom2, li2]FAFourVector[mom3, li3], FAFourVector[mom1, li2]FAFourVector[mom3, li1]FAFourVector[mom3, li3], FAFourVector[mom2, li2]FAFourVector[mom3, li1]FAFourVector[mom3, li3], FAFourVector[mom1, li1]FAFourVector[mom3, li2]FAFourVector[mom3, li3], FAFourVector[mom2, li1]FAFourVector[mom3, li2]FAFourVector[mom3, li3], FAFourVector[mom1, li3]FAMetricTensor[li1 ,li2 ], FAFourVector[mom2, li3]FAMetricTensor[li1 ,li2 ], FAFourVector[mom1, li2]FAMetricTensor[li1 ,li3 ], FAFourVector[mom3, li2]FAMetricTensor[li1 ,li3 ], FAFourVector[mom2, li1]FAMetricTensor[li2 ,li3 ], FAFourVector[mom3, li1]FAMetricTensor[li2 ,li3 ], FAFourVector[mom2, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom1,mom1], FAFourVector[mom3, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom1,mom1], FAFourVector[mom2, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom1,mom1], FAFourVector[mom3, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom1,mom1], FAFourVector[mom2, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom1,mom1], FAFourVector[mom3, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom1,mom1], FAFourVector[mom2, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom1,mom2], FAFourVector[mom3, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom1,mom2], FAFourVector[mom1, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom1,mom2], FAFourVector[mom3, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom1,mom2], FAFourVector[mom2, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom1,mom3], FAFourVector[mom3, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom1,mom3], FAFourVector[mom1, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom1,mom3], FAFourVector[mom2, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom1,mom3], FAFourVector[mom1, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom2,mom2], FAFourVector[mom3, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom2,mom2], FAFourVector[mom1, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom2,mom2], FAFourVector[mom3, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom2,mom2], FAFourVector[mom1, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom2,mom2], FAFourVector[mom3, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom2,mom2], FAFourVector[mom1, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom2,mom3], FAFourVector[mom3, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom2,mom3], FAFourVector[mom1, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom2,mom3], FAFourVector[mom2, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom2,mom3], FAFourVector[mom1, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom3,mom3], FAFourVector[mom2, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom3,mom3], FAFourVector[mom1, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom3,mom3], FAFourVector[mom2, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom3,mom3], FAFourVector[mom1, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom3,mom3], FAFourVector[mom2, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom3,mom3]},
+G[+1][s1 V[j1], s2 V[j2], s3 V[j3]].{FAFourVector[mom1, li1]FAFourVector[mom1, li3]FAFourVector[mom2, li2], FAFourVector[mom1, li3]FAFourVector[mom2, li1]FAFourVector[mom2, li2], FAFourVector[mom1, li1]FAFourVector[mom1, li2]FAFourVector[mom2, li3], FAFourVector[mom1, li1]FAFourVector[mom2, li2]FAFourVector[mom2, li3], FAFourVector[mom2, li2]FAFourVector[mom2, li3]FAFourVector[mom3, li1], FAFourVector[mom1, li1]FAFourVector[mom1, li3]FAFourVector[mom3, li2], FAFourVector[mom1, li1]FAFourVector[mom1, li2]FAFourVector[mom3, li3], FAFourVector[mom2, li1]FAFourVector[mom2, li2]FAFourVector[mom3, li3], FAFourVector[mom1, li2]FAFourVector[mom3, li1]FAFourVector[mom3, li3], FAFourVector[mom2, li2]FAFourVector[mom3, li1]FAFourVector[mom3, li3], FAFourVector[mom1, li1]FAFourVector[mom3, li2]FAFourVector[mom3, li3], FAFourVector[mom2, li1]FAFourVector[mom3, li2]FAFourVector[mom3, li3], FAFourVector[mom1, li3]FAMetricTensor[li1 ,li2 ], FAFourVector[mom2, li3]FAMetricTensor[li1 ,li2 ], FAFourVector[mom1, li2]FAMetricTensor[li1 ,li3 ], FAFourVector[mom3, li2]FAMetricTensor[li1 ,li3 ], FAFourVector[mom2, li1]FAMetricTensor[li2 ,li3 ], FAFourVector[mom3, li1]FAMetricTensor[li2 ,li3 ], FAFourVector[mom2, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom1,mom1], FAFourVector[mom3, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom1,mom1], FAFourVector[mom2, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom1,mom1], FAFourVector[mom3, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom1,mom1], FAFourVector[mom2, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom1,mom1], FAFourVector[mom3, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom1,mom1], FAFourVector[mom2, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom1,mom2], FAFourVector[mom1, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom1,mom2], FAFourVector[mom3, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom1,mom3], FAFourVector[mom1, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom1,mom3], FAFourVector[mom1, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom2,mom2], FAFourVector[mom3, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom2,mom2], FAFourVector[mom1, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom2,mom2], FAFourVector[mom3, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom2,mom2], FAFourVector[mom1, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom2,mom2], FAFourVector[mom3, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom2,mom2], FAFourVector[mom3, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom2,mom3], FAFourVector[mom2, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom2,mom3], FAFourVector[mom1, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom3,mom3], FAFourVector[mom2, li3]FAMetricTensor[li1 ,li2 ]FAScalarProduct[mom3,mom3], FAFourVector[mom1, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom3,mom3], FAFourVector[mom2, li2]FAMetricTensor[li1 ,li3 ]FAScalarProduct[mom3,mom3], FAFourVector[mom1, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom3,mom3], FAFourVector[mom2, li1]FAMetricTensor[li2 ,li3 ]FAScalarProduct[mom3,mom3]},
 
 	 (* VVVV *)
 
