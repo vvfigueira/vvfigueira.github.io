@@ -1,0 +1,102 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+\usepackage[style=numeric-comp, backend=bibtex]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphics, setspace}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{slashed}
+\usepackage{tensor}
+\usepackage[lmargin=1cm,rmargin=1cm, tmargin =2cm,bmargin =2cm]{geometry}
+\usepackage{tensor}
+\usepackage[brazilian]{cleveref}
+\usepackage{tikz-feynman}
+
+\AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
+\AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
+\AtBeginDocument{\newcommand{\im}{\textnormal{i}}}
+\AtBeginDocument{\newcommand{\luz}{\textnormal{c}}}
+\AtBeginDocument{\newcommand{\grav}{\textnormal{G}}}
+\AtBeginDocument{\newcommand{\kb}{{\textnormal{k}_{\textnormal{B}}}}}
+\newcommand{\Dd}[1]{\mathcal D #1}
+\newcommand{\Det}[1]{\textup{Det} #1}
+\newcommand{\sgn}[1]{\mbox{sgn}\qty(#1)}
+\newcommand{\cqd}{\hfill$\blacksquare$}
+\newcommand{\dbar}{\mbox{\dj}}
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\newcommand{\sumint}[1]{\ \ \mathclap{\displaystyle\int\limits_{#1}}\mathclap{\textstyle\sum}\ \ }
+
+\numberwithin{equation}{section}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{defi}{Definição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{hip}{Hipótese}[subsection]
+
+\newcommand{\numberthis}{\addtocounter{equation}{1}\tag{\theequation}}
+
+\pagestyle{plain}
+
+%\AddToHook{cmd/section/before}{\clearpage}
+
+\addbibresource{refs.bib}
+
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{definicao}{Definição}[section]
+\newtheorem{lema}{Lema}[section]
+\newtheorem{hipotese}{Hipótese}[section]
+\newtheorem{postulado}{Postulado}[section]
+
+\begin{document}
+
+%\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{-1cm}{
+            \setstretch{.5} 
+            \textsc{Universidade de São Paulo} \\
+            \HRule{.2pt}\\
+            \textsc{Instituto de Física}
+        }
+
+        \vspace{5.5cm}
+        
+        \Large \textbf{\textsc{Testando o Modelo Padrão em sinais de Transições de Fase Cosmológicas}}
+ 	    \HRule{1.5pt} \\ [0.5cm]
+        \linespread{1}
+        \large Relatório científico anual do projeto na modalidade Iniciação Científica --- Fluxo Contínuo, fomentado pela FAPESP. \\ 
+   	    \HRule{1.5pt} \\ [0.5cm]       
+        Projeto FAPESP~\texttt{\#2024/06488-0}
+        \\ [0.5cm]
+        Pesquisador Responsável: Gabriel \\
+        Aluno: Vicente Viater Figueira
+        \\ [0.5cm]
+        Vigência: 01/03/2025 a 01/03/2027\\
+        Período Coberto pelo Relatório: 01/03/2025 a 01/12/2025
+        \vfill
+        {\normalsize  São Paulo, \today}
+    \end{center}
+\end{titlepage}
+
+\nocite{*}
+
+\input{sections/resumo}
+
+\input{sections/realizacoes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\printbibliography
+
+\end{document}
