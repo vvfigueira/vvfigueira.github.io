@@ -71,4 +71,4 @@ M$ClassesDescription =
 
 DFS[A,mu,nu,alpha,a] := del[FS[A,mu,nu,a],alpha]+g*f[a,b,c]*A[alpha,b]*FS[A,mu,nu,c];
 
-LDF2 = 1/2 * (del[FS[A,mu,nu,a],mu]+g*f[a,b,c]*A[mu,b]*FS[A,mu,nu,c])* (del[FS[A,alpha,nu,a],alpha]+g*f[a,d,e]*A[alpha,d]*FS[A,alpha,nu,e])-1/3 f[a,b,c]*FS[A,mu,nu,a]*FS[A,nu,alpha,b]*FS[A,alpha,mu,c]+1/2 DC[phi[i],mu].DC[phi[i],mu]+1/2 g* c[i,a,b]*phi[i]*FS[A,mu,nu,a]FS[A,mu,nu,b]+1/6 g* dcolour[i,j,k]*phi[i]*phi[j]*phi[k]-m^2/2 phi[i]*phi[i]-m^2/4 FS[A,mu,nu,a]* FS[A,mu,nu,a];
+LDF2 = 1/2 * (del[FS[A,mu,nu,a],mu]+g*f[a,b,c]*A[mu,b]*FS[A,mu,nu,c])* (del[FS[A,alpha,nu,a],alpha]+g*f[a,d,e]*A[alpha,d]*FS[A,alpha,nu,e])-1/3 *g*f[a,b,c]*FS[A,mu,nu,a]*FS[A,nu,alpha,b]*FS[A,alpha,mu,c]+1/2 DC[phi[i],mu].DC[phi[i],mu]+1/2 g* c[i,a,b]*phi[i]*FS[A,mu,nu,a]FS[A,mu,nu,b]+1/6 g* dcolour[i,j,k]*phi[i]*phi[j]*phi[k]-m^2/2 phi[i]*phi[i]-m^2/4 FS[A,mu,nu,a]* FS[A,mu,nu,a];
