@@ -1,4 +1,4 @@
-\subsection{Métodos On-Shell}
+\subsection{Métodos \textit{On-Shell}}
 
 O principal ponto da abordagem relativamente moderna de métodos on-shell para o cálculo de amplitudes em teorias de campo 
 é utilizar-se de uma informação subutilizada em Teoria Quântica de Campos (TQC) usual, transformações pelo \textit{Little-Group}. 
@@ -42,5 +42,55 @@ O último isomorfismo deixa claro que todas as representações de $\mathfrak{sl
 por sua vez são muito bem conhecidas, são representadas por dois meio-inteiros $m,n\in\frac12\mathbb N$, $\qty(m,n)$. Sabemos que um vetor é a representação \[\qty(\frac12, 0 )\otimes \qty(0,\frac12)=\qty(\frac12,\frac12) = \vb0\oplus\vb 1,\] 
 disto é claro que a representação de vetor não é irredutível, ela é o produto das representações irredutíveis $\qty(\frac12,0),\qty(0,\frac12)$. Como podemos obter a decomposição de um vetor em suas partes irredutíveis? 
 Isso pode ser derivado por teoria de representações também, analisando,
-\[\qty(\frac12,0)\otimes \qty(0,\frac12)\otimes\qty(\frac12,\frac12) = \qty(0,0)\oplus\cdots\]
-\subsubsection{teste}
+\[\qty(\frac12,0)\otimes \qty(0,\frac12)\otimes\qty(\frac12,\frac12) = \qty(0,0)\oplus\qty(1,0)\oplus\qty(0,1)\oplus\qty(1,1).\]
+A existência da representação escalar, $\qty(0,0)$, neste produto de representações é um indicativo da existência de um invariante do 
+grupo com três índices. Indexando a representação de mão esquerda $\qty(\frac12,0)$ por $_a$ e a de mão direita $\qty(0,\frac12)$ por $^{\dot a}$, o invariante 
+do grupo que prevemos a existência é \[\tensor{\Lambda}{^\alpha_\beta}\tensor{L\qty(\Lambda)}{_a^b}\tensor{{R^{-1}}\qty(\Lambda)}{^{\dot b}_{\dot a}}\tensor{\sigma}{^\beta_b_{\dot b}}=\tensor{\sigma}{^\alpha_a_{\dot a}},\] 
+onde $\Lambda, L\qty(\Lambda),R\qty(\Lambda)$ são transformações do grupo $SL\qty(2,\mathbb C)$ nas representações vetorial, mão esquerda e mão direita. 
+Diretamente dessa relação de invariância é possível calcular explicitamente o tensor $\tensor{\sigma}{^\alpha_a_{\dot a}}$, a parte de um fator multiplicativo. 
+Seus valores são bem conhecidos, \[\tensor{\sigma}{^\alpha_a_{\dot a}}=\mqty({\mathbb 1 }_{a\dot a} & {\boldsymbol{\sigma}}_{a\dot a}),\] no qual $\boldsymbol\sigma$ são 
+as matrizes de Pauli. Há mais quantidades invariantes que podem serem obtidas, outra que será de grande importância para nós é,\[\qty(\frac12,0)\otimes\qty(\frac12,0)=\qty(0,0)\oplus\qty(1,0),\] implica 
+a existência de um objeto invariante, \[\tensor{L\qty(\Lambda)}{_a^c}\tensor{L\qty(\Lambda)}{_b^d}\epsilon_{cd}=\epsilon_{ab},\] também existe um associado à representação 
+de mão direita, \[\qty(0,\frac12)\otimes\qty(0,\frac12)=\qty(0,0)\oplus\qty(0,1),\] que implica em, \[\tensor{R^{-1}\qty(\Lambda)}{_{\dot a}^{\dot c}}\tensor{R^{-1}\qty(\Lambda)}{_{\dot b}^{\dot d}}\epsilon_{\dot c\dot d}=\epsilon_{\dot a\dot b},\] 
+aparte de fatores multiplicativos podemos escolher os valores como, \[\epsilon_{ab}=\epsilon_{\dot a\dot b}=\mqty(0&-1\\1&0).\] 
+
+Daqui existem várias relações algébricas que serão muito úteis, vamos apenas enunciá-las,
+\begin{align*}
+    \tensor{{\bar\sigma}}{^\mu^{\dot a}^a}&=\epsilon^{\dot a\dot b}\epsilon^{a b}\tensor{\sigma}{^\mu_a_{\dot b}}=\mqty(\mathbb 1 &-\boldsymbol\sigma)\\
+    \eta_{\mu\nu}\tensor{\sigma}{^\mu_a_{\dot a}}\tensor{\sigma}{^\nu_b_{\dot b}}&=-2\epsilon_{ab}\epsilon_{\dot a\dot b}\\
+    \epsilon^{ab}\epsilon^{\dot a\dot b}\tensor{\sigma}{^\mu_a_{\dot a}}\tensor{\sigma}{^\nu_b_{\dot b}}&=\Tr\qty[\sigma^\mu{\bar\sigma}^\nu]=-2\eta^{\mu\nu}\\
+    \sigma^\mu{\bar\sigma}^\nu+\sigma^\nu{\bar\sigma}^\mu&=-2\eta^{\mu\nu}\\
+    {\bar\sigma}^\mu\sigma^\nu+{\bar\sigma}^\nu\sigma^\mu&=-2\eta^{\mu\nu}
+\end{align*}
+
+O ponto dessas construções é, dado um momento $p^\mu$, é possível construir o seguinte objeto $p_\mu\tensor{\sigma}{^\mu_a_{\dot a}}=p_{a\dot a}$. Como $\tensor{\sigma}{^\mu_a_{\dot a}}$ é 
+um invariante do grupo, o objeto $p_{a\dot a}$ se transforma corretamente na representação $\qty(\frac12,0)\otimes\qty(0,\frac12)$. Caso $p^2 =0 $, e utilizando-se das relações acima, 
+\begin{align*}
+    p_\mu p_\nu\epsilon^{ab}\epsilon^{\dot a\dot b}\tensor{\sigma}{^\mu_a_{\dot a}}\tensor{\sigma}{^\nu_b_{\dot b}}&=-2p_\mu p_\nu\eta^{\mu\nu}=0\\
+    \epsilon^{ab}\epsilon^{\dot a\dot b}p_{a\dot a}p_{b\dot b}&=0\\
+    \epsilon^{\dot a\dot b}\qty(p_{1\dot a}p_{2\dot b}-p_{2\dot a}p_{1\dot b})&=2\epsilon^{\dot a\dot b}p_{1\dot a}p_{2\dot b}=2\Det[p_{a\dot a}]=0
+\end{align*}
+Logo, $p_\mu p^\mu =0 \Rightarrow \Det[p_{a\dot a}]=0$, isto é, dos $4$ elementos da matriz $p_{a\dot a}$, apenas dois são independentes. Em outras palavras, 
+esta matrix é completamente determinada apenas por um vetor de duas componentes $p_a$, fazendo com que $p_{a\dot a}= -p_ap_{\dot a}$\footnote{O fator de $-$ aqui está relacionado 
+com $p^0>0$, para mostrar sua necessidade é preciso realizar uma demonstração mais cuidadosa.}. Devido à $p^\mu$ possuir componentes 
+reais, isso implica em $p_{\dot a} = \qty(p_a)^\ast$. Representamos $p_a=|p]$ e $p_{\dot a }=\langle p|$, assim $p=-|p]\langle p|$. Igualmente, podemos 
+definir $p^a = \epsilon^{ab}p_b= [p|, p^{\dot a} =\epsilon^{\dot a\dot b}p_{\dot b}=|p\rangle $, de tal forma que:\[\forall p,q| p^2=q^2=0,\ \ \ \epsilon^{ab}p_aq_b=[pq],\ \ \epsilon_{\dot a \dot b}p^{\dot a} q^{\dot b}=\langle pq\rangle.\] 
+
+Claramente, dado $p^2=0$, a escolha de $|p]$ --- que fixa todos os outros símbolos, se o momento for real --- não é única. Podemos sempre fazer a transformação $|p],\langle p|\rightarrow t|p],t^{-1}\langle p|$ que preserva $p^\mu$. Este é 
+o \textit{Little-Group}. Como afirmamos anteriormente, para partículas sem massa deveria ser o grupo $U\qty(1)$, que é consistente com um fator multiplicativo $t$. De fato então 
+fomos bem sucedidos, conseguimos compactar a informação contida em um momento sem massa em um objeto $|p]$ que se transforma não trivialmente 
+sobre o \textit{Little-Group}, portanto, se utilizar-mos como blocos de construção $|p], \textnormal{etc...}$ ao invés de $p^\mu$, podemos 
+obter restrições não triviais sobre objetos em TQC ao impor condições sobre como devem se comportar sobre uma transformação destas.
+
+Este procedimento é excelente para momentos não massivos, porém, não é satisfatório para momentos massivos, note que, se $p^2 = -m^2$, 
+\begin{align*}
+    p_\mu p_\nu\epsilon^{ab}\epsilon^{\dot a\dot b}\tensor{\sigma}{^\mu_a_{\dot a}}\tensor{\sigma}{^\nu_b_{\dot b}}&=-2p_\mu p_\nu\eta^{\mu\nu}=2m^2\\
+    \epsilon^{ab}\epsilon^{\dot a\dot b}p_{a\dot a}p_{b\dot b}&=2m^2\\
+    \epsilon^{\dot a\dot b}\qty(p_{1\dot a}p_{2\dot b}-p_{2\dot a}p_{1\dot b})&=2\epsilon^{\dot a\dot b}p_{1\dot a}p_{2\dot b}=2\Det[p_{a\dot a}]=2m^2
+\end{align*}
+Desta forma, $p^2 =-m^2\Rightarrow \Det[p_{a\dot a}]=m^2$, portanto, as linhas e colunas desta matrix são linearmente independentes, e não é possível decompô-la na forma 
+$p_{a\dot a} = -p_ap_{\dot a}$, o melhor que é possível de ser realizado é decompô-la em termo de dois vetores $p^I_{a},\ I=1,2$, tal que, $p_{a\dot a}= -p^I_ap_{I\dot a}$. 
+Novamente, é facilmente observável que esta decomposição não é única, e está definida aparte de uma transformação $p^I_{a},p_{K\dot a}\rightarrow\tensor{W}{^I_J},\tensor{W}{^{-1}^L_K}p_{L\dot a}$, 
+como $p^\mu$ é real, $p_{I\dot a} = \qty(p^I_{a})^\ast$, isso impõe a restrição em $W$ de, $W^{ \textnormal T\ast} = W^{-1}$, ou seja, essa ambiguidade 
+corresponde a uma transformação de $SU(2)$, em concordância com o \textit{Little-Group}. Utilizamos também uma notação muito similar à das partículas 
+sem massa, $p^I_a = |p^I],$ etc...
