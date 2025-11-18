@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.15)  14 NOV 2025 22:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.15)  17 NOV 2025 21:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1205,11 +1205,17 @@ LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./sections/resumo.tex) (./sections/realizacoes.tex) (./sections/amplitudes.tex
-) (./sections/unitarity.tex) (./sections/plano.tex)
+LaTeX Font Info:    Trying to load font information for U+euf on input line 33.
 
-[1]
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
 
-[2] (./main.aux
+[1]) (./sections/unitarity.tex) (./sections/plano.tex)
+
+[2]
+
+[3] (./main.aux
 Package cleveref Info: loaded `brazilian' language definitions on input line 12
 .
 )
@@ -1228,26 +1234,33 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36316 strings out of 467886
- 711467 string characters out of 5438218
- 1342635 words of memory out of 5000000
- 64167 multiletter control sequences out of 15000+600000
- 635496 words of font info for 74 fonts, out of 8000000 for 9000
+ 36352 strings out of 467886
+ 712099 string characters out of 5438218
+ 1356635 words of memory out of 5000000
+ 64192 multiletter control sequences out of 15000+600000
+ 637526 words of font info for 81 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 98i,5n,105p,1866b,1974s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,21n,105p,1866b,1974s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
 live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/202
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/t
-exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (3 pages, 112492 bytes).
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/
+texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/202
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmti8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmtt12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/e
+ufm10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
+0.pfb>
+Output written on main.pdf (4 pages, 184474 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
+ 149 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
+ 14 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

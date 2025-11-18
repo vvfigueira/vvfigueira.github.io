@@ -2,6 +2,45 @@
 
 O principal ponto da abordagem relativamente moderna de métodos on-shell para o cálculo de amplitudes em teorias de campo 
 é utilizar-se de uma informação subutilizada em Teoria Quântica de Campos (TQC) usual, transformações pelo \textit{Little-Group}. 
-É de conhecimento geral que a álgebra de Poincaré admite dois invariantes de Casimir, a massa quadrada $-P^\mu P_\mu$ e o spin 
-$W^\mu W_\mu$, para estados fisicamente aceitáveis é necessário $P^\mu P_\mu\leq 0$, desses dois casos
+É de conhecimento geral que a álgebra de Poincaré --- $ISO^+\qty(1,3)$ --- admite dois invariantes de Casimir, a massa quadrada $-P^\mu P_\mu$ e o spin 
+$W^\mu W_\mu$, para estados fisicamente aceitáveis é necessário $-P^\mu P_\mu\geq 0$, o que gera dois casos possíveis,
+\begin{align*}
+    \begin{cases}
+        -P^\mu P_\mu&= 0 \\
+        -P^\mu P_\mu&> 0
+    \end{cases}.
+\end{align*}
+Podemos sempre relacionar momentos específicos via transformações de Lorentz de momentos referência, a escolha mais adequada para cada um dos casos acima é,
+\begin{align*}
+    \begin{cases}
+        -k^2= 0&\Rightarrow k_0 = \mqty(\kappa & 0&0&\kappa),\ \ \ \kappa> 0\\
+        -k^2= m^2>0&\Rightarrow k_m = \mqty(m&0&0&0),\ \ \ m>0
+    \end{cases}.
+\end{align*}
+Dessa forma, dado $p^2=0$ ($p^2=-m^2$), existe sempre uma transformação $L\qty(p)$ tal que $p=L\qty(p)k_0$ ($p=L\qty(p)k_m$). O fato mais interessante dessa 
+relação é que a escolha de $L(p)$ não é única, pois existem transformações --- do grupo de Poincaré --- não triviais que preservam $k_0$ ($k_m$), estas transformações são os elementos do 
+chamado \textit{Little-Group}. É trivial determiná-las, para $k_0$ são rotações nas componentes $1$ e $2$, isto é, $SO(2)$\footnote{Na realidade o subgrupo de Poincaré que preserva $k_0$ 
+é $ISO(2)$, porém, as transformações geradas pela parte não homogênea desse grupo correspondem à números quânticos contínuos. Até o presente momento, as partículas sem massas conhecidas 
+apresentam apenas números quânticos discretos --- helicidade ---, e nenhum número quântico contínuo, logo, somos levados a crer que estas se transformam trivialmente sobre a ação da 
+parte não homogênea, de modo que possamos ignorá-la.} que devido à estarmos lidando com uma teoria quântica 
+necessita de ser elevado para seu \textit{double cover}, $U\qty(1)$. Para $k_m$ são rotações nas três componentes espaciais, $SO(3)$, que novamente precisa ser elevado ao \textit{double cover}, 
+$SU(2)$. O ponto desta discussão é: Em TQC, como estamos interessados em utilizar o momento, essas transformações que preservam os momentos $k_0,k_m$ são objetos subutilizados, uma vez que 
+são totalmente irrelevantes. Outro modo de pensar é do ponto de vista de teoria de grupos, os representativos $k_0,k_m$ das classes de momentos sem massa e massivos não são objetos 
+que se transformam em uma representação irredutível do grupo de Poincaré, pois possuem um subespaço invariante --- o \textit{Little-Group} ---, logo, é possível decompor ainda mais 
+os representativos das classes de momento. Para entender como isso pode ser realizado temos de recorrer novamente a teoria de grupos. Primeiramente, nosso grupo de interesse é o grupo de 
+Poincaré, a parte não homogênea já é realizada trivialmente, pois estamos trabalhando em autoestados de momento, logo, precisamos tornar nossa atenção apenas para a parte homogênea, isto é, 
+o grupo de Lorentz. Note que, devido à querermos analisar a teoria quântica, é necessário voltar-no-mos à seu \textit{double-cover},\[SO^+\qty(1,3)\xRightarrow{\text{\textit{double cover}}}SL(2,\mathbb C).\] 
+Infelizmente, $\mathfrak{sl}(2,\mathbb C)$ por sí não é adequado para obter-se representações irredutíveis. O método mais fácil é complexificar a álgebra, e utilizar-se do isomorfismo 
+$\mathfrak{sl}\qty(2,\mathbb C)\cong\mathfrak{su}\qty(2)_{\mathbb C}$,
+útil, 
+\begin{align*}
+    \mathfrak{sl}\qty(2,\mathbb C)\hookrightarrow \mathfrak{sl}\qty(2,\mathbb C)_{\mathbb C}&\cong \mathfrak{sl}\qty(2,\mathbb C)\oplus\mathfrak{sl}\qty(2,\mathbb C)\\
+    \mathfrak{sl}\qty(2,\mathbb C)\hookrightarrow \mathfrak{sl}\qty(2,\mathbb C)_{\mathbb C}&\cong \mathfrak{su}\qty(2)_{\mathbb C}\oplus\mathfrak{su}\qty(2)_{\mathbb C}\\
+    \mathfrak{sl}\qty(2,\mathbb C)\hookrightarrow \mathfrak{sl}\qty(2,\mathbb C)_{\mathbb C}&\cong \qty(\mathfrak{su}\qty(2)\oplus\mathfrak{su}\qty(2))_{\mathbb C}
+\end{align*}
+O último isomorfismo deixa claro que todas as representações de $\mathfrak{sl}\qty(2,\mathbb C)$ estão em um mapa um-para-um com as representações de $\mathfrak{su}\qty(2)\oplus \mathfrak{su}\qty(2)$. Estas 
+por sua vez são muito bem conhecidas, são representadas por dois meio-inteiros $m,n\in\frac12\mathbb N$, $\qty(m,n)$. Sabemos que um vetor é a representação \[\qty(\frac12, 0 )\otimes \qty(0,\frac12)=\qty(\frac12,\frac12) = \vb0\oplus\vb 1,\] 
+disto é claro que a representação de vetor não é irredutível, ela é o produto das representações irredutíveis $\qty(\frac12,0),\qty(0,\frac12)$. Como podemos obter a decomposição de um vetor em suas partes irredutíveis? 
+Isso pode ser derivado por teoria de representações também, analisando,
+\[\qty(\frac12,0)\otimes \qty(0,\frac12)\otimes\qty(\frac12,\frac12) = \qty(0,0)\oplus\cdots\]
 \subsubsection{teste}
