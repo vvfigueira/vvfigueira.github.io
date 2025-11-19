@@ -19,7 +19,7 @@ diferentes ordens na expansão do parâmetro de acoplamento. A versão mais famo
     2\textnormal{Im}\qty[\mathcal A_{\alpha\alpha}]&=\qty(2\pi)^4\int\dd{\beta}\delta\qty(p_\beta-p_\alpha)\abs{\mathcal A_{\beta\alpha}}^2
 \end{align*}
 Trabalhando do ponto de vista de teoria de perturbação, podemos calcular a parte imaginária da contribuição de 1--\textit{loop} de $\mathcal A_{\alpha\alpha}$ apenas sabendo a contribuição 
-de nível arvore para $\mathcal A_{\beta\alpha}$. Parte deste fato está relacionado ao teorema de Sokhotski–Plemelj, \[\frac{1}{p^2+m^2-\im\epsilon}=\im\pi\delta\qty(p^2+m^2)+\textnormal{P}\frac{1}{p^2+m^2}.\] Que nos confirma que o propagador 
+de nível arvore para $\mathcal A_{\beta\alpha}$. Parte deste fato está relacionado ao teorema de Sokhotski–Plemelj, \[\frac{1}{p^2+m^2-\im\epsilon}=\im\pi\delta\qty(p^2+m^2)+\textnormal{P.V.}\frac{1}{p^2+m^2}.\] Que nos confirma que o propagador 
 apenas possui parte imaginária para uma partícula \textit{on-shell}, porém, para diagramas a nível árvore não é cinematicamente permitido de uma partícula virtual 
 interna ao diagrama entrar \textit{on-shell}, o que é compatível com o senso comum de contribuições à nível árvore serem polinômios de propagadores e numeradores cinemáticos, que certamente não 
 possuem parte imaginária para partículas \textit{off-shell}. Agora, para contribuições de \textit{loop}, partículas virtuais internas podem ficarem \textit{on-shell}, e portanto, os diagramas 
@@ -31,8 +31,8 @@ Como exemplo tomemos a teoria $g\phi^3$,\[\mathcal L = -\frac12\phi\qty(-\Box+m^
         a -- [scalar] b -- [ half left,scalar] c --[half left,scalar] b,
         c -- [scalar] d,
     };=\frac12 \qty(\im g)^2\frac{1}{\im^2}\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\frac{1}{\ell^2+m^2-\im\epsilon}\frac{1}{\qty(\ell - p)^2+m^2-\im\epsilon}\\
-    \mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}&=-\im\frac12g^2\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\qty(\im\pi\delta\qty(\ell^2+m^2)+\textnormal{P}\frac{1}{\ell^2+m^2})\qty(\im\pi\delta\qty(\qty(\ell-p)^2+m^2)+\textnormal{P}\frac{1}{\qty(\ell-p)^2+m^2})\\
-    \textnormal{Im}\qty[\mathcal A]&=-\frac12g^2\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\qty(-\pi^2\delta\qty(\ell^2+m^2)\delta\qty(\qty(\ell-p)^2+m^2)+\textnormal{P}\frac{1}{\ell^2+m^2}\textnormal{P}\frac{1}{\qty(\ell-p)^2+m^2})
+    \mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}&=-\im\frac12g^2\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\qty(\im\pi\delta\qty(\ell^2+m^2)+\textnormal{P.V.}\frac{1}{\ell^2+m^2})\qty(\im\pi\delta\qty(\qty(\ell-p)^2+m^2)+\textnormal{P.V.}\frac{1}{\qty(\ell-p)^2+m^2})\\
+    \textnormal{Im}\qty[\mathcal A]&=-\frac12g^2\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\qty(-\pi^2\delta\qty(\ell^2+m^2)\delta\qty(\qty(\ell-p)^2+m^2)+\textnormal{P.V.}\frac{1}{\ell^2+m^2}\textnormal{P.V.}\frac{1}{\qty(\ell-p)^2+m^2})
 \end{align*}
 A parte dependente do valor principal resultará em zero, e portanto,
 \begin{align*}
@@ -41,6 +41,39 @@ A parte dependente do valor principal resultará em zero, e portanto,
     \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[4]{q}\dd[4]{\ell}}{\qty(2\pi)^42\omega_{\boldsymbol \ell}2\omega_{\vb q}}\qty(\delta\qty(\ell^0-\omega_{\boldsymbol\ell})+\delta\qty(\ell^0+\omega_{\boldsymbol\ell}))\qty(\delta\qty(q^0-\omega_{\vb q})+\delta\qty(q^0+\omega_{\vb q}))\delta^{\qty(4)}\qty(q+\ell-p)\\
     \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^42\omega_{\boldsymbol \ell}2\omega_{\vb q}}\qty(\delta\qty(\omega_{\vb q}+\omega_{\boldsymbol\ell}-p^0)+\delta\qty(\omega_{\vb q}-\omega_{\boldsymbol\ell}-p^0)+\delta\qty(-\omega_{\vb q}+\omega_{\boldsymbol\ell}-p^0))\delta^{\qty(3)}\qty(\vb q+\boldsymbol\ell-\vb p)\\
     \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac18\qty(2\pi)^4g^2\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^62\omega_{\boldsymbol \ell}2\omega_{\vb q}}\delta^{\qty(4)}\qty(q+\ell- p)\\
-    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac18\qty(2\pi)^4\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^62\omega_{\boldsymbol \ell}2\omega_{\vb q}}\delta^{\qty(4)}\qty(q+\ell- p)\abs{\mathcal A^{\textnormal{tree}}_{1\rightarrow 2}}^2
+    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac18\qty(2\pi)^4\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^62\omega_{\boldsymbol \ell}2\omega_{\vb q}}\delta^{\qty(4)}\qty(q+\ell- p)\abs{\mathcal A^{\textnormal{tree}}_{1\rightarrow 2}}^2, \ \ \ \mathcal A^{\textnormal{tree}}_{1\rightarrow 2}=g
 \end{align*}
-Neste \textit{toy-model} podemos apreciar claramente a parte imaginária da amplitude $1\rightarrow 1$ a 1--\textit{loop} ser expressável em termos da amplitude nível árvore $1\rightarrow 2$.
+Neste \textit{toy-model} podemos apreciar claramente a parte imaginária da amplitude $1\rightarrow 1$ a 1--\textit{loop} ser expressável em termos da amplitude nível árvore $1\rightarrow 2$. A integral que aparece, 
+\[\int\dd{\beta}=\frac14\int\frac{\dd[3]{\boldsymbol\ell}\dd[3]{\vb q}}{\qty(2\pi)^62\omega_{\boldsymbol\ell}2\omega_{\vb q}},\] 
+nada é além da medida Lorentz invariante do espaço de fase. Há uma maneira diagramática de obter essa igualdade entre a parte imaginária e produtos 
+de amplitudes em menor ordem, elas vão pelo nome de \textbf{regras de corte de Cutkosky}, o procedimento é simples, escrevemos um diagrama de Feynman de n--\textit{loops} que 
+contribua para o processo em análise, disto, \textit{cortamos} propagadores deste diagrama de forma a separar o diagrama inicial em dois diagramas de ordem menor. 
+O procedimento de \textit{cortar} um propagador corresponde a substituir $\qty(p^2+m^2-\im\epsilon)^{-1}$ por $\im\pi\theta\qty(p^0)\delta\qty(p^2+m^2)$, diagramaticamente, 
+representamos um propagador cortado por uma linha perpendicular passando por seu propagador, ao fim, multiplicamos as duas amplitudes restantes, com a da direita sendo 
+conjugada, ao fim, integramos sobre o espaço de fase Lorentz invariante. Note que neste processo obtemos duas amplitudes \textit{on-shell}. Como exemplo,
+\begin{align*}
+    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12
+    \begin{tikzpicture}
+        \begin{feynman}\diagram* {
+        a -- [scalar] b -- [ half left,scalar] c-- [scalar] d,c --[half left,scalar] b
+        };
+        \draw[solid, very thick,red] ($(c)+(-0.5,0.7)$) -- ($(c)+(-0.5,0.2)$);
+        \draw[solid, very thick,red] ($(c)+(-0.5,-0.2)$) -- ($(c)+(-0.5,-0.7)$);
+        \end{feynman}
+    \end{tikzpicture}=\frac12\qty(2\pi)^4\int\dd{\beta}\delta^{\qty(4)}\qty(q+\ell-p)\mathcal A^{\textnormal{tree}}_{1\rightarrow 2}\qty(p;\ell,q)\mathcal A^{\textnormal{tree}\ast}_{1\rightarrow 2}\qty(-p;-\ell,-q)
+\end{align*}
+Claramente, para esse exemplo simples, há apenas uma única maneira de se \textit{cortar} o diagrama de 1--\textit{loop} em 
+duas partes de menor ordem. Porém, para um número de pernas externas maior, ou maior número de \textit{loops}, é necessário somar 
+sobre todas as maneiras de se separar as amplitudes. Este conceito de unitariedade é possível de ser estendido para o que 
+chamamos de \textbf{unitariedade generalizada}. Enquanto a noção usual de unitariedade relaciona a parte imaginária de uma contribuição 
+de ordem superior com contribuições de ordem inferiores --- O que pode ser pensado como relacionando a estrutura de polos de amplitudes de 
+ordem inferiores com a estrutura de \textit{branch-cuts} de amplitudes de ordem superiores ---, conceitualmente, conforme mencionamos 
+brevemente anteriormente, efeito de \textit{loops} geram uma estrutura analítica de \textit{branch-cuts} não trivial devido 
+a possibilidade de partículas internas estarem \textit{on-shell}. A proposta da unitariedade generalizada é utilizar o conceito de 
+partículas internas entrando \textit{on-shell} alterarem a estrutura analítica da amplitude, e usar isto para recuperar não somente a 
+parte imaginária da amplitude, mas de fato reconstruir a amplitude como um todo\footnote{Há condições para que isso seja possível.}. 
+
+O exemplo mais básico de unitariedade generalizada é encontrado nas relações de recursão a nível árvore. Seja $\mathcal A_n$ uma amplitude de 
+$n>3$ pontos, para nossa teoria exemplo há propagadores internos nessa amplitude, porém, cinematicamente nenhum destes pode entrar \textit{on-shell}, 
+o motivo reside em os momentos externos das partículas serem reais. Mas, se admitirmos momentos complexos, é sim possível cinematicamente para 
+propagadores internos estarem \textit{on-shell} 
