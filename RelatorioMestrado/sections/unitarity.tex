@@ -1,7 +1,46 @@
 \subsection{Unitariedade em TQC}
 
-Em teoria quântica de campos existem vários conceitos fundamentais, entre eles: Unitariedade, Localidade, Causalidade. Apesar de conceitos 
-completamente independentes, suas aparições em TQC apresentam correlações. Estamos aqui interessados especificamente no primeiro, Unitariedade. 
-Em mecânica quântica, o conceito de unitariedade está associado à evolução temporal e conservação de probabilidades, isto é, quando dizemos que 
-uma determinada teoria quântica é unitária, estamos afirmando que o operador de evolução temporal $U\qty(t_1,t_0)$ satisfaz $U^\dagger\qty(t_1,t_0)U\qty(t_1,t_0)=\mathbb 1$. 
-Isto implica na conservação de probabilidades em relação a evolução temporal, \[\Psi(t_0)\rightarrow \qty(\Psi\qty(t_1),\Psi\qty(t_1))=\qty(U\qty(t_1,t_0)\Psi\qty(t_0),U\qty(t_1,t_0)\Psi\qty(t_0))=\qty(\Psi\qty(t_0),U^\dagger\qty(t_1,t_0)U\qty(t_1,t_0)\Psi\qty(t_0))=\qty(\Psi\qty(t_0),\Psi\qty(t_0))\]
+Unitariedade em TQC se refere a unitariedade da matrix $S$. Como revisão, a matrix $S$ é a amplitude de transição entre um estado \textit{in}, $\Psi^+_\alpha$, para um estado 
+\textit{out}, $\Psi^-_\beta$, \[S_{\beta\alpha}=\qty(\Psi^-_\beta,\Psi^+_\alpha),\] aqui $\alpha$ e $\beta$ são índices que condensam toda a informação contida em seu respectivo 
+estado do espaço de Hilbert. É assumido que tanto os estados \textit{in}, quanto os \textit{out}, sejam uma base completa do espaço de Hilbert, de forma que se a matrix $S$ 
+é um mapa entre essas duas bases, é necessário ela ser um mapa unitário, e de fato, manipulando formalmente essa expressão, \[\int\dd{\beta}S^\ast_{\beta\gamma}S_{\beta\alpha}=\int\dd{\beta}\qty(\Psi^-_\beta,\Psi^+_\gamma)^\ast\qty(\Psi^-_\beta,\Psi^+_\alpha)=\int\dd{\beta}\qty(\Psi^+_\gamma,\Psi^-_\beta)\qty(\Psi^-_\beta,\Psi^+_\alpha)=\qty(\Psi^+_\gamma,\Psi^+_\alpha)=\delta_{\gamma\alpha}\]
+Há fortes consequências dessa propriedades, a principal é chamada por motivos históricos de \textbf{Teorema Óptico}, primeiro, é necessário expandir, \[S_{\beta\alpha}=\delta_{\beta\alpha}+\im \qty(2\pi)^4\delta\qty(p_\beta-p_\alpha)\mathcal A_{\beta\alpha}\] nessa forma, 
+a condição de unitariedade implica,
+\begin{align*}
+    \delta_{\gamma\alpha}&=\int\dd{\beta}S^\ast_{\beta\gamma}S_{\beta\alpha}=\int\dd{\beta}\qty(\delta_{\beta\gamma}+\im \qty(2\pi)^4\delta\qty(p_\beta-p_\gamma)\mathcal A_{\beta\gamma})^\ast\qty(\delta_{\beta\alpha}+\im \qty(2\pi)^4\delta\qty(p_\beta-p_\alpha)\mathcal A_{\beta\alpha})\\
+    \delta_{\gamma\alpha}&=\delta_{\gamma\alpha}-\im \qty(2\pi)^4\delta\qty(p_\alpha-p_\gamma)\mathcal A^\ast_{\alpha\gamma}+\im \qty(2\pi)^4\delta\qty(p_\gamma-p_\alpha)\mathcal A_{\gamma\alpha}+\qty(2\pi)^8\int\dd{\beta}\delta\qty(p_\beta-p_\gamma)\delta\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\\
+    0&=-\im \mathcal A^\ast_{\alpha\gamma}+\im \mathcal A_{\gamma\alpha}+\qty(2\pi)^4\int\dd{\beta}\delta\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}
+\end{align*}
+A maior utilidade deste resultado é do ponto de vista de teoria de perturbação, certamente calculamos uma amplitude de espalhamento $\mathcal A_{\beta\alpha}$ em uma determinada 
+ordem $\mathcal O(g^n)$ do parâmetro de acoplamento, porém, o resultado acima promove uma relação entre $\mathcal A$ e $\mathcal A^2$, ou seja, há relações entre amplitudes em 
+diferentes ordens na expansão do parâmetro de acoplamento. A versão mais famosa deste resultado é para $\alpha=\gamma$, 
+\begin{align*}
+    \im \mathcal A^\ast_{\alpha\alpha}-\im \mathcal A_{\alpha\alpha}&=\qty(2\pi)^4\int\dd{\beta}\delta\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\alpha}\mathcal A_{\beta\alpha}\\
+    2\textnormal{Im}\qty[\mathcal A_{\alpha\alpha}]&=\qty(2\pi)^4\int\dd{\beta}\delta\qty(p_\beta-p_\alpha)\abs{\mathcal A_{\beta\alpha}}^2
+\end{align*}
+Trabalhando do ponto de vista de teoria de perturbação, podemos calcular a parte imaginária da contribuição de 1--\textit{loop} de $\mathcal A_{\alpha\alpha}$ apenas sabendo a contribuição 
+de nível arvore para $\mathcal A_{\beta\alpha}$. Parte deste fato está relacionado ao teorema de Sokhotski–Plemelj, \[\frac{1}{p^2+m^2-\im\epsilon}=\im\pi\delta\qty(p^2+m^2)+\textnormal{P}\frac{1}{p^2+m^2}.\] Que nos confirma que o propagador 
+apenas possui parte imaginária para uma partícula \textit{on-shell}, porém, para diagramas a nível árvore não é cinematicamente permitido de uma partícula virtual 
+interna ao diagrama entrar \textit{on-shell}, o que é compatível com o senso comum de contribuições à nível árvore serem polinômios de propagadores e numeradores cinemáticos, que certamente não 
+possuem parte imaginária para partículas \textit{off-shell}. Agora, para contribuições de \textit{loop}, partículas virtuais internas podem ficarem \textit{on-shell}, e portanto, os diagramas 
+podem possuírem parte imaginária.
+
+Como exemplo tomemos a teoria $g\phi^3$,\[\mathcal L = -\frac12\phi\qty(-\Box+m^2)\phi+\frac1{3!}g\phi^3,\] A contribuição de 1--\textit{loop} para o processo $1\rightarrow 1$ é,
+\begin{align*}
+    \im\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}&=\feynmandiagram [baseline = (b.base),horizontal=a to b,layered layout] {
+        a -- [scalar] b -- [ half left,scalar] c --[half left,scalar] b,
+        c -- [scalar] d,
+    };=\frac12 \qty(\im g)^2\frac{1}{\im^2}\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\frac{1}{\ell^2+m^2-\im\epsilon}\frac{1}{\qty(\ell - p)^2+m^2-\im\epsilon}\\
+    \mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}&=-\im\frac12g^2\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\qty(\im\pi\delta\qty(\ell^2+m^2)+\textnormal{P}\frac{1}{\ell^2+m^2})\qty(\im\pi\delta\qty(\qty(\ell-p)^2+m^2)+\textnormal{P}\frac{1}{\qty(\ell-p)^2+m^2})\\
+    \textnormal{Im}\qty[\mathcal A]&=-\frac12g^2\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\qty(-\pi^2\delta\qty(\ell^2+m^2)\delta\qty(\qty(\ell-p)^2+m^2)+\textnormal{P}\frac{1}{\ell^2+m^2}\textnormal{P}\frac{1}{\qty(\ell-p)^2+m^2})
+\end{align*}
+A parte dependente do valor principal resultará em zero, e portanto,
+\begin{align*}
+    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\delta\qty(\ell^2+m^2)\delta\qty(\qty(\ell-p)^2+m^2)\\
+    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[4]{q}\dd[4]{\ell}}{\qty(2\pi)^4}\delta\qty(\ell^2+m^2)\delta\qty(q^2+m^2)\delta^{\qty(4)}\qty(q+\ell-p)\\
+    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[4]{q}\dd[4]{\ell}}{\qty(2\pi)^42\omega_{\boldsymbol \ell}2\omega_{\vb q}}\qty(\delta\qty(\ell^0-\omega_{\boldsymbol\ell})+\delta\qty(\ell^0+\omega_{\boldsymbol\ell}))\qty(\delta\qty(q^0-\omega_{\vb q})+\delta\qty(q^0+\omega_{\vb q}))\delta^{\qty(4)}\qty(q+\ell-p)\\
+    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^42\omega_{\boldsymbol \ell}2\omega_{\vb q}}\qty(\delta\qty(\omega_{\vb q}+\omega_{\boldsymbol\ell}-p^0)+\delta\qty(\omega_{\vb q}-\omega_{\boldsymbol\ell}-p^0)+\delta\qty(-\omega_{\vb q}+\omega_{\boldsymbol\ell}-p^0))\delta^{\qty(3)}\qty(\vb q+\boldsymbol\ell-\vb p)\\
+    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac18\qty(2\pi)^4g^2\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^62\omega_{\boldsymbol \ell}2\omega_{\vb q}}\delta^{\qty(4)}\qty(q+\ell- p)\\
+    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac18\qty(2\pi)^4\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^62\omega_{\boldsymbol \ell}2\omega_{\vb q}}\delta^{\qty(4)}\qty(q+\ell- p)\abs{\mathcal A^{\textnormal{tree}}_{1\rightarrow 2}}^2
+\end{align*}
+Neste \textit{toy-model} podemos apreciar claramente a parte imaginária da amplitude $1\rightarrow 1$ a 1--\textit{loop} ser expressável em termos da amplitude nível árvore $1\rightarrow 2$.
