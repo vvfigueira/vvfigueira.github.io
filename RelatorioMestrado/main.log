@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.27)  19 NOV 2025 15:06
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.27)  25 NOV 2025 17:59
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1364,12 +1364,22 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 [3]
 
 [4]
+Overfull \hbox (1.39423pt too wide) detected at line 45
+[]
+ []
 
-[5]) (./sections/plano.tex)
 
-[6]
+Underfull \vbox (badness 3343) has occurred while \output is active []
 
-[7] (./main.aux
+
+
+[5]
+
+[6]) (./sections/plano.tex)
+
+[7]
+
+[8] (./main.aux
 Package cleveref Info: loaded `brazilian' language definitions on input line 12
 .
 )
@@ -1389,14 +1399,14 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 38224 strings out of 470117
- 125002,1648299 words of node,token memory allocated
- 6713 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 658 sub_mlist, 1 glyph, 1379 attrib
-ute, 72 glue_spec, 691 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:24,2:3242,3:426,4:71,5:629,6:35,7:9374,8:318,9:1925,10:33,11:9
-75
- 65707 multiletter control sequences out of 65536+600000
+ 38772 strings out of 470117
+ 156261,1648299 words of node,token memory allocated
+ 6743 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 658 sub_mlist, 1 glyph, 1389 attrib
+ute, 72 glue_spec, 696 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 1:24,2:7660,3:1467,4:71,5:630,6:35,7:9374,8:318,9:2229,10:33,11:
+975
+ 66254 multiletter control sequences out of 65536+600000
  89 fonts using 6250151 bytes
  84i,21n,92p,1865b,1973s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf></op
@@ -1420,15 +1430,16 @@ xlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/texlive/202
 -dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></opt/texlive/2025/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/texlive/2025/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmr12.pfb></opt/texlive/2025/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
-opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></opt/t
-exlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (8 pages, 216936 bytes).
+lic/amsfonts/cm/cmr6.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
+.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></o
+pt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/texliv
+e/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></opt/texlive/202
+5/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (9 pages, 236256 bytes).
 
-PDF statistics: 226 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 131072)
+PDF statistics: 234 PDF objects out of 1000 (max. 8388607)
+ 172 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 131072)
  64 words of extra memory for PDF output out of 10000 (max. 100000000)
 

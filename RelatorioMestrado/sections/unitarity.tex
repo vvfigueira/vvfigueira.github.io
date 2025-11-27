@@ -4,19 +4,19 @@ Unitariedade em TQC se refere a unitariedade da matrix $S$. Como revisão, a mat
 \textit{out}, $\Psi^-_\beta$, \[S_{\beta\alpha}=\qty(\Psi^-_\beta,\Psi^+_\alpha),\] aqui $\alpha$ e $\beta$ são índices que condensam toda a informação contida em seu respectivo 
 estado do espaço de Hilbert. É assumido que tanto os estados \textit{in}, quanto os \textit{out}, sejam uma base completa do espaço de Hilbert, de forma que se a matrix $S$ 
 é um mapa entre essas duas bases, é necessário ela ser um mapa unitário, e de fato, manipulando formalmente essa expressão, \[\int\dd{\beta}S^\ast_{\beta\gamma}S_{\beta\alpha}=\int\dd{\beta}\qty(\Psi^-_\beta,\Psi^+_\gamma)^\ast\qty(\Psi^-_\beta,\Psi^+_\alpha)=\int\dd{\beta}\qty(\Psi^+_\gamma,\Psi^-_\beta)\qty(\Psi^-_\beta,\Psi^+_\alpha)=\qty(\Psi^+_\gamma,\Psi^+_\alpha)=\delta_{\gamma\alpha}\]
-Há fortes consequências dessa propriedades, a principal é chamada por motivos históricos de \textbf{Teorema Óptico}, primeiro, é necessário expandir, \[S_{\beta\alpha}=\delta_{\beta\alpha}+\im \qty(2\pi)^4\delta\qty(p_\beta-p_\alpha)\mathcal A_{\beta\alpha}\] nessa forma, 
+Há fortes consequências dessa propriedades, a principal é chamada por motivos históricos de \textbf{Teorema Óptico}, primeiro, é necessário expandir, \[S_{\beta\alpha}=\delta_{\beta\alpha}+\im \qty(2\pi)^4\delta^{\qty(4)}\qty(p_\beta-p_\alpha)\mathcal A_{\beta\alpha}\] nessa forma, 
 a condição de unitariedade implica,
 \begin{align*}
-    \delta_{\gamma\alpha}&=\int\dd{\beta}S^\ast_{\beta\gamma}S_{\beta\alpha}=\int\dd{\beta}\qty(\delta_{\beta\gamma}+\im \qty(2\pi)^4\delta\qty(p_\beta-p_\gamma)\mathcal A_{\beta\gamma})^\ast\qty(\delta_{\beta\alpha}+\im \qty(2\pi)^4\delta\qty(p_\beta-p_\alpha)\mathcal A_{\beta\alpha})\\
-    \delta_{\gamma\alpha}&=\delta_{\gamma\alpha}-\im \qty(2\pi)^4\delta\qty(p_\alpha-p_\gamma)\mathcal A^\ast_{\alpha\gamma}+\im \qty(2\pi)^4\delta\qty(p_\gamma-p_\alpha)\mathcal A_{\gamma\alpha}+\qty(2\pi)^8\int\dd{\beta}\delta\qty(p_\beta-p_\gamma)\delta\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\\
-    0&=-\im \mathcal A^\ast_{\alpha\gamma}+\im \mathcal A_{\gamma\alpha}+\qty(2\pi)^4\int\dd{\beta}\delta\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}
+    \delta_{\gamma\alpha}&=\int\dd{\beta}S^\ast_{\beta\gamma}S_{\beta\alpha}=\int\dd{\beta}\qty(\delta_{\beta\gamma}+\im \qty(2\pi)^4\delta^{\qty(4)}\qty(p_\beta-p_\gamma)\mathcal A_{\beta\gamma})^\ast\qty(\delta_{\beta\alpha}+\im \qty(2\pi)^4\delta^{\qty(4)}\qty(p_\beta-p_\alpha)\mathcal A_{\beta\alpha})\\
+    \delta_{\gamma\alpha}&=\delta_{\gamma\alpha}-\im \qty(2\pi)^4\delta^{\qty(4)}\qty(p_\alpha-p_\gamma)\mathcal A^\ast_{\alpha\gamma}+\im \qty(2\pi)^4\delta^{\qty(4)}\qty(p_\gamma-p_\alpha)\mathcal A_{\gamma\alpha}+\qty(2\pi)^8\int\dd{\beta}\delta^{\qty(4)}\qty(p_\beta-p_\gamma)\delta^{\qty(4)}\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\\
+    0&=-\im \mathcal A^\ast_{\alpha\gamma}+\im \mathcal A_{\gamma\alpha}+\qty(2\pi)^4\int\dd{\beta}\delta^{\qty(4)}\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}
 \end{align*}
 A maior utilidade deste resultado é do ponto de vista de teoria de perturbação, certamente calculamos uma amplitude de espalhamento $\mathcal A_{\beta\alpha}$ em uma determinada 
 ordem $\mathcal O(g^n)$ do parâmetro de acoplamento, porém, o resultado acima promove uma relação entre $\mathcal A$ e $\mathcal A^2$, ou seja, há relações entre amplitudes em 
 diferentes ordens na expansão do parâmetro de acoplamento. A versão mais famosa deste resultado é para $\alpha=\gamma$, 
 \begin{align*}
-    \im \mathcal A^\ast_{\alpha\alpha}-\im \mathcal A_{\alpha\alpha}&=\qty(2\pi)^4\int\dd{\beta}\delta\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\alpha}\mathcal A_{\beta\alpha}\\
-    2\textnormal{Im}\qty[\mathcal A_{\alpha\alpha}]&=\qty(2\pi)^4\int\dd{\beta}\delta\qty(p_\beta-p_\alpha)\abs{\mathcal A_{\beta\alpha}}^2
+    \im \mathcal A^\ast_{\alpha\alpha}-\im \mathcal A_{\alpha\alpha}&=\qty(2\pi)^4\int\dd{\beta}\delta^{\qty(4)}\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\alpha}\mathcal A_{\beta\alpha}\\
+    2\mathfrak{Im}\qty[\mathcal A_{\alpha\alpha}]&=\qty(2\pi)^4\int\dd{\beta}\delta^{\qty(4)}\qty(p_\beta-p_\alpha)\abs{\mathcal A_{\beta\alpha}}^2
 \end{align*}
 Trabalhando do ponto de vista de teoria de perturbação, podemos calcular a parte imaginária da contribuição de 1--\textit{loop} de $\mathcal A_{\alpha\alpha}$ apenas sabendo a contribuição 
 de nível arvore para $\mathcal A_{\beta\alpha}$. Parte deste fato está relacionado ao teorema de Sokhotski–Plemelj, \[\frac{1}{p^2+m^2-\im\epsilon}=\im\pi\delta\qty(p^2+m^2)+\textnormal{P.V.}\frac{1}{p^2+m^2}.\] Que nos confirma que o propagador 
@@ -27,21 +27,21 @@ podem possuírem parte imaginária.
 
 Como exemplo tomemos a teoria $g\phi^3$,\[\mathcal L = -\frac12\phi\qty(-\Box+m^2)\phi+\frac1{3!}g\phi^3,\] A contribuição de 1--\textit{loop} para o processo $1\rightarrow 1$ é,
 \begin{align*}
-    \im\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}&=\feynmandiagram [baseline = (b.base),horizontal=a to b,layered layout] {
-        a -- [scalar] b -- [ half left,scalar] c --[half left,scalar] b,
-        c -- [scalar] d,
-    };=\frac12 \qty(\im g)^2\frac{1}{\im^2}\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\frac{1}{\ell^2+m^2-\im\epsilon}\frac{1}{\qty(\ell - p)^2+m^2-\im\epsilon}\\
+    \im\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}&=\raisebox{+3pt}{\feynmandiagram [baseline = (b.base),horizontal=a to b,layered layout] {
+        a -- [scalar,momentum =\(p\)] b -- [ half left,scalar, momentum=\(\ell\)] c --[half left,scalar, momentum=\(\ell-p\)] b,
+        c -- [scalar,momentum =\(p\)] d,
+    };}=\frac12 \qty(\im g)^2\frac{1}{\im^2}\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\frac{1}{\ell^2+m^2-\im\epsilon}\frac{1}{\qty(\ell - p)^2+m^2-\im\epsilon}\\
     \mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}&=-\im\frac12g^2\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\qty(\im\pi\delta\qty(\ell^2+m^2)+\textnormal{P.V.}\frac{1}{\ell^2+m^2})\qty(\im\pi\delta\qty(\qty(\ell-p)^2+m^2)+\textnormal{P.V.}\frac{1}{\qty(\ell-p)^2+m^2})\\
-    \textnormal{Im}\qty[\mathcal A]&=-\frac12g^2\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\qty(-\pi^2\delta\qty(\ell^2+m^2)\delta\qty(\qty(\ell-p)^2+m^2)+\textnormal{P.V.}\frac{1}{\ell^2+m^2}\textnormal{P.V.}\frac{1}{\qty(\ell-p)^2+m^2})
+    \mathfrak{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=-\frac12g^2\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\qty(-\pi^2\delta\qty(\ell^2+m^2)\delta\qty(\qty(\ell-p)^2+m^2)+\textnormal{P.V.}\frac{1}{\ell^2+m^2}\textnormal{P.V.}\frac{1}{\qty(\ell-p)^2+m^2})
 \end{align*}
 A parte dependente do valor principal resultará em zero, e portanto,
 \begin{align*}
-    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\delta\qty(\ell^2+m^2)\delta\qty(\qty(\ell-p)^2+m^2)\\
-    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[4]{q}\dd[4]{\ell}}{\qty(2\pi)^4}\delta\qty(\ell^2+m^2)\delta\qty(q^2+m^2)\delta^{\qty(4)}\qty(q+\ell-p)\\
-    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[4]{q}\dd[4]{\ell}}{\qty(2\pi)^42\omega_{\boldsymbol \ell}2\omega_{\vb q}}\qty(\delta\qty(\ell^0-\omega_{\boldsymbol\ell})+\delta\qty(\ell^0+\omega_{\boldsymbol\ell}))\qty(\delta\qty(q^0-\omega_{\vb q})+\delta\qty(q^0+\omega_{\vb q}))\delta^{\qty(4)}\qty(q+\ell-p)\\
-    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^42\omega_{\boldsymbol \ell}2\omega_{\vb q}}\qty(\delta\qty(\omega_{\vb q}+\omega_{\boldsymbol\ell}-p^0)+\delta\qty(\omega_{\vb q}-\omega_{\boldsymbol\ell}-p^0)+\delta\qty(-\omega_{\vb q}+\omega_{\boldsymbol\ell}-p^0))\delta^{\qty(3)}\qty(\vb q+\boldsymbol\ell-\vb p)\\
-    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac18\qty(2\pi)^4g^2\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^62\omega_{\boldsymbol \ell}2\omega_{\vb q}}\delta^{\qty(4)}\qty(q+\ell- p)\\
-    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac18\qty(2\pi)^4\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^62\omega_{\boldsymbol \ell}2\omega_{\vb q}}\delta^{\qty(4)}\qty(q+\ell- p)\abs{\mathcal A^{\textnormal{tree}}_{1\rightarrow 2}}^2, \ \ \ \mathcal A^{\textnormal{tree}}_{1\rightarrow 2}=g
+    \mathfrak{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\delta\qty(\ell^2+m^2)\delta\qty(\qty(\ell-p)^2+m^2)\\
+    \mathfrak{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[4]{q}\dd[4]{\ell}}{\qty(2\pi)^4}\delta\qty(\ell^2+m^2)\delta\qty(q^2+m^2)\delta^{\qty(4)}\qty(q+\ell-p)\\
+    \mathfrak{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[4]{q}\dd[4]{\ell}}{\qty(2\pi)^42\omega_{\boldsymbol \ell}2\omega_{\vb q}}\qty(\delta\qty(\ell^0-\omega_{\boldsymbol\ell})+\delta\qty(\ell^0+\omega_{\boldsymbol\ell}))\qty(\delta\qty(q^0-\omega_{\vb q})+\delta\qty(q^0+\omega_{\vb q}))\delta^{\qty(4)}\qty(q+\ell-p)\\
+    \mathfrak{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12\pi^2g^2\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^42\omega_{\boldsymbol \ell}2\omega_{\vb q}}\qty(\delta\qty(\omega_{\vb q}+\omega_{\boldsymbol\ell}-p^0)+\delta\qty(\omega_{\vb q}-\omega_{\boldsymbol\ell}-p^0)+\delta\qty(-\omega_{\vb q}+\omega_{\boldsymbol\ell}-p^0))\delta^{\qty(3)}\qty(\vb q+\boldsymbol\ell-\vb p)\\
+    \mathfrak{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac18\qty(2\pi)^4g^2\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^62\omega_{\boldsymbol \ell}2\omega_{\vb q}}\delta^{\qty(4)}\qty(q+\ell- p)\\
+    \mathfrak{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac18\qty(2\pi)^4\int\frac{\dd[3]{\vb q}\dd[3]{\boldsymbol\ell}}{\qty(2\pi)^62\omega_{\boldsymbol \ell}2\omega_{\vb q}}\delta^{\qty(4)}\qty(q+\ell- p)\abs{\mathcal A^{\textnormal{tree}}_{1\rightarrow 2}}^2, \ \ \ \mathcal A^{\textnormal{tree}}_{1\rightarrow 2}=g
 \end{align*}
 Neste \textit{toy-model} podemos apreciar claramente a parte imaginária da amplitude $1\rightarrow 1$ a 1--\textit{loop} ser expressável em termos da amplitude nível árvore $1\rightarrow 2$. A integral que aparece, 
 \[\int\dd{\beta}=\frac14\int\frac{\dd[3]{\boldsymbol\ell}\dd[3]{\vb q}}{\qty(2\pi)^62\omega_{\boldsymbol\ell}2\omega_{\vb q}},\] 
@@ -52,19 +52,68 @@ O procedimento de \textit{cortar} um propagador corresponde a substituir $\qty(p
 representamos um propagador cortado por uma linha perpendicular passando por seu propagador, ao fim, multiplicamos as duas amplitudes restantes, com a da direita sendo 
 conjugada, ao fim, integramos sobre o espaço de fase Lorentz invariante. Note que neste processo obtemos duas amplitudes \textit{on-shell}. Como exemplo,
 \begin{align*}
-    \textnormal{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12
-    \begin{tikzpicture}
+    \mathfrak{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12
+    \raisebox{+3pt}{\begin{tikzpicture}[baseline=(a.base)]
         \begin{feynman}\diagram* {
-        a -- [scalar] b -- [ half left,scalar] c-- [scalar] d,c --[half left,scalar] b
+        a -- [scalar,momentum =\(p\)] b -- [ half left,scalar,momentum=\(\ell\)] c-- [scalar,momentum =\(p\)] d,c --[half left,scalar,reversed momentum=\(q\)] b
         };
         \draw[solid, very thick,red] ($(c)+(-0.5,0.7)$) -- ($(c)+(-0.5,0.2)$);
         \draw[solid, very thick,red] ($(c)+(-0.5,-0.2)$) -- ($(c)+(-0.5,-0.7)$);
         \end{feynman}
-    \end{tikzpicture}=\frac12\qty(2\pi)^4\int\dd{\beta}\delta^{\qty(4)}\qty(q+\ell-p)\mathcal A^{\textnormal{tree}}_{1\rightarrow 2}\qty(p;\ell,q)\mathcal A^{\textnormal{tree}\ast}_{1\rightarrow 2}\qty(-p;-\ell,-q)
+    \end{tikzpicture}}=\frac12\qty(2\pi)^4\int\dd{\beta}\delta^{\qty(4)}\qty(q+\ell-p)\mathcal A^{\textnormal{tree}}_{1\rightarrow 2}\qty(p;\ell,q)\mathcal A^{\textnormal{tree}\ast}_{1\rightarrow 2}\qty(p;\ell,q)
 \end{align*}
 Claramente, para esse exemplo simples, há apenas uma única maneira de se \textit{cortar} o diagrama de 1--\textit{loop} em 
 duas partes de menor ordem. Porém, para um número de pernas externas maior, ou maior número de \textit{loops}, é necessário somar 
-sobre todas as maneiras de se separar as amplitudes. Este conceito de unitariedade é possível de ser estendido para o que 
+sobre todas as maneiras de se separar as amplitudes. Este conceito de unitariedade possui algumas limitações, 
+primeiro, é possível apenas determinar a parte imaginária das amplitudes via amplitudes de ordem inferior, 
+segundo, somente conseguimos aplicar este resultado para um espalhamento da forma $\alpha\rightarrow \alpha$, que 
+é longe de ser a forma de espalhamento mais geral. Contudo, é possível obter um resultado mais geral, para isto, temos 
+que relembrar a definição de estados \textit{in/out}. Dado um hamiltoniano $H=H_0+V$, e sendo $\Phi_\alpha$ autoestado de $H_0$ com autovalor $E_\alpha$, definimos 
+$\Psi^\pm_\alpha$ autoestado de $H$ com autovalor $E_\alpha$ por \[\Psi^\pm_\alpha=\Phi_\alpha+\qty(E_\alpha-H_0\pm\im\epsilon)^{-1}V\Psi^\pm_\alpha,\ \ \ \epsilon>0.\]
+
+Note a imposição $\epsilon>0$, e portanto, a troca $\epsilon\leftrightarrow-\epsilon$ corresponde a: $\Psi^-_\alpha\leftrightarrow\Psi^+_\alpha$. 
+Assim, podemos retornar a expressão,
+\[S_{\alpha\gamma}^\ast=\qty(\Psi^-_\alpha,\Psi^+_\gamma)^\ast = \qty(\Psi^+_\gamma,\Psi^-_\alpha)= \qty(\Psi^-_\gamma,\Psi^+_\alpha)\eval_{\epsilon<0}=S_{\gamma\alpha}\eval_{\epsilon<0},\]
+portanto,\[\mathcal A_{\alpha\gamma}^\ast=\mathcal A_{\gamma\alpha}\eval_{\epsilon<0},\]
+utilizando esse resultado podemos concluir,
+\begin{align*}
+    -\im\qty(\mathcal A_{\gamma\alpha}-\mathcal A^\ast_{\alpha\gamma})&=\int\dd{\beta}\qty(2\pi)^4\delta^{\qty(4)}\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\\
+    -\im\qty(\mathcal A_{\gamma\alpha}\eval_{\epsilon>0}-\mathcal A_{\gamma\alpha}\eval_{\epsilon<0})&=\int\dd{\beta}\qty(2\pi)^4\delta^{\qty(4)}\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}
+\end{align*}
+O lado esquerdo desta igualdade deve ser entendido como sendo o limite $\epsilon\rightarrow 0$, claramente, se $\mathcal A_{\gamma\alpha}$ fosse 
+uma função contínua em $\epsilon$, o resultado seria zero, e como o lado direito da igualdade é não necessariamente zero, podemos apenas concluir que: 
+Em geral $\mathcal A_{\gamma\alpha}$ é descontínuo em $\epsilon$, porém, como $\epsilon$ contribui para a amplitude somente dentro do propagador 
+$-\im\qty(p^2+m^2-\im\epsilon)^{-1}$, e é acompanhado por um fator de $\im$, concluímos que genericamente as amplitudes, vistas como 
+funções dos invariantes cinemáticos, possuem um \textit{branch cut} num subconjunto do eixo real, quando interpretamos os momentos podendo tomar 
+valores em números complexos. 
+
+Seja uma função $f:\mathbb C\rightarrow \mathbb C$ analítica em todo plano, exceto por possíveis polos e um \textit{branch cut} no eixo real, naturalmente 
+isso significa que, 
+\begin{align*}
+    \exists s\in\mathbb R,\ \ 0&\neq\lim\limits_{\epsilon\rightarrow 0^+}\qty[f\qty(s-\im\epsilon)-f\qty(s+\im\epsilon)]= 2\im\mathfrak{Disc}_s[f],
+\end{align*}
+no qual já definimos o que chamamos de descontinuidade de uma função. Assim,
+\begin{align*}
+    2\mathfrak{Disc}\qty[\mathcal A_{\gamma\alpha}]&=\int\dd{\beta}\qty(2\pi)^4\delta^{\qty(4)}\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}.
+\end{align*}
+
+Claramente, essa expressão somente toma total sentido se estamos dispostos a interpretar $\mathcal A_{\gamma\alpha}$ como função dos momentos externos, 
+e admitirmos estes a poderem tomar valores complexos. Isso permite extrairmos ainda mais informação sobre amplitudes de ordem superiores partindo de ordem 
+inferiores. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Este conceito de unitariedade é possível de ser estendido para o que 
 chamamos de \textbf{unitariedade generalizada}. Enquanto a noção usual de unitariedade relaciona a parte imaginária de uma contribuição 
 de ordem superior com contribuições de ordem inferiores --- O que pode ser pensado como relacionando a estrutura de polos de amplitudes de 
 ordem inferiores com a estrutura de \textit{branch-cuts} de amplitudes de ordem superiores ---, conceitualmente, conforme mencionamos 
