@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.27)  25 NOV 2025 17:59
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.27)  27 NOV 2025 16:39
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1401,10 +1401,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of LuaTeX's memory you used:
  38772 strings out of 470117
  156261,1648299 words of node,token memory allocated
- 6743 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 658 sub_mlist, 1 glyph, 1389 attrib
-ute, 72 glue_spec, 696 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:24,2:7660,3:1467,4:71,5:630,6:35,7:9374,8:318,9:2229,10:33,11:
+ 6767 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 658 sub_mlist, 1 glyph, 1397 attrib
+ute, 72 glue_spec, 700 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 1:24,2:7648,3:1467,4:71,5:630,6:35,7:9374,8:318,9:2229,10:33,11:
 975
  66254 multiletter control sequences out of 65536+600000
  89 fonts using 6250151 bytes
@@ -1425,21 +1425,22 @@ c/amsfonts/cm/cmbx12.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmbx8.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cme
 x10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/te
-xlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/texlive/202
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/texlive/2025/texmf
--dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></opt/texlive/2025/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/texlive/2025/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr12.pfb></opt/texlive/2025/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
-.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></o
-pt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/texliv
-e/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></opt/texlive/202
-5/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (9 pages, 236256 bytes).
+xlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/texlive/202
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/texlive/2025/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/texlive/2025/texmf-dist/fon
+ts/type1/public/amsfonts/cmextra/cmmib8.pfb></opt/texlive/2025/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></opt/texlive/2025/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr6.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+7.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></op
+t/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texliv
+e/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/texlive/2025/te
+xmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></opt/texlive/2025/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (9 pages, 247348 bytes).
 
-PDF statistics: 234 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
+PDF statistics: 238 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
  20 named destinations out of 1000 (max. 131072)
  64 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -1,0 +1,268 @@
+\begin{thebibliography}{38}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname bibnamefont\endcsname\relax
+  \def\bibnamefont#1{#1}\fi
+\expandafter\ifx\csname bibfnamefont\endcsname\relax
+  \def\bibfnamefont#1{#1}\fi
+\expandafter\ifx\csname citenamefont\endcsname\relax
+  \def\citenamefont#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{\citenamefont{Kawai et~al.}(1986)\citenamefont{Kawai, Lewellen, and
+  Tye}}]{KLT}
+\bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Kawai}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Lewellen}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Tye}},
+  \bibinfo{journal}{Nucl. Phys. B} \textbf{\bibinfo{volume}{269}},
+  \bibinfo{pages}{1} (\bibinfo{year}{1986}).
+
+\bibitem[{\citenamefont{Bern et~al.}(2008)\citenamefont{Bern, Carrasco, and
+  Johansson}}]{BCJ1}
+\bibinfo{author}{\bibfnamefont{Z.}~\bibnamefont{Bern}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Carrasco}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Johansson}},
+  \bibinfo{journal}{Phys. Rev. D} \textbf{\bibinfo{volume}{78}},
+  \bibinfo{pages}{085011} (\bibinfo{year}{2008}).
+
+\bibitem[{\citenamefont{Bern et~al.}(2010)\citenamefont{Bern, Carrasco, and
+  Johansson}}]{BCJ2}
+\bibinfo{author}{\bibfnamefont{Z.}~\bibnamefont{Bern}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Carrasco}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Johansson}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{105}},
+  \bibinfo{pages}{061602} (\bibinfo{year}{2010}).
+
+\bibitem[{\citenamefont{Salvio and Strumia}(2014)}]{2}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Salvio}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Strumia}},
+  \bibinfo{journal}{JHEP} \textbf{\bibinfo{volume}{06}}, \bibinfo{pages}{080}
+  (\bibinfo{year}{2014}).
+
+\bibitem[{\citenamefont{Holdom}(2016)}]{Holdom:16}
+\bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Holdom}},
+  \bibinfo{journal}{Phys. Rev. D} \textbf{\bibinfo{volume}{93}},
+  \bibinfo{pages}{124030} (\bibinfo{year}{2016}).
+
+\bibitem[{\citenamefont{Mannheim}(2012)}]{Mannheim:12}
+\bibinfo{author}{\bibfnamefont{P.~D.} \bibnamefont{Mannheim}},
+  \bibinfo{journal}{Found. Phys} \textbf{\bibinfo{volume}{42}},
+  \bibinfo{pages}{388} (\bibinfo{year}{2012}).
+
+\bibitem[{\citenamefont{Odintsov and Shapiro}(1992)}]{6a}
+\bibinfo{author}{\bibfnamefont{S.~D.} \bibnamefont{Odintsov}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{I.~L.} \bibnamefont{Shapiro}},
+  \bibinfo{journal}{Theor. Math. Phys.} \textbf{\bibinfo{volume}{90}},
+  \bibinfo{pages}{319} (\bibinfo{year}{1992}).
+
+\bibitem[{\citenamefont{Shapiro and Cognola}(1995)}]{6b}
+\bibinfo{author}{\bibfnamefont{I.~L.} \bibnamefont{Shapiro}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Cognola}},
+  \bibinfo{journal}{Phys. Rev. D} \textbf{\bibinfo{volume}{51}},
+  \bibinfo{pages}{2775} (\bibinfo{year}{1995}).
+
+\bibitem[{\citenamefont{Barra et~al.}(2020)\citenamefont{Barra, Lavrov,
+  Dos~Reis, de~Paula~Netto, and Shapiro}}]{Barra:2019rhz}
+\bibinfo{author}{\bibfnamefont{V.~F.} \bibnamefont{Barra}},
+  \bibinfo{author}{\bibfnamefont{P.~M.} \bibnamefont{Lavrov}},
+  \bibinfo{author}{\bibfnamefont{E.~A.} \bibnamefont{Dos~Reis}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{de~Paula~Netto}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{I.~L.}
+  \bibnamefont{Shapiro}}, \bibinfo{journal}{Phys. Rev. D}
+  \textbf{\bibinfo{volume}{101}}, \bibinfo{pages}{065001}
+  (\bibinfo{year}{2020}).
+
+\bibitem[{\citenamefont{Tomboulis}(2015)}]{Tomboulis:15}
+\bibinfo{author}{\bibfnamefont{E.~T.} \bibnamefont{Tomboulis}},
+  \bibinfo{journal}{Mod. Phys. Lett. A} \textbf{\bibinfo{volume}{30}},
+  \bibinfo{pages}{1540005} (\bibinfo{year}{2015}).
+
+\bibitem[{\citenamefont{Antoniadis and Tomboulis}(1986)}]{7a}
+\bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{Antoniadis}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{Tomboulis}},
+  \bibinfo{journal}{Phys. Rev. D} \textbf{\bibinfo{volume}{33}},
+  \bibinfo{pages}{2756} (\bibinfo{year}{1986}).
+
+\bibitem[{\citenamefont{Anselmi and Piva}(2017)}]{10a}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Anselmi}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Piva}},
+  \bibinfo{journal}{Phys. Rev. D} \textbf{\bibinfo{volume}{96}},
+  \bibinfo{pages}{045009} (\bibinfo{year}{2017}).
+
+\bibitem[{\citenamefont{Stelle}(1977)}]{Stelle:1976gc}
+\bibinfo{author}{\bibfnamefont{K.~S.} \bibnamefont{Stelle}},
+  \bibinfo{journal}{Phys. Rev. D} \textbf{\bibinfo{volume}{16}},
+  \bibinfo{pages}{953} (\bibinfo{year}{1977}).
+
+\bibitem[{\citenamefont{Julve and Tonin}(1978)}]{Julve:1978xn}
+\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Julve}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Tonin}},
+  \bibinfo{journal}{Nuovo Cim.\ B} \textbf{\bibinfo{volume}{46}},
+  \bibinfo{pages}{137} (\bibinfo{year}{1978}).
+
+\bibitem[{\citenamefont{Fradkin and Tseytlin}(1981)}]{Fradkin:1981hx}
+\bibinfo{author}{\bibfnamefont{E.~S.} \bibnamefont{Fradkin}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.~A.} \bibnamefont{Tseytlin}},
+  \bibinfo{journal}{Phys.\ Lett.\ B} \textbf{\bibinfo{volume}{104}},
+  \bibinfo{pages}{377} (\bibinfo{year}{1981}).
+
+\bibitem[{\citenamefont{Fradkin and Tseytlin}(1982)}]{Fradkin:1981iu}
+\bibinfo{author}{\bibfnamefont{E.~S.} \bibnamefont{Fradkin}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.~A.} \bibnamefont{Tseytlin}},
+  \bibinfo{journal}{Nucl.\ Phys.\ B} \textbf{\bibinfo{volume}{201}},
+  \bibinfo{pages}{469} (\bibinfo{year}{1982}).
+
+\bibitem[{\citenamefont{Donoghue and Menezes}(2018{\natexlab{a}})}]{DM:18}
+\bibinfo{author}{\bibfnamefont{J.~F.} \bibnamefont{Donoghue}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Menezes}},
+  \bibinfo{journal}{Phys. Rev. D} \textbf{\bibinfo{volume}{97}},
+  \bibinfo{pages}{126005} (\bibinfo{year}{2018}{\natexlab{a}}).
+
+\bibitem[{\citenamefont{Donoghue and Menezes}(2018{\natexlab{b}})}]{DM:Newton}
+\bibinfo{author}{\bibfnamefont{J.~F.} \bibnamefont{Donoghue}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Menezes}},
+  \bibinfo{journal}{Phys. Rev. D} \textbf{\bibinfo{volume}{97}},
+  \bibinfo{pages}{056022} (\bibinfo{year}{2018}{\natexlab{b}}).
+
+\bibitem[{\citenamefont{Donoghue and Menezes}(2019{\natexlab{a}})}]{PRD19a}
+\bibinfo{author}{\bibfnamefont{J.~F.} \bibnamefont{Donoghue}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Menezes}},
+  \bibinfo{journal}{Phys.\ Rev.\ D} \textbf{\bibinfo{volume}{99}},
+  \bibinfo{pages}{065017} (\bibinfo{year}{2019}{\natexlab{a}}).
+
+\bibitem[{\citenamefont{Donoghue and Menezes}(2019{\natexlab{b}})}]{PRD19}
+\bibinfo{author}{\bibfnamefont{J.~F.} \bibnamefont{Donoghue}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Menezes}},
+  \bibinfo{journal}{Phys.\ Rev.\ D} \textbf{\bibinfo{volume}{100}},
+  \bibinfo{pages}{105006} (\bibinfo{year}{2019}{\natexlab{b}}).
+
+\bibitem[{\citenamefont{Donoghue and Menezes}(2019{\natexlab{c}})}]{PRL19}
+\bibinfo{author}{\bibfnamefont{J.~F.} \bibnamefont{Donoghue}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Menezes}},
+  \bibinfo{journal}{Phys.\ Rev.\ Lett.} \textbf{\bibinfo{volume}{123}},
+  \bibinfo{pages}{171601} (\bibinfo{year}{2019}{\natexlab{c}}).
+
+\bibitem[{\citenamefont{Donoghue and Menezes}(2020)}]{PPNP20}
+\bibinfo{author}{\bibfnamefont{J.~F.} \bibnamefont{Donoghue}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Menezes}},
+  \bibinfo{journal}{Prog.\ Part.\ Nucl.\ Phys.} \textbf{\bibinfo{volume}{115}},
+  \bibinfo{pages}{103812} (\bibinfo{year}{2020}).
+
+\bibitem[{\citenamefont{Donoghue and Menezes}(2023)}]{Donoghue:2023yjt}
+\bibinfo{author}{\bibfnamefont{J.~F.} \bibnamefont{Donoghue}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Menezes}}
+  (\bibinfo{year}{2023}), \eprint{2308.13704}.
+
+\bibitem[{\citenamefont{Buccio et~al.}(2024{\natexlab{a}})\citenamefont{Buccio,
+  Donoghue, Menezes, and Percacci}}]{Buccio:2024hys}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Buccio}},
+  \bibinfo{author}{\bibfnamefont{J.~F.} \bibnamefont{Donoghue}},
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Menezes}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Percacci}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{133}},
+  \bibinfo{pages}{021604} (\bibinfo{year}{2024}{\natexlab{a}}),
+  \eprint{2403.02397}.
+
+\bibitem[{\citenamefont{Buccio et~al.}(2024{\natexlab{b}})\citenamefont{Buccio,
+  Donoghue, and Percacci}}]{Buccio:2023lzo}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Buccio}},
+  \bibinfo{author}{\bibfnamefont{J.~F.} \bibnamefont{Donoghue}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Percacci}},
+  \bibinfo{journal}{Phys. Rev. D} \textbf{\bibinfo{volume}{109}},
+  \bibinfo{pages}{045008} (\bibinfo{year}{2024}{\natexlab{b}}),
+  \eprint{2307.00055}.
+
+\bibitem[{\citenamefont{Herrmann and Trnka}(2019)}]{Herrmann:2018dja}
+\bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{Herrmann}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Trnka}},
+  \bibinfo{journal}{JHEP} \textbf{\bibinfo{volume}{02}}, \bibinfo{pages}{084}
+  (\bibinfo{year}{2019}), \eprint{1808.10446}.
+
+\bibitem[{\citenamefont{Berkovits and Witten}(2004)}]{Berkovits:2004jj}
+\bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Berkovits}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{Witten}},
+  \bibinfo{journal}{JHEP} \textbf{\bibinfo{volume}{08}}, \bibinfo{pages}{009}
+  (\bibinfo{year}{2004}), \eprint{hep-th/0406051}.
+
+\bibitem[{\citenamefont{Cachazo and Guevara}(2017)}]{74}
+\bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{Cachazo}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Guevara}},
+  \bibinfo{journal}{arXiv:1705.10262}  (\bibinfo{year}{2017}).
+
+\bibitem[{\citenamefont{Guevara}(2017)}]{75}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Guevara}},
+  \bibinfo{journal}{arXiv:1706.02314}  (\bibinfo{year}{2017}).
+
+\bibitem[{\citenamefont{Guevara et~al.}(2019)\citenamefont{Guevara, Ochirov,
+  and Vines}}]{Guevara:19a}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Guevara}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Ochirov}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Vines}},
+  \bibinfo{journal}{JHEP} \textbf{\bibinfo{volume}{09}}, \bibinfo{pages}{056}
+  (\bibinfo{year}{2019}).
+
+\bibitem[{\citenamefont{Kosower et~al.}(2019)\citenamefont{Kosower, Maybee, and
+  Connell}}]{Kosower:19}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Kosower}},
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Maybee}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{D.~O.} \bibnamefont{Connell}},
+  \bibinfo{journal}{JHEP} \textbf{\bibinfo{volume}{02}}, \bibinfo{pages}{137}
+  (\bibinfo{year}{2019}).
+
+\bibitem[{\citenamefont{Maybee et~al.}(2019)\citenamefont{Maybee, Connell, and
+  Vines}}]{Maybee:19}
+\bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Maybee}},
+  \bibinfo{author}{\bibfnamefont{D.~O.} \bibnamefont{Connell}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Vines}},
+  \bibinfo{journal}{JHEP} \textbf{\bibinfo{volume}{12}}, \bibinfo{pages}{156}
+  (\bibinfo{year}{2019}).
+
+\bibitem[{\citenamefont{Elvang and Huang}(2015)}]{Elvang:15}
+\bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Elvang}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Y.-T.} \bibnamefont{Huang}},
+  \emph{\bibinfo{title}{Scattering Amplitudes in Gauge Theory and Gravity}}
+  (\bibinfo{publisher}{Cambridge University Press},
+  \bibinfo{address}{Cambridge}, \bibinfo{year}{2015}).
+
+\bibitem[{\citenamefont{Arkani-Hamed et~al.}(2017)\citenamefont{Arkani-Hamed,
+  Huang, and Huang}}]{Arkani-Hamed:17}
+\bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Arkani-Hamed}},
+  \bibinfo{author}{\bibfnamefont{T.-C.} \bibnamefont{Huang}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Y.-T.} \bibnamefont{Huang}},
+  \bibinfo{journal}{arXiv:1709.04891}  (\bibinfo{year}{2017}).
+
+\bibitem[{\citenamefont{Johansson and Nohle}(2017)}]{Johansson:2017srf}
+\bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Johansson}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Nohle}}
+  (\bibinfo{year}{2017}), \eprint{1707.02965}.
+
+\bibitem[{\citenamefont{Johansson et~al.}(2018)\citenamefont{Johansson, Mogull,
+  and Teng}}]{Johansson:2018ues}
+\bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Johansson}},
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Mogull}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{Teng}},
+  \bibinfo{journal}{JHEP} \textbf{\bibinfo{volume}{09}}, \bibinfo{pages}{080}
+  (\bibinfo{year}{2018}), \eprint{1806.05124}.
+
+\bibitem[{\citenamefont{Azevedo et~al.}(2018)\citenamefont{Azevedo, Chiodaroli,
+  Johansson, and Schlotterer}}]{Azevedo:2018dgo}
+\bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Azevedo}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Chiodaroli}},
+  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Johansson}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{Schlotterer}},
+  \bibinfo{journal}{JHEP} \textbf{\bibinfo{volume}{10}}, \bibinfo{pages}{012}
+  (\bibinfo{year}{2018}), \eprint{1803.05452}.
+
+\bibitem[{\citenamefont{Azevedo et~al.}(2020)\citenamefont{Azevedo, Jusinskas,
+  and Lize}}]{Azevedo:2019zbn}
+\bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Azevedo}},
+  \bibinfo{author}{\bibfnamefont{R.~L.} \bibnamefont{Jusinskas}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Lize}},
+  \bibinfo{journal}{JHEP} \textbf{\bibinfo{volume}{01}}, \bibinfo{pages}{082}
+  (\bibinfo{year}{2020}), \eprint{1908.11371}.
+
+\end{thebibliography}

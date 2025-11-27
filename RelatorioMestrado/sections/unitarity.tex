@@ -90,11 +90,25 @@ valores em números complexos.
 Seja uma função $f:\mathbb C\rightarrow \mathbb C$ analítica em todo plano, exceto por possíveis polos e um \textit{branch cut} no eixo real, naturalmente 
 isso significa que, 
 \begin{align*}
-    \exists s\in\mathbb R,\ \ 0&\neq\lim\limits_{\epsilon\rightarrow 0^+}\qty[f\qty(s-\im\epsilon)-f\qty(s+\im\epsilon)]= 2\im\mathfrak{Disc}_s[f],
+    \exists s\in\mathbb R,\ \ 0&\neq\lim\limits_{\epsilon\rightarrow 0^+}\qty[f\qty(s-\im\epsilon)-f\qty(s+\im\epsilon)]= \mathfrak{Disc}[f],
 \end{align*}
 no qual já definimos o que chamamos de descontinuidade de uma função. Assim,
 \begin{align*}
-    2\mathfrak{Disc}\qty[\mathcal A_{\gamma\alpha}]&=\int\dd{\beta}\qty(2\pi)^4\delta^{\qty(4)}\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}.
+    -\im \mathfrak{Disc}\qty[\mathcal A_{\gamma\alpha}]&=\int\dd{\beta}\qty(2\pi)^4\delta^{\qty(4)}\qty(p_\beta-p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}.
+\end{align*}
+
+Agora, se supormos que $\mathcal A_{\gamma\alpha}$ é uma amplitude de nível árvore, claramente as sub-amplitudes 
+$\mathcal A_{\beta\gamma},\mathcal A_{\beta\alpha}$ devem ser também de nível árvore, do contrário, seriam contribuições de ordem superior 
+para $\mathcal A_{\gamma\alpha}$. Assim, necessariamente $\Phi_\beta$ é um estado de uma única partícula, portanto, $\dd{\beta}$ é a 
+medida invariante de Lorentz do espaço de fase de uma única partícula,
+\begin{align*}
+    -\im \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\int\dd{\beta}\qty(2\pi)^4\delta^{\qty(4)}\qty(p_\beta- p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\\
+    -\im \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta\int\frac{\dd[3]{\vb q}}{\qty(2\pi)^32\omega_{\vb q}}\qty(2\pi)^4\delta^{\qty(4)}\qty(q- p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\\
+    -\im \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta2\pi\frac{1}{2\omega_{\vb q}}\delta\qty(q^0- p^0_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\eval_{\vb q = \vb p_\alpha=\vb p_\gamma}\\
+    -\im \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta\pi\delta\qty(\qty(q^0)^2-\qty(p_\alpha^0)^2)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\eval_{\vb q = \vb p_\alpha=\vb p_\gamma}\\
+    -\im \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta\pi\delta\qty(p_\alpha^2+m_\beta^2)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\\
+    \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta\frac12\mathfrak{Disc}\qty[\qty(p_\alpha^2+m_\beta^2)^{-1}]\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\\
+    \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta\frac12\qty[\frac{1}{p_\alpha^2+m_\beta^2-\im\epsilon}-\frac{1}{p_\alpha^2+m_\beta^2+\im\epsilon}]\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}
 \end{align*}
 
 Claramente, essa expressão somente toma total sentido se estamos dispostos a interpretar $\mathcal A_{\gamma\alpha}$ como função dos momentos externos, 
