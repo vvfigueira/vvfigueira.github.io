@@ -105,38 +105,54 @@ medida invariante de Lorentz do espaço de fase de uma única partícula,
     -\im \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\int\dd{\beta}\qty(2\pi)^4\delta^{\qty(4)}\qty(p_\beta- p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\\
     -\im \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta\int\frac{\dd[3]{\vb q}}{\qty(2\pi)^32\omega_{\vb q}}\qty(2\pi)^4\delta^{\qty(4)}\qty(q- p_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\\
     -\im \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta2\pi\frac{1}{2\omega_{\vb q}}\delta\qty(q^0- p^0_\alpha)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\eval_{\vb q = \vb p_\alpha=\vb p_\gamma}\\
-    -\im \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta\pi\delta\qty(\qty(q^0)^2-\qty(p_\alpha^0)^2)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\eval_{\vb q = \vb p_\alpha=\vb p_\gamma}\\
-    -\im \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta\pi\delta\qty(p_\alpha^2+m_\beta^2)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\\
-    \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta\frac12\mathfrak{Disc}\qty[\qty(p_\alpha^2+m_\beta^2)^{-1}]\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\\
-    \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta\frac12\qty[\frac{1}{p_\alpha^2+m_\beta^2-\im\epsilon}-\frac{1}{p_\alpha^2+m_\beta^2+\im\epsilon}]\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}
+    -\im \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta2\pi\theta\qty(p_\alpha^0)\delta\qty(\qty(q^0)^2-\qty(p_\alpha^0)^2)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}\eval_{\vb q = \vb p_\alpha=\vb p_\gamma}\\
+    \mathfrak{Disc}\qty[\mathcal A^{\textnormal{Tree}}_{\gamma\alpha}]&=\sum\limits_\beta2\pi\im\theta\qty(p_\alpha^0)\delta\qty(p_\alpha^2+m_\beta^2)\mathcal A^\ast_{\beta\gamma}\mathcal A_{\beta\alpha}.
 \end{align*}
 
+Note que $p_\alpha^2+m_\beta^2 = 0$ é impossível de ser satisfeito para diagramas nível árvore, pois, isso força $m_\beta^2> \sum\limits_\alpha m_\alpha^2$, 
+e caso exista tal estado em nossa teoria, este não é estável, logo, não é possível de estar em um espalhamento de estados assintóticos. 
 Claramente, essa expressão somente toma total sentido se estamos dispostos a interpretar $\mathcal A_{\gamma\alpha}$ como função dos momentos externos, 
-e admitirmos estes a poderem tomar valores complexos. Isso permite extrairmos ainda mais informação sobre amplitudes de ordem superiores partindo de ordem 
-inferiores. 
+e admitirmos estes a poderem tomar valores complexos. Nesse ponto de vista, olhemos para as amplitudes como funções de cada momento das partículas iniciais e 
+finais: $p_{\alpha_i},p_{\gamma_j}$, e estudemos sua extensão no plano complexo definida por,
+\begin{align*}
+    \mathcal A_{\gamma \alpha} = \mathcal A_{\gamma \alpha}\qty(\qty{p_\alpha},\qty{p_\gamma})\rightarrow\tilde{\mathcal A}_{\gamma\alpha}\qty(\qty{p_\alpha+k_\alpha z},\qty{p_\gamma+k_\gamma z})=\tilde{\mathcal A}_{\gamma \alpha}\qty(z),
+\end{align*}
+no qual $z\in\mathbb C$ e $k_{\alpha_i},k_{\gamma_j}$ são momentos arbitrários satisfazendo:\[k_\alpha=k_\gamma,\ \ \ k_{\alpha_i}\cdot k_{\alpha_j}=k_{\alpha_i}\cdot k_{\gamma_j}=k_{\gamma_i}\cdot k_{\gamma_j}=0,\ \ \ p_{\alpha_i}\cdot k_{\alpha_i}=p_{\gamma_i}\cdot k_{\gamma_i}=0.\]
 
+Desta forma temos que $\tilde{\mathcal A}_{\gamma \alpha}\qty(0)=\mathcal A_{\gamma \alpha}$, olhemos para expressão anterior quando sujeita a esta extensão complexa,
+\begin{align*}
+    \mathfrak{Disc}\qty[\tilde{\mathcal A}_{\gamma\alpha}]&=\sum\limits_\beta2\pi\im\theta\qty({\tilde{p}}_\alpha^0)\delta\qty({\tilde{p}}_\alpha^2+m_\beta^2)\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\\
+    \mathfrak{Disc}\qty[\tilde{\mathcal A}_{\gamma\alpha}]&=\sum\limits_\beta2\pi\im\theta\qty(p_\alpha^0+k_\alpha^0 z)\delta\qty(p_\alpha^2+m_\beta^2+2p_\alpha\cdot k_\alpha z)\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\\
+    \mathfrak{Disc}\qty[\tilde{\mathcal A}_{\gamma\alpha}]&=\sum\limits_\beta\frac{2\pi\im}{2\abs{p_\alpha\cdot k_\alpha}}\theta\qty(p_\alpha^0+k_\alpha^0 z)\delta\qty(z+\frac{p_\alpha^2+m_\beta^2}{2p_\alpha\cdot k_\alpha})\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha},\ \ \ z_\beta = -\frac{p_\alpha^2+m_\beta^2}{2p_\alpha\cdot k_\alpha}\\
+    \mathfrak{Disc}\qty[\tilde{\mathcal A}_{\gamma\alpha}]&=\sum\limits_\beta \abs{z_\beta}\frac{2\pi\im}{\abs{p_\alpha^2+m_\beta^2}}\theta\qty(p_\alpha^0+k_\alpha^0 z_\beta)\delta\qty(z-z_\beta)\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\\
+    \frac1z\mathfrak{Disc}\qty[\tilde{\mathcal A}_{\gamma\alpha}]&=\sum\limits_\beta \frac{\abs{z_\beta}}{z_\beta}\frac{2\pi\im}{\abs{p_\alpha^2+m_\beta^2}}\theta\qty(p_\alpha^0+k_\alpha^0 z_\beta)\delta\qty(z-z_\beta)\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}.
+\end{align*}
 
-
-
-
-
-
-
-
-
-
-
-
-Este conceito de unitariedade é possível de ser estendido para o que 
-chamamos de \textbf{unitariedade generalizada}. Enquanto a noção usual de unitariedade relaciona a parte imaginária de uma contribuição 
-de ordem superior com contribuições de ordem inferiores --- O que pode ser pensado como relacionando a estrutura de polos de amplitudes de 
-ordem inferiores com a estrutura de \textit{branch-cuts} de amplitudes de ordem superiores ---, conceitualmente, conforme mencionamos 
-brevemente anteriormente, efeito de \textit{loops} geram uma estrutura analítica de \textit{branch-cuts} não trivial devido 
-a possibilidade de partículas internas estarem \textit{on-shell}. A proposta da unitariedade generalizada é utilizar o conceito de 
-partículas internas entrando \textit{on-shell} alterarem a estrutura analítica da amplitude, e usar isto para recuperar não somente a 
-parte imaginária da amplitude, mas de fato reconstruir a amplitude como um todo\footnote{Há condições para que isso seja possível.}. 
-
-O exemplo mais básico de unitariedade generalizada é encontrado nas relações de recursão a nível árvore. Seja $\mathcal A_n$ uma amplitude de 
-$n>3$ pontos, para nossa teoria exemplo há propagadores internos nessa amplitude, porém, cinematicamente nenhum destes pode entrar \textit{on-shell}, 
-o motivo reside em os momentos externos das partículas serem reais. Mas, se admitirmos momentos complexos, é sim possível cinematicamente para 
-propagadores internos estarem \textit{on-shell} 
+Sabemos que as amplitudes $\mathcal A_{\beta\gamma},\mathcal A_{\beta\alpha}$ são de nível árvore, portanto, pelo argumento anterior, não possuem singularidades em $z=z_\beta$, 
+assim, podemos integrar a expressão anterior em um intervalo simplesmente conexo fechado qualquer que contenha $z_\beta$ e não passe por $z=0$. Chamemos este intervalo de $I_\beta$,
+\begin{align*}
+    \int\limits_{I_\beta}\dd{z}\frac1z\mathfrak{Disc}\qty[\tilde{\mathcal A}_{\gamma\alpha}]&=\int\limits_{I_\beta}\dd{z}\sum\limits_\beta \frac{\abs{z_\beta}}{z_\beta}\frac{2\pi\im}{\abs{p_\alpha^2+m_\beta^2}}\theta\qty(p_\alpha^0+k_\alpha^0 z_\beta)\delta\qty(z-z_\beta)\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\\
+    \int\limits_{I_\beta}\dd{z}\frac1z\mathfrak{Disc}\qty[\tilde{\mathcal A}_{\gamma\alpha}]&=\sum\limits_\beta \frac{\abs{z_\beta}}{z_\beta}\frac{2\pi\im}{\abs{p_\alpha^2+m_\beta^2}}\theta\qty(p_\alpha^0+k_\alpha^0 z_\beta)\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\eval_{z=z_\beta},
+\end{align*}
+agora, utilizando a definição de descontinuidade, e sabendo que a descontinuidade de $z$ é zero neste domínio, podemos deformar o contorno $I_\beta$ para duas versões, uma passando por baixo da reta real, e outra 
+por cima da reta real com orientação oposta, e devido à descontinuidade é possível unir estes contornos formando uma curva fechada no sentido anti-horário circundando o ponto $z_\beta$, 
+chamemos este contorno de $C_\beta$,
+\begin{align*}
+    \oint\limits_{C_\beta}\dd{z}\frac1z\tilde{\mathcal A}_{\gamma\alpha}&=\sum\limits_\beta \frac{\abs{z_\beta}}{z_\beta}\frac{2\pi\im}{\abs{p_\alpha^2+m_\beta^2}}\theta\qty(p_\alpha^0+k_\alpha^0 z_\beta)\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\eval_{z=z_\beta}.
+\end{align*}
+Podemos então agora deformar o contorno $C_\beta$ em outros dois, um circundando o ponto $z=0$ no sentido horário, e outro no sentido anti-horário circundando $z=\infty$, assim,
+\begin{align*}
+    -\frac{1}{2\pi\im}\oint\limits_{C_0}\dd{z}\frac1z\tilde{\mathcal A}_{\gamma\alpha}-\frac{1}{2\pi\im}\oint\limits_{C_\infty}\dd{z}\frac1z\tilde{\mathcal A}_{\gamma\alpha}&=\sum\limits_\beta \frac{\abs{z_\beta}}{z_\beta}\frac{1}{\abs{p_\alpha^2+m_\beta^2}}\theta\qty(p_\alpha^0+k_\alpha^0 z_\beta)\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\eval_{z=z_\beta}\\
+    -\mathfrak{Res}_{z=0}\qty[\frac1z\tilde{\mathcal A}_{\gamma\alpha}]-\mathfrak{Res}_{z=\infty}\qty[\frac1z\tilde{\mathcal A}_{\gamma\alpha}]&=\sum\limits_\beta \frac{\abs{z_\beta}}{z_\beta}\frac{1}{\abs{p_\alpha^2+m_\beta^2}}\theta\qty(p_\alpha^0+k_\alpha^0 z_\beta)\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\eval_{z=z_\beta}\\
+    \mathcal A_{\gamma\alpha}&=-\sum\limits_\beta \frac{\abs{z_\beta}}{z_\beta}\frac{1}{\abs{p_\alpha^2+m_\beta^2}}\theta\qty(p_\alpha^0+k_\alpha^0 z_\beta)\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\eval_{z=z_\beta}-\mathfrak{Res}_{z=\infty}\qty[\frac1z\tilde{\mathcal A}_{\gamma\alpha}]\\
+    \mathcal A_{\gamma\alpha}&=-\sum\limits_\beta \frac{\abs{z_\beta}}{z_\beta}\frac{1}{\abs{p_\alpha^2+m_\beta^2}}\theta\qty(p_\alpha^0+k_\alpha^0 z_\beta)\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\eval_{z=z_\beta}+\lim\limits_{\abs{z}\rightarrow \infty}\tilde{\mathcal A}_{\gamma\alpha},
+\end{align*}
+finalmente, sempre podemos tomar $z_\beta<0$, pois, $m_\beta^2>-p_\alpha^2$ e o sinal de $k_\alpha$ é fixado por se fazer $\theta\qty(p_\alpha^0+k_\alpha^0z_\beta)$, assim,
+\begin{align*}
+    \mathcal A_{\gamma\alpha}&=\sum\limits_\beta\frac{1}{p_\alpha^2+m_\beta^2}\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\eval_{z=z_\beta}+\lim\limits_{\abs{z}\rightarrow \infty}\tilde{\mathcal A}_{\gamma\alpha}.
+\end{align*}
+Esta forma da condição de unitariedade é também conhecida como \textbf{relações de recursão à nível árvore}. Escolhas específicas de $k_\alpha,k_\gamma$ 
+caracterizam diferentes métodos de recursão, os principais métodos são BCFW --- Britto, Cachazo, Feng e Witten --- e CSW --- Cachazo, Svrcek e Witten ---. 
+Esses métodos de recursão, unidos com a simplicidade do formalismo de amplitudes \textit{on-shell}, providenciam uma abordagem robusta e --- comparativamente ao método usual --- simples para 
+se obter amplitudes de $n\geq4$ pontos à nível árvore. Claramente, essas relações somente facilitam a obtenção de amplitudes se o requisito \[\lim\limits_{\abs{z}\rightarrow \infty}\tilde{\mathcal A}_{\gamma\alpha}=0,\] for satisfeito. Esta 
+condição é altamente não trivial e não é válida para várias teorias, porém, para teorias do tipo Yang-Mills foi-se provado que é de fato verdadeira.
