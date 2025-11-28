@@ -7,4 +7,15 @@ ordem. Vamos agora descrever como esse método de unitariedade pode ser estendid
 generalizada}, que nos permite obter amplitudes de \textit{loop} partindo de amplitudes de menor ordem. 
 Claro que isso só é possível suplementando com condições da estrutura analítica.
 
-Para isso, começamos partindo de uma amplitude $\mathcal A_{\gamma\alpha}$ de $L$--\textit{loops}
+Para isso, começamos partindo de uma amplitude $\mathcal A^L_{\gamma\alpha}$ de $L$--\textit{loops}. Sabemos da estrutura das regras de Feynman 
+que tal amplitude pode ser escrita como,
+\[\mathcal A^L_{\gamma\alpha}=\sum\limits_a\int\prod\limits_{n=0}^L\frac{\dd[4]{\ell_n}}{\qty(2\pi)^4}\mathcal I^{L,a}_{\gamma\alpha},\]
+no qual $a$ indexa diferentes topologias que contribuem para este processo, e chamamos o objeto $\mathcal I^{L,a}_{\gamma\alpha}$ de integrando 
+da amplitude. Ainda mais, o integrando possui forma bem definida, provindas das regras de Feynman,
+\[\mathcal I^{L,a}_{\gamma\alpha}=\frac{1}{S_a}\frac{n_ac_a}{\prod\limits_{\beta_a}\qty(p_{\beta_a}^2+m^2_\beta)},\]
+$n_a$ engloba toda a dependência cinemática do numerador, $c_a$ são fatores puramente numéricos dependentes dos acoplamentos e 
+dos grupos de calibre, e $S_a$ são apenas fatores de simetria. O caso ideal seria se a soma sobre topologias comutasse com a integral dos 
+momentos de \textit{loop}, e pudéssemos definir o seguinte objeto,
+\[\mathcal A^L_{\gamma\alpha}=\sum\limits_a\int\prod\limits_{n=0}^L\frac{\dd[4]{\ell_n}}{\qty(2\pi)^4}\mathcal I^{L,a}_{\gamma\alpha}\stackrel{\text{?}}{=}\int\prod\limits_{n=0}^L\frac{\dd[4]{\ell_n}}{\qty(2\pi)^4}\sum\limits_a\mathcal I^{L,a}_{\gamma\alpha}\stackrel{\text{?}}{=}\int\prod\limits_{n=0}^L\frac{\dd[4]{\ell_n}}{\qty(2\pi)^4}\mathcal I^{L}_{\gamma\alpha},\]
+a obstrução para se fazer isso é que não existe uma maneira de se definir globalmente como os momentos de loop são definidos no objeto $\mathcal I^{L,a}_{\gamma\alpha}$. 
+Existem teorias em que isso sim é possível, porém, no caso geral não é verdade. Assim,

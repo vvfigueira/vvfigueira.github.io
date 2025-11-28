@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.27)  28 NOV 2025 14:28
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.27)  28 NOV 2025 17:30
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1405,10 +1405,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of LuaTeX's memory you used:
  38786 strings out of 470117
  156261,1648299 words of node,token memory allocated
- 6886 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 662 sub_mlist, 1 glyph, 1435 attrib
-ute, 72 glue_spec, 719 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:24,2:7591,3:1463,4:71,5:731,6:35,7:9375,8:318,9:2229,10:33,11:
+ 6904 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 662 sub_mlist, 1 glyph, 1441 attrib
+ute, 72 glue_spec, 722 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 1:24,2:7582,3:1463,4:71,5:731,6:35,7:9375,8:318,9:2229,10:33,11:
 975
  66260 multiletter control sequences out of 65536+600000
  89 fonts using 6250151 bytes
@@ -1442,7 +1442,7 @@ e/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/texlive/2025/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/texlive/2025/texmf-dist/
 fonts/type1/public/amsfonts/euler/eufm10.pfb></opt/texlive/2025/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (11 pages, 269494 bytes).
+Output written on main.pdf (11 pages, 273093 bytes).
 
 PDF statistics: 253 PDF objects out of 1000 (max. 8388607)
  187 compressed objects within 2 object streams
