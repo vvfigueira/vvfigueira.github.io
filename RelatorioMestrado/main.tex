@@ -56,6 +56,23 @@
 \newtheorem{hipotese}{Hipótese}[section]
 \newtheorem{postulado}{Postulado}[section]
 
+\tikzset{
+  cut/.style={
+    postaction={
+      decorate,
+      decoration={
+        markings,
+        mark= at position 0.5 with {
+          % draw a short line perpendicular to the path
+          \pgftransformrotate{\pgfdecoratedangle} % align to tangent
+          \pgftransformrotate{90}                   % rotate to perpendicular
+          \draw[thick, red, dashed, dash pattern=on 3pt off 1pt] (-0.2cm,0) -- (0.2cm,0);
+        }
+      }
+    }
+  }
+}
+
 \begin{document}
 
 %\tableofcontents

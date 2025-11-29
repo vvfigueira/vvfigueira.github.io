@@ -55,10 +55,8 @@ conjugada, ao fim, integramos sobre o espaço de fase Lorentz invariante. Note q
     \mathfrak{Im}\qty[\mathcal A^{\textnormal{1--loop}}_{1\rightarrow 1}]&=\frac12
     \raisebox{+3pt}{\begin{tikzpicture}[baseline=(a.base)]
         \begin{feynman}\diagram* {
-        a -- [scalar,momentum =\(p\)] b -- [ half left,scalar,momentum=\(\ell\)] c-- [scalar,momentum =\(p\)] d,c --[half left,scalar,reversed momentum=\(q\)] b
+        a -- [scalar,momentum =\(p\)] b -- [ half left,scalar,momentum=\(\ell\), cut] c-- [scalar,momentum =\(p\)] d,c --[half left,scalar,reversed momentum=\(q\), cut] b
         };
-        \draw[solid, very thick,red] ($(c)+(-0.5,0.7)$) -- ($(c)+(-0.5,0.2)$);
-        \draw[solid, very thick,red] ($(c)+(-0.5,-0.2)$) -- ($(c)+(-0.5,-0.7)$);
         \end{feynman}
     \end{tikzpicture}}=\frac12\qty(2\pi)^4\int\dd{\beta}\delta^{\qty(4)}\qty(q+\ell-p)\mathcal A^{\textnormal{tree}}_{1\rightarrow 2}\qty(p;\ell,q)\mathcal A^{\textnormal{tree}\ast}_{1\rightarrow 2}\qty(p;\ell,q)
 \end{align*}
