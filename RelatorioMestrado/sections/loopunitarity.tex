@@ -32,10 +32,10 @@ da forma,
             \vertex (i1) at (-1,1);
             \vertex (i2) at (-1,-1);
             \vertex [blob, minimum size=1cm] (b) at (0,0) {};
-            \vertex (d1) at (-1,0) {$\raisebox{6pt}{\vdots}$};
+            \placedotsbetween{b}{i1}{i2}{0.7cm}{4}
             \vertex (f1) at (1,1);
-            \vertex (d2) at (1,0) {$\raisebox{6pt}{\vdots}$};
             \vertex (f2) at (1,-1);
+            \placedotsbetween{b}{f1}{f2}{0.7cm}{4}
             \diagram*{
                 (i1) -- [fermion] (b) [blob],
                 (i2) -- [fermion] (b),
@@ -48,29 +48,30 @@ da forma,
             \vertex (i1) at (-1,1);
             \vertex (i2) at (-1,-1);
             \vertex [blob, minimum size=1cm] (b) at (0,0) {};
-            \vertex (d1) at (-1,0) {$\raisebox{6pt}{\vdots}$};
-            \vertex (d2) at (1,0) {$\raisebox{6pt}{\vdots}$};
+            \placedotsbetween{b}{i1}{i2}{0.7cm}{4};
             \vertex [blob, minimum size=1cm] (B) at (2,0) {};
-            \vertex (D2) at (2.7,0) {$\raisebox{6pt}{\vdots}$};
+            \vertex (d1) at (1,0) {$\raisebox{6pt}{\vdots}$};
             \vertex (F1) at (2.8,0.6);
             \vertex (F2) at (2.8,-0.6);
+            \placedotsbetween{B}{F1}{F2}{0.7cm}{4};
             \vertex (mid1) at (3.3,-0.6) {$\cdots$};
             \vertex (mid2) at (3.3,0) {$\cdots$};
             \vertex (mid3) at (3.3,0.6) {$\cdots$};
             \vertex (II1) at (3.8,0.6);
             \vertex (II2) at (3.8,-0.6);
-            \vertex (DD2) at (3.9,0) {$\raisebox{6pt}{\vdots}$};
+            % \vertex (DD2) at (3.9,0) {$\raisebox{6pt}{\vdots}$};
             \vertex [blob, minimum size=1cm] (BB) at (4.6,0) {};
+            \placedotsbetween{BB}{II1}{II2}{0.7cm}{4};
             \vertex (dd1) at (5.6,0) {$\raisebox{6pt}{\vdots}$};
-            \vertex (dd2) at (7.6,0) {$\raisebox{6pt}{\vdots}$};
             \vertex [blob, minimum size=1cm] (bb) at (6.6,0) {};
             \vertex (ii1) at (7.6,1);
             \vertex (ii2) at (7.6,-1);
+            \placedotsbetween{bb}{ii1}{ii2}{0.7cm}{4};
             \diagram*{
                 (i1) -- [fermion] (b),
                 (i2) -- [fermion] (b),
-                (b) -- [fermion, bend left=45, looseness=1, cut] (B),
-                (b) -- [fermion, bend right=45, looseness=1, cut] (B),
+                (b) -- [fermion, bend left=45, looseness=1, cut2] (B),
+                (b) -- [fermion, bend right=45, looseness=1, cut2] (B),
                 (B) -- [fermion, bend left=10, looseness=1] (F1),
                 (B) -- [fermion, bend right=10, looseness=1] (F2),
                 (II1) -- [fermion, bend left=10, looseness=1] (BB),
@@ -92,10 +93,10 @@ de serem tomados que não são levados em conta na aplicação da unitariedade c
             \vertex (i1) at (-1,1);
             \vertex (i2) at (-1,-1);
             \vertex [blob, minimum size=1cm] (b) at (0,0) {};
-            \vertex (d1) at (-1,0) {$\raisebox{6pt}{\vdots}$};
+            \placedotsbetween{b}{i1}{i2}{0.7cm}{4}
             \vertex (f1) at (1,1);
-            \vertex (d2) at (1,0) {$\raisebox{6pt}{\vdots}$};
             \vertex (f2) at (1,-1);
+            \placedotsbetween{b}{f1}{f2}{0.7cm}{4};
             \diagram*{
                 (i1) -- [fermion] (b) [blob],
                 (i2) -- [fermion] (b),
@@ -108,38 +109,32 @@ de serem tomados que não são levados em conta na aplicação da unitariedade c
             \vertex (i1) at (-1,1);
             \vertex (i2) at (-1,-1);
             \vertex [blob, minimum size=1cm] (b) at (0,0) {};
-            \vertex (d1) at (-1,0) {$\raisebox{6pt}{\vdots}$};
-            \vertex (d2) at (1,0) {$\raisebox{6pt}{\vdots}$};
-            \vertex [blob, minimum size=1cm] (B) at (2,0) {};
-            \vertex (D2) at (2.7,0) {$\raisebox{6pt}{\vdots}$};
-            \vertex (F1) at (2.8,0.6);
-            \vertex (F2) at (2.8,-0.6);
-            \vertex (mid1) at (3.3,-0.6) {$\cdots$};
-            \vertex (mid2) at (3.3,0) {$\cdots$};
-            \vertex (mid3) at (3.3,0.6) {$\cdots$};
-            \vertex (II1) at (3.8,0.6);
-            \vertex (II2) at (3.8,-0.6);
-            \vertex (DD2) at (3.9,0) {$\raisebox{6pt}{\vdots}$};
-            \vertex [blob, minimum size=1cm] (BB) at (4.6,0) {};
-            \vertex (dd1) at (5.6,0) {$\raisebox{6pt}{\vdots}$};
-            \vertex (dd2) at (7.6,0) {$\raisebox{6pt}{\vdots}$};
-            \vertex [blob, minimum size=1cm] (bb) at (6.6,0) {};
-            \vertex (ii1) at (7.6,1);
-            \vertex (ii2) at (7.6,-1);
+            \placedotsbetween{b}{i1}{i2}{0.7cm}{4};
+            \vertex (d2) at (1.04,0) {$\raisebox{0pt}{\rotatebox[origin=c]{90}{\therefore}}$};
+            \vertex [blob, minimum size=1cm] (B1) at (1.7,1) {};
+            \vertex [blob, minimum size=1cm] (B2) at (1.7,-1) {};
+            \placedotsbetween{B1}{B2}{f1}{0.7cm}{4};
+            \placedotsbetween{B2}{f2}{B1}{0.7cm}{4};
+            \vertex (f1) at (2.7,1);
+            \vertex (f2) at (2.7,-1);
             \diagram*{
                 (i1) -- [fermion] (b),
                 (i2) -- [fermion] (b),
-                (b) -- [fermion, bend left=45, looseness=1, cut] (B),
-                (b) -- [fermion, bend right=45, looseness=1, cut] (B),
-                (B) -- [fermion, bend left=10, looseness=1] (F1),
-                (B) -- [fermion, bend right=10, looseness=1] (F2),
-                (II1) -- [fermion, bend left=10, looseness=1] (BB),
-                (II2) -- [fermion, bend right=10, looseness=1] (BB),
-                (BB) -- [fermion, bend left=45, looseness=1, cut] (bb),
-                (BB) -- [fermion, bend right=45, looseness=1, cut] (bb),
-                (bb) -- [fermion] (ii1),
-                (bb) -- [fermion] (ii2),
+                (b) -- [fermion, cut2] (B1),
+                (B2) -- [fermion, cut2] (b),
+                (B1) -- [fermion, cut2] (B2),
+                (B1) -- [fermion] (f1),
+                (B2) -- [fermion] (f2),
             };
         \end{feynman}
     \end{tikzpicture}}.
 \end{align*}
+
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex[blob, minimum size=14mm] (B) at (0,0) {};
+    % compute radius: half the minimum size (7mm) plus an outward offset (2mm -> 0.2cm)
+    % here we just pick 0.9cm for the example; adapt to your blob
+    \placedots{B}{0.9cm}{ {180,190,170} } % three dots on the upper hemisphere
+  \end{feynman}
+\end{tikzpicture}
