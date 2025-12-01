@@ -52,6 +52,59 @@
 }
 
 \makeatletter
+% Robust placedotsbetween that computes absolute coords (no polar + relative)
+% \placedotsbetween{blob}{vstart}{vend}{radius}{N}
+\newcommand{\placedotsbetweeN}[5]{%
+  \begin{scope}
+    % --- read absolute center coordinates (in pt) ---
+    \pgfpointanchor{#1}{center}\relax
+    \pgfmathsetmacro{\pbx}{\pgf@x/1pt}\relax
+    \pgfmathsetmacro{\pby}{\pgf@y/1pt}\relax
+
+    \pgfpointanchor{#2}{center}\relax
+    \pgfmathsetmacro{\pax}{\pgf@x/1pt}\relax
+    \pgfmathsetmacro{\pay}{\pgf@y/1pt}\relax
+
+    \pgfpointanchor{#3}{center}\relax
+    \pgfmathsetmacro{\pcx}{\pgf@x/1pt}\relax
+    \pgfmathsetmacro{\pcy}{\pgf@y/1pt}\relax
+
+    % --- vectors from blob center to start/end (numeric in pt) ---
+    \pgfmathsetmacro{\vdxA}{\pax - \pbx}\relax
+    \pgfmathsetmacro{\vdyA}{\pay - \pby}\relax
+    \pgfmathsetmacro{\vdxC}{\pcx - \pbx}\relax
+    \pgfmathsetmacro{\vdyC}{\pcy - \pby}\relax
+
+    % --- angles (degrees) ---
+    \pgfmathsetmacro{\angA}{atan2(\vdyA,\vdxA)}\relax
+    \pgfmathsetmacro{\angC}{atan2(\vdyC,\vdxC)}\relax
+
+    % --- shortest delta normalized to (-180,180] ---
+    \pgfmathsetmacro{\rawdelta}{\angC - \angA}\relax
+    \pgfmathsetmacro{\delta}{\rawdelta}\relax
+    \ifdim\delta pt>180pt \pgfmathsetmacro{\delta}{\delta - 360}\fi
+    \ifdim\delta pt<-180pt \pgfmathsetmacro{\delta}{\delta + 360}\fi
+
+    % --- step angle: put N dots between endpoints (not including endpoints) ---
+    \pgfmathsetmacro{\Nd}{#5}\relax
+    \pgfmathsetmacro{\step}{\delta/(\Nd+1)}\relax
+
+    % --- radius numeric in pt ---
+    \pgfmathsetlength{\Rlen}{#4}\relax
+    \pgfmathsetmacro{\Rpt}{\Rlen/1pt}\relax
+
+    % --- place N dots using absolute x,y computed numerically ---
+    \foreach \k in {1,...,#5} {%
+      \pgfmathsetmacro{\angk}{\angA + \k*\step}\relax
+      \pgfmathsetmacro{\xpt}{\pbx + \Rpt * cos(\angk)}\relax
+      \pgfmathsetmacro{\ypt}{\pby + \Rpt * sin(\angk)}\relax
+      \node[inner sep=0pt, draw=none] at (\xpt pt,\ypt pt) {\(\cdot\)};%
+    }%
+  \end{scope}%
+}
+\makeatother
+
+\makeatletter
 \newcommand{\placedotsbetween}[5]{%
   \begin{scope}
     % blob center

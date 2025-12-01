@@ -20,10 +20,10 @@ momentos de \textit{loop}, e pudéssemos definir o seguinte objeto,
 a obstrução para se fazer isso é que não existe uma maneira de se definir globalmente como os momentos de loop são definidos no objeto $\mathcal I^{L,a}_{\gamma\alpha}$. 
 Existem teorias em que isso sim é possível, porém, no caso geral não é verdade. Assim como mostramos no conceito de unitariedade da matrix S, 
 a amplitude completa á nível árvore pode ser reconstruída em sua totalidade sabendo apenas o valor de seu resíduo em,
-\[\qty(p_\alpha^2+m_\beta^2)\mathcal A_{\gamma\alpha}=\mathfrak{Res}\qty[\mathcal A_{\gamma\alpha}]=\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\eval_{p_\alpha^2=-m_\beta^2},\]
+\[\qty(p_\alpha^2+m_\beta^2)\mathcal A_{\gamma\alpha}\eval_{p_\alpha^2=-m_\beta^2}=\mathfrak{Res}\qty[\mathcal A_{\gamma\alpha}]=\tilde{\mathcal A}^\ast_{\beta\gamma}\tilde{\mathcal A}_{\beta\alpha}\eval_{p_\alpha^2=-m_\beta^2},\]
 com o mesmo espírito, propomos que o integrando de amplitudes de \textit{loops} possa ser reconstruído fazendo 
 a igualdade de seus resíduos em \textbf{cortes} com o produto de amplitudes de menor ordem. Por exemplo, a unitariedade por sí é capaz de nos garantir, 
-\[\qty(\ell_i^2+m_{\beta_1}^2)\qty(\qty(p_\alpha-\ell_i)^2+m^2_{\beta_2})\mathcal I^{L}_{\gamma\alpha}=\sum\limits_{n=0}^L\sum\limits_{\beta}\mathcal I^{L-n\ast}_{\beta\gamma}\mathcal I^{n}_{\beta\alpha},\]
+\[\qty(\ell_i^2+m_{\beta_1}^2)\qty(\qty(p_\alpha-\ell_i)^2+m^2_{\beta_2})\mathcal I^{L}_{\gamma\alpha}\eval_{\ell_i^2=-m_{\beta_1}^2,\qty(p_\alpha-\ell_i)^2=-m^2_{\beta_2}}=\sum\limits_{n=0}^L\sum\limits_{\beta}\mathcal I^{L-n\ast}_{\beta\gamma}\mathcal I^{n}_{\beta\alpha}\eval_{\ell_i^2=-m_{\beta_1}^2,\qty(p_\alpha-\ell_i)^2=-m^2_{\beta_2}},\]
 contudo, ela somente nos é capaz de nos dizer algo sobre \textbf{cortes} verticais do diagrama, isto é, \textbf{cortes} 
 da forma, 
 \begin{align*}
@@ -32,7 +32,7 @@ da forma,
             \vertex (i1) at (-1,1);
             \vertex (i2) at (-1,-1);
             \vertex [blob, minimum size=1cm] (b) at (0,0) {};
-            \placedotsbetween{b}{i1}{i2}{0.7cm}{4}
+            \placedotsbetween{b}{i2}{i1}{0.7cm}{4}
             \vertex (f1) at (1,1);
             \vertex (f2) at (1,-1);
             \placedotsbetween{b}{f1}{f2}{0.7cm}{4}
@@ -82,7 +82,7 @@ da forma,
                 (bb) -- [fermion] (ii2),
             };
         \end{feynman}
-    \end{tikzpicture}}.
+    \end{tikzpicture}}
 \end{align*}
 Apesar desta topologia de resíduos nos proporcionar muita informação sobre a amplitude, para $L\geq 1$, essa 
 informação apenas não é suficiente para conseguirmos reconstruir a amplitude, pois, há outros resíduos possíveis 
@@ -110,13 +110,16 @@ de serem tomados que não são levados em conta na aplicação da unitariedade c
             \vertex (i2) at (-1,-1);
             \vertex [blob, minimum size=1cm] (b) at (0,0) {};
             \placedotsbetween{b}{i1}{i2}{0.7cm}{4};
-            \vertex (d2) at (1.04,0) {$\raisebox{0pt}{\rotatebox[origin=c]{90}{\therefore}}$};
+            % \vertex (d2) at (1.04,0) {$\raisebox{0pt}{\rotatebox[origin=c]{90}{\therefore}}$};
             \vertex [blob, minimum size=1cm] (B1) at (1.7,1) {};
             \vertex [blob, minimum size=1cm] (B2) at (1.7,-1) {};
-            \placedotsbetween{B1}{B2}{f1}{0.7cm}{4};
-            \placedotsbetween{B2}{f2}{B1}{0.7cm}{4};
             \vertex (f1) at (2.7,1);
             \vertex (f2) at (2.7,-1);
+            \placedotsbetween{B1}{B2}{f1}{0.7cm}{4};
+            \placedotsbetween{B2}{f2}{B1}{0.7cm}{4};
+            \placedotsbetween{b}{B1}{B2}{0.7cm}{3};
+            \placedotsbetween{B1}{b}{B2}{0.7cm}{3};
+            \placedotsbetween{B2}{b}{B1}{0.7cm}{3};
             \diagram*{
                 (i1) -- [fermion] (b),
                 (i2) -- [fermion] (b),
@@ -127,14 +130,13 @@ de serem tomados que não são levados em conta na aplicação da unitariedade c
                 (B2) -- [fermion] (f2),
             };
         \end{feynman}
-    \end{tikzpicture}}.
+    \end{tikzpicture}}
 \end{align*}
-
-\begin{tikzpicture}
-  \begin{feynman}
-    \vertex[blob, minimum size=14mm] (B) at (0,0) {};
-    % compute radius: half the minimum size (7mm) plus an outward offset (2mm -> 0.2cm)
-    % here we just pick 0.9cm for the example; adapt to your blob
-    \placedots{B}{0.9cm}{ {180,190,170} } % three dots on the upper hemisphere
-  \end{feynman}
-\end{tikzpicture}
+que corresponderia à,
+\[\qty(\ell^2+m_{\beta_3}^2)\qty(\qty(p_{\gamma_1}-\ell)^2+m^2_{\beta_1})\qty(\qty(p_{\gamma_2}-\ell)^2+m^2_{\beta_2})\mathcal I^{L}_{\gamma\alpha}\eval_{\textnormal{Cuts}}\stackrel{?}{=}\sum\limits_{n=0}^L\sum\limits_{m=0}^{L-n}\sum\limits_{\beta_1,\beta_2,\beta_3}\mathcal I^{L-n-m\ast}_{\qty{\beta_2,\beta_3}\gamma_2}\mathcal I^{m\ast}_{\qty{\beta_1,\beta_2}\gamma_1}\mathcal I^{n}_{\qty{\beta_1,\beta_2}\alpha}\eval_{\textnormal{Cuts},\gamma=\gamma_1\cup\gamma_2}\]
+o grande problema com esse tipo de corte é: nos assumimos que os estados iniciais e finais em integrandos $\mathcal I_{\beta\alpha}^L$ são tais que 
+satisfazem $p_\alpha^0,p_\beta^0>0$, porém, neste caso é fácil de se mostrar que não é possível de se satisfazer essa condição para a solução dos 
+cortes, assim, as amplitudes que aparecem nos resíduos dos cortes não possuem de fato uma relação rígida de partículas iniciais e finais, por conta do 
+sinal da componente temporal do momento não ser positivo --- podendo ser complexo ---. Então, se estamos interessados em obter o máximo de 
+informação sobre amplitudes de ordens superiores partindo de ordens inferiores, é necessário obtermos um formalismo que trate partículas externas 
+de maneira uniforme, isto é, um formalismo que seja indiferente de $p^0>0$ e trate igualmente partículas internas e externas. 
