@@ -17,7 +17,7 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global/global}
-  \entry{Herrmann_2019}{article}{}{}
+  \entry{herrmannUVCancelationsGravity2019}{article}{}{}
     \name{author}{2}{}{%
       {{hash=HE}{%
          family={Herrmann},
@@ -32,10 +32,6 @@
          giveni={J\bibinitperiod},
       }}%
     }
-    \list{publisher}{2}{%
-      {Springer Science}%
-      {Business Media LLC}%
-    }
     \strng{namehash}{HETJ1}
     \strng{fullhash}{HETJ1}
     \field{labelnamesource}{author}
@@ -43,16 +39,19 @@
     \field{sortinit}{H}
     \field{sortinithash}{H}
     \verb{doi}
-    \verb 10.1007/jhep02(2019)084
+    \verb 10.1007/JHEP02(2019)084
+    \endverb
+    \verb{eprint}
+    \verb 1808.10446
     \endverb
     \field{issn}{1029-8479}
     \field{number}{2}
-    \field{title}{UV cancellations in gravity loop integrands}
-    \verb{url}
-    \verb http://dx.doi.org/10.1007/JHEP02(2019)084
-    \endverb
+    \field{pages}{84}
+    \field{title}{{{UV}} Cancelations in Gravity Loop Integrands}
     \field{volume}{2019}
     \field{journaltitle}{Journal of High Energy Physics}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
     \field{month}{02}
     \field{year}{2019}
   \endentry
