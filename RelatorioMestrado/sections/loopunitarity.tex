@@ -194,7 +194,8 @@ mais resíduos. Vamos demonstrar como isso pode ser feito na teoria teste, $g\ph
 \end{align*}
 que implica,
 \[\mathcal I^1_4 \supseteq g^4\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\frac{1}{\qty(\ell^2+m^2)\qty(\qty(\ell+2)^2+m^2)\qty(\qty(\ell-3)^2+m^2)\qty(\qty(\ell-3-4)^2+m^2)}.\]
-Obviamente esse resulta é somente para uma única contribuição para  can proceed further to three cuts,
+Obviamente esse resulta é somente para uma única contribuição de topologia no corte de $4$ partículas, há mais outras cinco contribuições que podem ser obtidas por permutação das pernas externas. 
+Procedemos para o corte de $3$ partículas,
 \begin{align*}
     \mathcal I^1_4\eval_{3\textnormal{ Cuts}} &=\raisebox{+3pt}{\begin{tikzpicture}[baseline=(b.base)]
         \begin{feynman}
@@ -217,8 +218,58 @@ Obviamente esse resulta é somente para uma única contribuição para  can proc
             };
         \end{feynman}
     \end{tikzpicture}}=\mathcal A_3\qty(2,\ell, -\ell-2)\mathcal A_3\qty(1, \ell+2,3+4-\ell)\mathcal A_4\qty(-\ell,\ell-3-4,3,4)\\
-    \mathcal I^1_4\eval_{3\textnormal{ Cuts}}&=g^4, 
+    \mathcal I^1_4\eval_{3\textnormal{ Cuts}}&=g^4\qty[\frac{1}{m^2+\qty(3+4)^2}+\frac{1}{m^2+\qty(3-\ell)^2}+\frac{1}{m^2+\qty(4-\ell)^2}], 
 \end{align*}
+Certamente esta é apenas uma contribuição de outras duas, note que os dois últimos termos correspondem ao mesmo resíduo da expressão com $4$ polos, portanto apenas o primeiro termo 
+nos diz algo não trivial sobre a parcela com $3$ polos,
+\[\mathcal I^1_3\supseteq \frac{g^4}{m^2+\qty(3+4)^2}\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\frac{1}{\qty(\ell^2+m^2)\qty(\qty(\ell+2)^2+m^2)\qty(\qty(\ell-3-4)^2+m^2)}.\]
+O corte duplo é,
+\begin{align*}
+    \mathcal I^1_4\eval_{2\textnormal{ Cuts}} &=\raisebox{+3pt}{\begin{tikzpicture}[baseline=(b.base)]
+        \begin{feynman}
+            \vertex (i1) at (-1,0.5);
+            \vertex (i2) at (-1,-0.5);
+            \vertex [solid blob=gray, minimum size=0.3cm] (b1) at (-0.5,0) {};
+            \vertex [solid blob=gray, minimum size=0.3cm] (b2) at (0.5,0) {};
+            \vertex (b) at (0,0) {};
+            \vertex (f1) at (1,0.5);
+            \vertex [particle =\(4\)] (f2) at (1,-0.5);
+            \diagram*{
+                (i1) [particle =\(2\)]-- [scalar] (b1),
+                (i2) [particle =\(1\)]-- [scalar] (b1),
+                (b1) -- [scalar, cut2, momentum = \(\ell\), bend left=45, looseness=1] (b2),
+                (b2) -- [scalar, cut2, momentum = \(\ell-3-4\), bend left=45, looseness=1] (b1),
+                (b2) -- [scalar] (f1)[particle =\(3\)],
+                (b2) -- [scalar] (f2),
+            };
+        \end{feynman}
+    \end{tikzpicture}}=\frac12\mathcal A_4\qty(1,2,\ell, -\ell-2)\mathcal A_4\qty(-\ell,\ell-3-4,3,4)\\
+    \mathcal I^1_4\eval_{3\textnormal{ Cuts}}&=\frac12g^4\qty[\frac{1}{m^2+\qty(1+2)^2}+\frac{1}{m^2+\qty(1+\ell)^2}+\frac{1}{m^2+\qty(2+\ell)^2}]\qty[\frac{1}{m^2+\qty(3+4)^2}+\frac{1}{m^2+\qty(3-\ell)^2}+\frac{1}{m^2+\qty(4-\ell)^2}], 
+\end{align*}
+realizando a mesma análise anterior, existe apenas um termo ligado a contribuição de $2$ polos,
+\[\mathcal I^1_3\supseteq \frac{g^4}{2\qty(m^2+\qty(3+4)^2)\qty(m^2+\qty(1+2)^2)}\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\frac{1}{\qty(\ell^2+m^2)\qty(\qty(\ell-3-4)^2+m^2)}.\]
+Nós poderíamos ir ainda mais além e tentar calcular o corte simples,
+\[\mathcal I^1_4\eval_{1\textnormal{ Cuts}}=\raisebox{+3pt}{\begin{tikzpicture}[baseline=(b.base)]
+        \begin{feynman}
+            \vertex (i1) at (-1,0.5);
+            \vertex (i2) at (-1,-0.5);
+            \vertex [solid blob=gray, minimum size=0.3cm] (b1) at (0,0) {};
+            \vertex (c) at (0,0.7) {};
+            \vertex (b) at (0,0) {};
+            \vertex (f1) at (1,0.5);
+            \vertex [particle =\(4\)] (f2) at (1,-0.5);
+            \diagram*{
+                (i1) [particle =\(2\)]-- [scalar] (b1),
+                (i2) [particle =\(1\)]-- [scalar] (b1),
+                (b1) -- [loop, scalar, cut2, momentum = \(\ell\),min distance=2cm] (b1),
+                (b1) -- [scalar] (f1)[particle =\(3\)],
+                (b1) -- [scalar] (f2),
+            };
+        \end{feynman}
+    \end{tikzpicture}}=\mathcal A_6\qty(1,2,3,4,\ell,-\ell),\]
+porém, este tipo de corte não está bem definido em TQC no geral, principalmente devido a divergências no limite colinear de amplitudes, contudo, não há problema nisto, cortes como esses 
+iriam apenas contribuir para \textit{tadpoles}, os quais após renormalização devem ser zero, portanto não iremos nos preocupar. Note que para o caso desta teoria teste é sim 
+possível obter o integrando $\mathcal I^1_4$ completo partindo da unitariedade generalizada.
 % Para obter tal formalismo precisamos supor várias coisas, primeiramente, LSZ. Isto é, um elemento de matriz S é obtido por,
 % \[S_{\beta\alpha}=\im^n\int\prod\limits_{a=1}^n\dd[4]{x_a}\qty(\textnormal{K.O.})_a\epsilon_{\sigma_a}^{I_a}\qty(k_a)\exp\qty((\pm)_a\im k_a\cdot x_a)\qty(\Omega,\textnormal{T}\qty{\Phi^{I_a}_a\qty(x_a)\cdots}\Omega)\]
 % como de costume, o sinal $\pm$ dentro da exponencial nos indica se determinada partícula faz parte da coleção inicial ou final, mas claro, isso só é verdade se $k_a^0>0$. Podemos 
