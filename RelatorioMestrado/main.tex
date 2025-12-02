@@ -104,6 +104,17 @@
 }
 \makeatother
 
+\tikzset{
+  solid blob/.style={
+    shape=circle,
+    draw=black,
+    fill=#1,          % parameter
+    minimum size=10mm,
+    inner sep=0pt
+  },
+  solid blob/.default=black,  % default color when none specified
+}
+
 \makeatletter
 \newcommand{\placedotsbetween}[5]{%
   \begin{scope}

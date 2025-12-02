@@ -140,3 +140,86 @@ cortes, assim, as amplitudes que aparecem nos resíduos dos cortes não possuem 
 sinal da componente temporal do momento não ser positivo --- podendo ser complexo ---. Então, se estamos interessados em obter o máximo de 
 informação sobre amplitudes de ordens superiores partindo de ordens inferiores, é necessário obtermos um formalismo que trate partículas externas 
 de maneira uniforme, isto é, um formalismo que seja indiferente de $p^0>0$ e trate igualmente partículas internas e externas. 
+
+Para isso, ao invés de utilizarmos como amplitude $\mathcal A_{\beta \alpha}$. que diferencia os estados iniciais $\alpha$ dos finais $\beta$, vamos fazer $p_{\alpha_i}\rightarrow -p_{\alpha_i}$, 
+de modo que a conservação de momento passa a ser $\sum\limits_i^np_i=0$. A amplitude $\mathcal A_{\beta \alpha}$ vista como função dos momentos $p_{\beta_i},-p_{\alpha_j}$ para $n$ partículas 
+externas será denominada $\mathcal A_n\qty(1^{h_1},\cdots,n^{h_n})$, no qual $i$ refere-se ao momento da $i$--ésima partícula e $h_i$ à helicidade/spin da $i$--ésima partícula. Nota-se a 
+uniformidade do tratamento de partículas iniciais e finais, a única diferença é que partículas com $p^0_i>0$ devem serem interpretadas como finais e partículas com $p^0_i<0$ como iniciais. De certa 
+forma, podemos interpretar essa nova função das variáveis cinemáticas como sendo uma abreviação de todas as amplitudes possíveis de $n$ pontos, isto é,
+\[\mathcal A_n\qty(1^{h_1},\cdots, n^{h_n})=\sum\limits_{\alpha,\beta}\prod\limits_{i\in\alpha,j\in\beta}\theta\qty(-p^0_{\alpha_i}>0)\theta\qty(p^0_{\beta_j}>0)\mathcal A_{\beta\alpha},\]
+devido às funções de Heaviside presentes, produtos dessas amplitudes fatorizam, e portanto, podemos utilizar do resultado da \eqref{residuotreelevelsmatrix} e obter uma expressão ainda mais geral,
+\begin{align*}
+    \mathcal A_n&=\sum\limits_{I,m}\frac{1}{P_I^2+m_\beta^2}\tilde{\mathcal A}_{n-m+2}\tilde{\mathcal A}_{m}\eval_{z=z_\beta}+\lim\limits_{\abs{z}\rightarrow \infty}\tilde{\mathcal A}_{n}\\
+    \qty(P_I^2+m_I^2)\mathcal A_n\eval_{P_I^2=-m_\beta^2}&=\mathfrak{Res}\qty[\mathcal A_n]=\sum\limits_{m=3}^{n-1}\tilde{\mathcal A}_{n-m+2}\tilde{\mathcal A}_{m}\eval_{P_I^2=-m_I^2}
+\end{align*}
+É claro, para teorias nas quais o termo de borda é zero. Assim, podemos utilizar este formalismo para calcular cortes do tipo triângulo mostrados anteriormente, devido a não ser necessário se preocupar sobre o 
+sinal dos momentos. Escrevemos então analogamente,
+\[\mathcal A_n^{L}=\int\prod\limits_{j=1}^L\frac{\dd[4]{\ell_j}}{\qty(2\pi)^4}\mathcal I^L_n,\]
+e agora nos voltamos sobre a construibilidade do integrando por meio de cortes. Bem, termos não construíveis são analíticos em $\mathbb C/\infty$ e estão relacionados com \textit{tadpoles}, 
+por hora iremos ignorar estes. 
+
+Comecemos com um exemplo à $1$--\textit{loop}, neste caso há apenas uma única integral de uma única variável de momento de \textit{loop}, $\ell$. Assim, como este possui apenas $4$ componentes, 
+podemos ao máximo realizar um corte quádruplo, sendo qualquer outro número superior de cortes zero. Assim, olhemos para a maior ordem de corte, 
+\[\qty(\ell^2+m_1^2)\qty(\qty(\ell-P_I)^2+m_2^2)\qty(\qty(\ell-P_J)^2+m_3^2)\qty(\qty(\ell-P_K)^2+m_4^2)\mathcal I^1_n\eval_{\textnormal{Cuts}}=\sum\limits_{k,l,m,p}^{k+l+m+p=n}\mathcal A_{k+2}\mathcal A_{l+2}\mathcal A_{m+2}\mathcal A_{p+2},\]
+as escolhas de $P_{I,J,K}$ ditam as topologias que aparecerão do lado direito, porém, note que o lado direito não possui nenhuma menção à variável de integração $\ell$, assim,
+\[\mathcal I^1_n\supseteq\sum\limits_{m_i}\sum\limits_{k,l,m,p}^{k+l+m+p=n}\mathcal A_{k+2}\mathcal A_{l+2}\mathcal A_{m+2}\mathcal A_{p+2}\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\frac{1}{\qty(\ell^2+m_1^2)\qty(\qty(\ell-P_I)^2+m_2^2)\qty(\qty(\ell-P_J)^2+m_3^2)\qty(\qty(\ell-P_K)^2+m_4^2)},\]
+isto é um exemplo de reconstrução, em geral, podemos fatorizar $\mathcal I^L_n$ em uma base de integrais escalares com coeficientes que englobam dependências cinemáticas, vetores de polarizações e 
+elementos de álgebras. Claro, obtemos aqui somente um dos termos de $\mathcal I^1_n$, é possível que haja contribuições com menor número de polos, e para obter estas seria necessário tomar 
+mais resíduos. Vamos demonstrar como isso pode ser feito na teoria teste, $g\phi^3$,
+\begin{align*}
+    \mathcal I^1_4\eval_{4\textnormal{ Cuts}} &=\raisebox{+3pt}{\begin{tikzpicture}[baseline=(b.base)]
+        \begin{feynman}
+            \vertex (i1) at (-1,0.5);
+            \vertex (i2) at (-1,-0.5);
+            \vertex [solid blob=gray, minimum size=0.3cm] (b1) at (-0.5,0.5) {};
+            \vertex [solid blob=gray, minimum size=0.3cm] (b2) at (-0.5,-0.5) {};
+            \vertex [solid blob=gray, minimum size=0.3cm] (b3) at (0.5,0.5) {};
+            \vertex [solid blob=gray, minimum size=0.3cm] (b4) at (0.5,-0.5) {};
+            \vertex (b) at (0,0) {};
+            \vertex (f1) at (1,0.5);
+            \vertex [particle =\(4\)] (f2) at (1,-0.5);
+            \diagram*{
+                (i1) [particle =\(2\)]-- [scalar] (b1),
+                (i2) [particle =\(1\)]-- [scalar] (b2),
+                (b1) -- [scalar, cut2, momentum = \(\ell\)] (b3),
+                (b3) -- [scalar, cut2, momentum = \(\ell-3\)] (b4),
+                (b4) -- [scalar, cut2, momentum = \(\ell-3-4\)] (b2),
+                (b2) -- [scalar, cut2, momentum = \(\ell+2\)] (b1),
+                (b3) -- [scalar] (f1)[particle =\(3\)],
+                (b4) -- [scalar] (f2),
+            };
+        \end{feynman}
+    \end{tikzpicture}}=\mathcal A_3\qty(2,\ell, -\ell-2)\mathcal A_3\qty(-\ell,\ell-3,3)\mathcal A_3\qty(4,3-\ell, \ell-3-4)\mathcal A_3\qty(1, \ell+2,3+4-\ell)\\
+    \mathcal I^1_4\eval_{4\textnormal{ Cuts}}&=g^4, 
+\end{align*}
+que implica,
+\[\mathcal I^1_4 \supseteq g^4\int\frac{\dd[4]{\ell}}{\qty(2\pi)^4}\frac{1}{\qty(\ell^2+m^2)\qty(\qty(\ell+2)^2+m^2)\qty(\qty(\ell-3)^2+m^2)\qty(\qty(\ell-3-4)^2+m^2)}.\]
+Obviamente esse resulta é somente para uma única contribuição para  can proceed further to three cuts,
+\begin{align*}
+    \mathcal I^1_4\eval_{3\textnormal{ Cuts}} &=\raisebox{+3pt}{\begin{tikzpicture}[baseline=(b.base)]
+        \begin{feynman}
+            \vertex (i1) at (-1,0.5);
+            \vertex (i2) at (-1,-0.5);
+            \vertex [solid blob=gray, minimum size=0.3cm] (b1) at (-0.5,0.5) {};
+            \vertex [solid blob=gray, minimum size=0.3cm] (b2) at (-0.5,-0.5) {};
+            \vertex [solid blob=gray, minimum size=0.3cm] (b3) at (0.3,0) {};
+            \vertex (b) at (0,0) {};
+            \vertex (f1) at (1,0.5);
+            \vertex [particle =\(4\)] (f2) at (1,-0.5);
+            \diagram*{
+                (i1) [particle =\(2\)]-- [scalar] (b1),
+                (i2) [particle =\(1\)]-- [scalar] (b2),
+                (b1) -- [scalar, cut2, momentum = \(\ell\)] (b3),
+                (b3) -- [scalar, cut2, momentum = \(\ell-3-4\)] (b2),
+                (b2) -- [scalar, cut2, momentum = \(\ell+2\)] (b1),
+                (b3) -- [scalar] (f1)[particle =\(3\)],
+                (b3) -- [scalar] (f2),
+            };
+        \end{feynman}
+    \end{tikzpicture}}=\mathcal A_3\qty(2,\ell, -\ell-2)\mathcal A_3\qty(1, \ell+2,3+4-\ell)\mathcal A_4\qty(-\ell,\ell-3-4,3,4)\\
+    \mathcal I^1_4\eval_{3\textnormal{ Cuts}}&=g^4, 
+\end{align*}
+% Para obter tal formalismo precisamos supor várias coisas, primeiramente, LSZ. Isto é, um elemento de matriz S é obtido por,
+% \[S_{\beta\alpha}=\im^n\int\prod\limits_{a=1}^n\dd[4]{x_a}\qty(\textnormal{K.O.})_a\epsilon_{\sigma_a}^{I_a}\qty(k_a)\exp\qty((\pm)_a\im k_a\cdot x_a)\qty(\Omega,\textnormal{T}\qty{\Phi^{I_a}_a\qty(x_a)\cdots}\Omega)\]
+% como de costume, o sinal $\pm$ dentro da exponencial nos indica se determinada partícula faz parte da coleção inicial ou final, mas claro, isso só é verdade se $k_a^0>0$. Podemos 
+% absorver este fator dentro dos momentos, assim, alguns possuirão $k_a<0$, nisto
