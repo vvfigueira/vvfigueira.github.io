@@ -261,10 +261,11 @@ Nós poderíamos ir ainda mais além e tentar calcular o corte simples,
             \diagram*{
                 (i1) [particle =\(2\)]-- [scalar] (b1),
                 (i2) [particle =\(1\)]-- [scalar] (b1),
-                (b1) -- [loop, scalar, cut2, momentum = \(\ell\),min distance=2cm] (b1),
+                % (b1) -- [scalar, cut2, momentum = \(\ell\), out=60, in=120, looseness=8] (b1),
                 (b1) -- [scalar] (f1)[particle =\(3\)],
                 (b1) -- [scalar] (f2),
             };
+            \draw[scalar,cut2](b1) .. controls +(0.8,1) and +(-0.8,1) .. (b1);
         \end{feynman}
     \end{tikzpicture}}=\mathcal A_6\qty(1,2,3,4,\ell,-\ell),\]
 porém, este tipo de corte não está bem definido em TQC no geral, principalmente devido a divergências no limite colinear de amplitudes, contudo, não há problema nisto, cortes como esses 
