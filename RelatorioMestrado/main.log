@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  2 DEC 2025 17:37
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  3 DEC 2025 11:42
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1366,83 +1366,14 @@ LaTeX Font Warning: Font shape `TU/lmr/bx/sc' undefined
 [0
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./sections/resumo.tex) (./sections/realizacoes.tex) (./sections/amplitudes.tex
-LaTeX Font Info:    Trying to load font information for U+bbold on input line 3
-2.
-(c:/texlive/2025/texmf-dist/tex/latex/bbold/Ubbold.fd)
-LaTeX Font Info:    Trying to load font information for U+euf on input line 33.
-
-
-(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
+(./sections/resumo.tex) (./sections/realizacoes.tex)
+(./sections/uvbehaviour.tex) (./sections/plano.tex)
 
 [1]
 
-[2]) (./sections/unitarity.tex
+[2]
 
-[3]
-
-[4]
-Overfull \hbox (1.39423pt too wide) detected at line 45
-[]
- []
-
-
-Underfull \vbox (badness 3343) has occurred while \output is active []
-
-
-
-[5]
-
-[6]
-
-[7]) (./sections/loopunitarity.tex
-
-[8]
-
-[9
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-]
-Overfull \hbox (3.95146pt too wide) detected at line 136
-[][][]\OMS/cmsy/m/n/12 I[][][][] [] [] [] [] I[]I[]I[][][][]
- []
-
-
-
-[10
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-]
-Overfull \hbox (8.5043pt too wide) detected at line 165
-\OMS/cmsy/m/n/12 I[]  [] [] A[]A[]A[]A[] [] [][]\OML/cmm/m/it/12 ;
- []
-
-
-Overfull \hbox (10.50417pt too wide) detected at line 194
-[]
- []
-
-
-Overfull \hbox (35.12212pt too wide) detected at line 248
-[]
- []
-
-
-
-[11]) (./sections/uvbehaviour.tex) (./sections/plano.tex)
-
-[12]
-
-[13] (./main.aux
+[3] (./main.aux
 Package cleveref Info: loaded `brazilian' language definitions on input line 12
 .
 )
@@ -1455,55 +1386,39 @@ L3 programming layer <2025-05-26>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7B220279D1438BB0B1C04E11C6862C29;1406.
+(rerunfilecheck)             Checksum: D5A940AE452E26864AFFAF32E5D4525E;836.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 40246 strings out of 470203
- 156261,1648299 words of node,token memory allocated
- 7066 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 662 sub_mlist, 1 glyph, 1497 attrib
-ute, 72 glue_spec, 750 attribute_list, 2 write nodes
-   avail lists: 1:25,2:11795,3:2537,4:71,5:739,6:36,7:10973,8:318,9:2229,10:33,1
-1:975
- 67578 multiletter control sequences out of 65536+600000
- 89 fonts using 6250151 bytes
- 84i,21n,92p,1865b,2070s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 39057 strings out of 470203
+ 100000,1648299 words of node,token memory allocated
+ 614 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 13 attribute, 72 glue_spec
+, 8 attribute_list, 2 write nodes
+   avail lists: 1:6,2:1167,3:228,4:21,5:467,6:36,7:9683,8:80,9:426,10:10,11:1054
+
+ 66433 multiletter control sequences out of 65536+600000
+ 62 fonts using 4398319 bytes
+ 84i,15n,92p,1865b,1973s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf><c:/te
 xlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf><c:/texlive/
-2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2025/
-texmf-dist/fonts/opentype/public/lm/lmroman8-italic.otf><c:/texlive/2025/texmf-d
-ist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2025/texmf-dist/fo
-nts/opentype/public/lm/lmroman12-italic.otf><c:/texlive/2025/texmf-dist/fonts/op
-entype/public/lm/lmroman10-bolditalic.otf><c:/texlive/2025/texmf-dist/fonts/open
-type/public/lm/lmroman12-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/
-public/lm/lmroman12-bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/l
-m/lmromancaps10-regular.otf><c:/texlive/2025/texmf-dist/fonts/type1/public/bbold
--type1/bbold10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/bbold-type1/bb
-old7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/
-2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib
-10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pf
-b><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texli
-ve/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.p
-fb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texl
-ive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/202
-5/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (14 pages, 303444 bytes).
+2025/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/texlive/2025/t
+exmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf><c:/texlive/2025/texmf-
+dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/texlive/2025/texmf-dist/fon
+ts/opentype/public/lm/lmromancaps10-regular.otf><c:/texlive/2025/texmf-dist/font
+s/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/te
+xlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (4 pages, 92557 bytes).
 
-PDF statistics: 273 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
- 27 named destinations out of 1000 (max. 131072)
- 85 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 126 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 131072)
+ 56 words of extra memory for PDF output out of 10000 (max. 100000000)
 
