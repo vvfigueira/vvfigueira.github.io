@@ -17,6 +17,84 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global/global}
+  \entry{arkani-hamedScatteringAmplitudesAll2021}{online}{}{}
+    \name{author}{3}{}{%
+      {{hash=AHN}{%
+         family={Arkani-Hamed},
+         familyi={A\bibinithyphendelim H\bibinitperiod},
+         given={Nima},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=HTC}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Tzu-Chen},
+         giveni={T\bibinithyphendelim C\bibinitperiod},
+      }}%
+      {{hash=HYt}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Yu-tin},
+         giveni={Y\bibinithyphendelim t\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AHNHTCHYt1}
+    \strng{fullhash}{AHNHTCHYt1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \verb{doi}
+    \verb 10.48550/arXiv.1709.04891
+    \endverb
+    \verb{eprint}
+    \verb 1709.04891
+    \endverb
+    \field{pubstate}{prepublished}
+    \field{title}{Scattering {{Amplitudes For All Masses}} and {{Spins}}}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{day}{31}
+    \field{month}{10}
+    \field{year}{2021}
+  \endentry
+
+  \entry{elvangScatteringAmplitudesGauge2015}{book}{}{}
+    \name{author}{2}{}{%
+      {{hash=EH}{%
+         family={Elvang},
+         familyi={E\bibinitperiod},
+         given={Henriette},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=HYt}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Yu-tin},
+         giveni={Y\bibinithyphendelim t\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{EHHYt1}
+    \strng{fullhash}{EHHYt1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \verb{doi}
+    \verb 10.1017/CBO9781107706620
+    \endverb
+    \field{edition}{1}
+    \field{isbn}{978-1-107-70662-0 978-1-107-06925-1 978-1-009-77336-2}
+    \field{title}{Scattering {{Amplitudes}} in {{Gauge Theory}} and
+  {{Gravity}}}
+    \field{day}{05}
+    \field{month}{02}
+    \field{year}{2015}
+  \endentry
+
   \entry{herrmannUVCancelationsGravity2019}{article}{}{}
     \name{author}{2}{}{%
       {{hash=HE}{%
@@ -54,6 +132,175 @@
     \field{eprintclass}{hep-th}
     \field{month}{02}
     \field{year}{2019}
+  \endentry
+
+  \entry{johanssonUnravelingConformalGravity2018}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=JH}{%
+         family={Johansson},
+         familyi={J\bibinitperiod},
+         given={Henrik},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Mogull},
+         familyi={M\bibinitperiod},
+         given={Gustav},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=TF}{%
+         family={Teng},
+         familyi={T\bibinitperiod},
+         given={Fei},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JHMGTF1}
+    \strng{fullhash}{JHMGTF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb 10.1007/JHEP09(2018)080
+    \endverb
+    \verb{eprint}
+    \verb 1806.05124
+    \endverb
+    \field{issn}{1029-8479}
+    \field{number}{9}
+    \field{pages}{80}
+    \field{title}{Unraveling Conformal Gravity Amplitudes}
+    \field{volume}{2018}
+    \field{journaltitle}{Journal of High Energy Physics}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{month}{09}
+    \field{year}{2018}
+  \endentry
+
+  \entry{johanssonConformalGravityGauge2017}{online}{}{}
+    \name{author}{2}{}{%
+      {{hash=JH}{%
+         family={Johansson},
+         familyi={J\bibinitperiod},
+         given={Henrik},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=NJ}{%
+         family={Nohle},
+         familyi={N\bibinitperiod},
+         given={Josh},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JHNJ1}
+    \strng{fullhash}{JHNJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb 10.48550/arXiv.1707.02965
+    \endverb
+    \verb{eprint}
+    \verb 1707.02965
+    \endverb
+    \field{pubstate}{prepublished}
+    \field{title}{Conformal {{Gravity}} from {{Gauge Theory}}}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{day}{10}
+    \field{month}{07}
+    \field{year}{2017}
+  \endentry
+
+  \entry{schwartzQuantumFieldTheory2013}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=SMD}{%
+         family={Schwartz},
+         familyi={S\bibinitperiod},
+         given={Matthew\bibnamedelima D.},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{SMD1}
+    \strng{fullhash}{SMD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1017/9781139540940
+    \endverb
+    \field{edition}{1}
+    \field{isbn}{978-1-108-98503-1 978-1-107-03473-0}
+    \field{title}{Quantum {{Field Theory}} and the {{Standard Model}}}
+    \field{day}{15}
+    \field{month}{12}
+    \field{year}{2013}
+  \endentry
+
+  \entry{srednickiQuantumFieldTheory2007}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=SM}{%
+         family={Srednicki},
+         familyi={S\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{SM1}
+    \strng{fullhash}{SM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1017/CBO9780511813917
+    \endverb
+    \field{isbn}{978-0-511-81391-7}
+    \field{title}{Quantum {{Field Theory}}}
+    \list{location}{1}{%
+      {Cambridge}%
+    }
+    \field{year}{2007}
+  \endentry
+
+  \entry{weinbergQuantumTheoryFields1995}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=WS}{%
+         family={Weinberg},
+         familyi={W\bibinitperiod},
+         given={Steven},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{WS1}
+    \strng{fullhash}{WS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{doi}
+    \verb 10.1017/CBO9781139644167
+    \endverb
+    \field{edition}{1}
+    \field{isbn}{978-0-521-67053-1 978-0-521-55001-7 978-1-139-64416-7}
+    \field{title}{The {{Quantum Theory}} of {{Fields}}: {{Volume}} 1,
+  {{Foundations}}}
+    \field{day}{30}
+    \field{month}{06}
+    \field{year}{1995}
   \endentry
 \enddatalist
 \endinput

@@ -21,6 +21,8 @@
 \usetikzlibrary{math}
 \usepackage{tikz-feynman}
 \usepackage{bbold}
+\usepackage{booktabs}
+
 
 \AtBeginDocument{\renewcommand*{\hbar}{{\mkern-1mu\mathchar'26\mkern-8mu\textnormal{h}}}}
 \AtBeginDocument{\newcommand{\e}{\textnormal{e}}}
@@ -166,7 +168,7 @@
 
 %\AddToHook{cmd/section/before}{\clearpage}
 
-\addbibresource{referencias.bib}
+\addbibresource{refs.bib}
 
 \newtheorem{teorema}{Teorema}[section]
 \newtheorem{definicao}{Definição}[section]
@@ -248,19 +250,23 @@
     \end{center}
 \end{titlepage}
 
-\nocite{*}
+% \nocite{*}
 
 \input{sections/resumo}
 
 \input{sections/realizacoes}
 
-% \input{sections/amplitudes}
+\input{sections/amplitudes}
 
-% \input{sections/unitarity}
+\input{sections/unitarity}
 
-% \input{sections/loopunitarity}
+\input{sections/loopunitarity}
 
 \input{sections/uvbehaviour}
+
+\input{sections/highderivative}
+
+\input{sections/highamptoy}
 
 \input{sections/plano}
 
