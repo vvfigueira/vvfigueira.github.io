@@ -17,11 +17,48 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global/global}
-  \entry{arkani-hamedScatteringAmplitudesAll2021}{online}{}{}
+  \entry{antoniadisGaugeInvarianceUnitarity1986}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=AI}{%
+         family={Antoniadis},
+         familyi={A\bibinitperiod},
+         given={I.},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=TET}{%
+         family={Tomboulis},
+         familyi={T\bibinitperiod},
+         given={E.\bibnamedelima T.},
+         giveni={E\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{AITET1}
+    \strng{fullhash}{AITET1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \verb{doi}
+    \verb 10.1103/PhysRevD.33.2756
+    \endverb
+    \field{number}{10}
+    \field{pages}{2756\bibrangedash 2779}
+    \field{title}{Gauge Invariance and Unitarity in Higher-Derivative Quantum
+  Gravity}
+    \field{volume}{33}
+    \field{journaltitle}{Physical Review D}
+    \field{month}{05}
+    \field{year}{1986}
+  \endentry
+
+  \entry{arkani-hamedScatteringAmplitudesAll2021}{misc}{}{}
     \name{author}{3}{}{%
-      {{hash=AHN}{%
-         family={Arkani-Hamed},
-         familyi={A\bibinithyphendelim H\bibinitperiod},
+      {{hash=AN}{%
+         family={{Arkani-Hamed}},
+         familyi={A\bibinitperiod},
          given={Nima},
          giveni={N\bibinitperiod},
       }}%
@@ -38,8 +75,11 @@
          giveni={Y\bibinithyphendelim t\bibinitperiod},
       }}%
     }
-    \strng{namehash}{AHNHTCHYt1}
-    \strng{fullhash}{AHNHTCHYt1}
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \strng{namehash}{ANHTCHYt1}
+    \strng{fullhash}{ANHTCHYt1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{A}
@@ -50,13 +90,373 @@
     \verb{eprint}
     \verb 1709.04891
     \endverb
-    \field{pubstate}{prepublished}
+    \field{number}{arXiv:1709.04891}
     \field{title}{Scattering {{Amplitudes For All Masses}} and {{Spins}}}
     \field{eprinttype}{arXiv}
     \field{eprintclass}{hep-th}
-    \field{day}{31}
     \field{month}{10}
     \field{year}{2021}
+  \endentry
+
+  \entry{bernTwoloopRenormalizationQuantum2017}{article}{}{}
+    \name{author}{4}{}{%
+      {{hash=BZ}{%
+         family={Bern},
+         familyi={B\bibinitperiod},
+         given={Zvi},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=CHH}{%
+         family={Chi},
+         familyi={C\bibinitperiod},
+         given={Huan-Hang},
+         giveni={H\bibinithyphendelim H\bibinitperiod},
+      }}%
+      {{hash=DL}{%
+         family={Dixon},
+         familyi={D\bibinitperiod},
+         given={Lance},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=EA}{%
+         family={Edison},
+         familyi={E\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{BZ+1}
+    \strng{fullhash}{BZCHHDLEA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1103/PhysRevD.95.046013
+    \endverb
+    \field{number}{4}
+    \field{pages}{046013}
+    \field{title}{Two-Loop Renormalization of Quantum Gravity Simplified}
+    \field{volume}{95}
+    \field{journaltitle}{Physical Review D}
+    \field{month}{02}
+    \field{year}{2017}
+  \endentry
+
+  \entry{donoghueCausalityGravity2021}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=DJF}{%
+         family={Donoghue},
+         familyi={D\bibinitperiod},
+         given={John\bibnamedelima F.},
+         giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Menezes},
+         familyi={M\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DJFMG1}
+    \strng{fullhash}{DJFMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.1007/JHEP11(2021)010
+    \endverb
+    \verb{eprint}
+    \verb 2106.05912
+    \endverb
+    \field{issn}{1029-8479}
+    \field{number}{11}
+    \field{pages}{10}
+    \field{title}{Causality and Gravity}
+    \field{volume}{2021}
+    \field{journaltitle}{Journal of High Energy Physics}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{month}{11}
+    \field{year}{2021}
+  \endentry
+
+  \entry{donoghueGaugeAssistedQuadratic2018}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=DJF}{%
+         family={Donoghue},
+         familyi={D\bibinitperiod},
+         given={John\bibnamedelima F.},
+         giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Menezes},
+         familyi={M\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DJFMG1}
+    \strng{fullhash}{DJFMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.1103/PhysRevD.97.126005
+    \endverb
+    \verb{eprint}
+    \verb 1804.04980
+    \endverb
+    \field{issn}{2470-0010, 2470-0029}
+    \field{number}{12}
+    \field{pages}{126005}
+    \field{shorttitle}{Gauge {{Assisted Quadratic Gravity}}}
+    \field{title}{Gauge {{Assisted Quadratic Gravity}}: {{A Framework}} for
+  {{UV Complete Quantum Gravity}}}
+    \field{volume}{97}
+    \field{journaltitle}{Physical Review D}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{month}{06}
+    \field{year}{2018}
+  \endentry
+
+  \entry{donoghueMassivePolesLeeWick2019}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=DJF}{%
+         family={Donoghue},
+         familyi={D\bibinitperiod},
+         given={John\bibnamedelima F.},
+         giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Menezes},
+         familyi={M\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DJFMG1}
+    \strng{fullhash}{DJFMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.1103/PhysRevD.99.065017
+    \endverb
+    \verb{eprint}
+    \verb 1812.03603
+    \endverb
+    \field{issn}{2470-0010, 2470-0029}
+    \field{number}{6}
+    \field{pages}{065017}
+    \field{title}{Massive Poles in {{Lee-Wick}} Quantum Field Theory}
+    \field{volume}{99}
+    \field{journaltitle}{Physical Review D}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{month}{03}
+    \field{year}{2019}
+  \endentry
+
+  \entry{donoghueQuadraticGravity2021}{misc}{}{}
+    \name{author}{2}{}{%
+      {{hash=DJF}{%
+         family={Donoghue},
+         familyi={D\bibinitperiod},
+         given={John\bibnamedelima F.},
+         giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Menezes},
+         familyi={M\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \strng{namehash}{DJFMG1}
+    \strng{fullhash}{DJFMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.48550/arXiv.2112.01974
+    \endverb
+    \verb{eprint}
+    \verb 2112.01974
+    \endverb
+    \field{number}{arXiv:2112.01974}
+    \field{title}{On {{Quadratic Gravity}}}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{month}{12}
+    \field{year}{2021}
+  \endentry
+
+  \entry{donoghueQuantumCausalityArrows2020a}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=DJF}{%
+         family={Donoghue},
+         familyi={D\bibinitperiod},
+         given={John\bibnamedelima F.},
+         giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Menezes},
+         familyi={M\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DJFMG1}
+    \strng{fullhash}{DJFMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.1016/j.ppnp.2020.103812
+    \endverb
+    \verb{eprint}
+    \verb 2003.09047
+    \endverb
+    \field{issn}{01466410}
+    \field{pages}{103812}
+    \field{title}{Quantum Causality and the Arrows of Time and Thermodynamics}
+    \field{volume}{115}
+    \field{journaltitle}{Progress in Particle and Nuclear Physics}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{quant-ph}
+    \field{month}{11}
+    \field{year}{2020}
+  \endentry
+
+  \entry{donoghueArrowCausalityQuantum2019a}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=DJF}{%
+         family={Donoghue},
+         familyi={D\bibinitperiod},
+         given={John\bibnamedelima F.},
+         giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Menezes},
+         familyi={M\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DJFMG1}
+    \strng{fullhash}{DJFMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.1103/PhysRevLett.123.171601
+    \endverb
+    \verb{eprint}
+    \verb 1908.04170
+    \endverb
+    \field{issn}{0031-9007, 1079-7114}
+    \field{number}{17}
+    \field{pages}{171601}
+    \field{title}{The Arrow of Causality and Quantum Gravity}
+    \field{volume}{123}
+    \field{journaltitle}{Physical Review Letters}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{month}{10}
+    \field{year}{2019}
+  \endentry
+
+  \entry{donoghueOstrogradskyInstabilityCan2021}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=DJF}{%
+         family={Donoghue},
+         familyi={D\bibinitperiod},
+         given={John\bibnamedelima F.},
+         giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Menezes},
+         familyi={M\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DJFMG1}
+    \strng{fullhash}{DJFMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.1103/PhysRevD.104.045010
+    \endverb
+    \verb{eprint}
+    \verb 2105.00898
+    \endverb
+    \field{issn}{2470-0010, 2470-0029}
+    \field{number}{4}
+    \field{pages}{045010}
+    \field{title}{The {{Ostrogradsky}} Instability Can Be Overcome by Quantum
+  Physics}
+    \field{volume}{104}
+    \field{journaltitle}{Physical Review D}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{month}{08}
+    \field{year}{2021}
+  \endentry
+
+  \entry{donoghueUnitarityStabilityLoops2019}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=DJF}{%
+         family={Donoghue},
+         familyi={D\bibinitperiod},
+         given={John\bibnamedelima F.},
+         giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Menezes},
+         familyi={M\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DJFMG1}
+    \strng{fullhash}{DJFMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.1103/PhysRevD.100.105006
+    \endverb
+    \verb{eprint}
+    \verb 1908.02416
+    \endverb
+    \field{issn}{2470-0010, 2470-0029}
+    \field{number}{10}
+    \field{pages}{105006}
+    \field{title}{Unitarity, Stability and Loops of Unstable Ghosts}
+    \field{volume}{100}
+    \field{journaltitle}{Physical Review D}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{month}{11}
+    \field{year}{2019}
   \endentry
 
   \entry{elvangScatteringAmplitudesGauge2015}{book}{}{}
@@ -90,9 +490,48 @@
     \field{isbn}{978-1-107-70662-0 978-1-107-06925-1 978-1-009-77336-2}
     \field{title}{Scattering {{Amplitudes}} in {{Gauge Theory}} and
   {{Gravity}}}
-    \field{day}{05}
     \field{month}{02}
     \field{year}{2015}
+  \endentry
+
+  \entry{goroffQuantumGravityTwo1985}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=GMH}{%
+         family={Goroff},
+         familyi={G\bibinitperiod},
+         given={Marc\bibnamedelima H.},
+         giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Sagnotti},
+         familyi={S\bibinitperiod},
+         given={Augusto},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Sagnotti},
+         familyi={S\bibinitperiod},
+         given={Augusto},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GMHSASA1}
+    \strng{fullhash}{GMHSASA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \verb{doi}
+    \verb 10.1016/0370-2693(85)91470-4
+    \endverb
+    \field{issn}{0370-2693}
+    \field{number}{1}
+    \field{pages}{81\bibrangedash 86}
+    \field{title}{Quantum Gravity at Two Loops}
+    \field{volume}{160}
+    \field{journaltitle}{Physics Letters B}
+    \field{month}{10}
+    \field{year}{1985}
   \endentry
 
   \entry{herrmannUVCancelationsGravity2019}{article}{}{}
@@ -132,6 +571,45 @@
     \field{eprintclass}{hep-th}
     \field{month}{02}
     \field{year}{2019}
+  \endentry
+
+  \entry{holdomQCDAnalogyQuantum2016}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=HB}{%
+         family={Holdom},
+         familyi={H\bibinitperiod},
+         given={Bob},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Ren},
+         familyi={R\bibinitperiod},
+         given={Jing},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HBRJ1}
+    \strng{fullhash}{HBRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.1103/PhysRevD.93.124030
+    \endverb
+    \verb{eprint}
+    \verb 1512.05305
+    \endverb
+    \field{issn}{2470-0010, 2470-0029}
+    \field{number}{12}
+    \field{pages}{124030}
+    \field{title}{A {{QCD}} Analogy for Quantum Gravity}
+    \field{volume}{93}
+    \field{journaltitle}{Physical Review D}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{month}{06}
+    \field{year}{2016}
   \endentry
 
   \entry{johanssonUnravelingConformalGravity2018}{article}{}{}
@@ -179,7 +657,7 @@
     \field{year}{2018}
   \endentry
 
-  \entry{johanssonConformalGravityGauge2017}{online}{}{}
+  \entry{johanssonConformalGravityGauge2017}{misc}{}{}
     \name{author}{2}{}{%
       {{hash=JH}{%
          family={Johansson},
@@ -194,6 +672,9 @@
          giveni={J\bibinitperiod},
       }}%
     }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
     \strng{namehash}{JHNJ1}
     \strng{fullhash}{JHNJ1}
     \field{labelnamesource}{author}
@@ -206,13 +687,84 @@
     \verb{eprint}
     \verb 1707.02965
     \endverb
-    \field{pubstate}{prepublished}
+    \field{number}{arXiv:1707.02965}
     \field{title}{Conformal {{Gravity}} from {{Gauge Theory}}}
     \field{eprinttype}{arXiv}
     \field{eprintclass}{hep-th}
-    \field{day}{10}
     \field{month}{07}
     \field{year}{2017}
+  \endentry
+
+  \entry{mannheimMakingCaseConformal2012}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=MPD}{%
+         family={Mannheim},
+         familyi={M\bibinitperiod},
+         given={Philip\bibnamedelima D.},
+         giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MPD1}
+    \strng{fullhash}{MPD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{doi}
+    \verb 10.1007/s10701-011-9608-6
+    \endverb
+    \verb{eprint}
+    \verb 1101.2186
+    \endverb
+    \field{issn}{0015-9018, 1572-9516}
+    \field{number}{3}
+    \field{pages}{388\bibrangedash 420}
+    \field{title}{Making the {{Case}} for {{Conformal Gravity}}}
+    \field{volume}{42}
+    \field{journaltitle}{Foundations of Physics}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-th}
+    \field{month}{03}
+    \field{year}{2012}
+  \endentry
+
+  \entry{salvioAgravity2014}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=SA}{%
+         family={Salvio},
+         familyi={S\bibinitperiod},
+         given={Alberto},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Strumia},
+         familyi={S\bibinitperiod},
+         given={Alessandro},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SASA1}
+    \strng{fullhash}{SASA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1007/JHEP06(2014)080
+    \endverb
+    \verb{eprint}
+    \verb 1403.4226
+    \endverb
+    \field{issn}{1029-8479}
+    \field{number}{6}
+    \field{pages}{80}
+    \field{title}{Agravity}
+    \field{volume}{2014}
+    \field{journaltitle}{Journal of High Energy Physics}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-ph}
+    \field{month}{06}
+    \field{year}{2014}
   \endentry
 
   \entry{schwartzQuantumFieldTheory2013}{book}{}{}
@@ -239,7 +791,6 @@
     \field{edition}{1}
     \field{isbn}{978-1-108-98503-1 978-1-107-03473-0}
     \field{title}{Quantum {{Field Theory}} and the {{Standard Model}}}
-    \field{day}{15}
     \field{month}{12}
     \field{year}{2013}
   \endentry
@@ -273,6 +824,133 @@
     \field{year}{2007}
   \endentry
 
+  \entry{stelleRenormalizationHigherderivativeQuantum1977}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=SKS}{%
+         family={Stelle},
+         familyi={S\bibinitperiod},
+         given={K.\bibnamedelima S.},
+         giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{SKS1}
+    \strng{fullhash}{SKS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1103/PhysRevD.16.953
+    \endverb
+    \field{number}{4}
+    \field{pages}{953\bibrangedash 969}
+    \field{title}{Renormalization of Higher-Derivative Quantum Gravity}
+    \field{volume}{16}
+    \field{journaltitle}{Physical Review D}
+    \field{month}{08}
+    \field{year}{1977}
+  \endentry
+
+  \entry{thooftOneloopDivergenciesTheory1993}{inbook}{}{}
+    \name{author}{2}{}{%
+      {{hash=tG}{%
+         family={{'t Hooft}},
+         familyi={t\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=VM}{%
+         family={Veltman},
+         familyi={V\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {WORLD SCIENTIFIC}%
+    }
+    \strng{namehash}{tGVM1}
+    \strng{fullhash}{tGVM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{booktitle}{Euclidean {{Quantum Gravity}}}
+    \verb{doi}
+    \verb 10.1142/9789814539395_0001
+    \endverb
+    \field{isbn}{978-981-02-0515-7 978-981-4539-39-5}
+    \field{pages}{3\bibrangedash 28}
+    \field{title}{One-Loop Divergencies in the Theory of Gravitation}
+    \field{langid}{english}
+    \field{month}{05}
+    \field{year}{1993}
+  \endentry
+
+  \entry{tomboulisRenormalizationUnitarityHigher2015}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=TET}{%
+         family={Tomboulis},
+         familyi={T\bibinitperiod},
+         given={E.\bibnamedelima T.},
+         giveni={E\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {World Scientific Publishing Co.}%
+    }
+    \strng{namehash}{TET1}
+    \strng{fullhash}{TET1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \verb{doi}
+    \verb 10.1142/S0217732315400052
+    \endverb
+    \field{issn}{0217-7323}
+    \field{number}{03n04}
+    \field{pages}{1540005}
+    \field{title}{Renormalization and Unitarity in Higher Derivative and
+  Nonlocal Gravity Theories}
+    \field{volume}{30}
+    \field{journaltitle}{Modern Physics Letters A}
+    \field{month}{02}
+    \field{year}{2015}
+  \endentry
+
+  \entry{vandevenTwoloopQuantumGravity1992}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=vAEM}{%
+         family={{van de Ven}},
+         familyi={v\bibinitperiod},
+         given={Anton E.\bibnamedelima M.},
+         giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim
+  M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{vAEM1}
+    \strng{fullhash}{vAEM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \verb{doi}
+    \verb 10.1016/0550-3213(92)90011-Y
+    \endverb
+    \field{issn}{0550-3213}
+    \field{number}{1}
+    \field{pages}{309\bibrangedash 366}
+    \field{title}{Two-Loop Quantum Gravity}
+    \field{volume}{378}
+    \field{journaltitle}{Nuclear Physics B}
+    \field{month}{07}
+    \field{year}{1992}
+  \endentry
+
   \entry{weinbergQuantumTheoryFields1995}{book}{}{}
     \name{author}{1}{}{%
       {{hash=WS}{%
@@ -298,7 +976,6 @@
     \field{isbn}{978-0-521-67053-1 978-0-521-55001-7 978-1-139-64416-7}
     \field{title}{The {{Quantum Theory}} of {{Fields}}: {{Volume}} 1,
   {{Foundations}}}
-    \field{day}{30}
     \field{month}{06}
     \field{year}{1995}
   \endentry

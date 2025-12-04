@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  3 DEC 2025 23:01
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  4 DEC 2025 16:07
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1466,31 +1466,29 @@ Overfull \hbox (10.50417pt too wide) detected at line 194
 
 
 [11]
-Overfull \hbox (35.12212pt too wide) detected at line 248
+
+[12]) (./sections/uvbehaviour.tex) (./sections/highderivative.tex
+
+[13]) (./sections/highamptoy.tex
+
+[14]
+Overfull \hbox (24.65553pt too wide) detected at line 125
 []
  []
 
-)
-
-[12] (./sections/uvbehaviour.tex) (./sections/highderivative.tex)
-(./sections/highamptoy.tex) (./sections/plano.tex
-Underfull \hbox (badness 1701) in paragraph at lines 13--13
-\TU/lmr/m/n/12 Tópicos Avan-ça-dos em Re-la-ti-vi-dade
- []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 20--20
-[]\TU/lmr/m/n/12 Cál-cu-los pre-li-mi-na-res com a te-o-ria
- []
-
+[15]) (./sections/plano.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 )
 
-[13]
+[16]
 
-[14] (./main.aux
+[17]
+
+[18] (./main.aux
 Package cleveref Info: loaded `brazilian' language definitions on input line 12
 .
 )
@@ -1510,14 +1508,14 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 40400 strings out of 470203
- 195337,1648299 words of node,token memory allocated
- 7075 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 662 sub_mlist, 1 glyph, 1499 attrib
-ute, 72 glue_spec, 751 attribute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:12,2:11849,3:3239,4:76,5:748,6:53,7:12017,8:318,9:2569,10:33,1
-1:1072
- 67703 multiletter control sequences out of 65536+600000
+ 40549 strings out of 470203
+ 195335,1648299 words of node,token memory allocated
+ 7301 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 662 sub_mlist, 1 glyph, 1555 attrib
+ute, 74 glue_spec, 779 attribute_list, 2 write, 10 pdf_action nodes
+   avail lists: 1:13,2:11785,3:3248,4:76,5:747,6:64,7:12019,8:318,9:2569,10:33,1
+1:1179
+ 67830 multiletter control sequences out of 65536+600000
  89 fonts using 6250151 bytes
  84i,21n,92p,1865b,2070s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf><c:/te
@@ -1548,10 +1546,10 @@ cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.p
 fb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texl
 ive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/202
 5/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (15 pages, 318311 bytes).
+Output written on main.pdf (19 pages, 352672 bytes).
 
-PDF statistics: 324 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
- 39 named destinations out of 1000 (max. 131072)
+PDF statistics: 413 PDF objects out of 1000 (max. 8388607)
+ 336 compressed objects within 4 object streams
+ 61 named destinations out of 1000 (max. 131072)
  101 words of extra memory for PDF output out of 10000 (max. 100000000)
 

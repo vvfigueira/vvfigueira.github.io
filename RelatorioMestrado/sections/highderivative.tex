@@ -1,1 +1,18 @@
 \subsection{Teorias com derivadas superiores}
+
+As teoria usuais estudadas em TQC possuem termo cinético em seu lagrangiano com no máximo duas derivadas, isso é devido à ser responsável por 
+gerar um propagador da forma $\qty(p^2+m^2)^{-1}$, o que é compatível com argumentos gerais da estrutura de polos físicos da matrix S \autocite{weinbergQuantumTheoryFields1995,srednickiQuantumFieldTheory2007,schwartzQuantumFieldTheory2013}. Um propagador 
+com polos diferentes dos previstos por argumentos gerais necessariamente seria um indicativo da teoria em questão não respeitar alguma das hipóteses, como: unitariedade, causalidade e 
+localidade. Ainda, dependendo dos coeficientes é possível a aparição de fantasmas --- Relacionados com a instabilidade de Ostrogradsky --- ou modos taquiônicos, porém, estudos recentes \autocite{donoghueGaugeAssistedQuadratic2018,donoghueMassivePolesLeeWick2019,donoghueArrowCausalityQuantum2019a,donoghueUnitarityStabilityLoops2019,donoghueQuantumCausalityArrows2020a,donoghueCausalityGravity2021,donoghueQuadraticGravity2021,donoghueOstrogradskyInstabilityCan2021} mostram que os fantasmas presentes nestes tipos de teorias 
+adquirem uma parte imaginária em sua auto-energia, assim, desacoplando do espectro assintótico de forma a manter a unitariedade.
+
+Independentemente disto, é sabido que a Relatividade Geral,\[S=\frac{1}{2\kappa}\int\dd[4]{x}\sqrt{-g}R,\] quando linearizada e interpretada como uma TQC, não é renormalizável. Uma análise 
+cuidadosa sobre as formas de divergências que surgem \autocite{antoniadisGaugeInvarianceUnitarity1986,bernTwoloopRenormalizationQuantum2017,goroffQuantumGravityTwo1985,holdomQCDAnalogyQuantum2016,mannheimMakingCaseConformal2012,salvioAgravity2014,stelleRenormalizationHigherderivativeQuantum1977,thooftOneloopDivergenciesTheory1993,tomboulisRenormalizationUnitarityHigher2015,vandevenTwoloopQuantumGravity1992}, 
+sugere que a princípio seria possível de se obter uma teoria linearizada de gravidade quantizável e perturbativamente renormalizável caso, além do termo de Einstein-Hilbert, adicionássemos 
+termos quárticos em derivadas, \[S=\int\dd[4]{x}\qty[\frac{1}{2\kappa}R +\alpha R^2+\beta R_{\mu\nu}R^{\mu\nu}+\gamma R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}].\] 
+Devido a existência do invariante topológico de Gauss-Bonnet em $4$ dimensões,\[\mathbb Z\ni\textnormal{G.B.} = \frac{1}{32\pi^2}\int\dd[4]{x}\qty[R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}-4R_{\mu\nu}R^{\mu\nu}+R^2],\] apenas dois de $\alpha,\beta,\gamma$ são 
+independentes, escolhemos $\alpha,\beta$ como independentes, podemos ainda remover $\beta$ em prol de introduzir um termo dependente do tensor de Weyl, assim, \[S=\int\dd[4]{x}\qty[\frac{1}{2\kappa}R +\alpha R^2+\beta W_{\mu\nu\rho\sigma}W^{\mu\nu\rho\sigma}].\] 
+Uma classe especial de teorias são aquelas nas quais $\alpha =0 $, pois, o termo dependente do tensor de Weyl quadrado é classicamente invariante por transformações conformes, assim, não gera 
+nenhuma contribuição para a matrix S, desta forma, a teoria definida por essa ação possui as mesmas amplitudes a nível árvore geradas por GR usual. Visto que essa teoria possui derivadas 
+superiores, gostaríamos de compreender melhor a forma das amplitudes de \textit{loops} desta teoria. Para isso, começamos a análise deste tipo de teorias utilizando uma teoria teste 
+conforme proposta em \autocite{johanssonUnravelingConformalGravity2018}.
