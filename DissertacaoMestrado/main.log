@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  5 DEC 2025 13:05
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  6 DEC 2025 14:45
  restricted system commands enabled.
 **main
 (./main.tex
@@ -105,17 +105,9 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layoutvoffset=\dimen157
 \Gm@dimlist=\toks18
 )
-(c:/texlive/2025/texmf-dist/tex/latex/psnfss/times.sty
-Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+(c:/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
 )
-LaTeX Font Info:    Trying to load font information for TU+ptm on input line 6.
-
-LaTeX Font Info:    No file TUptm.fd. on input line 6.
-
-
-LaTeX Font Warning: Font shape `TU/ptm/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 6.
-
 (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
 File: l3backend-luatex.def 2025-04-14 L3 backend support: PDF output (LuaTeX)
 \l__color_backend_stack_int=\count285
@@ -204,7 +196,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 28.
 
 Underfull \hbox (badness 10000) in paragraph at lines 28--32
- []\TU/ptm/m/n/12 Ori-en-ta-dor(a): $[]$
+ []\TU/lmr/m/n/12 Ori-en-ta-dor: $[]$
  []
 
 
@@ -214,7 +206,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--32
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 (./ParteExterna/FichaCatalografica.tex) (./ParteExterna/FolhaRostoIN.tex
 Underfull \hbox (badness 10000) in paragraph at lines 28--32
- []\TU/ptm/m/n/12 Su-per-vi-sor: $[]$
+ []\TU/lmr/m/n/12 Su-per-vi-sor: $[]$
  []
 
 
@@ -227,52 +219,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--32
 (./ParteInterna/PreTextuais/Resumo.tex)
 (./ParteInterna/PreTextuais/Abstract.tex)
 (./ParteInterna/PreTextuais/Listas.tex) (./ParteInterna/PreTextuais/Sumario.tex
-
-LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/m/n' instead on input line 1.
-
-No file main.toc.
+(./main.toc)
 \tf@toc=\write3
 
 \openout3 = main.toc
-) (./ParteInterna/Textuais/Introducao.tex
+) (./ParteInterna/Textuais/C1Introducao.tex
 
 [3
 
 
 ]
 Chapter 1.
-)
+) (./ParteInterna/Textuais/C2Poincare.tex
 
 [4
+
+]
+Chapter 2.
+) (./ParteInterna/Textuais/C3OnShell.tex
+
+[5
+
+]
+Chapter 3.
+) (./ParteInterna/Textuais/C4Unitarity.tex)
+(./ParteInterna/Textuais/C5UVBehaviour.tex)
+(./ParteInterna/Textuais/C6HigherDerivative.tex)
+(./ParteInterna/Textuais/C7ApplyDF2.tex) (./ParteInterna/Textuais/Conclusao.tex
+
+
+[6
+
+]
+Chapter 4.
+)
+
+[7
 
 ] (./main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-05-26>
  ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
 )
 
 Here is how much of LuaTeX's memory you used:
- 2059 strings out of 470203
+ 2161 strings out of 470203
  100000,662416 words of node,token memory allocated
  421 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 4 attribute, 51 glue_spec,
  4 attribute_list, 1 write nodes
-   avail lists: 2:114,3:58,4:15,5:50,6:24,7:1450,8:2,9:76,10:11,11:108
- 30325 multiletter control sequences out of 65536+600000
- 29 fonts using 1872767 bytes
- 57i,5n,62p,245b,132s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf><c:/t
-exlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf>
-Output written on main.pdf (4 pages, 14179 bytes).
+   avail lists: 2:114,3:58,4:15,5:54,6:24,7:1430,8:2,9:78,10:11,11:108
+ 30380 multiletter control sequences out of 65536+600000
+ 31 fonts using 2135503 bytes
+ 57i,5n,62p,241b,132s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/texl
+ive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf><c:/texlive/2
+025/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf>
+Output written on main.pdf (7 pages, 20311 bytes).
 
-PDF statistics: 31 PDF objects out of 1000 (max. 8388607)
- 18 compressed objects within 1 object stream
+PDF statistics: 47 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
