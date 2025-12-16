@@ -1,4 +1,0 @@
-\contentsline {chapter}{\numberline {1}Introduction}{4}{}%
-\contentsline {chapter}{\numberline {2}The Poincaré Group \& Algebra}{5}{}%
-\contentsline {chapter}{\numberline {3}On-Shell Methods}{6}{}%
-\contentsline {chapter}{\numberline {4}Conclusion}{7}{}%
