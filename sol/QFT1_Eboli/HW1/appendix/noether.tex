@@ -1,0 +1,26 @@
+\section{Noether Theorem}
+
+Here we're going to derive the Noether theorem for a handful of cases, first of all, the validity 
+of this theorem is to global continuous symmetries, which in our field theory context means: we start 
+of with an action which depends upon a number of fields, $S\qty[\Phi^I]$, $I$ is supposed to encode 
+whatever index the fields have, then, a symmetry transformation is given in terms of:
+
+\begin{align}
+    \begin{cases}
+        x^\mu&\rightarrow {x'}^\mu = {x'}^\mu\qty(x;a)\\
+        \Phi^I\qty(x)&\rightarrow {\Phi'}^I\qty(x')={\Phi'}^I\qty(\Phi^J,x;a)
+    \end{cases}\Rightarrow S\qty[\Phi^I] = S'\qty[{\Phi'}^I]
+\end{align}
+
+As the symmetry is continuous, it does not depends upon the value of the parametrization of the 
+transformation $a$, thus, 
+
+\begin{align*}
+    0&=\pdv{}{a} \qty{S'\qty[{\Phi'}^I]}
+\end{align*}
+
+In principle we could just make use of the chain rule to write,
+
+\begin{align*}
+    0&\stackrel{?}{=}\int\dd[4]{y}\fdv{}{{\Phi'}^J\qty(y)} \qty{S'\qty[{\Phi'}^I]}\pdv{{\Phi'}^J\qty(y)}{a}
+\end{align*}
