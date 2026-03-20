@@ -2,25 +2,92 @@
 
 Here we're going to derive the Noether theorem for a handful of cases, first of all, the validity 
 of this theorem is to global continuous symmetries, which in our field theory context means: we start 
-of with an action which depends upon a number of fields, $S\qty[\Phi^I]$, $I$ is supposed to encode 
+of with an action which depends upon a field, $S\qty[\phi]$, it's supposed to encode 
 whatever index the fields have, then, a symmetry transformation is given in terms of:
 
 \begin{align}
     \begin{cases}
         x^\mu&\rightarrow {x'}^\mu = {x'}^\mu\qty(x;a)\\
-        \Phi^I\qty(x)&\rightarrow {\Phi'}^I\qty(x')={\Phi'}^I\qty(\Phi^J,x;a)
-    \end{cases}\Rightarrow S\qty[\Phi^I] = S'\qty[{\Phi'}^I]
+        \phi\qty(x)&\rightarrow {\phi'}\qty(x')={\phi'}\qty(\phi\qty(x),x;a)
+    \end{cases}\Rightarrow S\qty[\phi] = S_a'\qty[{\phi'}]
 \end{align}
 
-As the symmetry is continuous, it does not depends upon the value of the parametrization of the 
-transformation $a$, thus, 
+Let's look further at the symmetry condition,
 
-\begin{align*}
-    0&=\pdv{}{a} \qty{S'\qty[{\Phi'}^I]}
-\end{align*}
+\begin{align}
+    S_a'\qty[\phi']-S\qty[\phi] &= \int\limits_{\Omega'}\dd[4]{x'}\mathcal L'\qty[\phi'\qty(x');x']-\int\limits_{\Omega}\dd[4]{x}\mathcal L\qty[\phi\qty(x);x]\\
+    S_a'\qty[\phi']-S\qty[\phi] &= \int\limits_{\Omega}\dd[4]{x}\mathcal L'\qty[\phi'\qty(x);x]-\int\limits_{\Omega}\dd[4]{x}\mathcal L\qty[\phi\qty(x);x]\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega'}\dd[4]{x'}\mathcal L'\qty[\phi'\qty(x');x']-\int\limits_{\Omega}\dd[4]{x}\mathcal L'\qty[\phi'\qty(x);x]\\
+    S_a'\qty[\phi']-S\qty[\phi] &= \int\limits_{\Omega}\dd[4]{x}\qty{\mathcal L'\qty[\phi'\qty(x);x]-\mathcal L\qty[\phi\qty(x);x]}\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\qty{\Det\qty[\pdv{x'}{x}]\mathcal L'\qty[\phi'\qty(x');x']-\mathcal L'\qty[\phi'\qty(x);x]}\\
+    S_a'\qty[\phi']-S\qty[\phi] &= \int\limits_{\Omega}\dd[4]{x}\qty{\mathcal L'\qty[\phi'\qty(x);x]-\mathcal L\qty[\phi\qty(x);x]}\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\qty{\Det\qty[\pdv{x'}{x}]-1}\mathcal L'\qty[\phi'\qty(x');x']\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\qty{\mathcal L'\qty[\phi'\qty(x');x']-\mathcal L'\qty[\phi'\qty(x);x]}
+\end{align}
 
-In principle we could just make use of the chain rule to write,
+Suppose $\mathcal L'=\mathcal L$,
 
-\begin{align*}
-    0&\stackrel{?}{=}\int\dd[4]{y}\fdv{}{{\Phi'}^J\qty(y)} \qty{S'\qty[{\Phi'}^I]}\pdv{{\Phi'}^J\qty(y)}{a}
-\end{align*}
+\begin{align}
+    \frac{\qty[S_a'\qty[\phi']-S\qty[\phi]]}{a} \eval_{a\rightarrow 0}&= \int\limits_{\Omega}\dd[4]{x}\int\limits_{\Omega}\dd[4]{y}\qty{\fdv{\mathcal L}{\phi\qty(y)}\frac{\phi'\qty(y)-\phi\qty(y)}{a}}\eval_{a\rightarrow0}\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\frac1a\qty{\Det\qty[\pdv{x'}{x}]-1}\eval_{a\rightarrow 0}\mathcal L\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\dv{\mathcal L}{x^\alpha}\frac{{x'}^\alpha-x^\alpha}{a}\eval_{a\rightarrow 0}\nonumber\\
+    \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\int\limits_{\Omega}\dd[4]{y}\fdv{\mathcal L}{\phi\qty(y)}\dv{\phi'\qty(y)}{a}\eval_{a=0}\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\mathcal L\dv{}{a}\Det\qty[\pdv{x'}{x}]\eval_{a= 0}\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\dv{\mathcal L}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}
+\end{align}
+
+Suppose the lagrangian has at most second derivatives,
+
+\begin{align}
+    \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\int\limits_{\Omega}\dd[4]{y}\qty[\pdv{\mathcal L}{\phi\qty(x)}\delta^{\qty(4)}\qty(x-y)+\pdv{\mathcal L}{\partial_{x\mu}\phi\qty(x)}\partial_{x\mu}\delta^{\qty(4)}\qty(x-y)]\dv{\phi'\qty(y)}{a}\eval_{a=0}\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\mathcal L\dv{}{a}\Det\qty[\pdv{x'}{x}]\eval_{a= 0}\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\dv{\mathcal L}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}\\
+    \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\qty[\pdv{\mathcal L}{\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\pdv{\mathcal L}{\partial_{\mu}\phi\qty(x)}\partial_{\mu}\dv{\phi'\qty(x)}{a}\eval_{a=0}]\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\mathcal L\dv{}{a}\Det\qty[\pdv{x'}{x}]\eval_{a= 0}\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\dv{\mathcal L}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}
+\end{align}
+
+Now impose the equations of motion,
+
+\begin{align}
+    \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\qty[\partial_\mu\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\pdv{\mathcal L}{\partial_{\mu}\phi\qty(x)}\partial_{\mu}\dv{\phi'\qty(x)}{a}\eval_{a=0}]\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\mathcal L\dv{}{a}\Det\qty[\pdv{x'}{x}]\eval_{a= 0}\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\dv{\mathcal L}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}\\
+    \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\partial_\mu\qty[\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}]\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\mathcal L\dv{}{a}\Det\qty[\pdv{x'}{x}]\eval_{a= 0}\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\dv{\mathcal L}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}
+\end{align}
+
+The last missing piece is to compute the determinant,
+
+\begin{align}
+    \Det\qty[\pdv{x'}{x}]&=\frac{1}{4!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\pdv{{x'}^\alpha}{x^\mu}\pdv{{x'}^\beta}{x^\nu}\pdv{{x'}^\gamma}{x^\rho}\pdv{{x'}^\delta}{x^\sigma}\\
+    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\frac{1}{4!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}\pdv{{x'}^\beta}{x^\nu}\pdv{{x'}^\gamma}{x^\rho}\pdv{{x'}^\delta}{x^\sigma}]\eval_{a=0}\\
+    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\frac{1}{3!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}]\eval_{a=0}\pdv{{x'}^\beta}{x^\nu}\eval_{a=0}\pdv{{x'}^\gamma}{x^\rho}\eval_{a=0}\pdv{{x'}^\delta}{x^\sigma}\eval_{a=0}\\
+    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\frac{1}{3!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}]\eval_{a=0}\tensor{g}{^\beta_\nu}\tensor{g}{^\gamma_\rho}\tensor{g}{^\delta_\sigma}\\
+    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\frac{1}{3!}\epsilon_{\alpha\nu\rho\sigma}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}]\eval_{a=0}\\
+    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\frac{1}{3!}3!\tensor{g}{_\alpha^\mu}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}]\eval_{a=0}\\
+    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\alpha}]\eval_{a=0}=\dv{}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}
+\end{align}
+
+Thus,
+
+\begin{align}
+    \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\partial_\mu\qty[\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}]\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\mathcal L\dv{}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\dv{\mathcal L}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}\\
+    \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\qty[\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}]
+\end{align}
+
+% As the symmetry is continuous, it does not depends upon the value of the parametrization of the 
+% transformation $a$, thus, 
+
+% \begin{align*}
+%     0&=\pdv{}{a} \qty{S'\qty[{\Phi'}^I]}
+% \end{align*}
+
+% In principle we could just make use of the chain rule to write,
+
+% \begin{align*}
+%     0&\stackrel{?}{=}\int\dd[4]{y}\fdv{}{{\Phi'}^J\qty(y)} \qty{S'\qty[{\Phi'}^I]}\pdv{{\Phi'}^J\qty(y)}{a}
+% \end{align*}
