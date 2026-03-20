@@ -1,0 +1,54 @@
+\problem{}
+
+The Lorentz transformation for a vector field is,
+
+\begin{align}
+    \begin{cases}
+        x^\mu&\rightarrow {x'}^\mu=\tensor{\Lambda}{^\mu_\nu}\qty(\omega)x^\nu\\
+        A^\rho\qty(x)&\rightarrow {A'}^\rho\qty(x')=\tensor{\Lambda}{^\rho_\sigma}A^\sigma\qty(x)
+    \end{cases}
+\end{align}
+
+The first step we had already made, \cref{eq:xderivativelorentz},
+
+\begin{align}
+    \dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega_{\alpha\beta}=0}=\tensor{g}{_\alpha^\mu}x_\beta-\tensor{g}{_\beta^\mu}x_\alpha
+\end{align}
+
+The second step,
+
+\begin{align}
+    \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\dv{}{\omega^{\alpha\beta}}\qty(\tensor{\Lambda}{^\rho_\sigma}A^\sigma\qty(\Lambda^{-1}x))\eval_{\omega^{\alpha\beta}=0}\\
+    \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\dv{}{\omega^{\alpha\beta}}\qty(\tensor{\Lambda}{^\rho_\sigma})\eval_{\omega^{\alpha\beta}=0}A^\sigma\qty(x)+\tensor{g}{^\rho_\sigma}\dv{}{\omega^{\alpha\beta}}\qty(A^\sigma\qty(\Lambda^{-1}x))\eval_{\omega^{\alpha\beta}=0}\\%\partial_\nu\phi\qty(x)\dv{}{\omega^{\alpha\beta}}\qty(\Lambda^{-1}x)^\nu\eval_{\omega^{\alpha\beta}=0}\\
+    \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\qty(\tensor{g}{_\alpha^\rho}\tensor{g}{_\beta_\sigma}-\tensor{g}{_\beta^\rho}\tensor{g}{_\alpha_\sigma})A^\sigma\qty(x)+\partial_\nu A^\rho\qty(x)\dv{}{\omega^{\alpha\beta}}\qty(\Lambda^{-1}x)^\nu\eval_{\omega^{\alpha\beta}=0}\\
+    \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\tensor{g}{_\alpha^\rho}A_\beta-\tensor{g}{_\beta^\rho}A_\alpha+\partial_\nu A^\rho\qty(x)\dv{\tensor{\Lambda}{_\gamma^\nu}}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}x^\gamma\\
+    \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\tensor{g}{_\alpha^\rho}A_\beta-\tensor{g}{_\beta^\rho}A_\alpha+\partial_\nu A^\rho\qty(x)\qty(\tensor{g}{_\alpha_\gamma}\tensor{g}{_\beta^\nu}-\tensor{g}{_\beta_\gamma}\tensor{g}{_\alpha^\nu})x^\gamma\\
+    \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\tensor{g}{_\alpha^\rho}A_\beta-\tensor{g}{_\beta^\rho}A_\alpha+x_\alpha\partial_\beta A^\rho\qty(x)-x_\beta\partial_\alpha A^\rho\qty(x)\\
+\end{align}
+
+Using these results in \cref{eq:conservedcurrentnoether},
+
+\begin{align}
+    \tensor{J}{^\mu_\alpha_\beta} &=\pdv{\mathcal L}{\partial_\mu A^\rho\qty(x)}\dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}+\mathcal L\dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}\\
+    \tensor{J}{^\mu_\alpha_\beta} &=\pdv{\mathcal L}{\partial_\mu A^\rho\qty(x)}\qty(\tensor{g}{_\alpha^\rho}A_\beta-\tensor{g}{_\beta^\rho}A_\alpha+x_\alpha\partial_\beta A^\rho-x_\beta\partial_\alpha A^\rho)+\mathcal L\qty(\tensor{g}{_\alpha^\mu}x_\beta-\tensor{g}{_\beta^\mu}x_\alpha)\\
+    \tensor{J}{^\mu_\alpha_\beta} &=x_\beta \tensor{J}{^\mu_\alpha}-x_\alpha \tensor{J}{^\mu_\beta}+\pdv{\mathcal L}{\partial_\mu A^\alpha\qty(x)}A_\beta-\pdv{\mathcal L}{\partial_\mu A^\beta\qty(x)}A_\alpha
+\end{align}
+
+Which also isn't gauge invariant. To solve this problem consider the following,
+
+\begin{align}
+    \tensor{J}{^\mu_\alpha_\beta}&=x_\beta \tensor{J}{^\mu_\alpha}-x_\alpha \tensor{J}{^\mu_\beta}+\tensor{S}{^\mu_\alpha_\beta}
+\end{align}
+
+The conservation equation gives,
+
+\begin{align}
+    \partial_\mu\tensor{J}{^\mu_\alpha_\beta}&=\tensor{J}{_\beta_\alpha}-\tensor{J}{_\alpha_\beta}+\partial_\mu \tensor{S}{^\mu_\alpha_\beta}=0\\
+    \partial_\mu \tensor{S}{^\mu_\alpha_\beta}&=\tensor{J}{_\alpha_\beta}-\tensor{J}{_\beta_\alpha}
+\end{align}
+
+Thus, we can get from $J_{\alpha\beta}$ a symmetric tensor by summing a divergenceless tensor,
+
+\begin{align}
+    \Theta_{\alpha\beta}&= J_{\alpha\beta}+\frac12\qty(\tensor{J}{_\alpha_\beta}-\tensor{J}{_\beta_\alpha})-\frac12\partial\qty(\tensor{J}{_\alpha_\beta}-\tensor{J}{_\beta_\alpha})=J_{\alpha\beta}+\frac12\partial_\mu\tensor{S}{^\mu_\alpha_\beta}
+\end{align}

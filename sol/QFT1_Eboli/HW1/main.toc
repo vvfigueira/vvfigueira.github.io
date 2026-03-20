@@ -1,7 +1,14 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{Problem 1}{2}{section.1}%
 \contentsline {subsection}{1.A)}{2}{subsection.1.1}%
+\contentsline {subsection}{1.B)}{2}{subsection.1.2}%
 \contentsline {section}{Problem 2}{3}{section.2}%
 \contentsline {subsection}{2.A)}{3}{subsection.2.1}%
 \contentsline {subsection}{2.B)}{3}{subsection.2.2}%
-\contentsline {section}{\numberline {A}Noether Theorem}{4}{appendix.A}%
+\contentsline {section}{Problem 3}{5}{section.3}%
+\contentsline {section}{Problem 4}{7}{section.4}%
+\contentsline {subsection}{4.A)}{7}{subsection.4.1}%
+\contentsline {subsection}{4.B)}{7}{subsection.4.2}%
+\contentsline {subsection}{4.C)}{7}{subsection.4.3}%
+\contentsline {section}{Problem 5}{9}{section.5}%
+\contentsline {section}{\numberline {A}Noether Theorem}{10}{appendix.A}%

@@ -1,0 +1,58 @@
+\problem{}
+
+The transformation is,
+
+\begin{align}
+    \begin{cases}
+        x&\rightarrow x' = \e^a x\\
+        \phi\qty(x)&\rightarrow \phi'\qty(x')=\e^{-d_\phi a}\phi\qty(x)
+    \end{cases}\Rightarrow \dv{{x'}^\mu}{a}\eval_{a=0} = x^\mu,\ \ \ \dv{\phi'\qty(x)}{a}\eval_{a=0}=-d_\phi\phi\qty(x) -\partial_\mu\phi\qty(x)x^\mu
+\end{align}
+
+First let's check that it's a symmetry,
+
+\begin{align}
+    S'_a\qty[\phi']&= \int\dd[4]{x'}\qty[-\frac12\partial'_\mu\phi'\qty(x')\partial'^\mu\phi'\qty(x')-\frac{\lambda}{4!}\phi'^4\qty(x')]\\
+    S'_a\qty[\phi']&= \int\dd[4]{x}\e^{4a}\qty[-\frac12\e^{-2a-2d_\phi a}\partial_\mu\phi\qty(x)\partial^\mu\phi\qty(x)-\e^{-4d_\phi a}\frac{\lambda}{4!}\phi^4\qty(x)]\\
+    S'_a\qty[\phi']&= \int\dd[4]{x}\qty[-\frac12\e^{2a-2d_\phi a}\partial_\mu\phi\qty(x)\partial^\mu\phi\qty(x)-\e^{4a-4d_\phi a}\frac{\lambda}{4!}\phi^4\qty(x)]
+\end{align}
+
+For $d_\phi=1$, 
+
+\begin{align}
+    S'_a\qty[\phi']&= \int\dd[4]{x}\qty[-\frac12\partial_\mu\phi\qty(x)\partial^\mu\phi\qty(x)-\frac{\lambda}{4!}\phi^4\qty(x)]=S[\phi]
+\end{align}
+
+Now, let's compute the conserved charge,
+
+\begin{align}
+    J^\mu &=\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}\\
+    J^\mu &=-\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\qty(d_\phi\phi\qty(x) +\partial_\alpha\phi\qty(x)x^\alpha)+\mathcal Lx^\mu\\
+    J^\mu &=\partial^\mu \phi\qty(d_\phi\phi +\partial_\alpha\phi x^\alpha)+\qty(-\frac12\partial^\alpha\phi\partial_\alpha\phi+\frac{\lambda}{4!}\phi^4)x^\mu
+\end{align}
+
+Check if it is really divergenceless,
+
+\begin{align}
+    \partial_\mu J^\mu &=\partial_\mu \partial^\mu \phi\qty(d_\phi\phi +\partial_\alpha\phi x^\alpha)+\partial^\mu \phi\qty(d_\phi\partial_\mu \phi +\partial_\mu\partial_\alpha\phi x^\alpha+\partial_\alpha\phi\partial_\mu x^\alpha)\nonumber\\
+    &\quad\quad\quad+\qty(-\partial^\alpha\phi\partial_\mu\partial_\alpha\phi-\frac{\lambda}{3!}\phi^3\partial_\mu\phi)x^\mu+\qty(-\frac12\partial^\alpha\phi\partial_\alpha\phi-\frac{\lambda}{4!}\phi^4)\partial_\mu x^\mu\\
+    \partial_\mu J^\mu &=\Box\phi\qty(d_\phi\phi +\partial_\alpha\phi x^\alpha)+\partial^\mu \phi\qty(d_\phi\partial_\mu \phi +\partial_\mu\partial_\alpha\phi x^\alpha+\partial_\alpha\phi\tensor{g}{_\mu^\alpha})\nonumber\\
+    &\quad\quad\quad+\qty(-\partial^\alpha\phi\partial_\mu\partial_\alpha\phi-\frac{\lambda}{3!}\phi^3\partial_\mu\phi)x^\mu+4\qty(-\frac12\partial^\alpha\phi\partial_\alpha\phi-\frac{\lambda}{4!}\phi^4)\\
+    \partial_\mu J^\mu &=\qty(\Box\phi-\frac{\lambda}{3!}\phi^3)x^\alpha\partial_\alpha\phi+\qty(d_\phi\Box\phi-\frac{\lambda}{3!}\phi^3)\phi+\partial^\mu \phi\qty(d_\phi\partial_\mu \phi +\partial_\mu\partial_\alpha\phi x^\alpha+\partial_\mu\phi)\nonumber\\
+    &\quad\quad\quad-\partial^\alpha\phi\partial_\mu\partial_\alpha\phi x^\mu-2\partial^\alpha\phi\partial_\alpha\phi\\
+    \partial_\mu J^\mu &=\qty(\Box\phi-\frac{\lambda}{3!}\phi^3)x^\alpha\partial_\alpha\phi+\qty(\Box\phi-\frac{\lambda}{3!}\phi^3)\phi+\qty(d_\phi-1)\phi\Box\phi+\qty(d_\phi-1)\partial^\mu \phi\partial_\mu \phi
+\end{align}
+
+Using the equation of motion, \begin{align}\Box\phi=\frac{\lambda}{3!}\phi^3\end{align}
+
+We get,
+
+\begin{align}
+    \partial_\mu J^\mu &=\qty(d_\phi-1)\phi\Box\phi+\qty(d_\phi-1)\partial^\mu \phi\partial_\mu \phi
+\end{align}
+
+Now set $d_\phi=1$, 
+
+\begin{align}
+    \partial_\mu J^\mu &=0
+\end{align}

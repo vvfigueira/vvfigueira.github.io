@@ -79,15 +79,14 @@ Thus,
     \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\qty[\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}]
 \end{align}
 
-% As the symmetry is continuous, it does not depends upon the value of the parametrization of the 
-% transformation $a$, thus, 
+It's trivial to include indicies,
 
-% \begin{align*}
-%     0&=\pdv{}{a} \qty{S'\qty[{\Phi'}^I]}
-% \end{align*}
+\begin{align}
+    \dv{}{a^I}S_a'\qty[\phi']\eval_{a^I=0}&= \int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\qty[\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a^I}\eval_{a^I=0}+\mathcal L\dv{{x'}^\mu}{a^I}\eval_{a^I=0}]
+\end{align}
 
-% In principle we could just make use of the chain rule to write,
+So that the conserved current is,
 
-% \begin{align*}
-%     0&\stackrel{?}{=}\int\dd[4]{y}\fdv{}{{\Phi'}^J\qty(y)} \qty{S'\qty[{\Phi'}^I]}\pdv{{\Phi'}^J\qty(y)}{a}
-% \end{align*}
+\begin{align}
+    J^\mu_I =\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a^I}\eval_{a^I=0}+\mathcal L\dv{{x'}^\mu}{a^I}\eval_{a^I=0}\label{eq:conservedcurrentnoether}
+\end{align}

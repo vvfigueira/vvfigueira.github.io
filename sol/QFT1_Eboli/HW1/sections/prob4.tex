@@ -1,0 +1,79 @@
+\problem{}
+\probitem{}
+
+The Lorentz transformation is,
+
+\begin{align}
+    {x'}^\mu &= \tensor{\Lambda}{^\mu_\nu}x^\nu=x^\mu+\tensor{\omega}{^\mu_\nu}x^\nu+\mathcal O\qty(\omega^2)
+\end{align}
+
+Which has to satisfy,
+
+\begin{align}
+    y^\mu x_\mu &= {y'}^\mu{x'}_\mu\\
+    y^\mu x_\mu &= \qty(y^\mu+\tensor{\omega}{^\mu_\nu}y^\nu+\mathcal O\qty(\omega^2))\qty(x_\mu+\tensor{\omega}{_\mu_\alpha}x^\alpha+\mathcal O\qty(\omega^2))\\
+    y^\mu x_\mu &=  y^\mu x_\mu +\tensor{\omega}{^\mu_\nu}y^\nu x_\mu + y^\mu\tensor{\omega}{_\mu_\alpha}x^\alpha+\mathcal O\qty(\omega^2)\\
+    0&=\tensor{\omega}{_\mu_\nu}y^\nu x^\mu + \tensor{\omega}{_\mu_\nu}x^\nu y^\mu\\
+    0&=y^\nu x^\mu\qty(\tensor{\omega}{_\mu_\nu} + \tensor{\omega}{_\nu_\mu})\Rightarrow \tensor{\omega}{_\mu_\nu} + \tensor{\omega}{_\nu_\mu}=0\Rightarrow \tensor{\omega}{_\mu_\nu} =- \tensor{\omega}{_\nu_\mu}
+\end{align}
+
+\probitem{}
+
+A rotation should preserve the time component,
+
+\begin{align}
+    x^0={x'}^0&=x^0+\tensor{\omega}{^0_\nu}x^\nu\\
+    0&=\tensor{\omega}{^0_\nu}x^\nu\Rightarrow \tensor{\omega}{^0_\nu}=0\Rightarrow \tensor{\omega}{_0_\nu}=0
+\end{align}
+
+Together with the anti-symmetry gives, 
+
+\begin{align}
+    \tensor{\omega}{_\mu_\nu} = \mqty(0&0&0&0\\0&0&\omega_{12}&-\omega_{31}\\0&-\omega_{12}&0&\omega_{23}\\0&\omega_{31}&-\omega_{23}&0)
+\end{align}
+
+\probitem{}
+
+The Lorentz transformation for a scalar field is,
+
+\begin{align}
+    \begin{cases}
+        x^\mu&\rightarrow {x'}^\mu=\tensor{\Lambda}{^\mu_\nu}\qty(\omega)x^\nu\\
+        \phi\qty(x)&\rightarrow {\phi'}\qty(x')=\phi\qty(x)
+    \end{cases}
+\end{align}
+
+Which is parametrized by $\omega_{\mu\nu}$, thus,
+
+\begin{align}
+    \dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega_{\alpha\beta}=0}=\dv{}{\omega_{\alpha\beta}}\qty(x^\mu+\tensor{\omega}{^\mu_\nu}x^\nu+\mathcal O\qty(\omega^2))\eval_{\omega_{\alpha\beta}=0}\\
+    \dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega_{\alpha\beta}=0}=\qty(\tensor{g}{_\alpha^\mu}\tensor{g}{_\beta_\nu}-\tensor{g}{_\beta^\mu}\tensor{g}{_\alpha_\nu})x^\nu=\tensor{g}{_\alpha^\mu}x_\beta-\tensor{g}{_\beta^\mu}x_\alpha\label{eq:xderivativelorentz}
+\end{align}
+
+And,
+
+\begin{align}
+    \dv{\phi'\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\dv{}{\omega^{\alpha\beta}}\qty(\phi\qty(\Lambda^{-1}x))\eval_{\omega^{\alpha\beta}=0}=\partial_\nu\phi\qty(x)\dv{}{\omega^{\alpha\beta}}\qty(\Lambda^{-1}x)^\nu\eval_{\omega^{\alpha\beta}=0}\\
+    \dv{\phi'\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\partial_\nu\phi\qty(x)\dv{\tensor{\Lambda}{_\rho^\nu}}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}x^\rho=\partial_\nu\phi\qty(x)\qty(\tensor{g}{_\alpha_\rho}\tensor{g}{_\beta^\nu}-\tensor{g}{_\beta_\rho}\tensor{g}{_\alpha^\nu})x^\rho\\
+    \dv{\phi'\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=x_\alpha\partial_\beta\phi-x_\beta\partial_\alpha\phi
+\end{align}
+
+Using these results in \cref{eq:conservedcurrentnoether},
+
+\begin{align}
+    \tensor{J}{^\mu_\alpha_\beta} &=\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}+\mathcal L\dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}\\
+    \tensor{J}{^\mu_\alpha_\beta} &=\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\qty(x_\alpha\partial_\beta\phi-x_\beta\partial_\alpha\phi)+\mathcal L\qty(\tensor{g}{_\alpha^\mu}x_\beta-\tensor{g}{_\beta^\mu}x_\alpha)\\
+    \tensor{J}{^\mu_\alpha_\beta} &=x_\beta \tensor{J}{^\mu_\alpha}-x_\alpha \tensor{J}{^\mu_\beta}
+\end{align}
+
+Check that is conserved,
+
+\begin{align}
+    \partial_\mu \tensor{J}{^\mu_\alpha_\beta}&= \partial_\mu\qty(x_\beta \tensor{J}{^\mu_\alpha}-x_\alpha \tensor{J}{^\mu_\beta})\\
+    \partial_\mu \tensor{J}{^\mu_\alpha_\beta}&= \partial_\mu x_\beta \tensor{J}{^\mu_\alpha}+x_\beta\partial_\mu \tensor{J}{^\mu_\alpha}-\partial_\mu x_\alpha \tensor{J}{^\mu_\beta}- x_\alpha\partial_\mu \tensor{J}{^\mu_\beta}\\
+    \partial_\mu \tensor{J}{^\mu_\alpha_\beta}&= g_{\mu\beta} \tensor{J}{^\mu_\alpha}+x_\beta\partial_\mu \tensor{J}{^\mu_\alpha}-g_{\mu\alpha} \tensor{J}{^\mu_\beta}- x_\alpha\partial_\mu \tensor{J}{^\mu_\beta}\\
+    \partial_\mu \tensor{J}{^\mu_\alpha_\beta}&= \tensor{J}{_\beta_\alpha}-\tensor{J}{_\alpha_\beta}+x_\beta\partial_\mu \tensor{J}{^\mu_\alpha}- x_\alpha\partial_\mu \tensor{J}{^\mu_\beta}
+\end{align}
+
+Without a proper lagrangian this is as far as we can go, but, an interesting result that can be seen from here is, 
+whenever the energy momentum tensor is conserved and symmetric, the angular momentum tensor is conserved.

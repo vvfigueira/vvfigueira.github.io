@@ -12,7 +12,37 @@
 
 \probitem{}
 
+By \cref{eq:conservedcurrentnoether}, 
+
 \begin{align}
-    S'\qty[A_\mu '] &= -\frac14\int\dd[4]{x'}{F'}^{\mu\nu'}{F'}_{\mu\nu}\\
-    \pdv{}{a^\alpha}S'\qty[A_\mu ']=0 &= -\frac14\int\dd[4]{x'}{F'}^{\mu\nu'}{F'}_{\mu\nu}
+    J^\mu_I =\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a^I}\eval_{a^I=0}+\mathcal L\dv{{x'}^\mu}{a^I}\eval_{a^I=0}
 \end{align}
+
+In this case the transformation is,
+
+\begin{align}
+    \begin{cases}
+        x&\rightarrow {x'}^\mu = x^\mu+a^\mu\\
+        A_\alpha\qty(x)&\rightarrow {A'}_\alpha\qty(x')=A_\alpha\qty(x)
+    \end{cases}\Rightarrow \dv{{x'}^\mu}{a^\nu}\eval_{a^\nu=0}=\tensor{g}{^\mu_\nu},\ \ \ \dv{A'_\alpha\qty(x)}{a^\nu}\eval_{a^\nu=0}=-\partial_\nu A_\alpha\qty(x)
+\end{align}
+
+Thus,
+
+\begin{align}
+    \tensor{J}{^\mu_\nu} =\pdv{\mathcal L}{\partial_\mu A_\alpha\qty(x)}\dv{A'_\alpha\qty(x)}{a^\nu}\eval_{a^\nu=0}+\mathcal L\dv{{x'}^\mu}{a^\nu}\eval_{a^\nu=0}\\
+    \tensor{J}{^\mu_\nu} =-\pdv{\mathcal L}{\partial_\mu A_\alpha\qty(x)}\partial_\nu A_\alpha\qty(x)+\mathcal L\tensor{g}{^\mu_\nu}\\
+    \tensor{J}{^\mu_\nu} =\frac12F^{\rho\sigma}\pdv{F_{\rho\sigma}}{\partial_\mu A_\alpha\qty(x)}\partial_\nu A_\alpha\qty(x)-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\\
+    \tensor{J}{^\mu_\nu} =\frac12F^{\rho\sigma}\qty(\tensor{g}{_\rho^\mu}\tensor{g}{_\sigma^\alpha}-\tensor{g}{_\rho^\alpha}\tensor{g}{_\sigma^\mu})\partial_\nu A_\alpha\qty(x)-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\\
+    \tensor{J}{^\mu_\nu} =\frac12F^{\rho\sigma}\qty(\partial_\nu\tensor{g}{_\rho^\mu}A_\sigma-\partial_\nu A_\rho\tensor{g}{_\sigma^\mu})-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\\
+    \tensor{J}{^\mu_\nu} =F^{\mu\sigma}\partial_\nu A_\sigma-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}
+\end{align}
+
+Let's check that this quantity is conserved when the equations of motion are obeyed,
+
+\begin{align}
+    \partial_\mu\tensor{J}{^\mu_\nu} =\partial_\mu F^{\mu\sigma}\partial_\nu A_\sigma+F^{\mu\sigma}\partial_\mu\partial_\nu A_\sigma-\frac12 F^{\rho\sigma}\partial_\mu  F_{\rho\sigma}\tensor{g}{^\mu_\nu}\\
+    \partial_\mu\tensor{J}{^\mu_\nu} =\partial_\mu F^{\mu\sigma}\partial_\nu A_\sigma+F^{\mu\sigma}\partial_\mu\partial_\nu A_\sigma-  F^{\rho\sigma}\partial_\nu\partial_\rho A_\sigma=0
+\end{align}
+
+Yes! But, it isn't gauge invariant, neither symmetric. How to obtain a gauge invariant and symmetric energy momentum tensor?
