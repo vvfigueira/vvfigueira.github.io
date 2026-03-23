@@ -1,4 +1,4 @@
-\section{Noether Theorem}
+\section{Noether's Theorem}
 
 Here we're going to derive the Noether theorem for a handful of cases, first of all, the validity 
 of this theorem is to global continuous symmetries, which in our field theory context means: we start 
@@ -61,11 +61,11 @@ Now impose the equations of motion,
 The last missing piece is to compute the determinant,
 
 \begin{align}
-    \Det\qty[\pdv{x'}{x}]&=\frac{1}{4!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\pdv{{x'}^\alpha}{x^\mu}\pdv{{x'}^\beta}{x^\nu}\pdv{{x'}^\gamma}{x^\rho}\pdv{{x'}^\delta}{x^\sigma}\\
-    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\frac{1}{4!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}\pdv{{x'}^\beta}{x^\nu}\pdv{{x'}^\gamma}{x^\rho}\pdv{{x'}^\delta}{x^\sigma}]\eval_{a=0}\\
-    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\frac{1}{3!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}]\eval_{a=0}\pdv{{x'}^\beta}{x^\nu}\eval_{a=0}\pdv{{x'}^\gamma}{x^\rho}\eval_{a=0}\pdv{{x'}^\delta}{x^\sigma}\eval_{a=0}\\
-    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\frac{1}{3!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}]\eval_{a=0}\tensor{g}{^\beta_\nu}\tensor{g}{^\gamma_\rho}\tensor{g}{^\delta_\sigma}\\
-    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\frac{1}{3!}\epsilon_{\alpha\nu\rho\sigma}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}]\eval_{a=0}\\
+    \Det\qty[\pdv{x'}{x}]&=-\frac{1}{4!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\pdv{{x'}^\alpha}{x^\mu}\pdv{{x'}^\beta}{x^\nu}\pdv{{x'}^\gamma}{x^\rho}\pdv{{x'}^\delta}{x^\sigma}\\
+    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=-\frac{1}{4!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}\pdv{{x'}^\beta}{x^\nu}\pdv{{x'}^\gamma}{x^\rho}\pdv{{x'}^\delta}{x^\sigma}]\eval_{a=0}\\
+    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=-\frac{1}{3!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}]\eval_{a=0}\pdv{{x'}^\beta}{x^\nu}\eval_{a=0}\pdv{{x'}^\gamma}{x^\rho}\eval_{a=0}\pdv{{x'}^\delta}{x^\sigma}\eval_{a=0}\\
+    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=-\frac{1}{3!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}]\eval_{a=0}\tensor{g}{^\beta_\nu}\tensor{g}{^\gamma_\rho}\tensor{g}{^\delta_\sigma}\\
+    \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=-\frac{1}{3!}\epsilon_{\alpha\nu\rho\sigma}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}]\eval_{a=0}\\
     \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\frac{1}{3!}3!\tensor{g}{_\alpha^\mu}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}]\eval_{a=0}\\
     \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\alpha}]\eval_{a=0}=\dv{}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}
 \end{align}
@@ -88,5 +88,5 @@ It's trivial to include indicies,
 So that the conserved current is,
 
 \begin{align}
-    J^\mu_I =\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a^I}\eval_{a^I=0}+\mathcal L\dv{{x'}^\mu}{a^I}\eval_{a^I=0}\label{eq:conservedcurrentnoether}
+    \tensor{J}{^\mu_I} =\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a^I}\eval_{a^I=0}+\mathcal L\dv{{x'}^\mu}{a^I}\eval_{a^I=0}\label{eq:conservedcurrentnoether}
 \end{align}

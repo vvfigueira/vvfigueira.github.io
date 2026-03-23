@@ -1,0 +1,26 @@
+\section{Boundary Conditions}
+
+Let our spacetime be a four dimensional manifold $\Omega$, with boundary $\partial\Omega = \Sigma_-\cup\Sigma_+\cup\Gamma$. 
+Our action principle is given by,
+
+\begin{align}
+    S[\phi] = \int\limits_\Omega\dd[4]{x}\mathcal L[\phi(x),x]+\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\ell^\alpha[\phi(x),x]
+\end{align}
+
+The variation of the action cannot have contributions from the bulk of $\Gamma$,
+
+\begin{align}
+    \int\limits_\Omega\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_\Omega\dd[4]{y}\int\limits_\Omega\dd[4]{x}\fdv{\mathcal L[x]}{\phi\qty(y)}\psi(y)+\int\limits_\Omega\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
+    \int\limits_\Omega\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_\Omega\dd[4]{y}\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi\qty(x)}\delta^{(4)}\qty(x-y)+\pdv{\mathcal L[x]}{\partial_\mu\phi\qty(x)}\partial_\mu\delta^{(4)}\qty(x-y)]\psi(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_\Omega\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
+    \int\limits_\Omega\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_\Omega\dd[4]{y}\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi\qty(x)}-\partial_\mu\pdv{\mathcal L[x]}{\partial_\mu\phi\qty(x)}]\delta^{(4)}\qty(x-y)\psi(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_\Omega\dd[4]{y}\int\limits_\Omega\dd[4]{x}\partial_{x\mu}\qty[\pdv{\mathcal L[x]}{\partial_\mu\phi\qty(x)}\delta^{(4)}\qty(x-y)]\psi(y)+\int\limits_\Omega\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
+    \int\limits_\Omega\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_\Omega\dd[4]{y}\qty[\pdv{\mathcal L[y]}{\phi\qty(y)}-\partial_\mu\pdv{\mathcal L[y]}{\partial_\mu\phi\qty(y)}]\psi(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_\Omega\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\pdv{\mathcal L[x]}{\partial_\alpha\phi\qty(x)}\delta^{(4)}\qty(x-y)\psi(y)+\int\limits_\Omega\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)
+\end{align}
+
+So our condition is,
+
+\begin{align}
+    \pdv{\mathcal L[x]}{\partial_i\phi\qty(x)}\delta^{(4)}\qty(x-y)+\fdv{\ell^i[x]}{\phi\qty(y)} = \partial^i
+\end{align}

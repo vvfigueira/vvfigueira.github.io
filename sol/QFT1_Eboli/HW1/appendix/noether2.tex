@@ -1,0 +1,43 @@
+\section{Noether's Second Theorem}
+
+This is an extension of the last result which deals with local transformations that leave the action 
+invariant. Notice, we aren't saying symmetry, but invariance, this will be clear in the end of this 
+appendix. Let the transformation be parametrized by a function $a\qty(x)$,
+
+\begin{align}
+    \begin{cases}
+        x^\mu&\rightarrow {x'}^\mu = {x'}^\mu\qty(x;a(x))\\
+        \phi\qty(x)&\rightarrow {\phi'}\qty(x')={\phi'}\qty(\phi\qty(x),x;a(x))
+    \end{cases}\Rightarrow S\qty[\phi] = S'\qty[{\phi'};a]
+\end{align}
+
+The reasoning proceeds as before, but now the derivatives are functional ones, also, due to 
+distributional matters, is of need to include a test function,
+
+\begin{align}
+    \int\limits_\Omega\dd[4]{z}\fdv{S'[\phi';a]}{a\qty(z)}\psi\qty(z)&=\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\int\limits_{\Omega}\dd[4]{y}\fdv{\mathcal L}{\phi\qty(y)}\fdv{\phi'\qty(y)}{a(z)}\eval_{a\equiv0}\nonumber\\
+    &\quad\quad\quad+\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\mathcal L\dv{}{x^\alpha}\fdv{{x'}^\alpha}{a(z)}\eval_{a\equiv0}\nonumber\\
+    &\quad\quad\quad+\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\dv{\mathcal L}{x^\alpha}\fdv{{x'}^\alpha}{a(z)}\eval_{a\equiv0}\\
+    \int\limits_\Omega\dd[4]{z}\fdv{S'[\phi';a]}{a\qty(z)}\psi\qty(z)&=\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\int\limits_{\Omega}\dd[4]{y}\qty[\pdv{\mathcal L}{\phi\qty(x)}\delta^{\qty(4)}\qty(x-y)+\pdv{\mathcal L}{\partial_{x\mu}\phi\qty(x)}\partial_{x\mu}\delta^{\qty(4)}\qty(x-y)]\fdv{\phi'\qty(y)}{a(z)}\eval_{a\equiv0}\nonumber\\
+    &\quad\quad\quad+\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\dv{}{x^\alpha}\qty[\mathcal L\fdv{{x'}^\alpha}{a(z)}\eval_{a\equiv0}]\\
+    \int\limits_\Omega\dd[4]{z}\fdv{S'[\phi';a]}{a\qty(z)}\psi\qty(z)&=\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\int\limits_{\Omega}\dd[4]{y}\pdv{\mathcal L}{\phi\qty(x)}\delta^{\qty(4)}\qty(x-y)\fdv{\phi'\qty(y)}{a(z)}\eval_{a\equiv0}\nonumber\\
+    &\quad\quad\quad+\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\int\limits_{\Omega}\dd[4]{y}\pdv{\mathcal L}{\partial_{x\mu}\phi\qty(x)}\partial_{x\mu}\delta^{\qty(4)}\qty(x-y)\fdv{\phi'\qty(y)}{a(z)}\eval_{a\equiv0}\nonumber\\
+    &\quad\quad\quad+\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\dv{}{x^\alpha}\qty[\mathcal L\fdv{{x'}^\alpha}{a(z)}\eval_{a\equiv0}]\\
+    \int\limits_\Omega\dd[4]{z}\fdv{S'[\phi';a]}{a\qty(z)}\psi\qty(z)&=\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\partial_{x\mu}\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\fdv{\phi'\qty(x)}{a(z)}\eval_{a\equiv0}\nonumber\\
+    &\quad\quad\quad+\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\int\limits_{\Omega}\dd[4]{y}\partial_{x\mu}\qty[\pdv{\mathcal L}{\partial_{\mu}\phi\qty(x)}\delta^{\qty(4)}\qty(x-y)]\fdv{\phi'\qty(y)}{a(z)}\eval_{a\equiv0}\nonumber\\
+    &\quad\quad\quad-\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\int\limits_{\Omega}\dd[4]{y}\partial_{x\mu}\pdv{\mathcal L}{\partial_{\mu}\phi\qty(x)}\delta^{\qty(4)}\qty(x-y)\fdv{\phi'\qty(y)}{a(z)}\eval_{a\equiv0}\nonumber\\
+    &\quad\quad\quad+\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\dv{}{x^\alpha}\qty[\mathcal L\fdv{{x'}^\alpha}{a(z)}\eval_{a\equiv0}]\\
+    \int\limits_\Omega\dd[4]{z}\fdv{S'[\phi';a]}{a\qty(z)}\psi\qty(z)&=\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\int\limits_{\Omega}\dd[4]{y}\partial_{x\mu}\qty[\pdv{\mathcal L}{\partial_{\mu}\phi\qty(x)}\delta^{\qty(4)}\qty(x-y)]\fdv{\phi'\qty(y)}{a(z)}\eval_{a\equiv0}\nonumber\\
+    &\quad\quad\quad+\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\dv{}{x^\alpha}\qty[\mathcal L\fdv{{x'}^\alpha}{a(z)}\eval_{a\equiv0}]\\
+    \int\limits_\Omega\dd[4]{z}\fdv{S'[\phi';a]}{a\qty(z)}\psi\qty(z)&=\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\qty[\pdv{\mathcal L}{\partial_{\mu}\phi\qty(x)}\fdv{\phi'\qty(x)}{a(z)}\eval_{a\equiv0}+\mathcal L\fdv{{x'}^\alpha}{a(z)}\eval_{a\equiv0}]
+\end{align}
+
+As an example, let's use the electromagnetic case,
+
+\begin{align}
+    0&=\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\qty[\pdv{\mathcal L}{\partial_{\mu}A_\nu\qty(x)}\fdv{A_\nu'\qty(x)}{a(z)}\eval_{a\equiv0}]\\
+    0&=\int\limits_\Omega\dd[4]{z}\psi(z)\int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\qty[-F^{\mu\nu}\partial_{x\nu}\delta^{\qty(4)}\qty(x-z)]\\
+    0&=\int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\qty[-F^{\mu\nu}\partial_{\nu}\psi(x)]\\
+    0&=\int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\dv{}{x^\nu}\qty[-F^{\mu\nu}\psi(x)]-\int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\qty[-\partial_{\nu}F^{\mu\nu}\psi(x)]\\
+    0&=-\int\limits_{\partial^2\Omega}\dd[2]{S_{\mu\nu}}F^{\mu\nu}\psi(x)+\int\limits_{\partial\Omega}\dd[3]{S_\mu}\partial_{\nu}F^{\mu\nu}\psi(x)
+\end{align}
