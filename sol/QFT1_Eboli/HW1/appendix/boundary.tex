@@ -7,20 +7,31 @@ Our action principle is given by,
     S[\phi] = \int\limits_\Omega\dd[4]{x}\mathcal L[\phi(x),x]+\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\ell^\alpha[\phi(x),x]
 \end{align}
 
-The variation of the action cannot have contributions from the bulk of $\Gamma$,
+The variation of the action cannot have contributions from the bulk of $\Gamma$, and also is done with compact support 
+outside of $\Sigma_-\cup\Sigma_+$, that is, on $\tilde\Omega = \Omega'\cup\Gamma'$,
 
 \begin{align}
-    \int\limits_\Omega\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_\Omega\dd[4]{y}\int\limits_\Omega\dd[4]{x}\fdv{\mathcal L[x]}{\phi\qty(y)}\psi(y)+\int\limits_\Omega\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
-    \int\limits_\Omega\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_\Omega\dd[4]{y}\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi\qty(x)}\delta^{(4)}\qty(x-y)+\pdv{\mathcal L[x]}{\partial_\mu\phi\qty(x)}\partial_\mu\delta^{(4)}\qty(x-y)]\psi(y)\nonumber\\
-    &\quad\quad\quad+\int\limits_\Omega\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
-    \int\limits_\Omega\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_\Omega\dd[4]{y}\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi\qty(x)}-\partial_\mu\pdv{\mathcal L[x]}{\partial_\mu\phi\qty(x)}]\delta^{(4)}\qty(x-y)\psi(y)\nonumber\\
-    &\quad\quad\quad+\int\limits_\Omega\dd[4]{y}\int\limits_\Omega\dd[4]{x}\partial_{x\mu}\qty[\pdv{\mathcal L[x]}{\partial_\mu\phi\qty(x)}\delta^{(4)}\qty(x-y)]\psi(y)+\int\limits_\Omega\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
-    \int\limits_\Omega\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_\Omega\dd[4]{y}\qty[\pdv{\mathcal L[y]}{\phi\qty(y)}-\partial_\mu\pdv{\mathcal L[y]}{\partial_\mu\phi\qty(y)}]\psi(y)\nonumber\\
-    &\quad\quad\quad+\int\limits_\Omega\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\pdv{\mathcal L[x]}{\partial_\alpha\phi\qty(x)}\delta^{(4)}\qty(x-y)\psi(y)+\int\limits_\Omega\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)
+    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\fdv{\mathcal L[x]}{\phi\qty(y)}\psi(y)+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
+    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi\qty(x)}\delta^{(4)}\qty(x-y)+\pdv{\mathcal L[x]}{\partial_\mu\phi\qty(x)}\partial_\mu\delta^{(4)}\qty(x-y)]\psi(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
+    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi\qty(x)}-\partial_\mu\pdv{\mathcal L[x]}{\partial_\mu\phi\qty(x)}]\delta^{(4)}\qty(x-y)\psi(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\partial_{x\mu}\qty[\pdv{\mathcal L[x]}{\partial_\mu\phi\qty(x)}\delta^{(4)}\qty(x-y)]\psi(y)+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
+    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\qty[\pdv{\mathcal L[y]}{\phi\qty(y)}-\partial_\mu\pdv{\mathcal L[y]}{\partial_\mu\phi\qty(y)}]\psi(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\pdv{\mathcal L[x]}{\partial_\alpha\phi\qty(x)}\delta^{(4)}\qty(x-y)\psi(y)+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
+    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\qty[\pdv{\mathcal L[y]}{\phi\qty(y)}-\partial_\mu\pdv{\mathcal L[y]}{\partial_\mu\phi\qty(y)}]\psi(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Gamma'}\dd[3]{S_{\alpha}}\psi(y)\qty[\pdv{\mathcal L[y]}{\partial_\alpha\phi\qty(y)}+\pdv{\ell^\alpha[y]}{\phi\qty(y)}-\partial_\beta\pdv{\ell^\alpha[y]}{\partial_\beta\phi\qty(y)}]
 \end{align}
 
 So our condition is,
 
 \begin{align}
-    \pdv{\mathcal L[x]}{\partial_i\phi\qty(x)}\delta^{(4)}\qty(x-y)+\fdv{\ell^i[x]}{\phi\qty(y)} = \partial^i
+    \pdv{\mathcal L[y]}{\partial_\alpha\phi\qty(y)}+\pdv{\ell^\alpha[y]}{\phi\qty(y)}-\partial_\beta\pdv{\ell^\alpha[y]}{\partial_\beta\phi\qty(y)}&=\partial_\mu C^{[\mu\alpha]}
+\end{align}
+
+Now let's return to Noether's theorem,
+
+\begin{align}
+    \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\qty[\partial_\mu\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\pdv{\mathcal L}{\partial_{\mu}\phi\qty(x)}\partial_{\mu}\dv{\phi'\qty(x)}{a}\eval_{a=0}]\nonumber\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\dv{}{x^\alpha}\qty[\mathcal L\dv{{x'}^\alpha}{a}\eval_{a=0}]\nonumber\\
+    &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_{\mu}}\qty[\pdv{\ell^\mu}{\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\pdv{\ell^\mu}{\partial_\beta\phi\qty(x)}\partial_\beta\dv{\phi'\qty(x)}{a}\eval_{a=0}]\nonumber\\
 \end{align}
