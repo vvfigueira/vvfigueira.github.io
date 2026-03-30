@@ -19,23 +19,75 @@ outside of $\Sigma_-\cup\Sigma_+$, that is, on $\tilde\Omega = \Omega'\cup\Gamma
     \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\qty[\pdv{\mathcal L[y]}{\phi\qty(y)}-\partial_\mu\pdv{\mathcal L[y]}{\partial_\mu\phi\qty(y)}]\psi(y)\nonumber\\
     &\quad\quad\quad+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\pdv{\mathcal L[x]}{\partial_\alpha\phi\qty(x)}\delta^{(4)}\qty(x-y)\psi(y)+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
     \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\qty[\pdv{\mathcal L[y]}{\phi\qty(y)}-\partial_\mu\pdv{\mathcal L[y]}{\partial_\mu\phi\qty(y)}]\psi(y)\nonumber\\
-    &\quad\quad\quad+\int\limits_{\Gamma'}\dd[3]{S_{\alpha}}\psi(y)\qty[\pdv{\mathcal L[y]}{\partial_\alpha\phi\qty(y)}+\pdv{\ell^\alpha[y]}{\phi\qty(y)}]
+    &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\pdv{\mathcal L[x]}{\partial_\alpha\phi\qty(x)}\psi(x)+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)
 \end{align}
 
-We suppose $\ell^\alpha$ do not depend on derivatives of $\phi$, due to technical reasons. So our condition is,
+For many cases $\ell^\alpha\equiv0$ due to dynamical and covariance reasons. Of course $\psi$ is zero on $\Sigma_\pm$, then, the equations of motion impose:
 
 \begin{align}
-    \pdv{\mathcal L[y]}{\partial_\alpha\phi\qty(y)}+\pdv{\ell^\alpha[y]}{\phi\qty(y)}&=\partial_\mu C^{[\mu\alpha]}
+    0&=\pdv{\mathcal L[\phi\qty(x);x]}{\phi\qty(x)}-\partial_\mu\pdv{\mathcal L[\phi(x);x]}{\partial_\mu\phi\qty(x)}\eval_{x\in\Omega}\\
+    0&=n_\alpha(x)\partial^\alpha\phi(x)\eval_{x\in\Gamma}
 \end{align}
 
-Now let's return to Noether's theorem and remake the derivation only to the boundary contribution of the action,
+With $n_\alpha$ being the normal direction in $\Gamma$. If we try to compute the conserved charge by Noether's theorem,
 
 \begin{align}
-    S_a'[\phi']-S[\phi]&= \int\limits_{\partial\Omega'}\dd[3]{S_\mu'}{\ell'}^\mu\qty[\phi'(x');x']-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi(x);x]\\
-    S_a'[\phi']-S[\phi]&= \int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi'(x),\lambda'(x);x]-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi(x);x]\nonumber\\
-    &\quad\quad\quad+ \int\limits_{\partial\Omega'}\dd[3]{S_\mu'}{\ell'}^\mu\qty[\phi'(x');x']-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi'(x),\lambda'(x);x]\\
-    S_a'[\phi']-S[\phi]&= \int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi'(x),\lambda'(x);x]-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi(x);x]\nonumber\\
-    &\quad\quad\quad+ \int\limits_{\partial\Omega}\dd[3]{S_\nu}\pdv{{x}^{\nu}}{{x'}^\mu}\pdv{{x'}^\mu}{x^\rho}\Det\qty[\pdv{x'}{x}]{\ell}^\rho\qty[\phi'(x'),\lambda'(x');x']-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi'(x),\lambda'(x);x]\\
-    \dv{S_a'[\phi']}{a}\eval_{a=0}&= \int\limits_{\partial\Omega}\dd[3]{S_\mu}\int\limits_{\Omega}\dd[4]{y}\fdv{{\ell}^\mu\qty[\phi(x);x]}{\phi\qty(y)}\dv{\phi'\qty(y)}{a}\eval_{a=0}+\int\limits_{\partial\Omega}\dd[3]{S_\mu}\int\dd[4]{y}\fdv{{\ell}^\mu\qty[\phi(x);x]}{\lambda\qty(y)}\dv{\lambda'\qty(y)}{a}\eval_{a=0}\nonumber\\
-    &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_\mu}\dv{}{a}\Det\qty[\pdv{x'}{x}]\eval_{a=0}{\ell}^\mu+\int\limits_{\partial\Omega}\dd[3]{S_\mu}\dv{}{x^\alpha}{\ell}^\mu\dv{{x'}^\alpha}{a}\eval_{a=0}
+    0&=\int\limits_{\partial\Omega}\dd[3]{S_\mu}\qty[\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}]\\
+    0&=\int\limits_{\Sigma_+}\dd[3]{S_\mu}J^\mu-\int\limits_{\Sigma_-}\dd[3]{S_\mu}J^\mu+\int\limits_{\Gamma}\dd[3]{S_\mu}\qty[\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}]\\
+    0&=\int\limits_{\Sigma_+}\dd[3]{S_\mu}J^\mu-\int\limits_{\Sigma_-}\dd[3]{S_\mu}J^\mu+\int\limits_{\Gamma}\dd[3]{S_\mu}\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}
+\end{align}
+
+Now, if we have $\mathcal L\eval_{x\in\Gamma} =0 $ or $\dv{x'}{a}\eval_{a=0,x\in\Gamma}=0$ then we get a conserved charge!
+
+\begin{align}
+    \int\limits_{\Sigma_+}\dd[3]{S_\mu}J^\mu=\int\limits_{\Sigma_-}\dd[3]{S_\mu}J^\mu
+\end{align}
+
+% We suppose $\ell^\alpha$ do not depend on derivatives of $\phi$, due to technical reasons. So our condition is,
+
+% \begin{align}
+%     \pdv{\mathcal L[y]}{\partial_\alpha\phi\qty(y)}+\pdv{\ell^\alpha[y]}{\phi\qty(y)}&=\partial_\mu C^{[\mu\alpha]}
+% \end{align}
+
+% Now let's return to Noether's theorem and remake the derivation only to the boundary contribution of the action,
+
+% \begin{align}
+%     S_a'[\phi']-S[\phi]&= \int\limits_{\partial\Omega'}\dd[3]{S_\mu'}{\ell'}^\mu\qty[\phi'(x');x']-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi(x);x]\\
+%     S_a'[\phi']-S[\phi]&= \int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi'(x),\lambda'(x);x]-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi(x);x]\nonumber\\
+%     &\quad\quad\quad+ \int\limits_{\partial\Omega'}\dd[3]{S_\mu'}{\ell'}^\mu\qty[\phi'(x');x']-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi'(x),\lambda'(x);x]\\
+%     S_a'[\phi']-S[\phi]&= \int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi'(x),\lambda'(x);x]-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi(x);x]\nonumber\\
+%     &\quad\quad\quad+ \int\limits_{\partial\Omega}\dd[3]{S_\nu}\pdv{{x}^{\nu}}{{x'}^\mu}\pdv{{x'}^\mu}{x^\rho}\Det\qty[\pdv{x'}{x}]{\ell}^\rho\qty[\phi'(x'),\lambda'(x');x']-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi'(x),\lambda'(x);x]\\
+%     \dv{S_a'[\phi']}{a}\eval_{a=0}&= \int\limits_{\partial\Omega}\dd[3]{S_\mu}\int\limits_{\Omega}\dd[4]{y}\fdv{{\ell}^\mu\qty[\phi(x);x]}{\phi\qty(y)}\dv{\phi'\qty(y)}{a}\eval_{a=0}+\int\limits_{\partial\Omega}\dd[3]{S_\mu}\int\dd[4]{y}\fdv{{\ell}^\mu\qty[\phi(x);x]}{\lambda\qty(y)}\dv{\lambda'\qty(y)}{a}\eval_{a=0}\nonumber\\
+%     &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_\mu}\dv{}{a}\Det\qty[\pdv{x'}{x}]\eval_{a=0}{\ell}^\mu+\int\limits_{\partial\Omega}\dd[3]{S_\mu}\dv{}{x^\alpha}{\ell}^\mu\dv{{x'}^\alpha}{a}\eval_{a=0}
+% \end{align}
+
+Now let's consider something other, let be a variation with change the values of the fields at the time-like boundaries, that is, 
+a variation between different solutions,
+
+\begin{align}
+    \int\limits_{\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi_1\qty(y)&=\int\limits_{\Omega}\dd[4]{y}E\qty[\phi\qty(y);y]\psi_1(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_{\alpha}}\Theta^\alpha\qty[\phi(x);x]\psi_1(x)\\
+    \int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\frac{\delta^2 S[\phi]}{\delta\phi\qty(z)\delta\phi\qty(y)}\psi_1\qty(y)\psi_2\qty(z)&=\int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\fdv{E\qty[\phi\qty(y);y]}{\phi(z)}\psi_1(y)\psi_2\qty(z)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\fdv{\Theta^\alpha\qty[\phi(x);x]}{\phi\qty(z)}\psi_1(x)\psi_2\qty(z)\\
+    \int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\frac{\delta^2 S[\phi]}{\delta\phi\qty(z)\delta\phi\qty(y)}\psi_1\qty(y)\psi_2\qty(z)&=\int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\qty(\Box_y-m^2)\delta^{(4)}\qty(y-z)\psi_1(y)\psi_2\qty(z)\nonumber\\
+    &\quad\quad\quad-\int\limits_{\partial\Omega}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\partial^\alpha_x\delta^{(4)}\qty(x-z)\psi_1(x)\psi_2\qty(z)\\
+    \int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\frac{\delta^2 S[\phi]}{\delta\phi\qty(z)\delta\phi\qty(y)}\psi_1\qty(y)\psi_2\qty(z)&=\int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\psi_1(y)\fdv{\psi_2\qty(y)}{\phi(z)}\qty(\Box_z-m^2)\phi(z)\nonumber\\
+    &\quad\quad\quad-\int\limits_{\partial\Omega}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\psi_1(x)\fdv{\psi_2\qty(x)}{\phi(z)}\partial^\alpha_z\phi\qty(z)
+\end{align}
+
+Evaluate at a solution of the equations of motion,
+
+\begin{align}
+    \int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\frac{\delta^2 S[\phi]}{\delta\phi\qty(z)\delta\phi\qty(y)}\psi_1\qty(y)\psi_2\qty(z)&=-\int\limits_{\Sigma_+\cup\Sigma_-}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\psi_1(x)\fdv{\psi_2\qty(x)}{\phi(z)}\partial^\alpha_z\phi\qty(z)
+\end{align}
+
+This should be symmetric in $1\leftrightarrow2$, thus,
+
+\begin{align}
+    0&=-\int\limits_{\Sigma_+\cup\Sigma_-}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\psi_1(x)\fdv{\psi_2\qty(x)}{\phi(z)}\partial^\alpha_z\phi\qty(z)+\int\limits_{\Sigma_+\cup\Sigma_-}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\psi_2(x)\fdv{\psi_1\qty(x)}{\phi(z)}\partial^\alpha_z\phi\qty(z)
+\end{align}
+
+\begin{align}
+    &\int\limits_{\Sigma_+}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\partial^\alpha_z\phi\qty(z)\qty[\psi_1(x)\fdv{\psi_2\qty(x)}{\phi(z)}-\psi_2(x)\fdv{\psi_1\qty(x)}{\phi(z)}]=\int\limits_{\Sigma_-}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\partial^\alpha_z\phi\qty(z)\qty[\psi_1(x)\fdv{\psi_2\qty(x)}{\phi(z)}-\psi_2(x)\fdv{\psi_1\qty(x)}{\phi(z)}]\\
+    &\int\limits_{\Sigma_+}\dd[3]{S_{\alpha}}\qty[\psi_1(x)\partial^\alpha\psi_2\qty(x)-\psi_2(x)\partial^\alpha\psi_1\qty(x)]=\int\limits_{\Sigma_-}\dd[3]{S_{\alpha}}\qty[\psi_1(x)\partial^\alpha\psi_2\qty(x)-\psi_2(x)\partial^\alpha\psi_1\qty(x)]
 \end{align}
