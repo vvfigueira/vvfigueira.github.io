@@ -1,0 +1,122 @@
+\section{Algebra of conserved quantities}
+
+\subsection{Internal Symmetries}
+
+Given an internal symmetry of our action,
+
+\begin{align}
+    \begin{cases}\phi^I\qty(x)&\rightarrow {\phi'}^I\qty(x;a)\\x^\mu&\rightarrow {x'}^\mu = x^\mu\end{cases}  
+    \Rightarrow S[\phi]=S'_a[\phi]
+\end{align}
+where $I$ encode whatever index the fields of our theory may have. Suppose this symmetry is 
+represented by some Lie Group/Algebra, that is, we have,
+
+\begin{align}
+    {\phi'}^I(x) &=\tensor{\exp\qty(\im a_iT^i)}{^I_J}\phi^J\qty(x)\Rightarrow \dv{{\phi'}^I(x)}{a^i}\eval_{a^i=0}=\im\tensor{T}{^I_J_i}\phi^J\qty(x)
+\end{align}
+
+This transformation generates a conserved current,
+
+\begin{align}
+    \tensor{J}{^\mu_i} &=\pdv{\mathcal L}{\partial_\mu\phi^I\qty(x)}\dv{{\phi'}^I\qty(x)}{a^i}\eval_{a^i=0}\\
+    \tensor{J}{^\mu_i} &=-\partial^\mu\phi_I\qty(x)\im\tensor{T}{^I_J_i}\phi^J\qty(x)\\
+    \tensor{J}{^0_i} &=-\pi_I\im\tensor{T}{^I_J_i}\phi^J
+\end{align}
+
+Compute the conserved charge,
+
+\begin{align}
+    Q_i&=\int\dd[3]{\vb x}\tensor{J}{^0_i}=-\int\dd[3]{\vb x}\pi_I\im\tensor{T}{^I_J_i}\phi^J
+\end{align}
+
+Now, the Poisson bracket,
+
+\begin{align}
+    \acomm{Q_i}{Q_j}&=\int\dd[3]{\vb x}\qty(\fdv{Q_i}{\phi^I\qty(\vb x)}\fdv{Q_j}{\pi_I\qty(\vb x)}-\fdv{Q_i}{\pi_I\qty(\vb x)}\fdv{Q_j}{\phi^I\qty(\vb x)})\\
+    \acomm{Q_i}{Q_j}&=\qty(-)^2\int\dd[3]{\vb x}\qty(\pi_K\im\tensor{T}{^K_I_i}\im\tensor{T}{^I_J_j}\phi^J-\im\tensor{T}{^I_J_i}\phi^J\pi_K\im\tensor{T}{^K_I_j})\\
+    \acomm{Q_i}{Q_j}&=\im^2\int\dd[3]{\vb x}\pi_K\qty(\tensor{T}{^K_I_i}\tensor{T}{^I_J_j}-\tensor{T}{^K_I_j}\tensor{T}{^I_J_i})\phi^J\\
+    \acomm{Q_i}{Q_j}&=\im^2\int\dd[3]{\vb x}\pi_K\qty(\tensor{\comm{T_i}{T_j}}{^K_J})\phi^J
+\end{align}
+
+Now, as $\tensor{T}{^K_I_i}$ are the generators of a Lie Algebra, they obey an commutation relation of the form, $\comm{T_i}{T_j} = \im \tensor{f}{_i_j^k}T_k$, 
+thus,
+
+\begin{align}
+    \acomm{Q_i}{Q_j}&=\im^2\int\dd[3]{\vb x}\pi_K\qty(\im \tensor{f}{_i_j^k}\tensor{T}{^K_J_k} )\phi^J\\
+    \acomm{Q_i}{Q_j}&=-\im^2 \tensor{f}{_i_j^k}\qty(-)\int\dd[3]{\vb x}\pi_K\im\tensor{T}{^K_J_k}\phi^J\\
+    \acomm{Q_i}{Q_j}&=\tensor{f}{_i_j^k}Q_k
+\end{align}
+
+In the quantum theory, at least from the canonical quantization POV, we have the map $\comm{\hat A}{\hat B} = \im\hbar \acomm{A}{B}$, therefore, 
+each classical conserved charge should be correspondent to a conserved charge operator $\hat Q_i$ which \textit{should} 
+satisfy the same Lie Algebra,
+
+\begin{align}
+    \comm{\hat Q_i}{\hat Q_j}&=\im\hbar \tensor{f}{_i_j^k}\hat Q_k
+\end{align}
+
+Almost always this isn't the case, and the symmetry has a anomaly in the quantum theory, that is, a transformation which is a symmetry in the classical 
+theory isn't anymore a symmetry when the theory is quantized. For these cases, the most common and physical relevant way an anomaly shows is 
+through a central extension of the Lie Algebra,
+
+\begin{align}
+    \comm{\hat Q_i}{\hat Q_j}&=\im\hbar \tensor{f}{_i_j^k}\hat Q_k+\hbar^2 C_{[ij]}\mathbbm 1
+\end{align}
+
+The name \textit{central extension} is so because $C_{[ij]}$ are just numbers, that is, they commute with every other generator of the algebra, and thus, 
+they belong to the center of the algebra --- the maximum set of mutually commuting generators ---. The $\hbar^2$ is needed for dimensional reasons (check it!), and 
+it explain why this don't show up in the classical theory, if we consider the limit of,
+
+\begin{align}
+    \acomm{Q_i}{Q_f}\coloneq \lim\limits_{\hbar\rightarrow 0}\frac{1}{\im\hbar}\comm{\hat Q_i}{\hat Q_j} = \tensor{f}{_i_j^k} Q_k
+\end{align}
+
+That is, the $\hbar^2$ term drop off, it's a true quantum effect. There are other ways of understanding why the central extensions of algebras show up 
+in the process of quantization, there is a close relation with the need to consider the double cover of Lie Groups/Algebras when going from classical 
+symmetries to quantum symmetries. Most of the anomalies are harmless, but, if there is an gauge anomaly the theory is physically inconsistent.
+
+Luckily, the Poincaré Group/Algebra does not allow any kind of central extension (see Weinberg for proof), hence, the Poincaré symmetry is realized 
+correctly in the quantum theory.
+
+Other relevant property of the conserved charges is: they generate the symmetry transformation in the phase space variables,
+
+\begin{align}
+    \acomm{Q_i}{\phi^I(x)}&= \int\dd[3]{\vb y}\qty(\fdv{Q_i}{\phi^K\qty(\vb y)}\fdv{\phi^I(t,\vb x)}{\pi_K\qty(\vb y)}-\fdv{Q_i}{\pi_K\qty(\vb y)}\fdv{\phi^I\qty(t,\vb x)}{\phi^K\qty(\vb y)})\\
+    \acomm{Q_i}{\phi^I(x)}&= (-)^2\int\dd[3]{\vb y}\im\tensor{T}{^K_J_i}\phi^J\tensor{\delta}{^I_K}\delta^{(3)}\qty(\vb x-\vb y)\\
+    \acomm{Q_i}{\phi^I(x)}&= \im\tensor{T}{^I_J_i}\phi^J\equiv \dv{{\phi'}^I}{a^i}\eval_{a^I=0}
+\end{align}
+
+\subsection{Space-Time Symmetries}
+
+Let's start with the easiest one, translations,
+\begin{align}
+    \begin{cases}\phi^I\qty(x)&\rightarrow {\phi'}^I(x')=\phi^I(x)\\x^\mu&\rightarrow {x'}^\mu = x^\mu+a^\mu\end{cases}  
+    \Rightarrow S[\phi]=S'_a[\phi]
+\end{align}
+
+Thus,
+\begin{align}
+    \dv{{\phi'}^I(x)}{a^\nu}\eval_{a^\nu=0}&=\im\tensor{T}{^I_J_\nu}\phi^J\qty(x)\\
+    \dv{{\phi}^I(x-a)}{a^\nu}\eval_{a^\nu=0}&=\im\tensor{T}{^I_J_\nu}\phi^J\qty(x)\\
+    -\partial_\nu\phi^I&=\im\tensor{T}{^I_J_\nu}\phi^J\qty(x)\\
+    \im\im\tensor{\delta}{^I_J}\partial_\nu\phi^J &=\im\tensor{T}{^I_J_\nu}\phi^J\qty(x)
+\end{align}
+
+And,
+\begin{align}
+    \dv{{x'}^\mu}{a^\nu}\eval_{a^\nu=0}&=\tensor{g}{^\mu_\nu}
+\end{align}
+
+And thus the conserved current is,
+
+\begin{align}
+    \tensor{J}{^\mu_\nu} &=\pdv{\mathcal L}{\partial_\mu\phi^I\qty(x)}\dv{{\phi'}^I\qty(x)}{a^\nu}\eval_{a^\nu=0}+\mathcal L\dv{{x'}^\mu}{a^\nu}\eval_{a^\nu=0}\\
+    \tensor{J}{^\mu_\nu} &=-\pdv{\mathcal L}{\partial_\mu\phi^I\qty(x)}\partial_\nu\phi^I+\mathcal L\tensor{g}{^\mu_\nu}\\
+    \tensor{J}{^\mu_\nu} &=\partial^\mu\phi_I\partial_\nu\phi^I+\mathcal L\tensor{g}{^\mu_\nu}\\
+    \tensor{J}{^0_\nu} &=\pi_I\partial_\nu\phi^I+\mathcal L\tensor{g}{^0_\nu}
+\end{align}
+
+The momentum is,
+\begin{align}
+    P_\nu&=\int\dd[3]{\vb x} \tensor{J}{^0_\nu} =\int\dd[3]{\vb x}\qty(\pi_I\partial_\nu\phi^I+\mathcal L\tensor{g}{^0_\nu})
+\end{align}

@@ -18,3 +18,6 @@
 \contentsline {section}{\numberline {C}Noether's Theorem}{12}{appendix.C}%
 \contentsline {section}{\numberline {D}Noether's Second Theorem}{15}{appendix.D}%
 \contentsline {section}{\numberline {E}Boundary Conditions}{17}{appendix.E}%
+\contentsline {section}{\numberline {F}Algebra of conserved quantities}{20}{appendix.F}%
+\contentsline {subsection}{\numberline {F.A)}Internal Symmetries}{20}{subsection.F.1}%
+\contentsline {subsection}{\numberline {F.B)}Space-Time Symmetries}{21}{subsection.F.2}%
