@@ -1,0 +1,121 @@
+\section{Phase space structure of EM}
+
+Let our spacetime be a four dimensional manifold $\Omega$, with boundary $\partial\Omega = \Sigma_-\cup\Sigma_+\cup\Gamma$. 
+Our action principle is given by,
+
+\begin{align}
+    S[A] = \int\limits_\Omega\dd[4]{x}\mathcal L[\phi(x),x] = -\frac14\int\limits_\Omega\dd[4]{x} F^{\mu\nu}F_{\mu\nu}
+\end{align}
+
+The variation of the action cannot have contributions from the bulk of $\Gamma$, and also is done with compact support 
+outside of $\Sigma_-\cup\Sigma_+$, that is, on $\tilde\Omega = \Omega'\cup\Gamma'$,
+
+\begin{align}
+    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[A]}{A_\alpha\qty(y)}\psi_\alpha\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\fdv{\mathcal L[x]}{A_\alpha\qty(y)}\psi_\alpha(y)\\
+    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[A]}{A_\alpha\qty(y)}\psi_\alpha\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{A_\alpha\qty(x)}\delta^{(4)}\qty(x-y)+\pdv{\mathcal L[x]}{\partial_\mu A_\alpha\qty(x)}\partial_\mu\delta^{(4)}\qty(x-y)]\psi_\alpha(y)\\
+    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[A]}{A_\alpha\qty(y)}\psi_\alpha\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{A_\alpha\qty(x)}-\partial_\mu\pdv{\mathcal L[x]}{\partial_\mu A_\alpha\qty(x)}]\delta^{(4)}\qty(x-y)\psi_\alpha(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\partial_{x\mu}\qty[\pdv{\mathcal L[x]}{\partial_\mu A_\alpha\qty(x)}\delta^{(4)}\qty(x-y)]\psi_\alpha(y)\\
+    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[A]}{A_\alpha\qty(y)}\psi_\alpha\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\qty[\pdv{\mathcal L[y]}{A_\alpha\qty(y)}-\partial_\mu\pdv{\mathcal L[y]}{\partial_\mu A_\alpha\qty(y)}]\psi_\alpha(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\mu}}\pdv{\mathcal L[x]}{\partial_\mu A_\alpha\qty(x)}\delta^{(4)}\qty(x-y)\psi_\alpha(y)\\
+    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[A]}{A_\alpha\qty(y)}\psi_\alpha\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\qty[\pdv{\mathcal L[y]}{A_\alpha\qty(y)}-\partial_\mu\pdv{\mathcal L[y]}{\partial_\mu A_\alpha\qty(y)}]\psi_\alpha(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_{\mu}}\pdv{\mathcal L[x]}{\partial_\mu A_\alpha\qty(x)}\psi_\alpha(x)\\
+    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[A]}{A_\alpha\qty(y)}\psi_\alpha\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}E^\alpha\qty[A(x);x]\psi_\alpha(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_{\mu}}\Theta^{\mu\alpha}\psi_\alpha(x)
+\end{align}
+
+With the identifications,
+
+\begin{align}
+    E^\alpha & = \partial_\mu F^{\mu\alpha}\\
+    \Theta^{\mu\alpha}&=-F^{\mu\alpha}
+\end{align}
+
+Again, we follow a similar reasoning,
+
+\begin{align}
+    \int\limits_{\Omega}\dd[4]{y}\fdv{S[A]}{A_\alpha\qty(y)}\psi_{1\alpha}\qty(y)&=\int\limits_{\Omega}\dd[4]{y}E^\alpha\qty[y]\psi_{1\alpha}(y)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_{\mu}}\Theta^{\mu\alpha}\qty[x]\psi_{1\alpha}(x)\\
+    \int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\frac{\delta^2 S[A]}{\delta A_\beta\qty(z)\delta A_\alpha\qty(y)}\psi_{1\alpha}\qty(y)\psi_{2\beta}\qty(z)&=\int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\fdv{E^\alpha\qty[y]}{A_\beta(z)}\psi_{1\alpha}(y)\psi_{2\beta}\qty(z)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_{\mu}}\int\limits_{\Omega}\dd[4]{z}\fdv{\Theta^{\mu\alpha}\qty[x]}{A_\beta\qty(z)}\psi_{1\alpha}(x)\psi_{2\beta}\qty(z)\\
+\end{align}
+
+Antisymmetrize in $1\leftrightarrow2$,
+\begin{align}
+    0&=\int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\qty(\fdv{E^\alpha\qty[y]}{A_\beta(z)}-\fdv{E^\beta\qty[z]}{ A_\alpha(y)})\psi_{1\alpha}(y)\psi_{2\beta}\qty(z)\nonumber\\
+    &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_{\mu}}\int\limits_{\Omega}\dd[4]{z}\qty(\fdv{\Theta^{\mu\alpha}\qty[x]}{A_\beta\qty(z)}-\fdv{\Theta^{\mu\beta}\qty[z]}{A_\alpha\qty(x)})\psi_{1\alpha}(x)\psi_{2\beta}\qty(z)
+\end{align}
+
+As long as the equation of motion have just even order of derivatives with constant coefficients,
+\begin{align}
+    0&=-\int\limits_{\partial\Omega}\dd[3]{S_{\mu}}\int\limits_{\Omega}\dd[4]{z}\qty(g^{\alpha\beta}\partial^\mu_x\delta^{(4)}\qty(x-z)-g^{\mu\beta}\partial^\alpha_x\delta^{(4)}\qty(x-z)-g^{\beta\alpha}\partial^\mu_z\delta^{(4)}\qty(z-x)+g^{\mu\alpha}\partial^\beta_z\delta^{(4)}\qty(z-x))\psi_{1\alpha}(x)\psi_{2\beta}\qty(z)\\
+    0&=-\int\limits_{\partial\Omega}\dd[3]{S_{\mu}}\qty(\psi_{1\alpha}g^{\alpha\beta}\partial^\mu\psi_{2\beta}-\psi_{1\alpha}g^{\mu\beta}\partial^\alpha\psi_{2\beta}-\psi_{2\beta}g^{\beta\alpha}\partial^\mu\psi_{1\alpha}+\psi_{2\beta}g^{\mu\alpha}\partial^\beta\psi_{1\alpha})
+\end{align}
+
+Suppose that for a given solution of the equations of motion $A$, it's true that $A+\psi_i$ are also solutions of the 
+equations of motion, then,
+\begin{align}
+    \int\limits_{\Sigma_+}\dd[3]{S_{\mu}}\qty(\psi_{1\alpha}\qty(\partial^\mu\psi_{2}^\alpha-\partial^\alpha\psi_{2}^\mu)-\psi_{2\alpha}\qty(\partial^\mu\psi_{1}^\alpha-\partial^\alpha\psi_{1}^\mu))=\int\limits_{\Sigma_-}\dd[3]{S_{\mu}}\qty(\psi_{1\alpha}\qty(\partial^\mu\psi_{2}^\alpha-\partial^\alpha\psi_{2}^\mu)-\psi_{2\alpha}\qty(\partial^\mu\psi_{1}^\alpha-\partial^\alpha\psi_{1}^\mu))
+\end{align}
+
+In other words, the functional,
+\begin{align}
+    \Omega\qty(\psi_1,\psi_2) &= \int\limits_{\Sigma_t}\dd[3]{\vb x}\qty(\psi_{1i}\qty(\dot\psi_2^i-\partial^i\psi_{20})-\psi_{2i}\qty(\dot\psi_1^i-\partial^i\psi_{10}))
+\end{align}
+defined in the tangent space of the phase space of solutions, is independent of the time slice used to compute it. The main 
+problem here is that this functional is degenerated in the variables $\psi_\alpha$, this means that they aren't a good parametrization 
+of the phase space. To see that are degeneracies here, 
+\begin{align}
+    \Omega\qty(\psi_1+\partial\lambda,\psi_2) &= \Omega\qty(\psi_1,\psi_2)+\int\limits_{\Sigma_t}\dd[3]{\vb x}\qty(\partial_i\lambda\qty(\dot\psi_2^i-\partial^i\psi_{20})-\psi_{2i}\qty(\partial^i\dot\lambda-\partial^i\dot\lambda))\\
+    \Omega\qty(\psi_1+\partial\lambda,\psi_2) &= \Omega\qty(\psi_1,\psi_2)+\int\limits_{\partial\Sigma_t}\dd[2]{S_i}\lambda\qty(\dot\psi_2^i-\partial^i\psi_{20})-\int\limits_{\Sigma_t}\dd[3]{\vb x}\lambda\partial_i\qty(\dot\psi_2^i-\partial^i\psi_{20})\\
+    \Omega\qty(\psi_1+\partial\lambda,\psi_2) &= \Omega\qty(\psi_1,\psi_2)+\int\limits_{\partial\Sigma_t}\dd[2]{S_i}\lambda\qty(\dot\psi_2^i-\partial^i\psi_{20})
+\end{align}
+as long as $\lambda$ is well behaved in the spatial boundary, the last integral is zero, and thus we have that the $\Omega$ is 
+degenerated in this space, also, we can shift as we please the canonical momentum $\dot\psi_0$, with no impact on $\Omega$. In 
+total, we should have just two coordinates and conjugated momenta, the usual choice is,
+
+
+
+
+
+
+
+
+Taken 
+into account that the phase space needs two variables for each degree of freedom, they are chosen as $\phi(\vb x)$ and $\pi\qty(\vb x)=\dot\phi\qty(\vb x)$, 
+in this way, our functional can be rewritten as a phase space 2-form,
+
+\begin{align}
+    \Omega &= \int\limits_{\Sigma_t}\dd[3]{\vb x}\delta\phi\qty(\vb x)\wedge\delta\pi\qty(\vb x)
+\end{align}
+
+The main point is that this 2-form is non degenerated and can be inverted as,
+
+\begin{align}
+    \acomm{\cdot}{\cdot} &= \int\limits_{\Sigma_t}\dd[3]{\vb x}\qty(\fdv{}{\phi\qty(\vb x)}\fdv{}{\pi\qty(\vb x)}-\fdv{}{\pi\qty(\vb x)}\fdv{}{\phi\qty(\vb x)})
+\end{align}
+
+Which provides the fundamental Poisson bracket,
+\begin{align}
+    \acomm{\phi\qty(t,\vb x)}{\pi\qty(t,\vb y)}&=\delta^{(3)}\qty(\vb x-\vb y) 
+\end{align}
+% \int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\frac{\delta^2 S[\phi]}{\delta\phi\qty(z)\delta\phi\qty(y)}\psi_1\qty(y)\psi_2\qty(z)&=\int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\qty(\Box_y-m^2)\delta^{(4)}\qty(y-z)\psi_1(y)\psi_2\qty(z)\nonumber\\
+    % &\quad\quad\quad-\int\limits_{\partial\Omega}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\partial^\alpha_x\delta^{(4)}\qty(x-z)\psi_1(x)\psi_2\qty(z)\\
+    % \int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\frac{\delta^2 S[\phi]}{\delta\phi\qty(z)\delta\phi\qty(y)}\psi_1\qty(y)\psi_2\qty(z)&=\int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\psi_1(y)\fdv{\psi_2\qty(y)}{\phi(z)}\qty(\Box_z-m^2)\phi(z)\nonumber\\
+    % &\quad\quad\quad-\int\limits_{\partial\Omega}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\psi_1(x)\fdv{\psi_2\qty(x)}{\phi(z)}\partial^\alpha_z\phi\qty(z)
+
+% Evaluate at a solution of the equations of motion,
+
+% \begin{align}
+%     \int\limits_{\Omega}\dd[4]{y}\int\limits_{\Omega}\dd[4]{z}\frac{\delta^2 S[\phi]}{\delta\phi\qty(z)\delta\phi\qty(y)}\psi_1\qty(y)\psi_2\qty(z)&=-\int\limits_{\Sigma_+\cup\Sigma_-}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\psi_1(x)\fdv{\psi_2\qty(x)}{\phi(z)}\partial^\alpha_z\phi\qty(z)
+% \end{align}
+
+% This should be symmetric in $1\leftrightarrow2$, thus,
+
+% \begin{align}
+%     0&=-\int\limits_{\Sigma_+\cup\Sigma_-}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\psi_1(x)\fdv{\psi_2\qty(x)}{\phi(z)}\partial^\alpha_z\phi\qty(z)+\int\limits_{\Sigma_+\cup\Sigma_-}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\psi_2(x)\fdv{\psi_1\qty(x)}{\phi(z)}\partial^\alpha_z\phi\qty(z)
+% \end{align}
+
+% \begin{align}
+%     &\int\limits_{\Sigma_+}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\partial^\alpha_z\phi\qty(z)\qty[\psi_1(x)\fdv{\psi_2\qty(x)}{\phi(z)}-\psi_2(x)\fdv{\psi_1\qty(x)}{\phi(z)}]=\int\limits_{\Sigma_-}\dd[3]{S_{\alpha}}\int\limits_{\Omega}\dd[4]{z}\partial^\alpha_z\phi\qty(z)\qty[\psi_1(x)\fdv{\psi_2\qty(x)}{\phi(z)}-\psi_2(x)\fdv{\psi_1\qty(x)}{\phi(z)}]\\
+%     &\int\limits_{\Sigma_+}\dd[3]{S_{\alpha}}\qty[\psi_1(x)\partial^\alpha\psi_2\qty(x)-\psi_2(x)\partial^\alpha\psi_1\qty(x)]=\int\limits_{\Sigma_-}\dd[3]{S_{\alpha}}\qty[\psi_1(x)\partial^\alpha\psi_2\qty(x)-\psi_2(x)\partial^\alpha\psi_1\qty(x)]
+% \end{align}

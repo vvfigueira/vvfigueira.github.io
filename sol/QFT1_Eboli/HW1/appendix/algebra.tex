@@ -1,7 +1,5 @@
 \section{Algebra of conserved quantities}
 
-\subsection{Internal Symmetries}
-
 Given an internal symmetry of our action,
 
 \begin{align}
@@ -12,14 +10,14 @@ where $I$ encode whatever index the fields of our theory may have. Suppose this 
 represented by some Lie Group/Algebra, that is, we have,
 
 \begin{align}
-    {\phi'}^I(x) &=\tensor{\exp\qty(\im a_iT^i)}{^I_J}\phi^J\qty(x)\Rightarrow \dv{{\phi'}^I(x)}{a^i}\eval_{a^i=0}=\im\tensor{T}{^I_J_i}\phi^J\qty(x)
+    {\phi'}^I(x) &=\tensor{\exp\qty(-\im a^iT_i)}{^I_J}\phi^J\qty(x)\Rightarrow \dv{{\phi'}^I(x)}{a^i}\eval_{a^i=0}=-\im\tensor{T}{^I_J_i}\phi^J\qty(x)
 \end{align}
 
 This transformation generates a conserved current,
 
 \begin{align}
     \tensor{J}{^\mu_i} &=\pdv{\mathcal L}{\partial_\mu\phi^I\qty(x)}\dv{{\phi'}^I\qty(x)}{a^i}\eval_{a^i=0}\\
-    \tensor{J}{^\mu_i} &=-\partial^\mu\phi_I\qty(x)\im\tensor{T}{^I_J_i}\phi^J\qty(x)\\
+    \tensor{J}{^\mu_i} &=(-)^2\partial^\mu\phi_I\qty(x)\im\tensor{T}{^I_J_i}\phi^J\qty(x)\\
     \tensor{J}{^0_i} &=-\pi_I\im\tensor{T}{^I_J_i}\phi^J
 \end{align}
 
@@ -33,7 +31,7 @@ Now, the Poisson bracket,
 
 \begin{align}
     \acomm{Q_i}{Q_j}&=\int\dd[3]{\vb x}\qty(\fdv{Q_i}{\phi^I\qty(\vb x)}\fdv{Q_j}{\pi_I\qty(\vb x)}-\fdv{Q_i}{\pi_I\qty(\vb x)}\fdv{Q_j}{\phi^I\qty(\vb x)})\\
-    \acomm{Q_i}{Q_j}&=\qty(-)^2\int\dd[3]{\vb x}\qty(\pi_K\im\tensor{T}{^K_I_i}\im\tensor{T}{^I_J_j}\phi^J-\im\tensor{T}{^I_J_i}\phi^J\pi_K\im\tensor{T}{^K_I_j})\\
+    \acomm{Q_i}{Q_j}&=(-)^2\int\dd[3]{\vb x}\qty(\pi_K\im\tensor{T}{^K_I_i}\im\tensor{T}{^I_J_j}\phi^J-\im\tensor{T}{^I_J_i}\phi^J\pi_K\im\tensor{T}{^K_I_j})\\
     \acomm{Q_i}{Q_j}&=\im^2\int\dd[3]{\vb x}\pi_K\qty(\tensor{T}{^K_I_i}\tensor{T}{^I_J_j}-\tensor{T}{^K_I_j}\tensor{T}{^I_J_i})\phi^J\\
     \acomm{Q_i}{Q_j}&=\im^2\int\dd[3]{\vb x}\pi_K\qty(\tensor{\comm{T_i}{T_j}}{^K_J})\phi^J
 \end{align}
@@ -63,7 +61,7 @@ through a central extension of the Lie Algebra,
     \comm{\hat Q_i}{\hat Q_j}&=\im\hbar \tensor{f}{_i_j^k}\hat Q_k+\hbar^2 C_{[ij]}\mathbbm 1
 \end{align}
 
-The name \textit{central extension} is so because $C_{[ij]}$ are just numbers, that is, they commute with every other generator of the algebra, and thus, 
+The name \textit{central extension} is so because $C_{[ij]}$ are just numbers, that is, they commute with every other generator of the algebra --- $\comm{C_{[ij]}}{\hat Q_k}=0$ ---, and thus, 
 they belong to the center of the algebra --- the maximum set of mutually commuting generators ---. The $\hbar^2$ is needed for dimensional reasons (check it!), and 
 it explain why this don't show up in the classical theory, if we consider the limit of,
 
@@ -81,42 +79,42 @@ correctly in the quantum theory.
 Other relevant property of the conserved charges is: they generate the symmetry transformation in the phase space variables,
 
 \begin{align}
-    \acomm{Q_i}{\phi^I(x)}&= \int\dd[3]{\vb y}\qty(\fdv{Q_i}{\phi^K\qty(\vb y)}\fdv{\phi^I(t,\vb x)}{\pi_K\qty(\vb y)}-\fdv{Q_i}{\pi_K\qty(\vb y)}\fdv{\phi^I\qty(t,\vb x)}{\phi^K\qty(\vb y)})\\
-    \acomm{Q_i}{\phi^I(x)}&= (-)^2\int\dd[3]{\vb y}\im\tensor{T}{^K_J_i}\phi^J\tensor{\delta}{^I_K}\delta^{(3)}\qty(\vb x-\vb y)\\
-    \acomm{Q_i}{\phi^I(x)}&= \im\tensor{T}{^I_J_i}\phi^J\equiv \dv{{\phi'}^I}{a^i}\eval_{a^I=0}
+    \acomm{\phi^I(x)}{Q_i}&= \int\dd[3]{\vb y}\qty(\fdv{\phi^I(t,\vb x)}{\phi^K\qty(\vb y)}\fdv{Q_i}{\pi_K\qty(\vb y)}-\fdv{\phi^I\qty(t,\vb x)}{\pi_K\qty(\vb y)}\fdv{Q_i}{\phi^K\qty(\vb y)})\\
+    \acomm{\phi^I(x)}{Q_i}&= -\int\dd[3]{\vb y}\im\tensor{T}{^K_J_i}\phi^J\tensor{\delta}{^I_K}\delta^{(3)}\qty(\vb x-\vb y)\\
+    \acomm{\phi^I(x)}{Q_i}&= -\im\tensor{T}{^I_J_i}\phi^J\equiv \dv{{\phi'}^I}{a^i}\eval_{a^I=0}\Rightarrow\comm{{\hat\phi}^I(x)}{\hat Q_i}= \hbar\tensor{T}{^I_J_i}{\hat\phi}^J
 \end{align}
 
-\subsection{Space-Time Symmetries}
+% \subsection{Space-Time Symmetries}
 
-Let's start with the easiest one, translations,
-\begin{align}
-    \begin{cases}\phi^I\qty(x)&\rightarrow {\phi'}^I(x')=\phi^I(x)\\x^\mu&\rightarrow {x'}^\mu = x^\mu+a^\mu\end{cases}  
-    \Rightarrow S[\phi]=S'_a[\phi]
-\end{align}
+% Let's start with the easiest one, translations,
+% \begin{align}
+%     \begin{cases}\phi^I\qty(x)&\rightarrow {\phi'}^I(x')=\phi^I(x)\\x^\mu&\rightarrow {x'}^\mu = x^\mu+a^\mu\end{cases}  
+%     \Rightarrow S[\phi]=S'_a[\phi]
+% \end{align}
 
-Thus,
-\begin{align}
-    \dv{{\phi'}^I(x)}{a^\nu}\eval_{a^\nu=0}&=\im\tensor{T}{^I_J_\nu}\phi^J\qty(x)\\
-    \dv{{\phi}^I(x-a)}{a^\nu}\eval_{a^\nu=0}&=\im\tensor{T}{^I_J_\nu}\phi^J\qty(x)\\
-    -\partial_\nu\phi^I&=\im\tensor{T}{^I_J_\nu}\phi^J\qty(x)\\
-    \im\im\tensor{\delta}{^I_J}\partial_\nu\phi^J &=\im\tensor{T}{^I_J_\nu}\phi^J\qty(x)
-\end{align}
+% Thus,
+% \begin{align}
+%     \dv{{\phi'}^I(x)}{a^\nu}\eval_{a^\nu=0}&=\im\tensor{T}{^I_J_\nu}\phi^J\qty(x)\\
+%     \dv{{\phi}^I(x-a)}{a^\nu}\eval_{a^\nu=0}&=\im\tensor{T}{^I_J_\nu}\phi^J\qty(x)\\
+%     -\partial_\nu\phi^I&=\im\tensor{T}{^I_J_\nu}\phi^J\qty(x)\\
+%     \im\im\tensor{\delta}{^I_J}\partial_\nu\phi^J &=\im\tensor{T}{^I_J_\nu}\phi^J\qty(x)
+% \end{align}
 
-And,
-\begin{align}
-    \dv{{x'}^\mu}{a^\nu}\eval_{a^\nu=0}&=\tensor{g}{^\mu_\nu}
-\end{align}
+% And,
+% \begin{align}
+%     \dv{{x'}^\mu}{a^\nu}\eval_{a^\nu=0}&=\tensor{g}{^\mu_\nu}
+% \end{align}
 
-And thus the conserved current is,
+% And thus the conserved current is,
 
-\begin{align}
-    \tensor{J}{^\mu_\nu} &=\pdv{\mathcal L}{\partial_\mu\phi^I\qty(x)}\dv{{\phi'}^I\qty(x)}{a^\nu}\eval_{a^\nu=0}+\mathcal L\dv{{x'}^\mu}{a^\nu}\eval_{a^\nu=0}\\
-    \tensor{J}{^\mu_\nu} &=-\pdv{\mathcal L}{\partial_\mu\phi^I\qty(x)}\partial_\nu\phi^I+\mathcal L\tensor{g}{^\mu_\nu}\\
-    \tensor{J}{^\mu_\nu} &=\partial^\mu\phi_I\partial_\nu\phi^I+\mathcal L\tensor{g}{^\mu_\nu}\\
-    \tensor{J}{^0_\nu} &=\pi_I\partial_\nu\phi^I+\mathcal L\tensor{g}{^0_\nu}
-\end{align}
+% \begin{align}
+%     \tensor{J}{^\mu_\nu} &=\pdv{\mathcal L}{\partial_\mu\phi^I\qty(x)}\dv{{\phi'}^I\qty(x)}{a^\nu}\eval_{a^\nu=0}+\mathcal L\dv{{x'}^\mu}{a^\nu}\eval_{a^\nu=0}\\
+%     \tensor{J}{^\mu_\nu} &=-\pdv{\mathcal L}{\partial_\mu\phi^I\qty(x)}\partial_\nu\phi^I+\mathcal L\tensor{g}{^\mu_\nu}\\
+%     \tensor{J}{^\mu_\nu} &=\partial^\mu\phi_I\partial_\nu\phi^I+\mathcal L\tensor{g}{^\mu_\nu}\\
+%     \tensor{J}{^0_\nu} &=\pi_I\partial_\nu\phi^I+\mathcal L\tensor{g}{^0_\nu}
+% \end{align}
 
-The momentum is,
-\begin{align}
-    P_\nu&=\int\dd[3]{\vb x} \tensor{J}{^0_\nu} =\int\dd[3]{\vb x}\qty(\pi_I\partial_\nu\phi^I+\mathcal L\tensor{g}{^0_\nu})
-\end{align}
+% The momentum is,
+% \begin{align}
+%     P_\nu&=\int\dd[3]{\vb x} \tensor{J}{^0_\nu} =\int\dd[3]{\vb x}\qty(\pi_I\partial_\nu\phi^I+\mathcal L\tensor{g}{^0_\nu})
+% \end{align}
