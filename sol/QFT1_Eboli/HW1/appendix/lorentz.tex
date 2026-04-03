@@ -1,0 +1,151 @@
+\section{Lorentz Group Digression}
+
+The Lorentz group is defined as the set of all $4$x$4$ matrices which preserve the scalar products 
+with respect to the relativistic metric, that is, the set of all $\Lambda:x^\mu\rightarrow {x'}^\mu=\tensor{\Lambda}{^\mu_\nu}x^\nu$, 
+such,
+\begin{align}
+    {x}^\mu g_{\mu\nu} {y}^\nu&={x'}^\alpha g_{\alpha\beta} {y'}^\beta\\
+    {x}^\mu g_{\mu\nu} {y}^\nu&=\tensor{\Lambda}{^\alpha_\mu}{x}^\mu g_{\alpha\beta} {y}^\nu\tensor{\Lambda}{^\beta_\nu}\\
+    {x}^\mu g_{\mu\nu} {y}^\nu&={x}^\mu {y}^\nu \tensor{\Lambda}{^\alpha_\mu}g_{\alpha\beta} \tensor{\Lambda}{^\beta_\nu}
+\end{align}
+as this should be valid for all $x,y$,
+\begin{align}
+     g_{\mu\nu} &= \tensor{{\Lambda^{\textnormal{T}}}}{_\mu^\alpha}g_{\alpha\beta} \tensor{\Lambda}{^\beta_\nu}\\
+     g&=\Lambda^{\textnormal{T}}g\Lambda
+\end{align}
+in other words, the Lorentz group is the group of all orthogonal $4$x$4$ matrices with respect to the non-positive definite 
+metric $g$. For orthogonal $n$x$n$ matrices with respect to the standard $\mathbb R^n$ metric, this group is denoted $O\qty(n)$, 
+as we're in a $1$ negative and $3$ positive eigenvalues metric, we denote by $O\qty(1,3)\cong O\qty(3,1)$.
+Apart from the topological structure carried by $O\qty(1,3)$, we are mainly interested in the tangent space structure at 
+the origin, at the identity element, also know as the Lie algebra, $\mathfrak o\qty(1,3)$. This is the case because 
+the generators of the Lie algebra are in a one to one correspondence with hermitian operators in the Hilbert space of 
+the quantum theory which represents conserved charges, for the Lorentz group these are the angular momentum and boost 
+operators. It's not hard to obtain the connected piece of $O\qty(1,3)$, we have two conditions which splits our group 
+into $4$ connected pieces, 
+\begin{align}
+    \Det\qty[g]&=\Det[\Lambda^{\textnormal{T}}]\Det[g]\Det[\Lambda]\\
+    -1&=-\Det[\Lambda^{\textnormal{T}}]\Det[\Lambda]\\
+    1&=\qty(\Det[\Lambda])\Rightarrow \Det[\Lambda] =\pm 1
+\end{align}
+and also,
+\begin{align}
+    g_{00}&=\tensor{{\Lambda^{\textnormal{T}}}}{_0^\alpha}g_{\alpha\beta}\tensor{\Lambda}{^\beta_0}\\
+    -1&=\tensor{{\Lambda^{\textnormal{T}}}}{_0^0}g_{00}\tensor{\Lambda}{^0_0}+\tensor{{\Lambda^{\textnormal{T}}}}{_0^i}g_{ij}\tensor{\Lambda}{^j_0}\\
+    \tensor{\Lambda}{^0_0}\tensor{\Lambda}{^0_0}&=1+\sum\limits_{i}\norm{\tensor{\Lambda}{^i_0}}^2\geq 1\\
+    \qty(\tensor{\Lambda}{^0_0})^2&\geq 1\Rightarrow \tensor{\Lambda}{^0_0}\begin{cases}\geq 1\\\leq -1\end{cases}
+\end{align}
+
+The connected piece is the one satisfying $\Det[\Lambda]= +1$ and $\tensor{\Lambda}{^0_0}\geq 1$, which is called the 
+proper orthochronous Lorentz group $SO^+\qty(1,3)$, proper ($S$) for $\Det[\Lambda]=+1$ and orthochronous ($\.^+$) for 
+$\tensor{\Lambda}{^0_0}\geq 1$. It's not hard to see that from the connected piece we can get all the other three pieces by 
+compositions with the following matrices,
+\begin{align}
+    \tensor{\mathcal P}{^\mu_\nu}=\textnormal{diag}\mqty(1&-1&-1&-1)&,\ \ \tensor{\mathcal T}{^\mu_\nu}=\textnormal{diag}\mqty(-1&1&1&1)\\
+    \tensor{\qty[\mathcal P\mathcal T]}{^\mu_\nu}&=\textnormal{diag}\mqty(-1&-1&-1&-1)
+\end{align}
+in fact they form a group by themselves, $\qty{\mathbbm 1,\mathcal P,\mathcal T,\mathcal P\mathcal T}$, called the Klein four group. With them we 
+can reconstruct the full Lorentz group, 
+\begin{align}
+    O\qty(1,3) = \qty{\mathbbm 1,\mathcal P,\mathcal T,\mathcal P\mathcal T}\rtimes SO^+\qty(1,3)
+\end{align}
+
+The quantum theory allows for projective representations of groups, this is due to states of the Hilbert space which differ by a phase represent 
+the same physical configuration, hence, representations of groups can obey the group multiplication law up to a phase, a.k.a. projective representations. 
+Constructing all the projective representations is similar to constructing all the proper representations of a cover of the group, for quantum mechanics 
+the double cover is enough. It's known that the double cover of $SO^+(1,3)$ is $SL(2,\mathbb C)$, the group of $2$x$2$ matrices of unit determinant over the 
+complex numbers, that is, \begin{align}SO^+\qty(1,3)\cong SL(2,\mathbb C)/\mathbb Z_2\end{align} the real quantum symmetry group is then $SL(2,\mathbb C)$, due 
+to it being the double cover, it contains proper spinorial representations, which are not present at $SO^+(1,3)$, at least as proper representations.
+
+Let's construct this isomorphism, first, a disclaimer, we'll use a little bit of a posteriori knowledge, which could be obtained through the item $1.b$ without 
+knowing of this construction. What we need is a way to represent Lorentz vectors over the $2$x$2$ complex values matrices, in which a proper orthochronous Lorentz transformation 
+is given through a unit determinant transformation. The correct choice, which we'll leave to explain why latter,
+\begin{align}
+    X = \mqty(-x^0+x^3& x^1-\im x^2\\x^1+\im x^2& -x^0-x^3)=-x^0\mathbbm 1 +x^i\sigma_i = x^\mu\sigma_\mu,\ \ \ \Det[X] = -x_\mu x^\mu
+\end{align}
+with $\sigma_i$ being the usual Pauli matrices, we also defined $\sigma_ 0 =-\mathbbm 1$, we leave for now open as if this is an honest four vector, 
+but in fact it transforms covariantly over $SL(2,\mathbb C)$, and even more, it's invariant. As the scalar product is given by the determinant, 
+Lorentz transformations are linear matrix multiplications which preserve the determinant,
+\begin{align}
+    X' = \mqty(-{x'}^0+{x'}^3& {x'}^1-\im {x'}^2\\{x'}^1+\im {x'}^2& -{x'}^0-{x'}^3)= \tilde U X \tilde V,\ \ \ \Det[X']=\Det[X]
+\end{align}
+also, the transformation needs to preserve the reality of each of the components, this can be assured by noting that $X^\dagger  =X$, and then 
+demanding that ${X'}^\dagger = X'$, which fixes $\tilde V ={\tilde U}^\dagger$. The preservation of the determinant gives the following constraint,
+\begin{align}
+    \Det[X]&=\Det[X']\\
+    \Det[X]&=\Det[\tilde U]\Det[X]\Det[{\tilde U}^\dagger]\\
+    1&=\norm{\Det[\tilde U]}^2\Rightarrow \Det[\tilde U]=\exp(\im \alpha)
+\end{align}
+notice that $\tilde U$ and $U=\exp(-\im\frac\alpha2)\tilde U$ generates the same transformation on $X$, hence, we can consider only the determinant one 
+matrices. What we concluded up to now is that at least the $2$x$2$ unit determinant matrices over the complexes is surjective in the (proper orthochronous?) Lorentz 
+group, let's verify it's the proper orthochronous, to see the condition $\tensor{\Lambda}{^0_0}\geq 1$, take $X = -\mathbbm 1\leftrightarrow x=\textnormal{diag}\mqty(1&0&0&0)$, then, 
+\begin{align}
+    X'=\mqty(-\tensor{\Lambda}{^0_0}+\tensor{\Lambda}{^3_0}& \tensor{\Lambda}{^1_0}-\im \tensor{\Lambda}{^2_0}\\\tensor{\Lambda}{^1_0}+\im \tensor{\Lambda}{^2_0}& -\tensor{\Lambda}{^0_0}-\tensor{\Lambda}{^3_0})\Rightarrow \Tr[X'] = -2\tensor{\Lambda}{^0_0}
+\end{align}
+thus,
+\begin{align}
+    \tensor{\Lambda}{^0_0}&=-\frac12\Tr[X']=-\frac12\Tr[UXU^\dagger]=\frac12\Tr[UU^\dagger]
+\end{align}
+as $\Det[U]=1$, we have $\Det[UU^\dagger]=1$, if $\lambda_1,\lambda_2$ are the eigenvalues of $U$, $\lambda_1^\ast,\lambda_2^\ast$ are the eigenvalues of 
+$U^\dagger$, hence, the eigenvalues of $UU^\dagger$ are $\norm{\lambda_1}^2,\norm{\lambda_2}^2>0$, the constraint $\Det[UU^\dagger]= 1 =\norm{\lambda_1}^2+\norm{\lambda_2}^2$ 
+imposes that $\Tr[UU^\dagger] = \norm{\lambda_1}^2+\norm{\lambda_1}^2\geq 2$, therefore,
+\begin{align}
+    \tensor{\Lambda}{^0_0}&=\frac12\Tr[UU^\dagger]\geq 1
+\end{align}
+this clears that $SL(2,\mathbb C)$ is at least surjective in the orthochronous Lorentz group. Now, the proper part, it suffices to show that there isn't in 
+this group a parity transformation. Suppose exists $U_p$ such that,
+\begin{align}
+    X' &= U_pXU_p'^\dagger=U_p\qty( -x^0 \mathbbm 1+x^i\sigma_i)U_p^\dagger = -x^0 \mathbbm 1-x^i\sigma_i
+\end{align}
+which imposes,
+\begin{align}
+    U_pU^\dagger_p&=\mathbbm 1\\
+    U_p\sigma_iU^\dagger_p&=-\sigma_i
+\end{align}
+
+Now, $\sigma_1\sigma_2\sigma_3 = \im\mathbbm 1$ (check it!), thus, we can compute the following,
+\begin{align}
+    U_p\sigma_1U^\dagger_pU_p\sigma_2U^\dagger_pU_p\sigma_3U^\dagger_p&=(-)^3\sigma_1\sigma_2\sigma_3\\
+    U_p\sigma_1\sigma_2\sigma_3U^\dagger_p&=-\im\mathbbm 1\\
+    U_p\im \mathbbm 1U^\dagger_p&=-\im\mathbbm 1\\
+    U_pU^\dagger_p&=-\mathbbm 1
+\end{align}
+contradiction! Thus the parity transformation with $\Det[\mathcal P]=-1$ isn't present in $SL(2,\mathbb C)$, and as this is a connected continuous group, 
+none of the transformations with $\Det[\Lambda]=-1$ are present. This concludes that $SL(2,\mathbb C)$ is surjective over the proper orthochronous Lorentz 
+group. But is still up to discussion whether this is an injective map, the answer is, it isn't, more than one transformation in $SL(2,\mathbb C)$ correspond 
+to the same $SO^+(1,3)$ transformation. This can be seen from the transformation law,
+\begin{align}
+    X' = UXU^\dagger= (-U)X(-U)^\dagger
+\end{align}
+as $U$ is two dimensional, $\Det[-U]=1$, and we conclude that both $U$ and $-U$ generate the same proper orthochronous Lorentz transformation, formally this means 
+that $SO^+(1,3)$ can be seen as an equivalence class over $SL(2,\mathbb C)$, 
+\begin{align}
+    SO^+ (1,3) \cong \qty{U\in SL(2,\mathbb C)| U\sim -U}
+\end{align}
+the action $U\rightarrow -U$ can be seen as a $\mathbb Z_2$ action over $SL(2,\mathbb C)$, hence, this equivalence class is a quotient group,
+\begin{align}
+    SO^+ (1,3) \cong  SL(2,\mathbb C)/\mathbb Z_ 2
+\end{align}
+this also means that $\mathfrak{o} \qty(1,3)\cong \mathfrak{so} \qty(1,3)\cong\mathfrak{so}^+ \qty(1,3) \cong \mathfrak {sl}(2,\mathbb C)$. The presence 
+of $\mathbb Z_ 2$ instead of $\mathbb Z_n$ signals that $SL(2,\mathbb C)$ is the double-cover, actually in this case it is the universal-cover. For general 
+dimensions the double-cover of $SO^+(p,q)$ is defined as $\textnormal{Spin}^+(p,q)$,
+\begin{align}
+    SO^+ (p,q) \cong  \textnormal{Spin}^+(p,q)/\mathbb Z_ 2
+\end{align}
+in a comically similar fashion, we have the following,
+\begin{align}
+    SO (p,q) \cong  \textnormal{Spin}(p,q)/\mathbb Z_ 2,\ \ \ O (p,q) \cong  \textnormal{Pin}(p,q)/\mathbb Z_ 2
+\end{align}
+these groups $\textnormal{Spin}^+(p,q),\textnormal{Spin}(p,q),\textnormal{Pin}(p,q)$ are more easily definable by means of Clifford algebras, 
+which we'll see soon enough, a representation of the Clifford algebra $\textnormal{Cl}(p,q)$ is given by the Dirac gamma matrices. The interesting point is 
+that $\textnormal{Spin}(1,3)\cong \textnormal{Spin}(3,1)$ contains the $\mathcal P\mathcal T$ transformation, but not parity and time inversion separately, 
+but the Pin group, which contains all $\mathcal P,\mathcal T,\mathcal P\mathcal T$ has the incredible property of
+\begin{align}
+    \textnormal{Pin}(1,3)\ncong\textnormal{Pin}(3,1)
+\end{align}
+which is a consequence of a non isomorphism between the Clifford algebras,
+\begin{align}
+    \textnormal{Cl}(1,3)\ncong\textnormal{Cl}(3,1)
+\end{align}
+
+This is simply outstanding, which in principle means that in a quantum theory with fermions and in which all $\mathcal P,\mathcal T,\mathcal P\mathcal T$ are 
+true symmetries there could be noticeable experimental results that could decide in favor of $\textnormal{Pin}(3,1)$ over $\textnormal{Pin}(1,3)$.
