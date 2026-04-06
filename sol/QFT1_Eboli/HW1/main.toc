@@ -16,8 +16,9 @@
 \contentsline {subsection}{\numberline {A.B)}Levi-Civita}{10}{subsection.A.2}%
 \contentsline {section}{\numberline {B}Lorentz Group Digression}{11}{appendix.B}%
 \contentsline {section}{\numberline {C}Determinants}{15}{appendix.C}%
-\contentsline {section}{\numberline {D}Noether's Theorem}{16}{appendix.D}%
-\contentsline {section}{\numberline {E}Noether's Second Theorem}{19}{appendix.E}%
-\contentsline {section}{\numberline {F}Boundary Conditions}{21}{appendix.F}%
-\contentsline {section}{\numberline {G}Phase space structure of EM}{24}{appendix.G}%
-\contentsline {section}{\numberline {H}Algebra of conserved quantities}{27}{appendix.H}%
+\contentsline {section}{\numberline {D}Functional Derivative}{16}{appendix.D}%
+\contentsline {section}{\numberline {E}Noether's Theorem}{17}{appendix.E}%
+\contentsline {section}{\numberline {F}Noether's Second Theorem}{20}{appendix.F}%
+\contentsline {section}{\numberline {G}Boundary Conditions}{22}{appendix.G}%
+\contentsline {section}{\numberline {H}Phase space structure of EM}{25}{appendix.H}%
+\contentsline {section}{\numberline {I}Algebra of conserved quantities}{28}{appendix.I}%

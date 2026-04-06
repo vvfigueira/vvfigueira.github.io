@@ -1,0 +1,22 @@
+\section{Functional Derivative}
+
+First let's clear what is a functional, a functional is a map from some space of functions to the real numbers, 
+\begin{align}
+    I:\mathcal F\qty(\Omega\subset \mathbb R^m;\mathbb R^n)&\rightarrow\mathbb R\\
+    f&\mapsto I\qty[f]
+\end{align}
+
+The most common way a functional can show up is by integration,
+\begin{align}
+    I[f]=\int\limits_{\Omega}\dd[m]{x}\mathcal I\qty[f(x)]
+\end{align}
+in these cases we have to guarantee that the domain of the functional is the space of functions for which the integral is well defined and converges,
+\begin{align}
+    f\in \mathcal F\qty(\Omega\subset \mathbb R^m;\mathbb R^n)\Rightarrow I[f]=\int\limits_{\Omega}\dd[m]{x}\mathcal I\qty[f(x)]<\infty
+\end{align}
+now, a functional derivative, as all derivatives do, measures the diference with respect to change, in this case the difference is the functional 
+value difference with respect to a change in the function it's evaluated in. As is the case in multivariate calculus, we can define the derivative 
+implicitly by doing a directional derivative. Pick $\psi\in \mathcal F\qty(\Omega\subset \mathbb R^m;\mathbb R^n)$ and $\epsilon\in\mathbb R$,
+\begin{align}
+    \dv{I[f+\epsilon \psi]}{\epsilon}\eval_{\epsilon=0} = \int\limits_\Omega\dd[m]{y}\fdv{I[f]}{f(y)}\psi(y)
+\end{align}
