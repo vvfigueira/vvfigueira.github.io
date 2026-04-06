@@ -1,34 +1,38 @@
 \section{Algebra of conserved quantities}
 
-Given an internal symmetry of our action,
+% \subsection{Internal Symmetries}
 
+Given an internal symmetry of our action,
 \begin{align}
     \begin{cases}\phi^I\qty(x)&\rightarrow {\phi'}^I\qty(x;a)\\x^\mu&\rightarrow {x'}^\mu = x^\mu\end{cases}  
     \Rightarrow S[\phi]=S'_a[\phi]
 \end{align}
 where $I$ encode whatever index the fields of our theory may have. Suppose this symmetry is 
 represented by some Lie Group/Algebra, that is, we have,
-
 \begin{align}
-    {\phi'}^I(x) &=\tensor{\exp\qty(-\im a^iT_i)}{^I_J}\phi^J\qty(x)\Rightarrow \dv{{\phi'}^I(x)}{a^i}\eval_{a^i=0}=-\im\tensor{T}{^I_J_i}\phi^J\qty(x)
+    {\phi'}^I(x) &=\tensor{\exp\qty(-\im a_iT^i)}{^I_J}\phi^J\qty(x)\Rightarrow \dv{{\phi'}^I(x)}{a^i}\eval_{a^i=0}=-\im\tensor{T}{^I_J_i}\phi^J\qty(x)
 \end{align}
 
-This transformation generates a conserved current,
-
+Consider the conserved current associated with this symmetry,
 \begin{align}
     \tensor{J}{^\mu_i} &=\pdv{\mathcal L}{\partial_\mu\phi^I\qty(x)}\dv{{\phi'}^I\qty(x)}{a^i}\eval_{a^i=0}\\
     \tensor{J}{^\mu_i} &=(-)^2\partial^\mu\phi_I\qty(x)\im\tensor{T}{^I_J_i}\phi^J\qty(x)\\
     \tensor{J}{^0_i} &=-\pi_I\im\tensor{T}{^I_J_i}\phi^J
 \end{align}
 
-Compute the conserved charge,
-
+Where we made use of the canonical conjugated momenta $\pi_I = \pdv{\mathcal L}{{\dot \phi}^I}$. Now compute the conserved charge,
 \begin{align}
     Q_i&=\int\dd[3]{\vb x}\tensor{J}{^0_i}=-\int\dd[3]{\vb x}\pi_I\im\tensor{T}{^I_J_i}\phi^J
 \end{align}
 
-Now, the Poisson bracket,
-
+Remember from classical mechanics, in the Hamiltonian formalism we have as dynamical variables the generalized coordinate $\phi^I(t,\vb x)$, and it's 
+canonical conjugated momentum $\pi_I(t,\vb x)$, they define the phase space and can be used to construct the Poisson bracket,
+\begin{align}
+    \acomm{A}{B}&=\int\dd[3]{\vb x}\qty(\fdv{A}{\phi^I\qty(\vb x)}\fdv{B}{\pi_I\qty(\vb x)}-\fdv{A}{\pi_I\qty(\vb x)}\fdv{A}{\phi^I\qty(\vb x)})
+\end{align}
+as this is a theory of the continuum, derivatives have to be exchanged by functional derivatives and sum over canonical pairs have to be exchanged 
+for integration, still, it satisfy the canonical equal time Poisson bracket relations, $\acomm{\phi^I(t,\vb x)}{\pi_J(t,\vb y)} = \tensor{\delta}{^I_J}\delta^{(3)}\qty(\vb x-\vb y)$ 
+(verify!). It's interesting to compute the Poisson bracket between two conserved charges,
 \begin{align}
     \acomm{Q_i}{Q_j}&=\int\dd[3]{\vb x}\qty(\fdv{Q_i}{\phi^I\qty(\vb x)}\fdv{Q_j}{\pi_I\qty(\vb x)}-\fdv{Q_i}{\pi_I\qty(\vb x)}\fdv{Q_j}{\phi^I\qty(\vb x)})\\
     \acomm{Q_i}{Q_j}&=(-)^2\int\dd[3]{\vb x}\qty(\pi_K\im\tensor{T}{^K_I_i}\im\tensor{T}{^I_J_j}\phi^J-\im\tensor{T}{^I_J_i}\phi^J\pi_K\im\tensor{T}{^K_I_j})\\
@@ -38,17 +42,16 @@ Now, the Poisson bracket,
 
 Now, as $\tensor{T}{^K_I_i}$ are the generators of a Lie Algebra, they obey an commutation relation of the form, $\comm{T_i}{T_j} = \im \tensor{f}{_i_j^k}T_k$, 
 thus,
-
 \begin{align}
     \acomm{Q_i}{Q_j}&=\im^2\int\dd[3]{\vb x}\pi_K\qty(\im \tensor{f}{_i_j^k}\tensor{T}{^K_J_k} )\phi^J\\
     \acomm{Q_i}{Q_j}&=-\im^2 \tensor{f}{_i_j^k}\qty(-)\int\dd[3]{\vb x}\pi_K\im\tensor{T}{^K_J_k}\phi^J\\
     \acomm{Q_i}{Q_j}&=\tensor{f}{_i_j^k}Q_k
 \end{align}
 
-In the quantum theory, at least from the canonical quantization POV, we have the map $\comm{\hat A}{\hat B} = \im\hbar \acomm{A}{B}$, therefore, 
+The classical charges satisfy an algebra with the same structure constants as the symmetry group! In the quantum theory, at least from the canonical quantization POV, 
+we have a correspondence between the commutator of two operators, and the Poisson bracket between the classical observables, $\comm{\hat A}{\hat B} \rightarrow \im\hbar \acomm{A}{B}$, therefore, 
 each classical conserved charge should be correspondent to a conserved charge operator $\hat Q_i$ which \textit{should} 
 satisfy the same Lie Algebra,
-
 \begin{align}
     \comm{\hat Q_i}{\hat Q_j}&=\im\hbar \tensor{f}{_i_j^k}\hat Q_k
 \end{align}
@@ -56,7 +59,6 @@ satisfy the same Lie Algebra,
 Almost always this isn't the case, and the symmetry has a anomaly in the quantum theory, that is, a transformation which is a symmetry in the classical 
 theory isn't anymore a symmetry when the theory is quantized. For these cases, the most common and physical relevant way an anomaly shows is 
 through a central extension of the Lie Algebra,
-
 \begin{align}
     \comm{\hat Q_i}{\hat Q_j}&=\im\hbar \tensor{f}{_i_j^k}\hat Q_k+\hbar^2 C_{[ij]}\mathbbm 1
 \end{align}
@@ -64,26 +66,25 @@ through a central extension of the Lie Algebra,
 The name \textit{central extension} is so because $C_{[ij]}$ are just numbers, that is, they commute with every other generator of the algebra --- $\comm{C_{[ij]}}{\hat Q_k}=0$ ---, and thus, 
 they belong to the center of the algebra --- the maximum set of mutually commuting generators ---. The $\hbar^2$ is needed for dimensional reasons (check it!), and 
 it explain why this don't show up in the classical theory, if we consider the limit of,
-
 \begin{align}
     \acomm{Q_i}{Q_f}\coloneq \lim\limits_{\hbar\rightarrow 0}\frac{1}{\im\hbar}\comm{\hat Q_i}{\hat Q_j} = \tensor{f}{_i_j^k} Q_k
 \end{align}
 
 That is, the $\hbar^2$ term drop off, it's a true quantum effect. There are other ways of understanding why the central extensions of algebras show up 
 in the process of quantization, there is a close relation with the need to consider the double cover of Lie Groups/Algebras when going from classical 
-symmetries to quantum symmetries. Most of the anomalies are harmless, but, if there is an gauge anomaly the theory is physically inconsistent.
+symmetries to quantum symmetries, and also some overlap with the need of normal ordering quantum operators. Most of the anomalies are harmless, but, if there is an gauge anomaly the theory is physically inconsistent.
 
 Luckily, the Poincaré Group/Algebra does not allow any kind of central extension (see Weinberg for proof), hence, the Poincaré symmetry is realized 
 correctly in the quantum theory.
 
 Other relevant property of the conserved charges is: they generate the symmetry transformation in the phase space variables,
-
 \begin{align}
-    \acomm{\phi^I(x)}{Q_i}&= \int\dd[3]{\vb y}\qty(\fdv{\phi^I(t,\vb x)}{\phi^K\qty(\vb y)}\fdv{Q_i}{\pi_K\qty(\vb y)}-\fdv{\phi^I\qty(t,\vb x)}{\pi_K\qty(\vb y)}\fdv{Q_i}{\phi^K\qty(\vb y)})\\
-    \acomm{\phi^I(x)}{Q_i}&= -\int\dd[3]{\vb y}\im\tensor{T}{^K_J_i}\phi^J\tensor{\delta}{^I_K}\delta^{(3)}\qty(\vb x-\vb y)\\
-    \acomm{\phi^I(x)}{Q_i}&= -\im\tensor{T}{^I_J_i}\phi^J\equiv \dv{{\phi'}^I}{a^i}\eval_{a^I=0}\Rightarrow\comm{{\hat\phi}^I(x)}{\hat Q_i}= \hbar\tensor{T}{^I_J_i}{\hat\phi}^J
+    \acomm{Q_i}{\phi^I(x)}&= \int\dd[3]{\vb y}\qty(\fdv{Q_i}{\phi^K\qty(\vb y)}\fdv{\phi^I(t,\vb x)}{\pi_K\qty(\vb y)}-\fdv{Q_i}{\pi_K\qty(\vb y)}\fdv{\phi^I\qty(t,\vb x)}{\phi^K\qty(\vb y)})\\
+    \acomm{Q_i}{\phi^I(x)}&= (-)^2\int\dd[3]{\vb y}\im\tensor{T}{^K_J_i}\phi^J\tensor{\delta}{^I_K}\delta^{(3)}\qty(\vb x-\vb y)\\
+    \acomm{Q_i}{\phi^I(x)}&= \im\tensor{T}{^I_J_i}\phi^J\equiv \dv{{\phi'}^I}{a^i}\eval_{a^I=0}\Rightarrow \comm{{\hat Q_i}}{{\hat\phi}^I(x)}= \im\hbar\dv{{\hat{\phi'}}^I}{a^i}\eval_{a^I=0}
 \end{align}
 
+The same reasoning can be applied to space-time symmetries (try it!).
 % \subsection{Space-Time Symmetries}
 
 % Let's start with the easiest one, translations,
