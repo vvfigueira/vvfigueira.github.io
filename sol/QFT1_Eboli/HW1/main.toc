@@ -19,4 +19,5 @@
 \contentsline {section}{\numberline {D}Noether's Theorem}{16}{appendix.D}%
 \contentsline {section}{\numberline {E}Noether's Second Theorem}{19}{appendix.E}%
 \contentsline {section}{\numberline {F}Boundary Conditions}{21}{appendix.F}%
-\contentsline {section}{\numberline {G}Algebra of conserved quantities}{24}{appendix.G}%
+\contentsline {section}{\numberline {G}Phase space structure of EM}{24}{appendix.G}%
+\contentsline {section}{\numberline {H}Algebra of conserved quantities}{27}{appendix.H}%
