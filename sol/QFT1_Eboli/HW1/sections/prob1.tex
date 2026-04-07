@@ -2,19 +2,29 @@
 \probitem{}
 
 Let an element of the Lorentz group be represented by, \begin{align}U\qty(\Lambda) = \exp\qty(\frac\im 2\omega_{\mu\nu}M^{\mu\nu})\end{align} this is indirectly defined through 
-the defining representation of the Lorentz group, \begin{align}\tensor{\Lambda}{^\alpha_\beta}\qty(\omega)\rightarrow -\im\dv{\tensor{\Lambda}{^\alpha_\beta}}{\omega_{\mu\nu}}\eval_{\omega=0} = -\frac\im 2 \qty(\tensor{g}{^\alpha^\mu}\tensor{g}{_\beta^\nu}-\tensor{g}{^\alpha^\nu}\tensor{g}{_\beta^\mu})\end{align} 
-this fixes the composition law of two transformations, then,
+the defining representation of the Lorentz group, \begin{align}\tensor{\Lambda}{^\alpha_\beta}\qty(\omega)%\rightarrow -\im\dv{\tensor{\Lambda}{^\alpha_\beta}}{\omega_{\mu\nu}}\eval_{\omega=0} = -\frac\im 2 \qty(\tensor{g}{^\alpha^\mu}\tensor{g}{_\beta^\nu}-\tensor{g}{^\alpha^\nu}\tensor{g}{_\beta^\mu})
+\end{align} 
+using our knowledge of the composition law of two transformations,
 \begin{align}
     U\qty(\Lambda_1)U\qty(\Lambda_2)U^{-1}\qty(\Lambda_1) &=U(\Lambda_1\Lambda_2 \Lambda_1^{\textnormal T})\\
-    -\im U\qty(\Lambda_1)\dv{U\qty(\Lambda_2)}{\omega_{2\mu\nu}}\eval_{\omega_2=0}U^{-1}\qty(\Lambda_1) &=-\im \dv{U(\Lambda_1 \Lambda_2 \Lambda_1^{\textnormal T})}{\omega_{2\mu\nu}}\eval_{\omega_2=0}\\
-     U\qty(\Lambda_1)M^{\mu\nu}U^{-1}\qty(\Lambda_1) &=-\im \dv{U(\Lambda_1 \Lambda_2 \Lambda_1^{\textnormal T})}{\omega_{3\alpha\beta}}\eval_{\omega_3=0}\frac12\dv{\omega_{3\alpha\beta}}{\omega_{2\mu\nu}}\eval_{\omega_2=0}\\
-     U\qty(\Lambda_1)M^{\mu\nu}U^{-1}\qty(\Lambda_1) &=M^{\alpha\beta}\frac12\dv{\omega_{3\alpha\beta}}{\omega_{2\mu\nu}}\eval_{\omega_2=0}
+    U\qty(\Lambda_1)U\qty(\mathbbm 1+\omega_2)U^{-1}\qty(\Lambda_1) &=U(\Lambda_1 \qty(\mathbbm 1+\omega_2) \Lambda_1^{\textnormal T})\\
+    U\qty(\Lambda_1)\qty(\mathbbm 1+\frac\im 2{\omega_2}_{\mu\nu}M^{\mu\nu})U^{-1}\qty(\Lambda_1) &=U(\mathbbm 1+\Lambda_1 \omega_2 \Lambda_1^{\textnormal T})\\
+    \mathbbm 1+U\qty(\Lambda_1)\frac\im 2{\omega_2}_{\mu\nu}M^{\mu\nu}U^{-1}\qty(\Lambda_1) &=\mathbbm 1 +\frac\im 2\tensor{\qty(\Lambda_1 \omega_2 \Lambda_1^{\textnormal T})}{_\alpha_\beta}M^{\alpha\beta}\\
+    {\omega_2}_{\mu\nu}U\qty(\Lambda_1)M^{\mu\nu}U^{-1}\qty(\Lambda_1) &=\tensor{{\Lambda_1}}{_\alpha^\mu}\tensor{{\omega_2}}{_\mu_\nu}\tensor{{\Lambda_1}}{_\beta^\nu}M^{\alpha\beta}\\
+    U\qty(\Lambda_1)M^{\mu\nu}U^{-1}\qty(\Lambda_1) &=\tensor{{\Lambda_1}}{_\alpha^\mu}\tensor{{\Lambda_1}}{_\beta^\nu}M^{\alpha\beta}
 \end{align}
-$\omega_3$ is implicitly defined by
+this equation already is useful by itself, as it shows how the generators themselves transforms under a group 
+action, but, as we're interested into the algebra of the group, we still need to expand around $\Lambda_2$,
 \begin{align}
-    -\im\dv{\tensor{\qty(\Lambda_1 \Lambda_2 \Lambda_1^{\textnormal T})}{^\alpha_\beta}}{\omega_{3\mu\nu}}\eval_{\omega_3=0} &= -\frac\im 2 \qty(\tensor{g}{^\alpha^\mu}\tensor{g}{_\beta^\nu}-\tensor{g}{^\alpha^\nu}\tensor{g}{_\beta^\mu})\\
-    -\im\dv{\tensor{\qty(\Lambda_1 \Lambda_2 \Lambda_1^{\textnormal T})}{^\alpha_\beta}}{\omega_{2\rho\sigma}}\eval_{\omega_2=0}\frac12\dv{\omega_{2\rho\sigma}}{\omega_{3\mu\nu}} &= -\frac\im 2 \qty(\tensor{g}{^\alpha^\mu}\tensor{g}{_\beta^\nu}-\tensor{g}{^\alpha^\nu}\tensor{g}{_\beta^\mu})
-\end{align} 
-
+    U\qty(\mathbbm 1+\omega_1)M^{\mu\nu}U^{-1}\qty(\mathbbm 1+\omega_1) &=\qty(\tensor{g}{_\alpha^\mu}+\tensor{{\omega_1}}{_\alpha^\mu})\qty(\tensor{g}{_\beta^\nu}+\tensor{{\omega_1}}{_\beta^\nu})M^{\alpha\beta}\\
+    \qty(\mathbbm 1 +\frac\im 2{\omega_1}_{\alpha\beta}M^{\alpha\beta})M^{\mu\nu}\qty(\mathbbm 1 -\frac\im 2{\omega_1}_{\alpha\beta}M^{\alpha\beta})&=M^{\mu\nu}+M^{\mu\beta}\tensor{{\omega_1}}{_\beta^\nu}+M^{\alpha\nu}\tensor{{\omega_1}}{_\alpha^\mu}\\
+    M^{\mu\nu}+\frac\im 2{\omega_1}_{\alpha\beta}M^{\alpha\beta}M^{\mu\nu} -\frac\im 2{\omega_1}_{\alpha\beta}M^{\mu\nu}M^{\alpha\beta}&=M^{\mu\nu}+M^{\mu\beta}\tensor{{\omega_1}}{_\beta^\nu}+M^{\alpha\nu}\tensor{{\omega_1}}{_\alpha^\mu}\\
+    \frac\im 2{\omega_1}_{\alpha\beta}\comm{M^{\alpha\beta}}{M^{\mu\nu}}&={\omega_1}_{\alpha\beta}\qty(-\tensor{g}{^\alpha^\nu}M^{\mu\beta}+M^{\alpha\nu}g^{\beta\mu})\\
+    \frac\im 2{\omega_1}_{\alpha\beta}\comm{M^{\alpha\beta}}{M^{\mu\nu}}&=\frac12{\omega_1}_{\alpha\beta}\qty(-\tensor{g}{^\alpha^\nu}M^{\mu\beta}+M^{\alpha\nu}g^{\beta\mu}+\tensor{g}{^\beta^\nu}M^{\mu\alpha}-M^{\beta\nu}g^{\alpha\mu})
+\end{align}
+thus,
+\begin{align}
+    \im \comm{M^{\alpha\beta}}{M^{\mu\nu}}&=-\tensor{g}{^\alpha^\nu}M^{\mu\beta}+M^{\alpha\nu}g^{\beta\mu}+\tensor{g}{^\beta^\nu}M^{\mu\alpha}-M^{\beta\nu}g^{\alpha\mu}
+\end{align}
 
 \probitem{}

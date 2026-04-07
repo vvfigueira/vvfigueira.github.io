@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  6 APR 2026 17:36
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  7 APR 2026 15:01
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1119,7 +1119,12 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 [1
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./sections/prob1.tex)
+(./sections/prob1.tex
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 15.
+
+ (c:/texlive/2025/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+))
 
 [2] (./sections/prob2.tex)
 
@@ -1148,11 +1153,7 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 LaTeX Warning: Command \. invalid in math mode on input line 39.
 
 Missing character: There is no ̇ (U+0307) in font cmmi8!
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 46.
 
-(c:/texlive/2025/texmf-dist/tex/latex/bbm-macros/ubbm.fd
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
 
 [11]
 
@@ -1220,12 +1221,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32597 strings out of 470203
+ 32603 strings out of 470203
  125016,1144653 words of node,token memory allocated
- 1988 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 10 sub_mlist, 1 glyph, 481 attribut
-e, 60 glue_spec, 242 attribute_list, 2 write nodes
-   avail lists: 1:9,2:3893,3:414,4:77,5:804,6:104,7:7260,8:311,9:3108,10:12,11:3
+ 1904 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 10 sub_mlist, 1 glyph, 453 attribut
+e, 60 glue_spec, 228 attribute_list, 2 write nodes
+   avail lists: 1:9,2:3893,3:414,4:77,5:804,6:104,7:7260,8:300,9:3108,10:12,11:3
 85
  59717 multiletter control sequences out of 65536+600000
  76 fonts using 5057223 bytes
@@ -1247,10 +1248,10 @@ blic/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eu
 fm10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
 pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (29 pages, 276413 bytes).
+Output written on main.pdf (29 pages, 277134 bytes).
 
-PDF statistics: 579 PDF objects out of 1000 (max. 8388607)
- 515 compressed objects within 6 object streams
- 274 named destinations out of 1000 (max. 131072)
+PDF statistics: 585 PDF objects out of 1000 (max. 8388607)
+ 521 compressed objects within 6 object streams
+ 280 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
