@@ -2,29 +2,186 @@
 \probitem{}
 
 Let an element of the Lorentz group be represented by, \begin{align}U\qty(\Lambda) = \exp\qty(\frac\im 2\omega_{\mu\nu}M^{\mu\nu})\end{align} this is indirectly defined through 
-the defining representation of the Lorentz group, \begin{align}\tensor{\Lambda}{^\alpha_\beta}\qty(\omega)%\rightarrow -\im\dv{\tensor{\Lambda}{^\alpha_\beta}}{\omega_{\mu\nu}}\eval_{\omega=0} = -\frac\im 2 \qty(\tensor{g}{^\alpha^\mu}\tensor{g}{_\beta^\nu}-\tensor{g}{^\alpha^\nu}\tensor{g}{_\beta^\mu})
-\end{align} 
-using our knowledge of the composition law of two transformations,
+the defining representation of the Lorentz group, which sets up the composition law, and also the inverse, 
 \begin{align}
-    U\qty(\Lambda_1)U\qty(\Lambda_2)U^{-1}\qty(\Lambda_1) &=U(\Lambda_1\Lambda_2 \Lambda_1^{\textnormal T})\\
+    \tensor{\Lambda}{^\alpha_\beta}\qty(\omega)\rightarrow U\qty(\Lambda_1) U\qty(\Lambda_2) = U(\Lambda_1\Lambda_2),\ \ \ U^{-1}(\Lambda)= U\qty(\Lambda^{\textnormal T}) %\rightarrow -\im\dv{\tensor{\Lambda}{^\alpha_\beta}}{\omega_{\mu\nu}}\eval_{\omega=0} = -\frac\im 2 \qty(\tensor{g}{^\alpha^\mu}\tensor{g}{_\beta^\nu}-\tensor{g}{^\alpha^\nu}\tensor{g}{_\beta^\mu})
+\end{align} 
+the Lie algebra of a group measures the non-commutative aspect of different group transformations, hence, an way in which the Lie algebra will show up is 
+when analyzing composition of transformations, the best choice of composition of transformations to look is doing a transformation 1, after doing a transformation 2 and then 
+undoing the transformation 1, this composition measures by how much the transformation 1 affects the way the transformation 2 should act, in other words, measures the non-commutative 
+aspect of both transformations,
+\begin{align}
+    U\qty(\Lambda_1)U\qty(\Lambda_2)U^{-1}\qty(\Lambda_1) &=U(\Lambda_1\Lambda_2 \Lambda_1^{\textnormal T})
+\end{align}
+now expand on $\Lambda_2=\mathbbm 1+\omega_2$,
+\begin{align}
     U\qty(\Lambda_1)U\qty(\mathbbm 1+\omega_2)U^{-1}\qty(\Lambda_1) &=U(\Lambda_1 \qty(\mathbbm 1+\omega_2) \Lambda_1^{\textnormal T})\\
     U\qty(\Lambda_1)\qty(\mathbbm 1+\frac\im 2{\omega_2}_{\mu\nu}M^{\mu\nu})U^{-1}\qty(\Lambda_1) &=U(\mathbbm 1+\Lambda_1 \omega_2 \Lambda_1^{\textnormal T})\\
     \mathbbm 1+U\qty(\Lambda_1)\frac\im 2{\omega_2}_{\mu\nu}M^{\mu\nu}U^{-1}\qty(\Lambda_1) &=\mathbbm 1 +\frac\im 2\tensor{\qty(\Lambda_1 \omega_2 \Lambda_1^{\textnormal T})}{_\alpha_\beta}M^{\alpha\beta}\\
     {\omega_2}_{\mu\nu}U\qty(\Lambda_1)M^{\mu\nu}U^{-1}\qty(\Lambda_1) &=\tensor{{\Lambda_1}}{_\alpha^\mu}\tensor{{\omega_2}}{_\mu_\nu}\tensor{{\Lambda_1}}{_\beta^\nu}M^{\alpha\beta}\\
     U\qty(\Lambda_1)M^{\mu\nu}U^{-1}\qty(\Lambda_1) &=\tensor{{\Lambda_1}}{_\alpha^\mu}\tensor{{\Lambda_1}}{_\beta^\nu}M^{\alpha\beta}
 \end{align}
-this equation already is useful by itself, as it shows how the generators themselves transforms under a group 
-action, but, as we're interested into the algebra of the group, we still need to expand around $\Lambda_2$,
+in this last step we factored out $\omega_2$ by using that both sides are antisymmetric in $\mu\nu$. This equation already is useful by itself, as it shows how the generators themselves transforms under a group 
+action, but, as we're interested into the algebra of the group, we still need to expand around $\Lambda_1$,
 \begin{align}
     U\qty(\mathbbm 1+\omega_1)M^{\mu\nu}U^{-1}\qty(\mathbbm 1+\omega_1) &=\qty(\tensor{g}{_\alpha^\mu}+\tensor{{\omega_1}}{_\alpha^\mu})\qty(\tensor{g}{_\beta^\nu}+\tensor{{\omega_1}}{_\beta^\nu})M^{\alpha\beta}\\
     \qty(\mathbbm 1 +\frac\im 2{\omega_1}_{\alpha\beta}M^{\alpha\beta})M^{\mu\nu}\qty(\mathbbm 1 -\frac\im 2{\omega_1}_{\alpha\beta}M^{\alpha\beta})&=M^{\mu\nu}+M^{\mu\beta}\tensor{{\omega_1}}{_\beta^\nu}+M^{\alpha\nu}\tensor{{\omega_1}}{_\alpha^\mu}\\
     M^{\mu\nu}+\frac\im 2{\omega_1}_{\alpha\beta}M^{\alpha\beta}M^{\mu\nu} -\frac\im 2{\omega_1}_{\alpha\beta}M^{\mu\nu}M^{\alpha\beta}&=M^{\mu\nu}+M^{\mu\beta}\tensor{{\omega_1}}{_\beta^\nu}+M^{\alpha\nu}\tensor{{\omega_1}}{_\alpha^\mu}\\
-    \frac\im 2{\omega_1}_{\alpha\beta}\comm{M^{\alpha\beta}}{M^{\mu\nu}}&={\omega_1}_{\alpha\beta}\qty(-\tensor{g}{^\alpha^\nu}M^{\mu\beta}+M^{\alpha\nu}g^{\beta\mu})\\
-    \frac\im 2{\omega_1}_{\alpha\beta}\comm{M^{\alpha\beta}}{M^{\mu\nu}}&=\frac12{\omega_1}_{\alpha\beta}\qty(-\tensor{g}{^\alpha^\nu}M^{\mu\beta}+M^{\alpha\nu}g^{\beta\mu}+\tensor{g}{^\beta^\nu}M^{\mu\alpha}-M^{\beta\nu}g^{\alpha\mu})
+    \frac\im 2{\omega_1}_{\alpha\beta}\comm{M^{\alpha\beta}}{M^{\mu\nu}}&={\omega_1}_{\alpha\beta}\qty(-\tensor{g}{^\alpha^\nu}M^{\mu\beta}+M^{\alpha\nu}g^{\beta\mu})
 \end{align}
-thus,
+to factorize $\omega_1$ we need to ensure both sides are antisymmetric, this can be simply done by antisymmetrizing the right hand side,
 \begin{align}
+    \frac\im 2{\omega_1}_{\alpha\beta}\comm{M^{\alpha\beta}}{M^{\mu\nu}}&=\frac12{\omega_1}_{\alpha\beta}\qty(-\tensor{g}{^\alpha^\nu}M^{\mu\beta}+M^{\alpha\nu}g^{\beta\mu}+\tensor{g}{^\beta^\nu}M^{\mu\alpha}-M^{\beta\nu}g^{\alpha\mu})\\
     \im \comm{M^{\alpha\beta}}{M^{\mu\nu}}&=-\tensor{g}{^\alpha^\nu}M^{\mu\beta}+M^{\alpha\nu}g^{\beta\mu}+\tensor{g}{^\beta^\nu}M^{\mu\alpha}-M^{\beta\nu}g^{\alpha\mu}
 \end{align}
+The sign on the right hand side is dependent of metric convention, here the answer is for the $\mqty(-&+&+&+)$ metric, the opposite sign metric has as answer an additional sign in the right hand side.
 
 \probitem{}
+
+In the last item we obtained the Lie algebra $\mathfrak {so}^+\qty(1,3)$, or as we argued $\mathfrak {sl}\qty(2,\mathbb C)$. The usual way of constructing representations of Lie algebras is to do by the highest weight 
+method, that is, we set up all the Casimirs of the algebra and choose a maximal set of mutually commuting algebra elements, then we construct a vector space in which these chosen operators are diagonal, and lastly 
+with the remaining algebra elements construct ladder operators which acts on the vector space by lowering and increasing the eigenvalues of the chosen mutually commuting operators. As a remainder --- and as will be 
+relevant --- the main example of this process which 
+is physically relevant is the computation of the representations of the group $SO(3)\cong SU(2)/{\mathbb Z_2}$, which have the algebra $\mathfrak {so}\qty(3)\cong \mathfrak{su}\qty(2)$,
+\begin{align}
+    \comm{J^i}{J^j}&=\im\tensor{\epsilon}{^i^j_k}J^k,\ \ \ i,j,k =1,2,3\label{eq:su2algebra}
+\end{align}
+the number of Casimirs of an algebra is not a trivial thing to obtain, for special cases, as semi-simple algebras, the number of independent Casimirs is equal to the rank of the algebra. Luckily, there is a complete 
+classification of all the simple Lie algebras and their ranks, the $\mathfrak{su}\qty(2)$ algebra is simple of rank one, then there is just one independent Casimir, $C = \delta_{ij}J^iJ^j$. 
+Usually $J^3$ is chosen as part of the maximal set of mutually commuting algebra elements --- in this case the \textit{set} is just one element ---. Representations are then indexed by two numbers,
+\begin{align}
+    C\ket{j,m} = j\qty(j+1)\ket{k,m}, \ \ \ J^3\ket{j,m} = m\ket{j,m}, \ \ \ j\in \frac12 \mathbb N,\ \ \ m = -j, -j+1,\cdots , j-1, j
+\end{align}
+
+The same process will happen for the Lorentz algebra, but now the rank of the algebra is two, it can be verified that the two Casimirs are, 
+\begin{align}
+    C_1 = \frac12 M^{\mu\nu}M_{\mu\nu},\ \ \ C_2 = \frac14 \epsilon_{\mu\nu\alpha\beta}M^{\mu\nu}M^{\alpha\beta}
+\end{align}
+sadly, is not that enlightening to workout the representations in a covariant manner, it's easier to decompose $M^{\mu\nu}$ into it's spatial parts,
+\begin{align}
+    J_i &=\frac12\epsilon_{ijk}M^{jk},\ \ \ K^i= M^{i0}
+\end{align}
+now we have to compute the algebra in terms of these new generators, first the $J-J$ commutation,
+\begin{align}
+    \comm{J_i}{J_j}&=\frac14\epsilon_{iab}\epsilon_{jlm}\comm{M^{ab}}{M^{lm}}\\
+    &=\frac\im 4\epsilon_{iab}\epsilon_{jlm}\qty(g^{al}M^{bm}-g^{bl}M^{am}+g^{bm}M^{al}-g^{am}M^{bl})\\
+    &=\frac\im 2\epsilon_{iab}\epsilon_{jlm}\qty(g^{al}M^{bm}+g^{bm}M^{al})\\
+    &=\frac\im 2\epsilon_{iab}\epsilon_{jlm}\qty(g^{al}M^{bm}-g^{am}M^{bl})\\
+    &=\im\epsilon_{iab}\epsilon_{jlm}g^{al}M^{bm}=\im\tensor{\epsilon}{_i^l_b}\epsilon_{jlm}M^{bm}\\
+    &=\im\tensor{\epsilon}{^l_b_i}\epsilon_{lmj}M^{bm}=\im\qty(g_{bm}g_{ij}-\tensor{g}{_b_j}\tensor{g}{_i_m})M^{bm},\ \ \ \textnormal{antisymmetrize }(b\leftrightarrow m)\\
+    &=-\frac\im2\qty(\tensor{g}{_b_j}\tensor{g}{_m_i}-\tensor{g}{_b_i}\tensor{g}{_m_j})M^{bm}=\frac\im2\tensor{\epsilon}{_l_b_m}\tensor{\epsilon}{^l_i_j}M^{bm}\\
+    &=\im\tensor{\epsilon}{_i_j^l}J_l
+\end{align}
+now the $J-K$,
+\begin{align}
+    \comm{J_i}{K^j}&=\frac12\epsilon_{iab}\comm{M^{ab}}{M^{j0}}\\
+    &=\frac\im2\epsilon_{iab}\qty(\tensor{g}{^a^j}M^{b0}-\tensor{g}{^b^j}M^{a0}+g^{b0}\tensor{M}{^a^j}-g^{a0}\tensor{M}{^b^j})\\
+    &=\frac\im2\epsilon_{iab}2\tensor{g}{^a^j}M^{b0}=\im\tensor{\epsilon}{_i^j_b}M^{b0}\\
+    &=\im\tensor{\epsilon}{_i^j_k}K^k
+\end{align}
+lastly $K-K$,
+\begin{align}
+    \comm{K^i}{K^j}&=\comm{M^{i0}}{M^{j0}}\\
+    &=\im\qty(g^{ij}M^{00}-\tensor{g}{^i^0}\tensor{M}{^0^j}+\tensor{g}{^0^0}M^{ij}-\tensor{g}{^0^j}\tensor{M}{^i_0})\\
+    &=-\im M^{ij}=-\im \tensor{g}{^i_a}\tensor{g}{^j_b}M^{ab},\ \ \ \textnormal{antisymmetrize }(a\leftrightarrow b)\\
+    &=-\frac\im2\qty(\tensor{g}{^i_a}\tensor{g}{^j_b}-\tensor{g}{^i_b}\tensor{g}{^j_a})M^{ab}\\
+    &=-\frac\im2\tensor{\epsilon}{^l^i^j}\epsilon_{lab}M^{ab}\\
+    &=-\im\epsilon^{ijk}J_{k}
+\end{align}
+
+Just for clarity sake, let's rewrite this new representation of the full $\mathfrak {sl}\qty(2,\mathbb C)$ algebra,
+\begin{align} 
+    \comm{J_i}{J_j}&=\im\tensor{\epsilon}{_i_j^k}J_k\\
+    \comm{J_i}{K^j}&=\im\tensor{\epsilon}{_i^j_k}K^k\\
+    \comm{K^i}{K^j}&=-\im\epsilon^{ijk}J_{k}
+\end{align}
+we just have been careful with the index placement, but, for our choice of metric $g_{ij}=\delta_{ij}$, thus, $J^i = J_i, K^i = K_i$.
+
+The usual treatment is to define now two new combination of generators,
+\begin{align}
+    N_i&=\frac12\qty(J_i-\im K_i),\ \ \ N^\dagger_i=\frac12\qty(J_i+\im K_i)\label{eq:noperators}
+\end{align}
+this is not entirely justifiable, at the most fundamental level a Lie algebra is a vector space over the \textbf{real} numbers, a multiplication by some imaginary quantity is 
+not well defined, as it even does not preserve the structure of the Lie bracket. The working procedure is to consider a complexification of a real Lie algebra, 
+$\mathfrak g\hookrightarrow \mathfrak g_{\mathbb C}$ where the complexified Lie algebra $\mathfrak g_{\mathbb C}$ is understood as a real Lie algebra. This is 
+done by considering the generators $T^I\in\mathfrak g$ linearly independent from $\im T^I$. Let's illustrate this process by working what is the complexification of 
+the $\mathfrak {su}(2)$ algebra, we start from the algebra, \cref{eq:su2algebra}, and define the complexified algebra $\mathfrak {su}(2)_{\mathbb C}$ to be generated by 
+$J^i, \im J^i$, to stress that we are considering them to be linearly independent, we are going to rename $\im J^i$ to $K^i$. Now we compute the algebra from \cref{eq:su2algebra} 
+with these new set of generators, first between $J^i$ and $\im J^j = K^j$
+\begin{align}
+    \comm{J^i}{K^j}&=\comm{J^i}{\im J^j} = \im\comm{J^i}{J^j} =\im^2\tensor{\epsilon}{^i^j_k}J ^k = \im\tensor{\epsilon}{^i^j_k}\im J ^k= \im\tensor{\epsilon}{^i^j_k}K ^k 
+\end{align}
+now between $\im J^i = K^i$ and $\im J^j = K^j$,
+\begin{align}
+    \comm{K^i}{K^j}&=\comm{\im J^i}{\im J^j} = \im^2\comm{J^i}{J^j} =\im^2\im\tensor{\epsilon}{^i^j_k}J ^k = -\im\tensor{\epsilon}{^i^j_k} J ^k
+\end{align}
+for clarity, the algebra we found for $\mathfrak {su}\qty(2)_{\mathbb C}$ in the basis $J^i, \im J^i= K^i$ is,
+\begin{align} 
+    \comm{J^i}{J^j}&=\im\tensor{\epsilon}{^i^j_k}J^k\\
+    \comm{J^i}{K^j}&=\im\tensor{\epsilon}{^i^j_k}K^k\\
+    \comm{K^i}{K^j}&=-\im\tensor{\epsilon}{^i^j_k}J_{k}
+\end{align}
+exactly the $\mathfrak{sl}\qty(2,\mathbb C)$ algebra! In other words $\mathfrak {su}\qty(2)_{\mathbb C}\cong \mathfrak{sl}\qty(2,\mathbb C)$.
+
+After this detour, we can go back to introducing \cref{eq:noperators}, which now we're aware that implies we're complexifying $\mathfrak{sl}\qty(2,\mathbb C)$, the new basis of 
+generators in the complexified algebra $\mathfrak {sl}\qty(2,\mathbb C)_{\mathbb C}$ are $J^i,K^i,\im J^i,\im K^i$, which can be exchanged by $N_ i, \im N_ i, N^\dagger_i, \im N^\dagger_i$. 
+It suffices to work out the $N-N^\dagger$ algebra, the others will follow, first $N-N$,
+\begin{align}
+    \comm{N_i}{N_j}&=\frac14\comm{J_i-\im K_i}{J_j-\im K_j}\\
+    &=\frac\im4\epsilon_{ijk}J^k+\frac14\epsilon_{ijk}K^k+\frac14\epsilon_{ijk}K^k+\frac\im4\epsilon_{ijk}J^k\\
+    &=\im\epsilon_{ijk}\frac12\qty(J^k-\im K^k)\\
+    &=\im\epsilon_{ijk}N^k
+\end{align}
+then $N^\dagger-N^\dagger$,
+\begin{align}
+    \comm{N^\dagger_i}{N^\dagger_j}&=\frac14\comm{J_i+\im K_i}{J_j+\im K_j}\\
+    &=\frac\im4\epsilon_{ijk}J^k-\frac14\epsilon_{ijk}K^k-\frac14\epsilon_{ijk}K^k+\frac\im4\epsilon_{ijk}J^k\\
+    &=\im\epsilon_{ijk}\frac12\qty(J^k+\im K^k)\\
+    &=\im\epsilon_{ijk}{N^\dagger}^k
+\end{align}
+and lastly $N-N^\dagger$,
+\begin{align}
+    \comm{N_i}{N^\dagger_j}&=\frac14\comm{J_i-\im K_i}{J_j+\im K_j}\\
+    &=\frac\im4\epsilon_{ijk}j^k-\frac14\epsilon_{ijk}K^k+\frac14\epsilon_{ijk}K^k-\frac\im4\epsilon_{ijk}J^k\\
+    &=0
+\end{align}
+together with the remaining commutations of $\im N, \im N^\dagger$. Thus, to summarize, the algebra of $\mathfrak {sl}\qty(2,\mathbb C)_{\mathbb C}$ is,
+\begin{align}
+    \comm{N_i}{N_j}&=\im\tensor{\epsilon}{_i_j^k}N_k\\
+    \comm{N^\dagger_i}{N^\dagger_j}&=\im\tensor{\epsilon}{_i_j^k}N^\dagger_k,\ \ \ \ \textnormal{Plus commutators involving }\im N, \im N^\dagger\\
+    \comm{N_i}{N^\dagger_j}&=0
+\end{align}
+but notice, the algebra generated by $N$ alone is $\mathfrak {su}(2)$, as is the one generated by $N^\dagger $ alone, by the commutation 
+relations the algebra from $N$ is decoupled from the algebra of $N^\dagger$, thus, to go from the algebra generated by $N$ to the algebra generated by $N,\im N$ is simply the 
+complexification of the algebra of $N$. Hence, the algebra generated by $N,\im N$ is $\mathfrak {su}\qty(2)_{\mathbb C}\cong \mathfrak {sl}\qty(2,\mathbb C)$, the same is valid for 
+the pair $N^\dagger, \im N^\dagger$. As the algebras between $N$ and $N^\dagger$ are independent, so are the algebras between $N,\im N$ and $N^\dagger, \im N^\dagger$, what implies that 
+$\mathfrak{sl}\qty(2,\mathbb C)_{\mathbb C}$, which is the algebra generated by $N,\im N,N^\dagger, \im N^\dagger$ is just the sum of the two independent algebras, in other words, 
+\begin{align}
+    \mathfrak{sl}\qty(2,\mathbb C)_{\mathbb C}&\cong \mathfrak {su}\qty(2)_{\mathbb C}\oplus \mathfrak {su}\qty(2)_{\mathbb C}\\
+    \mathfrak{sl}\qty(2,\mathbb C)_{\mathbb C}&\cong \mathfrak{sl}\qty(2,\mathbb C)\oplus\mathfrak{sl}\qty(2,\mathbb C)
+\end{align}
+
+The first form of this result is of the most significance for us,
+\begin{align}
+    \mathfrak{sl}\qty(2,\mathbb C)_{\mathbb C}&\cong \mathfrak {su}\qty(2)_{\mathbb C}\oplus \mathfrak {su}\qty(2)_{\mathbb C}\cong \qty(\mathfrak {su}\qty(2)\oplus \mathfrak {su}\qty(2))_{\mathbb C}
+\end{align}
+Thus, the real representations of $\mathfrak{sl}\qty(2,\mathbb C)_{\mathbb C}$ are into a one-to-one map with the real representations of $\qty(\mathfrak {su}\qty(2)\oplus \mathfrak {su}\qty(2))_{\mathbb C}$, 
+what is equivalent to say that the representations of $\mathfrak{sl}\qty(2,\mathbb C)$ are into a one-to-one with representations of $\mathfrak {su}\qty(2)\oplus \mathfrak {su}\qty(2)$. 
+Of course, these two $\mathfrak {su}(2)$ are the ones generated by $N, N^\dagger$. 
+
+This whole convoluted argument is just to justify why is ok --- in this case --- to multiply the generators by complex numbers and still obtain a reasonable answer. To finish to find the 
+representation of the Lorentz algebra, we continue as always in the usual procedure of finding the representations of $\mathfrak{su}(2)$ which we already described, there are two 
+Casimirs, 
+\begin{align}
+    C_L=\delta^{ij}N_i N_j,\ \ \  C_R = \delta^{ij}N^\dagger_i N^\dagger_j
+\end{align}
+choosing also as a mutually commuting set of algebra elements $N_3,N^\dagger_3$, then the representations are given by four numbers,
+\begin{align}
+    C_L\ket{j_L,m_L;j_R,m_R} &= j_L\qty(j_L+1)\ket{j_L,m_L;j_R,m_R} ,\ C_R\ket{j_L,m_L;j_R,m_R} = j_R\qty(j_R+1)\ket{j_L,m_L;j_R,m_R}\\
+    N_3\ket{j_L,m_L;j_R,m_R} &= m_L \ket{j_L,m_L;j_R,m_R}, \ N^\dagger_3\ket{j_L,m_L;j_R,m_R} = m_R \ket{j_L,m_L;j_R,m_R}\\
+    j_{L/R} &\in\frac12\mathbb N,\ \ \ m_{L/R} = -j_{L/R},-j_{L/R}+1,\cdots,j_{L/R}-1,j_{L/R}
+\end{align}
+the representations are indexed by $j_{L/R}$, generally are written as,
+\begin{align}
+    \qty(j_L,j_R)
+\end{align}
