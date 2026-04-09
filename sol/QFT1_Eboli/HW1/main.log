@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  9 APR 2026 10:34
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  9 APR 2026 10:47
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1138,7 +1138,7 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 [4]
 
 [5]
-Overfull \hbox (24.14737pt too wide) detected at line 183
+Overfull \hbox (24.14737pt too wide) detected at line 187
 []
  []
 
@@ -1230,23 +1230,19 @@ Overfull \hbox (39.21654pt too wide) detected at line 58
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-05-26>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: E5D4068670905E0EF6F9B81744FD38FB;2598.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32670 strings out of 470203
+ 32672 strings out of 470203
  125016,1144653 words of node,token memory allocated
  1904 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 10 sub_mlist, 1 glyph, 453 attribut
 e, 60 glue_spec, 228 attribute_list, 2 write nodes
    avail lists: 1:9,2:3893,3:437,4:77,5:804,6:104,7:7260,8:336,9:3108,10:12,11:3
 85
- 59721 multiletter control sequences out of 65536+600000
+ 59723 multiletter control sequences out of 65536+600000
  76 fonts using 5057223 bytes
  98i,22n,100p,576b,373s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><<c:/U
@@ -1266,10 +1262,10 @@ blic/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eu
 fm10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
 pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (34 pages, 308390 bytes).
+Output written on main.pdf (34 pages, 309088 bytes).
 
-PDF statistics: 672 PDF objects out of 1000 (max. 8388607)
- 602 compressed objects within 7 object streams
+PDF statistics: 674 PDF objects out of 1000 (max. 8388607)
+ 604 compressed objects within 7 object streams
  343 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
