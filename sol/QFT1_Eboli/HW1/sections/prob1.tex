@@ -185,3 +185,29 @@ the representations are indexed by $j_{L/R}$, generally are written as,
 \begin{align}
     \qty(j_L,j_R)
 \end{align}
+
+The simplest possible representation is the scalar one, $j_L=j_R=0$, this fixes,
+\begin{align}
+    \qty(0,0)\rightarrow N_ i= N_i^\dagger =0 \Rightarrow J^i=K^i =0\Rightarrow M^{\mu\nu}=0\Rightarrow U\qty(\Lambda) = 1
+\end{align}
+$U\qty(\Lambda)=1$ is what we should expect from a scalar representation, as a scalar do not transform under Lorentz. Now, the simplest non trivial 
+representation we can obtain is given by either $j_L=\frac12, j_R=0$ or $j_R=\frac12, j_L=0$ they are called the Left-handed Weyl spinorial representation 
+and the Right-handed Weyl spinorial representation respectively. As example let's pickup the Left-handed one, we know that the $j=\frac12$ representation of 
+$\mathfrak {su}(2)$ is given by the Pauli matrices, then,
+\begin{align}
+    \qty(\frac12,0)\rightarrow N_ i=\frac12\sigma_i,\  N_i^\dagger =0 \Rightarrow J^i=\frac12 \sigma^i,\ K^i =\frac\im 2\sigma^i\Rightarrow M^{ij}=\frac12 \tensor{\epsilon}{^i^j_k}\sigma^k,\ M^{i0}=\frac\im2\sigma^i
+\end{align}
+the Right-handed one has a similar form. Now, a interesting representation is the vector one,
+\begin{align}
+    \qty(\frac12,\frac12)=\qty(\frac12,0)\otimes\qty(0,\frac12)
+\end{align}
+to see why this should be a vector representation we need to remember some results about sum of angular momentum, when going from the $N^2, N^{\dagger2}$ basis to the 
+$\qty(N+N^\dagger)^2$ basis, we exchange the $j_{L/R}$ for a total $j=\abs{j_L -j_R},\cdots, j_L+j_R$. Notice that $j(j+1)$ is the eigenvalue of $(N+N^\dagger)^2$, but, 
+\begin{align}
+    (N+N^\dagger)^2&=J^2
+\end{align}
+hence the $j$ is exactly the angular momentum of the representation. For what we called the vector representation,
+\begin{align}
+    \qty(\frac12,\frac12)=\vb 0\oplus \vb 1
+\end{align}
+it carries only a scalar, under rotations, and a vector, under rotations, hence the name vector representation.
