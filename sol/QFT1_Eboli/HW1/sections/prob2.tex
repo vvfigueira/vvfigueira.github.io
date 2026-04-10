@@ -1,48 +1,76 @@
 \problem{}
-\probitem{}
 
-\begin{align}
-    0&=\fdv{}{A_\alpha\qty(y)}S\qty[A_\mu]\\
-    0&=-\frac14\fdv{}{A_\alpha\qty(y)}\int\dd[4]{x}F^{\mu\nu}F_{\mu\nu}\\
-    0&=-\frac12\int\dd[4]{x}F^{\mu\nu}\fdv{}{A_\alpha\qty(y)}F_{\mu\nu}\\
-    0&=-\frac12\int\dd[4]{x}F^{\mu\nu}\qty(\partial_\mu \tensor{g}{_\nu^\alpha}\delta^{\qty(4)}(x-y)-\partial_\nu \tensor{g}{_\mu^\alpha}\delta^{\qty(4)}(x-y))\\
-    0&=\int\dd[4]{x}\partial_\mu F^{\mu\nu} \tensor{g}{_\nu^\alpha}\delta^{\qty(4)}(x-y)\\
-    0&=\partial_\mu F^{\mu\alpha}
-\end{align}
+The remaining of the problems, this one included, are about applications of the Noether's theorem to some regular cases. Here the electromagnetic 
+energy-momentum tensor is derived, after the equations of motion are obtained.
 
 \probitem{}
 
-By \cref{eq:conservedcurrentnoether}, 
+For obtaining the equations of motion from the action, the usual procedure is to vary the action with respect to an infinitesimal (first order)
+change in the fields --- this whole deal of infinitesimal changes in functionals can be formalized by a functional derivative ---. 
+We start with $S[A+\delta A]-S[A]$, then expand $F^{\mu\nu}[A+\delta A]$ in Taylor around $A$, and lastly integrate by parts,
 
 \begin{align}
-    J^\mu_I =\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a^I}\eval_{a^I=0}+\mathcal L\dv{{x'}^\mu}{a^I}\eval_{a^I=0}
+    S[A+\delta A]-S[A] &= -\frac14\int\dd[4]{x}\qty(F^{\mu\nu}\qty(A+\delta A)F_{\mu\nu}\qty(A+\delta A)-F^{\mu\nu}\qty(A)F_{\mu\nu}\qty(A))\\
+    S[A+\delta A]-S[A] &= -\frac14\int\dd[4]{x}\qty(F^{\mu\nu}\qty(A)F_{\mu\nu}\qty(A)+2F^{\mu\nu}\qty(A)\pdv{F_{\mu\nu}\qty(A)}{\partial_\alpha A_\beta}\partial_\alpha\delta A_\beta-F^{\mu\nu}\qty(A)F_{\mu\nu}\qty(A))\\
+    S[A+\delta A]-S[A] &= -\frac12\int\dd[4]{x}F^{\mu\nu}\qty(A)\qty(\tensor{g}{_\mu^\alpha}\tensor{g}{_\nu^\beta}-\tensor{g}{_\nu^\alpha}\tensor{g}{_\mu^\beta})\partial_\alpha\delta A_\beta\\
+    S[A+\delta A]-S[A] &= -\frac12\int\dd[4]{x}\qty(F^{\alpha\beta}\qty(A)-F^{\beta\alpha}\qty(A))\partial_\alpha\delta A_\beta\\
+    S[A+\delta A]-S[A] &= -\int\dd[4]{x}F^{\alpha\beta}\qty(A)\partial_\alpha\delta A_\beta\\
+    S[A+\delta A]-S[A] &= -\int\dd[4]{x}\qty{\partial_\alpha\qty(F^{\alpha\beta}\qty(A)\delta A_\beta)-\partial_\alpha F^{\alpha\beta}\qty(A)\delta A_\beta}\\
+    S[A+\delta A]-S[A] &= \int\dd[4]{x}\qty(\partial_\alpha F^{\alpha\beta}\qty(A))\delta A_\beta-\int\dd[4]{x}\partial_\alpha\qty(F^{\alpha\beta}\qty(A)\delta A_\beta)
 \end{align}
+the last term is an integral of a total derivative, also called a boundary term because, by Stokes theorem, a integral over space-time of a total derivative 
+becomes an integral over the space-time boundary. Usually the boundary term is taken to be zero by saying that the space-time has no boundary or by 
+considering it as a constraint on the values of the fields in the asymptotical infinity regions. Either way, neglecting the boundary, for a physical 
+configuration, the action should be an extremum, thus, the first order infinitesimal variation should vanish,
+\begin{align}
+    0&= \int\dd[4]{x}\qty(\partial_\alpha F^{\alpha\beta}\qty(A))\delta A_\beta
+\end{align}
+as this should be true for all possible variations --- at lest the variations which keeps the initial value data the same, as this selects a specific 
+solution ---, we conclude that
+\begin{align}
+    0&=\partial_\alpha F^{\alpha\beta}
+\end{align}
+is the equation of motion.
 
-In this case the transformation is,
+% \begin{align}
+%     0&=\fdv{}{A_\alpha\qty(y)}S\qty[A_\mu]\\
+%     0&=-\frac14\fdv{}{A_\alpha\qty(y)}\int\dd[4]{x}F^{\mu\nu}F_{\mu\nu}\\
+%     0&=-\frac12\int\dd[4]{x}F^{\mu\nu}\fdv{}{A_\alpha\qty(y)}F_{\mu\nu}\\
+%     0&=-\frac12\int\dd[4]{x}F^{\mu\nu}\qty(\partial_\mu \tensor{g}{_\nu^\alpha}\delta^{\qty(4)}(x-y)-\partial_\nu \tensor{g}{_\mu^\alpha}\delta^{\qty(4)}(x-y))\\
+%     0&=\int\dd[4]{x}\partial_\mu F^{\mu\nu} \tensor{g}{_\nu^\alpha}\delta^{\qty(4)}(x-y)\\
+%     0&=\partial_\mu F^{\mu\alpha}
+% \end{align}
 
+\probitem{}
+
+In this item, and also in the others where is requested for a Noether's current computation, we will use the formula for the 
+Noether's current derived in \cref{appendix:noetherfirst}, specially \cref{eq:conservedcurrentnoether}, which when applied to 
+our case gives,
+\begin{align}
+    \tensor{T}{^\mu_\nu} =\pdv{\mathcal L}{\partial_\mu A_\alpha\qty(x)}\dv{A_\alpha'\qty(x)}{a^\nu}\eval_{a^\nu=0}+\mathcal L\dv{{x'}^\mu}{a^\nu}\eval_{a^\nu=0}
+\end{align}
+the missing information is the first order infinitesimal variation of the translation transformation,
 \begin{align}
     \begin{cases}
         x&\rightarrow {x'}^\mu = x^\mu+a^\mu\\
         A_\alpha\qty(x)&\rightarrow {A'}_\alpha\qty(x')=A_\alpha\qty(x)
     \end{cases}\Rightarrow \dv{{x'}^\mu}{a^\nu}\eval_{a^\nu=0}=\tensor{g}{^\mu_\nu},\ \ \ \dv{A'_\alpha\qty(x)}{a^\nu}\eval_{a^\nu=0}=-\partial_\nu A_\alpha\qty(x)
 \end{align}
-
-Thus,
-
+it's straightforward to substitute it,
 \begin{align}
-    \tensor{J}{^\mu_\nu} =\pdv{\mathcal L}{\partial_\mu A_\alpha\qty(x)}\dv{A'_\alpha\qty(x)}{a^\nu}\eval_{a^\nu=0}+\mathcal L\dv{{x'}^\mu}{a^\nu}\eval_{a^\nu=0}\\
-    \tensor{J}{^\mu_\nu} =-\pdv{\mathcal L}{\partial_\mu A_\alpha\qty(x)}\partial_\nu A_\alpha\qty(x)+\mathcal L\tensor{g}{^\mu_\nu}\\
-    \tensor{J}{^\mu_\nu} =\frac12F^{\rho\sigma}\pdv{F_{\rho\sigma}}{\partial_\mu A_\alpha\qty(x)}\partial_\nu A_\alpha\qty(x)-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\\
-    \tensor{J}{^\mu_\nu} =\frac12F^{\rho\sigma}\qty(\tensor{g}{_\rho^\mu}\tensor{g}{_\sigma^\alpha}-\tensor{g}{_\rho^\alpha}\tensor{g}{_\sigma^\mu})\partial_\nu A_\alpha\qty(x)-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\\
-    \tensor{J}{^\mu_\nu} =\frac12F^{\rho\sigma}\qty(\partial_\nu\tensor{g}{_\rho^\mu}A_\sigma-\partial_\nu A_\rho\tensor{g}{_\sigma^\mu})-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\\
-    \tensor{J}{^\mu_\nu} =F^{\mu\sigma}\partial_\nu A_\sigma-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}
+    \tensor{T}{^\mu_\nu} =\pdv{\mathcal L}{\partial_\mu A_\alpha\qty(x)}\dv{A'_\alpha\qty(x)}{a^\nu}\eval_{a^\nu=0}+\mathcal L\dv{{x'}^\mu}{a^\nu}\eval_{a^\nu=0}\\
+    \tensor{T}{^\mu_\nu} =-\pdv{\mathcal L}{\partial_\mu A_\alpha\qty(x)}\partial_\nu A_\alpha\qty(x)+\mathcal L\tensor{g}{^\mu_\nu}\\
+    \tensor{T}{^\mu_\nu} =\frac12F^{\rho\sigma}\pdv{F_{\rho\sigma}}{\partial_\mu A_\alpha\qty(x)}\partial_\nu A_\alpha\qty(x)-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\\
+    \tensor{T}{^\mu_\nu} =\frac12F^{\rho\sigma}\qty(\tensor{g}{_\rho^\mu}\tensor{g}{_\sigma^\alpha}-\tensor{g}{_\rho^\alpha}\tensor{g}{_\sigma^\mu})\partial_\nu A_\alpha\qty(x)-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\\
+    \tensor{T}{^\mu_\nu} =\frac12F^{\rho\sigma}\qty(\partial_\nu\tensor{g}{_\rho^\mu}A_\sigma-\partial_\nu A_\rho\tensor{g}{_\sigma^\mu})-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\\
+    \tensor{T}{^\mu_\nu} =F^{\mu\sigma}\partial_\nu A_\sigma-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}
 \end{align}
+which is the desired energy-momentum tensor.
 
-Let's check that this quantity is conserved when the equations of motion are obeyed,
-
+As a sanity check, we can prove that it's indeed conserved when the equations of motion are valid,
 \begin{align}
-    \partial_\mu\tensor{J}{^\mu_\nu} =\partial_\mu F^{\mu\sigma}\partial_\nu A_\sigma+F^{\mu\sigma}\partial_\mu\partial_\nu A_\sigma-\frac12 F^{\rho\sigma}\partial_\mu  F_{\rho\sigma}\tensor{g}{^\mu_\nu}\\
-    \partial_\mu\tensor{J}{^\mu_\nu} =\partial_\mu F^{\mu\sigma}\partial_\nu A_\sigma+F^{\mu\sigma}\partial_\mu\partial_\nu A_\sigma-  F^{\rho\sigma}\partial_\nu\partial_\rho A_\sigma=0
+    \partial_\mu\tensor{T}{^\mu_\nu} =\partial_\mu F^{\mu\sigma}\partial_\nu A_\sigma+F^{\mu\sigma}\partial_\mu\partial_\nu A_\sigma-\frac12 F^{\rho\sigma}\partial_\mu  F_{\rho\sigma}\tensor{g}{^\mu_\nu}\\
+    \partial_\mu\tensor{T}{^\mu_\nu} =\partial_\mu F^{\mu\sigma}\partial_\nu A_\sigma+F^{\mu\sigma}\partial_\mu\partial_\nu A_\sigma-  F^{\rho\sigma}\partial_\nu\partial_\rho A_\sigma=0
 \end{align}
-
-Yes! But, it isn't gauge invariant, neither symmetric. How to obtain a gauge invariant and symmetric energy momentum tensor?
+showing that it's indeed conserved.
+% But, it isn't gauge invariant, neither symmetric. How to obtain a gauge invariant and symmetric energy momentum tensor?

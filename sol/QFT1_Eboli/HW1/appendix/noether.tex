@@ -1,5 +1,5 @@
 \section{Noether's Theorem}
-
+\label{appendix:noetherfirst}
 Here we're going to derive the Noether theorem for a handful of cases, first of all, the validity 
 of this theorem is to global continuous symmetries, which in our field theory context means: we start 
 of with an action which depends upon a field, $S\qty[\phi]$, it's supposed to encode 
@@ -82,11 +82,11 @@ Thus,
 It's trivial to include indicies,
 
 \begin{align}
-    \dv{}{a^I}S_a'\qty[\phi']\eval_{a^I=0}&= \int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\qty[\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a^I}\eval_{a^I=0}+\mathcal L\dv{{x'}^\mu}{a^I}\eval_{a^I=0}]
+    \dv{}{a^i}S_a'\qty[\phi_I']\eval_{a^i=0}&= \int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\qty[\pdv{\mathcal L}{\partial_\mu\phi_I\qty(x)}\dv{\phi_I'\qty(x)}{a^i}\eval_{a^i=0}+\mathcal L\dv{{x'}^\mu}{a^i}\eval_{a^i=0}]
 \end{align}
 
 So that the conserved current is,
 
 \begin{align}
-    \tensor{J}{^\mu_I} =\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a^I}\eval_{a^I=0}+\mathcal L\dv{{x'}^\mu}{a^I}\eval_{a^I=0}\label{eq:conservedcurrentnoether}
+    \tensor{J}{^\mu_i} =\pdv{\mathcal L}{\partial_\mu\phi_ I\qty(x)}\dv{\phi_ I'\qty(x)}{a^i}\eval_{a^i=0}+\mathcal L\dv{{x'}^\mu}{a^i}\eval_{a^i=0}\label{eq:conservedcurrentnoether}
 \end{align}
