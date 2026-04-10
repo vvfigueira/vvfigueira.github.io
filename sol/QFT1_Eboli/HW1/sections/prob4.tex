@@ -1,35 +1,54 @@
 \problem{}
+
+The first two itens are just some well known properties of Lorentz transformations, the last item is other 
+important application of Noether's theorem, which gives the angular momentum density tensor, an analogous 
+quantity to the energy-momentum tensor, but for Lorentz transformations instead of translations.
+
 \probitem{}
 
-The Lorentz transformation is,
-
+A Lorentz transformation has the following infinitesimal form when acting on a vector,
 \begin{align}
     {x'}^\mu &= \tensor{\Lambda}{^\mu_\nu}x^\nu=x^\mu+\tensor{\omega}{^\mu_\nu}x^\nu+\mathcal O\qty(\omega^2)
 \end{align}
-
-Which has to satisfy,
-
+it's defining property is to preserve the scalar product between any vectors,
 \begin{align}
     y^\mu x_\mu &= {y'}^\mu{x'}_\mu\\
     y^\mu x_\mu &= \qty(y^\mu+\tensor{\omega}{^\mu_\nu}y^\nu+\mathcal O\qty(\omega^2))\qty(x_\mu+\tensor{\omega}{_\mu_\alpha}x^\alpha+\mathcal O\qty(\omega^2))\\
     y^\mu x_\mu &=  y^\mu x_\mu +\tensor{\omega}{^\mu_\nu}y^\nu x_\mu + y^\mu\tensor{\omega}{_\mu_\alpha}x^\alpha+\mathcal O\qty(\omega^2)\\
+    0 &=  \tensor{\omega}{^\mu_\nu}y^\nu x_\mu + y^\mu\tensor{\omega}{_\mu_\alpha}x^\alpha+\mathcal O\qty(\omega^2)
+\end{align}
+as $\omega$ is arbitrary, the only possible way the right-hand side is zero is if each coefficient of each order in $\omega$ is zero,
+at first order,
+\begin{align}
     0&=\tensor{\omega}{_\mu_\nu}y^\nu x^\mu + \tensor{\omega}{_\mu_\nu}x^\nu y^\mu\\
     0&=y^\nu x^\mu\qty(\tensor{\omega}{_\mu_\nu} + \tensor{\omega}{_\nu_\mu})\Rightarrow \tensor{\omega}{_\mu_\nu} + \tensor{\omega}{_\nu_\mu}=0\Rightarrow \tensor{\omega}{_\mu_\nu} =- \tensor{\omega}{_\nu_\mu}
 \end{align}
+the lasts equalities follow from the equation being needed to hold for arbitrary values of $x,y$. We conclude that $\omega$ is anti-symmetric.
 
 \probitem{}
 
 A rotation should preserve the time component,
-
 \begin{align}
     x^0={x'}^0&=x^0+\tensor{\omega}{^0_\nu}x^\nu\\
     0&=\tensor{\omega}{^0_\nu}x^\nu\Rightarrow \tensor{\omega}{^0_\nu}=0\Rightarrow \tensor{\omega}{_0_\nu}=0
 \end{align}
-
-Together with the anti-symmetry gives, 
-
+together with the anti-symmetry gives, 
 \begin{align}
     \tensor{\omega}{_\mu_\nu} = \mqty(0&0&0&0\\0&0&\omega_{12}&-\omega_{31}\\0&-\omega_{12}&0&\omega_{23}\\0&\omega_{31}&-\omega_{23}&0)
+\end{align}
+now, to understand better what each of these components are we can look at a general representation of a spatial rotation. Let $\boldsymbol \theta$ be 
+the rotation direction and $\theta$ be it's modulus,
+\begin{align}
+    \vb x '=\vb x\cos \theta+\boldsymbol \theta\times \vb x\sin\theta + \qty(\boldsymbol \theta\cdot \vb x)\boldsymbol \theta\qty(1-\cos\theta)
+\end{align}
+to first order we have,
+\begin{align}
+    {x'}^i=\tensor{\epsilon}{^i_j_k}\boldsymbol \theta^j x^k \theta=\tensor{\omega}{^i_k}x^k\Rightarrow \tensor{\omega}{_i_k} = -\tensor{\epsilon}{_k_i_j}\theta\boldsymbol \theta^j
+\end{align}
+we recognize from this last expression that $\theta\boldsymbol \theta^j$ is just the infinitesimal angle rotation in the $k-i$ plane, hence, we call it $\theta^j$. Also, the 
+equivalence between the two formulation of the rotations implies that $\omega_{ik}$ is minus the angle of rotation in the $k-i$ plane. With this we can rewrite our matrix as,
+\begin{align}
+    \tensor{\omega}{_\mu_\nu} = \mqty(0&0&0&0\\0&0&-\theta^3&\theta^2\\0&\theta^3&0&-\theta^1\\0&-\theta^2&\theta^1&0)
 \end{align}
 
 \probitem{}
