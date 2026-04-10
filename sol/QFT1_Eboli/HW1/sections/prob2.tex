@@ -69,8 +69,9 @@ which is the desired energy-momentum tensor.
 
 As a sanity check, we can prove that it's indeed conserved when the equations of motion are valid,
 \begin{align}
-    \partial_\mu\tensor{T}{^\mu_\nu} =\partial_\mu F^{\mu\sigma}\partial_\nu A_\sigma+F^{\mu\sigma}\partial_\mu\partial_\nu A_\sigma-\frac12 F^{\rho\sigma}\partial_\mu  F_{\rho\sigma}\tensor{g}{^\mu_\nu}\\
-    \partial_\mu\tensor{T}{^\mu_\nu} =\partial_\mu F^{\mu\sigma}\partial_\nu A_\sigma+F^{\mu\sigma}\partial_\mu\partial_\nu A_\sigma-  F^{\rho\sigma}\partial_\nu\partial_\rho A_\sigma=0
+    \partial_\mu\tensor{T}{^\mu_\nu} &=\partial_\mu F^{\mu\sigma}\partial_\nu A_\sigma+F^{\mu\sigma}\partial_\mu\partial_\nu A_\sigma-\frac12 F^{\rho\sigma}\partial_\mu  F_{\rho\sigma}\tensor{g}{^\mu_\nu}\\
+    \partial_\mu\tensor{T}{^\mu_\nu} &=F^{\mu\sigma}\partial_\mu\partial_\nu A_\sigma-  F^{\rho\sigma}\partial_\nu\partial_\rho A_\sigma=0\\
+    \partial_\mu\tensor{T}{^\mu_\nu} &=F^{\rho\sigma}\qty(\partial_\rho\partial_\nu A_\sigma- \partial_\nu\partial_\rho A_\sigma)=0
 \end{align}
 showing that it's indeed conserved.
 % But, it isn't gauge invariant, neither symmetric. How to obtain a gauge invariant and symmetric energy momentum tensor?
