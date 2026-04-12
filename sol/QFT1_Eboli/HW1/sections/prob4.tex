@@ -53,46 +53,69 @@ equivalence between the two formulation of the rotations implies that $\omega_{i
 
 \probitem{}
 
-The Lorentz transformation for a scalar field is,
-
+The first step to derive the Noether current is to state the Lorentz transformation for a scalar field,
 \begin{align}
     \begin{cases}
         x^\mu&\rightarrow {x'}^\mu=\tensor{\Lambda}{^\mu_\nu}\qty(\omega)x^\nu\\
         \phi\qty(x)&\rightarrow {\phi'}\qty(x')=\phi\qty(x)
     \end{cases}
 \end{align}
-
-Which is parametrized by $\omega_{\mu\nu}$, thus,
-
+which is parametrized by $\omega_{\mu\nu}$, now we should take the variation of the coordinates,
 \begin{align}
-    \dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega_{\alpha\beta}=0}=\dv{}{\omega_{\alpha\beta}}\qty(x^\mu+\tensor{\omega}{^\mu_\nu}x^\nu+\mathcal O\qty(\omega^2))\eval_{\omega_{\alpha\beta}=0}\\
+    \dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega_{\alpha\beta}=0}=\dv{}{\omega_{\alpha\beta}}\qty(x^\mu+\tensor{\omega}{^\mu_\nu}x^\nu+\mathcal O\qty(\omega^2))\eval_{\omega_{\alpha\beta}=0}
+\end{align}
+may look trivial that $\dv{\omega_{\mu\nu}}{\omega_{\alpha\beta}}\stackrel{?}{=}\tensor{g}{_\mu^\alpha}\tensor{g}{_\nu^\beta}$, but this is wrong, as $\omega$ 
+is anti-symmetric, it's true that $1=\dv{\omega_{12}}{\omega_{12}}=-\dv{\omega_{21}}{\omega_{12}}$, the last expression doesn't takes into consideration 
+this, it's necessary to antisymmetrize it, hence,
+\begin{align}
     \dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega_{\alpha\beta}=0}=\qty(\tensor{g}{_\alpha^\mu}\tensor{g}{_\beta_\nu}-\tensor{g}{_\beta^\mu}\tensor{g}{_\alpha_\nu})x^\nu=\tensor{g}{_\alpha^\mu}x_\beta-\tensor{g}{_\beta^\mu}x_\alpha\label{eq:xderivativelorentz}
 \end{align}
-
-And,
-
+we also need the expression of the field variation, this is obtained by usual means of writing the transformation law as $\phi'(x)=\phi(\Lambda^{\textnormal T}x)$,
 \begin{align}
-    \dv{\phi'\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\dv{}{\omega^{\alpha\beta}}\qty(\phi\qty(\Lambda^{-1}x))\eval_{\omega^{\alpha\beta}=0}=\partial_\nu\phi\qty(x)\dv{}{\omega^{\alpha\beta}}\qty(\Lambda^{-1}x)^\nu\eval_{\omega^{\alpha\beta}=0}\\
+    \dv{\phi'\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\dv{}{\omega^{\alpha\beta}}\qty(\phi\qty(\Lambda^{\textnormal T}x))\eval_{\omega^{\alpha\beta}=0}=\partial_\nu\phi\qty(x)\dv{}{\omega^{\alpha\beta}}\qty(\Lambda^{\textnormal T}x)^\nu\eval_{\omega^{\alpha\beta}=0}\\
     \dv{\phi'\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\partial_\nu\phi\qty(x)\dv{\tensor{\Lambda}{_\rho^\nu}}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}x^\rho=\partial_\nu\phi\qty(x)\qty(\tensor{g}{_\alpha_\rho}\tensor{g}{_\beta^\nu}-\tensor{g}{_\beta_\rho}\tensor{g}{_\alpha^\nu})x^\rho\\
     \dv{\phi'\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=x_\alpha\partial_\beta\phi-x_\beta\partial_\alpha\phi
 \end{align}
-
-Using these results in \cref{eq:conservedcurrentnoether},
-
+again we use these variation expressions on \cref{eq:conservedcurrentnoether},
 \begin{align}
-    \tensor{J}{^\mu_\alpha_\beta} &=\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}+\mathcal L\dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}\\
-    \tensor{J}{^\mu_\alpha_\beta} &=\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\qty(x_\alpha\partial_\beta\phi-x_\beta\partial_\alpha\phi)+\mathcal L\qty(\tensor{g}{_\alpha^\mu}x_\beta-\tensor{g}{_\beta^\mu}x_\alpha)\\
-    \tensor{J}{^\mu_\alpha_\beta} &=x_\beta \tensor{J}{^\mu_\alpha}-x_\alpha \tensor{J}{^\mu_\beta}
+    \tensor{{\tilde M}}{^\mu_\alpha_\beta} &=\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}+\mathcal L\dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}\\
+    \tensor{{\tilde M}}{^\mu_\alpha_\beta} &=\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\qty(x_\alpha\partial_\beta\phi-x_\beta\partial_\alpha\phi)+\mathcal L\qty(\tensor{g}{_\alpha^\mu}x_\beta-\tensor{g}{_\beta^\mu}x_\alpha)\\
+    \tensor{{\tilde M}}{^\mu_\alpha_\beta} &=-x_\alpha\qty(-\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\partial_\beta\phi+\mathcal L\tensor{g}{_\beta^\mu})+x_\beta\qty(-\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\partial_\alpha\phi+\mathcal L\tensor{g}{_\alpha^\mu})\\
+    \tensor{{\tilde M}}{^\mu_\alpha_\beta} &=x_\beta \tensor{T}{^\mu_\alpha}-x_\alpha \tensor{T}{^\mu_\beta}
 \end{align}
-
-Check that is conserved,
-
+where in the last line we identified the energy-momentum tensor. The conserved current is defined up to a constant, then we can change 
+the sign of the quantity to our desire. It's more common to work with the opposite sign conserved current $M =-{\tilde M} $,
 \begin{align}
-    \partial_\mu \tensor{J}{^\mu_\alpha_\beta}&= \partial_\mu\qty(x_\beta \tensor{J}{^\mu_\alpha}-x_\alpha \tensor{J}{^\mu_\beta})\\
-    \partial_\mu \tensor{J}{^\mu_\alpha_\beta}&= \partial_\mu x_\beta \tensor{J}{^\mu_\alpha}+x_\beta\partial_\mu \tensor{J}{^\mu_\alpha}-\partial_\mu x_\alpha \tensor{J}{^\mu_\beta}- x_\alpha\partial_\mu \tensor{J}{^\mu_\beta}\\
-    \partial_\mu \tensor{J}{^\mu_\alpha_\beta}&= g_{\mu\beta} \tensor{J}{^\mu_\alpha}+x_\beta\partial_\mu \tensor{J}{^\mu_\alpha}-g_{\mu\alpha} \tensor{J}{^\mu_\beta}- x_\alpha\partial_\mu \tensor{J}{^\mu_\beta}\\
-    \partial_\mu \tensor{J}{^\mu_\alpha_\beta}&= \tensor{J}{_\beta_\alpha}-\tensor{J}{_\alpha_\beta}+x_\beta\partial_\mu \tensor{J}{^\mu_\alpha}- x_\alpha\partial_\mu \tensor{J}{^\mu_\beta}
+    \tensor{M}{^\mu_\alpha_\beta} &=x_\alpha \tensor{T}{^\mu_\beta}-x_\beta \tensor{T}{^\mu_\alpha}
 \end{align}
+this sign choice is related to the conserved charge associated with $M$. Remember, the conserved charge given by the integral 
+of the energy-momentum tensor is the four momentum,
+\begin{align}
+    P_\beta = \int\dd[3]{\vb x}\tensor{T}{^0_\beta}
+\end{align}
+thus, $\tensor{T}{^0_\beta}$ is the density of four momentum. With this information, the conserved quantity,
+\begin{align}
+    M_{\alpha\beta} = \int\dd[3]{\vb x}\tensor{M}{^0_\alpha_\beta}=\int\dd[3]{\vb x}\qty(x_\alpha \tensor{T}{^0_\beta}-x_\beta \tensor{T}{^0_\alpha})
+\end{align}
+is the integral of position times density of momentum, anti-symmetrized. It's clear the resemblance to: $\vb L = \vb x\times \vb p$. We can 
+even verify that $M_{\alpha\beta}$ as given by the above expression is a representation of the Lorentz algebra generators, but this 
+representation lives in the field phase-space. That is, the algebra is obtained by the Poisson bracket,
+\begin{align}
+    \acomm{M^{\alpha\beta}}{M^{\mu\nu}}&=\tensor{g}{^\alpha^\nu}M^{\mu\beta}-M^{\alpha\nu}g^{\beta\mu}-\tensor{g}{^\beta^\nu}M^{\mu\alpha}+M^{\beta\nu}g^{\alpha\mu}
+\end{align}
+of course, without the $\im$. This is so due to usually in classical mechanics we use the real version of the generators, as complex numbers are 
+not so welcome.
 
-Without a proper lagrangian this is as far as we can go, but, an interesting result that can be seen from here is, 
-whenever the energy momentum tensor is conserved and symmetric, the angular momentum tensor is conserved.
+Without a proper lagrangian, or other information about the theory, we cannot explicitly check that it's conserved. But, the 
+condition of conservation of this current imposes other constrains in the theory,
+\begin{align}
+    \partial_\mu \tensor{M}{^\mu_\alpha_\beta}=0&= \partial_\mu\qty(x_\alpha \tensor{T}{^\mu_\beta}-x_\beta \tensor{T}{^\mu_\alpha})\\
+    0&= \partial_\mu x_\alpha \tensor{T}{^\mu_\beta}+x_\alpha\partial_\mu \tensor{T}{^\mu_\beta}-\partial_\mu x_\beta \tensor{T}{^\mu_\alpha}- x_\beta\partial_\mu \tensor{T}{^\mu_\alpha}\\
+    0&= g_{\mu\alpha} \tensor{T}{^\mu_\beta}+x_\alpha\partial_\mu \tensor{T}{^\mu_\beta}-g_{\mu\beta} \tensor{T}{^\mu_\alpha}- x_\beta\partial_\mu \tensor{T}{^\mu_\alpha}\\
+    0&= \tensor{T}{_\alpha_\beta}-\tensor{T}{_\beta_\alpha}+x_\alpha\partial_\mu \tensor{T}{^\mu_\beta}- x_\beta\partial_\mu \tensor{T}{^\mu_\alpha}
+\end{align}
+notice, if we have a Lorentz invariant scalar theory, which is also translational invariant, then, 
+\begin{align}
+    0&= \tensor{T}{_\alpha_\beta}-\tensor{T}{_\beta_\alpha}
+\end{align}
+the energy-momentum tensor is symmetric!

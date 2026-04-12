@@ -10,15 +10,15 @@
 \contentsline {subsection}{4.A)}{12}{subsection.4.1}%
 \contentsline {subsection}{4.B)}{12}{subsection.4.2}%
 \contentsline {subsection}{4.C)}{13}{subsection.4.3}%
-\contentsline {section}{Problem 5}{14}{section.5}%
-\contentsline {section}{\numberline {A}Conventions}{15}{appendix.A}%
-\contentsline {subsection}{\numberline {A.A)}Metric}{15}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.B)}Levi-Civita}{15}{subsection.A.2}%
-\contentsline {section}{\numberline {B}Lorentz Group Digression}{16}{appendix.B}%
-\contentsline {section}{\numberline {C}Determinants}{20}{appendix.C}%
-\contentsline {section}{\numberline {D}Functional Derivative}{21}{appendix.D}%
-\contentsline {section}{\numberline {E}Noether's Theorem}{22}{appendix.E}%
-\contentsline {section}{\numberline {F}Noether's Second Theorem}{25}{appendix.F}%
-\contentsline {section}{\numberline {G}Boundary Conditions}{27}{appendix.G}%
-\contentsline {section}{\numberline {H}Phase space structure of EM}{30}{appendix.H}%
-\contentsline {section}{\numberline {I}Algebra of conserved quantities}{33}{appendix.I}%
+\contentsline {section}{Problem 5}{15}{section.5}%
+\contentsline {section}{\numberline {A}Conventions}{16}{appendix.A}%
+\contentsline {subsection}{\numberline {A.A)}Metric}{16}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.B)}Levi-Civita}{16}{subsection.A.2}%
+\contentsline {section}{\numberline {B}Lorentz Group Digression}{17}{appendix.B}%
+\contentsline {section}{\numberline {C}Determinants}{21}{appendix.C}%
+\contentsline {section}{\numberline {D}Functional Derivative}{22}{appendix.D}%
+\contentsline {section}{\numberline {E}Noether's Theorem}{23}{appendix.E}%
+\contentsline {section}{\numberline {F}Noether's Second Theorem}{26}{appendix.F}%
+\contentsline {section}{\numberline {G}Boundary Conditions}{28}{appendix.G}%
+\contentsline {section}{\numberline {H}Phase space structure of EM}{31}{appendix.H}%
+\contentsline {section}{\numberline {I}Algebra of conserved quantities}{34}{appendix.I}%
