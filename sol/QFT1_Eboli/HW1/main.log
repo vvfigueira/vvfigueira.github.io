@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.3.13)  12 APR 2026 10:05
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.3.13)  12 APR 2026 10:54
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1124,14 +1124,14 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32661 strings out of 476076
+ 32668 strings out of 476076
  125016,1144653 words of node,token memory allocated
- 2205 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 43 sub_mlist, 1 glyph, 521 attribut
-e, 60 glue_spec, 261 attribute_list, 2 write nodes
-   avail lists: 1:9,2:3893,3:404,4:77,5:804,6:104,7:7260,8:336,9:3108,10:19,11:3
+ 2277 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 51 sub_mlist, 1 glyph, 537 attribut
+e, 60 glue_spec, 269 attribute_list, 2 write nodes
+   avail lists: 1:9,2:3893,3:396,4:77,5:804,6:104,7:7260,8:336,9:3108,10:19,11:3
 85
- 53831 multiletter control sequences out of 65536+600000
+ 53833 multiletter control sequences out of 65536+600000
  82 fonts using 5430151 bytes
  98i,22n,113p,576b,381s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><<c:/U
@@ -1152,10 +1152,10 @@ onts/cm/cmsy6.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
 <c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/t
 exlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (35 pages, 332756 bytes).
+Output written on main.pdf (35 pages, 335822 bytes).
 
-PDF statistics: 705 PDF objects out of 1000 (max. 8388607)
- 633 compressed objects within 7 object streams
- 362 named destinations out of 1000 (max. 1048576)
+PDF statistics: 712 PDF objects out of 1000 (max. 8388607)
+ 640 compressed objects within 7 object streams
+ 367 named destinations out of 1000 (max. 1048576)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
