@@ -1,54 +1,79 @@
 \problem{}
 
-The Lorentz transformation for a vector field is,
-
+Following the lead of last problem, this is again an application of the Noether's theorem to Lorentz transformations. 
+But now with a difference of the field transforming non-trivially,
 \begin{align}
     \begin{cases}
         x^\mu&\rightarrow {x'}^\mu=\tensor{\Lambda}{^\mu_\nu}\qty(\omega)x^\nu\\
         A^\rho\qty(x)&\rightarrow {A'}^\rho\qty(x')=\tensor{\Lambda}{^\rho_\sigma}A^\sigma\qty(x)
     \end{cases}
 \end{align}
-
-The first step we had already made, \cref{eq:xderivativelorentz},
-
+the variation of coordinates we had already made, \cref{eq:xderivativelorentz},
 \begin{align}
     \dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega_{\alpha\beta}=0}=\tensor{g}{_\alpha^\mu}x_\beta-\tensor{g}{_\beta^\mu}x_\alpha
 \end{align}
-
-The second step,
-
+Leaving only the variation of the field, which now has two contributions, the usual one due to $x$ dependence, and 
+another due to the field index transformation, it's not difficult to obtain the result, we just start from ${A'}^\rho\qty(x)= \tensor{\Lambda}{^\rho_\sigma}A^\sigma\qty(\Lambda^{\textnormal{T}}x)$, 
+and apply the chain rule,
 \begin{align}
     \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\dv{}{\omega^{\alpha\beta}}\qty(\tensor{\Lambda}{^\rho_\sigma}A^\sigma\qty(\Lambda^{-1}x))\eval_{\omega^{\alpha\beta}=0}\\
     \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\dv{}{\omega^{\alpha\beta}}\qty(\tensor{\Lambda}{^\rho_\sigma})\eval_{\omega^{\alpha\beta}=0}A^\sigma\qty(x)+\tensor{g}{^\rho_\sigma}\dv{}{\omega^{\alpha\beta}}\qty(A^\sigma\qty(\Lambda^{-1}x))\eval_{\omega^{\alpha\beta}=0}\\%\partial_\nu\phi\qty(x)\dv{}{\omega^{\alpha\beta}}\qty(\Lambda^{-1}x)^\nu\eval_{\omega^{\alpha\beta}=0}\\
     \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\qty(\tensor{g}{_\alpha^\rho}\tensor{g}{_\beta_\sigma}-\tensor{g}{_\beta^\rho}\tensor{g}{_\alpha_\sigma})A^\sigma\qty(x)+\partial_\nu A^\rho\qty(x)\dv{}{\omega^{\alpha\beta}}\qty(\Lambda^{-1}x)^\nu\eval_{\omega^{\alpha\beta}=0}\\
     \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\tensor{g}{_\alpha^\rho}A_\beta-\tensor{g}{_\beta^\rho}A_\alpha+\partial_\nu A^\rho\qty(x)\dv{\tensor{\Lambda}{_\gamma^\nu}}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}x^\gamma\\
     \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\tensor{g}{_\alpha^\rho}A_\beta-\tensor{g}{_\beta^\rho}A_\alpha+\partial_\nu A^\rho\qty(x)\qty(\tensor{g}{_\alpha_\gamma}\tensor{g}{_\beta^\nu}-\tensor{g}{_\beta_\gamma}\tensor{g}{_\alpha^\nu})x^\gamma\\
-    \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\tensor{g}{_\alpha^\rho}A_\beta-\tensor{g}{_\beta^\rho}A_\alpha+x_\alpha\partial_\beta A^\rho\qty(x)-x_\beta\partial_\alpha A^\rho\qty(x)\\
+    \dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}&=\tensor{g}{_\alpha^\rho}A_\beta-\tensor{g}{_\beta^\rho}A_\alpha+x_\alpha\partial_\beta A^\rho\qty(x)-x_\beta\partial_\alpha A^\rho\qty(x)
+\end{align}
+using these results in \cref{eq:conservedcurrentnoether}, and as in the last problem, we set up the current with an additional sign due to 
+convenience,
+\begin{align}
+    -\tensor{M}{^\mu_\alpha_\beta} &=\pdv{\mathcal L}{\partial_\mu A^\rho\qty(x)}\dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}+\mathcal L\dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}\\
+    -\tensor{M}{^\mu_\alpha_\beta} &=\pdv{\mathcal L}{\partial_\mu A^\rho\qty(x)}\qty(\tensor{g}{_\alpha^\rho}A_\beta-\tensor{g}{_\beta^\rho}A_\alpha+x_\alpha\partial_\beta A^\rho-x_\beta\partial_\alpha A^\rho)+\mathcal L\qty(\tensor{g}{_\alpha^\mu}x_\beta-\tensor{g}{_\beta^\mu}x_\alpha)\\
+    -\tensor{M}{^\mu_\alpha_\beta} &=x_\beta\qty(-\pdv{\mathcal L}{\partial_\mu A^\rho\qty(x)}\partial_\alpha A^\rho+\mathcal L\tensor{g}{_\alpha^\mu})-x_\alpha\qty(-\pdv{\mathcal L}{\partial_\mu A^\rho\qty(x)}\partial_\beta A^\rho+\mathcal L\tensor{g}{_\beta^\mu})\nonumber\\
+    &\quad\quad\quad+\pdv{\mathcal L}{\partial_\mu A^\rho\qty(x)}\qty(\tensor{g}{_\alpha^\rho}A_\beta-\tensor{g}{_\beta^\rho}A_\alpha)\\
+    -\tensor{M}{^\mu_\alpha_\beta} &=x_\beta \tensor{T}{^\mu_\alpha}-x_\alpha \tensor{T}{^\mu_\beta}+\pdv{\mathcal L}{\partial_\mu A^\alpha\qty(x)}A_\beta-\pdv{\mathcal L}{\partial_\mu A^\beta\qty(x)}A_\alpha
+\end{align}
+in the last line we identified the energy-momentum tensor. Notice the form of the tensor,
+\begin{align}
+    \tensor{M}{^\mu_\alpha_\beta}&=x_\alpha \tensor{T}{^\mu_\beta}-x_\beta \tensor{T}{^\mu_\alpha}+\tensor{S}{^\mu_\alpha_\beta},\ \ \ \tensor{S}{^\mu_\alpha_\beta}= \tensor{F}{^\mu_\alpha}A_\beta-\tensor{F}{^\mu_\beta}A_\alpha
+\end{align}
+this form of the result we reached is very insightful. Of course the $xT-xT$ piece is referring to orbital angular momentum, 
+while the $S$ piece is about intrinsic angular momentum. Despite this, $M$ is not gauge invariant, as well as $T$ isn't. One type of 
+procedure to obtain an gauge invariant energy-momentum tensor and angular momentum tensor is the Belinfante one, first, we notice that 
+due to conservation,
+\begin{align}
+    \partial_\mu\tensor{M}{^\mu_\alpha_\beta}&=\tensor{T}{_\alpha_\beta}-\tensor{T}{_\beta_\alpha}+\partial_\mu \tensor{S}{^\mu_\alpha_\beta}=0\\
+    \partial_\mu \tensor{S}{^\mu_\alpha_\beta}&=\tensor{T}{_\beta_\alpha}-\tensor{T}{_\alpha_\beta}
+\end{align}
+the divergence of $S$ measures exactly the anti-symmetry of $T$. Notice that we can extract the symmetric part of $T$ as,
+\begin{align}
+    {\tilde\Theta}_{\alpha\beta}&= \frac12\qty(T_{\alpha\beta}+T_{\beta\alpha})\\
+    {\tilde\Theta}_{\alpha\beta}&= T_{\alpha\beta} - \frac12\qty(T_{\alpha\beta}-T_{\beta\alpha})\\
+    {\tilde\Theta}_{\alpha\beta}&= T_{\alpha\beta} + \frac12\partial_\mu \tensor{S}{^\mu_\alpha_\beta}
+\end{align}
+this new tensor is still divergenceless, as $\partial^\alpha\partial_\mu \tensor{S}{^\mu_\alpha_\beta}=0$. We only didn't guaranteed that it's 
+gauge invariant. Actually it isn't, as can be seen from the transformation,
+\begin{align}
+    A_\mu\rightarrow A_\mu +\partial_\mu \lambda&\Rightarrow T_{\alpha\beta}\rightarrow T_{\alpha\beta} +\tensor{F}{_\alpha^\sigma}\partial_\sigma\partial_\beta\lambda\\
+    \tensor{S}{^\mu_\alpha_\beta}\rightarrow \tensor{S}{^\mu_\alpha_\beta}+\tensor{F}{^\mu_\alpha}\partial_\beta \lambda-\tensor{F}{^\mu_\beta}\partial_\alpha \lambda&\Rightarrow 
+    \partial_\mu\tensor{S}{^\mu_\alpha_\beta}\rightarrow \partial_\mu\tensor{S}{^\mu_\alpha_\beta}+\tensor{F}{^\mu_\alpha}\partial_\mu\partial_\beta \lambda-\tensor{F}{^\mu_\beta}\partial_\mu\partial_\alpha \lambda\\
+    {\tilde\Theta}_{\alpha\beta}&\rightarrow {\tilde\Theta}_{\alpha\beta}+\frac12\qty(\tensor{F}{_\alpha^\mu}\partial_\beta+\tensor{F}{_\beta^\mu}\partial_\alpha )\partial_\mu\lambda
 \end{align}
 
-Using these results in \cref{eq:conservedcurrentnoether},
-
+Despite seeming unproductive, closer inspection in this last equations reveals that the first term in 
+the variation of $\partial S$ cancels exactly half the contribution of $T$, and as it contains $\tensor{F}{^\mu_\alpha}$, if we add 
+another $\partial S$ term anti-symmetrized in $\alpha\mu$ will be sufficient to cancel the $T$ 
+contribution. Now, there are the remaining changes coming from $\partial S$, which can be further 
+eliminated by summing $\partial S$ symmetrized in $\beta\mu$, thus, we define the \textit{Belinfante improved energy-momentum tensor} as,
 \begin{align}
-    \tensor{J}{^\mu_\alpha_\beta} &=\pdv{\mathcal L}{\partial_\mu A^\rho\qty(x)}\dv{{A'}^\rho\qty(x)}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}+\mathcal L\dv{{x'}^\mu}{\omega^{\alpha\beta}}\eval_{\omega^{\alpha\beta}=0}\\
-    \tensor{J}{^\mu_\alpha_\beta} &=\pdv{\mathcal L}{\partial_\mu A^\rho\qty(x)}\qty(\tensor{g}{_\alpha^\rho}A_\beta-\tensor{g}{_\beta^\rho}A_\alpha+x_\alpha\partial_\beta A^\rho-x_\beta\partial_\alpha A^\rho)+\mathcal L\qty(\tensor{g}{_\alpha^\mu}x_\beta-\tensor{g}{_\beta^\mu}x_\alpha)\\
-    \tensor{J}{^\mu_\alpha_\beta} &=x_\beta \tensor{J}{^\mu_\alpha}-x_\alpha \tensor{J}{^\mu_\beta}+\pdv{\mathcal L}{\partial_\mu A^\alpha\qty(x)}A_\beta-\pdv{\mathcal L}{\partial_\mu A^\beta\qty(x)}A_\alpha
+    {\Theta}_{\alpha\beta}&= T_{\alpha\beta} + \frac12\partial_\mu \qty[\tensor{S}{^\mu_\alpha_\beta}-\tensor{S}{_\alpha^\mu_\beta}+\tensor{S}{_\beta_\alpha^\mu}]
 \end{align}
+it is conserved, $\partial^\alpha \Theta_{\alpha\beta}=0$, and it's gauge invariant (check it!). Is important to stress that 
+despite we constructed it by using explicit example of electromagnetism, this formula is true for any Poincaré invariant theory.
 
-Which also isn't gauge invariant. To solve this problem consider the following,
-
+We could use this inspiration to construct a gauge invariant angular momentum tensor, with a bit of foresight,
 \begin{align}
-    \tensor{J}{^\mu_\alpha_\beta}&=x_\beta \tensor{J}{^\mu_\alpha}-x_\alpha \tensor{J}{^\mu_\beta}+\tensor{S}{^\mu_\alpha_\beta}
-\end{align}
-
-The conservation equation gives,
-
-\begin{align}
-    \partial_\mu\tensor{J}{^\mu_\alpha_\beta}&=\tensor{J}{_\beta_\alpha}-\tensor{J}{_\alpha_\beta}+\partial_\mu \tensor{S}{^\mu_\alpha_\beta}=0\\
-    \partial_\mu \tensor{S}{^\mu_\alpha_\beta}&=\tensor{J}{_\alpha_\beta}-\tensor{J}{_\beta_\alpha}
-\end{align}
-
-Thus, we can get from $J_{\alpha\beta}$ a symmetric tensor by summing a divergenceless tensor,
-
-\begin{align}
-    \Theta_{\alpha\beta}&= J_{\alpha\beta}+\frac12\qty(\tensor{J}{_\alpha_\beta}-\tensor{J}{_\beta_\alpha})-\frac12\partial\qty(\tensor{J}{_\alpha_\beta}-\tensor{J}{_\beta_\alpha})=J_{\alpha\beta}+\frac12\partial_\mu\tensor{S}{^\mu_\alpha_\beta}
+    \tensor{M}{^\mu_\alpha_\beta}&=x_\alpha \tensor{T}{^\mu_\beta}-x_\beta \tensor{T}{^\mu_\alpha}+\tensor{S}{^\mu_\alpha_\beta}\\
+    \tensor{M}{^\mu_\alpha_\beta}&=x_\alpha \tensor{T}{^\mu_\beta}-x_\beta \tensor{T}{^\mu_\alpha}+g_{\alpha\nu}\tensor{S}{^\mu^\nu_\beta}\\
+    \tensor{M}{^\mu_\alpha_\beta}&=x_\alpha \tensor{T}{^\mu_\beta}-x_\beta \tensor{T}{^\mu_\alpha}+\partial_\nu (x_\alpha)\tensor{S}{^\mu^\nu_\beta}\\
+    \tensor{M}{^\mu_\alpha_\beta}&=x_\alpha \tensor{T}{^\mu_\beta}-x_\beta \tensor{T}{^\mu_\alpha}+\partial_\nu (x_\alpha\tensor{S}{^\mu^\nu_\beta})-x_\alpha\partial_\nu\tensor{S}{^\mu^\nu_\beta}
 \end{align}

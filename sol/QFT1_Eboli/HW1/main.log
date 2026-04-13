@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.3.13)  12 APR 2026 10:54
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.3.13)  12 APR 2026 13:39
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1086,25 +1086,25 @@ Overfull \hbox (24.14737pt too wide) detected at line 187
  []
 
 [6]) [7] (./sections/prob2.tex [8]) [9] (./sections/prob3.tex [10]) [11]
-(./sections/prob4.tex [12] [13]) [14] (./sections/prob5.tex) [15]
-(./appendix/conventions.tex) [16] (./appendix/lorentz.tex
+(./sections/prob4.tex [12] [13]) [14] (./sections/prob5.tex [15]) [16]
+(./appendix/conventions.tex) [17] (./appendix/lorentz.tex
 
 LaTeX Warning: Command \. invalid in math mode on input line 39.
 
 Missing character: There is no ̇ (U+0307) in font cmmi8!
-[17] [18] [19]) [20] (./appendix/determinant.tex) [21]
-(./appendix/fderivative.tex) [22] (./appendix/noether.tex [23] [24]) [25]
+[18] [19] [20]) [21] (./appendix/determinant.tex) [22]
+(./appendix/fderivative.tex) [23] (./appendix/noether.tex [24] [25]) [26]
 (./appendix/noether2.tex
 Overfull \hbox (46.84259pt too wide) detected at line 33
 []
  []
 
-[26]) [27] (./appendix/boundary.tex
+[27]) [28] (./appendix/boundary.tex
 Overfull \hbox (20.08763pt too wide) detected at line 23
 []
  []
 
-[28] [29]) [30] (./appendix/boundaryEM.tex [31]
+[29] [30]) [31] (./appendix/boundaryEM.tex [32]
 Overfull \hbox (76.5018pt too wide) detected at line 52
 []
  []
@@ -1114,7 +1114,7 @@ Overfull \hbox (39.21654pt too wide) detected at line 58
 []
  []
 
-[32]) [33] (./appendix/algebra.tex [34]) [35] (./main.aux)
+[33]) [34] (./appendix/algebra.tex [35]) [36] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1124,12 +1124,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32668 strings out of 476076
+ 32679 strings out of 476076
  125016,1144653 words of node,token memory allocated
- 2277 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 51 sub_mlist, 1 glyph, 537 attribut
-e, 60 glue_spec, 269 attribute_list, 2 write nodes
-   avail lists: 1:9,2:3893,3:396,4:77,5:804,6:104,7:7260,8:336,9:3108,10:19,11:3
+ 2391 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 69 sub_mlist, 1 glyph, 557 attribut
+e, 60 glue_spec, 279 attribute_list, 2 write nodes
+   avail lists: 1:9,2:4134,3:401,4:77,5:804,6:104,7:7260,8:336,9:3108,10:19,11:3
 85
  53833 multiletter control sequences out of 65536+600000
  82 fonts using 5430151 bytes
@@ -1152,10 +1152,10 @@ onts/cm/cmsy6.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
 <c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/t
 exlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (35 pages, 335822 bytes).
+Output written on main.pdf (36 pages, 343017 bytes).
 
-PDF statistics: 712 PDF objects out of 1000 (max. 8388607)
- 640 compressed objects within 7 object streams
- 367 named destinations out of 1000 (max. 1048576)
+PDF statistics: 726 PDF objects out of 1000 (max. 8388607)
+ 653 compressed objects within 7 object streams
+ 378 named destinations out of 1000 (max. 1048576)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
