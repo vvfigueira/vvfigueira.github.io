@@ -68,12 +68,38 @@ eliminated by summing $\partial S$ symmetrized in $\beta\mu$, thus, we define th
     {\Theta}_{\alpha\beta}&= T_{\alpha\beta} + \frac12\partial_\mu \qty[\tensor{S}{^\mu_\alpha_\beta}-\tensor{S}{_\alpha^\mu_\beta}+\tensor{S}{_\beta_\alpha^\mu}]
 \end{align}
 it is conserved, $\partial^\alpha \Theta_{\alpha\beta}=0$, and it's gauge invariant (check it!). Is important to stress that 
-despite we constructed it by using explicit example of electromagnetism, this formula is true for any Poincaré invariant theory.
-
-We could use this inspiration to construct a gauge invariant angular momentum tensor, with a bit of foresight,
+despite we constructed it by using explicit example of electromagnetism, this formula is true for any Poincaré invariant theory. If we 
+compute explicitly for the electromagnetism we get,
 \begin{align}
-    \tensor{M}{^\mu_\alpha_\beta}&=x_\alpha \tensor{T}{^\mu_\beta}-x_\beta \tensor{T}{^\mu_\alpha}+\tensor{S}{^\mu_\alpha_\beta}\\
-    \tensor{M}{^\mu_\alpha_\beta}&=x_\alpha \tensor{T}{^\mu_\beta}-x_\beta \tensor{T}{^\mu_\alpha}+g_{\alpha\nu}\tensor{S}{^\mu^\nu_\beta}\\
-    \tensor{M}{^\mu_\alpha_\beta}&=x_\alpha \tensor{T}{^\mu_\beta}-x_\beta \tensor{T}{^\mu_\alpha}+\partial_\nu (x_\alpha)\tensor{S}{^\mu^\nu_\beta}\\
-    \tensor{M}{^\mu_\alpha_\beta}&=x_\alpha \tensor{T}{^\mu_\beta}-x_\beta \tensor{T}{^\mu_\alpha}+\partial_\nu (x_\alpha\tensor{S}{^\mu^\nu_\beta})-x_\alpha\partial_\nu\tensor{S}{^\mu^\nu_\beta}
+    \Theta_{\alpha\beta} = \tensor{F}{_\alpha^\mu}F_{\beta\mu}-\frac14g_{\alpha\beta}F_{\mu\nu}F^{\mu\nu}
 \end{align}
+
+Of course, we could define whatever we wanted as an \textit{improved energy-momentum tensor}, the catch behind the 
+Belinfante procedure is that this construction is unique, and also agrees with the more general Hilbert's energy-momentum tensor. 
+To see that the Belinfante improvement is a honest construction we must obtain the same conserved charges from both the unimproved and 
+the improved tensor.
+\begin{align}
+    {\tilde P}_\beta &= \int\dd[3]{\vb x}\tensor{\Theta}{^0_\beta} = \int\dd[3]{\vb x}\qty(\tensor{T}{^0_\beta} + \frac12\partial_\mu \qty[\tensor{S}{^\mu^0_\beta}-\tensor{S}{^0^\mu_\beta}+\tensor{S}{_\beta^0^\mu}])\\
+    {\tilde P}_\beta &=\int\dd[3]{\vb x}\tensor{T}{^0_\beta} + \textnormal{ boundary contributions}\\
+    {\tilde P}_\beta &\sim P_\beta
+\end{align}
+for reasonable physical field configurations we can most of the time neglect the boundary contributions.
+
+We could use this inspiration to construct a gauge invariant angular momentum tensor, we first start with the orbital 
+angular momentum using the improved energy-momentum tensor,
+\begin{align}
+    \tensor{\Sigma}{^\mu_\alpha_\beta}&=x_\alpha \tensor{\Theta}{^\mu_\beta}-x_\beta \tensor{\Theta}{^\mu_\alpha}\\
+    \tensor{\Sigma}{^\mu_\alpha_\beta}&=x_\alpha \qty(\tensor{T}{^\mu_\beta} + \frac12\partial_\nu \qty[\tensor{S}{^\nu^\mu_\beta}-\tensor{S}{^\mu^\nu_\beta}+\tensor{S}{_\beta^\mu^\nu}])-x_\beta \qty(\tensor{T}{^\mu_\alpha} + \frac12\partial_\nu \qty[\tensor{S}{^\nu^\mu_\alpha}-\tensor{S}{^\mu^\nu_\alpha}+\tensor{S}{_\alpha^\mu^\nu}])\\
+    \tensor{\Sigma}{^\mu_\alpha_\beta}&=\tensor{M}{^\mu_\alpha_\beta}-\tensor{S}{^\mu_\alpha_\beta}+x_\alpha \frac12\partial_\nu\qty[\tensor{S}{^\nu^\mu_\beta}-\tensor{S}{^\mu^\nu_\beta}+\tensor{S}{_\beta^\mu^\nu}]-x_\beta \frac12\partial_\nu\qty[\tensor{S}{^\nu^\mu_\alpha}-\tensor{S}{^\mu^\nu_\alpha}+\tensor{S}{_\alpha^\mu^\nu}]
+\end{align}
+now, integrating by parts and neglecting boundary terms, visually cued by $\sim$,
+\begin{align}
+    \tensor{\Sigma}{^\mu_\alpha_\beta}&\sim\tensor{M}{^\mu_\alpha_\beta}-\tensor{S}{^\mu_\alpha_\beta}-\partial_\nu x_\alpha \frac12\qty[\tensor{S}{^\nu^\mu_\beta}-\tensor{S}{^\mu^\nu_\beta}+\tensor{S}{_\beta^\mu^\nu}]+\partial_\nu x_\beta \frac12\qty[\tensor{S}{^\nu^\mu_\alpha}-\tensor{S}{^\mu^\nu_\alpha}+\tensor{S}{_\alpha^\mu^\nu}]\\
+    \tensor{\Sigma}{^\mu_\alpha_\beta}&\sim\tensor{M}{^\mu_\alpha_\beta}-\tensor{S}{^\mu_\alpha_\beta}-g_{\nu\alpha} \frac12\qty[\tensor{S}{^\nu^\mu_\beta}-\tensor{S}{^\mu^\nu_\beta}+\tensor{S}{_\beta^\mu^\nu}]+g_{\nu\beta} \frac12\qty[\tensor{S}{^\nu^\mu_\alpha}-\tensor{S}{^\mu^\nu_\alpha}+\tensor{S}{_\alpha^\mu^\nu}]\\
+    \tensor{\Sigma}{^\mu_\alpha_\beta}&\sim\tensor{M}{^\mu_\alpha_\beta}-\tensor{S}{^\mu_\alpha_\beta}- \frac12\qty[\tensor{S}{_\alpha^\mu_\beta}-\tensor{S}{^\mu_\alpha_\beta}+\tensor{S}{_\beta^\mu_\alpha}]+\frac12\qty[\tensor{S}{_\beta^\mu_\alpha}-\tensor{S}{^\mu_\beta_\alpha}+\tensor{S}{_\alpha^\mu_\beta}]\\
+    \tensor{\Sigma}{^\mu_\alpha_\beta}&\sim\tensor{M}{^\mu_\alpha_\beta}-\tensor{S}{^\mu_\alpha_\beta}+\tensor{S}{^\mu_\beta_\alpha}\\
+    \tensor{\Sigma}{^\mu_\alpha_\beta}&\sim\tensor{M}{^\mu_\alpha_\beta}
+\end{align}
+astonishing! The improved angular momentum tensor is given only by the orbital contribution with the improved energy-momentum tensor. Of course, the spin is still encoded inside $\Theta$, 
+but the decomposition of $\Sigma$ into orbital plus intrinsic cannot be done in a gauge invariant manner. To choose a polarization basis for the electromagnetic field is to chose 
+a gauge.
