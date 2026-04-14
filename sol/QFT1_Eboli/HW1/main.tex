@@ -144,15 +144,15 @@
 
 \newcommand{\probitem}{%
   \refstepcounter{subsection}%
-  \addcontentsline{toc}{subsection}{\thesubsection}%
+  \addcontentsline{toc}{subsection}{\thesection.\Alph{subsection})}%
   \vspace{1.5em}
   \noindent
-  {\large\bfseries\thesubsection}%
+  {\large\bfseries\thesection.\Alph{subsection})}%
   \par\nopagebreak\vspace{0.5em}
 }
 
 
-\renewcommand{\thesubsection}{\thesection.\Alph{subsection})}
+% \renewcommand{\thesubsection}{\thesection.\Alph{subsection})}
 
 \allowdisplaybreaks
 

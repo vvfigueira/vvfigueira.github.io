@@ -12,8 +12,8 @@
 \contentsline {subsection}{4.C)}{14}{subsection.4.3}%
 \contentsline {section}{Problem 5}{16}{section.5}%
 \contentsline {section}{\numberline {A}Conventions}{19}{appendix.A}%
-\contentsline {subsection}{\numberline {A.A)}Metric}{19}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.B)}Levi-Civita}{19}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.1}Metric}{19}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Levi-Civita}{19}{subsection.A.2}%
 \contentsline {section}{\numberline {B}Lorentz Group Digression}{20}{appendix.B}%
 \contentsline {section}{\numberline {C}Determinants}{24}{appendix.C}%
 \contentsline {section}{\numberline {D}Functional Derivative}{25}{appendix.D}%
