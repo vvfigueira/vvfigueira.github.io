@@ -63,7 +63,7 @@ it's straightforward to substitute it,
     \tensor{T}{^\mu_\nu} =\frac12F^{\rho\sigma}\pdv{F_{\rho\sigma}}{\partial_\mu A_\alpha\qty(x)}\partial_\nu A_\alpha\qty(x)-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\\
     \tensor{T}{^\mu_\nu} =\frac12F^{\rho\sigma}\qty(\tensor{g}{_\rho^\mu}\tensor{g}{_\sigma^\alpha}-\tensor{g}{_\rho^\alpha}\tensor{g}{_\sigma^\mu})\partial_\nu A_\alpha\qty(x)-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\\
     \tensor{T}{^\mu_\nu} =\frac12F^{\rho\sigma}\qty(\partial_\nu\tensor{g}{_\rho^\mu}A_\sigma-\partial_\nu A_\rho\tensor{g}{_\sigma^\mu})-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\\
-    \tensor{T}{^\mu_\nu} =F^{\mu\sigma}\partial_\nu A_\sigma-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}
+    \tensor{T}{^\mu_\nu} =F^{\mu\sigma}\partial_\nu A_\sigma-\frac14 F_{\rho\sigma}F^{\rho\sigma}\tensor{g}{^\mu_\nu}\label{eq:emtensoreletro}
 \end{align}
 which is the desired energy-momentum tensor.
 
@@ -75,3 +75,28 @@ As a sanity check, we can prove that it's indeed conserved when the equations of
 \end{align}
 showing that it's indeed conserved.
 % But, it isn't gauge invariant, neither symmetric. How to obtain a gauge invariant and symmetric energy momentum tensor?
+
+An important feature of electromagnetism is the presence of a local invariance of the action under $A_\alpha\rightarrow A_\alpha +\partial_\alpha\lambda$, 
+which is true for any $\lambda(x)$. This is called a gauge transformation, and we say the action is gauge invariant. 
+This is \textbf{not} a symmetry, despite being an invariance of the action. Also, the existence of this invariance 
+is of utter importance for the quantization of it, as we'll see in due time, furthermore, not only the action 
+needs to respect this invariance, but any physical quantity has to be gauge invariant. This generates a problem, 
+note that our expression in \cref{eq:emtensoreletro} is not gauge invariant, and also not symmetric --- which is 
+also a problem, as $T^{0i}$ is the momentum density and $T^{i0}$ is the energy flux density, if they are different 
+we're considering an open system ---. It can be shown that the conserved charge, the four momentum, is indeed 
+gauge invariant because $T$ transforms under gauge with a total derivative, thus, it does not contributes to 
+the conserved charge.
+
+Still, it's interesting to construct a symmetric and gauge invariant energy-momentum tensor. There are two main ways 
+of doing so, first, is the Belinfante improvement procedure --- which we undergo in problem \ref{section:prob5} --- that 
+returns the following,
+\begin{align}
+    \Theta_{\alpha\beta}=\tensor{F}{_\alpha^\mu}\tensor{F}{_\beta_\mu}-\frac14 g_{\alpha\beta}F^{\mu\nu}F_{\mu\nu}
+\end{align}
+the other way is by an alternative definition of the energy-momentum tensor, the Hilbert energy-momentum tensor, which 
+requires writing down an action expression fully invariant over general coordinate transformations, and then 
+defining the energy-momentum tensor as,
+\begin{align}
+    \Theta^{\mu\nu}\qty(x) = -\frac{2}{\sqrt{-g}}\fdv{S[\phi]}{g_{\mu\nu}\qty(x)}
+\end{align}
+this is always symmetric and gauge invariant. Both the Belinfante and the Hilbert result agree.
