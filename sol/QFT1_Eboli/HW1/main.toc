@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {C}Determinants}{24}{appendix.C}%
 \contentsline {section}{\numberline {D}Functional Derivative}{25}{appendix.D}%
 \contentsline {section}{\numberline {E}Noether's Theorem}{26}{appendix.E}%
-\contentsline {section}{\numberline {F}Noether's Second Theorem}{29}{appendix.F}%
-\contentsline {section}{\numberline {G}Boundary Conditions}{31}{appendix.G}%
-\contentsline {section}{\numberline {H}Phase space structure of EM}{34}{appendix.H}%
-\contentsline {section}{\numberline {I}Algebra of conserved quantities}{37}{appendix.I}%
+\contentsline {section}{\numberline {F}Noether's Second Theorem}{30}{appendix.F}%
+\contentsline {section}{\numberline {G}Boundary Conditions}{32}{appendix.G}%
+\contentsline {section}{\numberline {H}Phase space structure of EM}{35}{appendix.H}%
+\contentsline {section}{\numberline {I}Algebra of conserved quantities}{38}{appendix.I}%
