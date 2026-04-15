@@ -2,31 +2,59 @@
 \label{appendix:noetherfirst}
 Here we're going to derive the Noether theorem for a handful of cases, first of all, the validity 
 of this theorem is to global continuous symmetries, which in our field theory context means: we start 
-of with an action which depends upon a field, $S\qty[\phi]$, it's supposed to encode 
-whatever index the fields have, then, a symmetry transformation is given in terms of:
-
+of with an action which depends upon a set of fields, $S\qty[\phi]$, $\phi$ is supposed to implicitly encode 
+whatever index the fields may have, then, a symmetry transformation is given in terms of:
 \begin{align}
     \begin{cases}
         x^\mu&\rightarrow {x'}^\mu = {x'}^\mu\qty(x;a)\\
         \phi\qty(x)&\rightarrow {\phi'}\qty(x')={\phi'}\qty(\phi\qty(x),x;a)
     \end{cases}\Rightarrow S\qty[\phi] = S_a'\qty[{\phi'}]
 \end{align}
-
-Let's look further at the symmetry condition,
-
+we write $S_a'[\phi']$ because the modified action is somewhat a function of $a$. Of course, due to this 
+transformation being a symmetry, it's a trivial function of $a$: $S_a'[\phi'] =S[\phi]$. This imposes 
+constrains on the modified action,
 \begin{align}
-    S_a'\qty[\phi']-S\qty[\phi] &= \int\limits_{\Omega'}\dd[4]{x'}\mathcal L'\qty[\phi'\qty(x');x']-\int\limits_{\Omega}\dd[4]{x}\mathcal L\qty[\phi\qty(x);x]\\
+    \dv[m]{}{a}S_a'[\phi']\eval_{a=0} = 0,\ \ \ \forall m\in\mathbb N^*
+\end{align}
+
+The whole point of the Noether's theorem is that the condition,
+\begin{align}
+    \dv{}{a}S_a'[\phi']\eval_{a=0} =0 
+\end{align}
+despite looking trivial, demands a non-trivial relation between the dynamical quantities of our theory. 
+This dynamical relation are the conservation of charges.
+
+To arrive at it, let's look further at the symmetry condition,
+\begin{align}
+    S_a'\qty[\phi']-S\qty[\phi] &= \int\limits_{\Omega'}\dd[4]{x'}\mathcal L'\qty[\phi'\qty(x');x']-\int\limits_{\Omega}\dd[4]{x}\mathcal L\qty[\phi\qty(x);x]
+\end{align}
+of course, if we would substitute $x'=x'(x;a)$ and $\phi'(x')=\phi'(\phi(x),x;a)$ back in this expression the result would just be a trivial $0=0$. 
+The trick is to delay the substitution a little. First we want to obtain in the left-hand side the derivative of the 
+action with respect to $a$, and, on the right-hand side there will be other derivatives in $a$. We do so by summing 
+$0$ in a way to factor the different $a$ variations in each of the transformed quantities,
+\begin{align}
     S_a'\qty[\phi']-S\qty[\phi] &= \int\limits_{\Omega}\dd[4]{x}\mathcal L'\qty[\phi'\qty(x);x]-\int\limits_{\Omega}\dd[4]{x}\mathcal L\qty[\phi\qty(x);x]\nonumber\\
-    &\quad\quad\quad+\int\limits_{\Omega'}\dd[4]{x'}\mathcal L'\qty[\phi'\qty(x');x']-\int\limits_{\Omega}\dd[4]{x}\mathcal L'\qty[\phi'\qty(x);x]\\
+    &\quad\quad\quad+\int\limits_{\Omega'}\dd[4]{x'}\mathcal L'\qty[\phi'\qty(x');x']-\int\limits_{\Omega}\dd[4]{x}\mathcal L'\qty[\phi'\qty(x);x]
+\end{align}
+by summing and subtracting $\int\limits_\Omega \dd[4]{x}\mathcal L'\qty[\phi'(x);x]$ we manage to keep on the first line just the 
+variation of the fields, $\phi'(x)-\phi(x)$, and in the second line just the variation of the coordinates. Here we're 
+considering a generic change of coordinates, what could also change the domain of integration $\Omega\rightarrow\Omega'$ and 
+create a non-unit determinant between the new and old coordinates. To be able to sum both terms in the second line inside a 
+single integral is necessary to make a change of variables which will include a determinant,
+\begin{align}
     S_a'\qty[\phi']-S\qty[\phi] &= \int\limits_{\Omega}\dd[4]{x}\qty{\mathcal L'\qty[\phi'\qty(x);x]-\mathcal L\qty[\phi\qty(x);x]}\nonumber\\
-    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\qty{\Det\qty[\pdv{x'}{x}]\mathcal L'\qty[\phi'\qty(x');x']-\mathcal L'\qty[\phi'\qty(x);x]}\\
+    &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\qty{\Det\qty[\pdv{x'}{x}]\mathcal L'\qty[\phi'\qty(x');x']-\mathcal L'\qty[\phi'\qty(x);x]}
+\end{align}
+we further separate the determinant and Lagrangian variations by summing zero,
+\begin{align}
     S_a'\qty[\phi']-S\qty[\phi] &= \int\limits_{\Omega}\dd[4]{x}\qty{\mathcal L'\qty[\phi'\qty(x);x]-\mathcal L\qty[\phi\qty(x);x]}\nonumber\\
     &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\qty{\Det\qty[\pdv{x'}{x}]-1}\mathcal L'\qty[\phi'\qty(x');x']\nonumber\\
     &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\qty{\mathcal L'\qty[\phi'\qty(x');x']-\mathcal L'\qty[\phi'\qty(x);x]}
 \end{align}
 
-Suppose $\mathcal L'=\mathcal L$,
-
+For simplicity suppose $\mathcal L'=\mathcal L$, this is equivalent to say that the parameters of the 
+lagrangian do not change under this transformation. Also, we fatorize the variation with respect to the 
+field as a functional derivative and divide everything by $a$
 \begin{align}
     \frac{\qty[S_a'\qty[\phi']-S\qty[\phi]]}{a} \eval_{a\rightarrow 0}&= \int\limits_{\Omega}\dd[4]{x}\int\limits_{\Omega}\dd[4]{y}\qty{\fdv{\mathcal L}{\phi\qty(y)}\frac{\phi'\qty(y)-\phi\qty(y)}{a}}\eval_{a\rightarrow0}\nonumber\\
     &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\frac1a\qty{\Det\qty[\pdv{x'}{x}]-1}\eval_{a\rightarrow 0}\mathcal L\nonumber\\
@@ -35,9 +63,9 @@ Suppose $\mathcal L'=\mathcal L$,
     &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\mathcal L\dv{}{a}\Det\qty[\pdv{x'}{x}]\eval_{a= 0}\nonumber\\
     &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\dv{\mathcal L}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}
 \end{align}
-
-Suppose the lagrangian has at most second derivatives,
-
+if the lagrangian has at most second derivatives, the functional derivative 
+can be written as a sum over the partial derivative with respect to the field and the 
+first derivatives of the field, everything multiplied by Dirac deltas,
 \begin{align}
     \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\int\limits_{\Omega}\dd[4]{y}\qty[\pdv{\mathcal L}{\phi\qty(x)}\delta^{\qty(4)}\qty(x-y)+\pdv{\mathcal L}{\partial_{x\mu}\phi\qty(x)}\partial_{x\mu}\delta^{\qty(4)}\qty(x-y)]\dv{\phi'\qty(y)}{a}\eval_{a=0}\nonumber\\
     &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\mathcal L\dv{}{a}\Det\qty[\pdv{x'}{x}]\eval_{a= 0}\nonumber\\
@@ -46,9 +74,7 @@ Suppose the lagrangian has at most second derivatives,
     &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\mathcal L\dv{}{a}\Det\qty[\pdv{x'}{x}]\eval_{a= 0}\nonumber\\
     &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\dv{\mathcal L}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}
 \end{align}
-
-Now impose the equations of motion,
-
+as the Noether's theorem is an on-shell statement, impose the equations of motion,
 \begin{align}
     \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\qty[\partial_\mu\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\pdv{\mathcal L}{\partial_{\mu}\phi\qty(x)}\partial_{\mu}\dv{\phi'\qty(x)}{a}\eval_{a=0}]\nonumber\\
     &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\mathcal L\dv{}{a}\Det\qty[\pdv{x'}{x}]\eval_{a= 0}\nonumber\\
@@ -58,8 +84,7 @@ Now impose the equations of motion,
     &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\dv{\mathcal L}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}
 \end{align}
 
-The last missing piece is to compute the determinant,
-
+The last missing piece is the knowledge of the variation of the determinant,
 \begin{align}
     \Det\qty[\pdv{x'}{x}]&=-\frac{1}{4!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\pdv{{x'}^\alpha}{x^\mu}\pdv{{x'}^\beta}{x^\nu}\pdv{{x'}^\gamma}{x^\rho}\pdv{{x'}^\delta}{x^\sigma}\\
     \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=-\frac{1}{4!}\epsilon_{\alpha\beta\gamma\delta}\epsilon^{\mu\nu\rho\sigma}\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\mu}\pdv{{x'}^\beta}{x^\nu}\pdv{{x'}^\gamma}{x^\rho}\pdv{{x'}^\delta}{x^\sigma}]\eval_{a=0}\\
@@ -70,23 +95,54 @@ The last missing piece is to compute the determinant,
     \dv{}{a}\qty[\Det\qty[\pdv{x'}{x}]]\eval_{a=0}&=\dv{}{a}\qty[\pdv{{x'}^\alpha}{x^\alpha}]\eval_{a=0}=\dv{}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}
 \end{align}
 
-Thus,
-
+Which now we can include in our previous expression,
 \begin{align}
     \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\partial_\mu\qty[\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}]\nonumber\\
     &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\mathcal L\dv{}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}\nonumber\\
     &\quad\quad\quad+\int\limits_{\Omega}\dd[4]{x}\dv{\mathcal L}{x^\alpha}\dv{{x'}^\alpha}{a}\eval_{a=0}\\
     \dv{}{a}S_a'\qty[\phi']\eval_{a=0}&= \int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\qty[\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}]
 \end{align}
-
-It's trivial to include indicies,
-
+this is a general expression for just one field, but, if $\phi$ indexes many fields it's trivial to include additional indicies, also, 
+we could consider the case in which there are more than one $a$ to vary with respect with,
 \begin{align}
     \dv{}{a^i}S_a'\qty[\phi_I']\eval_{a^i=0}&= \int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\qty[\pdv{\mathcal L}{\partial_\mu\phi_I\qty(x)}\dv{\phi_I'\qty(x)}{a^i}\eval_{a^i=0}+\mathcal L\dv{{x'}^\mu}{a^i}\eval_{a^i=0}]
 \end{align}
 
-So that the conserved current is,
-
+The conserved current is the integrand inside the total derivative,
 \begin{align}
     \tensor{J}{^\mu_i} =\pdv{\mathcal L}{\partial_\mu\phi_ I\qty(x)}\dv{\phi_ I'\qty(x)}{a^i}\eval_{a^i=0}+\mathcal L\dv{{x'}^\mu}{a^i}\eval_{a^i=0}\label{eq:conservedcurrentnoether}
+\end{align}
+but why it's called conserved? As we argued before, $\dv{}{a}S_a'[\phi']\eval_{a=0}=0$, then,
+\begin{align}
+    0&= \int\limits_{\Omega}\dd[4]{x}\dv{}{x^\mu}\tensor{J}{^\mu_i}
+\end{align}
+under some strong assumptions this could mean $\partial_\mu\tensor{J}{^\mu_i}=0$, but, the main result is: 
+Let $\Omega = [t_{\textnormal{in}},t_{\textnormal{out}}]\times V$, with $V\subset\mathbb R^3$ --- we didn't used the 
+full $\mathbb R^3$ due to problems arising in non-limited domains ---. Now, by Stokes theorem,
+\begin{align}
+    0&= \int\limits_{\partial\Omega}\dd[3]{S_\mu}\tensor{J}{^\mu_i}
+\end{align}
+where $\dd[3]{S_\mu}$ is the oriented element of integration in 
+\begin{align}
+    \partial\Omega &= \partial [t_{\textnormal{in}},t_{\textnormal{out}}]\times V\cup [t_{\textnormal{in}},t_{\textnormal{out}}]\times \partial V\\
+    \partial\Omega &= \qty{t_{\textnormal{in}},t_{\textnormal{out}}}\times V\cup [t_{\textnormal{in}},t_{\textnormal{out}}]\times \partial V
+\end{align}
+usually we call $[t_{\textnormal{in}},t_{\textnormal{out}}]\times \partial V=\Gamma$ and $t_{\textnormal{in/out}}\times V=\Sigma_\mp$. Opening the 
+integration in these three domains,
+\begin{align}
+    0&= -\int\limits_{\Sigma_-}\dd[3]{S_0}\tensor{J}{^0_i}+\int\limits_{\Sigma_+}\dd[3]{S_0}\tensor{J}{^0_i}+\int\limits_{\Gamma}\dd[3]{S_j}\tensor{J}{^j_i}
+\end{align}
+under some broad assumptions on physical field configuration, action finiteness, etc..., we can neglect the $\Gamma$ contribution to obtain,
+\begin{align}
+    \int\limits_{\Sigma_-}\dd[3]{S_0}\tensor{J}{^0_i}&=\int\limits_{\Sigma_+}\dd[3]{S_0}\tensor{J}{^0_i}
+\end{align}
+Of course, we could have defined the initial and final times to our will, what is valid is that between 
+any two times, the equations of motion provide an evolution such that,
+\begin{align}
+    \int\limits_{\Sigma_{t_1}}\dd[3]{S_0}\tensor{J}{^0_i}&=\int\limits_{\Sigma_{t_2}}\dd[3]{S_0}\tensor{J}{^0_i}
+\end{align}
+
+This means we can define a conserved quantity as,
+\begin{align}
+    Q\qty(t)=\int\limits_{\Sigma_{t}}\dd[3]{S_0}\tensor{J}{^0_i}\Rightarrow Q(t_1)=Q\qty(t_2)
 \end{align}
