@@ -1,0 +1,112 @@
+\problem{}
+\probitem{}
+
+The definition of the canonical conjugated momenta is,
+\begin{align}
+    \pi = \pdv{\mathcal L}{\dot \phi}, \ \ \ \pi^\ast = \pdv{\mathcal L}{\dot \phi^\ast},\ \ \ \dot\phi = \partial_0\phi
+\end{align}
+it's straightforward to obtain then from the Lagrangian,
+\begin{align}
+    \pi = \dot\phi^\ast,\ \ \ \pi^\ast = \dot\phi
+\end{align}
+
+The definition of the Hamiltonian density is,
+\begin{align}
+    \mathcal H  &= \pi\dot \phi+\pi^\ast\dot \phi^\ast - \mathcal L\\
+    \mathcal H  &= \pi\pi^\ast+\pi^\ast\pi +\partial_\mu\phi^\ast\partial^\mu\phi +m^2\phi^\ast\phi\\
+    \mathcal H  &= 2\pi^\ast\pi -\dot\phi^\ast\dot \phi+\grad\phi^\ast\cdot\grad\phi +m^2\phi^\ast\phi\\
+    \mathcal H  &= 2\pi^\ast\pi -\pi\pi ^\ast+\grad\phi^\ast\cdot\grad\phi +m^2\phi^\ast\phi\\
+    \mathcal H  &= \pi^\ast\pi+\grad\phi^\ast\cdot\grad\phi +m^2\phi^\ast\phi
+\end{align}
+the Hamiltonian is then given by the space integral,
+\begin{align}
+    H&=\int\dd[3]{\vb x}\mathcal H\\
+    H&=\int\dd[3]{\vb x}\qty[\pi^\ast\pi+\grad\phi^\ast\cdot\grad\phi +m^2\phi^\ast\phi]
+\end{align}
+
+\probitem{}
+
+First let's check it is a symmetry, the transformation law is,
+\begin{align}
+    \begin{cases}
+        x&\rightarrow x' = x\\
+        \phi(x)&\rightarrow \phi'\qty(x') = \e^{\im a}\phi\qty(x)\\
+        \phi^\ast(x)&\rightarrow {\phi^\ast}'\qty(x') = \e^{-\im a}\phi^\ast\qty(x)
+    \end{cases}
+\end{align}
+substituting back in the action,
+\begin{align}
+    S_a'[\phi']&=\int\dd[4]{x'}\qty(-\partial_\mu '{\phi^\ast}'{\partial^\mu}'\phi'-m^2{\phi^\ast}'\phi')\\
+    S_a'[\phi']&=\int\dd[4]{x}\qty(-\partial_\mu \e^{-\im a}{\phi^\ast}{\partial^\mu}\e^{\im a}\phi-m^2\e^{-\im a}{\phi^\ast}\e^{\im a}\phi)\\
+    S_a'[\phi']&=\int\dd[4]{x}\qty(-\partial_\mu{\phi^\ast}{\partial^\mu}\phi-m^2{\phi^\ast}\phi) = S[\phi]
+\end{align}
+indeed is a symmetry, then, we can use Noether's theorem,
+\begin{align}
+    \tensor{J}{^\mu} &=\pdv{\mathcal L}{\partial_\mu\phi_ I\qty(x)}\dv{\phi_ I'\qty(x)}{a}\eval_{a=0}+\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}\\
+    \tensor{J}{^\mu} &=\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\pdv{\mathcal L}{\partial_\mu\phi^\ast\qty(x)}\dv{{\phi^\ast}'\qty(x)}{a}\eval_{a=0}\\
+    \tensor{J}{^\mu} &=-\partial^\mu\phi^\ast\dv{\phi'\qty(x)}{a}\eval_{a=0}-\partial^\mu\phi\dv{{\phi^\ast}'\qty(x)}{a}\eval_{a=0}\\
+    \tensor{J}{^\mu} &=-\partial^\mu\phi^\ast\qty(\im\phi)-\partial^\mu\phi\qty(-\im \phi^\ast)\\
+    \tensor{J}{^\mu} &=\im \phi^\ast\partial^\mu\phi-\im\phi\partial^\mu\phi^\ast
+\end{align}
+it also can be defined with an overall minus sign. The conserved charge is,
+\begin{align}
+    Q&= \int\dd[3]{\vb x}J^0=\int\dd[3]{\vb x}\qty(\im \phi^\ast\partial^0\phi-\im\phi\partial^0\phi^\ast)\\
+    Q&=-\int\dd[3]{\vb x}\qty(\im \phi^\ast\pi^\ast-\im\phi\pi)\\
+    Q&=\im\int\dd[3]{\vb x}\qty(\pi\phi-\pi^\ast \phi^\ast)
+\end{align}
+
+\probitem{}
+\probitem{}
+
+The canonical commutation relations are,
+\begin{align}
+    \comm{\phi\qty(t,\vb x)}{\pi\qty(t,\vb y)}&= \im\delta^{\qty(3)}\qty(\vb x-\vb y), \ \ \ \comm{\phi\qty(t,\vb x)}{\phi\qty(t,\vb y)}=\comm{\pi\qty(t,\vb x)}{\pi\qty(t,\vb y)}=0\\
+    \comm{\phi^\ast\qty(t,\vb x)}{\pi^\ast\qty(t,\vb y)}&= \im\delta^{\qty(3)}\qty(\vb x-\vb y), \ \ \ \comm{\phi^\ast\qty(t,\vb x)}{\phi^\ast\qty(t,\vb y)}=\comm{\pi^\ast\qty(t,\vb x)}{\pi^\ast\qty(t,\vb y)}=0\\
+    \comm{\phi^\ast\qty(t,\vb x)}{\phi\qty(t,\vb y)}&=\comm{\pi^\ast\qty(t,\vb x)}{\pi\qty(t,\vb y)}=0
+\end{align}
+
+We expand the field in momentum space as,
+\begin{align}
+    \phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}\tilde \phi\qty(p)\e^{\im x\cdot p}
+\end{align}
+
+The equation of motion is,
+\begin{align}
+    \qty(-\Box_x+m^2)\phi\qty(x)=0
+\end{align}
+which when acting on the momentum space representation gives,
+\begin{align}
+    0=\qty(-\Box_x+m^2)\phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}\tilde \phi\qty(p)\qty(-\Box_x+m^2)\e^{\im x\cdot p}\\
+    0&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}\tilde \phi\qty(p)\qty(p^2+m^2)\e^{\im x\cdot p}
+\end{align}
+as each mode should be a solution, $\tilde\phi\qty(p)\qty(p^2+m^2)=0$. The most general solution of this 
+equation is $\tilde\phi\qty(p) = 2\pi\delta\qty(p^2+m^2)\qty(\theta\qty(p^0)a\qty(\vb p)+\theta\qty(-p^0)b^\ast\qty(\vb p))$. Thus,
+\begin{align}
+    \phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}\tilde \phi\qty(p)\e^{\im x\cdot p}\\
+    \phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}2\pi\delta\qty(p^2+m^2)\qty(\theta\qty(p^0)a\qty(\vb p)+\theta\qty(-p^0)b^\ast\qty(\vb p))\e^{\im x\cdot p}
+\end{align}
+to simplify this we need to use some additional properties of the Dirac delta,
+\begin{align}
+    \phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^32\omega_{\vb p}}\qty(\delta\qty(p^0-\omega_{\vb p})+\delta\qty(p^0+\omega_{\vb p}))\qty(\theta\qty(p^0)a\qty(\vb p)+\theta\qty(-p^0)b^\ast\qty(\vb p))\e^{\im x\cdot p}\\
+    \phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^32\omega_{\vb p}}\qty(\delta\qty(p^0-\omega_{\vb p})a\qty(\vb p)+\delta\qty(p^0+\omega_{\vb p})b^\ast\qty(\vb p))\e^{\im x\cdot p}\\
+    \phi\qty(x)&=\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}\qty(a\qty(\vb p)\e^{\im x\cdot p}+b^\ast\qty(\vb p)\e^{-\im x\cdot p})
+\end{align}
+
+Now we use the commutation relations of the fields to obtain the commutation relations of the creation add 
+annihilation operators,
+
+\probitem{}
+
+
+
+\probitem{}
+
+\begin{align}
+    \Delta_{\textnormal{F}}\qty(x,y) &= \mel{0}{\textnormal{T}\qty{\phi\qty(x)\phi^\dagger\qty(y)}}{0}\\
+    \Delta_{\textnormal{F}}\qty(x,y) &= \theta\qty(x^0-y^0)\mel{0}{\phi\qty(x)\phi^\dagger\qty(y)}{0}+\theta\qty(y^0-x^0)\mel{0}{\phi^\dagger\qty(y)\phi\qty(x)}{0}\\
+    \Delta_{\textnormal{F}}\qty(x,y) &= \int\frac{\dd[3]{\vb p}\dd[3]{\vb k}}{\qty(2\pi)^64\omega_{\vb p}\omega_{\vb k}}\qty(\theta\qty(x^0-y^0)\mel{0}{a\qty(\vb p)\e^{\im x\cdot p}a^\dagger\qty(\vb k)\e^{-\im y\cdot k}}{0}+\theta\qty(y^0-x^0)\mel{0}{b\qty(\vb k)\e^{\im y\cdot k}b^\dagger\qty(\vb p)\e^{-\im x\cdot p}}{0})\\
+    \Delta_{\textnormal{F}}\qty(x,y) &= \int\frac{\dd[3]{\vb p}\dd[3]{\vb k}}{\qty(2\pi)^64\omega_{\vb p}\omega_{\vb k}}\left(\theta\qty(x^0-y^0)\e^{-\im y\cdot k+\im x\cdot p}\qty(2\pi)^32\omega_{\vb p}\delta^{\qty(3)}\qty(\vb k-\vb p)\braket{0}{0}\right.\nonumber\\
+    &\quad\quad\quad\left.+\theta\qty(y^0-x^0)\e^{-\im x\cdot p+\im y\cdot k}\qty(2\pi)^32\omega_{\vb p}\delta^{\qty(3)}\qty(\vb k-\vb p)\braket{0}{0}\right)\\
+    \Delta_{\textnormal{F}}\qty(x,y) &= \int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb k}}\left(\theta\qty(x^0-y^0)\e^{\im \qty(x-y)\cdot p}+\theta\qty(y^0-x^0)\e^{-\im \qty(x-y)\cdot p}\right)\\
+    \Delta_{\textnormal{F}}\qty(x,y) &= \int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb k}}\e^{\im \qty(\vb x-\vb y)\cdot \vb p}\left(\theta\qty(x^0-y^0)\e^{-\im \qty(x^0-y^0)\omega_{\vb p}}+\theta\qty(y^0-x^0)\e^{\im \qty(x^0-y^0)\omega_{\vb p}}\right)
+\end{align}
