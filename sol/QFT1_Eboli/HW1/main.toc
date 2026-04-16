@@ -14,11 +14,4 @@
 \contentsline {section}{\numberline {A}Conventions}{19}{appendix.A}%
 \contentsline {subsection}{\numberline {A.1}Metric}{19}{subsection.A.1}%
 \contentsline {subsection}{\numberline {A.2}Levi-Civita}{19}{subsection.A.2}%
-\contentsline {section}{\numberline {B}Lorentz Group Digression}{20}{appendix.B}%
-\contentsline {section}{\numberline {C}Determinants}{24}{appendix.C}%
-\contentsline {section}{\numberline {D}Functional Derivative}{25}{appendix.D}%
-\contentsline {section}{\numberline {E}Noether's Theorem}{26}{appendix.E}%
-\contentsline {section}{\numberline {F}Noether's Second Theorem}{30}{appendix.F}%
-\contentsline {section}{\numberline {G}Boundary Conditions}{32}{appendix.G}%
-\contentsline {section}{\numberline {H}Phase space structure of EM}{35}{appendix.H}%
-\contentsline {section}{\numberline {I}Algebra of conserved quantities}{38}{appendix.I}%
+\contentsline {section}{\numberline {B}Noether's Theorem}{20}{appendix.B}%
