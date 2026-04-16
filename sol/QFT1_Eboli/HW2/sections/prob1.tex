@@ -107,6 +107,26 @@ annihilation operators,
     \Delta_{\textnormal{F}}\qty(x,y) &= \int\frac{\dd[3]{\vb p}\dd[3]{\vb k}}{\qty(2\pi)^64\omega_{\vb p}\omega_{\vb k}}\qty(\theta\qty(x^0-y^0)\mel{0}{a\qty(\vb p)\e^{\im x\cdot p}a^\dagger\qty(\vb k)\e^{-\im y\cdot k}}{0}+\theta\qty(y^0-x^0)\mel{0}{b\qty(\vb k)\e^{\im y\cdot k}b^\dagger\qty(\vb p)\e^{-\im x\cdot p}}{0})\\
     \Delta_{\textnormal{F}}\qty(x,y) &= \int\frac{\dd[3]{\vb p}\dd[3]{\vb k}}{\qty(2\pi)^64\omega_{\vb p}\omega_{\vb k}}\left(\theta\qty(x^0-y^0)\e^{-\im y\cdot k+\im x\cdot p}\qty(2\pi)^32\omega_{\vb p}\delta^{\qty(3)}\qty(\vb k-\vb p)\braket{0}{0}\right.\nonumber\\
     &\quad\quad\quad\left.+\theta\qty(y^0-x^0)\e^{-\im x\cdot p+\im y\cdot k}\qty(2\pi)^32\omega_{\vb p}\delta^{\qty(3)}\qty(\vb k-\vb p)\braket{0}{0}\right)\\
-    \Delta_{\textnormal{F}}\qty(x,y) &= \int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb k}}\left(\theta\qty(x^0-y^0)\e^{\im \qty(x-y)\cdot p}+\theta\qty(y^0-x^0)\e^{-\im \qty(x-y)\cdot p}\right)\\
-    \Delta_{\textnormal{F}}\qty(x,y) &= \int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb k}}\e^{\im \qty(\vb x-\vb y)\cdot \vb p}\left(\theta\qty(x^0-y^0)\e^{-\im \qty(x^0-y^0)\omega_{\vb p}}+\theta\qty(y^0-x^0)\e^{\im \qty(x^0-y^0)\omega_{\vb p}}\right)
+    \Delta_{\textnormal{F}}\qty(x,y) &= \int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}\left(\theta\qty(x^0-y^0)\e^{\im \qty(x-y)\cdot p}+\theta\qty(y^0-x^0)\e^{-\im \qty(x-y)\cdot p}\right)\\
+    \Delta_{\textnormal{F}}\qty(x,y) &= \int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}\e^{\im \qty(\vb x-\vb y)\cdot \vb p}\left(\theta\qty(x^0-y^0)\e^{-\im \qty(x^0-y^0)\omega_{\vb p}}+\theta\qty(y^0-x^0)\e^{\im \qty(x^0-y^0)\omega_{\vb p}}\right)
+\end{align}
+
+Let us use the integral representation of the Heaviside function,
+\begin{align}
+    \theta\qty(x) = -\frac{1}{2\pi\im}\lim\limits_{\epsilon\rightarrow 0^+}\int\limits_{-\infty}^{+\infty}\dd{p}\frac{\e^{-\im xp}}{p+\im\epsilon}
+\end{align}
+then,
+\begin{align}
+    \Delta_{\textnormal{F}}\qty(x,y) &=-\frac{1}{2\pi\im}\lim\limits_{\epsilon\rightarrow 0^+} \int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}\e^{\im \qty(\vb x-\vb y)\cdot \vb p}\int\dd{p^0}\frac{1}{p^0+\im\epsilon}\left(\e^{-\im \qty(x^0-y^0)p^0}\e^{-\im \qty(x^0-y^0)\omega_{\vb p}}+\e^{\im \qty(x^0-y^0)p^0}\e^{\im \qty(x^0-y^0)\omega_{\vb p}}\right)
+\end{align}
+shifting the $p^0$ integral,
+\begin{align}
+    \Delta_{\textnormal{F}}\qty(x,y) &=-\frac{1}{2\pi\im}\lim\limits_{\epsilon\rightarrow 0^+} \int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}\e^{\im \qty(\vb x-\vb y)\cdot \vb p}\int\dd{p^0}\frac{1}{p^0-\omega_{\vb p}+\im\epsilon}\left(\e^{-\im \qty(x^0-y^0)p^0}+\e^{\im \qty(x^0-y^0)p^0}\right)
+\end{align}
+changing the sign of $p^0$ in the second term,
+\begin{align}
+    \Delta_{\textnormal{F}}\qty(x,y) &=-\frac{1}{2\pi\im}\lim\limits_{\epsilon\rightarrow 0^+} \int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}\e^{\im \qty(\vb x-\vb y)\cdot \vb p}\int\dd{p^0}\e^{-\im \qty(x^0-y^0)p^0}\left(\frac{1}{p^0-\omega_{\vb p}+\im\epsilon}+\frac{1}{-p^0-\omega_{\vb p}+\im\epsilon}\right)\\
+    \Delta_{\textnormal{F}}\qty(x,y) &=-\frac{1}{\im}\lim\limits_{\epsilon\rightarrow 0^+} \int\frac{\dd[4]{ p}}{\qty(2\pi)^42\omega_{\vb p}}\e^{\im \qty(x- y)\cdot p}\left(\frac{-2\omega_{\vb p}+2\im\epsilon}{\qty(p^0-\omega_{\vb p}+\im\epsilon)\qty(-p^0-\omega_{\vb p}+\im\epsilon)}\right)\\
+    \Delta_{\textnormal{F}}\qty(x,y) &=\frac{1}{\im}\lim\limits_{\epsilon\rightarrow 0^+} \int\frac{\dd[4]{ p}}{\qty(2\pi)^4}\frac{\e^{\im \qty(x- y)\cdot p}}{-\qty(p^0)^2+\omega_{\vb p}^2-2\im\epsilon\omega_{\vb p}-\epsilon^2}\\
+    \Delta_{\textnormal{F}}\qty(x,y) &=\frac{1}{\im}\lim\limits_{\epsilon\rightarrow 0^+} \int\frac{\dd[4]{ p}}{\qty(2\pi)^4}\frac{\e^{\im \qty(x- y)\cdot p}}{p^2+m^2-\im\epsilon}
 \end{align}
