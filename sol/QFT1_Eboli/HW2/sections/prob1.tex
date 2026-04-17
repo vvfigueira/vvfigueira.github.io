@@ -97,7 +97,27 @@ annihilation operators,
 
 \probitem{}
 
-
+Let's start with the Hamiltonian,
+\begin{align}
+    H&=\int\dd[3]{\vb x}\qty[\pi^\ast\pi+\grad\phi^\ast\cdot\grad\phi +m^2\phi^\ast\phi]\\
+    H&=\int\dd[3]{\vb x}\int\frac{\dd[3]{\vb p}\dd[3]{\vb k}}{\qty(2\pi)^64\omega_{\vb p}\omega_{\vb k}}\left[\partial_0\qty(a\qty(\vb k)\e^{\im x\cdot k}+b^\dagger\qty(\vb k)\e^{-\im x\cdot k})\partial_0\qty(b\qty(\vb p)\e^{\im x\cdot p}+a^\dagger\qty(\vb p)\e^{-\im x\cdot p})\right.\nonumber\\
+    &\quad\quad\quad+\grad\qty(b\qty(\vb k)\e^{\im x\cdot k}+a^\dagger\qty(\vb k)\e^{-\im x\cdot k})\cdot\grad\qty(a\qty(\vb p)\e^{\im x\cdot p}+b^\dagger\qty(\vb p)\e^{-\im x\cdot p})\nonumber\\
+    &\quad\quad\quad\left.+m^2\qty(b\qty(\vb k)\e^{\im x\cdot k}+a^\dagger\qty(\vb k)\e^{-\im x\cdot k})\qty(a\qty(\vb p)\e^{\im x\cdot p}+b^\dagger\qty(\vb p)\e^{-\im x\cdot p})\right]\\
+    H&=\int\dd[3]{\vb x}\int\frac{\dd[3]{\vb p}\dd[3]{\vb k}}{\qty(2\pi)^64\omega_{\vb p}\omega_{\vb k}}\left[\im\omega_{\vb k}\qty(-a\qty(\vb k)\e^{\im x\cdot k}+b^\dagger\qty(\vb k)\e^{-\im x\cdot k})\im\omega_{\vb p}\qty(-b\qty(\vb p)\e^{\im x\cdot p}+a^\dagger\qty(\vb p)\e^{-\im x\cdot p})\right.\nonumber\\
+    &\quad\quad\quad+\im^2\vb p\cdot \vb k\qty(b\qty(\vb k)\e^{\im x\cdot k}-a^\dagger\qty(\vb k)\e^{-\im x\cdot k})\qty(a\qty(\vb p)\e^{\im x\cdot p}-b^\dagger\qty(\vb p)\e^{-\im x\cdot p})\nonumber\\
+    &\quad\quad\quad\left.+m^2\qty(b\qty(\vb k)\e^{\im x\cdot k}+a^\dagger\qty(\vb k)\e^{-\im x\cdot k})\qty(a\qty(\vb p)\e^{\im x\cdot p}+b^\dagger\qty(\vb p)\e^{-\im x\cdot p})\right]\\
+    H&=\int\dd[3]{\vb x}\int\frac{\dd[3]{\vb p}\dd[3]{\vb k}}{\qty(2\pi)^64\omega_{\vb p}\omega_{\vb k}}\left[\e^{\im x\cdot\qty(k+p)}\qty(-\omega_{\vb k}\omega_{\vb p}a\qty(\vb k)b\qty(\vb p)-\vb k\cdot \vb p b\qty(\vb k)a\qty(\vb p)+m^2b\qty(\vb k)a\qty(\vb p))\right.\nonumber\\
+    &\quad\quad\quad+\e^{\im x\cdot\qty(k-p)}\qty(\omega_{\vb k}\omega_{\vb p}a\qty(\vb k)a^\dagger\qty(\vb p)+\vb k\cdot \vb p b\qty(\vb k)b^\dagger\qty(\vb p)+m^2b\qty(\vb k)b^\dagger\qty(\vb p))\nonumber\\
+    &\quad\quad\quad+\e^{\im x\cdot\qty(-k+p)}\qty(\omega_{\vb k}\omega_{\vb p}b^\dagger\qty(\vb k)b\qty(\vb p)+\vb k\cdot \vb p a^\dagger\qty(\vb k)a\qty(\vb p)+m^2a^\dagger\qty(\vb k)a\qty(\vb p))\nonumber\\
+    &\quad\quad\quad\left.+\e^{-\im x\cdot\qty(k+p)}\qty(-\omega_{\vb k}\omega_{\vb p}b^\dagger\qty(\vb k)a^\dagger\qty(\vb p)-\vb k\cdot \vb p a^\dagger\qty(\vb k)b^\dagger\qty(\vb p)+m^2a^\dagger\qty(\vb k)b^\dagger\qty(\vb p))\right]\\
+    H&=\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^34\omega_{\vb p}^2}\left[\e^{-\im x^02\omega_{\vb p}}\qty(-\omega_{\vb p}\omega_{\vb p}a\qty(-\vb p)b\qty(\vb p)+\vb p^2 b\qty(-\vb p)a\qty(\vb p)+m^2b\qty(-\vb p)a\qty(\vb p))\right.\nonumber\\
+    &\quad\quad\quad+\qty(\omega_{\vb p}\omega_{\vb p}a\qty(\vb p)a^\dagger\qty(\vb p)+ \vb p^2 b\qty(\vb p)b^\dagger\qty(\vb p)+m^2b\qty(\vb p)b^\dagger\qty(\vb p))\nonumber\\
+    &\quad\quad\quad+\qty(\omega_{\vb p}\omega_{\vb p}b^\dagger\qty(\vb p)b\qty(\vb p)+\vb p^2 a^\dagger\qty(\vb p)a\qty(\vb p)+m^2a^\dagger\qty(\vb p)a\qty(\vb p))\nonumber\\
+    &\quad\quad\quad\left.+\e^{\im x^02\omega_{\vb p}}\qty(-\omega_{\vb p}\omega_{\vb p}b^\dagger\qty(-\vb p)a^\dagger\qty(\vb p)+\vb p^2 a^\dagger\qty(-\vb p)b^\dagger\qty(\vb p)+m^2a^\dagger\qty(-\vb p)b^\dagger\qty(\vb p))\right]\\
+    H&=\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^34\omega_{\vb p}^2}\left[\omega_{\vb p}^2a\qty(\vb p)a^\dagger\qty(\vb p)+ \omega_{\vb p}^2 b\qty(\vb p)b^\dagger\qty(\vb p)+\omega_{\vb p}^2b^\dagger\qty(\vb p)b\qty(\vb p)+\omega_{\vb p}^2 a^\dagger\qty(\vb p)a\qty(\vb p)\right]\\
+    H&=\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^34\omega_{\vb p}}\omega_{\vb p}\left[2\qty(2\pi)^32\omega_{\vb p}\delta^{\qty(3)}\qty(0)+2b^\dagger\qty(\vb p)b\qty(\vb p)+ 2a^\dagger\qty(\vb p)a\qty(\vb p)\right]\\
+    H&=\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}\omega_{\vb p}\left[b^\dagger\qty(\vb p)b\qty(\vb p)+ a^\dagger\qty(\vb p)a\qty(\vb p)\right]+2\delta^{\qty(3)}\qty(0)\int\dd[3]{\vb p}\frac12\omega_{\vb p}
+\end{align}
 
 \probitem{}
 
