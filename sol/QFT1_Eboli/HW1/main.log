@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  16 APR 2026 11:12
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.15)  20 APR 2026 10:17
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1204,7 +1204,7 @@ Overfull \hbox (46.84259pt too wide) detected at line 33
 
 [30])
 
-[31] (./appendix/boundary.tex
+[31] (./appendix/boundary2.tex
 
 [32]
 
@@ -1268,7 +1268,7 @@ onts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/t
 exlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (39 pages, 357991 bytes).
+Output written on main.pdf (39 pages, 357637 bytes).
 
 PDF statistics: 762 PDF objects out of 1000 (max. 8388607)
  686 compressed objects within 7 object streams
