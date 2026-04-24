@@ -1,65 +1,159 @@
 \section{Boundary Conditions}
 
-The main Let our spacetime be a four dimensional manifold $\Omega$, with boundary $\partial\Omega = \Sigma_-\cup\Sigma_+\cup\Gamma$. 
-Our action principle is given by,
-
+Usually the boundary terms are straightly neglected, here we would like to discuss a little bit more 
+about some non-trivial implications of them. Let's start by choosing our domain of integration, a.k.a. spacetime, to be a four dimensional manifold $\Omega$, which we take to have a 
+boundary $\partial\Omega = \Sigma_-\cup\Sigma_+\cup\Gamma$. Here $\Sigma_\pm$ are two time-like boundaries, a generalization of initial and finial constant time surfaces, and $\Gamma$ is the 
+space-like boundary, which is usually taken as a cube or a 2-sphere. In the simplest case, $\Omega$ is a compact subset of $\mathbb R^4$. Also, we consider an action with various scalar fields --- 
+we can of course do the same with vector fields, but we'll leave this to later ---,
 \begin{align}
-    S[\phi] = \int\limits_\Omega\dd[4]{x}\mathcal L[\phi(x),x]%+\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\ell^\alpha[\phi(x),x]
+    S[\phi_I] = \int\limits_\Omega\dd[4]{x}\mathcal L[\phi_I(x),x]%+\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\ell^\alpha[\phi(x),x]
+\end{align}
+we proceed with the variation of the action to obtain the equations of motion,
+\begin{align}
+    \delta S&=\int\limits_{\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\fdv{\mathcal L[x]}{\phi_J\qty(y)}\delta\phi_J(y)
+\end{align}%+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
+assuming the Lagrangian has at most second derivatives,
+\begin{align}
+    \delta S&=\int\limits_{\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi_J\qty(x)}\delta^{(4)}\qty(x-y)+\pdv{\mathcal L[x]}{\partial_\mu\phi_J\qty(x)}\partial_\mu\delta^{(4)}\qty(x-y)]\delta\phi_J(y)\\%&\quad\quad\quad+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
+    \delta S&=\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi_J\qty(x)}\delta\phi_J\qty(x)+\pdv{\mathcal L[x]}{\partial_\mu\phi_J\qty(x)}\partial_\mu\delta\phi_J(x)]   
+\end{align}
+integrating by parts the second term,
+\begin{align}
+    \delta S&=\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi_J\qty(x)}\delta\phi_J\qty(x)-\partial_\mu\pdv{\mathcal L[x]}{\partial_\mu\phi_J\qty(x)}\delta\phi_J(x)]+\int\limits_\Omega\dd[4]{x}\partial_\mu\qty[\pdv{\mathcal L[x]}{\partial_\mu\phi_J\qty(x)}\delta\phi_J(x)]
+\end{align}
+using Stokes' theorem,
+\begin{align}
+    \delta S&=\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi_J\qty(x)}-\partial_\mu\pdv{\mathcal L[x]}{\partial_\mu\phi_J\qty(x)}]\delta\phi_J(x)+\int\limits_{\partial\Omega}\dd[3]{S_\mu}\pdv{\mathcal L[x]}{\partial_\mu\phi_J\qty(x)}\delta\phi_J(x)\label{eq:deltaS}
+\end{align}
+where $\dd[3]{S_\mu}$ is the oriented integration form on $\partial\Omega$ inherited from $\Omega$. We define as a solution of the equations of motion any field configuration $\Phi_{J}$ such that the variation of 
+the action near it is zero. That is,
+\begin{align}
+    \Phi_J\textnormal{ is a solution }\Leftrightarrow \delta S\eval_{\phi_J = \Phi_J} =0
 \end{align}
 
-The variation of the action cannot have contributions from the bulk of $\Gamma$, and also is done with compact support 
-outside of $\Sigma_-\cup\Sigma_+$, that is, on $\tilde\Omega = \Omega'\cup\Gamma'$,
-
+As the variation $\delta \phi_J$ around $\Phi_J$ must be arbitrary, each term in \cref{eq:deltaS} must vanish locally. For the interior of $\Omega$ this simply impose the Euler-Lagrange equations,
 \begin{align}
-    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\fdv{\mathcal L[x]}{\phi\qty(y)}\psi(y)\\%+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
-    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi\qty(x)}\delta^{(4)}\qty(x-y)+\pdv{\mathcal L[x]}{\partial_\mu\phi\qty(x)}\partial_\mu\delta^{(4)}\qty(x-y)]\psi(y)\\%&\quad\quad\quad+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
-    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi\qty(x)}-\partial_\mu\pdv{\mathcal L[x]}{\partial_\mu\phi\qty(x)}]\delta^{(4)}\qty(x-y)\psi(y)\nonumber\\
-    &\quad\quad\quad+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_\Omega\dd[4]{x}\partial_{x\mu}\qty[\pdv{\mathcal L[x]}{\partial_\mu\phi\qty(x)}\delta^{(4)}\qty(x-y)]\psi(y)\\%\\+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
-    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\qty[\pdv{\mathcal L[y]}{\phi\qty(y)}-\partial_\mu\pdv{\mathcal L[y]}{\partial_\mu\phi\qty(y)}]\psi(y)\nonumber\\
-    &\quad\quad\quad+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\pdv{\mathcal L[x]}{\partial_\alpha\phi\qty(x)}\delta^{(4)}\qty(x-y)\psi(y)\\%+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)\\
-    \int\limits_{\tilde\Omega}\dd[4]{y}\fdv{S[\phi]}{\phi\qty(y)}\psi\qty(y)&=\int\limits_{\tilde\Omega}\dd[4]{y}\qty[\pdv{\mathcal L[y]}{\phi\qty(y)}-\partial_\mu\pdv{\mathcal L[y]}{\partial_\mu\phi\qty(y)}]\psi(y)\nonumber\\
-    &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\pdv{\mathcal L[x]}{\partial_\alpha\phi\qty(x)}\psi(x)%+\int\limits_{\tilde\Omega}\dd[4]{y}\int\limits_{\partial\Omega}\dd[3]{S_{x\alpha}}\fdv{\ell^\alpha[x]}{\phi\qty(y)}\psi(y)
+    0&=\qty[\pdv{\mathcal L[x]}{\phi_J\qty(x)}-\partial_\mu\pdv{\mathcal L[x]}{\partial_\mu\phi_J\qty(x)}]\eval_{\phi_J=\Phi_J},\ \ \ \forall x\in\mathring\Omega
+\end{align}
+as we supposed the Lagrangian has at most second derivatives, this implies we have to solve in the bulk for,
+\begin{align}
+    0&=\qty[\pdv{\mathcal L[x]}{\phi_J\qty(x)}+\tensor{R}{^J^K}\partial_\mu\partial^\mu \phi_K]\eval_{\phi_J=\Phi_J},\ \ \ \forall x\in\mathring\Omega
+\end{align}
+if $R$ is not invertible, some of the fields are non-dynamical, and have as equations of motion just algebraic conditions. Suppose $R$ is invertible, then,
+\begin{align}
+    0&=\qty[R^{-1}_{IJ}\pdv{\mathcal L[x]}{\phi_J\qty(x)}+\partial_\mu\partial^\mu \phi_I]\eval_{\phi_J=\Phi_J},\ \ \ \forall x\in\mathring\Omega
+\end{align}
+this is a second order hyperbolic PDE. For these kinds of PDE, to find an unique solution is necessary to specify two boundary conditions, and as we are interested in the 
+time evolution, there are two possible choices,
+\begin{align}
+    \Phi_J\qty(t_1,\vb x) = a_{1J}\qty(\vb x)\ &\&\ \Phi_J\qty(t_2,\vb x) = a_{2J}\qty(\vb x),\ \ \ t_1\neq t_2\\
+    \Phi_J\qty(t_1,\vb x) = a_{1J}\qty(\vb x)\ &\&\ \dot \Phi_J\qty(t_1,\vb x) = a_{J2}\qty(\vb x)
+\end{align}
+the first one is generally the most common choice, as it fits well in the time evolution reasoning and quantumly does not break the uncertainty principle. As we need to choose this boundary condition 
+to get a unique answer from the action variation, the variation itself cannot change it, otherwise we wouldn't be able to select a unique solution. The most easy way out is to choose $t_1$ and $t_2$ as 
+the initial and final times related to the initial and final time-like surfaces $\Sigma_pm$, and then set that,
+\begin{align}
+    \delta\phi_J\eval_{\Sigma_{\pm}}=0
 \end{align}
 
-%For many cases $\ell^\alpha\equiv0$ due to dynamical and covariance reasons. 
-Of course $\psi$ is zero on $\Sigma_\pm$, then, the equations of motion impose:
-
+Is important to stress that this is the case only if we're varying the action to get a solution of the equations of motion. With this extra condition the variation becomes,
 \begin{align}
-    0&=\pdv{\mathcal L[\phi\qty(x);x]}{\phi\qty(x)}-\partial_\mu\pdv{\mathcal L[\phi(x);x]}{\partial_\mu\phi\qty(x)}\eval_{x\in\Omega}\\
-    0&=n_\alpha(x)\partial^\alpha\phi(x)\eval_{x\in\Gamma}
+    \delta S&=\int\limits_\Omega\dd[4]{x}\qty[\pdv{\mathcal L[x]}{\phi_J\qty(x)}-\partial_\mu\pdv{\mathcal L[x]}{\partial_\mu\phi_J\qty(x)}]\delta\phi_J(x)+\int\limits_{\Gamma}\dd[3]{S_\mu}\pdv{\mathcal L[x]}{\partial_\mu\phi_J\qty(x)}\delta\phi_J(x)\label{eq:deltaSwithinitialvalue}
+\end{align}
+notice that in the second integral, $\partial\Omega\rightarrow \Gamma$, as $\delta\phi_J =0 $ at $\Sigma_\pm$. Again, to $\delta S =0$ give an solution of the equations of motion each piece has to vanish locally, 
+the first integrand we already discussed, which gives the Euler-Lagrange equations and that has an unique solution with the proper chosen boundary data. Despite this, we still have a second contribution coming 
+from the integral over $\Gamma$. As well as the first, the integrand has to vanish locally, this implies that,
+\begin{align}
+    0&=\qty[n_\mu\qty(x)\pdv{\mathcal L[x]}{\partial_\mu\phi_J\qty(x)}]\eval_{\phi_J=\Phi_J},\ \ \ \forall x \in \Gamma\label{eq:Gammaboundarycondition}
+\end{align}
+where $n_\mu\qty(x)$ is the normal vector at $x$ in $\Gamma$. To $\Phi_J$ to be a solution, despite having to satisfy the Euler-Lagrangian equations of motion in the interior of $\Omega$, 
+it also has to satisfy the boundary condition of \cref{eq:Gammaboundarycondition}. 
+
+This is kind of interesting to various reasons, first, remembering the reasoning behind Noether's theorem, we arrive at,
+\begin{align}
+    0&=\int\limits_{\Omega}\dd[4]{x}\partial_\mu\qty[\pdv{\mathcal L}{\partial_\mu\phi_I\qty(x)}\dv{{\phi'}_I\qty(x)}{a^i}\eval_{a^i=0}+\mathcal L\dv{{x'}^\mu}{a^i}\eval_{a^i=0}]
+\end{align}
+using Stokes' theorem,
+\begin{align}
+    0&=\int\limits_{\partial\Omega}\dd[3]{S_\mu}\tensor{J}{^\mu_i}\\
+    0&=\int\limits_{\Sigma_-}\dd[3]{S_\mu}\tensor{J}{^\mu_i}+\int\limits_{\Sigma_+}\dd[3]{S_\mu}\tensor{J}{^\mu_i}+\int\limits_{\Gamma}\dd[3]{S_\mu}\tensor{J}{^\mu_i}
+\end{align}
+for the simplest of the cases,
+\begin{align}
+    \dd[3]{S_\mu}\eval_{\Sigma_\pm} = \pm\delta_{0\mu}\dd[3]{\vb x}
+\end{align}
+then,
+\begin{align}
+    \int\limits_{\Sigma_-}\dd[3]{\vb x}\tensor{J}{^0_i}&=\int\limits_{\Sigma_+}\dd[3]{\vb x}\tensor{J}{^0_i}+\int\limits_{\Gamma}\dd[3]{S_\mu}\qty[\pdv{\mathcal L}{\partial_\mu\phi_I\qty(x)}\dv{{\phi'}_I\qty(x)}{a^i}\eval_{a^i=0}+\mathcal L\dv{{x'}^\mu}{a^i}\eval_{a^i=0}]
+\end{align}
+due to the additional boundary equation of motion, \cref{eq:Gammaboundarycondition}, the first term in the integrand of the last integral is zero, then,
+\begin{align}
+    \int\limits_{\Sigma_-}\dd[3]{\vb x}\tensor{J}{^0_i}&=\int\limits_{\Sigma_+}\dd[3]{\vb x}\tensor{J}{^0_i}+\int\limits_{\Gamma}\dd[3]{S_\mu}\mathcal L\dv{{x'}^\mu}{a^i}\eval_{a^i=0}\label{eq:NotConservationEquation}
 \end{align}
 
-With $n_\alpha$ being the normal direction in $\Gamma$. If we try to compute the conserved charge by Noether's theorem,
-
+The conservation equation is spoiled by the last integral over $\Gamma$. Notice, if the symmetry transformation does not act on the space-time --- $\dv{{x'}^\mu}{a^i}\eval_{a^i=0}=0$ ---, then, we get a conserved quantity,
 \begin{align}
-    0&=\int\limits_{\partial\Omega}\dd[3]{S_\mu}\qty[\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}]\\
-    0&=\int\limits_{\Sigma_+}\dd[3]{S_\mu}J^\mu-\int\limits_{\Sigma_-}\dd[3]{S_\mu}J^\mu+\int\limits_{\Gamma}\dd[3]{S_\mu}\qty[\pdv{\mathcal L}{\partial_\mu\phi\qty(x)}\dv{\phi'\qty(x)}{a}\eval_{a=0}+\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}]\\
-    0&=\int\limits_{\Sigma_+}\dd[3]{S_\mu}J^\mu-\int\limits_{\Sigma_-}\dd[3]{S_\mu}J^\mu+\int\limits_{\Gamma}\dd[3]{S_\mu}\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}
+    \int\limits_{\Sigma_-}\dd[3]{\vb x}\tensor{J}{^0_i}&=\int\limits_{\Sigma_+}\dd[3]{\vb x}\tensor{J}{^0_i}
+\end{align}
+otherwise there isn't a conserved quantity, unless we guarantee by any other means that this last term is \textit{zero}. Usually what is assumed is: ``Physical field configurations must decay rapidly enough at space-like boundary (infinity)'', that is supposed to mean,
+\begin{align}
+    \mathcal L\eval_{x\in\Gamma}=0\Rightarrow \int\limits_{\Gamma}\dd[3]{S_\mu}\mathcal L\dv{{x'}^\mu}{a^i}\eval_{a^i=0}=0
+\end{align}
+despite sounding reasonable, it's hard to tell from where this condition is coming. In the entire derivation we didn't need any hypothesis about the behavior of the solutions at 
+space-like infinity, apart from it's derivative in \cref{eq:Gammaboundarycondition}.
+
+Actually, the most general condition we should impose in order to have a conserved quantity is that this last term is again a total derivative. If $\mathcal L\dv{{x'}^\mu}{a^i}\eval_{a^i=0}=\partial_\nu K^{\qty[\nu\mu]}$, then,
+\begin{align}
+    \int\limits_{\Sigma_-}\dd[3]{\vb x}\tensor{J}{^0_i}&=\int\limits_{\Sigma_+}\dd[3]{\vb x}\tensor{J}{^0_i}+\int\limits_{\Gamma}\dd[3]{S_\mu}\partial_\nu K^{\qty[\nu\mu]}\\
+    \int\limits_{\Sigma_-}\dd[3]{\vb x}\tensor{J}{^0_i}&=\int\limits_{\Sigma_+}\dd[3]{\vb x}\tensor{J}{^0_i}+\int\limits_{\partial\Gamma}\dd[3]{S_{\qty[\nu\mu]}} K^{\qty[\nu\mu]}
+\end{align}
+where we used Stokes' theorem. Of course $\partial\Gamma = \partial\Sigma_+\cup \partial\Sigma_-$,
+\begin{align}
+    \int\limits_{\Sigma_-}\dd[3]{\vb x}\tensor{J}{^0_i}&=\int\limits_{\Sigma_+}\dd[3]{\vb x}\tensor{J}{^0_i}-\int\limits_{\partial\Sigma_+\cup \partial\Sigma_-}\dd[3]{S_{\qty[\nu\mu]}} K^{\qty[\nu\mu]}\\
+    \int\limits_{\Sigma_-}\dd[3]{\vb x}\tensor{J}{^0_i}&=\int\limits_{\Sigma_+}\dd[3]{\vb x}\tensor{J}{^0_i}-\int\limits_{\partial\Sigma_+}\dd[3]{S_{\qty[\nu\mu]}} K^{\qty[\nu\mu]}-\int\limits_{\partial\Sigma_-}\dd[3]{S_{\qty[\nu\mu]}} K^{\qty[\nu\mu]}\\
+    \int\limits_{\Sigma_-}\dd[3]{\vb x}\tensor{J}{^0_i}&=\int\limits_{\Sigma_+}\dd[3]{\vb x}\tensor{J}{^0_i}-\int\limits_{\Sigma_+}\dd[3]{S_{\mu}}\partial_\nu K^{\qty[\nu\mu]}-\int\limits_{\Sigma_-}\dd[3]{S_\mu}\partial_\nu K^{\qty[\nu\mu]}\\
+    \int\limits_{\Sigma_-}\dd[3]{\vb x}\tensor{J}{^0_i}&=\int\limits_{\Sigma_+}\dd[3]{\vb x}\tensor{J}{^0_i}-\int\limits_{\Sigma_+}\dd[3]{\vb x}\partial_\nu K^{\qty[\nu0]}+\int\limits_{\Sigma_-}\dd[3]{\vb x}\partial_\nu K^{\qty[\nu0]}\\
+    \int\limits_{\Sigma_-}\dd[3]{\vb x}\qty[\tensor{J}{^0_i}-\partial_\nu K^{\qty[\nu0]}]&=\int\limits_{\Sigma_+}\dd[3]{\vb x}\qty[\tensor{J}{^0_i}-\partial_\nu K^{\qty[\nu0]}]
+\end{align}
+we still get a conserved quantity! Which differs by a total derivative of the naive conserved quantity.
+
+We'll now show that this is the case, at least for free theories. Let the Lagrangian be given by
+\begin{align}
+    \mathcal L &= -\frac12 R^{IJ}g^{\mu\nu}\partial_\mu\phi_I\partial_\nu\phi_J-\frac12 m^{IJ}\phi_I\phi_J\\
+    \mathcal L &= -\frac12 R^{IJ}\partial^\mu\qty(\phi_I\partial_\mu\phi_J) +\frac12 R^{IJ}\phi_I\Box\phi_J-\frac12 m^{IJ}\phi_I\phi_J
+\end{align}
+the equations of motion are simply $R^{IJ}\Box\phi_J- m^{IJ}\phi_J$. As we evaluate the conserved charges always on-shell, 
+is justifiable to use as an on-shell Lagrangian simply the first term,
+\begin{align}
+    \mathcal L = -\frac12 R^{IJ}\partial_\mu\qty(\phi_I\partial^\mu\phi_J) = \frac12 \partial_\mu\qty(\phi_I\pdv{\mathcal L}{\partial_\mu\phi_I})
 \end{align}
 
-Now, if we have $\mathcal L\eval_{x\in\Gamma} =0 $ or $\dv{x'}{a}\eval_{a=0,x\in\Gamma}=0$ then we get a conserved charge!
-
+In the way it appears at \cref{eq:NotConservationEquation}, we need to show it can be written as $\partial_\nu K^{[\nu\mu]}$,
 \begin{align}
-    \int\limits_{\Sigma_+}\dd[3]{S_\mu}J^\mu=\int\limits_{\Sigma_-}\dd[3]{S_\mu}J^\mu
+    \int\limits_{\Gamma}\dd[3]{S_\mu}\mathcal L\dv{{x'}^\mu}{a^i}\eval_{a^i=0}&=\int\limits_{\Gamma}\dd[3]{S_\mu}\frac12 \partial_\nu\qty(\phi_I\pdv{\mathcal L}{\partial_\nu\phi_I})\dv{{x'}^\mu}{a^i}\eval_{a^i=0}\\
+    &=\int\limits_{\Gamma}\dd[3]{S_\mu}\frac12 \partial_\nu\qty(\phi_I\pdv{\mathcal L}{\partial_\nu\phi_I}\dv{{x'}^\mu}{a^i}\eval_{a^i=0})-\int\limits_{\Gamma}\dd[3]{S_\mu}\frac12 \phi_I\pdv{\mathcal L}{\partial_\nu\phi_I}\partial_\nu\dv{{x'}^\mu}{a^i}\eval_{a^i=0}
 \end{align}
+to get a total derivative, we should have inside the integral a antisymmetric quantity in $\mu\leftrightarrow\nu$, that is not 
+the case yet. We can make such a quantity appear by use of the boundary equation of motion. As $\dd[3]{S_\mu}\pdv{\mathcal L}{\partial_\mu\phi}\eval_{\Gamma}=0$, 
+\begin{align}
+    \int\limits_{\Gamma}\dd[3]{S_\mu}\mathcal L\dv{{x'}^\mu}{a^i}\eval_{a^i=0}&=\int\limits_{\Gamma}\dd[3]{S_\mu}\frac12 \partial_\nu\qty(\phi_I\pdv{\mathcal L}{\partial_\nu\phi_I}\dv{{x'}^\mu}{a^i}\eval_{a^i=0})-\int\limits_{\Gamma}\dd[3]{S_\mu}\frac12 \phi_I\pdv{\mathcal L}{\partial_\nu\phi_I}\partial_\nu\dv{{x'}^\mu}{a^i}\eval_{a^i=0}\\
+    &\quad\quad\quad-\int\limits_{\Gamma}\dd[3]{S_\mu}\frac12 \partial_\nu\qty(\phi_I\pdv{\mathcal L}{\partial_\mu\phi_I}\dv{{x'}^\nu}{a^i}\eval_{a^i=0})+\int\limits_{\Gamma}\dd[3]{S_\mu}\frac12 \phi_I\pdv{\mathcal L}{\partial_\mu\phi_I}\partial_\nu\dv{{x'}^\nu}{a^i}\eval_{a^i=0}
+\end{align}
+which is just adding zero in a clever manner.
 
-% We suppose $\ell^\alpha$ do not depend on derivatives of $\phi$, due to technical reasons. So our condition is,
 
-% \begin{align}
-%     \pdv{\mathcal L[y]}{\partial_\alpha\phi\qty(y)}+\pdv{\ell^\alpha[y]}{\phi\qty(y)}&=\partial_\mu C^{[\mu\alpha]}
-% \end{align}
 
-% Now let's return to Noether's theorem and remake the derivation only to the boundary contribution of the action,
 
-% \begin{align}
-%     S_a'[\phi']-S[\phi]&= \int\limits_{\partial\Omega'}\dd[3]{S_\mu'}{\ell'}^\mu\qty[\phi'(x');x']-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi(x);x]\\
-%     S_a'[\phi']-S[\phi]&= \int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi'(x),\lambda'(x);x]-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi(x);x]\nonumber\\
-%     &\quad\quad\quad+ \int\limits_{\partial\Omega'}\dd[3]{S_\mu'}{\ell'}^\mu\qty[\phi'(x');x']-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi'(x),\lambda'(x);x]\\
-%     S_a'[\phi']-S[\phi]&= \int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi'(x),\lambda'(x);x]-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi(x);x]\nonumber\\
-%     &\quad\quad\quad+ \int\limits_{\partial\Omega}\dd[3]{S_\nu}\pdv{{x}^{\nu}}{{x'}^\mu}\pdv{{x'}^\mu}{x^\rho}\Det\qty[\pdv{x'}{x}]{\ell}^\rho\qty[\phi'(x'),\lambda'(x');x']-\int\limits_{\partial\Omega}\dd[3]{S_\mu}{\ell}^\mu\qty[\phi'(x),\lambda'(x);x]\\
-%     \dv{S_a'[\phi']}{a}\eval_{a=0}&= \int\limits_{\partial\Omega}\dd[3]{S_\mu}\int\limits_{\Omega}\dd[4]{y}\fdv{{\ell}^\mu\qty[\phi(x);x]}{\phi\qty(y)}\dv{\phi'\qty(y)}{a}\eval_{a=0}+\int\limits_{\partial\Omega}\dd[3]{S_\mu}\int\dd[4]{y}\fdv{{\ell}^\mu\qty[\phi(x);x]}{\lambda\qty(y)}\dv{\lambda'\qty(y)}{a}\eval_{a=0}\nonumber\\
-%     &\quad\quad\quad+\int\limits_{\partial\Omega}\dd[3]{S_\mu}\dv{}{a}\Det\qty[\pdv{x'}{x}]\eval_{a=0}{\ell}^\mu+\int\limits_{\partial\Omega}\dd[3]{S_\mu}\dv{}{x^\alpha}{\ell}^\mu\dv{{x'}^\alpha}{a}\eval_{a=0}
-% \end{align}
+
+
+
+
+
+
+
+
+
+
 
 Now let's consider something other, let be a variation with change the values of the fields at the time-like boundaries, that is, 
 a variation between different solutions,
