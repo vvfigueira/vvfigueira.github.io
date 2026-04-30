@@ -99,7 +99,7 @@ substituting back in the action,
 \end{align}
 indeed is a symmetry. Then, we can use Noether's theorem,
 \begin{align}
-    \tensor{J}{^\mu} &=\pdv{\mathcal L}{\partial_\mu\phi_ I\qty(x)}\dv{\phi_ I'\qty(x)}{a}\eval_{a=0}+\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}\\
+    \tensor{J}{^\mu} &=\pdv{\mathcal L}{\partial_\mu\phi_ I\qty(x)}\dv{\phi_ I'\qty(x)}{a}\eval_{a=0}+\mathcal L\dv{{x'}^\mu}{a}\eval_{a=0}
 \end{align}
 as we commented before, we have to take $\phi_I=\qty{\phi,\phi^\ast}$,
 \begin{align}    
@@ -114,16 +114,22 @@ to obtain the conserved charge we integrate the temporal component over a spatia
     Q&=-\int\dd[3]{\vb x}\qty(\im \phi^\ast\pi^\ast-\im\phi\pi)\\
     Q&=\im\int\dd[3]{\vb x}\qty(\pi\phi-\pi^\ast \phi^\ast)
 \end{align}
-as we'll see in the item e), the minus sign between $\pi\phi$ and $\pi^\ast\phi^\ast$ is 
+as we'll see in the \cref{section:e}, the minus sign between $\pi\phi$ and $\pi^\ast\phi^\ast$ is 
 what gives a difference of sign in the charges of particles and anti-particles of 
 this theory.
 
 \probitem{}
 
-The Heisenberg equation of motion is,
+This serves as a starting point of the quantization, showing the quantum equations of motion, of, the Heisenberg equations. 
+As we know, these are the analogous classical equations of motion given by the Poisson bracket in the Hamiltonian formalism,
 \begin{align}
-    \comm{A\qty(t,\vb x)}{H(t)} = \im\dot A\qty(t,\vb x) 
+    \acomm{A\qty(t,\vb x)}{H\qty(t)}=\dot A\qty(t,\vb x)\Rightarrow \comm{A\qty(t,\vb x)}{ H(t)} = \im\dot A\qty(t,\vb x) 
 \end{align}
+
+We already found an expression for the Hamiltonian. What is missing is the canonical commutation relations. These also mimic the 
+canonical Poisson brackets, 
+
+
 applying to $\phi$ and substituting the already found expression for $H$,
 \begin{align}
     \im\dot\phi\qty(t,\vb x)&=\comm{\phi\qty(t,\vb x)}{\int\dd[3]{\vb y}\qty[\pi^\ast\qty(t,\vb y)\pi\qty(t,\vb y)+\grad\phi^\ast\qty(t,\vb y)\cdot\grad\phi\qty(t,\vb y) +m^2\phi^\ast\qty(t,\vb y)\phi\qty(t,\vb y)]}\\
@@ -194,6 +200,7 @@ Now we use the commutation relations of the fields to obtain the commutation rel
 annihilation operators,
 
 \probitem{}
+\label{section:e}
 
 Let's start with the Hamiltonian,
 \begin{align}
