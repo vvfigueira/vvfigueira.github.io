@@ -114,7 +114,7 @@ to obtain the conserved charge we integrate the temporal component over a spatia
     Q&=-\int\dd[3]{\vb x}\qty(\im \phi^\ast\pi^\ast-\im\phi\pi)\\
     Q&=\im\int\dd[3]{\vb x}\qty(\pi\phi-\pi^\ast \phi^\ast)
 \end{align}
-as we'll see in the \cref{section:e}, the minus sign between $\pi\phi$ and $\pi^\ast\phi^\ast$ is 
+as we'll see in the remaining of the problems, the minus sign between $\pi\phi$ and $\pi^\ast\phi^\ast$ is 
 what gives a difference of sign in the charges of particles and anti-particles of 
 this theory.
 
@@ -127,19 +127,25 @@ As we know, these are the analogous classical equations of motion given by the P
 \end{align}
 
 We already found an expression for the Hamiltonian. What is missing is the canonical commutation relations. These also mimic the 
-canonical Poisson brackets, 
-
-
-applying to $\phi$ and substituting the already found expression for $H$,
+canonical Poisson brackets, let's state them here, 
 \begin{align}
+    \comm{\phi\qty(t,\vb x)}{\pi\qty(t,\vb y)}&= \im\delta^{\qty(3)}\qty(\vb x-\vb y), \ \ \ \comm{\phi\qty(t,\vb x)}{\phi\qty(t,\vb y)}=\comm{\pi\qty(t,\vb x)}{\pi\qty(t,\vb y)}=0\\
+    \comm{\phi^\ast\qty(t,\vb x)}{\pi^\ast\qty(t,\vb y)}&= \im\delta^{\qty(3)}\qty(\vb x-\vb y), \ \ \ \comm{\phi^\ast\qty(t,\vb x)}{\phi^\ast\qty(t,\vb y)}=\comm{\pi^\ast\qty(t,\vb x)}{\pi^\ast\qty(t,\vb y)}=0\\
+    \comm{\phi^\ast\qty(t,\vb x)}{\phi\qty(t,\vb y)}&=\comm{\pi^\ast\qty(t,\vb x)}{\pi\qty(t,\vb y)}=0
+\end{align}
+which we can use to compute the commutator of $H$ and $\phi$, with the already found 
+expression of $H$,
+\begin{align}
+    \im\dot\phi\qty(t,\vb x)&=\comm{\phi\qty(t,\vb x)}{H\qty(t)}\\
     \im\dot\phi\qty(t,\vb x)&=\comm{\phi\qty(t,\vb x)}{\int\dd[3]{\vb y}\qty[\pi^\ast\qty(t,\vb y)\pi\qty(t,\vb y)+\grad\phi^\ast\qty(t,\vb y)\cdot\grad\phi\qty(t,\vb y) +m^2\phi^\ast\qty(t,\vb y)\phi\qty(t,\vb y)]}\\
     \im\dot\phi\qty(t,\vb x)&=\int\dd[3]{\vb y}\comm{\phi\qty(t,\vb x)}{\pi^\ast\qty(t,\vb y)\pi\qty(t,\vb y)+\grad\phi^\ast\qty(t,\vb y)\cdot\grad\phi\qty(t,\vb y) +m^2\phi^\ast\qty(t,\vb y)\phi\qty(t,\vb y)} 
 \end{align}
-using the canonical commutation relations,
+from the three terms inside the commutator, only the first one will give a non-zero result, 
+due to the canonical commutation relations,
 \begin{align}
     \comm{\phi\qty(t,\vb x)}{\phi\qty(t,\vb y)} = \comm{\phi\qty(t,\vb x)}{\phi^\ast\qty(t,\vb y)} =0\Rightarrow \comm{\phi\qty(t,\vb x)}{\grad\phi\qty(t,\vb y)} = \comm{\phi\qty(t,\vb x)}{\grad\phi^\ast\qty(t,\vb y)} =0
 \end{align}
-then,
+with this is straightforward to finish the calculation,
 \begin{align}
     \im\dot\phi\qty(t,\vb x)&=\int\dd[3]{\vb y}\comm{\phi\qty(t,\vb x)}{\pi^\ast\qty(t,\vb y)\pi\qty(t,\vb y)}\\
     \im\dot\phi\qty(t,\vb x)&=\int\dd[3]{\vb y}\pi^\ast\qty(t,\vb y)\comm{\phi\qty(t,\vb x)}{\pi\qty(t,\vb y)}+\int\dd[3]{\vb y}\comm{\phi\qty(t,\vb x)}{\pi^\ast\qty(t,\vb y)} \pi\qty(t,\vb y)\\
@@ -152,39 +158,74 @@ Analogously is possible to show that,
 \begin{align}
     \dot{\phi^\ast} = \pi,\ \ \ \dot {\pi^\ast} = \grad^2\phi-m^2\phi,\ \ \ \dot {\pi} = \grad^2\phi^\ast-m^2\phi^\ast
 \end{align}
+those are all the Heisenberg equations of motion for all the degrees of 
+freedom. Notice that they can be put in the usual covariant form,
+\begin{align}
+    \dot {\pi^\ast} &= \grad^2\phi-m^2\phi,\ \ \ \dot\phi\qty(t,\vb x)=\pi^\ast\qty(t,\vb x)\\
+    \ddot{\phi} &= \grad^2\phi-m^2\phi\Rightarrow -\Box\phi+m^2\phi = 0
+\end{align}
+which is a lot more familiar.
 
 \probitem{}
 
-The canonical commutation relations are,
-\begin{align}
-    \comm{\phi\qty(t,\vb x)}{\pi\qty(t,\vb y)}&= \im\delta^{\qty(3)}\qty(\vb x-\vb y), \ \ \ \comm{\phi\qty(t,\vb x)}{\phi\qty(t,\vb y)}=\comm{\pi\qty(t,\vb x)}{\pi\qty(t,\vb y)}=0\\
-    \comm{\phi^\ast\qty(t,\vb x)}{\pi^\ast\qty(t,\vb y)}&= \im\delta^{\qty(3)}\qty(\vb x-\vb y), \ \ \ \comm{\phi^\ast\qty(t,\vb x)}{\phi^\ast\qty(t,\vb y)}=\comm{\pi^\ast\qty(t,\vb x)}{\pi^\ast\qty(t,\vb y)}=0\\
-    \comm{\phi^\ast\qty(t,\vb x)}{\phi\qty(t,\vb y)}&=\comm{\pi^\ast\qty(t,\vb x)}{\pi\qty(t,\vb y)}=0
-\end{align}
+% The canonical commutation relations are,
+% \begin{align}
+%     \comm{\phi\qty(t,\vb x)}{\pi\qty(t,\vb y)}&= \im\delta^{\qty(3)}\qty(\vb x-\vb y), \ \ \ \comm{\phi\qty(t,\vb x)}{\phi\qty(t,\vb y)}=\comm{\pi\qty(t,\vb x)}{\pi\qty(t,\vb y)}=0\\
+%     \comm{\phi^\ast\qty(t,\vb x)}{\pi^\ast\qty(t,\vb y)}&= \im\delta^{\qty(3)}\qty(\vb x-\vb y), \ \ \ \comm{\phi^\ast\qty(t,\vb x)}{\phi^\ast\qty(t,\vb y)}=\comm{\pi^\ast\qty(t,\vb x)}{\pi^\ast\qty(t,\vb y)}=0\\
+%     \comm{\phi^\ast\qty(t,\vb x)}{\phi\qty(t,\vb y)}&=\comm{\pi^\ast\qty(t,\vb x)}{\pi\qty(t,\vb y)}=0
+% \end{align}
 
-We expand the field in it's inverse Fourier transform,
-\begin{align}
-    \phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}\tilde \phi\qty(p)\e^{\im x\cdot p}
-\end{align}
+We have already stated the canonical commutation relations, and also computed 
+the equations of motion. Now, we'll solve the equation of motion for $\phi$, 
+this solution will have undetermined coefficients $a,b$, which also will have 
+the interpretation of operators in the Hilbert space. We'll determine the algebra 
+of these coefficients by ensuring $\phi$ satisfy the canonical commutation relations.
 
-The equation of motion is,
+As we derived, our equation of motion is,
 \begin{align}
     \qty(-\Box_x+m^2)\phi\qty(x)=0
 \end{align}
-which when acting on the momentum space representation gives,
+which is linear. One of the easiest ways of solving linear PDE is 
+to expand the field in it's inverse Fourier transform,
+\begin{align}
+    \phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}\tilde \phi\qty(p)\e^{\im x\cdot p}
+\end{align}
+substituting it back in the equation of motion,
 \begin{align}
     0=\qty(-\Box_x+m^2)\phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}\tilde \phi\qty(p)\qty(-\Box_x+m^2)\e^{\im x\cdot p}\\
     0&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}\tilde \phi\qty(p)\qty(p^2+m^2)\e^{\im x\cdot p}
 \end{align}
-this integral equation should be valid for every $x$. In fact, given an arbitrary function $\psi\qty(x)$, we can integrate over $x$,
+we obtained an integral condition of the Fourier modes $\tilde\phi$ which should be valid for every $x$. In fact, given an arbitrary function $\psi\qty(x)$, we can integrate over $x$,
 \begin{align}
     0\int\dd[4]{x}\psi(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}\tilde \phi\qty(p)\qty(p^2+m^2)\int\dd[4]{x}\e^{\im x\cdot p}\psi(x)\\
     0&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}\tilde \phi\qty(p)\qty(p^2+m^2)\tilde\psi(-p)
 \end{align}
-as $\psi$ is arbitrary, the only way to the result be zero is if $\tilde \phi\qty(p)\qty(p^2+m^2)$ is itself 
+as $\psi$ is arbitrary\footnote{The matter of whether $\psi$ or even $\phi$ do possesses an well defined Fourier transform is left untouched. 
+There are developments into formalizing what kind of mathematical object $\phi$ --- distribution valued operator ---, but we'll just assume 
+everything works out.}, the only way to the result be zero is if $\tilde \phi\qty(p)\qty(p^2+m^2)$ is itself 
 the zero distribution. Naively this would imply $\tilde \phi\qty(p) \equiv 0$, but, due to the distributional 
-identity $x\delta(x)=0$, the most general solution is $\tilde \phi\qty(p) \propto \delta\qty(p^2+m^2)$. The most general solution of this 
-equation is $\tilde\phi\qty(p) = 2\pi\delta\qty(p^2+m^2)\qty(\theta\qty(p^0)a\qty(\vb p)+\theta\qty(-p^0)b^\ast\qty(\vb p))$. Thus,
+identity, \begin{align}x\delta(x)=0\end{align} the most general solution is $\tilde \phi\qty(p) \propto \delta\qty(p^2+m^2)$, as $\qty(p^2+m^2)\delta\qty(p^2+m^2)=0$. 
+Our desired expression for $\tilde\phi$ is then given by $\delta\qty(p^2+m^2)$ multiplied by some coefficients, 
+\begin{align}
+    \tilde\phi\qty(p)&=A\qty(p)\delta\qty(p^2+m^2)
+\end{align}
+due to the Dirac delta, we're enforcing \begin{align}p^2 = -m^2\Rightarrow {p^0}^2 = \vb p^2 + m^2\Rightarrow p^0 =\pm\sqrt{ \vb p^2 + m^2}=\pm\omega_{\vb p}\end{align} 
+thus, $A$ cannot have arbitrary arguments in the $p^0$ entry, otherwise the Dirac delta would enforce it 
+to be zero. The only two non-zero contributions are $A\qty(\omega_{\vb p},\vb p)$ and $A\qty(-\omega_{\vb p},\vb p)$, 
+\begin{align}
+    \tilde\phi\qty(p)&=\qty(A\qty(\omega_{\vb p},\vb p)+A\qty(-\omega_{\vb p},\vb p))\delta\qty(p^2+m^2)
+\end{align}
+
+As the Dirac delta enforces $p^0=\pm\omega_{\vb p}$, it's not necessary to even label the $p^0$ in $A$, just 
+to keep track of the sign. For this we call $A\qty(\omega_{\vb p},\vb p)=2\pi a\qty(\vb p)$ and 
+$A\qty(-\omega_{\vb p},\vb p)=2\pi b^\dagger\qty(\vb p)$, and keep track of the $p^0$ sign by multiplying 
+$a$ by $\theta\qty(p^0)$ and $b$ by $\theta\qty(-p^0)$,
+\begin{align}
+    \tilde\phi\qty(p)&=2\pi\delta\qty(p^2+m^2)\qty(\theta\qty(p^0)a\qty(\vb p)+\theta\qty(-p^0)b^\dagger\qty(\vb p))
+\end{align}
+of course the choice of normalization $2\pi$ is conventional, also the names of the coefficients $a, b^\dagger$. But, 
+there are motifs behind this, which is a desired form of the final expression. Now, with the full expression of $\tilde\phi$, 
+we do the Fourier transform to get $\phi$,
 \begin{align}
     \phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}\tilde \phi\qty(p)\e^{\im x\cdot p}\\
     \phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^4}2\pi\delta\qty(p^2+m^2)\qty(\theta\qty(p^0)a\qty(\vb p)+\theta\qty(-p^0)b^\ast\qty(\vb p))\e^{\im x\cdot p}
