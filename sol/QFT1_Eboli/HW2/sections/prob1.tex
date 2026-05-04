@@ -238,11 +238,11 @@ for our case $g(p^0) = -{p^0}^2+\omega_{\vb p}^2$, what implies,
 \begin{align}
     \phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^32\omega_{\vb p}}\qty(\delta\qty(p^0-\omega_{\vb p})+\delta\qty(p^0+\omega_{\vb p}))\qty(\theta\qty(p^0)a\qty(\vb p)+\theta\qty(-p^0)b^\dagger\qty(\vb p))\e^{\im x\cdot p}\\
     \phi\qty(x)&=\int\frac{\dd[4]{p}}{\qty(2\pi)^32\omega_{\vb p}}\qty(\delta\qty(p^0-\omega_{\vb p})a\qty(\vb p)+\delta\qty(p^0+\omega_{\vb p})b^\dagger\qty(\vb p))\e^{\im x\cdot p}\\
-    \phi\qty(x)&=\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}a\qty(\vb p)\eval_{p^0=\omega_{\vb p}}+\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}b^\dagger\qty(\vb p)\e^{\im x\cdot p}\eval_{p^0=-\omega_{\vb p}}
+    \phi\qty(x)&=\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}a\qty(\vb p)\e^{\im x\cdot p}\eval_{p^0=\omega_{\vb p}}+\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}b^\dagger\qty(\vb p)\e^{\im x\cdot p}\eval_{p^0=-\omega_{\vb p}}
 \end{align}
 if we make the change of integration variables $\vb p\rightarrow-\vb p$ in the second integral, we can change the overall sign on the exponential to get,
 \begin{align}
-    \phi\qty(x)&=\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}a\qty(\vb p)\eval_{p^0=\omega_{\vb p}}+\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}b^\dagger\qty(\vb p)\e^{-\im x\cdot p}\eval_{p^0=\omega_{\vb p}}\\
+    \phi\qty(x)&=\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}a\qty(\vb p)\e^{\im x\cdot p}\eval_{p^0=\omega_{\vb p}}+\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}b^\dagger\qty(\vb p)\e^{-\im x\cdot p}\eval_{p^0=\omega_{\vb p}}\\
     \phi\qty(x)&=\int\frac{\dd[3]{\vb p}}{\qty(2\pi)^32\omega_{\vb p}}\qty(a\qty(\vb p)\e^{\im x\cdot p}+b^\dagger\qty(\vb p)\e^{-\im x\cdot p})\eval_{p^0=\omega_{\vb p}}
 \end{align}
 if $\phi$ was a real field, we would have to impose $\phi^\dagger = \phi$, what would set $a = b$. But here we are working with a complex field, then $a$ and $b$ are independent.
