@@ -29,6 +29,14 @@
 \usepackage[compact,explicit]{titlesec}
 \usepackage{stackengine}
 
+\newcounter{problem}
+\newcounter{problemitem}[problem]
+
+\renewcommand{\theproblem}{\arabic{problem}}
+\renewcommand{\theproblemitem}{\theproblem.\Alph{problemitem})}
+
+% \crefname{appsec}{appendix}{appendices}
+% \Crefname{appsec}{Appendix}{Appendices}
 
 \newtheoremstyle{dotless}% name
     {}% space above
@@ -134,22 +142,29 @@
 %\titleformat{\section}[runin]{\large\bfseries}{}{0pt}{Problem \thesection}
 
 \newcommand{\problem}{%
-  \refstepcounter{section}%
-  \addcontentsline{toc}{section}{Problem \thesection}%
+  \refstepcounter{problem}%
+  \stepcounter{section}
+  \addcontentsline{toc}{section}{Problem \theproblem}%
   \vspace{1.5em}
   \noindent
-  {\large\bfseries Problem \thesection}%
+  {\large\bfseries Problem \theproblem}%
   \par\nopagebreak\vspace{0.5em}
 }
 
 \newcommand{\probitem}{%
-  \refstepcounter{subsection}%
-  \addcontentsline{toc}{subsection}{\thesection.\Alph{subsection})}%
+  \refstepcounter{problemitem}%
+  \addcontentsline{toc}{subsection}{\theproblemitem}%
   \vspace{1.5em}
   \noindent
-  {\large\bfseries\thesection.\Alph{subsection})}%
+  {\large\bfseries\theproblemitem}%
   \par\nopagebreak\vspace{0.5em}
 }
+
+\crefname{problem}{problem}{problems}
+\Crefname{problem}{Problem}{Problems}
+
+\crefname{problemitem}{item}{items}
+\Crefname{problemitem}{Item}{Items}
 
 
 % \renewcommand{\thesubsection}{\thesection.\Alph{subsection})}
@@ -185,6 +200,8 @@
 \newpage
 
 \appendix
+
+\crefalias{section}{appendix}
 
 \input{appendix/conventions}
 
