@@ -1,4 +1,0 @@
-\babel@toc {brazilian}{}\relax 
-\contentsline {section}{\tocsection {}{1}{Exercício 1}}{2}{section.1}%
-\contentsline {section}{\tocsection {}{2}{Exercício 2}}{3}{section.2}%
-\contentsline {section}{\tocsection {}{3}{Exercício 3}}{4}{section.3}%
